@@ -1,0 +1,442 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* ─────────────────────────────────────────
+     LF Brand Palette — white/cream + coal + yellow accent
+     Principios:
+     · Background: near-white con ligera calidez
+     · Foreground: negro carbón para máximo contraste
+     · Primary: amarillo LF — SOLO acento, NUNCA texto largo en fondo claro
+     · Muted-foreground: gris oscuro legible (≥ 4.5:1 sobre fondo)
+     · Secondary: gris azul oscuro — texto secundario en oscuro
+  ───────────────────────────────────────── */
+  /* ── PALETA LF EDITORIAL ──────────────────────────────────────
+     Filosofía: papel viejo + carbón + amarillo firma.
+     Tres niveles de fondo distinguibles:
+       paper-light: hsl(40 18% 96%) — el más claro, secciones de descanso
+       paper:       hsl(38 22% 93%) — fondo base principal
+       paper-warm:  hsl(36 28% 89%) — secciones con más peso visual
+     Foreground: carbón sepia profundo.
+     Dark blocks: hsl(24·22·9) — carbón más denso.
+     Yellow: SOLO descubrimientos, conexiones, navegación activa.
+  ──────────────────────────────────────────────────────────────── */
+  --color-background: 38 22% 93%; /* papel — base principal */
+  --color-foreground: 24 22% 9%; /* carbón sepia profundo */
+  --color-card: 40 18% 96%; /* paper-light — secciones de descanso */
+  --color-card-foreground: 24 18% 10%;
+  --color-popover: 40 20% 98%;
+  --color-popover-foreground: 24 18% 10%;
+
+  /* Amarillo LF — firma de marca, NO texto largo */
+  --color-primary: 44 95% 48%;
+  --color-primary-foreground: 24 18% 8%;
+
+  /* Gris oscuro cálido — texto secundario con mejor contraste */
+  --color-secondary: 24 16% 22%;
+  --color-secondary-foreground: 40 18% 96%;
+
+  /* Metadata / eyebrow — más oscuro para legibilidad */
+  --color-tertiary: 24 14% 32%;
+  --color-tertiary-foreground: 40 18% 96%;
+
+  /* Superficie tono medio — paper-warm para secciones con peso */
+  --color-muted: 36 28% 89%;
+  --color-muted-foreground: 24 16% 28%;
+
+  /* Acento amarillo suave — fondos de highlight */
+  --color-accent: 48 90% 88%;
+  --color-accent-foreground: 24 18% 10%;
+
+  --color-success: 152 62% 30%;
+  --color-success-foreground: 0 0% 100%;
+  --color-warning: 32 90% 40%;
+  --color-warning-foreground: 0 0% 100%;
+  --color-destructive: 0 72% 44%;
+  --color-destructive-foreground: 0 0% 100%;
+
+  --color-border: 32 18% 80%; /* borde cálido más visible */
+  --color-input: 34 16% 84%;
+  --color-ring: 44 95% 48%;
+
+  /* ── Escala de grises cálidos ── */
+  --color-gray-50: 38 18% 96%;
+  --color-gray-100: 36 16% 92%;
+  --color-gray-200: 34 12% 85%;
+  --color-gray-300: 32 10% 74%;
+  --color-gray-400: 30 8% 60%;
+  --color-gray-500: 28 8% 46%;
+  --color-gray-600: 26 10% 34%;
+  --color-gray-700: 24 13% 22%;
+  --color-gray-800: 22 16% 14%;
+  --color-gray-900: 20 18% 8%;
+
+  /* ── Dark block LF — carbón sepia más denso ── */
+  --color-ink: 24 22% 9%; /* fondo de bloques oscuros — más profundo */
+  --color-ink-mid: 25 24% 14%; /* variante media oscura */
+  --color-ink-surface: 26 20% 18%; /* superficie sobre oscuro */
+  --color-ink-text: 38 16% 94%; /* texto principal sobre oscuro — más claro */
+  --color-ink-muted: 32 12% 58%; /* texto secundario sobre oscuro — más legible */
+
+  /* ── Gradientes ── */
+  --gradient-lf: radial-gradient(
+    ellipse 65% 55% at 100% 100%,
+    hsl(50 90% 85% / 0.5) 0%,
+    hsl(44 75% 92% / 0.2) 45%,
+    hsl(38 22% 95%) 70%
+  );
+  --gradient-2: linear-gradient(
+    180deg,
+    hsl(38 22% 95%) 0%,
+    hsl(44 40% 92%) 100%
+  );
+  --gradient-dark: linear-gradient(
+    150deg,
+    hsl(25 20% 10%) 0%,
+    hsl(26 24% 15%) 100%
+  );
+  --gradient-1: var(--gradient-lf);
+  --button-border-gradient: linear-gradient(
+    120deg,
+    hsl(44 95% 48%),
+    hsl(38 80% 40%)
+  );
+
+  --font-sans: "DM Sans", sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --font-mono: "IBM Plex Mono", monospace;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  html,
+  body,
+  #app {
+    @apply min-h-full bg-background text-foreground;
+  }
+
+  body {
+    @apply font-sans antialiased;
+    background-color: hsl(var(--color-background));
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif text-foreground;
+  }
+
+  p,
+  span,
+  li,
+  label,
+  input,
+  textarea,
+  button,
+  a,
+  small {
+    @apply text-inherit;
+  }
+
+  a,
+  button,
+  input,
+  textarea,
+  [role="button"],
+  [tabindex]:not([tabindex="-1"]) {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+  }
+}
+
+@layer components {
+  .section-shell {
+    @apply px-8 py-20 md:py-24 lg:py-28;
+  }
+
+  .section-inner {
+    @apply mx-auto w-full max-w-7xl;
+  }
+
+  /* ─── SISTEMA TIPOGRÁFICO LF ───────────────────────────────
+     Reglas estrictas de uso:
+     · display-headline  → serif grande, titulares de hero y landing
+     · h1–h3 en páginas  → font-serif, foreground oscuro
+     · body text         → font-sans, foreground o muted-foreground legible
+     · eyebrow/metadata  → font-mono, siempre sobre base clara con buen contraste
+     · labels/tags       → font-mono pequeño, foreground o muted legible
+     · botones           → font-sans medium
+  ──────────────────────────────────────────────────────────── */
+
+  .eyebrow {
+    /* Metadata y eyebrows: gris oscuro legible, NO amarillo */
+    @apply font-mono text-xs uppercase tracking-[0.2em] text-tertiary;
+  }
+
+  .surface-panel {
+    @apply rounded-2xl border border-border bg-card/80 backdrop-blur-sm;
+  }
+
+  /* ── Bloque oscuro editorial — clase utilitaria reutilizable ── */
+  .ink-block {
+    background-color: hsl(var(--color-ink));
+    color: hsl(var(--color-ink-text));
+  }
+  .ink-block-mid {
+    background-color: hsl(var(--color-ink-mid));
+    color: hsl(var(--color-ink-text));
+  }
+  .ink-surface {
+    background-color: hsl(var(--color-ink-surface));
+  }
+
+  /* ── Tres niveles de papel — ritmo visual claro ── */
+  .paper-light {
+    background-color: hsl(40 18% 96%); /* más claro — descanso */
+  }
+  .paper-base {
+    background-color: hsl(38 22% 93%); /* base principal */
+  }
+  .paper-warm {
+    background-color: hsl(36 28% 89%); /* más cálido — peso visual */
+  }
+  .paper-deep {
+    background-color: hsl(34 24% 85%); /* más oscuro — transición a ink */
+  }
+
+  /* LF sparkle decoration */
+  .lf-sparkle {
+    display: inline-block;
+    position: relative;
+  }
+
+  .lf-sparkle::before {
+    content: "✦";
+    position: absolute;
+    color: hsl(var(--color-primary));
+    font-size: 0.7em;
+    top: -0.5em;
+    right: -0.8em;
+  }
+
+  /* Monogram LF */
+  .lf-monogram {
+    @apply font-serif font-bold text-foreground/40 select-none;
+    letter-spacing: -0.04em;
+  }
+
+  /* Arc decoration */
+  .lf-arc {
+    position: absolute;
+    border-radius: 50%;
+    border: 1.5px solid hsl(var(--color-foreground) / 0.12);
+    pointer-events: none;
+  }
+
+  /* Card warm style */
+  .lf-card {
+    @apply rounded-2xl border border-border/60 bg-card/70 backdrop-blur-sm shadow-sm;
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  .lf-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px hsl(44 95% 48% / 0.15);
+  }
+
+  /* Serif display headline */
+  .display-headline {
+    @apply font-serif font-medium leading-[1.1] tracking-tight text-foreground;
+  }
+
+  /* SEGUNDA LECTURA — anomaly elements */
+
+  /* Strikethrough annotation (crossed-out assumption) */
+  .sl-strike {
+    position: relative;
+    display: inline;
+    color: hsl(var(--color-muted-foreground));
+  }
+  .sl-strike::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 1.5px;
+    background: hsl(var(--color-primary));
+    transform: translateY(-50%) rotate(-1deg);
+  }
+
+  /* Shifted / offset word */
+  .sl-shift {
+    display: inline-block;
+    transform: translateY(-3px);
+    color: hsl(var(--color-secondary));
+    font-style: italic;
+  }
+
+  /* Marginal annotation / side note */
+  .sl-margin-note {
+    /* Contraste suficiente: text-tertiary = gris 38% oscuro sobre blanco = AA */
+    @apply font-mono text-xs;
+    color: hsl(var(--color-tertiary));
+    border-left: 2px solid hsl(var(--color-primary) / 0.6);
+    padding-left: 0.75rem;
+  }
+
+  /* Underline reveal on hover */
+  .sl-reveal-underline {
+    position: relative;
+    cursor: default;
+  }
+  .sl-reveal-underline::after {
+    content: attr(data-reveal);
+    position: absolute;
+    bottom: -1.6rem;
+    left: 0;
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: hsl(var(--color-tertiary));
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateY(4px);
+    transition:
+      opacity 0.2s ease,
+      transform 0.2s ease;
+    pointer-events: none;
+  }
+  .sl-reveal-underline:hover::after {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Reasoning chain arrow — amarillo solo como decoración, no como texto informativo */
+  .sl-chain-arrow {
+    @apply font-mono text-xs;
+    color: hsl(var(--color-primary));
+    margin: 0 0.35rem;
+    font-weight: 500;
+  }
+
+  /* Annotation bracket */
+  .sl-bracket {
+    @apply font-mono text-xs;
+    color: hsl(var(--color-primary) / 0.7);
+  }
+
+  /* Grid rule — fine horizontal line with label */
+  .sl-rule {
+    position: relative;
+    border-top: 1px solid hsl(var(--color-border));
+  }
+  .sl-rule-label {
+    position: absolute;
+    top: -0.7rem;
+    right: 0;
+    @apply font-mono text-[10px] uppercase tracking-widest text-muted-foreground bg-background px-2;
+  }
+
+  /* Note card */
+  .nota-card {
+    @apply border border-border bg-card;
+    transition:
+      border-color 0.2s ease,
+      background-color 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+  .nota-card:hover {
+    border-color: hsl(var(--color-primary) / 0.6);
+    background-color: hsl(var(--color-accent) / 0.28);
+    box-shadow: 0 2px 16px hsl(44 95% 48% / 0.08);
+  }
+}
+
+/* ─── Marquee ─── */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+/* ─── Utility overrides ─── */
+.hover\:bg-foreground\/6:hover {
+  background-color: hsl(var(--color-foreground) / 0.06);
+}
+.bg-primary\/8 {
+  background-color: hsl(var(--color-primary) / 0.08);
+}
+.bg-white\/4 {
+  background-color: hsl(0 0% 100% / 0.04);
+}
+.border-white\/8 {
+  border-color: hsl(0 0% 100% / 0.08);
+}
+.bg-primary\/12 {
+  background-color: hsl(var(--color-primary) / 0.12);
+}
+.bg-foreground\/6 {
+  background-color: hsl(var(--color-foreground) / 0.06);
+}
+
+/* ─── Print ─── */
+@media print {
+  header,
+  footer,
+  nav {
+    display: none !important;
+  }
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 11pt;
+  }
+  main {
+    padding: 0 !important;
+  }
+  section {
+    background: white !important;
+    padding: 1.2rem 2.4rem !important;
+    page-break-inside: avoid;
+  }
+  /* Ensure all collapsible sections are visible in print */
+  [id^="cv-section-body-"] {
+    max-height: none !important;
+    opacity: 1 !important;
+    overflow: visible !important;
+  }
+  /* Hide print buttons in print */
+  button[onClick*="print"] {
+    display: none !important;
+  }
+  /* Clean up gradients and decorative elements */
+  .pointer-events-none {
+    display: none !important;
+  }
+  /* Force links to show URLs */
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.75em;
+    color: #666;
+  }
+}
