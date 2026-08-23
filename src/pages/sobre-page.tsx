@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "@phosphor-icons/react";
 import { SeoHead } from "@/components/seo-head";
 import { MotionWrapper } from "@/components/motion-wrapper";
+import { profile } from "@/data/profile";
 
 // ─── DATOS EDITORIALES ───────────────────────────────────────────────────────
 // Lara puede actualizar estos bloques independientemente.
@@ -34,42 +35,37 @@ const PRINCIPLES = [
   },
 ];
 
-const TIMELINE_FRAGMENTS = [
+type TimelineType = "edu" | "award" | "pro" | "personal" | "now";
+
+const TIMELINE_FRAGMENTS: Array<{
+  year: string;
+  label: string;
+  text: string;
+  type: TimelineType;
+}> = [
   {
-    year: "2021",
-    label: "Inicio",
-    text: "Comienzo la carrera de Publicidad y RRPP. Primeras aproximaciones a la estrategia — más como pregunta que como respuesta.",
-    type: "edu" as const,
+    year: "",
+    label: "Formación",
+    text: "Grado en Publicidad y RRPP finalizado. Nota media 8,62.",
+    type: "edu",
   },
   {
-    year: "2023",
-    label: "Primer reconocimiento",
-    text: "Premio Ideathon. La primera vez que una idea construida desde cero fue reconocida en competición real.",
-    type: "award" as const,
+    year: "",
+    label: "Experiencia profesional",
+    text: "Stud-IA: estrategia, gestión de contenidos y trabajo analítico asociado a comunicación y marketing.",
+    type: "pro",
   },
   {
-    year: "2023",
-    label: "Herramientas",
-    text: "Formación RTVE. Primer contacto profesional con producción y comunicación institucional.",
-    type: "pro" as const,
-  },
-  {
-    year: "2024",
+    year: "",
     label: "El producto",
-    text: "Comienzo a desarrollar Talixea de forma autónoma. Aprender a programar como consecuencia de querer resolver un problema real.",
-    type: "personal" as const,
+    text: "Talixea nace al conectar lectura, aprendizaje de idiomas y una oportunidad detectada en español.",
+    type: "personal",
   },
   {
-    year: "2024",
-    label: "IA aplicada",
-    text: "Formación especializada Stud-IA. Análisis crítico de la inteligencia artificial en flujos de trabajo de comunicación.",
-    type: "pro" as const,
-  },
-  {
-    year: "2025",
-    label: "En curso",
-    text: "Último año de carrera. Nota media 8,62 — Beca de Excelencia Académica. Talixea en versión activa.",
-    type: "now" as const,
+    year: "AHORA",
+    label: "Máster",
+    text: "Iniciando un máster en Comunicación Publicitaria. Centro y fechas pendientes de añadir.",
+    type: "now",
   },
 ];
 
@@ -92,26 +88,19 @@ const CURRENTLY = [
   {
     label: "Explorando",
     items: [
-      "Sistemas de repetición espaciada y memoria a largo plazo",
-      "Comunicación que reduce la complejidad sin simplificarla",
-      "El papel del contexto en el aprendizaje de idiomas",
-    ],
-  },
-  {
-    label: "Leyendo",
-    items: [
-      "Thinking, Fast and Slow — Daniel Kahneman",
-      "How Brands Grow — Byron Sharp",
-      "The Design of Everyday Things — Don Norman",
+      "Comportamiento, comunicación y contexto",
+      "Sistemas de aprendizaje y lectura en idiomas",
+      "TODO: actualizar intereses y lecturas reales",
     ],
   },
 ];
 
-const LANGUAGES = [
-  { lang: "Español", level: "Nativo", code: "ES", width: "100%" },
-  { lang: "Gallego", level: "Nativo", code: "GL", width: "100%" },
-  { lang: "Inglés", level: "Avanzado (C1)", code: "EN", width: "88%" },
-];
+const LANGUAGES = profile.languages.map((language) => ({
+  lang: language.label,
+  level: "Nivel pendiente de confirmar",
+  code: language.code,
+  width: "0%",
+}));
 
 const TYPE_STYLES: Record<
   "edu" | "award" | "pro" | "personal" | "now",
@@ -247,7 +236,7 @@ export function SobrePage() {
           title: "Sobre mí | Lara Feijóo",
           description:
             "Perfil editorial de Lara Feijóo — estrategia, comunicación, curiosidad y autonomía. Más que un CV.",
-          canonical: `${window.location.origin}/sobre`,
+          canonical: `${window.location.origin}/sobre-mi`,
         }}
       />
 
@@ -383,53 +372,24 @@ export function SobrePage() {
                 {/* Columna derecha — imagen + ficha */}
                 <MotionWrapper delay={0.1}>
                   <div className="sticky top-24 space-y-4">
-                    {/* Imagen editorial */}
-                    <div className="relative overflow-hidden">
-                      <img
-                        src="/assets/lara-portrait.png"
-                        alt="Lara Feijóo — retrato editorial"
-                        loading="eager"
-                        className="w-full object-cover"
-                        style={{
-                          clipPath:
-                            "polygon(0 0, 100% 0, 100% 93%, 96% 100%, 0 100%)",
-                          maxHeight: "420px",
-                        }}
-                      />
-                      {/* Overlay sutil */}
-                      <div
-                        className="absolute inset-0 pointer-events-none"
-                        style={{
-                          background:
-                            "linear-gradient(to bottom, transparent 60%, hsl(36 28% 91% / 0.30) 100%)",
-                        }}
-                      />
-                      {/* Badge de estado */}
-                      <div
-                        className="absolute bottom-4 left-4 px-3 py-2"
-                        style={{
-                          background: "hsl(40 20% 97% / 0.93)",
-                          border: "1px solid hsl(24 18% 10% / 0.12)",
-                          backdropFilter: "blur(4px)",
-                        }}
+                    {/* Sustituir por una fotografía real antes de publicar. */}
+                    <div
+                      className="relative flex min-h-[320px] items-end overflow-hidden p-6"
+                      aria-label="Placeholder para retrato de Lara Feijóo"
+                      style={{
+                        background:
+                          "linear-gradient(145deg, hsl(36 26% 86%), hsl(40 18% 96%))",
+                        border: "1px dashed hsl(24 18% 10% / 0.20)",
+                        clipPath:
+                          "polygon(0 0, 100% 0, 100% 93%, 96% 100%, 0 100%)",
+                      }}
+                    >
+                      <span
+                        className="font-mono text-[10px] uppercase tracking-[0.18em]"
+                        style={{ color: "hsl(24 18% 10% / 0.48)" }}
                       >
-                        <span className="relative flex h-1.5 w-1.5 inline-block mr-2 align-middle">
-                          <span
-                            className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75"
-                            style={{ background: "hsl(152 55% 40%)" }}
-                          />
-                          <span
-                            className="relative inline-flex rounded-full h-1.5 w-1.5"
-                            style={{ background: "hsl(152 55% 35%)" }}
-                          />
-                        </span>
-                        <span
-                          className="font-mono text-[9px] uppercase tracking-widest"
-                          style={{ color: "hsl(24 18% 10% / 0.65)" }}
-                        >
-                          En curso · Máster
-                        </span>
-                      </div>
+                        TODO: retrato real
+                      </span>
                     </div>
 
                     {/* Ficha compacta */}
@@ -443,14 +403,14 @@ export function SobrePage() {
                       {[
                         {
                           label: "Formación",
-                          value: "Publicidad y RRPP · UCM",
+                          value: "Publicidad y RRPP · TODO: institución",
                         },
                         {
                           label: "Nota media",
-                          value: "8,62 · Beca de Excelencia",
+                          value: "8,62",
                         },
-                        { label: "Idiomas", value: "ES · GL · EN" },
-                        { label: "Proyecto activo", value: "Talixea v1.2" },
+                        { label: "Idiomas", value: "TODO: confirmar" },
+                        { label: "Proyecto activo", value: "Talixea · proyecto vivo" },
                       ].map(({ label, value }) => (
                         <div
                           key={label}

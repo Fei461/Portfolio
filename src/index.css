@@ -24,9 +24,19 @@
      Dark blocks: hsl(24·22·9) — carbón más denso.
      Yellow: SOLO descubrimientos, conexiones, navegación activa.
   ──────────────────────────────────────────────────────────────── */
-  --color-background: 38 22% 93%; /* papel — base principal */
+  --surface-01: 38 22% 91%;
+  --surface-02: 36 26% 86%;
+  --surface-03: 40 18% 96%;
+  --surface-dark: 24 22% 9%;
+  --pure-white: 0 0% 100%;
+  --text-primary: 24 22% 9%;
+  --text-secondary: 24 16% 26%;
+  --text-metadata: 24 14% 38%;
+  --text-decorative: 24 12% 58%;
+
+  --color-background: var(--surface-01); /* papel — base principal */
   --color-foreground: 24 22% 9%; /* carbón sepia profundo */
-  --color-card: 40 18% 96%; /* paper-light — secciones de descanso */
+  --color-card: var(--surface-03); /* paper-light — secciones de descanso */
   --color-card-foreground: 24 18% 10%;
   --color-popover: 40 20% 98%;
   --color-popover-foreground: 24 18% 10%;
@@ -40,12 +50,12 @@
   --color-secondary-foreground: 40 18% 96%;
 
   /* Metadata / eyebrow — más oscuro para legibilidad */
-  --color-tertiary: 24 14% 32%;
+  --color-tertiary: var(--text-metadata);
   --color-tertiary-foreground: 40 18% 96%;
 
   /* Superficie tono medio — paper-warm para secciones con peso */
-  --color-muted: 36 28% 89%;
-  --color-muted-foreground: 24 16% 28%;
+  --color-muted: var(--surface-02);
+  --color-muted-foreground: var(--text-secondary);
 
   /* Acento amarillo suave — fondos de highlight */
   --color-accent: 48 90% 88%;
@@ -117,6 +127,7 @@
 
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 
   html,
@@ -158,6 +169,21 @@
   [role="button"],
   [tabindex]:not([tabindex="-1"]) {
     @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
   }
 }
 
@@ -204,13 +230,13 @@
 
   /* ── Tres niveles de papel — ritmo visual claro ── */
   .paper-light {
-    background-color: hsl(40 18% 96%); /* más claro — descanso */
+    background-color: hsl(var(--surface-03)); /* más claro — descanso */
   }
   .paper-base {
-    background-color: hsl(38 22% 93%); /* base principal */
+    background-color: hsl(var(--surface-01)); /* base principal */
   }
   .paper-warm {
-    background-color: hsl(36 28% 89%); /* más cálido — peso visual */
+    background-color: hsl(var(--surface-02)); /* más cálido — peso visual */
   }
   .paper-deep {
     background-color: hsl(34 24% 85%); /* más oscuro — transición a ink */

@@ -8,11 +8,13 @@ import {
 } from "@phosphor-icons/react";
 import { SeoHead } from "@/components/seo-head";
 import { MotionWrapper } from "@/components/motion-wrapper";
+import { projectContent, projectSequence } from "@/data/projects";
+import { isPendingContent } from "@/lib/utils";
 
 // ─── TIPOS ────────────────────────────────────────────────────────────────────
 
 type ProjectContext = "PERSONAL" | "PROFESIONAL" | "ACADÉMICO";
-type DepthLevel = "CASO COMPLETO" | "CASO BREVE";
+type DepthLevel = "CASO COMPLETO" | "CASO BREVE" | "ARCHIVO";
 type BlockType =
   | "CONTEXTO"
   | "HIPÓTESIS"
@@ -434,19 +436,70 @@ const PROJECT_REGISTRY: Record<string, Partial<CaseStudyData>> = {
   },
 };
 
+// La fuente activa de contenido es src/data/projects.ts; este registro se conserva
+// únicamente como referencia de estructura para futuras ampliaciones editoriales.
+void PROJECT_REGISTRY;
+
 // ─── FUNCIÓN: obtener datos completos del proyecto ────────────────────────────
 function getProjectData(slug: string): CaseStudyData {
-  const partial = PROJECT_REGISTRY[slug];
-  if (!partial) {
+  const project = projectContent[slug];
+  if (!project) {
     return { ...DEMO_DATA, slug };
   }
+
+  const index = projectSequence.indexOf(slug);
+  const previousSlug = projectSequence[index - 1];
+  const nextSlug = projectSequence[index + 1];
+
   return {
     ...DEMO_DATA,
-    ...partial,
     slug,
-    blocks: DEMO_DATA.blocks,
-    evidencias: DEMO_DATA.evidencias,
-    reflexion: DEMO_DATA.reflexion,
+    num: String(index + 1).padStart(2, "0"),
+    title: project.title,
+    subtitle: isPendingContent(project.description) ? undefined : project.description,
+    year: isPendingContent(project.year) ? "" : project.year,
+    context: project.context,
+    depth: project.depth,
+    role: isPendingContent(project.role) ? "" : project.role,
+    tags: project.tags,
+    coverImg: project.media.find((media) => media.src)?.src,
+    opening: {
+      headline: isPendingContent(project.description) ? project.title : project.description,
+      objective: undefined,
+      background: `Contexto: ${project.context.toLowerCase()}.`,
+    },
+    blocks: [
+      {
+        type: "CONTEXTO",
+        title: "Contexto",
+        body: isPendingContent(project.description) ? "" : project.description,
+      },
+      {
+        type: "PROCESO",
+        title: "Mi papel",
+        body: isPendingContent(project.role) ? "" : project.role,
+        annotation: isPendingContent(project.contribution) ? undefined : project.contribution,
+      },
+      {
+        type: "RESULTADO",
+        title: "Material pendiente de documentar",
+        body: "",
+        list: project.media
+          .filter((media) => media.src && !isPendingContent(media.alt))
+          .map((media) => media.alt),
+      },
+    ],
+    evidencias: undefined,
+    reflexion: {
+      headline: "Siguiente paso",
+      body: "",
+    },
+    prevProject: previousSlug
+      ? { slug: previousSlug, title: projectContent[previousSlug].title, num: String(index).padStart(2, "0") }
+      : undefined,
+    nextProject: nextSlug
+      ? { slug: nextSlug, title: projectContent[nextSlug].title, num: String(index + 2).padStart(2, "0") }
+      : undefined,
   };
 }
 
@@ -688,6 +741,7 @@ function MediaItemRender({
         <img
           src={item.src}
           alt={item.alt}
+          loading="lazy"
           className={`w-full object-cover transition-transform duration-700 group-hover:scale-[1.02] ${compact ? "aspect-square" : "aspect-[4/3]"}`}
         />
         {item.caption && (
@@ -715,6 +769,7 @@ function MediaItemRender({
           <img
             src={item.poster}
             alt="Vista previa del video"
+            loading="lazy"
             className="absolute inset-0 h-full w-full object-cover opacity-40"
           />
         )}
@@ -1190,7 +1245,7 @@ export function CaseStudyPage() {
                         value: data.depth,
                       },
                       { label: "Rol", value: data.role },
-                    ].map(({ label, value }) => (
+                    ].filter(({ value }) => !isPendingContent(value)).map(({ label, value }) => (
                       <div
                         key={label}
                         className="pb-3"
@@ -1227,6 +1282,7 @@ export function CaseStudyPage() {
               <img
                 src={data.coverImg}
                 alt={`${data.title} — imagen de portada`}
+                loading="eager"
                 className="h-full w-full object-cover"
               />
               <div

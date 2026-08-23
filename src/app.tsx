@@ -25,6 +25,9 @@ const CaseStudyPage = lazy(() =>
 const CvPage = lazy(() =>
   import("@/pages/cv-page").then(({ CvPage }) => ({ default: CvPage })),
 );
+const NotFoundPage = lazy(() =>
+  import("@/pages/not-found-page").then(({ NotFoundPage }) => ({ default: NotFoundPage })),
+);
 
 function PageLoading() {
   return <main className="min-h-[60vh] bg-background" aria-busy="true" />;
@@ -41,10 +44,12 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/trabajo" element={<TrabajoPage />} />
             <Route path="/sobre" element={<SobrePage />} />
+            <Route path="/sobre-mi" element={<SobrePage />} />
             <Route path="/notas" element={<NotasPage />} />
             <Route path="/trabajo/talixea" element={<TalixeaPage />} />
             <Route path="/trabajo/:slug" element={<CaseStudyPage />} />
             <Route path="/cv" element={<CvPage />} />
+            <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </Suspense>
         <SiteFooter />

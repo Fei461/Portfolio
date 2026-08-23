@@ -11,100 +11,55 @@ import {
 import { SeoHead } from "@/components/seo-head";
 import { MotionWrapper } from "@/components/motion-wrapper";
 import { formatDateRange } from "@/lib/utils";
+import { isPendingContent } from "@/lib/utils";
+import { profile } from "@/data/profile";
 import type { ExperienceRecord, EducationRecord } from "@/types";
 
 // ─── STATIC EDITORIAL DATA ────────────────────────────────────────────────────
 
 const AWARDS = [
   {
-    year: "2024",
-    title: "Beca de Excelencia Académica",
-    org: "Universidad Complutense de Madrid",
-    note: "Reconocimiento por nota media superior a 8,5 durante la carrera.",
-  },
-  {
-    year: "2023",
-    title: "Premio Ideathon",
-    org: "Concurso nacional de estrategia creativa",
-    note: "Primer premio en la categoría de comunicación estratégica.",
-  },
-  {
-    year: "2024",
     title: "Stud-IA",
-    org: "Programa de inteligencia artificial aplicada a la comunicación",
-    note: "Formación especializada en flujos de trabajo con IA para profesionales de la comunicación.",
-  },
-  {
-    year: "2023",
-    title: "Formación RTVE",
-    org: "Radio Televisión Española",
-    note: "Formación intensiva en producción y comunicación institucional.",
+    org: "Experiencia profesional",
+    note: "Estrategia, gestión de contenidos y trabajo analítico asociado a comunicación y marketing.",
+    year: "TODO: fechas",
   },
 ];
 
-const LANGUAGES = [
-  {
-    lang: "Español",
-    code: "ES",
-    level: "Nativo",
-    detail: "Lengua materna. Redacción y expresión oral de nivel profesional.",
-  },
-  {
-    lang: "Gallego",
-    code: "GL",
-    level: "Nativo",
-    detail:
-      "Lengua materna. Competencia plena en contextos formales e informales.",
-  },
-  {
-    lang: "Inglés",
-    code: "EN",
-    level: "Avanzado · C1",
-    detail:
-      "Lectura académica, comunicación profesional y presentaciones en inglés.",
-  },
-];
+const LANGUAGES = profile.languages.map((language) => ({
+  lang: language.label,
+  code: language.code,
+  level: "Nivel pendiente de confirmar",
+  detail: "Interés y aprendizaje confirmados; falta indicar nivel.",
+}));
 
 const SOFTWARE = [
   {
     category: "Estrategia y planificación",
-    tools: ["Notion", "Miro", "Google Slides", "Microsoft Office"],
+    tools: ["TODO: herramientas verificadas"],
   },
   {
     category: "Diseño y producción visual",
-    tools: ["Figma", "Adobe Photoshop", "Canva", "Adobe Illustrator"],
+    tools: ["TODO: herramientas verificadas"],
   },
   {
     category: "Datos y análisis",
-    tools: ["Google Analytics", "Meta Business Suite", "Google Search Console"],
+    tools: ["TODO: herramientas verificadas"],
   },
   {
     category: "Comunicación y gestión",
-    tools: ["Slack", "Trello", "Airtable", "Mailchimp"],
+    tools: ["TODO: herramientas verificadas"],
   },
 ];
 
-const INTERESTS = [
-  "Comportamiento del consumidor y psicología de decisiones",
-  "Diseño de sistemas narrativos y arquitecturas de contenido",
-  "Filosofía del lenguaje y semántica pragmática",
-  "Aprendizaje autónomo y sistemas de memoria a largo plazo",
-  "Desarrollo de producto desde cero (Talixea)",
-  "Escritura editorial como herramienta de pensamiento",
-];
+const INTERESTS = profile.interests;
 
 const REFERENCES = [
   {
-    name: "Disponible bajo solicitud",
+    name: "TODO: referencias",
     role: "",
-    org: "Contacto profesional académico",
-    note: "Referencia académica o profesional disponible previa solicitud.",
-  },
-  {
-    name: "Disponible bajo solicitud",
-    role: "",
-    org: "Contacto profesional de sector",
-    note: "Referencia de entorno profesional disponible previa solicitud.",
+    org: "Pendiente de confirmar",
+    note: "Añadir sólo con autorización de las personas implicadas.",
   },
 ];
 
@@ -315,7 +270,7 @@ export function CvPage() {
         meta={{
           title: "CV | Lara Feijóo",
           description:
-            "Currículum editorial de Lara Feijóo — Estrategia, Comunicación y Creatividad. Publicidad y RRPP · Nota 8,62 · Beca de Excelencia · Premio Ideathon.",
+            "Currículum de Lara Feijóo — estrategia, comunicación, research e insights.",
           canonical: `${window.location.origin}/cv`,
         }}
       />
@@ -441,7 +396,7 @@ export function CvPage() {
                       Imprimir / Guardar PDF
                     </button>
                     <Link
-                      to="/sobre"
+                      to="/sobre-mi"
                       className="inline-flex items-center gap-2 font-mono text-[9px] uppercase tracking-widest transition-opacity hover:opacity-70"
                       style={{ color: "hsl(24 18% 10% / 0.45)" }}
                     >
@@ -766,7 +721,7 @@ export function CvPage() {
               id="contacto"
               num="08"
               title="Contacto"
-              subtitle="Proyectos, prácticas y colaboraciones"
+              subtitle="Proyectos y colaboraciones"
               defaultOpen={false}
             >
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 pt-2">
@@ -774,14 +729,14 @@ export function CvPage() {
                   {
                     icon: <Envelope size={14} />,
                     label: "Email",
-                    value: "lara.feijoo@example.com",
-                    href: "mailto:lara.feijoo@example.com",
+                    value: "TODO: email profesional",
+                    href: "#contacto",
                   },
                   {
                     icon: <LinkedinLogo size={14} />,
                     label: "LinkedIn",
-                    value: "linkedin.com/in/larafeijoo",
-                    href: "https://www.linkedin.com/",
+                    value: "TODO: perfil profesional",
+                    href: "#contacto",
                   },
                   {
                     icon: <ArrowUpRight size={14} />,
@@ -790,7 +745,7 @@ export function CvPage() {
                     href: "/trabajo",
                     internal: true,
                   },
-                ].map((contact) => (
+                ].filter((contact) => contact.internal || !isPendingContent(contact.value)).map((contact) => (
                   <div
                     key={contact.label}
                     className="p-4 group"
@@ -918,28 +873,20 @@ function ExperienceEmpty() {
     <div className="py-6 grid gap-0">
       {[
         {
-          date: "2023 — Presente",
-          title: "Proyecto Talixea",
-          subtitle: "Desarrollo autónomo de producto",
+          date: "En curso",
+          title: "Talixea",
+          subtitle: "Proyecto personal",
           detail:
-            "Plataforma de aprendizaje de idiomas desarrollada de forma independiente. Diseño, desarrollo, estrategia y producto.",
-          tags: ["Producto", "Estrategia", "Desarrollo"],
+            "Proyecto vivo que une lectura y aprendizaje de idiomas; detalle de responsabilidades editable.",
+          tags: ["Producto", "Estrategia"],
         },
         {
-          date: "2023",
-          title: "Formación RTVE",
-          subtitle: "Radio Televisión Española",
+          date: "TODO: fechas",
+          title: "Stud-IA",
+          subtitle: "Experiencia profesional",
           detail:
-            "Formación intensiva en producción audiovisual y comunicación institucional.",
-          tags: ["Comunicación", "Producción"],
-        },
-        {
-          date: "2023",
-          title: "Proyecto Iberia",
-          subtitle: "Caso de estrategia · UCM",
-          detail:
-            "Estrategia de comunicación para campaña de marca. Desde el brief hasta la idea.",
-          tags: ["Estrategia", "Marca"],
+            "Estrategia, gestión de contenidos y trabajo analítico asociado a comunicación y marketing.",
+          tags: ["Estrategia", "Contenido", "Research"],
         },
       ].map((item, i) => (
         <EntryRow
@@ -975,12 +922,12 @@ function EducationEmpty() {
     <div className="py-2 grid gap-0">
       {[
         {
-          date: "2021 — 2025",
+          date: "Finalizado",
           title: "Grado en Publicidad y Relaciones Públicas",
-          subtitle: "Universidad Complutense de Madrid",
+          subtitle: "TODO: institución por confirmar",
           detail:
-            "Nota media 8,62. Especialización en estrategia de comunicación y planificación de campaña.",
-          tags: ["Nota 8,62", "Beca de Excelencia"],
+            "Nota media 8,62.",
+          tags: ["Nota 8,62"],
         },
       ].map((item, i) => (
         <EntryRow

@@ -29,8 +29,12 @@ export function SeoHead({ meta, schema }: SeoHeadProps) {
     setMetaTag("description", meta.description);
     setMetaTag("og:title", meta.title, "property");
     setMetaTag("og:description", meta.description, "property");
+    setMetaTag("og:type", "website", "property");
+    setMetaTag("og:url", meta.canonical ?? window.location.href, "property");
     setMetaTag("twitter:title", meta.title, "name");
     setMetaTag("twitter:description", meta.description, "name");
+    setMetaTag("twitter:card", "summary", "name");
+    setMetaTag("theme-color", "#eee9de");
 
     if (meta.canonical) {
       let link = document.head.querySelector(

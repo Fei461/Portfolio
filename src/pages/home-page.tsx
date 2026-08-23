@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 import { ArrowRight, ArrowUpRight } from "@phosphor-icons/react";
 import { SeoHead } from "@/components/seo-head";
 import { MotionWrapper } from "@/components/motion-wrapper";
-import { profile } from "@/lib/content";
+import { notes } from "@/data/notes";
+import { profile } from "@/data/profile";
+import { isPendingContent } from "@/lib/utils";
 
 // ─── pequeña utilidad cx ──────────────────────────────────────────────────────
 function cx(...classes: (string | false | undefined | null)[]) {
@@ -130,13 +132,13 @@ const PROJECTS = [
   },
   {
     num: "05",
-    slug: "proyecto-branding",
-    title: "Proyecto de marca",
-    discipline: "Branding · Identidad",
-    territory: "Identidad · Posicionamiento · Narrativa",
-    year: "2023",
-    tagline: "Parecía un encargo de diseño.",
-    taglineHover: "Era una pregunta sobre quién quieres ser.",
+    slug: "bruja-roja",
+    title: "Bruja Roja",
+    discipline: "Branding · Identidad · Tono de voz",
+    territory: "Normalización · Tabúes · Alternativa sostenible",
+    year: "TODO: año",
+    tagline: "Parecía una identidad visual.",
+    taglineHover: "Era una posición clara ante un tabú.",
     chain: [
       "ANÁLISIS",
       "POSICIONAMIENTO",
@@ -145,106 +147,36 @@ const PROJECTS = [
       "IDENTIDAD",
     ],
     description:
-      "Construcción de identidad de marca desde el posicionamiento estratégico hasta la narrativa visual.",
-    coverImg: "/assets/talixea.png",
+      "Proyecto académico de identidad para una marca de copa menstrual, desde el territorio de marca hasta sus aplicaciones visuales.",
     dark: true,
     featured: false,
   },
 ];
 
 // Notas con categorías del sistema definido
-const HOME_NOTES = [
-  {
-    id: "n01",
-    date: "Nov 2025",
-    category: "MARCAS",
-    title: "Por qué las marcas que prometen demasiado acaban prometiendo nada",
-    excerpt:
-      "Hay un umbral a partir del cual el exceso de beneficios en un mensaje lo vacía de credibilidad. El problema no es el producto. Es la distancia entre lo que se dice y lo que el receptor puede creer.",
-    annotation: "credibilidad antes que alcance",
-  },
-  {
-    id: "n02",
-    date: "Oct 2025",
-    category: "COMPORTAMIENTO",
-    title:
-      "Lo que la gente dice que hace y lo que realmente hace son dos datos distintos",
-    excerpt:
-      "En investigación cualitativa, la respuesta más honesta raramente es la primera. La primera es la que el entrevistado cree que debes escuchar.",
-    annotation: "el gap declarativo-conductual",
-  },
-  {
-    id: "n03",
-    date: "Sep 2025",
-    category: "MEDIOS",
-    title: "El algoritmo no crea tendencias. Amplifica lo que ya existe.",
-    excerpt:
-      "Atribuir el éxito de un contenido al algoritmo es confundir la palanca con la fuerza. La pregunta estratégica es qué interés preexistente estás activando.",
-    annotation: "causa vs. amplificador",
-  },
-  {
-    id: "n04",
-    date: "Ago 2025",
-    category: "CREATIVIDAD",
-    title:
-      "La idea más obvia es la que todo el mundo descarta demasiado rápido",
-    excerpt:
-      "Existe una tendencia a rechazar la solución más directa por miedo a parecer poco original. A veces lo más simple es lo más honesto. Y lo honesto, en comunicación, suele ganar.",
-    annotation: "segunda lectura de lo evidente",
-  },
-  {
-    id: "n05",
-    date: "Jul 2025",
-    category: "ESTRATEGIA",
-    title: "Definir bien el problema ya es parte de la solución",
-    excerpt:
-      "La mayoría de los briefs describen síntomas. El trabajo estratégico consiste en encontrar el problema real debajo del aparente.",
-    annotation: "diagnóstico antes de prescripción",
-  },
-];
+const HOME_NOTES = notes.slice(0, 3);
 
 const CREDENTIALS = [
   {
     type: "EDU",
-    org: "Universidad [Por confirmar]",
+    org: "TODO: institución por confirmar",
     role: "Máster en Comunicación Publicitaria",
-    period: "2025–",
-    note: "En curso",
+    period: "En inicio",
+    note: "Dato verificable; centro y fechas pendientes",
   },
   {
     type: "EDU",
-    org: "Universidad de Vigo",
-    role: "Publicidad y Relaciones Públicas",
-    period: "2021–2025",
-    note: "Beca de Excelencia Académica · Nota media 8,62",
+    org: "TODO: institución por confirmar",
+    role: "Grado en Publicidad y RRPP",
+    period: "Finalizado",
+    note: "Nota media 8,62",
   },
   {
-    type: "AWD",
-    org: "Premio Ideathon",
-    role: "Competición nacional de ideas",
-    period: "2023",
-    note: "1.er puesto",
-  },
-  {
-    type: "PRX",
+    type: "EXP",
     org: "Stud-IA",
-    role: "IA aplicada a la comunicación",
-    period: "2024",
-    note: "Formación especializada",
-  },
-  {
-    type: "PRX",
-    org: "RTVE",
-    role: "Formación en medios y periodismo",
-    period: "2023",
-    note: "Producción y análisis de contenido",
-  },
-  {
-    type: "CRT",
-    org: "Google Analytics",
-    role: "Fundamentals Certificate",
-    period: "2023",
-    note: "Análisis digital",
+    role: "Experiencia profesional",
+    period: "TODO: fechas",
+    note: "Estrategia, gestión de contenidos y trabajo analítico",
   },
 ];
 
@@ -316,7 +248,7 @@ export function HomePage() {
                 00 — Inicio
               </span>
               <span
-                className="font-mono text-[10px] uppercase tracking-[0.26em]"
+                className="hidden sm:inline font-mono text-[10px] uppercase tracking-[0.26em]"
                 style={{ color: "hsl(24 18% 10% / 0.52)" }}
               >
                 Segunda Lectura · 2025
@@ -330,13 +262,13 @@ export function HomePage() {
               <div className="grid gap-0 lg:grid-cols-[3fr_2fr]">
                 {/* Columna A — nombre + texto principal */}
                 <div
-                  className="pb-14 pr-0 lg:border-r lg:pb-16 lg:pr-14"
+                  className="min-w-0 pb-14 pr-0 lg:border-r lg:pb-16 lg:pr-14"
                   style={{ borderColor: "hsl(24 18% 10% / 0.12)" }}
                 >
                   <MotionWrapper>
                     {/* Disciplina */}
                     <p
-                      className="font-mono text-xs uppercase tracking-[0.24em] mb-6"
+                      className="max-w-full break-words font-mono text-xs uppercase tracking-[0.18em] sm:tracking-[0.24em] mb-6"
                       style={{ color: "hsl(24 18% 10% / 0.80)" }}
                     >
                       Publicidad · Estrategia · Comunicación
@@ -363,16 +295,16 @@ export function HomePage() {
                     </h1>
 
                     {/* Texto introductorio */}
-                    <div className="mt-9 max-w-lg space-y-4">
+                    <div className="mt-9 max-w-lg min-w-0 space-y-4">
                       <p
-                        className="text-xl font-serif font-medium leading-relaxed md:text-2xl"
+                        className="break-words text-xl font-serif font-medium leading-relaxed md:text-2xl"
                         style={{ color: "hsl(24 18% 10%)" }}
                       >
                         Me gusta entender por qué las cosas funcionan como
                         funcionan.
                       </p>
                       <p
-                        className="text-base font-sans leading-relaxed"
+                        className="break-words text-base font-sans leading-relaxed"
                         style={{ color: "hsl(24 18% 10% / 0.82)" }}
                       >
                         A veces eso acaba en una estrategia. Otras, en una
@@ -394,7 +326,7 @@ export function HomePage() {
                         Ver proyectos <ArrowRight size={15} />
                       </Link>
                       <Link
-                        to="/sobre"
+                        to="/sobre-mi"
                         className="inline-flex items-center gap-2 px-7 py-3 font-sans text-sm font-medium transition-colors"
                         style={{
                           border: "1px solid hsl(24 18% 10% / 0.42)",
@@ -466,9 +398,11 @@ export function HomePage() {
                     </p>
                     <ul className="space-y-2.5">
                       {[
-                        { code: "ES", lang: "Español", level: "Nativo" },
-                        { code: "GL", lang: "Gallego", level: "Nativo" },
-                        { code: "EN", lang: "Inglés", level: "C1" },
+                        {
+                          code: "TODO",
+                          lang: "Idiomas pendientes de confirmar",
+                          level: "",
+                        },
                       ].map((l) => (
                         <li key={l.lang} className="flex items-center gap-2.5">
                           <span
@@ -1495,14 +1429,8 @@ export function HomePage() {
                         label: "En curso",
                         val: "Máster en Comunicación Publicitaria",
                       },
-                      {
-                        label: "Distinción",
-                        val: "Beca de Excelencia Académica",
-                      },
-                      {
-                        label: "Competición",
-                        val: "1.er puesto · Premio Ideathon",
-                      },
+                      { label: "Grado", val: "Publicidad y RRPP · 8,62" },
+                      { label: "Experiencia", val: "Stud-IA" },
                     ].map((item) => (
                       <div
                         key={item.label}
@@ -1617,7 +1545,7 @@ export function HomePage() {
 
         {/* ══════════════════════════════════════════════════════
             06 — CONTACTO
-            Sección independiente. Sin framing de prácticas.
+            Sección final de contacto.
         ══════════════════════════════════════════════════════ */}
         <section
           className="px-8 py-16 md:py-20"
@@ -1673,16 +1601,16 @@ export function HomePage() {
                 </p>
 
                 <div className="mt-8 flex flex-wrap gap-3">
-                  <a
-                    href="mailto:lara@larafeijoo.com"
+                  <Link
+                    to="/cv"
                     className="inline-flex items-center gap-2 px-7 py-3 font-sans text-sm font-semibold transition-all hover:opacity-90"
                     style={{
                       background: "hsl(44 95% 48%)",
                       color: "hsl(24 18% 10%)",
                     }}
                   >
-                    Escribir <ArrowRight size={14} />
-                  </a>
+                    Ver CV <ArrowRight size={14} />
+                  </Link>
                   <Link
                     to="/cv"
                     className="inline-flex items-center gap-2 px-7 py-3 font-sans text-sm font-medium transition-colors"
@@ -1702,20 +1630,20 @@ export function HomePage() {
                   {[
                     {
                       label: "Email",
-                      val: "lara@larafeijoo.com",
-                      href: "mailto:lara@larafeijoo.com",
+                      val: "TODO: email profesional",
+                      href: "#contacto",
                     },
                     {
                       label: "LinkedIn",
-                      val: "linkedin.com/in/larafeijoo",
-                      href: "https://www.linkedin.com/in/larafeijoo",
+                      val: "TODO: perfil profesional",
+                      href: "#contacto",
                     },
                     {
                       label: "CV",
-                      val: "Descargar PDF",
+                      val: "CV navegable",
                       href: "/cv",
                     },
-                  ].map((item, i) => (
+                  ].filter((item) => !isPendingContent(item.val)).map((item, i) => (
                     <a
                       key={item.label}
                       href={item.href}

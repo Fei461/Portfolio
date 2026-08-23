@@ -8,14 +8,11 @@ import {
 } from "@phosphor-icons/react";
 import { SeoHead } from "@/components/seo-head";
 import { MotionWrapper } from "@/components/motion-wrapper";
-import { notes, type Note } from "@/lib/content";
+import { noteCategories, notes, type Note } from "@/data/notes";
 
 // ─── CONSTANTES ───────────────────────────────────────────────────────────────
 
-const ALL_CATEGORIES = [
-  "Todo",
-  ...Array.from(new Set(notes.map((n) => n.category))),
-];
+const ALL_CATEGORIES = ["Todo", ...noteCategories];
 
 const CATEGORY_COUNTS = ALL_CATEGORIES.reduce<Record<string, number>>(
   (acc, cat) => {
@@ -33,6 +30,8 @@ const CATEGORY_COUNTS = ALL_CATEGORIES.reduce<Record<string, number>>(
 
 // Lectura estimada en texto
 function ReadTime({ mins }: { mins: number }) {
+  if (mins <= 0) return null;
+
   return (
     <span
       className="font-mono text-[9px] uppercase tracking-widest"
@@ -200,9 +199,7 @@ function FeaturedNoteCard({ note }: { note: Note }) {
             {note.annotation}
           </p>
           <a
-            href="https://www.linkedin.com/"
-            target="_blank"
-            rel="noreferrer"
+            href="#archivo"
             className="inline-flex items-center gap-1.5 transition-opacity hover:opacity-70 shrink-0"
             style={{
               fontFamily: "var(--font-mono)",
@@ -211,9 +208,9 @@ function FeaturedNoteCard({ note }: { note: Note }) {
               letterSpacing: "0.14em",
               color: hovered ? "hsl(44 95% 58%)" : "hsl(44 95% 30%)",
             }}
-            aria-label={`Leer más sobre ${note.title} en LinkedIn`}
+            aria-label={`Ficha de ${note.title} en preparación`}
           >
-            LinkedIn <ArrowUpRight size={10} />
+            En preparación <ArrowUpRight size={10} />
           </a>
         </div>
       </div>
@@ -293,9 +290,7 @@ function LargeNoteCard({ note, delay = 0 }: { note: Note; delay?: number }) {
               {note.annotation}
             </p>
             <a
-              href="https://www.linkedin.com/"
-              target="_blank"
-              rel="noreferrer"
+              href="#archivo"
               className="shrink-0 transition-opacity hover:opacity-70"
               style={{
                 fontFamily: "var(--font-mono)",
@@ -307,9 +302,9 @@ function LargeNoteCard({ note, delay = 0 }: { note: Note; delay?: number }) {
                 alignItems: "center",
                 gap: "4px",
               }}
-              aria-label="Ver en LinkedIn"
+              aria-label="Ficha en preparación"
             >
-              Leer <ArrowUpRight size={9} />
+              Pendiente <ArrowUpRight size={9} />
             </a>
           </div>
         </div>
@@ -384,9 +379,7 @@ function MediumNoteCard({ note, delay = 0 }: { note: Note; delay?: number }) {
             {note.annotation}
           </p>
           <a
-            href="https://www.linkedin.com/"
-            target="_blank"
-            rel="noreferrer"
+            href="#archivo"
             className="shrink-0 inline-flex items-center gap-1 hover:opacity-70"
             style={{
               fontFamily: "var(--font-mono)",
@@ -395,9 +388,9 @@ function MediumNoteCard({ note, delay = 0 }: { note: Note; delay?: number }) {
               letterSpacing: "0.14em",
               color: "hsl(44 95% 30%)",
             }}
-            aria-label="Ver en LinkedIn"
+            aria-label="Ficha en preparación"
           >
-            LinkedIn <ArrowUpRight size={9} />
+            Pendiente <ArrowUpRight size={9} />
           </a>
         </div>
       </article>
@@ -464,9 +457,7 @@ function SmallNoteCard({ note, delay = 0 }: { note: Note; delay?: number }) {
           <NoteDate raw={note.date} />
           {hovered && (
             <a
-              href="https://www.linkedin.com/"
-              target="_blank"
-              rel="noreferrer"
+              href="#archivo"
               className="inline-flex items-center gap-0.5 hover:opacity-70"
               style={{
                 fontFamily: "var(--font-mono)",
@@ -475,9 +466,9 @@ function SmallNoteCard({ note, delay = 0 }: { note: Note; delay?: number }) {
                 letterSpacing: "0.12em",
                 color: "hsl(44 95% 28%)",
               }}
-              aria-label="Ver en LinkedIn"
+              aria-label="Ficha en preparación"
             >
-              Leer <ArrowUpRight size={8} />
+              Pendiente <ArrowUpRight size={8} />
             </a>
           )}
         </div>
@@ -844,13 +835,13 @@ export function NotasPage() {
                     className="font-serif italic text-lg mb-2"
                     style={{ color: "hsl(24 18% 10% / 0.38)" }}
                   >
-                    Sin resultados para ese filtro.
+                    Aún no hay notas publicadas.
                   </p>
                   <p
                     className="font-mono text-[9px] uppercase tracking-widest"
                     style={{ color: "hsl(24 18% 10% / 0.28)" }}
                   >
-                    Prueba con otra categoría o término
+                    TODO: añadir publicaciones reales de Lara
                   </p>
                 </div>
               </MotionWrapper>
@@ -983,7 +974,7 @@ export function NotasPage() {
             03 — PANEL TEMÁTICO OSCURO
             Agrupación por tema transversal — navegación alternativa
         ════════════════════════════════════════════════════ */}
-        {!isFiltered && (
+        {false && notes.length > 0 && !isFiltered && (
           <section
             className="px-8 py-12 md:py-16"
             style={{ background: "hsl(25 20% 10%)" }}
@@ -1124,18 +1115,15 @@ export function NotasPage() {
 
               <MotionWrapper delay={0.06}>
                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-                  <a
-                    href="https://www.linkedin.com/"
-                    target="_blank"
-                    rel="noreferrer"
+                  <span
                     className="inline-flex items-center gap-2 px-5 py-2.5 font-sans text-sm font-medium transition-all hover:opacity-85"
                     style={{
                       background: "hsl(44 95% 48%)",
                       color: "hsl(24 18% 10%)",
                     }}
                   >
-                    Ver perfil de LinkedIn <ArrowUpRight size={14} />
-                  </a>
+                    Enlace profesional pendiente de confirmar
+                  </span>
                   <Link
                     to="/#contacto"
                     className="inline-flex items-center gap-2 font-sans text-sm transition-colors hover:opacity-70"

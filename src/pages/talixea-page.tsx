@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import {
   ArrowLeft,
   ArrowRight,
-  ArrowUpRight,
   Circle,
   CheckCircle,
 } from "@phosphor-icons/react";
@@ -15,13 +14,13 @@ import { MotionWrapper } from "@/components/motion-wrapper";
 const PROJECT = {
   num: "01",
   title: "Talixea",
-  year: "2024",
+  year: "En curso",
   context: "PERSONAL" as const,
   depth: "CASO COMPLETO",
-  role: "Fundadora · Estrategia · Producto",
+  role: "Iniciativa personal · Estrategia · Producto",
   tags: ["Producto", "Estrategia", "Idiomas", "Aprendizaje"],
   status: "En curso",
-  version: "v1.2",
+  version: "Proyecto vivo",
   headline: "Una curiosidad se convirtió en oportunidad.",
   subheadline: "La oportunidad se convirtió en producto.",
   opening: "Parecía un hobby de aprendizaje.",
@@ -36,6 +35,16 @@ function SecondReadingHero() {
       className="mt-4 cursor-default select-none"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
+      onClick={() => setHovered((value) => !value)}
+      onKeyDown={(event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          setHovered((value) => !value);
+        }
+      }}
+      role="button"
+      tabIndex={0}
+      aria-pressed={hovered}
     >
       <div className="relative overflow-hidden" style={{ minHeight: "1.6rem" }}>
         <p
@@ -67,7 +76,7 @@ function SecondReadingHero() {
           fontSize: "9px",
         }}
       >
-        ↑ pasa el cursor
+        toca o pasa el cursor
       </p>
     </div>
   );
@@ -770,12 +779,13 @@ export function TalixeaPage() {
                     ))}
                     {/* CTA */}
                     <a
-                      href="#"
-                      className="inline-flex items-center gap-2 font-mono text-[9px] uppercase tracking-widest transition-opacity hover:opacity-70"
+                      href="https://talixea.es"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="font-mono text-[9px] uppercase tracking-widest transition-opacity hover:opacity-70"
                       style={{ color: "hsl(44 95% 30%)" }}
-                      aria-label="Ver Talixea (próximamente)"
                     >
-                      Ver Talixea <ArrowUpRight size={11} />
+                      Visitar talixea.es →
                     </a>
                   </div>
                 </MotionWrapper>
@@ -1119,8 +1129,8 @@ export function TalixeaPage() {
                 num="D"
                 label="Identidad"
                 title="El nombre y la forma"
-                body="Talixea no es un acrónimo. Es una construcción fonética que suena a idioma sin ser ninguno. Eso era exactamente lo que buscaba: algo que evocara aprendizaje sin remitir a ninguna lengua concreta."
-                annotation="El nombre tardó más en llegar que el primer prototipo."
+                body="Talixea nace de TALE, LEXIS y WEAVE: historia, palabra y tejer. La identidad busca unir literatura, aprendizaje y tecnología con un tono adulto y sereno."
+                annotation="TODO: añadir bocetos y decisiones reales de identidad."
                 isDark
                 delay={0.1}
               />
@@ -1417,8 +1427,8 @@ export function TalixeaPage() {
               <DecisionCard
                 num="D1"
                 question="¿Por qué este nombre?"
-                answer="Talixea no significa nada en ningún idioma conocido. Eso es exactamente lo que buscaba. Un nombre que suene a idioma extranjero sin serlo. Una palabra que cualquier persona, en cualquier idioma nativo, sienta igualmente alejada — y por eso igualmente cercana. El aprendizaje de idiomas siempre empieza con esa sensación de extrañeza. El nombre debía capturarla."
-                annotation="Se descartaron más de 40 nombres antes de llegar a Talixea."
+                answer="Talixea une tres territorios que explican el proyecto: TALE, historia; LEXIS, palabra y vocabulario; y WEAVE, tejer. El nombre conecta literatura, aprendizaje y tecnología sin convertir la experiencia en una app educativa infantil o estridente."
+                annotation="TODO: añadir bocetos y decisiones reales del proceso de naming."
                 delay={0.04}
               />
               <DecisionCard

@@ -2,6 +2,11 @@ export function cn(...classes: Array<string | false | null | undefined>) {
   return classes.filter(Boolean).join(" ");
 }
 
+// Mantiene los marcadores de edición en los datos sin mostrarlos como contenido público.
+export function isPendingContent(value?: string | null) {
+  return !value || /^TODO(?:_LARA)?\b/i.test(value.trim());
+}
+
 export function splitCommaList(value: string) {
   return value
     .split(",")
@@ -50,4 +55,3 @@ export function scrollToId(id: string) {
   const top = element.getBoundingClientRect().top + window.scrollY - 88;
   window.scrollTo({ top, behavior: "smooth" });
 }
-

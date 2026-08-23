@@ -30,16 +30,14 @@ export function SiteFooter() {
               Estrategia · Comunicación · Insights
             </p>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/55 font-sans">
-              Graduada en Publicidad y Relaciones Públicas. Me interesa lo que
-              no se ve a primera vista.
+              Estrategia, comunicación, research e insights.
             </p>
-            {/* CTA: amarillo — legible sobre oscuro, señal de acción */}
-            <a
-              href="mailto:lara@larafeijoo.com"
+            <Link
+              to="/#contacto"
               className="mt-5 inline-flex items-center gap-2 border-b border-primary/50 pb-0.5 text-sm font-medium text-primary transition-colors hover:text-white hover:border-white/50"
             >
-              Escribirme <ArrowRight size={14} />
-            </a>
+              Contacto <ArrowRight size={14} />
+            </Link>
           </div>
 
           <div>
@@ -51,7 +49,7 @@ export function SiteFooter() {
                 { label: "Inicio", to: "/" },
                 { label: "Trabajo", to: "/trabajo" },
                 { label: "Notas", to: "/notas" },
-                { label: "Sobre mí", to: "/sobre" },
+                { label: "Sobre mí", to: "/sobre-mi" },
                 { label: "CV", to: "/cv" },
                 { label: "Contacto", to: "/#contacto" as string },
               ].map((item) => (
@@ -67,11 +65,12 @@ export function SiteFooter() {
             </ul>
           </div>
 
-          <div>
-            <p className="mb-4 font-mono text-[10px] uppercase tracking-widest text-white/35">
-              Contacto
-            </p>
-            <ul className="space-y-2.5">
+          {profile.socials.length > 0 && (
+            <div>
+              <p className="mb-4 font-mono text-[10px] uppercase tracking-widest text-white/35">
+                Contacto
+              </p>
+              <ul className="space-y-2.5">
               {profile.socials.map((social) => (
                 <li key={social.label}>
                   <a
@@ -88,14 +87,14 @@ export function SiteFooter() {
                   </a>
                 </li>
               ))}
-            </ul>
-          </div>
+              </ul>
+            </div>
+          )}
         </div>
 
         <div className="border-t border-white/10 pt-6 flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
           <p className="font-sans text-xs text-white/30">
-            © {new Date().getFullYear()} Lara Feijóo. Portfolio de Publicidad y
-            RRPP.
+            © {new Date().getFullYear()} Lara Feijóo
           </p>
           <p className="font-mono text-[10px] text-white/20">
             Segunda lectura recomendada.

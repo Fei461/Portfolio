@@ -11,9 +11,10 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 
 const navItems = [
+  { label: "Inicio", to: "/" },
   { label: "Trabajo", to: "/trabajo" },
   { label: "Notas", to: "/notas" },
-  { label: "Sobre mí", to: "/sobre" },
+  { label: "Sobre mí", to: "/sobre-mi" },
 ] as const;
 
 const navLinkClass = ({ isActive }: { isActive: boolean }) =>

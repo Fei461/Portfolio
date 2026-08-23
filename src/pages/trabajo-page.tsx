@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { ArrowRight, X } from "@phosphor-icons/react";
 import { SeoHead } from "@/components/seo-head";
 import { MotionWrapper } from "@/components/motion-wrapper";
+import { projectContent, projectSequence } from "@/data/projects";
+import { isPendingContent } from "@/lib/utils";
 
 // ─── TIPOS ────────────────────────────────────────────────────────────────────
 type DepthLevel = "CASO COMPLETO" | "CASO BREVE" | "ARCHIVO";
@@ -40,17 +42,17 @@ type CapabilityGroup = {
 };
 
 // ─── DATOS DE PROYECTOS ──────────────────────────────────────────────────────
-const PROJECTS: Project[] = [
+const PROJECTS_BASE: Project[] = [
   {
     num: "01",
     slug: "talixea",
     title: "Talixea",
-    year: "2024",
+    year: "En curso",
     context: "PERSONAL",
     tags: ["Producto", "Estrategia", "Aprendizaje"],
     categories: ["ESTRATEGIA", "CONTENIDO"],
     description:
-      "Plataforma para aprender idiomas construida desde cero. Detecté un vacío en la forma en que la gente aprende vocabulario en contexto real. Diseñé la propuesta, construí la arquitectura y desarrollé el producto de forma autónoma.",
+      "Proyecto personal que conecta lectura y aprendizaje de idiomas. Nace al detectar una oportunidad para aplicar el Diglot Weave Method en español.",
     depth: "CASO COMPLETO",
     coverImg: "/assets/talixea.png",
     role: "Fundadora · Estrategia · Producto",
@@ -58,8 +60,7 @@ const PROJECTS: Project[] = [
       "¿Cómo hacer que aprender un idioma se parezca más a leer que a estudiar?",
     contribution:
       "Ideación, posicionamiento, diseño de propuesta de valor, desarrollo del producto.",
-    evidence:
-      "Vacío de mercado detectado, propuesta construida sin brief externo.",
+    evidence: "Proyecto vivo; evidencias y evolución pendientes de actualizar.",
   },
   {
     num: "02",
@@ -116,8 +117,7 @@ const PROJECTS: Project[] = [
       "¿Cómo hacer crecer la audiencia de una plataforma con recursos limitados?",
     contribution:
       "Análisis de audiencia, mapa de territorios, sistema de distribución, KPIs.",
-    evidence:
-      "El sistema superó los benchmarks del sector en alcance potencial.",
+    evidence: "Evidencias y resultados pendientes de documentar.",
   },
   {
     num: "05",
@@ -166,14 +166,14 @@ const PROJECTS: Project[] = [
     tags: ["Research", "Estrategia", "Contenido"],
     categories: ["ESTRATEGIA", "CONTENIDO", "INVESTIGACIÓN"],
     description:
-      "Trabajo de investigación y estrategia de contenido en contexto de formación especializada en IA aplicada a la comunicación. Análisis de aplicaciones prácticas, producción de contenido y síntesis de hallazgos.",
+      "Experiencia profesional en estrategia, gestión de contenidos y trabajo analítico asociado a comunicación y marketing.",
     depth: "CASO BREVE",
     role: "Investigación · Estrategia · Producción de contenido",
     challenge:
       "¿Cómo se integra la IA en flujos de trabajo de comunicación reales?",
     contribution:
       "Investigación aplicada, análisis de herramientas, estrategia de implementación.",
-    evidence: "Síntesis entre análisis técnico y criterio comunicativo.",
+    evidence: "Detalle de responsabilidades pendiente de confirmar.",
   },
   {
     num: "08",
@@ -247,6 +247,34 @@ const PROJECTS: Project[] = [
       "Capacidad de trabajo creativo bajo condiciones de competición real.",
   },
 ];
+
+// El diseño conserva sus metadatos visuales; el contenido editable vive en src/data/projects.ts.
+const PROJECTS: Project[] = projectSequence.map((slug, index) => {
+  const base = PROJECTS_BASE.find((project) => project.slug === slug);
+  const content = projectContent[slug];
+
+  if (!content) return base!;
+
+  return {
+    ...(base ?? {
+      num: String(index + 1).padStart(2, "0"),
+      slug,
+    }),
+    num: String(index + 1).padStart(2, "0"),
+    title: content.title,
+    year: isPendingContent(content.year) ? "" : content.year,
+    context: content.context,
+    tags: content.tags,
+    categories: content.categories as FilterKey[],
+    description: isPendingContent(content.description) ? "" : content.description,
+    depth: content.depth,
+    coverImg: content.media.find((media) => media.src)?.src,
+    role: isPendingContent(content.role) ? undefined : content.role,
+    challenge: isPendingContent(content.contribution) ? undefined : content.contribution,
+    contribution: isPendingContent(content.contribution) ? undefined : content.contribution,
+    evidence: isPendingContent(content.contribution) ? undefined : content.contribution,
+  };
+});
 
 // ─── GRUPOS DE CAPACIDADES ────────────────────────────────────────────────────
 const CAPABILITY_GROUPS: CapabilityGroup[] = [
@@ -591,6 +619,7 @@ function ProjectCard({
             <img
               src={project.coverImg}
               alt={project.title}
+              loading="lazy"
               className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
             />
             <div
