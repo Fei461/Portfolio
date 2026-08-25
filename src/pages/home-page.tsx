@@ -16,27 +16,27 @@ function cx(...classes: (string | false | undefined | null)[]) {
 const PROCESS_STEPS = [
   {
     verb: "MIRO",
-    question: "contexto · comportamiento · contradicciones",
+    question: "¿Qué está pasando realmente?",
     example: "contexto · comportamiento · contradicciones",
   },
   {
     verb: "PREGUNTO",
-    question: "qué asumimos · qué falta · qué cambia si el problema no es ese",
+    question: "¿Qué estamos dando por hecho?",
     example: "qué asumimos · qué falta · qué cambia si el problema no es ese",
   },
   {
     verb: "ORDENO",
-    question: "research · stakeholders · restricciones · prioridades",
+    question: "¿Qué importa y qué es ruido?",
     example: "research · stakeholders · restricciones · prioridades",
   },
   {
     verb: "CONECTO",
-    question: "patrones · cultura · datos · comportamiento",
+    question: "¿Qué relación no era evidente?",
     example: "patrones · cultura · datos · comportamiento",
   },
   {
     verb: "HAGO",
-    question: "estrategia · contenido · sistema · producto",
+    question: "¿Qué merece convertirse en algo?",
     example: "estrategia · contenido · sistema · producto",
   },
 ];
@@ -148,30 +148,9 @@ const HOME_NOTE = notes.find((note) => note.featuredOnHome) ?? notes[0];
 const HOME_NOTES = notes
   .filter((note) => !note.title.startsWith("[") && note.category && note.annotation)
   .slice(0, 3);
+const HAS_SINGLE_HOME_NOTE = HOME_NOTES.length === 1;
 
-const CREDENTIALS = [
-  {
-    type: "EDU",
-    org: profile.education.master,
-    role: "",
-    period: "",
-    note: "",
-  },
-  {
-    type: "EDU",
-    org: profile.education.degreeInstitution,
-    role: profile.education.degree,
-    period: "Finalizado",
-    note: `Nota media ${profile.education.averageGrade} · ${profile.education.honors}`,
-  },
-  {
-    type: "EXP",
-    org: profile.experience.organization,
-    role: "Experiencia profesional",
-    period: profile.experience.period,
-    note: "Estrategia, gestión de contenidos y trabajo analítico",
-  },
-];
+const CREDENTIALS = profile.homeCredentials;
 
 // ─── COMPONENTE PRINCIPAL ─────────────────────────────────────────────────────
 export function HomePage() {
@@ -502,7 +481,7 @@ export function HomePage() {
             Layout: texto izquierda · imagen placeholder derecha.
         ══════════════════════════════════════════════════════ */}
         <section
-          className="px-8 py-16 md:py-20"
+          className="px-8 py-12 md:py-16"
           style={{ background: "hsl(35 24% 85%)" }}
           aria-label="Sobre mí"
         >
@@ -618,7 +597,7 @@ export function HomePage() {
             Interacción: hover revela ejemplo concreto.
         ══════════════════════════════════════════════════════ */}
         <section
-          className="px-8 py-16 md:py-20"
+          className="px-8 py-12 md:py-16"
           style={{ background: "hsl(24 22% 9%)" }}
           aria-label="Forma de trabajar"
         >
@@ -683,7 +662,7 @@ export function HomePage() {
         ══════════════════════════════════════════════════════ */}
         <section
           className="px-8 py-16 md:py-20"
-          style={{ background: "hsl(38 22% 93%)" }}
+          style={{ background: "hsl(35 21% 88%)" }}
           id="trabajo-preview"
           aria-label="Proyectos seleccionados"
         >
@@ -1165,8 +1144,8 @@ export function HomePage() {
             Archivo editorial · carrusel horizontal.
         ══════════════════════════════════════════════════════ */}
         <section
-          className="py-16 md:py-20 overflow-hidden"
-          style={{ background: "hsl(35 24% 85%)" }}
+          className="py-12 md:py-16 overflow-hidden"
+          style={{ background: "hsl(34 22% 82%)" }}
           id="notas-preview"
           aria-label="Notas"
         >
@@ -1228,8 +1207,8 @@ export function HomePage() {
                   to="/notas"
                   className="group shrink-0 flex flex-col justify-between p-6 transition-shadow hover:shadow-md"
                   style={{
-                    background: "hsl(40 18% 96%)",
-                    width: "clamp(280px, 36vw, 360px)",
+                    background: "hsl(40 18% 95%)",
+                    width: HAS_SINGLE_HOME_NOTE ? "min(100%, 42rem)" : "clamp(280px, 36vw, 360px)",
                     scrollSnapAlign: "start",
                     border: "1px solid hsl(24 22% 9% / 0.12)",
                     minHeight: "240px",
@@ -1310,7 +1289,7 @@ export function HomePage() {
                 style={{
                   background: "transparent",
                   border: "1px dashed hsl(24 18% 10% / 0.22)",
-                  width: "clamp(180px, 22vw, 220px)",
+                  width: HAS_SINGLE_HOME_NOTE ? "12rem" : "clamp(180px, 22vw, 220px)",
                   scrollSnapAlign: "start",
                   minHeight: "240px",
                 }}
@@ -1350,7 +1329,7 @@ export function HomePage() {
             Idiomas NO aparecen aquí (ya están en el hero).
         ══════════════════════════════════════════════════════ */}
         <section
-          className="px-8 py-16 md:py-20"
+          className="px-8 py-12 md:py-16"
           style={{ background: "hsl(24 22% 9%)" }}
           id="credenciales"
           aria-label="Formación y credenciales"
@@ -1442,7 +1421,7 @@ export function HomePage() {
                   <div className="space-y-0">
                     {CREDENTIALS.map((c, i) => (
                       <div
-                        key={c.org + c.period}
+                        key={c.title + c.period}
                         className="grid grid-cols-[auto_1fr] gap-4 py-4 transition-colors hover:bg-white/[0.03]"
                         style={{
                           borderBottom:
@@ -1455,15 +1434,15 @@ export function HomePage() {
                         <span
                           className={cx(
                             "mt-0.5 shrink-0 self-start font-mono text-[9px] tracking-widest px-1.5 py-0.5",
-                            c.type === "AWD" ? "text-primary" : "text-white/30",
+                            c.type === "FORMACIÓN" ? "text-primary" : "text-white/30",
                           )}
                           style={{
                             background:
-                              c.type === "AWD"
+                              c.type === "FORMACIÓN"
                                 ? "hsl(44 95% 48% / 0.18)"
                                 : "transparent",
                             border:
-                              c.type === "AWD"
+                              c.type === "FORMACIÓN"
                                 ? "none"
                                 : "1px solid hsl(0 0% 100% / 0.12)",
                           }}
@@ -1478,7 +1457,7 @@ export function HomePage() {
                               className="font-sans text-sm font-medium"
                               style={{ color: "hsl(36 18% 92% / 0.88)" }}
                             >
-                              {c.org}
+                              {c.title}
                             </p>
                             {c.period && (
                             <span
@@ -1489,20 +1468,12 @@ export function HomePage() {
                             </span>
                             )}
                           </div>
-                          {c.role && (
-                          <p
-                            className="font-mono text-[10px] mt-0.5"
-                            style={{ color: "hsl(0 0% 100% / 0.42)" }}
-                          >
-                            {c.role}
-                          </p>
-                          )}
-                          {c.note && (
+                          {c.detail && (
                           <p
                             className="mt-1 font-mono text-[9px]"
                             style={{ color: "hsl(0 0% 100% / 0.28)" }}
                           >
-                            {c.note}
+                            {c.detail}
                           </p>
                           )}
                         </div>
@@ -1533,9 +1504,9 @@ export function HomePage() {
             Sección final de contacto.
         ══════════════════════════════════════════════════════ */}
         <section
-          className="px-8 py-16 md:py-20"
+          className="hidden"
           style={{ background: "hsl(40 18% 96%)" }}
-          id="contacto"
+          id="contacto-legacy"
           aria-label="Contacto"
         >
           <div className="mx-auto max-w-7xl">

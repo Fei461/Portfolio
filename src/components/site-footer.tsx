@@ -1,7 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { profile } from "@/lib/content";
 
 export function SiteFooter() {
+  const { pathname } = useLocation();
+  const isHome = pathname === "/";
+
   return (
     <footer
       className="relative overflow-hidden px-8 pb-10 pt-16"
@@ -19,6 +22,27 @@ export function SiteFooter() {
       </span>
 
       <div className="section-inner relative z-10">
+        {isHome && (
+          <section id="contacto" className="border-b border-white/10 pb-12 mb-12" aria-label="Contacto">
+            <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-primary">Contacto</p>
+            <div className="mt-5 flex flex-col gap-7 lg:flex-row lg:items-end lg:justify-between">
+              <div>
+                <h2 className="max-w-2xl font-serif text-3xl font-medium leading-snug text-white md:text-4xl">
+                  Siempre abierta a conversaciones, proyectos y oportunidades.
+                </h2>
+                <p className="mt-4 max-w-md text-sm leading-relaxed text-white/55">
+                  Estrategia y comunicación publicitaria.
+                </p>
+              </div>
+              <Link
+                to="/cv"
+                className="inline-flex w-fit items-center gap-2 border border-primary/60 px-5 py-3 font-mono text-[10px] uppercase tracking-widest text-primary transition-colors hover:border-white hover:text-white"
+              >
+                Ver CV
+              </Link>
+            </div>
+          </section>
+        )}
         <div className="grid gap-10 pb-10 md:grid-cols-[1.5fr_1fr]">
           <div>
             <p className="font-serif text-2xl font-semibold text-white">

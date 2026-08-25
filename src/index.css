@@ -407,17 +407,20 @@
 
 /* Transiciones editoriales reutilizables entre superficies contiguas. */
 .section-transition {
-  height: clamp(3rem, 6vw, 6rem);
+  height: clamp(1.5rem, 3vw, 3rem);
   pointer-events: none;
 }
 .section-transition-to-warm {
-  background: linear-gradient(to bottom, hsl(var(--surface-01)), hsl(var(--surface-02)));
+  background: hsl(var(--surface-02));
+  border-top: 1px solid hsl(var(--color-foreground) / 0.08);
 }
 .section-transition-to-dark {
-  background: linear-gradient(to bottom, hsl(var(--surface-02)), hsl(var(--surface-dark)));
+  background: hsl(var(--surface-dark));
+  border-top: 1px solid hsl(var(--color-primary) / 0.35);
 }
 .section-transition-from-dark {
-  background: linear-gradient(to bottom, hsl(var(--surface-dark)), hsl(var(--surface-01)));
+  background: hsl(var(--surface-01));
+  border-top: 1px solid hsl(var(--color-foreground) / 0.12);
 }
 
 /* ─── Utility overrides ─── */

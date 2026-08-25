@@ -38,6 +38,14 @@ export const profile = {
     organization: "Stud-IA",
     period: "Enero – Mayo 2026",
   },
+  homeCredentials: [
+    { type: "FORMACIÓN", title: "Máster en Comunicación Publicitaria", period: "EN CURSO", detail: "" },
+    { type: "FORMACIÓN", title: "Universidad Rey Juan Carlos", period: "FINALIZADO", detail: "Grado en Publicidad y RRPP · Nota media 8,62 · 6 matrículas de honor" },
+    { type: "EXPERIENCIA", title: "Stud-IA", period: "ENERO – MAYO 2026", detail: "Prácticas en Marketing · estrategia de campañas · creación de contenido · análisis de mercado/competencia · reputación" },
+    { type: "CURSOS", title: "RTVE", period: "JUNIO – OCTUBRE 2025", detail: "Producción y estrategia de contenidos para plataformas OTT" },
+    { type: "CURSOS", title: "RTVE", period: "OCTUBRE – NOVIEMBRE 2024", detail: "Inteligencia artificial en medios de comunicación" },
+    { type: "EXPERIENCIA", title: "Ayuntamiento de Galapagar", period: "OCTUBRE 2024 – AGOSTO 2025", detail: "Comunicación, Marketing e Imagen Corporativa" },
+  ],
   languages: [
     { code: "ES", label: "Español", level: "Nativo" },
     { code: "EN", label: "Inglés", level: "C1" },
