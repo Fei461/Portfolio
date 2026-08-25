@@ -480,20 +480,24 @@ function getProjectData(slug: string): CaseStudyData {
         body: isPendingContent(project.role) ? "" : project.role,
         annotation: isPendingContent(project.contribution) ? undefined : project.contribution,
       },
-      {
-        type: "RESULTADO",
-        title: "Material pendiente de documentar",
-        body: "",
-        list: project.media
-          .filter((media) => media.src && !isPendingContent(media.alt))
-          .map((media) => media.alt),
-      },
-    ],
-    evidencias: undefined,
-    reflexion: {
-      headline: "Siguiente paso",
-      body: "",
-    },
+    ].filter((block) => Boolean(block.body || block.annotation)),
+    evidencias: project.media.some((media) => media.src)
+      ? {
+          compositions: [
+            {
+              layout: "gallery",
+              items: project.media
+                .filter((media) => media.src && !isPendingContent(media.alt))
+                .map((media) => ({
+                  type: "image" as const,
+                  src: media.src!,
+                  alt: media.alt,
+                })),
+            },
+          ],
+        }
+      : undefined,
+    reflexion: undefined,
     prevProject: previousSlug
       ? { slug: previousSlug, title: projectContent[previousSlug].title, num: String(index).padStart(2, "0") }
       : undefined,

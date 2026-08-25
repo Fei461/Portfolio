@@ -1130,7 +1130,6 @@ export function TalixeaPage() {
                 label="Identidad"
                 title="El nombre y la forma"
                 body="Talixea nace de TALE, LEXIS y WEAVE: historia, palabra y tejer. La identidad busca unir literatura, aprendizaje y tecnología con un tono adulto y sereno."
-                annotation="TODO: añadir bocetos y decisiones reales de identidad."
                 isDark
                 delay={0.1}
               />
@@ -1272,12 +1271,6 @@ export function TalixeaPage() {
                       background: "hsl(0 0% 100% / 0.02)",
                     }}
                   >
-                    <p
-                      className="font-mono text-[8px] italic"
-                      style={{ color: "hsl(0 0% 100% / 0.22)" }}
-                    >
-                      Captura de pantalla real pendiente de añadir
-                    </p>
                   </div>
                 </div>
               </MotionWrapper>
@@ -1428,7 +1421,6 @@ export function TalixeaPage() {
                 num="D1"
                 question="¿Por qué este nombre?"
                 answer="Talixea une tres territorios que explican el proyecto: TALE, historia; LEXIS, palabra y vocabulario; y WEAVE, tejer. El nombre conecta literatura, aprendizaje y tecnología sin convertir la experiencia en una app educativa infantil o estridente."
-                annotation="TODO: añadir bocetos y decisiones reales del proceso de naming."
                 delay={0.04}
               />
               <DecisionCard

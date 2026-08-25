@@ -841,7 +841,7 @@ export function NotasPage() {
                     className="font-mono text-[9px] uppercase tracking-widest"
                     style={{ color: "hsl(24 18% 10% / 0.28)" }}
                   >
-                    TODO: añadir publicaciones reales de Lara
+                    El archivo editorial se está preparando.
                   </p>
                 </div>
               </MotionWrapper>

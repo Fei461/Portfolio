@@ -22,7 +22,7 @@ const AWARDS = [
     title: "Stud-IA",
     org: "Experiencia profesional",
     note: "Estrategia, gestión de contenidos y trabajo analítico asociado a comunicación y marketing.",
-    year: "TODO: fechas",
+    year: "",
   },
 ];
 
@@ -36,19 +36,19 @@ const LANGUAGES = profile.languages.map((language) => ({
 const SOFTWARE = [
   {
     category: "Estrategia y planificación",
-    tools: ["TODO: herramientas verificadas"],
+    tools: ["Información en preparación"],
   },
   {
     category: "Diseño y producción visual",
-    tools: ["TODO: herramientas verificadas"],
+    tools: ["Información en preparación"],
   },
   {
     category: "Datos y análisis",
-    tools: ["TODO: herramientas verificadas"],
+    tools: ["Información en preparación"],
   },
   {
     category: "Comunicación y gestión",
-    tools: ["TODO: herramientas verificadas"],
+    tools: ["Información en preparación"],
   },
 ];
 
@@ -56,7 +56,7 @@ const INTERESTS = profile.interests;
 
 const REFERENCES = [
   {
-    name: "TODO: referencias",
+    name: "Referencias",
     role: "",
     org: "Pendiente de confirmar",
     note: "Añadir sólo con autorización de las personas implicadas.",
@@ -729,13 +729,13 @@ export function CvPage() {
                   {
                     icon: <Envelope size={14} />,
                     label: "Email",
-                    value: "TODO: email profesional",
+                    value: "",
                     href: "#contacto",
                   },
                   {
                     icon: <LinkedinLogo size={14} />,
                     label: "LinkedIn",
-                    value: "TODO: perfil profesional",
+                    value: "",
                     href: "#contacto",
                   },
                   {
@@ -881,7 +881,7 @@ function ExperienceEmpty() {
           tags: ["Producto", "Estrategia"],
         },
         {
-          date: "TODO: fechas",
+          date: "",
           title: "Stud-IA",
           subtitle: "Experiencia profesional",
           detail:
@@ -924,7 +924,7 @@ function EducationEmpty() {
         {
           date: "Finalizado",
           title: "Grado en Publicidad y Relaciones Públicas",
-          subtitle: "TODO: institución por confirmar",
+          subtitle: "",
           detail:
             "Nota media 8,62.",
           tags: ["Nota 8,62"],

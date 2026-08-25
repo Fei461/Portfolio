@@ -90,7 +90,7 @@ const CURRENTLY = [
     items: [
       "Comportamiento, comunicación y contexto",
       "Sistemas de aprendizaje y lectura en idiomas",
-      "TODO: actualizar intereses y lecturas reales",
+      "Lecturas y referencias en actualización",
     ],
   },
 ];
@@ -388,7 +388,7 @@ export function SobrePage() {
                         className="font-mono text-[10px] uppercase tracking-[0.18em]"
                         style={{ color: "hsl(24 18% 10% / 0.48)" }}
                       >
-                        TODO: retrato real
+                        Retrato en preparación
                       </span>
                     </div>
 
@@ -403,13 +403,13 @@ export function SobrePage() {
                       {[
                         {
                           label: "Formación",
-                          value: "Publicidad y RRPP · TODO: institución",
+                          value: "Publicidad y RRPP",
                         },
                         {
                           label: "Nota media",
                           value: "8,62",
                         },
-                        { label: "Idiomas", value: "TODO: confirmar" },
+                        { label: "Idiomas", value: "En el perfil" },
                         { label: "Proyecto activo", value: "Talixea · proyecto vivo" },
                       ].map(({ label, value }) => (
                         <div

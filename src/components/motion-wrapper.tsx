@@ -23,29 +23,38 @@ export function MotionWrapper({
   useEffect(() => {
     if (!ref.current || reducedMotion) return;
 
+    const element = ref.current;
+
     const ctx = gsap.context(() => {
       gsap.fromTo(
-        ref.current,
-        { autoAlpha: 0, y: 24 },
+        element,
+        { y: 24 },
         {
-          autoAlpha: 1,
           y: 0,
           delay,
           duration: 0.7,
           ease: "power2.inOut",
           scrollTrigger: {
-            trigger: ref.current,
+            trigger: element,
             start: "top 85%",
           },
         },
       );
     }, ref);
 
-    return () => ctx.revert();
+    // Never leave editorial content offset if ScrollTrigger cannot initialize.
+    const fallbackId = window.setTimeout(() => {
+      gsap.set(element, { y: 0 });
+    }, 1200 + delay * 1000);
+
+    return () => {
+      window.clearTimeout(fallbackId);
+      ctx.revert();
+    };
   }, [delay, reducedMotion]);
 
   return (
-    <div ref={ref} className={cn(!reducedMotion && "opacity-0", className)}>
+    <div ref={ref} className={cn(className)}>
       {children}
     </div>
   );

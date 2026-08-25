@@ -532,8 +532,8 @@ function ProjectCard({
 
   if (isArchive) {
     return (
-      <button
-        onClick={() => onOpenArchive(project)}
+      <Link
+        to={`/trabajo/${project.slug}`}
         className="w-full text-left group py-4 grid grid-cols-[3rem_1fr_auto] items-start gap-4 transition-colors hover:bg-[hsl(44_95%_48%_/_0.04)]"
         style={{ borderBottom: "1px solid hsl(24 18% 10% / 0.10)" }}
       >
@@ -600,13 +600,14 @@ function ProjectCard({
             Ver →
           </span>
         </div>
-      </button>
+      </Link>
     );
   }
 
   if (isFullCase) {
     return (
-      <div
+      <Link
+        to={`/trabajo/${project.slug}`}
         className="group relative overflow-hidden transition-shadow hover:shadow-md"
         style={{
           background: isDark ? "hsl(25 20% 10%)" : "hsl(40 20% 97%)",
@@ -742,17 +743,18 @@ function ProjectCard({
               className="font-mono text-[10px] uppercase tracking-widest flex items-center gap-1.5 opacity-50 group-hover:opacity-100 transition-opacity"
               style={{ color: isDark ? "hsl(0 0% 100%)" : "hsl(44 95% 38%)" }}
             >
-              Caso completo próximamente <ArrowRight size={11} />
+              Ver caso <ArrowRight size={11} />
             </span>
           </div>
         </div>
-      </div>
+      </Link>
     );
   }
 
   // CASO BREVE
   return (
-    <div
+    <Link
+      to={`/trabajo/${project.slug}`}
       className="group flex flex-col justify-between p-6 lg:p-7 transition-shadow hover:shadow-sm"
       style={{
         background: "hsl(40 20% 97%)",
@@ -850,10 +852,10 @@ function ProjectCard({
           className="font-mono text-[9px] uppercase tracking-widest flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity"
           style={{ color: "hsl(44 95% 38%)" }}
         >
-          Caso próximamente <ArrowRight size={10} />
+          Ver caso <ArrowRight size={10} />
         </span>
       </div>
-    </div>
+    </Link>
   );
 }
 
@@ -901,7 +903,8 @@ function CapabilityView({ projects }: { projects: Project[] }) {
               {/* Proyectos del grupo */}
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                 {groupProjects.map((project) => (
-                  <div
+                  <Link
+                    to={`/trabajo/${project.slug}`}
                     key={project.slug}
                     className="group p-5 transition-all hover:shadow-sm"
                     style={{
@@ -960,7 +963,7 @@ function CapabilityView({ projects }: { projects: Project[] }) {
                       className="mt-3 h-[1.5px] w-0 group-hover:w-full transition-all duration-300"
                       style={{ background: "hsl(44 95% 48% / 0.50)" }}
                     />
-                  </div>
+                  </Link>
                 ))}
               </div>
             </div>
@@ -1183,8 +1186,8 @@ export function TrabajoPage() {
               aria-label="Cambiar vista del archivo"
             >
               {[
-                { key: "proyecto" as const, label: "Por proyecto" },
-                { key: "habilidad" as const, label: "Por lo que hice" },
+                { key: "proyecto" as const, label: "POR PROYECTO" },
+                { key: "habilidad" as const, label: "POR LO QUE HAGO" },
               ].map((v) => (
                 <button
                   key={v.key}

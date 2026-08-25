@@ -5,6 +5,7 @@ import { SeoHead } from "@/components/seo-head";
 import { MotionWrapper } from "@/components/motion-wrapper";
 import { notes } from "@/data/notes";
 import { profile } from "@/data/profile";
+import { projectContent } from "@/data/projects";
 import { isPendingContent } from "@/lib/utils";
 
 // ─── pequeña utilidad cx ──────────────────────────────────────────────────────
@@ -43,105 +44,28 @@ const PROCESS_STEPS = [
 
 // ─── DATOS EDITORIALES ───────────────────────────────────────────────────────
 
-const PROJECTS = [
-  {
-    num: "01",
-    slug: "talixea",
-    title: "Talixea",
-    discipline: "Proyecto personal",
-    territory: "Producto · Aprendizaje · Plataforma",
-    year: "2024",
-    tagline: "Parecía un hobby de aprendizaje.",
-    taglineHover: "Era un vacío de mercado esperando solución.",
-    chain: ["LEER", "APRENDER", "VACÍO", "OPORTUNIDAD", "CONSTRUIR"],
-    description:
-      "Plataforma de aprendizaje de idiomas construida desde cero. Idea propia, diseño propio, arquitectura propia.",
-    coverImg: "/assets/talixea.png",
-    dark: false,
-    featured: true,
-  },
-  {
-    num: "02",
-    slug: "iberia",
-    title: "Iberia",
-    discipline: "Estrategia publicitaria",
-    territory: "Sostenibilidad · Credibilidad · Reposicionamiento",
-    year: "2024",
-    tagline: "Parecía un problema de sostenibilidad.",
-    taglineHover: "Era un problema de credibilidad.",
-    chain: [
-      "BRIEF",
-      "PROBLEMA APARENTE",
-      "PROBLEMA REAL",
-      "INSIGHT",
-      "ESTRATEGIA",
-    ],
-    description:
-      "Campaña de reposicionamiento. El análisis mostró que el territorio de sostenibilidad era indefendible — la credibilidad era el problema real.",
-    coverImg: "/assets/iberia.png",
-    dark: true,
-    featured: false,
-  },
-  {
-    num: "03",
-    slug: "warriors-arena",
-    title: "Warriors Arena",
-    discipline: "Estrategia de contenido",
-    territory: "OTT · Distribución · Sistema",
-    year: "2024",
-    tagline: "Parecía un problema de alcance.",
-    taglineHover: "Era un problema de sistema.",
-    chain: ["AUDIENCIA", "TERRITORIOS", "VENTANAS", "PLATAFORMAS", "SISTEMA"],
-    description:
-      "Estrategia de contenido end-to-end. La complejidad se resolvió creando un sistema, no más contenido.",
-    coverImg: "/assets/warriors-arena.png",
-    dark: false,
-    featured: false,
-  },
-  {
-    num: "04",
-    slug: "ryanair",
-    title: "Ryanair",
-    discipline: "Comunicación interna",
-    territory: "Stakeholders · Empleados · Onboarding",
-    year: "2023",
-    tagline: "Parecía un problema de mensajes.",
-    taglineHover: "Era un problema de cultura.",
-    chain: [
-      "EMPLEADOS",
-      "EXPERIENCIA",
-      "RECONOCIMIENTO",
-      "ONBOARDING",
-      "COMUNICACIÓN",
-    ],
-    description:
-      "Plan de comunicación interna orientado a mejorar el reconocimiento y la experiencia de los empleados.",
-    coverImg: "/assets/ryanair.png",
-    dark: false,
-    featured: false,
-  },
-  {
-    num: "05",
-    slug: "bruja-roja",
-    title: "Bruja Roja",
-    discipline: "Branding · Identidad · Tono de voz",
-    territory: "Normalización · Tabúes · Alternativa sostenible",
-    year: "TODO: año",
-    tagline: "Parecía una identidad visual.",
-    taglineHover: "Era una posición clara ante un tabú.",
-    chain: [
-      "ANÁLISIS",
-      "POSICIONAMIENTO",
-      "TERRITORIO",
-      "NARRATIVA",
-      "IDENTIDAD",
-    ],
-    description:
-      "Proyecto académico de identidad para una marca de copa menstrual, desde el territorio de marca hasta sus aplicaciones visuales.",
-    dark: true,
-    featured: false,
-  },
-];
+const HOME_PROJECT_PRESENTATION = {
+  talixea: { discipline: "Proyecto personal", territory: "Producto · Aprendizaje · Plataforma", tagline: "Parecía un hobby de aprendizaje.", taglineHover: "Era un vacío de mercado esperando solución.", chain: ["LEER", "APRENDER", "VACÍO", "OPORTUNIDAD", "CONSTRUIR"], dark: false, featured: true },
+  iberia: { discipline: "Estrategia publicitaria", territory: "Sostenibilidad · Credibilidad · Reposicionamiento", tagline: "Parecía un problema de sostenibilidad.", taglineHover: "Era un problema de credibilidad.", chain: ["BRIEF", "PROBLEMA APARENTE", "PROBLEMA REAL", "INSIGHT", "ESTRATEGIA"], dark: true, featured: false },
+  "warriors-arena": { discipline: "Estrategia de contenido", territory: "OTT · Distribución · Sistema", tagline: "Parecía un problema de alcance.", taglineHover: "Era un problema de sistema.", chain: ["AUDIENCIA", "TERRITORIOS", "VENTANAS", "PLATAFORMAS", "SISTEMA"], dark: false, featured: false },
+  ryanair: { discipline: "Comunicación interna", territory: "Stakeholders · Empleados · Onboarding", tagline: "Parecía un problema de mensajes.", taglineHover: "Era un problema de cultura.", chain: ["EMPLEADOS", "EXPERIENCIA", "RECONOCIMIENTO", "ONBOARDING", "COMUNICACIÓN"], dark: false, featured: false },
+  "bruja-roja": { discipline: "Branding · Identidad · Tono de voz", territory: "Normalización · Tabúes · Alternativa sostenible", tagline: "Parecía una identidad visual.", taglineHover: "Era una posición clara ante un tabú.", chain: ["ANÁLISIS", "POSICIONAMIENTO", "TERRITORIO", "NARRATIVA", "IDENTIDAD"], dark: true, featured: false },
+} as const;
+
+const PROJECTS = Object.keys(HOME_PROJECT_PRESENTATION).map((slug, index) => {
+  const project = projectContent[slug];
+  const presentation = HOME_PROJECT_PRESENTATION[slug as keyof typeof HOME_PROJECT_PRESENTATION];
+
+  return {
+    ...presentation,
+    num: String(index + 1).padStart(2, "0"),
+    slug,
+    title: project.title,
+    year: isPendingContent(project.year) ? "" : project.year,
+    description: project.description,
+    coverImg: project.media.find((media) => media.src)?.src,
+  };
+});
 
 // Notas con categorías del sistema definido
 const HOME_NOTE = notes.find((note) => note.featuredOnHome) ?? notes[0];
@@ -1193,7 +1117,9 @@ export function HomePage() {
           {/* Carrusel horizontal — permite scroll lateral nativo */}
           <MotionWrapper>
             <div
-              className={`flex gap-4 overflow-x-auto pb-4 px-8 scrollbar-hide ${HAS_SINGLE_HOME_NOTE ? "md:justify-center" : ""}`}
+              className={HAS_SINGLE_HOME_NOTE
+                ? "mx-auto grid max-w-7xl grid-cols-1 gap-4 px-8 md:grid-cols-[minmax(0,2fr)_minmax(12rem,1fr)]"
+                : "flex gap-4 overflow-x-auto pb-4 px-8 scrollbar-hide"}
               style={{
                 scrollSnapType: "x mandatory",
                 WebkitOverflowScrolling: "touch",
@@ -1205,10 +1131,10 @@ export function HomePage() {
                 <Link
                   key={note.id}
                   to="/notas"
-                  className="group shrink-0 flex flex-col justify-between p-6 transition-shadow hover:shadow-md"
+                  className={`group flex flex-col justify-between p-6 transition-shadow hover:shadow-md ${HAS_SINGLE_HOME_NOTE ? "w-full" : "shrink-0"}`}
                   style={{
                     background: "hsl(40 18% 95%)",
-                    width: HAS_SINGLE_HOME_NOTE ? "min(100%, 42rem)" : "clamp(280px, 36vw, 360px)",
+                    width: HAS_SINGLE_HOME_NOTE ? "auto" : "clamp(280px, 36vw, 360px)",
                     scrollSnapAlign: "start",
                     border: "1px solid hsl(24 22% 9% / 0.12)",
                     minHeight: "240px",
@@ -1285,11 +1211,11 @@ export function HomePage() {
               {/* Tarjeta-CTA al final del carrusel */}
               <Link
                 to="/notas"
-                className="group shrink-0 flex flex-col items-center justify-center gap-3 p-6 transition-colors"
+                className={`group flex flex-col items-center justify-center gap-3 p-6 transition-colors ${HAS_SINGLE_HOME_NOTE ? "w-full" : "shrink-0"}`}
                 style={{
                   background: "transparent",
                   border: "1px dashed hsl(24 18% 10% / 0.22)",
-                  width: HAS_SINGLE_HOME_NOTE ? "12rem" : "clamp(180px, 22vw, 220px)",
+                  width: HAS_SINGLE_HOME_NOTE ? "auto" : "clamp(180px, 22vw, 220px)",
                   scrollSnapAlign: "start",
                   minHeight: "240px",
                 }}
@@ -1576,12 +1502,12 @@ export function HomePage() {
                   {[
                     {
                       label: "Email",
-                      val: "TODO: email profesional",
+                      val: "",
                       href: "#contacto",
                     },
                     {
                       label: "LinkedIn",
-                      val: "TODO: perfil profesional",
+                      val: "",
                       href: "#contacto",
                     },
                     {
