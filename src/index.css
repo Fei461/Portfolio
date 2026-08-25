@@ -407,7 +407,7 @@
 
 /* Transiciones editoriales reutilizables entre superficies contiguas. */
 .section-transition {
-  height: clamp(1.5rem, 3vw, 3rem);
+  height: clamp(1rem, 2vw, 2rem);
   pointer-events: none;
 }
 .section-transition-to-warm {

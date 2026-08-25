@@ -481,14 +481,14 @@ export function HomePage() {
             Layout: texto izquierda · imagen placeholder derecha.
         ══════════════════════════════════════════════════════ */}
         <section
-          className="px-8 py-12 md:py-16"
+          className="px-8 py-10 md:py-12"
           style={{ background: "hsl(35 24% 85%)" }}
           aria-label="Sobre mí"
         >
           <div className="mx-auto max-w-7xl">
             <MotionWrapper>
               <div
-                className="mb-10 flex items-baseline gap-4 pb-5"
+                className="mb-7 flex items-baseline gap-4 pb-4"
                 style={{ borderBottom: "1px solid hsl(24 18% 10% / 0.16)" }}
               >
                 <span
@@ -506,7 +506,7 @@ export function HomePage() {
               </div>
             </MotionWrapper>
 
-            <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20 items-center">
+            <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 items-center">
               {/* Texto */}
               <MotionWrapper>
                 <div>
@@ -554,7 +554,7 @@ export function HomePage() {
               {/* Imagen — placeholder para reemplazar con foto real */}
               <MotionWrapper delay={0.08}>
                 <div
-                  className="relative aspect-[4/5] w-full max-w-sm overflow-hidden lg:translate-x-8"
+                  className="relative aspect-[4/5] w-full max-w-[19rem] overflow-hidden lg:translate-x-8"
                   style={{ background: "hsl(34 16% 84%)" }}
                 >
                   <div className="flex h-full min-h-[300px] items-end p-6" aria-label="">
@@ -1193,7 +1193,7 @@ export function HomePage() {
           {/* Carrusel horizontal — permite scroll lateral nativo */}
           <MotionWrapper>
             <div
-              className="flex gap-4 overflow-x-auto pb-4 px-8 scrollbar-hide"
+              className={`flex gap-4 overflow-x-auto pb-4 px-8 scrollbar-hide ${HAS_SINGLE_HOME_NOTE ? "md:justify-center" : ""}`}
               style={{
                 scrollSnapType: "x mandatory",
                 WebkitOverflowScrolling: "touch",
@@ -1329,7 +1329,7 @@ export function HomePage() {
             Idiomas NO aparecen aquí (ya están en el hero).
         ══════════════════════════════════════════════════════ */}
         <section
-          className="px-8 py-12 md:py-16"
+          className="px-8 py-10 md:py-12"
           style={{ background: "hsl(24 22% 9%)" }}
           id="credenciales"
           aria-label="Formación y credenciales"
@@ -1422,7 +1422,7 @@ export function HomePage() {
                     {CREDENTIALS.map((c, i) => (
                       <div
                         key={c.title + c.period}
-                        className="grid grid-cols-[auto_1fr] gap-4 py-4 transition-colors hover:bg-white/[0.03]"
+                        className="grid grid-cols-[auto_1fr] gap-4 py-3 transition-colors hover:bg-white/[0.03]"
                         style={{
                           borderBottom:
                             i < CREDENTIALS.length - 1
@@ -1640,8 +1640,10 @@ function ProcessStep({
   return (
     <MotionWrapper delay={index * 0.06}>
       <div
-        className="group grid cursor-default py-5 transition-colors"
-        style={{
+      className="group grid cursor-default py-5 transition-colors"
+      role="button"
+      tabIndex={0}
+      style={{
           borderBottom:
             index < total - 1 ? "1px solid hsl(0 0% 100% / 0.08)" : "none",
           background: hovered ? "hsl(0 0% 100% / 0.03)" : "transparent",
@@ -1725,6 +1727,15 @@ function SecondReading({
       className="mt-4 cursor-default select-none min-h-[1.5rem]"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
+      onFocus={() => setHovered(true)}
+      onBlur={() => setHovered(false)}
+      onClick={() => setHovered((value) => !value)}
+      onKeyDown={(event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          setHovered((value) => !value);
+        }
+      }}
     >
       {!hovered ? (
         <p
