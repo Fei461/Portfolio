@@ -17,6 +17,7 @@ export type Note = {
   readingTime: number;
   size: NoteSize;
   featured?: boolean;
+  featuredOnHome?: boolean;
   related?: string[];
   tags?: string[];
 };
@@ -24,15 +25,16 @@ export type Note = {
 // Los títulos entre corchetes son placeholders de publicaciones reales.
 export const notes: Note[] = [
   {
-    id: "ikea",
-    date: "TODO: fecha",
+    id: "campanas-mundial-2026",
+    date: "",
     category: "Marcas",
-    title: "[Análisis de IKEA]",
-    excerpt: "TODO: añadir extracto de la publicación real.",
-    annotation: "análisis de campaña",
+    title: "Las campañas ganadoras del Mundial 2026",
+    excerpt: "",
+    annotation: "branding, contexto y oportunidades",
     readingTime: 0,
     size: "featured",
     featured: true,
+    featuredOnHome: true,
     related: ["mediamarkt", "kfc"],
     tags: ["marcas", "estrategia"],
   },

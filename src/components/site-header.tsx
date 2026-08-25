@@ -60,7 +60,8 @@ export function SiteHeader() {
           : undefined
       }
     >
-      <div className="section-inner flex min-h-14 items-center justify-between px-8">
+      <div className="px-8">
+        <div className="section-inner flex min-h-14 items-center justify-between">
         {/* Logotipo — nombre + marcador */}
         <Link
           to="/"
@@ -145,6 +146,7 @@ export function SiteHeader() {
               </NavigationMenu>
             </SheetContent>
           </Sheet>
+        </div>
         </div>
       </div>
     </header>

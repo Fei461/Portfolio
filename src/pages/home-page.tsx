@@ -154,6 +154,7 @@ const PROJECTS = [
 ];
 
 // Notas con categorías del sistema definido
+const HOME_NOTE = notes.find((note) => note.featuredOnHome) ?? notes[0];
 const HOME_NOTES = notes.slice(0, 3);
 
 const CREDENTIALS = [
@@ -251,7 +252,7 @@ export function HomePage() {
                 className="hidden sm:inline font-mono text-[10px] uppercase tracking-[0.26em]"
                 style={{ color: "hsl(24 18% 10% / 0.52)" }}
               >
-                Segunda Lectura · 2025
+                {profile.home.topLine}
               </span>
             </div>
           </div>
@@ -271,7 +272,7 @@ export function HomePage() {
                       className="max-w-full break-words font-mono text-xs uppercase tracking-[0.18em] sm:tracking-[0.24em] mb-6"
                       style={{ color: "hsl(24 18% 10% / 0.80)" }}
                     >
-                      Publicidad · Estrategia · Comunicación
+                      {profile.home.territory}
                     </p>
 
                     {/* Nombre */}
@@ -300,16 +301,13 @@ export function HomePage() {
                         className="break-words text-xl font-serif font-medium leading-relaxed md:text-2xl"
                         style={{ color: "hsl(24 18% 10%)" }}
                       >
-                        Me gusta entender por qué las cosas funcionan como
-                        funcionan.
+                        {profile.home.introduction}
                       </p>
                       <p
                         className="break-words text-base font-sans leading-relaxed"
                         style={{ color: "hsl(24 18% 10% / 0.82)" }}
                       >
-                        A veces eso acaba en una estrategia. Otras, en una
-                        publicación. Y una vez acabó en una plataforma para
-                        aprender idiomas.
+                        {profile.home.summary}
                       </p>
                     </div>
 
@@ -397,14 +395,8 @@ export function HomePage() {
                       Idiomas
                     </p>
                     <ul className="space-y-2.5">
-                      {[
-                        {
-                          code: "TODO",
-                          lang: "Idiomas pendientes de confirmar",
-                          level: "",
-                        },
-                      ].map((l) => (
-                        <li key={l.lang} className="flex items-center gap-2.5">
+                      {profile.languages.map((l) => (
+                        <li key={l.code} className="flex items-center gap-2.5">
                           <span
                             className="shrink-0 font-mono text-[10px] font-bold w-7 text-center py-0.5"
                             style={{
@@ -419,7 +411,7 @@ export function HomePage() {
                             className="font-sans text-sm font-medium"
                             style={{ color: "hsl(24 18% 10% / 0.85)" }}
                           >
-                            {l.lang}
+                            {l.label}
                           </span>
                           <span
                             className="ml-auto font-mono text-[9px] uppercase tracking-widest"
@@ -458,20 +450,22 @@ export function HomePage() {
                           color: "hsl(44 95% 32%)",
                         }}
                       >
-                        {HOME_NOTES[0].category}
+                        {HOME_NOTE.category}
                       </span>
                       <p
                         className="font-serif text-sm font-medium leading-snug group-hover:underline decoration-primary underline-offset-2 transition-colors"
                         style={{ color: "hsl(24 18% 10% / 0.88)" }}
                       >
-                        {HOME_NOTES[0].title}
+                        {HOME_NOTE.title}
                       </p>
+                      {HOME_NOTE.date && (
                       <p
                         className="mt-1 font-mono text-[9px] uppercase tracking-wider"
                         style={{ color: "hsl(24 18% 10% / 0.48)" }}
                       >
-                        {HOME_NOTES[0].date}
+                        {HOME_NOTE.date}
                       </p>
+                      )}
                     </Link>
                   </div>
                 </MotionWrapper>
@@ -491,10 +485,8 @@ export function HomePage() {
               {[
                 ...profile.certifications,
                 ...profile.heroChips,
-                "COMUNICACIÓN PUBLICITARIA",
-                "INVESTIGACIÓN",
-                "SEGUNDA LECTURA",
-                "RAZONAMIENTO VISIBLE",
+                "MÁSTER EN COMUNICACIÓN PUBLICITARIA",
+                "STUD-IA · EXPERIENCIA PROFESIONAL",
                 ...profile.certifications,
                 ...profile.heroChips,
               ].map((item, i) => (
