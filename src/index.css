@@ -405,6 +405,21 @@
   animation: marquee 30s linear infinite;
 }
 
+/* Transiciones editoriales reutilizables entre superficies contiguas. */
+.section-transition {
+  height: clamp(3rem, 6vw, 6rem);
+  pointer-events: none;
+}
+.section-transition-to-warm {
+  background: linear-gradient(to bottom, hsl(var(--surface-01)), hsl(var(--surface-02)));
+}
+.section-transition-to-dark {
+  background: linear-gradient(to bottom, hsl(var(--surface-02)), hsl(var(--surface-dark)));
+}
+.section-transition-from-dark {
+  background: linear-gradient(to bottom, hsl(var(--surface-dark)), hsl(var(--surface-01)));
+}
+
 /* ─── Utility overrides ─── */
 .hover\:bg-foreground\/6:hover {
   background-color: hsl(var(--color-foreground) / 0.06);

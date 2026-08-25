@@ -28,9 +28,15 @@ export const profile = {
   ],
   education: {
     degree: "Grado en Publicidad y RRPP",
+    degreeInstitution: "Universidad Rey Juan Carlos",
     averageGrade: "8,62",
+    honors: "6 matrículas de honor",
     master: "Máster en Comunicación Publicitaria",
     masterInstitution: "[CENTRO DEL MÁSTER]",
+  },
+  experience: {
+    organization: "Stud-IA",
+    period: "Enero – Mayo 2026",
   },
   languages: [
     { code: "ES", label: "Español", level: "Nativo" },

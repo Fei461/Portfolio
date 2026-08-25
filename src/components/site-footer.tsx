@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { ArrowRight } from "@phosphor-icons/react";
 import { profile } from "@/lib/content";
 
 export function SiteFooter() {
@@ -20,24 +19,14 @@ export function SiteFooter() {
       </span>
 
       <div className="section-inner relative z-10">
-        <div className="grid gap-10 pb-10 md:grid-cols-[1.5fr_1fr_1fr]">
+        <div className="grid gap-10 pb-10 md:grid-cols-[1.5fr_1fr]">
           <div>
             <p className="font-serif text-2xl font-semibold text-white">
               Lara Feijóo
             </p>
-            {/* Subtitle: mono blanco/60 — legible sobre oscuro */}
             <p className="mt-1 font-mono text-[10px] uppercase tracking-widest text-white/50">
-              Estrategia · Comunicación · Insights
+              {profile.home.territory}
             </p>
-            <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/55 font-sans">
-              Estrategia, comunicación, research e insights.
-            </p>
-            <Link
-              to="/#contacto"
-              className="mt-5 inline-flex items-center gap-2 border-b border-primary/50 pb-0.5 text-sm font-medium text-primary transition-colors hover:text-white hover:border-white/50"
-            >
-              Contacto <ArrowRight size={14} />
-            </Link>
           </div>
 
           <div>
@@ -51,7 +40,6 @@ export function SiteFooter() {
                 { label: "Notas", to: "/notas" },
                 { label: "Sobre mí", to: "/sobre-mi" },
                 { label: "CV", to: "/cv" },
-                { label: "Contacto", to: "/#contacto" as string },
               ].map((item) => (
                 <li key={item.to}>
                   <Link
@@ -97,7 +85,7 @@ export function SiteFooter() {
             © {new Date().getFullYear()} Lara Feijóo
           </p>
           <p className="font-mono text-[10px] text-white/20">
-            Segunda lectura recomendada.
+            CULO INQUIETO.
           </p>
         </div>
       </div>

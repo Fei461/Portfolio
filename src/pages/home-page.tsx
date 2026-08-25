@@ -15,39 +15,29 @@ function cx(...classes: (string | false | undefined | null)[]) {
 // ─── PROCESS STEPS ───────────────────────────────────────────────────────────
 const PROCESS_STEPS = [
   {
-    num: "01",
     verb: "MIRO",
-    question: "¿Qué está pasando realmente?",
-    example:
-      "En análisis de campañas o comportamiento del consumidor, el primer dato visible raramente es el relevante.",
+    question: "contexto · comportamiento · contradicciones",
+    example: "contexto · comportamiento · contradicciones",
   },
   {
-    num: "02",
     verb: "PREGUNTO",
-    question: "¿Por qué ocurre? ¿Qué falta?",
-    example:
-      "En investigación cualitativa, la respuesta honesta raramente es la primera. La primera es la que el entrevistado cree que debes escuchar.",
+    question: "qué asumimos · qué falta · qué cambia si el problema no es ese",
+    example: "qué asumimos · qué falta · qué cambia si el problema no es ese",
   },
   {
-    num: "03",
     verb: "ORDENO",
-    question: "Datos · personas · contexto · límites",
-    example:
-      "Estrategia de medios, planificación, research estructurado. Cuando hay demasiadas variables, necesito un sistema.",
+    question: "research · stakeholders · restricciones · prioridades",
+    example: "research · stakeholders · restricciones · prioridades",
   },
   {
-    num: "04",
     verb: "CONECTO",
-    question: "¿Qué relación no era evidente al principio?",
-    example:
-      "Lectura + aprendizaje de idiomas → vacío de mercado. Cultura + comunicación + datos → comportamiento.",
+    question: "patrones · cultura · datos · comportamiento",
+    example: "patrones · cultura · datos · comportamiento",
   },
   {
-    num: "05",
     verb: "HAGO",
-    question: "Estrategia · pieza · sistema · proyecto",
-    example:
-      "No me gusta dejar una idea en 'estaría bien hacer esto'. Talixea, análisis de LinkedIn, estrategias, planes de contenido.",
+    question: "estrategia · contenido · sistema · producto",
+    example: "estrategia · contenido · sistema · producto",
   },
 ];
 
@@ -155,28 +145,30 @@ const PROJECTS = [
 
 // Notas con categorías del sistema definido
 const HOME_NOTE = notes.find((note) => note.featuredOnHome) ?? notes[0];
-const HOME_NOTES = notes.slice(0, 3);
+const HOME_NOTES = notes
+  .filter((note) => !note.title.startsWith("[") && note.category && note.annotation)
+  .slice(0, 3);
 
 const CREDENTIALS = [
   {
     type: "EDU",
-    org: "TODO: institución por confirmar",
-    role: "Máster en Comunicación Publicitaria",
-    period: "En inicio",
-    note: "Dato verificable; centro y fechas pendientes",
+    org: profile.education.master,
+    role: "",
+    period: "",
+    note: "",
   },
   {
     type: "EDU",
-    org: "TODO: institución por confirmar",
-    role: "Grado en Publicidad y RRPP",
+    org: profile.education.degreeInstitution,
+    role: profile.education.degree,
     period: "Finalizado",
-    note: "Nota media 8,62",
+    note: `Nota media ${profile.education.averageGrade} · ${profile.education.honors}`,
   },
   {
     type: "EXP",
-    org: "Stud-IA",
+    org: profile.experience.organization,
     role: "Experiencia profesional",
-    period: "TODO: fechas",
+    period: profile.experience.period,
     note: "Estrategia, gestión de contenidos y trabajo analítico",
   },
 ];
@@ -502,6 +494,8 @@ export function HomePage() {
           </div>
         </section>
 
+        <div className="section-transition section-transition-to-warm" aria-hidden="true" />
+
         {/* ══════════════════════════════════════════════════════
             01 — SOBRE MÍ
             Directamente después del hero.
@@ -509,7 +503,7 @@ export function HomePage() {
         ══════════════════════════════════════════════════════ */}
         <section
           className="px-8 py-16 md:py-20"
-          style={{ background: "hsl(40 18% 96%)" }}
+          style={{ background: "hsl(35 24% 85%)" }}
           aria-label="Sobre mí"
         >
           <div className="mx-auto max-w-7xl">
@@ -533,7 +527,7 @@ export function HomePage() {
               </div>
             </MotionWrapper>
 
-            <div className="grid gap-12 lg:grid-cols-[1.2fr_1fr] lg:gap-16 items-center">
+            <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20 items-center">
               {/* Texto */}
               <MotionWrapper>
                 <div>
@@ -561,21 +555,12 @@ export function HomePage() {
                     </span>
                   </p>
                   <p
-                    className="mt-5 font-sans text-base leading-relaxed"
-                    style={{ color: "hsl(24 18% 10% / 0.82)" }}
-                  >
-                    Me interesa lo que pasa detrás de lo que se ve: los
-                    mecanismos que mueven el comportamiento, los sistemas que
-                    sostienen la comunicación, los vacíos que nadie ha rellenado
-                    todavía.
-                  </p>
-                  <p
-                    className="mt-4 font-sans text-sm leading-relaxed"
+                    className="mt-5 max-w-md font-sans text-sm leading-relaxed"
                     style={{ color: "hsl(24 18% 10% / 0.72)" }}
                   >
-                    Aprendo de forma autónoma, organizo antes de actuar y me
-                    tomo el tiempo de formular bien la pregunta. A veces eso es
-                    más valioso que tener la respuesta rápida.
+                    Aprendo de forma autónoma y me tomo el tiempo de formular
+                    bien la pregunta. A veces eso es más valioso que tener la
+                    respuesta rápida.
                   </p>
                   <Link
                     to="/sobre"
@@ -590,23 +575,13 @@ export function HomePage() {
               {/* Imagen — placeholder para reemplazar con foto real */}
               <MotionWrapper delay={0.08}>
                 <div
-                  className="relative aspect-[4/5] w-full max-w-sm overflow-hidden"
+                  className="relative aspect-[4/5] w-full max-w-sm overflow-hidden lg:translate-x-8"
                   style={{ background: "hsl(34 16% 84%)" }}
                 >
-                  <div
-                    className="relative overflow-hidden h-full"
-                    style={{ minHeight: "300px" }}
-                  >
-                    <img
-                      src={PROJECTS[0].coverImg}
-                      alt="Talixea — plataforma de aprendizaje de idiomas"
-                      className="h-full w-full object-cover transition-transform duration-700 hover:scale-[1.03]"
-                      style={{ minHeight: "300px" }}
-                    />
-                    <div
-                      className="absolute inset-0"
-                      style={{ background: "hsl(24 22% 9% / 0.15)" }}
-                    />
+                  <div className="flex h-full min-h-[300px] items-end p-6" aria-label="">
+                    <p className="font-mono text-[9px] uppercase tracking-widest" style={{ color: "hsl(24 18% 10% / 0.42)" }}>
+                      Fotografía pendiente de añadir
+                    </p>
                   </div>
                   {/* Badge estado actual */}
                   <div
@@ -634,6 +609,8 @@ export function HomePage() {
             </div>
           </div>
         </section>
+
+        <div className="section-transition section-transition-to-dark" aria-hidden="true" />
 
         {/* ══════════════════════════════════════════════════════
             02 — FORMA DE TRABAJAR
@@ -669,7 +646,7 @@ export function HomePage() {
                   className="font-mono text-[10px] uppercase tracking-[0.18em]"
                   style={{ color: "hsl(0 0% 100% / 0.28)" }}
                 >
-                  Cómo suelo llegar hasta una respuesta
+                  Cómo suelo abordar las cosas
                 </p>
               </div>
             </MotionWrapper>
@@ -692,11 +669,13 @@ export function HomePage() {
                 className="mt-8 font-mono text-[9px] uppercase tracking-widest text-right"
                 style={{ color: "hsl(0 0% 100% / 0.22)" }}
               >
-                No siempre ocurre en este orden.
+                No siempre hay un orden. Ni una respuesta.
               </p>
             </MotionWrapper>
           </div>
         </section>
+
+        <div className="section-transition section-transition-from-dark" aria-hidden="true" />
 
         {/* ══════════════════════════════════════════════════════
             03 — TRABAJO SELECCIONADO
@@ -706,7 +685,7 @@ export function HomePage() {
           className="px-8 py-16 md:py-20"
           style={{ background: "hsl(38 22% 93%)" }}
           id="trabajo-preview"
-          aria-label="Trabajo seleccionado"
+          aria-label="Proyectos seleccionados"
         >
           <div className="mx-auto max-w-7xl">
             <MotionWrapper>
@@ -725,7 +704,7 @@ export function HomePage() {
                     className="font-mono text-[10px] uppercase tracking-[0.22em]"
                     style={{ color: "hsl(24 18% 10% / 0.50)" }}
                   >
-                    Trabajo seleccionado
+                    Proyectos seleccionados
                   </h2>
                 </div>
                 <Link
@@ -1179,13 +1158,15 @@ export function HomePage() {
           </div>
         </section>
 
+        <div className="section-transition section-transition-to-warm" aria-hidden="true" />
+
         {/* ══════════════════════════════════════════════════════
             04 — NOTAS
             Archivo editorial · carrusel horizontal.
         ══════════════════════════════════════════════════════ */}
         <section
           className="py-16 md:py-20 overflow-hidden"
-          style={{ background: "hsl(36 28% 89%)" }}
+          style={{ background: "hsl(35 24% 85%)" }}
           id="notas-preview"
           aria-label="Notas"
         >
@@ -1274,12 +1255,14 @@ export function HomePage() {
                       >
                         {note.category}
                       </span>
-                      <span
-                        className="font-mono text-[9px] shrink-0"
-                        style={{ color: "hsl(24 18% 10% / 0.42)" }}
-                      >
-                        {note.date}
-                      </span>
+                      {note.date && (
+                        <span
+                          className="font-mono text-[9px] shrink-0"
+                          style={{ color: "hsl(24 18% 10% / 0.42)" }}
+                        >
+                          {note.date}
+                        </span>
+                      )}
                     </div>
 
                     <h4
@@ -1289,12 +1272,14 @@ export function HomePage() {
                       {note.title}
                     </h4>
 
-                    <p
-                      className="mt-3 font-sans text-xs leading-relaxed line-clamp-3"
-                      style={{ color: "hsl(24 22% 9% / 0.68)" }}
-                    >
-                      {note.excerpt}
-                    </p>
+                    {note.excerpt && (
+                      <p
+                        className="mt-3 font-sans text-xs leading-relaxed line-clamp-3"
+                        style={{ color: "hsl(24 22% 9% / 0.68)" }}
+                      >
+                        {note.excerpt}
+                      </p>
+                    )}
                   </div>
 
                   {/* Footer de tarjeta */}
@@ -1356,6 +1341,8 @@ export function HomePage() {
             </p>
           </div>
         </section>
+
+        <div className="section-transition section-transition-to-dark" aria-hidden="true" />
 
         {/* ══════════════════════════════════════════════════════
             05 — FORMACIÓN · CREDENCIALES
@@ -1493,25 +1480,31 @@ export function HomePage() {
                             >
                               {c.org}
                             </p>
+                            {c.period && (
                             <span
                               className="shrink-0 font-mono text-[9px]"
                               style={{ color: "hsl(0 0% 100% / 0.28)" }}
                             >
                               {c.period}
                             </span>
+                            )}
                           </div>
+                          {c.role && (
                           <p
                             className="font-mono text-[10px] mt-0.5"
                             style={{ color: "hsl(0 0% 100% / 0.42)" }}
                           >
                             {c.role}
                           </p>
+                          )}
+                          {c.note && (
                           <p
                             className="mt-1 font-mono text-[9px]"
                             style={{ color: "hsl(0 0% 100% / 0.28)" }}
                           >
                             {c.note}
                           </p>
+                          )}
                         </div>
                       </div>
                     ))}
@@ -1589,7 +1582,7 @@ export function HomePage() {
                   style={{ color: "hsl(24 22% 9% / 0.75)" }}
                 >
                   Trabajo en estrategia y comunicación publicitaria. Si tienes
-                  un proyecto que merece una segunda lectura, hablamos.
+                  un proyecto sobre el que hablar, hablamos.
                 </p>
 
                 <div className="mt-8 flex flex-wrap gap-3">
@@ -1602,16 +1595,6 @@ export function HomePage() {
                     }}
                   >
                     Ver CV <ArrowRight size={14} />
-                  </Link>
-                  <Link
-                    to="/cv"
-                    className="inline-flex items-center gap-2 px-7 py-3 font-sans text-sm font-medium transition-colors"
-                    style={{
-                      border: "1px solid hsl(24 18% 10% / 0.38)",
-                      color: "hsl(24 18% 10%)",
-                    }}
-                  >
-                    Ver CV
                   </Link>
                 </div>
               </MotionWrapper>
@@ -1662,28 +1645,6 @@ export function HomePage() {
                   ))}
                 </div>
 
-                {/* CTA amarillo — marca */}
-                <div
-                  className="mt-8 p-6"
-                  style={{
-                    background: "hsl(44 95% 48% / 0.10)",
-                    border: "1px solid hsl(44 95% 48% / 0.35)",
-                  }}
-                >
-                  <p
-                    className="font-mono text-[9px] uppercase tracking-[0.22em] mb-2"
-                    style={{ color: "hsl(24 18% 10% / 0.42)" }}
-                  >
-                    Disponible para
-                  </p>
-                  <p
-                    className="font-serif text-base font-medium"
-                    style={{ color: "hsl(24 18% 10%)" }}
-                  >
-                    Proyectos, colaboraciones y oportunidades en estrategia y
-                    comunicación publicitaria.
-                  </p>
-                </div>
               </MotionWrapper>
             </div>
           </div>
@@ -1718,15 +1679,7 @@ function ProcessStep({
         onMouseLeave={() => setHovered(false)}
       >
         {/* Layout: num · verbo · pregunta · ejemplo */}
-        <div className="grid grid-cols-[2.5rem_1fr] gap-4 lg:grid-cols-[2.5rem_12rem_1fr_1fr]">
-          {/* Número */}
-          <span
-            className="font-mono text-[10px] pt-0.5"
-            style={{ color: "hsl(44 95% 48% / 0.55)" }}
-          >
-            {step.num}
-          </span>
-
+        <div className="grid grid-cols-1 gap-2 lg:grid-cols-[12rem_1fr_1fr] lg:gap-4">
           {/* Verbo */}
           <p
             className="font-serif text-lg font-medium leading-tight md:text-xl transition-colors"
@@ -1759,24 +1712,22 @@ function ProcessStep({
         </div>
 
         {/* Mobile: pregunta + ejemplo */}
-        <div className="col-span-2 mt-2 pl-[calc(2.5rem+1rem)] lg:hidden">
+        <div className="mt-2 lg:hidden">
           <p
             className="font-mono text-[10px] leading-relaxed"
             style={{ color: "hsl(0 0% 100% / 0.50)" }}
           >
             {step.question}
           </p>
-          {hovered && (
-            <p
-              className="mt-2 font-sans text-xs leading-relaxed pl-3"
-              style={{
-                borderLeft: "1px solid hsl(44 95% 48% / 0.35)",
-                color: "hsl(0 0% 100% / 0.52)",
-              }}
-            >
-              {step.example}
-            </p>
-          )}
+          <p
+            className="mt-2 font-sans text-xs leading-relaxed pl-3"
+            style={{
+              borderLeft: "1px solid hsl(44 95% 48% / 0.35)",
+              color: "hsl(0 0% 100% / 0.52)",
+            }}
+          >
+            {step.example}
+          </p>
         </div>
       </div>
     </MotionWrapper>
