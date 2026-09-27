@@ -6,7 +6,8 @@ import path from "path";
 export default defineConfig({
   plugins: [react()],
   publicDir: "./static",
-  base: "/",
+  // GitHub Pages sirve este repositorio bajo /Portfolio/; en local se mantiene la raíz.
+  base: process.env.VITE_BASE_PATH ?? "/",
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src"),

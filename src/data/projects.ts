@@ -20,30 +20,32 @@ export type ProjectContent = {
   }>;
 };
 
+const assetPath = (file: string) => `${import.meta.env.BASE_URL}assets/${file}`;
+
 export const projectContent: Record<string, ProjectContent> = {
   talixea: {
     title: "Talixea", year: "En desarrollo", context: "PERSONAL", depth: "CASO COMPLETO",
     tags: ["Producto", "Estrategia", "Aprendizaje", "Idiomas"], categories: ["ESTRATEGIA", "CONTENIDO"],
     description: "Proyecto personal que conecta lectura y aprendizaje de idiomas a partir del Diglot Weave Method.",
     role: "Creado íntegramente por Lara", contribution: "Idea, identidad, producto, evolución y promoción.",
-    media: [{ src: "/assets/talixea.png", alt: "TODO: captura real de Talixea", kind: "image" }],
+    media: [{ src: assetPath("talixea.png"), alt: "TODO: captura real de Talixea", kind: "image" }],
   },
   iberia: {
     title: "Iberia", year: "TODO: año", context: "ACADÉMICO", depth: "CASO COMPLETO",
     tags: ["Estrategia", "Credibilidad", "Sostenibilidad"], categories: ["ESTRATEGIA", "INVESTIGACIÓN"],
     description: "Trabajo en equipo sobre la brecha entre transición sostenible y percepción pública: el problema de comunicación era la credibilidad.",
     role: "TODO: mi papel en el equipo", contribution: "TODO: contribución individual.",
-    media: [{ src: "/assets/iberia.png", alt: "TODO: pieza de Iberia", kind: "image" }],
+    media: [{ src: assetPath("iberia.png"), alt: "TODO: pieza de Iberia", kind: "image" }],
   },
   "warriors-arena": {
     title: "Warriors Arena", year: "TODO: año", context: "ACADÉMICO", depth: "CASO COMPLETO",
     tags: ["Contenido", "OTT", "Distribución", "Medios"], categories: ["CONTENIDO", "ESTRATEGIA", "MEDIOS"],
     description: "Trabajo en equipo para ordenar la distribución multicanal y comercial de un formato de entretenimiento de diez episodios.",
     role: "TODO: mi papel en el equipo", contribution: "TODO: contribución individual.",
-    media: [{ src: "/assets/warriors-arena.png", alt: "TODO: material de Warriors Arena", kind: "image" }],
+    media: [{ src: assetPath("warriors-arena.png"), alt: "TODO: material de Warriors Arena", kind: "image" }],
   },
   bbva: { title: "BBVA", year: "TODO: año", context: "ACADÉMICO", depth: "CASO BREVE", tags: ["Estrategia", "Comportamiento", "Fraude digital"], categories: ["ESTRATEGIA", "INVESTIGACIÓN"], description: "Trabajo estratégico sobre fraude digital y la confianza excesiva ante amenazas en personas de 18 a 30 años.", role: "TODO: mi papel", contribution: "TODO: contribución individual.", media: [{ alt: "TODO: piezas BBVA", kind: "placeholder" }] },
-  ryanair: { title: "Ryanair", year: "TODO: año", context: "ACADÉMICO", depth: "CASO BREVE", tags: ["Comunicación interna", "Stakeholders", "Onboarding"], categories: ["ESTRATEGIA", "CONTENIDO"], description: "Proyecto académico de comunicación interna centrado en experiencia del empleado, stakeholders, reconocimiento y onboarding.", role: "TODO: mi papel", contribution: "TODO: contribución individual.", media: [{ src: "/assets/ryanair.png", alt: "TODO: material de Ryanair", kind: "image" }] },
+  ryanair: { title: "Ryanair", year: "TODO: año", context: "ACADÉMICO", depth: "CASO BREVE", tags: ["Comunicación interna", "Stakeholders", "Onboarding"], categories: ["ESTRATEGIA", "CONTENIDO"], description: "Proyecto académico de comunicación interna centrado en experiencia del empleado, stakeholders, reconocimiento y onboarding.", role: "TODO: mi papel", contribution: "TODO: contribución individual.", media: [{ src: assetPath("ryanair.png"), alt: "TODO: material de Ryanair", kind: "image" }] },
   "bruja-roja": { title: "Bruja Roja", year: "TODO: año", context: "ACADÉMICO", depth: "CASO BREVE", tags: ["Branding", "Identidad", "Tono de voz"], categories: ["MARCA"], description: "Identidad para una marca de copa menstrual orientada a normalizar la menstruación y romper tabúes.", role: "TODO: mi papel", contribution: "TODO: contribución individual.", media: [{ alt: "TODO: identidad Bruja Roja", kind: "placeholder" }] },
   "stud-ia": { title: "Stud-IA", year: "TODO: fechas", context: "PROFESIONAL", depth: "CASO BREVE", tags: ["Estrategia", "Contenido", "Research"], categories: ["ESTRATEGIA", "CONTENIDO", "INVESTIGACIÓN"], description: "Experiencia profesional de marketing y comunicación: estrategia, gestión y creación de contenido, copy y trabajo para redes y plataformas.", role: "Prácticas en marketing y comunicación", contribution: "TODO: concretar responsabilidades y ejemplos publicables.", media: [{ alt: "TODO: calendarios, research o ejemplos autorizados", kind: "placeholder" }] },
   oreo: { title: "Oreo", year: "TODO: año", context: "ACADÉMICO", depth: "ARCHIVO", tags: ["Media planning", "Funnel", "KPIs"], categories: ["MEDIOS", "ESTRATEGIA"], description: "Plan de medios académico para público joven: situación, buyer persona, funnel, tácticas, KPIs y modelos de compra.", role: "TODO: mi papel", contribution: "TODO: contribución individual.", media: [{ alt: "TODO: plan de medios Oreo", kind: "placeholder" }] },
