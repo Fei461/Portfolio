@@ -105,6 +105,20 @@ export type CaseStudyData = {
     compositions: MediaLayout[];
   };
 
+  // ── Autoría y criterio de evaluación ─────────────────────────────────────
+  contribution?: {
+    label: string;
+    summary: string;
+    scope: string[];
+    note?: string;
+  };
+  evaluation?: {
+    title: string;
+    body: string;
+    signals: string[];
+    note?: string;
+  };
+
   // ── Reflexión final ───────────────────────────────────────────────────────
   reflexion?: {
     headline: string;
@@ -509,6 +523,108 @@ const CASE_NARRATIVES: Record<
   },
 };
 
+// Separa la autoría del equipo de aquello que el proyecto habría medido al salir al mercado.
+// Ningún caso académico declara resultados de implementación que no existen.
+const CASE_ACCOUNTABILITY: Record<
+  string,
+  Pick<CaseStudyData, "contribution" | "evaluation">
+> = {
+  iberia: {
+    contribution: {
+      label: "Trabajo en equipo",
+      summary: "Participación en la definición estratégica, la narrativa de campaña y la traducción de la idea a entregables.",
+      scope: ["Diagnóstico de credibilidad", "Concepto de restauración", "Sistema de soportes"],
+      note: "El entregable original acredita el proyecto de forma colectiva; no asigna autoría por pieza.",
+    },
+    evaluation: {
+      title: "Qué habría validado la propuesta",
+      body: "Al ser una propuesta académica, no hubo campaña en mercado. El criterio no sería solo notoriedad: tendría que demostrar una comprensión más creíble de las acciones de sostenibilidad.",
+      signals: ["Comprensión de las acciones concretas", "Percepción de credibilidad frente a un mensaje verde convencional", "Intención de considerar Iberia en futuros viajes"],
+      note: "Criterios de evaluación propuestos; no son resultados reportados.",
+    },
+  },
+  "el-regalo-no-deseado": {
+    contribution: {
+      label: "Trabajo en equipo",
+      summary: "Participación en el concepto, el relato de campaña y la adaptación de la idea a exterior, experiencia y vídeo.",
+      scope: ["Insight y concepto", "Narrativa de soportes", "Propuesta de activación"],
+      note: "El entregable original acredita el proyecto de forma colectiva; no asigna autoría por pieza.",
+    },
+    evaluation: {
+      title: "Qué habría validado la propuesta",
+      body: "La campaña necesitaría probar que el mecanismo creativo no solo llama la atención, sino que desplaza la percepción de Sinergia hacia un producto con valor y curiosidad.",
+      signals: ["Recuerdo del concepto y de la marca", "Interacción con los soportes experienciales", "Consideración de la gama Sinergia"],
+      note: "Criterios de evaluación propuestos; no son resultados reportados.",
+    },
+  },
+  ryanair: {
+    contribution: {
+      label: "Trabajo en equipo",
+      summary: "Participación en el diagnóstico de públicos internos y en la articulación de un plan de acogida, pertenencia y reconocimiento.",
+      scope: ["Mapa de stakeholders", "Objetivos de comunicación", "Propuesta de sistema interno"],
+      note: "El entregable original acredita el proyecto de forma colectiva; no asigna autoría por pieza.",
+    },
+    evaluation: {
+      title: "Qué habría validado la propuesta",
+      body: "El plan no se implementó. La prueba de valor sería comprobar si los momentos de entrada, acompañamiento y reconocimiento cambian la experiencia percibida de los equipos.",
+      signals: ["Satisfacción durante el onboarding", "Participación en mentoría y reconocimiento", "Percepción de pertenencia y claridad interna"],
+      note: "Criterios de evaluación propuestos; no son resultados reportados.",
+    },
+  },
+  "warriors-arena": {
+    contribution: {
+      label: "Proyecto individual",
+      summary: "Diseño de la estrategia de distribución, las ventanas de derechos y el modelo de comercialización del formato.",
+      scope: ["Análisis de compradores", "Arquitectura de ventanas", "Ruta comercial y KPIs"],
+      note: "Trabajo académico individual.",
+    },
+    evaluation: {
+      title: "Qué habría validado la propuesta",
+      body: "La estrategia tendría que demostrar que cada ventana suma alcance o ingresos sin canibalizar la anterior ni debilitar el valor del formato.",
+      signals: ["Interés de compradores priorizados", "Acuerdos y valor de licencia por ventana", "Audiencia acumulada y continuidad del formato"],
+      note: "Criterios de evaluación propuestos; no son resultados reportados.",
+    },
+  },
+  "bruja-roja": {
+    contribution: {
+      label: "Trabajo en equipo",
+      summary: "Participación en la construcción de la identidad, su universo visual y sus aplicaciones de marca.",
+      scope: ["Territorio de marca", "Sistema visual", "Aplicaciones y tono"],
+      note: "El entregable original acredita el proyecto de forma colectiva; no asigna autoría por pieza.",
+    },
+    evaluation: {
+      title: "Qué habría validado la propuesta",
+      body: "Una identidad de categoría sensible debe ser reconocible y, a la vez, hacer que la conversación resulte más abierta y menos estigmatizada.",
+      signals: ["Reconocimiento de los activos de marca", "Asociación con autonomía y reutilización", "Comprensión y aceptación del tono de comunicación"],
+      note: "Criterios de evaluación propuestos; no son resultados reportados.",
+    },
+  },
+};
+
+const CASE_PROCESS_ADDITIONS: Record<
+  string,
+  { before?: ProcessBlock[]; after?: ProcessBlock[] }
+> = {
+  iberia: {
+    before: [{ type: "INVESTIGACIÓN", title: "La barrera era la desconfianza", body: "El análisis del contexto mostró que la sostenibilidad en aviación no se recibe como una promesa neutra. Antes de decidir el mensaje, había que atender a la distancia entre compromiso declarado y percepción pública." }],
+  },
+  "el-regalo-no-deseado": {
+    before: [{ type: "INVESTIGACIÓN", title: "Tradición no basta para entrar en la conversación", body: "El reto no era explicar el producto, sino darle una entrada cultural a una audiencia que espera sorpresa, experiencia y una razón para compartir." }],
+    after: [{ type: "RESULTADO", title: "Una idea que cambia según el soporte", body: "La campaña se concretó en una marquesina, una intervención de metro y un storyboard: tres ejecuciones que convierten el cambio de perspectiva en acción." }],
+  },
+  ryanair: {
+    after: [{ type: "RESULTADO", title: "Un recorrido, no acciones sueltas", body: "El resultado fue un sistema de comunicación interna que conecta la primera semana, el acompañamiento y el reconocimiento en lugar de tratarlos como comunicaciones aisladas." }],
+  },
+  "warriors-arena": {
+    before: [{ type: "INVESTIGACIÓN", title: "El formato debía responder a un mercado", body: "Antes de definir canales, se compararon perfiles de comprador, hábitos de consumo y posibilidades de adaptación para decidir quién podía dar recorrido real al formato." }],
+    after: [{ type: "RESULTADO", title: "Una propuesta comercial defendible", body: "El proyecto terminó con una arquitectura de ventas: compradores prioritarios, secuencia de ventanas y criterios para seguir el rendimiento después del estreno." }],
+  },
+  "bruja-roja": {
+    before: [{ type: "INVESTIGACIÓN", title: "La categoría arrastra códigos que silencian", body: "La propuesta parte de una observación de categoría: muchos códigos visuales normalizan desde la discreción. La marca necesitaba una posición que hablara de autonomía sin suavizar el tema." }],
+    after: [{ type: "INSIGHT", title: "Una identidad también decide qué conversación permite", body: "El universo esotérico no se eligió como adorno. Sirve para convertir ciclo, conocimiento y poder personal en un lenguaje reconocible y aplicable." }],
+  },
+};
+
 // ─── FUNCIÓN: obtener datos completos del proyecto ────────────────────────────
 function getProjectData(slug: string): CaseStudyData {
   const project = projectContent[slug];
@@ -521,6 +637,8 @@ function getProjectData(slug: string): CaseStudyData {
   const nextSlug = projectSequence[index + 1];
 
   const narrative = CASE_NARRATIVES[slug];
+  const accountability = CASE_ACCOUNTABILITY[slug];
+  const processAdditions = CASE_PROCESS_ADDITIONS[slug];
   return {
     ...DEMO_DATA,
     slug,
@@ -538,7 +656,11 @@ function getProjectData(slug: string): CaseStudyData {
       objective: undefined,
       background: `Contexto: ${project.context.toLowerCase()}.`,
     },
-    blocks: narrative?.blocks ?? [
+    blocks: narrative?.blocks ? [
+      ...(processAdditions?.before ?? []),
+      ...narrative.blocks,
+      ...(processAdditions?.after ?? []),
+    ] : [
       {
         type: "CONTEXTO",
         title: "Contexto",
@@ -551,6 +673,8 @@ function getProjectData(slug: string): CaseStudyData {
         annotation: isPendingContent(project.contribution) ? undefined : project.contribution,
       },
     ].filter((block) => Boolean(block.body || block.annotation)),
+    contribution: accountability?.contribution,
+    evaluation: accountability?.evaluation,
     evidencias: narrative?.evidencias ?? (project.media.some((media) => media.src)
       ? {
           compositions: [
@@ -1650,7 +1774,154 @@ export function CaseStudyPage() {
         )}
 
         {/* ══════════════════════════════════════════════════════
-            04 — REFLEXIÓN
+            04 — PARTICIPACIÓN Y EVALUACIÓN
+            Distingue el alcance acreditado de los resultados que no se pueden atribuir.
+        ══════════════════════════════════════════════════════ */}
+        {(data.contribution || data.evaluation) && (
+          <section
+            className="px-8 py-14 md:py-18"
+            style={{ background: "hsl(38 22% 95%)" }}
+            aria-label="Participación y evaluación"
+          >
+            <div className="mx-auto max-w-7xl">
+              <MotionWrapper>
+                <div
+                  className="mb-10 flex items-baseline gap-4 pb-5"
+                  style={{ borderBottom: "1px solid hsl(24 18% 10% / 0.14)" }}
+                >
+                  <span
+                    className="font-mono text-[10px] font-bold"
+                    style={{ color: "hsl(44 95% 38%)" }}
+                  >
+                    04
+                  </span>
+                  <p
+                    className="font-mono text-[10px] uppercase tracking-[0.22em]"
+                    style={{ color: "hsl(24 18% 10% / 0.50)" }}
+                  >
+                    Alcance y evaluación
+                  </p>
+                </div>
+              </MotionWrapper>
+
+              <div className="grid gap-5 lg:grid-cols-2">
+                {data.contribution && (
+                  <MotionWrapper delay={0.04}>
+                    <div
+                      className="h-full p-7"
+                      style={{
+                        background: "hsl(40 20% 97%)",
+                        border: "1px solid hsl(24 18% 10% / 0.12)",
+                        borderTop: "3px solid hsl(44 95% 48%)",
+                      }}
+                    >
+                      <p
+                        className="font-mono text-[9px] uppercase tracking-widest"
+                        style={{ color: "hsl(44 95% 32%)" }}
+                      >
+                        {data.contribution.label}
+                      </p>
+                      <h2
+                        className="mt-3 font-serif text-2xl font-medium"
+                        style={{ color: "hsl(24 18% 10%)" }}
+                      >
+                        Mi participación
+                      </h2>
+                      <p
+                        className="mt-4 font-sans text-sm leading-relaxed"
+                        style={{ color: "hsl(24 18% 10% / 0.70)" }}
+                      >
+                        {data.contribution.summary}
+                      </p>
+                      <ul className="mt-6 grid gap-2 sm:grid-cols-3">
+                        {data.contribution.scope.map((item) => (
+                          <li
+                            key={item}
+                            className="font-mono text-[9px] leading-relaxed"
+                            style={{ color: "hsl(24 18% 10% / 0.52)" }}
+                          >
+                            <span style={{ color: "hsl(44 95% 38%)" }}>+</span> {item}
+                          </li>
+                        ))}
+                      </ul>
+                      {data.contribution.note && (
+                        <p
+                          className="mt-6 border-t pt-4 font-mono text-[9px] italic leading-relaxed"
+                          style={{
+                            borderColor: "hsl(24 18% 10% / 0.10)",
+                            color: "hsl(24 18% 10% / 0.38)",
+                          }}
+                        >
+                          {data.contribution.note}
+                        </p>
+                      )}
+                    </div>
+                  </MotionWrapper>
+                )}
+
+                {data.evaluation && (
+                  <MotionWrapper delay={0.08}>
+                    <div
+                      className="h-full p-7"
+                      style={{ background: "hsl(25 20% 10%)" }}
+                    >
+                      <p
+                        className="font-mono text-[9px] uppercase tracking-widest"
+                        style={{ color: "hsl(44 95% 58%)" }}
+                      >
+                        Criterio de éxito
+                      </p>
+                      <h2
+                        className="mt-3 font-serif text-2xl font-medium"
+                        style={{ color: "hsl(36 18% 92%)" }}
+                      >
+                        {data.evaluation.title}
+                      </h2>
+                      <p
+                        className="mt-4 font-sans text-sm leading-relaxed"
+                        style={{ color: "hsl(0 0% 100% / 0.66)" }}
+                      >
+                        {data.evaluation.body}
+                      </p>
+                      <ul className="mt-6 space-y-2.5">
+                        {data.evaluation.signals.map((signal) => (
+                          <li key={signal} className="flex gap-3">
+                            <span
+                              className="font-mono text-xs"
+                              style={{ color: "hsl(44 95% 48%)" }}
+                            >
+                              →
+                            </span>
+                            <span
+                              className="font-sans text-sm leading-relaxed"
+                              style={{ color: "hsl(0 0% 100% / 0.74)" }}
+                            >
+                              {signal}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                      {data.evaluation.note && (
+                        <p
+                          className="mt-6 border-t pt-4 font-mono text-[9px] italic leading-relaxed"
+                          style={{
+                            borderColor: "hsl(0 0% 100% / 0.12)",
+                            color: "hsl(0 0% 100% / 0.40)",
+                          }}
+                        >
+                          {data.evaluation.note}
+                        </p>
+                      )}
+                    </div>
+                  </MotionWrapper>
+                )}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* ══════════════════════════════════════════════════════
+            05 — REFLEXIÓN
             Final compacto. Honesto, no conclusivo.
         ══════════════════════════════════════════════════════ */}
         {data.reflexion && (
