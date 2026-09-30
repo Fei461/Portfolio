@@ -44,6 +44,8 @@ function ReadTime({ mins }: { mins: number }) {
 
 // Fecha formateada
 function NoteDate({ raw }: { raw: string }) {
+  if (!raw) return null;
+
   const [year, month] = raw.split("-");
   const monthNames = [
     "ENE",
@@ -199,7 +201,9 @@ function FeaturedNoteCard({ note }: { note: Note }) {
             {note.annotation}
           </p>
           <a
-            href="#archivo"
+            href={note.sourceUrl}
+            target="_blank"
+            rel="noreferrer"
             className="inline-flex items-center gap-1.5 transition-opacity hover:opacity-70 shrink-0"
             style={{
               fontFamily: "var(--font-mono)",
@@ -208,9 +212,9 @@ function FeaturedNoteCard({ note }: { note: Note }) {
               letterSpacing: "0.14em",
               color: hovered ? "hsl(44 95% 58%)" : "hsl(44 95% 30%)",
             }}
-            aria-label={`Ficha de ${note.title} en preparación`}
+            aria-label={`Ver ${note.title} en LinkedIn`}
           >
-            En preparación <ArrowUpRight size={10} />
+            Ver en LinkedIn <ArrowUpRight size={10} />
           </a>
         </div>
       </div>
@@ -290,7 +294,9 @@ function LargeNoteCard({ note, delay = 0 }: { note: Note; delay?: number }) {
               {note.annotation}
             </p>
             <a
-              href="#archivo"
+              href={note.sourceUrl}
+              target="_blank"
+              rel="noreferrer"
               className="shrink-0 transition-opacity hover:opacity-70"
               style={{
                 fontFamily: "var(--font-mono)",
@@ -302,9 +308,9 @@ function LargeNoteCard({ note, delay = 0 }: { note: Note; delay?: number }) {
                 alignItems: "center",
                 gap: "4px",
               }}
-              aria-label="Ficha en preparación"
+              aria-label={`Ver ${note.title} en LinkedIn`}
             >
-              Pendiente <ArrowUpRight size={9} />
+              Ver en LinkedIn <ArrowUpRight size={9} />
             </a>
           </div>
         </div>
@@ -379,7 +385,9 @@ function MediumNoteCard({ note, delay = 0 }: { note: Note; delay?: number }) {
             {note.annotation}
           </p>
           <a
-            href="#archivo"
+            href={note.sourceUrl}
+            target="_blank"
+            rel="noreferrer"
             className="shrink-0 inline-flex items-center gap-1 hover:opacity-70"
             style={{
               fontFamily: "var(--font-mono)",
@@ -388,9 +396,9 @@ function MediumNoteCard({ note, delay = 0 }: { note: Note; delay?: number }) {
               letterSpacing: "0.14em",
               color: "hsl(44 95% 30%)",
             }}
-            aria-label="Ficha en preparación"
+            aria-label={`Ver ${note.title} en LinkedIn`}
           >
-            Pendiente <ArrowUpRight size={9} />
+            Ver en LinkedIn <ArrowUpRight size={9} />
           </a>
         </div>
       </article>
@@ -457,7 +465,9 @@ function SmallNoteCard({ note, delay = 0 }: { note: Note; delay?: number }) {
           <NoteDate raw={note.date} />
           {hovered && (
             <a
-              href="#archivo"
+              href={note.sourceUrl}
+              target="_blank"
+              rel="noreferrer"
               className="inline-flex items-center gap-0.5 hover:opacity-70"
               style={{
                 fontFamily: "var(--font-mono)",
@@ -466,9 +476,9 @@ function SmallNoteCard({ note, delay = 0 }: { note: Note; delay?: number }) {
                 letterSpacing: "0.12em",
                 color: "hsl(44 95% 28%)",
               }}
-              aria-label="Ficha en preparación"
+              aria-label={`Ver ${note.title} en LinkedIn`}
             >
-              Pendiente <ArrowUpRight size={8} />
+              Ver en LinkedIn <ArrowUpRight size={8} />
             </a>
           )}
         </div>
