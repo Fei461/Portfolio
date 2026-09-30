@@ -21,6 +21,17 @@ npm run build
 
 Las imagenes del portfolio se sirven desde `static/assets`, por lo que la aplicacion no depende de Anima ni de su CDN.
 
+## GitHub Pages
+
+Cuando el repositorio sea público, genera la versión estática para Pages y súbela junto al código:
+
+```bash
+npm run build:pages
+```
+
+En GitHub, ve a `Settings > Pages`, selecciona `Deploy from a branch`, rama `main` y carpeta `/docs`.
+No abras `index.html` ni `src/index.tsx` directamente: Vite debe generar primero la carpeta `docs`.
+
 ## Editing the portfolio
 
 ### Cambiar información personal

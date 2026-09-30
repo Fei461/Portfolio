@@ -6,7 +6,8 @@
   "description": "Portfolio personal de Lara Feijoo",
   "scripts": {
     "dev": "vite",
-    "build": "vite build"
+    "build": "vite build",
+    "build:pages": "vite build --base=/Portfolio/ --outDir docs"
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.1.10",
