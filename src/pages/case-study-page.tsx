@@ -443,7 +443,7 @@ void PROJECT_REGISTRY;
 // Narrativas verificadas a partir de los entregables académicos originales.
 const CASE_NARRATIVES: Record<
   string,
-  Pick<CaseStudyData, "opening" | "blocks" | "reflexion">
+  Pick<CaseStudyData, "opening" | "blocks" | "evidencias" | "reflexion">
 > = {
   iberia: {
     opening: {
@@ -459,6 +459,7 @@ const CASE_NARRATIVES: Record<
       { type: "DECISIÓN", title: "Una restauración que no termina", body: "La campaña usa la restauración de una obra deteriorada como metáfora de la transición: reconocer el daño, mostrar las acciones y no fingir que el proceso está acabado." },
       { type: "RESULTADO", title: "Un sistema de soportes coherente", body: "La idea se trasladó a spot, experiencia en aeropuerto, email y prensa: cada formato hace tangible la limpieza gradual sin convertirla en una promesa absoluta." },
     ],
+    evidencias: { intro: "La propuesta se diseñó como un proceso visible, no como una promesa cerrada.", compositions: [{ layout: "wide", item: { type: "diagram", title: "De la huella a la transición", description: "Una secuencia narrativa que transforma el problema en acciones comprobables.", nodes: ["Huella reconocida", "Acciones en curso", "Proceso visible", "Confianza construida"] }, annotation: "La restauración queda deliberadamente inacabada." }] },
     reflexion: { headline: "La sostenibilidad exige precisión", body: "Aprendimos que, en territorios con tanta desconfianza, una marca gana más credibilidad al explicar límites y proceso que al intentar parecer resuelta.", learnings: ["Reformular el brief cuando la percepción pública revela otro problema.", "Usar una idea creativa como prueba de coherencia, no como decoración."], annotation: "Proyecto académico en equipo." },
   },
   "el-regalo-no-deseado": {
@@ -468,6 +469,7 @@ const CASE_NARRATIVES: Record<
       { type: "DECISIÓN", title: "Convertir el trampantojo en relato", body: "El concepto toma prestada la lógica del trampantojo: un envoltorio inesperado cambia de sentido cuando se descubre lo que contiene." },
       { type: "SISTEMA", title: "De la marquesina al metro", body: "La idea se tradujo en exterior holográfico, una intervención de metro y piezas digitales. Cada soporte plantea un cambio de perspectiva, no una repetición del mismo mensaje." },
     ],
+    evidencias: { intro: "El mismo mecanismo creativo se adapta a cada punto de contacto.", compositions: [{ layout: "wide", item: { type: "diagram", title: "Un regalo que cambia de sentido", description: "El recorrido convierte una primera impresión en descubrimiento.", nodes: ["Envoltorio inesperado", "Curiosidad", "Descubrimiento", "Producto revalorizado"] }, annotation: "El soporte no ilustra la idea: la hace ocurrir." }] },
     reflexion: { headline: "Una idea puede unir producto y conversación", body: "El proyecto demostró que una campaña de producto gana interés cuando el mecanismo creativo nace de una tensión que la audiencia reconoce.", learnings: ["Hacer que el soporte participe en la idea.", "Traducir un valor de marca en una experiencia concreta."], annotation: "Proyecto académico en equipo." },
   },
   ryanair: {
@@ -477,6 +479,7 @@ const CASE_NARRATIVES: Record<
       { type: "DECISIÓN", title: "La cultura se trabaja en momentos", body: "En lugar de limitarse a comunicaciones descendentes, el plan prioriza momentos de vínculo: premios, bienvenida, mentoría y contenido compartido." },
       { type: "SISTEMA", title: "Una acogida que continúa", body: "Cabin Crew Awards, buddy program, welcome kit e intranet forman un sistema de reconocimiento, integración y circulación de historias internas." },
     ],
+    evidencias: { intro: "La propuesta conecta relación, reconocimiento y acompañamiento en lugar de sumar mensajes aislados.", compositions: [{ layout: "wide", item: { type: "diagram", title: "Sistema de pertenencia", description: "Una experiencia interna diseñada por momentos, públicos y vínculos.", nodes: ["Mapa de stakeholders", "Acogida", "Mentoría", "Reconocimiento"] }, annotation: "La cultura se construye en las interacciones repetidas." }] },
     reflexion: { headline: "La comunicación interna no es solo informar", body: "El valor del trabajo está en tratar la cultura como una experiencia que se diseña, especialmente al entrar, colaborar y ser reconocido.", learnings: ["Priorizar públicos antes de elegir canales.", "Diferenciar comunicación operativa de pertenencia."], annotation: "Proyecto académico en equipo." },
   },
   "warriors-arena": {
@@ -486,6 +489,7 @@ const CASE_NARRATIVES: Record<
       { type: "DECISIÓN", title: "Vender por ventanas, no de una vez", body: "La estrategia combina una primera ventana OTT global, una segunda en televisión y una tercera AVOD o de nicho cuando se liberan los derechos." },
       { type: "SISTEMA", title: "Un plan comercial que se puede medir", body: "Se definieron clientes prioritarios, mercados profesionales y un calendario de lanzamiento que conecta teasers, ferias, promoción social, venta y seguimiento de KPIs." },
     ],
+    evidencias: { intro: "La estrategia convierte el formato en una propiedad que puede circular y escalar.", compositions: [{ layout: "wide", item: { type: "diagram", title: "Arquitectura de distribución", description: "Las ventanas prolongan el valor del contenido y amplían su audiencia.", nodes: ["OTT global", "Televisión", "AVOD y nicho", "Adaptaciones locales"] }, annotation: "Los derechos se liberan cuando abren una nueva oportunidad." }] },
     reflexion: { headline: "El contenido también necesita modelo de negocio", body: "Este proyecto convirtió una idea de entretenimiento en una propuesta comercial: pensar dónde se estrena, quién la compra y cómo prolonga su valor.", learnings: ["Traducir una audiencia en una estrategia de ventanas.", "Plantear KPIs antes de la distribución."], annotation: "Proyecto académico individual." },
   },
   "bruja-roja": {
@@ -495,6 +499,7 @@ const CASE_NARRATIVES: Record<
       { type: "SISTEMA", title: "Una identidad que se reconoce antes de leer", body: "El manual define la relación entre símbolo, color, tipografía y patrones para que cada aplicación mantenga coherencia sin perder expresividad." },
       { type: "RESULTADO", title: "Del logotipo a las aplicaciones", body: "El resultado es un sistema preparado para publicaciones, productos y piezas de comunicación, no solo una marca presentada en una portada." },
     ],
+    evidencias: { intro: "La identidad se define como un sistema de decisiones, no como un logotipo aislado.", compositions: [{ layout: "wide", item: { type: "diagram", title: "Código visual de Bruja Roja", description: "Los elementos trabajan juntos para sostener una voz reconocible en cada aplicación.", nodes: ["Símbolo", "Paleta", "Tipografía", "Aplicaciones"] }, annotation: "La coherencia permite que la marca sea expresiva sin perderse." }] },
     reflexion: { headline: "La identidad empieza por el significado", body: "El proyecto refuerza que un sistema visual funciona mejor cuando cada decisión responde a una postura de marca y no solo a una estética.", learnings: ["Construir consistencia entre discurso y forma.", "Diseñar reglas que permitan aplicar la marca."], annotation: "Proyecto académico en equipo." },
   },
 };
@@ -541,7 +546,7 @@ function getProjectData(slug: string): CaseStudyData {
         annotation: isPendingContent(project.contribution) ? undefined : project.contribution,
       },
     ].filter((block) => Boolean(block.body || block.annotation)),
-    evidencias: project.media.some((media) => media.src)
+    evidencias: narrative?.evidencias ?? (project.media.some((media) => media.src)
       ? {
           compositions: [
             {
@@ -556,7 +561,7 @@ function getProjectData(slug: string): CaseStudyData {
             },
           ],
         }
-      : undefined,
+      : undefined),
     reflexion: narrative?.reflexion,
     prevProject: previousSlug
       ? { slug: previousSlug, title: projectContent[previousSlug].title, num: String(index).padStart(2, "0") }
