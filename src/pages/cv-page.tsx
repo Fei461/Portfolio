@@ -10,56 +10,89 @@ import {
 } from "@phosphor-icons/react";
 import { SeoHead } from "@/components/seo-head";
 import { MotionWrapper } from "@/components/motion-wrapper";
-import { formatDateRange } from "@/lib/utils";
-import { isPendingContent } from "@/lib/utils";
 import { profile } from "@/data/profile";
-import type { ExperienceRecord, EducationRecord } from "@/types";
 
 // ─── STATIC EDITORIAL DATA ────────────────────────────────────────────────────
 
 const AWARDS = [
   {
-    title: "Stud-IA",
-    org: "Experiencia profesional",
-    note: "Estrategia, gestión de contenidos y trabajo analítico asociado a comunicación y marketing.",
+    title: "Primer premio del Ideathon de Innovación",
+    org: "Universidad Rey Juan Carlos",
+    note: "Reconocimiento universitario de innovación.",
     year: "",
+  },
+  {
+    title: "Producción y estrategia de contenidos para plataformas OTT",
+    org: "RTVE",
+    note: "Curso especializado · junio - octubre de 2025.",
+    year: "2025",
+  },
+  {
+    title: "Inteligencia artificial en medios de comunicación",
+    org: "RTVE",
+    note: "Curso especializado · octubre - noviembre de 2024.",
+    year: "2024",
   },
 ];
 
 const LANGUAGES = profile.languages.map((language) => ({
   lang: language.label,
   code: language.code,
-  level: "Nivel pendiente de confirmar",
-  detail: "Interés y aprendizaje confirmados; falta indicar nivel.",
+  level: language.level,
+  detail: "",
 }));
-
-const SOFTWARE = [
-  {
-    category: "Estrategia y planificación",
-    tools: ["Información en preparación"],
-  },
-  {
-    category: "Diseño y producción visual",
-    tools: ["Información en preparación"],
-  },
-  {
-    category: "Datos y análisis",
-    tools: ["Información en preparación"],
-  },
-  {
-    category: "Comunicación y gestión",
-    tools: ["Información en preparación"],
-  },
-];
 
 const INTERESTS = profile.interests;
 
-const REFERENCES = [
+const EXPERIENCES = [
   {
-    name: "Referencias",
-    role: "",
-    org: "Pendiente de confirmar",
-    note: "Añadir sólo con autorización de las personas implicadas.",
+    id: "stud-ia",
+    date: "ENERO - MAYO 2026",
+    title: "Prácticas en el departamento de Marketing",
+    subtitle: "Stud-IA",
+    detail: "Estrategia de campañas, creación de contenido, análisis de mercado y competencia, y gestión de la reputación.",
+    tags: ["Estrategia", "Contenido", "Investigación"],
+  },
+  {
+    id: "guerreros-profesora",
+    date: "OCTUBRE 2022 - JUNIO 2025",
+    title: "Profesora de artes marciales",
+    subtitle: "Guerreros Galapagar",
+    detail: "Docencia de artes marciales.",
+    tags: ["Docencia", "Liderazgo"],
+  },
+  {
+    id: "guerreros-campamento",
+    date: "VERANOS 2021 - 2025",
+    title: "Monitora de campamento de verano",
+    subtitle: "Guerreros Galapagar",
+    detail: "Dinamización y acompañamiento de actividades de verano.",
+    tags: ["Dinamización", "Responsabilidad"],
+  },
+];
+
+const EDUCATION = [
+  {
+    id: "master-uc3m",
+    date: "DESDE SEPTIEMBRE DE 2026",
+    title: "Máster en Comunicación Publicitaria",
+    subtitle: "Universidad Carlos III de Madrid",
+    detail: "En curso.",
+  },
+  {
+    id: "grado-urjc",
+    date: "SEPTIEMBRE 2022 - JUNIO 2026",
+    title: "Grado en Publicidad y Relaciones Públicas",
+    subtitle: "Universidad Rey Juan Carlos",
+    detail: "Nota media: 8,62.",
+    tags: ["Nota media 8,62"],
+  },
+  {
+    id: "peac",
+    date: "SEPTIEMBRE 2012 - JUNIO 2021",
+    title: "Programa PEAC Madrid Oeste",
+    subtitle: "Programa de Excelencia Educativa para Alumnos con Altas Capacidades",
+    detail: "Actualmente, Alumni PEAC.",
   },
 ];
 
@@ -256,10 +289,6 @@ function EntryRow({
 // ─── MAIN PAGE ────────────────────────────────────────────────────────────────
 
 export function CvPage() {
-  // These collections remain local until final CV data is available.
-  const experiences: ExperienceRecord[] = [];
-  const education: EducationRecord[] = [];
-
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "auto" });
   }, []);
@@ -310,7 +339,7 @@ export function CvPage() {
                 className="font-mono text-[10px] uppercase tracking-[0.26em]"
                 style={{ color: "hsl(24 18% 10% / 0.28)" }}
               >
-                Dossier editorial · 2025
+                Dossier editorial · 2026
               </span>
             </div>
           </div>
@@ -334,7 +363,7 @@ export function CvPage() {
                       className="mt-2 font-mono text-[11px] uppercase tracking-[0.28em]"
                       style={{ color: "hsl(24 18% 10% / 0.45)" }}
                     >
-                      Estrategia · Comunicación · Creatividad
+                      Publicidad · Estrategia · Contenidos
                     </p>
 
                     {/* Fila de datos rápidos */}
@@ -342,7 +371,7 @@ export function CvPage() {
                       {[
                         { label: "Titulación", val: "Publicidad y RRPP" },
                         { label: "Nota media", val: "8,62" },
-                        { label: "Idiomas", val: "ES · GL · EN" },
+                        { label: "Idiomas", val: "ES · EN · CA · FR" },
                         { label: "Proyecto", val: "Talixea (activo)" },
                       ].map(({ label, val }) => (
                         <div key={label} className="flex items-baseline gap-2">
@@ -426,21 +455,11 @@ export function CvPage() {
               subtitle="Trayectoria profesional y práctica"
               defaultOpen={true}
             >
-              {experiences.length === 0 ? (
-                <ExperienceEmpty />
-              ) : (
-                <div>
-                  {(experiences as ExperienceRecord[]).map((item) => (
-                    <EntryRow
-                      key={item.id}
-                      date={formatDateRange(item.startDate, item.endDate)}
-                      title={item.position}
-                      subtitle={item.company}
-                      detail={item.description}
-                    />
-                  ))}
-                </div>
-              )}
+              <div>
+                {EXPERIENCES.map((item) => (
+                  <EntryRow key={item.id} {...item} />
+                ))}
+              </div>
             </CvSection>
 
             {/* ── 02 FORMACIÓN ────────────────────────────────── */}
@@ -451,20 +470,11 @@ export function CvPage() {
               subtitle="Educación académica y titulaciones"
               defaultOpen={true}
             >
-              {education.length === 0 ? (
-                <EducationEmpty />
-              ) : (
-                <div>
-                  {(education as EducationRecord[]).map((item) => (
-                    <EntryRow
-                      key={item.id}
-                      date={formatDateRange(item.startDate, item.endDate)}
-                      title={item.degree}
-                      subtitle={item.institution}
-                    />
-                  ))}
-                </div>
-              )}
+              <div>
+                {EDUCATION.map((item) => (
+                  <EntryRow key={item.id} {...item} />
+                ))}
+              </div>
             </CvSection>
 
             {/* ── 03 RECONOCIMIENTOS ──────────────────────────── */}
@@ -536,6 +546,7 @@ export function CvPage() {
                           {lang.level}
                         </span>
                       </div>
+                      {lang.detail && (
                       <p
                         className="mt-1 font-sans text-sm leading-relaxed"
                         style={{
@@ -545,71 +556,17 @@ export function CvPage() {
                       >
                         {lang.detail}
                       </p>
+                      )}
                     </div>
                   </div>
                 ))}
               </div>
             </CvSection>
 
-            {/* ── 05 SOFTWARE Y HERRAMIENTAS ──────────────────── */}
-            <CvSection
-              id="software"
-              num="05"
-              title="Herramientas"
-              subtitle="Software y plataformas de trabajo"
-              defaultOpen={false}
-            >
-              <div className="grid gap-6 sm:grid-cols-2 pt-2">
-                {SOFTWARE.map((group) => (
-                  <div key={group.category}>
-                    <p
-                      className="font-mono text-[9px] uppercase tracking-widest mb-3"
-                      style={{ color: "hsl(24 18% 10% / 0.35)" }}
-                    >
-                      {group.category}
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      {group.tools.map((tool) => (
-                        <span
-                          key={tool}
-                          className="font-sans text-xs px-2.5 py-1"
-                          style={{
-                            border: "1px solid hsl(24 18% 10% / 0.14)",
-                            color: "hsl(24 18% 10% / 0.68)",
-                            background: "hsl(40 18% 97%)",
-                          }}
-                        >
-                          {tool}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Nota sobre herramientas */}
-              <div
-                className="mt-6 p-4"
-                style={{
-                  background: "hsl(44 95% 48% / 0.05)",
-                  border: "1px solid hsl(44 95% 48% / 0.18)",
-                  borderLeft: "2px solid hsl(44 95% 48% / 0.55)",
-                }}
-              >
-                <p
-                  className="font-mono text-[9px] italic"
-                  style={{ color: "hsl(24 18% 10% / 0.42)" }}
-                >
-                  Las herramientas son medios, no competencias. Lo que importa
-                  es lo que se construye con ellas.
-                </p>
-              </div>
-            </CvSection>
-
-            {/* ── 06 INTERESES ────────────────────────────────── */}
+            {/* ── 05 INTERESES ────────────────────────────────── */}
             <CvSection
               id="intereses"
-              num="06"
+              num="05"
               title="Intereses"
               subtitle="Áreas de curiosidad intelectual y práctica"
               defaultOpen={false}
@@ -640,86 +597,10 @@ export function CvPage() {
               </div>
             </CvSection>
 
-            {/* ── 07 REFERENCIAS ──────────────────────────────── */}
-            <CvSection
-              id="referencias"
-              num="07"
-              title="Referencias"
-              subtitle="Disponibles bajo solicitud"
-              defaultOpen={false}
-            >
-              <div className="grid gap-0 pt-1">
-                {REFERENCES.map((ref, i) => (
-                  <div
-                    key={i}
-                    className="grid gap-2 py-5"
-                    style={{
-                      gridTemplateColumns: "140px 1fr",
-                      borderBottom: "1px solid hsl(24 18% 10% / 0.07)",
-                    }}
-                  >
-                    <p
-                      className="font-mono text-[9px] uppercase tracking-widest pt-0.5"
-                      style={{ color: "hsl(24 18% 10% / 0.32)" }}
-                    >
-                      Ref. 0{i + 1}
-                    </p>
-                    <div>
-                      <h3
-                        className="font-serif font-medium"
-                        style={{
-                          fontSize: "1rem",
-                          color: "hsl(24 18% 10% / 0.55)",
-                          fontStyle: "italic",
-                        }}
-                      >
-                        {ref.name}
-                      </h3>
-                      <p
-                        className="mt-0.5 font-mono text-[9px] uppercase tracking-widest"
-                        style={{ color: "hsl(24 18% 10% / 0.30)" }}
-                      >
-                        {ref.org}
-                      </p>
-                      <p
-                        className="mt-2 font-sans text-sm"
-                        style={{ color: "hsl(24 18% 10% / 0.48)" }}
-                      >
-                        {ref.note}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-
-                {/* CTA de contacto para referencias */}
-                <div
-                  className="mt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 py-4"
-                  style={{ borderTop: "1px solid hsl(24 18% 10% / 0.08)" }}
-                >
-                  <p
-                    className="font-sans text-sm"
-                    style={{ color: "hsl(24 18% 10% / 0.55)" }}
-                  >
-                    Para solicitar referencias, escribe directamente.
-                  </p>
-                  <Link
-                    to="/#contacto"
-                    className="inline-flex items-center gap-2 px-4 py-2 font-sans text-xs font-medium transition-opacity hover:opacity-80"
-                    style={{
-                      border: "1px solid hsl(24 18% 10% / 0.22)",
-                      color: "hsl(24 18% 10% / 0.65)",
-                    }}
-                  >
-                    Contactar <ArrowRight size={11} />
-                  </Link>
-                </div>
-              </div>
-            </CvSection>
-
-            {/* ── 08 CONTACTO ─────────────────────────────────── */}
+            {/* ── 06 CONTACTO ─────────────────────────────────── */}
             <CvSection
               id="contacto"
-              num="08"
+              num="06"
               title="Contacto"
               subtitle="Proyectos y colaboraciones"
               defaultOpen={false}
@@ -729,23 +610,23 @@ export function CvPage() {
                   {
                     icon: <Envelope size={14} />,
                     label: "Email",
-                    value: "",
-                    href: "#contacto",
+                    value: "lara.feijoo@gmail.com",
+                    href: "mailto:lara.feijoo@gmail.com",
                   },
                   {
                     icon: <LinkedinLogo size={14} />,
                     label: "LinkedIn",
-                    value: "",
-                    href: "#contacto",
+                    value: "linkedin.com/in/lara-feijoo",
+                    href: "https://www.linkedin.com/in/lara-feijoo",
                   },
                   {
                     icon: <ArrowUpRight size={14} />,
                     label: "Portfolio",
-                    value: "larafeijoo.com",
+                    value: "Ver proyectos",
                     href: "/trabajo",
                     internal: true,
                   },
-                ].filter((contact) => contact.internal || !isPendingContent(contact.value)).map((contact) => (
+                ].map((contact) => (
                   <div
                     key={contact.label}
                     className="p-4 group"
