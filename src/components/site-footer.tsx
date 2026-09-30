@@ -43,7 +43,7 @@ export function SiteFooter() {
             </div>
           </section>
         )}
-        <div className="grid gap-10 pb-10 md:grid-cols-[1.5fr_1fr]">
+        <div className="grid gap-10 pb-10 md:grid-cols-[1.25fr_1fr_1fr]">
           <div>
             <p className="font-serif text-2xl font-semibold text-white">
               Lara Feijóo
@@ -108,8 +108,8 @@ export function SiteFooter() {
           <p className="font-sans text-xs text-white/30">
             © {new Date().getFullYear()} Lara Feijóo
           </p>
-          <p className="font-mono text-[10px] text-white/20">
-            CULO INQUIETO.
+          <p className="font-mono text-[10px] uppercase tracking-widest text-white/20">
+            Estrategia y comunicación
           </p>
         </div>
       </div>

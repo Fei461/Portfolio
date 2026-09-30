@@ -92,6 +92,7 @@ export type CaseStudyData = {
     secondReading?: string; // la segunda lectura — hover / revela
     brief?: string; // el encargo (si lo había)
     objective?: string; // objetivo del trabajo
+    target?: string;
     background?: string; // contexto adicional
   };
 
@@ -451,6 +452,7 @@ const CASE_NARRATIVES: Record<
       secondReading: "Era un problema de credibilidad.",
       brief: "Construir una campaña para comunicar la transición sostenible de Iberia.",
       objective: "Evitar el greenwashing y explicar un proceso real, lento y todavía incompleto.",
+      target: "Viajeros jóvenes preocupados por el impacto climático y escépticos ante los mensajes verdes.",
       background: "La propuesta parte de la brecha entre las acciones de la aerolínea y la desconfianza del público ante los mensajes verdes.",
     },
     blocks: [
@@ -459,47 +461,47 @@ const CASE_NARRATIVES: Record<
       { type: "DECISIÓN", title: "Una restauración que no termina", body: "La campaña usa la restauración de una obra deteriorada como metáfora de la transición: reconocer el daño, mostrar las acciones y no fingir que el proceso está acabado." },
       { type: "RESULTADO", title: "Un sistema de soportes coherente", body: "La idea se trasladó a spot, experiencia en aeropuerto, email y prensa: cada formato hace tangible la limpieza gradual sin convertirla en una promesa absoluta." },
     ],
-    evidencias: { intro: "La propuesta se diseñó como un proceso visible, no como una promesa cerrada.", compositions: [{ layout: "wide", item: { type: "diagram", title: "De la huella a la transición", description: "Una secuencia narrativa que transforma el problema en acciones comprobables.", nodes: ["Huella reconocida", "Acciones en curso", "Proceso visible", "Confianza construida"] }, annotation: "La restauración queda deliberadamente inacabada." }] },
+    evidencias: { intro: "La campaña hace visible el proceso en lugar de esconderlo detrás de un mensaje verde.", compositions: [{ layout: "three-grid", items: [{ type: "document", title: "Spot: restauración", description: "Una obra deteriorada abre la conversación sobre daño, transición y responsabilidad." }, { type: "document", title: "Aeropuerto: intervención", description: "Una experiencia participativa lleva el gesto de restaurar al espacio de viaje." }, { type: "document", title: "Email y prensa", description: "Piezas que sostienen el mismo tono: acciones concretas, sin prometer una solución total." }] }, { layout: "wide", item: { type: "diagram", title: "De la huella a la transición", description: "El sistema conecta el reconocimiento del problema con acciones verificables.", nodes: ["Huella reconocida", "Acciones en curso", "Proceso visible", "Confianza"] }, annotation: "La restauración queda deliberadamente inacabada." }] },
     reflexion: { headline: "La sostenibilidad exige precisión", body: "Aprendimos que, en territorios con tanta desconfianza, una marca gana más credibilidad al explicar límites y proceso que al intentar parecer resuelta.", learnings: ["Reformular el brief cuando la percepción pública revela otro problema.", "Usar una idea creativa como prueba de coherencia, no como decoración."], annotation: "Proyecto académico en equipo." },
   },
   "el-regalo-no-deseado": {
-    opening: { headline: "Parecía un turrón difícil de hacer relevante.", secondReading: "Era una historia sobre lo que juzgamos antes de descubrir.", brief: "Acercar la gama Sinergia de Torrons Vicens a una audiencia joven.", objective: "Convertir tradición e innovación en una experiencia con una lectura cultural propia.", background: "El producto reunía técnica turronera y colaboración gastronómica; el reto era que eso tuviera significado para Generación Z." },
+    opening: { headline: "Parecía un turrón difícil de hacer relevante.", secondReading: "Era una historia sobre lo que juzgamos antes de descubrir.", brief: "Acercar la gama Sinergia de Torrons Vicens a una audiencia joven.", objective: "Convertir tradición e innovación en una experiencia con una lectura cultural propia.", target: "Generación Z que valora la autenticidad, la experiencia y los productos con historia.", background: "El producto reunía técnica turronera y colaboración gastronómica; el reto era que eso tuviera significado para Generación Z." },
     blocks: [
       { type: "INSIGHT", title: "No todo lo valioso entra por los ojos", body: "La propuesta parte del prejuicio superficial: tanto las personas como los productos pueden ser descartados antes de que alguien descubra su interior.", quote: "El regalo no deseado." },
       { type: "DECISIÓN", title: "Convertir el trampantojo en relato", body: "El concepto toma prestada la lógica del trampantojo: un envoltorio inesperado cambia de sentido cuando se descubre lo que contiene." },
       { type: "SISTEMA", title: "De la marquesina al metro", body: "La idea se tradujo en exterior holográfico, una intervención de metro y piezas digitales. Cada soporte plantea un cambio de perspectiva, no una repetición del mismo mensaje." },
     ],
-    evidencias: { intro: "El mismo mecanismo creativo se adapta a cada punto de contacto.", compositions: [{ layout: "wide", item: { type: "diagram", title: "Un regalo que cambia de sentido", description: "El recorrido convierte una primera impresión en descubrimiento.", nodes: ["Envoltorio inesperado", "Curiosidad", "Descubrimiento", "Producto revalorizado"] }, annotation: "El soporte no ilustra la idea: la hace ocurrir." }] },
+    evidencias: { intro: "El trampantojo se convierte en un mecanismo que se experimenta en cada soporte.", compositions: [{ layout: "three-grid", items: [{ type: "document", title: "Marquesina holográfica", description: "Una pieza exterior que cambia según el punto de vista del espectador." }, { type: "document", title: "Metro intervenido", description: "Un recorrido físico que convierte el descubrimiento en experiencia compartida." }, { type: "document", title: "Vídeo y redes", description: "Una narrativa breve que revela el producto cuando la expectativa cambia." }] }, { layout: "wide", item: { type: "diagram", title: "Un regalo que cambia de sentido", description: "El recorrido lleva de la primera impresión al valor que estaba oculto.", nodes: ["Envoltorio", "Curiosidad", "Descubrimiento", "Revalorizar"] }, annotation: "El soporte no ilustra la idea: la hace ocurrir." }] },
     reflexion: { headline: "Una idea puede unir producto y conversación", body: "El proyecto demostró que una campaña de producto gana interés cuando el mecanismo creativo nace de una tensión que la audiencia reconoce.", learnings: ["Hacer que el soporte participe en la idea.", "Traducir un valor de marca en una experiencia concreta."], annotation: "Proyecto académico en equipo." },
   },
   ryanair: {
-    opening: { headline: "Parecía un problema de mensajes internos.", secondReading: "Era un problema de pertenencia.", brief: "Proponer acciones de comunicación interna para mejorar la experiencia de empleado.", objective: "Distinguir información, acogida y reconocimiento para construir un plan que responda a distintos públicos internos.", background: "La propuesta se apoya en un mapa de stakeholders y prioriza las relaciones con mayor urgencia, legitimidad y poder." },
+    opening: { headline: "Parecía un problema de mensajes internos.", secondReading: "Era un problema de pertenencia.", brief: "Proponer acciones de comunicación interna para mejorar la experiencia de empleado.", objective: "Distinguir información, acogida y reconocimiento para construir un plan que responda a distintos públicos internos.", target: "Empleados de Ryanair, con foco en nuevas incorporaciones y equipos con alta exposición operativa.", background: "La propuesta se apoya en un mapa de stakeholders y prioriza las relaciones con mayor urgencia, legitimidad y poder." },
     blocks: [
       { type: "INVESTIGACIÓN", title: "Primero, ordenar las relaciones", body: "El mapa de stakeholders permitió evitar una solución única: sindicatos, empleados, reguladores y dirección tienen expectativas y capacidad de influencia distintas." },
       { type: "DECISIÓN", title: "La cultura se trabaja en momentos", body: "En lugar de limitarse a comunicaciones descendentes, el plan prioriza momentos de vínculo: premios, bienvenida, mentoría y contenido compartido." },
       { type: "SISTEMA", title: "Una acogida que continúa", body: "Cabin Crew Awards, buddy program, welcome kit e intranet forman un sistema de reconocimiento, integración y circulación de historias internas." },
     ],
-    evidencias: { intro: "La propuesta conecta relación, reconocimiento y acompañamiento en lugar de sumar mensajes aislados.", compositions: [{ layout: "wide", item: { type: "diagram", title: "Sistema de pertenencia", description: "Una experiencia interna diseñada por momentos, públicos y vínculos.", nodes: ["Mapa de stakeholders", "Acogida", "Mentoría", "Reconocimiento"] }, annotation: "La cultura se construye en las interacciones repetidas." }] },
+    evidencias: { intro: "Tres intervenciones construyen una misma experiencia de pertenencia.", compositions: [{ layout: "three-grid", items: [{ type: "document", title: "Cabin Crew Awards", description: "Un ritual de reconocimiento para hacer visibles los logros de los equipos." }, { type: "document", title: "Buddy Program", description: "Un sistema de mentoría que acompaña las primeras semanas de incorporación." }, { type: "document", title: "Historias con altura", description: "Contenido interno para compartir experiencia, conocimiento y cultura." }] }, { layout: "wide", item: { type: "diagram", title: "De la acogida al reconocimiento", description: "La propuesta no trata cada acción como un evento aislado: crea un recorrido de pertenencia.", nodes: ["Entrada", "Acompañamiento", "Conexión", "Reconocimiento"] }, annotation: "El empleado deja de ser solo receptor de información." }] },
     reflexion: { headline: "La comunicación interna no es solo informar", body: "El valor del trabajo está en tratar la cultura como una experiencia que se diseña, especialmente al entrar, colaborar y ser reconocido.", learnings: ["Priorizar públicos antes de elegir canales.", "Diferenciar comunicación operativa de pertenencia."], annotation: "Proyecto académico en equipo." },
   },
   "warriors-arena": {
-    opening: { headline: "Parecía un formato que necesitaba más alcance.", secondReading: "Necesitaba una arquitectura de distribución.", brief: "Diseñar el plan de distribución de un concurso físico pensado para una audiencia internacional.", objective: "Definir compradores, ventanas, derechos y métricas para que el formato pueda escalar en distintos territorios.", background: "Warriors Arena combina espectáculo físico, competición y adaptabilidad cultural en diez episodios de 75 minutos." },
+    opening: { headline: "Parecía un formato que necesitaba más alcance.", secondReading: "Necesitaba una arquitectura de distribución.", brief: "Diseñar el plan de distribución de un concurso físico pensado para una audiencia internacional.", objective: "Definir compradores, ventanas, derechos y métricas para que el formato pueda escalar en distintos territorios.", target: "Plataformas, cadenas y audiencias globales afines a la competición y el entretenimiento físico.", background: "Warriors Arena combina espectáculo físico, competición y adaptabilidad cultural en diez episodios de 75 minutos." },
     blocks: [
       { type: "CONTEXTO", title: "Un formato que viaja", body: "La ausencia de dependencia lingüística y la posibilidad de adaptar pruebas convierten el formato en una propiedad con potencial global." },
       { type: "DECISIÓN", title: "Vender por ventanas, no de una vez", body: "La estrategia combina una primera ventana OTT global, una segunda en televisión y una tercera AVOD o de nicho cuando se liberan los derechos." },
       { type: "SISTEMA", title: "Un plan comercial que se puede medir", body: "Se definieron clientes prioritarios, mercados profesionales y un calendario de lanzamiento que conecta teasers, ferias, promoción social, venta y seguimiento de KPIs." },
     ],
-    evidencias: { intro: "La estrategia convierte el formato en una propiedad que puede circular y escalar.", compositions: [{ layout: "wide", item: { type: "diagram", title: "Arquitectura de distribución", description: "Las ventanas prolongan el valor del contenido y amplían su audiencia.", nodes: ["OTT global", "Televisión", "AVOD y nicho", "Adaptaciones locales"] }, annotation: "Los derechos se liberan cuando abren una nueva oportunidad." }] },
+    evidencias: { intro: "El caso se cuenta desde tres decisiones de negocio, no desde una presentación de producción.", compositions: [{ layout: "three-grid", items: [{ type: "document", title: "Compradores prioritarios", description: "OTT globales y compradores de formato seleccionados por alcance, catálogo y capacidad de adaptación." }, { type: "document", title: "Ventanas de derechos", description: "Primera ventana OTT, segunda televisión y tercera AVOD o nicho para prolongar valor." }, { type: "document", title: "Ruta de lanzamiento", description: "Teasers, mercados profesionales, campaña social y KPIs para sostener la comercialización." }] }, { layout: "wide", item: { type: "diagram", title: "Arquitectura de distribución", description: "Las ventanas amplían audiencia e ingresos sin diluir el formato.", nodes: ["OTT global", "Televisión", "AVOD", "Adaptaciones"] }, annotation: "Los derechos se liberan cuando abren una nueva oportunidad." }] },
     reflexion: { headline: "El contenido también necesita modelo de negocio", body: "Este proyecto convirtió una idea de entretenimiento en una propuesta comercial: pensar dónde se estrena, quién la compra y cómo prolonga su valor.", learnings: ["Traducir una audiencia en una estrategia de ventanas.", "Plantear KPIs antes de la distribución."], annotation: "Proyecto académico individual." },
   },
   "bruja-roja": {
-    opening: { headline: "Parecía un manual de identidad.", secondReading: "Era una forma de abrir conversación.", brief: "Crear una identidad para una marca de copa menstrual.", objective: "Normalizar la menstruación con una voz y un universo visual reconocibles.", background: "La propuesta articula logotipo, paleta, tipografías, aplicaciones y recursos gráficos bajo una estética de misterio, cuidado y poder personal." },
+    opening: { headline: "Parecía un manual de identidad.", secondReading: "Era una forma de abrir conversación.", brief: "Crear una identidad para una marca de copa menstrual.", objective: "Normalizar la menstruación con una voz y un universo visual reconocibles.", target: "Personas jóvenes que buscan alternativas reutilizables y una conversación menos estigmatizada.", background: "La propuesta articula logotipo, paleta, tipografías, aplicaciones y recursos gráficos bajo una estética de misterio, cuidado y poder personal." },
     blocks: [
       { type: "DECISIÓN", title: "Dar a la marca un territorio propio", body: "Bruja Roja usa el imaginario esotérico sin convertirlo en disfraz: funciona como una forma de hablar de ciclos, conocimiento y autonomía." },
       { type: "SISTEMA", title: "Una identidad que se reconoce antes de leer", body: "El manual define la relación entre símbolo, color, tipografía y patrones para que cada aplicación mantenga coherencia sin perder expresividad." },
       { type: "RESULTADO", title: "Del logotipo a las aplicaciones", body: "El resultado es un sistema preparado para publicaciones, productos y piezas de comunicación, no solo una marca presentada en una portada." },
     ],
-    evidencias: { intro: "La identidad se define como un sistema de decisiones, no como un logotipo aislado.", compositions: [{ layout: "wide", item: { type: "diagram", title: "Código visual de Bruja Roja", description: "Los elementos trabajan juntos para sostener una voz reconocible en cada aplicación.", nodes: ["Símbolo", "Paleta", "Tipografía", "Aplicaciones"] }, annotation: "La coherencia permite que la marca sea expresiva sin perderse." }] },
+    evidencias: { intro: "La marca se plantea como un código vivo que puede sostenerse en distintos soportes.", compositions: [{ layout: "three-grid", items: [{ type: "document", title: "Nombre y símbolo", description: "Un territorio verbal que asocia ciclo, autonomía y una conversación sin tabúes." }, { type: "document", title: "Código visual", description: "Paleta, tipografías y recursos que equilibran misterio, cuidado y presencia." }, { type: "document", title: "Aplicaciones", description: "Reglas para producto, publicaciones y comunicación sin perder reconocimiento." }] }, { layout: "wide", item: { type: "diagram", title: "Código visual de Bruja Roja", description: "Cada decisión visual refuerza una misma posición de marca.", nodes: ["Símbolo", "Paleta", "Tipografía", "Aplicaciones"] }, annotation: "La coherencia permite que la marca sea expresiva sin perderse." }] },
     reflexion: { headline: "La identidad empieza por el significado", body: "El proyecto refuerza que un sistema visual funciona mejor cuando cada decisión responde a una postura de marca y no solo a una estética.", learnings: ["Construir consistencia entre discurso y forma.", "Diseñar reglas que permitan aplicar la marca."], annotation: "Proyecto académico en equipo." },
   },
 };
@@ -1371,6 +1373,7 @@ export function CaseStudyPage() {
         ══════════════════════════════════════════════════════ */}
         {(data.opening.brief ||
           data.opening.objective ||
+          data.opening.target ||
           data.opening.background) && (
           <section
             className="px-8 py-14 md:py-18"
@@ -1398,7 +1401,7 @@ export function CaseStudyPage() {
                 </div>
               </MotionWrapper>
 
-              <div className="grid gap-8 lg:grid-cols-3">
+              <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
                 {data.opening.brief && (
                   <MotionWrapper delay={0.04}>
                     <div
@@ -1472,6 +1475,30 @@ export function CaseStudyPage() {
                         style={{ color: "hsl(24 18% 10% / 0.62)" }}
                       >
                         {data.opening.background}
+                      </p>
+                    </div>
+                  </MotionWrapper>
+                )}
+                {data.opening.target && (
+                  <MotionWrapper delay={0.16}>
+                    <div
+                      className="p-6"
+                      style={{
+                        background: "hsl(25 20% 10%)",
+                        borderTop: "3px solid hsl(44 95% 48%)",
+                      }}
+                    >
+                      <p
+                        className="font-mono text-[9px] uppercase tracking-widest mb-3"
+                        style={{ color: "hsl(44 95% 58%)" }}
+                      >
+                        El público
+                      </p>
+                      <p
+                        className="font-serif text-sm font-medium leading-relaxed"
+                        style={{ color: "hsl(36 18% 92%)" }}
+                      >
+                        {data.opening.target}
                       </p>
                     </div>
                   </MotionWrapper>
