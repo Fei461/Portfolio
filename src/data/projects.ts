@@ -31,22 +31,29 @@ export const projectContent: Record<string, ProjectContent> = {
     media: [{ src: assetPath("talixea.png"), alt: "TODO: captura real de Talixea", kind: "image" }],
   },
   iberia: {
-    title: "Iberia", year: "TODO: año", context: "ACADÉMICO", depth: "CASO COMPLETO",
+    title: "Iberia", year: "", context: "ACADÉMICO", depth: "CASO COMPLETO",
     tags: ["Estrategia", "Credibilidad", "Sostenibilidad"], categories: ["ESTRATEGIA", "INVESTIGACIÓN"],
     description: "Trabajo en equipo sobre la brecha entre transición sostenible y percepción pública: el problema de comunicación era la credibilidad.",
-    role: "TODO: mi papel en el equipo", contribution: "TODO: contribución individual.",
-    media: [{ src: assetPath("iberia.png"), alt: "TODO: pieza de Iberia", kind: "image" }],
+    role: "Proyecto académico en equipo", contribution: "Estrategia, narrativa y entregables desarrollados de forma colaborativa.",
+    media: [{ src: assetPath("cases/iberia-restauracion.png"), alt: "Concepto de restauración inacabada para Iberia", kind: "image" }, { src: assetPath("cases/iberia-experiencia.png"), alt: "Activación experiencial de la campaña Iberia", kind: "image" }],
+  },
+  "el-regalo-no-deseado": {
+    title: "Torrons Vicens", year: "", context: "ACADÉMICO", depth: "CASO COMPLETO",
+    tags: ["Creatividad", "Experiencia", "Storytelling"], categories: ["CONTENIDO", "MARCA"],
+    description: "Campaña para Sinergia de Torrons Vicens que convierte el prejuicio sobre lo aparente en una experiencia de descubrimiento.",
+    role: "Proyecto académico en equipo", contribution: "Concepto, narrativa y propuesta de soportes desarrollados de forma colaborativa.",
+    media: [{ src: assetPath("cases/torrons-exterior.png"), alt: "Propuesta exterior para El regalo no deseado", kind: "image" }, { src: assetPath("cases/torrons-digital.png"), alt: "Storyboard y activación digital para El regalo no deseado", kind: "image" }],
   },
   "warriors-arena": {
-    title: "Warriors Arena", year: "TODO: año", context: "ACADÉMICO", depth: "CASO COMPLETO",
+    title: "Warriors Arena", year: "", context: "ACADÉMICO", depth: "CASO COMPLETO",
     tags: ["Contenido", "OTT", "Distribución", "Medios"], categories: ["CONTENIDO", "ESTRATEGIA", "MEDIOS"],
     description: "Trabajo en equipo para ordenar la distribución multicanal y comercial de un formato de entretenimiento de diez episodios.",
-    role: "TODO: mi papel en el equipo", contribution: "TODO: contribución individual.",
-    media: [{ src: assetPath("warriors-arena.png"), alt: "TODO: material de Warriors Arena", kind: "image" }],
+    role: "Proyecto académico individual", contribution: "Diseño de la estrategia de distribución, ventanas y modelo de comercialización.",
+    media: [{ src: assetPath("cases/warriors-mercados.png"), alt: "Mapa de clientes para Warriors Arena", kind: "image" }, { src: assetPath("cases/warriors-ventanas.png"), alt: "Ventanas de distribución para Warriors Arena", kind: "image" }],
   },
   bbva: { title: "BBVA", year: "TODO: año", context: "ACADÉMICO", depth: "CASO BREVE", tags: ["Estrategia", "Comportamiento", "Fraude digital"], categories: ["ESTRATEGIA", "INVESTIGACIÓN"], description: "Trabajo estratégico sobre fraude digital y la confianza excesiva ante amenazas en personas de 18 a 30 años.", role: "TODO: mi papel", contribution: "TODO: contribución individual.", media: [{ alt: "TODO: piezas BBVA", kind: "placeholder" }] },
-  ryanair: { title: "Ryanair", year: "TODO: año", context: "ACADÉMICO", depth: "CASO BREVE", tags: ["Comunicación interna", "Stakeholders", "Onboarding"], categories: ["ESTRATEGIA", "CONTENIDO"], description: "Proyecto académico de comunicación interna centrado en experiencia del empleado, stakeholders, reconocimiento y onboarding.", role: "TODO: mi papel", contribution: "TODO: contribución individual.", media: [{ src: assetPath("ryanair.png"), alt: "TODO: material de Ryanair", kind: "image" }] },
-  "bruja-roja": { title: "Bruja Roja", year: "TODO: año", context: "ACADÉMICO", depth: "CASO BREVE", tags: ["Branding", "Identidad", "Tono de voz"], categories: ["MARCA"], description: "Identidad para una marca de copa menstrual orientada a normalizar la menstruación y romper tabúes.", role: "TODO: mi papel", contribution: "TODO: contribución individual.", media: [{ alt: "TODO: identidad Bruja Roja", kind: "placeholder" }] },
+  ryanair: { title: "Ryanair", year: "", context: "ACADÉMICO", depth: "CASO COMPLETO", tags: ["Comunicación interna", "Stakeholders", "Onboarding"], categories: ["ESTRATEGIA", "CONTENIDO"], description: "Plan de comunicación interna que aborda pertenencia, reconocimiento y acogida desde el mapa de stakeholders.", role: "Proyecto académico en equipo", contribution: "Diagnóstico y propuesta desarrollados de forma colaborativa.", media: [{ src: assetPath("cases/ryanair-stakeholders.png"), alt: "Mapa de stakeholders de Ryanair", kind: "image" }, { src: assetPath("cases/ryanair-onboarding.png"), alt: "Sistema de onboarding propuesto para Ryanair", kind: "image" }] },
+  "bruja-roja": { title: "Bruja Roja", year: "", context: "ACADÉMICO", depth: "CASO COMPLETO", tags: ["Branding", "Identidad", "Tono de voz"], categories: ["MARCA"], description: "Sistema de identidad para una marca de copa menstrual que normaliza la conversación desde un universo visual propio.", role: "Proyecto académico en equipo", contribution: "Identidad y aplicaciones desarrolladas de forma colaborativa.", media: [{ src: assetPath("cases/bruja-identidad.png"), alt: "Manual de identidad de Bruja Roja", kind: "image" }, { src: assetPath("cases/bruja-aplicacion.png"), alt: "Aplicación de marca Bruja Roja", kind: "image" }] },
   "stud-ia": { title: "Stud-IA", year: "TODO: fechas", context: "PROFESIONAL", depth: "CASO BREVE", tags: ["Estrategia", "Contenido", "Research"], categories: ["ESTRATEGIA", "CONTENIDO", "INVESTIGACIÓN"], description: "Experiencia profesional de marketing y comunicación: estrategia, gestión y creación de contenido, copy y trabajo para redes y plataformas.", role: "Prácticas en marketing y comunicación", contribution: "TODO: concretar responsabilidades y ejemplos publicables.", media: [{ alt: "TODO: calendarios, research o ejemplos autorizados", kind: "placeholder" }] },
   oreo: { title: "Oreo", year: "TODO: año", context: "ACADÉMICO", depth: "ARCHIVO", tags: ["Media planning", "Funnel", "KPIs"], categories: ["MEDIOS", "ESTRATEGIA"], description: "Plan de medios académico para público joven: situación, buyer persona, funnel, tácticas, KPIs y modelos de compra.", role: "TODO: mi papel", contribution: "TODO: contribución individual.", media: [{ alt: "TODO: plan de medios Oreo", kind: "placeholder" }] },
   "hermanos-chacon": { title: "Hermanos Chacón", year: "TODO: año", context: "ACADÉMICO", depth: "ARCHIVO", tags: ["Rebranding", "Digitalización", "Negocio local"], categories: ["MARCA", "ESTRATEGIA"], description: "Rebranding de un bar tradicional: modernizar su presencia sin perder la esencia ni el vínculo con el público habitual.", role: "TODO: mi papel", contribution: "TODO: contribución individual.", media: [{ alt: "TODO: identidad Hermanos Chacón", kind: "placeholder" }] },
@@ -54,4 +61,4 @@ export const projectContent: Record<string, ProjectContent> = {
   "tour-cdc-dana": { title: "Tour C de C / DANA", year: "TODO_LARA", context: "ACADÉMICO", depth: "ARCHIVO", tags: ["Comunicación", "Propuesta creativa"], categories: ["CONTENIDO", "ESTRATEGIA"], description: "TODO_LARA: descripción del trabajo y contexto.", role: "TODO_LARA", contribution: "TODO_LARA", media: [{ alt: "TODO_LARA: visual del proyecto", kind: "placeholder" }] },
 };
 
-export const projectSequence = ["talixea", "iberia", "warriors-arena", "bbva", "ryanair", "bruja-roja", "stud-ia", "oreo", "hermanos-chacon", "investigacion-consumo", "tour-cdc-dana"];
+export const projectSequence = ["talixea", "iberia", "el-regalo-no-deseado", "warriors-arena", "ryanair", "bruja-roja", "bbva", "stud-ia", "oreo", "hermanos-chacon", "investigacion-consumo", "tour-cdc-dana"];
