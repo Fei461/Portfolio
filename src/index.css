@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -24,29 +24,29 @@
      Dark blocks: hsl(24·22·9) — carbón más denso.
      Yellow: SOLO descubrimientos, conexiones, navegación activa.
   ──────────────────────────────────────────────────────────────── */
-  --surface-01: 38 20% 91%;
-  --surface-02: 35 24% 85%;
-  --surface-03: 40 18% 95%;
-  --surface-dark: 24 22% 9%;
+  --surface-01: 60 13% 95%;
+  --surface-02: 53 33% 88%;
+  --surface-03: 60 20% 98%;
+  --surface-dark: 0 0% 0%;
   --pure-white: 0 0% 100%;
-  --text-primary: 24 22% 9%;
-  --text-secondary: 24 16% 24%;
-  --text-metadata: 24 13% 34%;
+  --text-primary: 0 0% 0%;
+  --text-secondary: 60 4% 24%;
+  --text-metadata: 60 4% 30%;
   --text-decorative: 24 10% 66%;
 
   --color-background: var(--surface-01); /* papel — base principal */
-  --color-foreground: 24 22% 9%; /* carbón sepia profundo */
+  --color-foreground: 0 0% 0%; /* carbón sepia profundo */
   --color-card: var(--surface-03); /* paper-light — secciones de descanso */
-  --color-card-foreground: 24 18% 10%;
-  --color-popover: 40 20% 98%;
-  --color-popover-foreground: 24 18% 10%;
+  --color-card-foreground: 0 0% 0%;
+  --color-popover: 60 20% 98%;
+  --color-popover-foreground: 0 0% 0%;
 
   /* Amarillo LF — firma de marca, NO texto largo */
-  --color-primary: 44 96% 51%;
-  --color-primary-foreground: 24 18% 8%;
+  --color-primary: 21 55% 27%;
+  --color-primary-foreground: 60 13% 95%;
 
   /* Gris oscuro cálido — texto secundario con mejor contraste */
-  --color-secondary: 24 16% 22%;
+  --color-secondary: 60 4% 22%;
   --color-secondary-foreground: 40 18% 96%;
 
   /* Metadata / eyebrow — más oscuro para legibilidad */
@@ -58,8 +58,8 @@
   --color-muted-foreground: var(--text-secondary);
 
   /* Acento amarillo suave — fondos de highlight */
-  --color-accent: 48 90% 88%;
-  --color-accent-foreground: 24 18% 10%;
+  --color-accent: 54 35% 83%;
+  --color-accent-foreground: 0 0% 0%;
 
   --color-success: 152 62% 30%;
   --color-success-foreground: 0 0% 100%;
@@ -68,9 +68,9 @@
   --color-destructive: 0 72% 44%;
   --color-destructive-foreground: 0 0% 100%;
 
-  --color-border: 32 16% 76%; /* borde cálido más visible */
-  --color-input: 34 16% 84%;
-  --color-ring: 44 95% 48%;
+  --color-border: 60 6% 75%; /* borde cálido más visible */
+  --color-input: 60 6% 84%;
+  --color-ring: 2 77% 47%;
 
   /* ── Escala de grises cálidos ── */
   --color-gray-50: 38 18% 96%;
@@ -85,19 +85,14 @@
   --color-gray-900: 20 18% 8%;
 
   /* ── Dark block LF — carbón sepia más denso ── */
-  --color-ink: 24 22% 9%; /* fondo de bloques oscuros — más profundo */
-  --color-ink-mid: 25 24% 14%; /* variante media oscura */
-  --color-ink-surface: 26 20% 18%; /* superficie sobre oscuro */
-  --color-ink-text: 38 16% 94%; /* texto principal sobre oscuro — más claro */
-  --color-ink-muted: 32 12% 58%; /* texto secundario sobre oscuro — más legible */
+  --color-ink: 0 0% 0%; /* fondo de bloques oscuros — más profundo */
+  --color-ink-mid: 0 0% 8%; /* variante media oscura */
+  --color-ink-surface: 0 0% 14%; /* superficie sobre oscuro */
+  --color-ink-text: 60 13% 95%; /* texto principal sobre oscuro — más claro */
+  --color-ink-muted: 60 5% 65%; /* texto secundario sobre oscuro — más legible */
 
   /* ── Gradientes ── */
-  --gradient-lf: radial-gradient(
-    ellipse 65% 55% at 100% 100%,
-    hsl(50 90% 85% / 0.5) 0%,
-    hsl(44 75% 92% / 0.2) 45%,
-    hsl(38 22% 95%) 70%
-  );
+  --gradient-lf: linear-gradient(hsl(var(--surface-01)), hsl(var(--surface-01)));
   --gradient-2: linear-gradient(
     180deg,
     hsl(38 22% 95%) 0%,
@@ -109,15 +104,11 @@
     hsl(26 24% 15%) 100%
   );
   --gradient-1: var(--gradient-lf);
-  --button-border-gradient: linear-gradient(
-    120deg,
-    hsl(44 95% 48%),
-    hsl(38 80% 40%)
-  );
+  --button-border-gradient: linear-gradient(hsl(var(--color-primary)), hsl(var(--color-primary)));
 
-  --font-sans: "DM Sans", sans-serif;
-  --font-serif: "Playfair Display", serif;
-  --font-mono: "IBM Plex Mono", monospace;
+  --font-sans: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-serif: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-mono: "Bricolage Grotesque", system-ui, sans-serif;
 }
 
 @layer base {

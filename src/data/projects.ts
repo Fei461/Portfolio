@@ -1,3 +1,5 @@
+import { proyectos } from "@/data/proyectos";
+
 export type ProjectDepth = "CASO COMPLETO" | "CASO BREVE" | "ARCHIVO";
 export type ProjectContext = "PERSONAL" | "PROFESIONAL" | "ACADÉMICO";
 
@@ -47,7 +49,7 @@ export const projectContent: Record<string, ProjectContent> = {
   "warriors-arena": {
     title: "Warriors Arena", year: "", context: "ACADÉMICO", depth: "CASO COMPLETO",
     tags: ["Contenido", "OTT", "Distribución", "Medios"], categories: ["CONTENIDO", "ESTRATEGIA", "MEDIOS"],
-    description: "Trabajo en equipo para ordenar la distribución multicanal y comercial de un formato de entretenimiento de diez episodios.",
+    description: "Plan individual para ordenar la distribución multicanal y comercial de un formato de entretenimiento de diez episodios.",
     role: "Proyecto académico individual", contribution: "Diseño de la estrategia de distribución, ventanas y modelo de comercialización.",
     media: [{ src: assetPath("cases/warriors-windows-detail.png"), alt: "Arquitectura de ventanas de distribución para Warriors Arena", kind: "image" }],
   },
@@ -57,8 +59,9 @@ export const projectContent: Record<string, ProjectContent> = {
   "stud-ia": { title: "Stud-IA", year: "TODO: fechas", context: "PROFESIONAL", depth: "CASO BREVE", tags: ["Estrategia", "Contenido", "Research"], categories: ["ESTRATEGIA", "CONTENIDO", "INVESTIGACIÓN"], description: "Experiencia profesional de marketing y comunicación: estrategia, gestión y creación de contenido, copy y trabajo para redes y plataformas.", role: "Prácticas en marketing y comunicación", contribution: "TODO: concretar responsabilidades y ejemplos publicables.", media: [{ alt: "TODO: calendarios, research o ejemplos autorizados", kind: "placeholder" }] },
   oreo: { title: "Oreo", year: "TODO: año", context: "ACADÉMICO", depth: "ARCHIVO", tags: ["Media planning", "Funnel", "KPIs"], categories: ["MEDIOS", "ESTRATEGIA"], description: "Plan de medios académico para público joven: situación, buyer persona, funnel, tácticas, KPIs y modelos de compra.", role: "TODO: mi papel", contribution: "TODO: contribución individual.", media: [{ alt: "TODO: plan de medios Oreo", kind: "placeholder" }] },
   "hermanos-chacon": { title: "Hermanos Chacón", year: "TODO: año", context: "ACADÉMICO", depth: "ARCHIVO", tags: ["Rebranding", "Digitalización", "Negocio local"], categories: ["MARCA", "ESTRATEGIA"], description: "Rebranding de un bar tradicional: modernizar su presencia sin perder la esencia ni el vínculo con el público habitual.", role: "TODO: mi papel", contribution: "TODO: contribución individual.", media: [{ alt: "TODO: identidad Hermanos Chacón", kind: "placeholder" }] },
-  "investigacion-consumo": { title: "Investigación de conducta de consumo", year: "TODO: año", context: "ACADÉMICO", depth: "ARCHIVO", tags: ["Comportamiento", "Consumo", "Psicología"], categories: ["INVESTIGACIÓN"], description: "Investigación sobre gestión emocional, comportamiento alimentario y consumo. Metodología y hallazgos pendientes de documentar.", role: "TODO: mi papel", contribution: "TODO: pregunta, metodología, hallazgo e implicación.", media: [{ alt: "TODO: investigación de conducta", kind: "placeholder" }] },
   "tour-cdc-dana": { title: "Tour C de C / DANA", year: "TODO_LARA", context: "ACADÉMICO", depth: "ARCHIVO", tags: ["Comunicación", "Propuesta creativa"], categories: ["CONTENIDO", "ESTRATEGIA"], description: "TODO_LARA: descripción del trabajo y contexto.", role: "TODO_LARA", contribution: "TODO_LARA", media: [{ alt: "TODO_LARA: visual del proyecto", kind: "placeholder" }] },
 };
 
-export const projectSequence = ["talixea", "iberia", "el-regalo-no-deseado", "warriors-arena", "ryanair", "bruja-roja", "bbva", "stud-ia", "oreo", "hermanos-chacon", "investigacion-consumo", "tour-cdc-dana"];
+// Datos heredados de las páginas de caso antiguas. El orden y la lista de
+// proyectos viven ahora en src/data/proyectos.ts.
+export const projectSequence = proyectos.filter((p) => p.pagina).map((p) => p.slug);

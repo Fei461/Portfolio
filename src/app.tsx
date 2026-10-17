@@ -5,7 +5,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { ScrollProgress } from "@/components/scroll-progress";
 
 const TrabajoPage = lazy(() =>
-  import("@/pages/trabajo-page").then(({ TrabajoPage }) => ({ default: TrabajoPage })),
+  import("@/pages/trabajo/trabajo-page").then(({ TrabajoPage }) => ({ default: TrabajoPage })),
 );
 const SobrePage = lazy(() =>
   import("@/pages/sobre-page").then(({ SobrePage }) => ({ default: SobrePage })),
@@ -16,8 +16,8 @@ const NotasPage = lazy(() =>
 const TalixeaPage = lazy(() =>
   import("@/pages/talixea-page").then(({ TalixeaPage }) => ({ default: TalixeaPage })),
 );
-const CaseStudyPage = lazy(() =>
-  import("@/pages/case-study-page").then(({ CaseStudyPage }) => ({ default: CaseStudyPage })),
+const CasoRouter = lazy(() =>
+  import("@/pages/caso/caso-router").then(({ CasoRouter }) => ({ default: CasoRouter })),
 );
 const CvPage = lazy(() =>
   import("@/pages/cv-page").then(({ CvPage }) => ({ default: CvPage })),
@@ -87,14 +87,6 @@ function App() {
   return (
     <HashRouter>
       <Routes>
-        <Route
-          path="/"
-          element={
-            <Suspense fallback={<PageLoading />}>
-              <InicioPage />
-            </Suspense>
-          }
-        />
         <Route path="/prototipo" element={<Navigate to="/" replace />} />
         <Route path="*" element={<MainLayout />} />
       </Routes>
@@ -104,24 +96,27 @@ function App() {
 
 function MainLayout() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
-        <ScrollProgress />
-        <SiteHeader />
+    <div className="dojo min-h-screen">
+      <ScrollProgress />
+      <SiteHeader />
+      <div id="contenido" tabIndex={-1}>
         <AppErrorBoundary>
           <Suspense fallback={<PageLoading />}>
             <Routes>
+              <Route path="/" element={<InicioPage />} />
               <Route path="/trabajo" element={<TrabajoPage />} />
               <Route path="/sobre" element={<SobrePage />} />
               <Route path="/sobre-mi" element={<SobrePage />} />
               <Route path="/notas" element={<NotasPage />} />
               <Route path="/trabajo/talixea" element={<TalixeaPage />} />
-              <Route path="/trabajo/:slug" element={<CaseStudyPage />} />
+              <Route path="/trabajo/:slug" element={<CasoRouter />} />
               <Route path="/cv" element={<CvPage />} />
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </Suspense>
         </AppErrorBoundary>
-        <SiteFooter />
+      </div>
+      <SiteFooter />
     </div>
   );
 }

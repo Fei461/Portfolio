@@ -71,9 +71,9 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: ['"DM Sans"', "sans-serif"],
-        serif: ['"Playfair Display"', "serif"],
-        mono: ['"IBM Plex Mono"', "monospace"],
+        sans: ['"Bricolage Grotesque"', "system-ui", "sans-serif"],
+        serif: ['"Bricolage Grotesque"', "system-ui", "sans-serif"],
+        mono: ['"Bricolage Grotesque"', "system-ui", "sans-serif"],
       },
       borderRadius: {
         lg: "0.875rem",
