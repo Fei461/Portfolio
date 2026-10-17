@@ -27,7 +27,7 @@ export const santander: CasoCompleto = {
     parrafos: [
       "En 2018 Santander evolucionó su marca para un cliente que vive en el móvil: letra sin remates, fondo blanco y un rojo más vivo. El encargo era evaluar ese logo con los once criterios de calidad de Chaves y Belluccia.",
       "Decidimos que cada nota tenía que poder comprobarse. Por eso trabajamos con tres fuentes de evidencia: la guía de marca del banco, un laboratorio con una prueba por criterio y una encuesta propia.",
-      "La web y la encuesta las hice yo sola. Así el anexo dejó de ser un PDF que nadie abre y pasó a ser algo que se usa: quien lo visita pone su nota y la compara con la nuestra.",
+      "La web y la encuesta las hice yo sola. Después de cuatro años entregando PDF que acaban en una carpeta, me apetecía un anexo que se usara de verdad: quien lo visita pone su nota y la compara con la nuestra.",
     ],
   },
   bloques: [

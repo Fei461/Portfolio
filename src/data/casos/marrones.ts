@@ -85,6 +85,7 @@ export const torrons: CasoCompleto = {
     parrafos: [
       "El brief parecía sencillo: enamorar a la Generación Z para que comprara turrón de alta calidad. El problema, un precio poco asequible para una generación que mira el bolsillo. Y para ellos Sinergia, la línea creada con chefs de alta cocina, era un dulce de Navidad y poco más.",
       "El insight venía de ellos mismos: «Muchas veces no me muestro como soy en realidad por miedo a ser juzgado». Igual que el producto, juzgado por fuera y distinto por dentro.",
+      "Todavía hoy, cada vez que paso por delante de su escaparate en Gran Vía, me acuerdo de este reto.",
     ],
   },
   bloques: [

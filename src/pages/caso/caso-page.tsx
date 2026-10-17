@@ -217,7 +217,7 @@ export function CasoPage({ caso }: { caso: CasoCompleto }) {
             </h2>
             <p className="caso-entradilla">
               {caso.tatami?.intro ??
-                "Lo primero que te enseñan en judo es a caer sin hacerte daño. Esto fue lo que me tocó aprender aquí."}
+                "Lo primero que te enseñan en judo es a caer sin hacerte daño. Aquí me tocó caer unas cuantas veces."}
             </p>
             <ul className="caso-caidas">
               {caso.caidas.map((c) => (

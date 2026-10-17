@@ -16,8 +16,8 @@ export function TrabajoPage() {
     <main className="dojo-seccion trabajo">
       <h1 className="trabajo-titulo">Proyectos</h1>
       <p className="dojo-entradilla">
-        {proyectos.length} trabajos ordenados como en el dojo: por el grado que demuestran. Los de
-        cinturón negro están en el orden en que te los enseñaría en una entrevista.
+        {proyectos.length} trabajos ordenados como en el dojo: por lo que demuestran, no por la nota
+        que sacaron. Los de cinturón negro van en el orden en que te los contaría en persona.
       </p>
 
       <section className="dojo-grado" aria-label="Cinturón negro">
@@ -36,7 +36,8 @@ export function TrabajoPage() {
       </section>
 
       <p className="trabajo-proximo">
-        En camino: Pluvielle, una marca de lujo del máster, en cuanto entregue su plan de medios.
+        En el horno: Pluvielle, una marca de lujo del máster. Llega en cuanto entregue su plan de
+        medios.
       </p>
     </main>
   );

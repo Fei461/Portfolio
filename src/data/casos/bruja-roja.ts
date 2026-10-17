@@ -25,7 +25,7 @@ export const brujaRoja: CasoCompleto = {
     parrafos: [
       "Bruja Roja nace para desafiar los tabúes sobre la menstruación, empoderar a las mujeres y ofrecer una alternativa sostenible con su copa menstrual.",
       "El reto de la asignatura era crear una cuenta en X. Convencí a mi equipo de que había otra forma de abordarlo: buscar la viralidad desde el odio, con un discurso profundamente progresista que chocara con la masculinidad frágil de esa red. Estuvimos cuatro meses publicando sin parar.",
-      "La clave era el tono: directo, provocador y con un punto de ironía. Una marca que habla como esa amiga que te dice las verdades que nadie más se atreve a decir. Por el camino creamos dos productos, colaboramos con otros grupos y lo resumimos todo en un dossier y un manual de marca.",
+      "Fue uno de los trabajos en los que mejor me lo he pasado de toda la carrera. La clave era el tono: directo, provocador y con un punto de ironía. Una marca que habla como esa amiga que te dice las verdades que nadie más se atreve a decir. Por el camino creamos dos productos, colaboramos con otros grupos y lo resumimos todo en un dossier y un manual de marca.",
     ],
   },
   bloques: [

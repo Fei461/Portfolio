@@ -193,14 +193,14 @@ export const porCinturon = (cinturon: Cinturon) =>
 export const cinturones: Record<Cinturon, { nombre: string; nota: string }> = {
   negro: {
     nombre: "Cinturón negro",
-    nota: "Casos completos, con el razonamiento entero.",
+    nota: "Los casos completos: qué me pedían, qué hice y qué me llevé.",
   },
   marron: {
     nombre: "Cinturón marrón",
-    nota: "Casos breves: el reto, lo que aporté y una pieza.",
+    nota: "Casos más cortos: el reto, la idea y alguna pieza.",
   },
   blanco: {
     nombre: "Cinturón blanco",
-    nota: "Donde empecé. Trabajos de la carrera que me enseñaron el oficio.",
+    nota: "Donde empecé. Trabajos de la carrera que me enseñaron el oficio y a perderle el miedo a proponer.",
   },
 };

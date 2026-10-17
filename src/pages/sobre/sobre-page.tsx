@@ -30,7 +30,11 @@ export function SobrePage() {
             No suelo ser la persona con la primera idea. Suelo ser la que quiere entender por qué esa
             idea debería funcionar.
           </p>
-          <p className="pagina-texto">{perfil.resumen}</p>
+          <p className="pagina-texto">
+            Lo que más me tira es la reputación, la percepción de marca, las relaciones públicas y la
+            comunicación, tanto corporativa como interna. Y, por el camino, he descubierto que me
+            flipa entender por qué compramos lo que compramos.
+          </p>
         </div>
         <figure className="pagina-foto">
           <img src={foto} alt="Lara sonriendo con la lengua fuera delante de una cascada" width={1400} height={1050} />

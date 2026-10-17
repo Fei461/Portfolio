@@ -14,24 +14,24 @@ const tiempos = [
     nombre: "Ukemi",
     significado: "Saber caer",
     ejemplo:
-      "Lo primero que te enseñan en judo. En Stud-IA, unas campañas pensadas para pago tuvieron que rehacerse en orgánico cuando ya estaban ideadas. Se rehicieron.",
+      "Lo primero que te enseñan en judo. En Stud-IA nos pasaron unas campañas de pago a orgánico cuando ya estaban pensadas. ¿Dolió? Un poco. Se rehicieron igual.",
   },
   {
     nombre: "Kuzushi",
     significado: "Desequilibrar",
     ejemplo:
-      "Mover el brief antes de aceptarlo. En Iberia, el problema que nos daban no era el problema real.",
+      "Desmontar el brief antes de aceptarlo. En Iberia nos pedían hablar de sostenibilidad, y el problema real era que nadie se lo creía.",
   },
   {
     nombre: "Tsukuri",
     significado: "Colocarse",
     ejemplo:
-      "Investigar y ordenar. Antes de escribir un mensaje B2B, segmenté el sector educativo en trece nichos.",
+      "Investigar y ordenar antes de lanzarme. Antes de escribir un solo mensaje B2B en Stud-IA, dividí el sector educativo en trece nichos.",
   },
   {
     nombre: "Kake",
     significado: "Ejecutar",
-    ejemplo: "Lanzarse del todo. Talixea existe porque decidí hacerla en lugar de seguir buscándola.",
+    ejemplo: "Ir a por todas. Talixea existe porque me cansé de buscarla y decidí hacerla yo.",
   },
 ];
 
@@ -80,8 +80,9 @@ export function InicioPage() {
             <p className="dojo-lema">Publicista con culo inquieto.</p>
             <div className="dojo-intro-caja">
               <p className="dojo-intro">
-                Estrategia, marca y reputación. Piso un tatami desde los siete años y trabajo igual
-                que entreno: con constancia y sin quedarme quieta hasta que algo sale bien.
+                Me muevo entre la estrategia, la marca y la reputación. Piso un tatami desde los siete
+                años y trabajo igual que entreno: con constancia, preguntándolo todo y sin quedarme
+                quieta hasta que algo sale bien.
               </p>
             </div>
             <p className="dojo-busco">
@@ -113,7 +114,8 @@ export function InicioPage() {
 
         <div className="dojo-cinturon">
           <p>
-            Cinturón marrón en judo y azul en taekwondo. En publicidad, entrenando para el negro.
+            Cinturón marrón en judo y azul en taekwondo. ¿En publicidad? Experta todavía no, y está
+            bien.
           </p>
         </div>
 
@@ -122,8 +124,8 @@ export function InicioPage() {
             Trabajo un proyecto como una proyección.
           </h2>
           <p className="dojo-entradilla">
-            En judo, tirar a alguien tiene tres tiempos y una regla previa: saber caer. Llevo años
-            repitiéndolos en el tatami y resulta que también sirven fuera.
+            En judo, una proyección tiene tres tiempos y una regla previa: saber caer. Llevo años
+            repitiéndolos en el tatami y, sin darme cuenta, es también como trabajo fuera de él.
           </p>
           <ol className="dojo-tiempos">
             {tiempos.map((t) => (
@@ -147,7 +149,7 @@ export function InicioPage() {
           </h2>
           <p className="dojo-entradilla">
             Como en el dojo, cada uno tiene su grado según lo que demuestra. Los de cinturón negro
-            están en el orden en que te los enseñaría en una entrevista.
+            van en el orden en que te los contaría si nos sentáramos a tomar un café.
           </p>
 
           <div className="dojo-grado">

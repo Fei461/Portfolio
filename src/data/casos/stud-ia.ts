@@ -24,8 +24,8 @@ export const studIa: CasoCompleto = {
     titulo: "Una startup pequeña, a propósito",
     parrafos: [
       "Stud-IA convierte los apuntes del propio estudiante en flashcards, mapas mentales y simulacros de examen. Tiene dos negocios que hablan de forma muy distinta: los estudiantes (B2C) y los centros educativos (B2B).",
-      "Podía haber elegido una gran empresa con un nombre bonito para el CV. Preferí un equipo de menos de diez personas donde lo que hiciera se notara desde el primer día. Y no me quedé en enviar la solicitud: busqué al equipo de comunicación y les escribí directamente.",
-      "Además, era mi propio público. Empecé con los exámenes finales a tres semanas y el TFG a dos meses: el agobio que tenía que comunicar lo estaba viviendo.",
+      "Cuando buscaba prácticas me encontré en una encrucijada: grandes empresas con buen sueldo y un nombre «seguro» en el CV, o una startup de menos de diez personas de la que ni había oído hablar. No quería ser una becaria más, de las que pasan sin pena ni gloria. Así que no me limité a mandar el CV: busqué al equipo de comunicación y les escribí directamente.",
+      "Y, para qué negarlo, era mi propio público. Empecé con los exámenes finales a tres semanas y el TFG a dos meses, así que el agobio que tenía que comunicar lo estaba viviendo en primera persona.",
     ],
   },
   bloques: [
@@ -41,7 +41,7 @@ export const studIa: CasoCompleto = {
     },
     {
       titulo: "Crear contenido",
-      resumen: "Todo el proceso, del guion a la edición, y después medir.",
+      resumen: "Del guion a la edición. Y después, mirar los números.",
       puntos: [
         "Guiones desglosados por partes, tiempos, acción, audio y texto en pantalla, cada uno dentro de un pilar de contenido.",
         "Grabación y edición propias, más carruseles pensados para guardarse, distintos para estudiantes y para centros.",
@@ -60,7 +60,7 @@ export const studIa: CasoCompleto = {
     },
     {
       titulo: "Leer los datos y cambiar el plan",
-      resumen: "BXT: Bluesky, X y Threads, mi primer ownership. Un informe cada mes.",
+      resumen: "BXT (Bluesky, X y Threads) fue mi primer ownership. Le dediqué un informe cada mes.",
       puntos: [
         "X: las respuestas rápidas a cuentas grandes sumaron 6.577 impresiones frente a 671 del contenido propio. Una respuesta a Lidl logró 784 impresiones, 43 interacciones y 7 visitas al perfil, y se convirtió en el modelo a repetir.",
         "Con esos datos dejé de publicar a diario y de copiar lo mismo en las tres redes: tres publicaciones propias a la semana y cuatro días dedicados a entrar en conversaciones.",
@@ -92,7 +92,7 @@ export const studIa: CasoCompleto = {
   ],
   piezas: {
     titulo: "Piezas publicadas",
-    texto: "Algunos de los vídeos que guioné, grabé y edité. Se reproducen aquí aunque desaparezcan de las redes.",
+    texto: "Algunos de los vídeos que guioné, grabé y edité. Alguno no lo vio ni mi madre (y eso que nos seguía); otro llegó a las 36.000 visualizaciones.",
     videos: [
       {
         src: video("youtube-36k.mp4"),
@@ -131,17 +131,17 @@ export const studIa: CasoCompleto = {
     {
       titulo: "Rehacer campañas ya ideadas",
       texto:
-        "Las campañas de marzo y abril nacieron con presupuesto para medios pagados. Cuando ya estaban pensadas, hubo que rehacerlas para que fueran solo orgánicas. Aprendí que una estrategia no es un documento intocable: es un mapa que se vuelve a dibujar con el contexto.",
+        "Las campañas de marzo y abril nacieron con presupuesto para medios pagados. Cuando ya estaban pensadas, me dijeron que tenían que ser solo orgánicas. Ahí entendí que una estrategia no es un documento sagrado: es un mapa que se vuelve a dibujar cada vez que cambia el terreno.",
     },
     {
       titulo: "De «huevito» a llevar tres redes",
       texto:
-        "Al principio me presentaba como «huevito» y me callaba por miedo a decir una tontería. Detecté un hueco donde yo sí tenía experiencia, X, y lo propuse. Me dijeron «podría estar bien». En la siguiente reunión llevé una estrategia completa para X, Threads y Bluesky, y así nació BXT.",
+        "La etiqueta de «la becaria» a veces pesa más que las ganas. Al principio me presentaba como «huevito» y prefería callarme a equivocarme. Hasta que vi un hueco donde yo sí tenía experiencia, X, y lo propuse. «Podría estar bien», me dijeron. En la siguiente reunión no llevé una idea: llevé la estrategia completa para X, Threads y Bluesky. Así nació BXT.",
     },
     {
       titulo: "Medir sin estadísticas",
       texto:
-        "Bluesky no ofrecía estadísticas propias y en X faltaban datos sin cuenta premium. Llevé un registro manual de las interacciones para encontrar patrones a base de observar.",
+        "Bluesky no daba estadísticas y en X me faltaban datos por no tener cuenta premium. Así que tocó apuntarlo todo a mano y encontrar patrones a base de observar. Poco glamuroso, muy útil.",
     },
   ],
   cita: {
@@ -154,7 +154,7 @@ export const studIa: CasoCompleto = {
     "Solo aprendes de lo que te atreves a decir en voz alta.",
     "Lo urgente y lo importante no son lo mismo, y el día hay que ordenarlo por las dos cosas.",
     "Coordinar un equipo repartido en tres husos horarios es estrategia, no logística.",
-    "En la carrera una campaña tiene meses; en una startup, el tiempo es un recurso más.",
+    "La única idea que seguro que no funciona es la que nunca pruebas.",
   ],
   enLinkedIn: [
     {

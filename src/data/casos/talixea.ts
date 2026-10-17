@@ -26,9 +26,9 @@ export const talixea: CasoCompleto = {
     titulo: "Buscaba algo que no existía",
     parrafos: [
       "Quería aprender idiomas leyendo con un método que me convencía, el diglot weave: lees un texto en tu idioma y, poco a poco, algunas palabras aparecen en el que estás aprendiendo, hasta que el texto acaba casi entero en él.",
-      "Busqué una app que lo hiciera así y no la encontré: las que había no estaban en español o no eran gratis. Así que decidí hacerla. No sabía programar; como mucho, leía un poco de código.",
+      "Busqué una app que lo hiciera así y no la encontré: las que había no estaban en español o no eran gratis. Así que decidí hacerla yo. Pequeño detalle: no sabía programar. Como mucho, leía un poco de código.",
       "La idea estuvo clara desde el primer día: cuentos y clásicos de dominio público, historias que todo el mundo conoce, y en cada capítulo un poco más del idioma nuevo que en el anterior.",
-      "La empecé en febrero de 2026 desde mi cuarto. De lo que más orgullosa estoy es de la constancia: de no rendirme cuando no encontraba nada que me gustara y de seguir hasta tenerla. Acaba de salir al mercado y la siguiente meta es conseguir sus primeros lectores.",
+      "La empecé en febrero de 2026, desde mi cuarto. Si me preguntas de qué estoy más orgullosa, no es del código ni del diseño: es de la constancia. De no rendirme cuando no encontraba nada que me gustara y seguir hasta tenerlo. Acaba de salir al mercado y ahora toca lo siguiente: sus primeros lectores.",
     ],
   },
   demo: "talixea",
@@ -99,17 +99,17 @@ export const talixea: CasoCompleto = {
     {
       titulo: "No sabía programar",
       texto:
-        "Me apoyé en herramientas de IA y aprendí sobre la marcha. Después de muchos errores, la app por fin me dejó crear una cuenta. Lo que escribí en ese momento: «Lo hemos conseguido, me deja entrar».",
+        "Me apoyé en herramientas de IA y fui aprendiendo sobre la marcha, a base de romper cosas. Después de muchísimos errores, la app por fin me dejó crear una cuenta. Lo que escribí en ese momento: «Lo hemos conseguido, me deja entrar».",
     },
     {
       titulo: "Cada nombre ya estaba cogido",
       texto:
-        "Cada nombre que me gustaba lo usaba ya alguien. Talixea apareció después de muchas vueltas y guarda todo lo que quería decir.",
+        "Costó. Cada nombre que me gustaba ya lo usaba alguien. Talixea apareció después de muchas vueltas y, al final, guarda todo lo que quería decir.",
     },
     {
       titulo: "Lo que vi al recorrerla entera",
       texto:
-        "Al probarla como lo haría cada tipo de cliente aparecieron fallos que yo no veía: etiquetas internas a la vista, un botón de Plus que no llevaba a Plus o mezclas de idiomas que parecían erratas. Se arreglaron antes de lanzar.",
+        "Cuando la recorrí como lo haría cada tipo de cliente, aparecieron fallos que yo, de tanto mirarla, ya no veía: etiquetas internas a la vista, un botón de Plus que no llevaba a Plus o mezclas de idiomas que parecían erratas. Se arreglaron antes de lanzar.",
     },
   ],
   cita: {

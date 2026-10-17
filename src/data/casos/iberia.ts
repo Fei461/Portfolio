@@ -24,7 +24,7 @@ export const iberia: CasoCompleto = {
     titulo: "Hablar de sostenibilidad sin greenwashing",
     parrafos: [
       "Iberia, junto con Cepsa, Vueling y BIOCIRC, impulsa combustibles sostenibles de aviación y sistemas eléctricos, con el objetivo de llegar a cero emisiones netas en 2050. El encargo era construir una campaña para contar esa transición.",
-      "El problema de comunicación estaba en otra parte: hay una brecha entre lo que hace la aerolínea y lo que percibe la gente, y una desconfianza enorme hacia cualquier mensaje «verde». Prometer más habría ensanchado esa brecha.",
+      "Pero el problema de comunicación estaba en otra parte. Entre lo que hace la aerolínea y lo que percibe la gente hay una brecha enorme, y cualquier mensaje «verde» genera desconfianza. ¿Prometer más? Solo habría hecho la brecha más grande.",
     ],
   },
   bloques: [

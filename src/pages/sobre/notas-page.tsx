@@ -18,8 +18,8 @@ export function NotasPage() {
       <section className="pagina-cabecera">
         <h1 className="pagina-titulo">Notas</h1>
         <p className="pagina-lead">
-          Lo que observo de marcas, campañas y aprendizaje, y publico en LinkedIn. Pensar en voz alta
-          también es entrenar.
+          Lo que voy observando de marcas, campañas y de mi propio aprendizaje, y que acabo contando
+          en LinkedIn. ¿Lo ves de otra forma? Te leo.
         </p>
       </section>
 
