@@ -30,6 +30,9 @@ export function SiteHeader() {
             {item.label}
           </NavLink>
         ))}
+        <a className="dojo-head__escribir" href="mailto:lara.feijoo@gmail.com">
+          Escríbeme
+        </a>
       </nav>
     </header>
   );

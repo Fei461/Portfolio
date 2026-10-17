@@ -1,5 +1,5 @@
 import { Component, lazy, Suspense, type ErrorInfo, type ReactNode } from "react";
-import { HashRouter, Navigate, Route, Routes } from "react-router-dom";
+import { HashRouter, Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { ScrollProgress } from "@/components/scroll-progress";
@@ -91,7 +91,12 @@ function App() {
   );
 }
 
+// Las pantallas del dojo (portada, proyectos y casos) caben enteras en la ventana;
+// el pie solo acompaña a las páginas de lectura.
+const conPie = ["/notas", "/cv"];
+
 function MainLayout() {
+  const { pathname } = useLocation();
   return (
     <div className="dojo min-h-screen">
       <ScrollProgress />
@@ -112,7 +117,7 @@ function MainLayout() {
           </Suspense>
         </AppErrorBoundary>
       </div>
-      <SiteFooter />
+      {conPie.includes(pathname) && <SiteFooter />}
     </div>
   );
 }

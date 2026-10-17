@@ -356,3 +356,136 @@
     break-inside: avoid;
   }
 }
+
+/* ── Sobre mí en una pantalla ─────────────── */
+.sobre-texto {
+  margin: 1rem 0 0;
+  max-width: 52ch;
+  color: var(--texto-suave);
+  font-family: var(--f);
+}
+
+.sobre-foto {
+  max-width: 340px;
+  margin-top: 1.5rem;
+}
+
+.sobre-foto img {
+  max-height: 30vh;
+  object-fit: cover;
+}
+
+.combate--sobre .dojo-acciones {
+  margin-top: 1.5rem;
+}
+
+.combate--sobre .asalto h2 {
+  margin-bottom: 0.25rem;
+}
+
+.combate--sobre .pagina-cita p {
+  color: var(--judogi);
+}
+
+.sobre-demas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem 2rem;
+}
+
+/* Los cuatro tiempos */
+.metodo {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.3fr);
+  gap: 1.5rem 2rem;
+  margin-top: 1.5rem;
+}
+
+.metodo__tiempos {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.metodo__tiempos button {
+  display: grid;
+  grid-template-columns: 2rem 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 0.6rem;
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  text-align: left;
+  font-family: var(--f);
+  color: var(--sumi);
+  background: var(--judogi);
+  border: 3px solid var(--sumi);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.metodo__tiempos button:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0 var(--sumi);
+}
+
+.metodo__tiempos button.activo {
+  color: var(--judogi);
+  background: var(--sumi);
+  box-shadow: inset 8px 0 0 var(--obi);
+}
+
+.metodo__n {
+  grid-row: span 2;
+  align-self: center;
+  font-weight: 800;
+  font-size: 1.4rem;
+  color: var(--obi);
+}
+
+.metodo__tiempos strong {
+  font-weight: 800;
+  font-variation-settings: "opsz" 40, "wdth" 82;
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.metodo__tiempos span:last-child {
+  font-size: 0.92rem;
+  opacity: 0.8;
+}
+
+.metodo__detalle {
+  padding: 1.25rem 1.4rem;
+  background: var(--tatami);
+  border: 3px solid var(--sumi);
+  box-shadow: 8px 8px 0 var(--heri);
+}
+
+.metodo__grande {
+  margin: 0;
+  font-family: var(--f);
+  font-weight: 800;
+  font-variation-settings: "opsz" 96, "wdth" 75;
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  line-height: 0.85;
+}
+
+.metodo__detalle p:not(.metodo__grande) {
+  margin: 1rem 0;
+  font-size: 1.1rem;
+  line-height: 1.55;
+}
+
+.metodo__detalle a {
+  font-weight: 800;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.2em;
+}
+
+@media (max-width: 900px) {
+  .metodo {
+    grid-template-columns: 1fr;
+  }
+}

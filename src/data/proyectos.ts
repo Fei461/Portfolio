@@ -16,12 +16,18 @@ export type Proyecto = {
    */
   pagina?: "nuevo";
   fuera?: { href: string; label: string };
+  /** Imagen o vídeo de la tarjeta, dentro de /assets/casos. */
+  portada?: string;
+  video?: string;
 };
+
+const caso = (file: string) => `${import.meta.env.BASE_URL}assets/casos/${file}`;
 
 export const proyectos: Proyecto[] = [
   // ── Cinturón negro: casos completos, en el orden de una entrevista ──
   {
     slug: "stud-ia",
+    video: caso("stud-ia/youtube-36k.mp4"),
     titulo: "Stud-IA",
     cinturon: "negro",
     tipo: "Prácticas en marketing, enero a mayo de 2026",
@@ -31,6 +37,7 @@ export const proyectos: Proyecto[] = [
   },
   {
     slug: "talixea",
+    portada: caso("talixea/portada.png"),
     titulo: "Talixea",
     cinturon: "negro",
     tipo: "Proyecto propio, desde febrero de 2026",
@@ -41,6 +48,7 @@ export const proyectos: Proyecto[] = [
   },
   {
     slug: "santander",
+    portada: caso("santander/laboratorio.png"),
     titulo: "Santander",
     cinturon: "negro",
     tipo: "Máster UC3M, web y encuesta hechas por mí",
@@ -51,6 +59,7 @@ export const proyectos: Proyecto[] = [
   },
   {
     slug: "iberia",
+    portada: caso("iberia/cine.png"),
     titulo: "Iberia",
     cinturon: "negro",
     tipo: "Grado URJC, en equipo",
@@ -60,6 +69,7 @@ export const proyectos: Proyecto[] = [
   },
   {
     slug: "bruja-roja",
+    portada: caso("bruja-roja/productos.jpg"),
     titulo: "Bruja Roja",
     cinturon: "negro",
     tipo: "Grado URJC, en equipo",
@@ -80,6 +90,7 @@ export const proyectos: Proyecto[] = [
   // ── Cinturón marrón: casos breves ──
   {
     slug: "ryanair",
+    portada: caso("ryanair/premios.jpg"),
     titulo: "Ryanair",
     cinturon: "marron",
     tipo: "Grado URJC, en equipo",
@@ -88,6 +99,7 @@ export const proyectos: Proyecto[] = [
   },
   {
     slug: "el-regalo-no-deseado",
+    portada: caso("torrons/marquesina.png"),
     titulo: "Torrons Vicens",
     cinturon: "marron",
     tipo: "Grado URJC, en equipo",
@@ -96,6 +108,7 @@ export const proyectos: Proyecto[] = [
   },
   {
     slug: "m-and-ms",
+    portada: caso("m-and-ms/cartel.jpg"),
     titulo: "M&M's Premium",
     cinturon: "marron",
     tipo: "Grado URJC, en equipo",
@@ -104,6 +117,7 @@ export const proyectos: Proyecto[] = [
   },
   {
     slug: "tour-cdc-dana",
+    video: caso("tour-cdc/tinder-publicitario.mp4"),
     titulo: "Tour C de C",
     cinturon: "marron",
     tipo: "Tour c de c 2025, individual",
@@ -112,6 +126,7 @@ export const proyectos: Proyecto[] = [
   },
   {
     slug: "revista-super-pop",
+    portada: caso("revista-super-pop/portada.jpg"),
     titulo: "Revista Super Pop",
     cinturon: "marron",
     tipo: "Máster UC3M, en equipo",
@@ -120,6 +135,7 @@ export const proyectos: Proyecto[] = [
   },
   {
     slug: "bbva",
+    portada: caso("bbva/sagrada-privacidad.jpg"),
     titulo: "BBVA",
     cinturon: "marron",
     tipo: "Grado URJC, en equipo",
@@ -128,6 +144,7 @@ export const proyectos: Proyecto[] = [
   },
   {
     slug: "oreo",
+    portada: caso("oreo/grafica.jpg"),
     titulo: "Oreo",
     cinturon: "marron",
     tipo: "Grado URJC, en equipo",
