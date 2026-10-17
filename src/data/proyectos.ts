@@ -64,7 +64,7 @@ export const proyectos: Proyecto[] = [
     cinturon: "negro",
     tipo: "Grado URJC, en equipo",
     resumen:
-      "Parecía un problema de sostenibilidad. Era de credibilidad: una campaña que reconoce la huella en vez de prometer vuelos verdes.",
+      "Una aerolínea que reconoce su huella en lugar de prometer vuelos verdes, contada como la restauración de un cuadro.",
     pagina: "nuevo",
   },
   {

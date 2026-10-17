@@ -332,6 +332,7 @@ a.dorsal__enlace:hover .dorsal__visual video {
   }
 
   .dorsal__enlace {
-    min-height: 62svh;
+    min-height: 0;
+    height: 64svh;
   }
 }

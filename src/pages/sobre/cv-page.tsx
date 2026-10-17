@@ -28,7 +28,8 @@ export function CvPage() {
   }, []);
 
   return (
-    <main className="pagina cv">
+    <main className="cv-mesa">
+      <article className="pagina cv">
       <header className="pagina-cabecera cv-cabecera">
         <div>
           <h1 className="pagina-titulo">{perfil.nombre}</h1>
@@ -96,6 +97,7 @@ export function CvPage() {
           </section>
         </aside>
       </div>
+      </article>
     </main>
   );
 }

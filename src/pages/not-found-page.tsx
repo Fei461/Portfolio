@@ -8,7 +8,8 @@ export function NotFoundPage() {
   }, []);
 
   return (
-    <main className="dojo-seccion" aria-labelledby="no-encontrada">
+    <main className="no-encontrada" aria-labelledby="no-encontrada">
+      <div className="dojo-seccion">
       <h1 className="trabajo-titulo" id="no-encontrada" lang="ja-Latn">
         Matte.
       </h1>
@@ -23,6 +24,7 @@ export function NotFoundPage() {
         <Link className="dojo-boton dojo-boton--claro" to="/trabajo">
           Ver proyectos
         </Link>
+      </div>
       </div>
     </main>
   );

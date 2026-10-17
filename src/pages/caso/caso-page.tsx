@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import type { CasoCompleto } from "@/data/casos";
 import { cinturones, porCinturon, proyectos } from "@/data/proyectos";
 import { DemoTalixea } from "./demo-talixea";
@@ -279,14 +279,21 @@ export function CasoPage({ caso }: { caso: CasoCompleto }) {
   const [lupa, setLupa] = useState<Imagen | null>(null);
   const cerrarLupa = useCallback(() => setLupa(null), []);
   const asaltos = construirAsaltos(caso, setLupa, { portada: proyecto?.portada, video: proyecto?.video });
-  const [activo, setActivo] = useState(0);
+  // El asalto queda en la dirección (?asalto=piezas) para poder enlazarlo.
+  const [params, setParams] = useSearchParams();
+  const pedido = asaltos.findIndex((a) => a.id === params.get("asalto"));
+  const activo = pedido >= 0 ? pedido : 0;
+  const setActivo = useCallback(
+    (n: number) => setParams(n === 0 ? {} : { asalto: asaltos[n].id }, { replace: true }),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [setParams, caso.slug],
+  );
   const panel = useRef<HTMLDivElement>(null);
   const pestanas = useRef<(HTMLButtonElement | null)[]>([]);
 
   useEffect(() => {
     document.title = `${caso.titulo}, un caso de Lara Feijóo`;
     window.scrollTo(0, 0);
-    setActivo(0);
   }, [caso]);
 
   const ir = useCallback(
@@ -296,7 +303,7 @@ export function CasoPage({ caso }: { caso: CasoCompleto }) {
       panel.current?.scrollTo({ top: 0 });
       if (enfocar) pestanas.current[n]?.focus();
     },
-    [asaltos.length],
+    [asaltos.length, setActivo],
   );
 
   // Flechas del teclado para cambiar de asalto, salvo si se está usando un control.

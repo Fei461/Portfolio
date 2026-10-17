@@ -54,24 +54,21 @@ export function InicioPage() {
       </div>
 
       <div className="dojo-pared">
-        <Colgador
-          extra={
-            <Link to="/sobre-mi" className="dojo-foto dojo-foto--pared">
-              <span className="dojo-foto__cordel" aria-hidden="true" />
-              <span className="dojo-foto__marco">
-                <img
-                  src={foto}
-                  alt="Lara con la beca de graduación y un ramo de flores, levantando una pierna y con el pulgar arriba"
-                  width={1200}
-                  height={1600}
-                />
-                <span className="dojo-foto__pie">
-                  Quieta, poco. <strong>Sobre mí</strong>
-                </span>
-              </span>
-            </Link>
-          }
-        />
+        <Link to="/sobre-mi" className="dojo-foto dojo-foto--pared">
+          <span className="dojo-foto__obi" aria-hidden="true" />
+          <span className="dojo-foto__marco">
+            <img
+              src={foto}
+              alt="Lara con la beca de graduación y un ramo de flores, levantando una pierna y con el pulgar arriba"
+              width={1200}
+              height={1600}
+            />
+            <span className="dojo-foto__pie">
+              Quieta, poco. <strong>Sobre mí</strong>
+            </span>
+          </span>
+        </Link>
+        <Colgador />
       </div>
     </main>
   );

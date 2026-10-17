@@ -833,6 +833,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 0.5rem;
   min-height: 70svh;
 }
 
@@ -854,7 +855,7 @@
 
 .colgador ul {
   list-style: none;
-  margin: -16px 0 0;
+  margin: -22px 0 0;
   padding: 0 1%;
   display: flex;
   justify-content: space-between;
@@ -878,13 +879,16 @@
 .obi {
   display: block;
   width: auto;
-  height: min(50svh, 400px);
-  transform-origin: 50% 8%;
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  max-height: 34svh;
+  transform-origin: 50% 12%;
   filter: drop-shadow(6px 6px 0 rgba(29, 28, 20, 0.55));
 }
 
 .colgador__etiqueta {
-  max-width: 11rem;
+  max-width: 14rem;
   margin-top: 0.65rem;
   padding: 0.45rem 0.7rem;
   background: var(--judogi);
@@ -1018,55 +1022,36 @@
   }
 }
 
-/* La foto, colgada de la misma barra con un cordel: lleva a Sobre mí */
-.colgador__extra {
-  flex: 0 0 clamp(130px, 12.5vw, 185px) !important;
-  align-self: flex-start;
-}
-
+/* La foto, clavada en la pared con un trozo de cinturón: lleva a Sobre mí */
 .dojo-foto--pared {
   position: relative;
   display: block;
-  width: 100%;
-  margin: 0;
-  padding-top: 2.6rem;
+  align-self: flex-end;
+  width: clamp(150px, 14vw, 205px);
+  margin: 0 1.5rem 0 0;
   rotate: 5deg;
-  transform-origin: 50% 0;
   text-decoration: none;
   animation: none;
   transition: transform 0.35s cubic-bezier(0.3, 1.6, 0.5, 1);
 }
 
-.dojo-foto__cordel {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 2px;
-  height: 2.9rem;
-  background: var(--sumi);
-}
-
-.dojo-foto__cordel::before {
-  content: "";
-  position: absolute;
-  top: -6px;
-  left: -8px;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background: #5b3b1f;
-  border: 2.6px solid var(--sumi);
-}
-
 .dojo-foto--pared:hover,
 .dojo-foto--pared:focus-visible {
-  transform: rotate(-7deg);
+  transform: rotate(-8deg) scale(1.04);
+}
+
+.dojo-foto--pared .dojo-foto__obi {
+  left: -18%;
+  top: 6%;
+  width: 70%;
+  height: 22px;
+  z-index: 2;
 }
 
 .dojo-foto--pared .dojo-foto__marco {
   position: relative;
   display: block;
-  padding: 0.5rem 0.5rem 2.9rem;
+  padding: 0.5rem 0.5rem 2.6rem;
   box-shadow: 8px 8px 0 var(--heri);
 }
 
@@ -1080,7 +1065,7 @@
   right: 0.6rem;
   bottom: 0.45rem;
   font-family: var(--f);
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   font-weight: 600;
   line-height: 1.2;
   color: var(--sumi);
@@ -1094,25 +1079,31 @@
 
 @media (max-width: 900px) {
   .dojo-hero--pantalla {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .dojo-hero--pantalla .dojo-nombre {
+    font-size: min(22vw, 7.5rem);
   }
 
   .dojo-pared {
     min-height: 0;
     padding-bottom: 3rem;
+    justify-content: flex-start;
+  }
+
+  .dojo-hero--pantalla {
+    align-items: start;
+    min-height: 0;
   }
 
   .obi {
-    height: min(52vw, 300px);
+    max-height: none;
   }
 
-  .colgador ul {
-    flex-wrap: wrap;
-  }
-
-  .colgador__extra {
-    flex-basis: 100% !important;
-    margin-top: 2rem;
+  .dojo-foto--pared {
+    align-self: center;
+    margin: 0 0 1.5rem;
   }
 }
 
@@ -1133,4 +1124,43 @@
   .colgador__etiqueta span {
     font-size: 0.78rem;
   }
+}
+
+/* ── Barrido entre pantallas: un cinturón cruza y descubre la nueva ── */
+.barrido {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  pointer-events: none;
+  background:
+    repeating-linear-gradient(to bottom, transparent 0 9px, rgba(255, 255, 255, 0.12) 9px 10px),
+    var(--obi);
+  border-left: 6px solid var(--sumi);
+  border-right: 6px solid var(--sumi);
+  transform: translateX(110%);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .barrido {
+    animation: barrer 0.6s cubic-bezier(0.7, 0, 0.3, 1);
+  }
+}
+
+@keyframes barrer {
+  0% {
+    transform: translateX(0) skewX(-8deg);
+  }
+  100% {
+    transform: translateX(115%) skewX(-8deg);
+  }
+}
+
+.no-encontrada {
+  min-height: calc(100svh - var(--alto-cabecera));
+  background-color: var(--tatami);
+  background-image: repeating-linear-gradient(90deg, transparent 0 5px, rgba(0, 0, 0, 0.05) 5px 6px);
+}
+
+.no-encontrada .dojo-entradilla {
+  color: var(--sumi);
 }

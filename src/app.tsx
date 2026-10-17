@@ -1,4 +1,13 @@
-import { Component, lazy, Suspense, type ErrorInfo, type ReactNode } from "react";
+import {
+  Component,
+  lazy,
+  Suspense,
+  useEffect,
+  useRef,
+  useState,
+  type ErrorInfo,
+  type ReactNode,
+} from "react";
 import { HashRouter, Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
@@ -97,9 +106,18 @@ const conPie = ["/notas", "/cv"];
 
 function MainLayout() {
   const { pathname } = useLocation();
+  // El barrido no se ve al entrar en la web, solo al cambiar de pantalla.
+  const anterior = useRef(pathname);
+  const [barrido, setBarrido] = useState(0);
+  useEffect(() => {
+    if (anterior.current === pathname) return;
+    anterior.current = pathname;
+    setBarrido((n) => n + 1);
+  }, [pathname]);
   return (
     <div className="dojo min-h-screen">
       <ScrollProgress />
+      {barrido > 0 && <div className="barrido" key={barrido} aria-hidden="true" />}
       <SiteHeader />
       <div id="contenido" tabIndex={-1}>
         <AppErrorBoundary>

@@ -2,11 +2,11 @@ import type { CSSProperties, ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { cinturones, porCinturon, type Cinturon } from "@/data/proyectos";
 
-// Colores de cada cinturón: tela, costuras y contorno.
-const telas: Record<Cinturon, { tela: string; costura: string }> = {
-  negro: { tela: "#141414", costura: "#55554f" },
-  marron: { tela: "#6b3a1f", costura: "#95603d" },
-  blanco: { tela: "#f7f7f4", costura: "#cfcfc6" },
+// Colores de cada cinturón: tela, cara interior (más oscura) y costuras.
+const telas: Record<Cinturon, { tela: string; sombra: string; costura: string }> = {
+  negro: { tela: "#161616", sombra: "#000", costura: "#5a5a54" },
+  marron: { tela: "#6b3a1f", sombra: "#3f2010", costura: "#97633f" },
+  blanco: { tela: "#f7f7f4", sombra: "#c9c9c0", costura: "#cfcfc6" },
 };
 
 const subtitulos: Record<Cinturon, (n: number) => string> = {
@@ -15,26 +15,36 @@ const subtitulos: Record<Cinturon, (n: number) => string> = {
   blanco: (n) => `${n} trabajos donde empecé`,
 };
 
-// Un cinturón atado y colgado de una clavija: el lazo sube hasta la clavija,
-// el nudo cuadrado en medio y las dos puntas caen abiertas, como en el dojo.
+// Un cinturón atado como en el tatami: el lazo cerrado colgado de la clavija,
+// el nudo cuadrado delante y las dos puntas cayendo.
 function Obi({ cinturon }: { cinturon: Cinturon }) {
-  const { tela, costura } = telas[cinturon];
-  const linea = { stroke: "#000", strokeWidth: 2.6, strokeLinejoin: "round" as const };
+  const { tela, sombra, costura } = telas[cinturon];
+  const borde = { stroke: "#000", strokeWidth: 3, strokeLinejoin: "round" as const };
   return (
-    <svg className="obi" viewBox="0 0 140 340" aria-hidden="true">
-      {/* Lazo: las dos vueltas del cinturón suben hasta la clavija */}
-      <path d="M44 150 L62 26 L78 26 L66 150 Z" fill={tela} {...linea} />
-      <path d="M74 150 L66 26 L82 26 L98 150 Z" fill={tela} {...linea} />
-      <path d="M53 140 L66 40 M88 140 L76 40" stroke={costura} strokeWidth="1.2" fill="none" />
-      {/* Puntas que caen desde el nudo */}
-      <path d="M58 180 L30 318 L56 326 L78 186 Z" fill={tela} {...linea} />
-      <path d="M82 180 L102 306 L126 296 L96 176 Z" fill={tela} {...linea} />
-      <path d="M62 196 L40 314 M70 196 L48 318 M88 196 L106 302 M94 194 L115 298" stroke={costura} strokeWidth="1.2" fill="none" />
-      {/* Nudo */}
-      <path d="M50 146 L94 142 L98 186 L52 190 Z" fill={tela} {...linea} />
-      <path d="M54 166 L95 162" stroke={costura} strokeWidth="1.4" />
+    <svg className="obi" viewBox="0 0 200 230" aria-hidden="true">
+      {/* Lazo: la cara de atrás se ve por dentro y es más oscura */}
+      <path d="M20 62 C20 17 180 17 180 62 L158 62 C158 38 42 38 42 62 Z" fill={sombra} {...borde} />
+      <path d="M20 62 C20 107 180 107 180 62 L158 62 C158 86 42 86 42 62 Z" fill={tela} {...borde} />
+      <path
+        d="M27 63 C28 100 172 100 173 63 M35 63 C36 93 164 93 165 63"
+        stroke={costura}
+        strokeWidth="1.4"
+        fill="none"
+      />
+      {/* Puntas */}
+      <path d="M86 104 L101 108 L80 214 L57 206 Z" fill={tela} {...borde} />
+      <path d="M101 108 L116 104 L143 204 L120 213 Z" fill={tela} {...borde} />
+      {/* Nudo y la vuelta que lo cruza */}
+      <path d="M81 78 L119 74 L122 108 L84 112 Z" fill={tela} {...borde} />
+      <path d="M73 92 L127 80 L130 93 L76 105 Z" fill={tela} {...borde} />
+      <path
+        d="M90 112 L65 206 M96 113 L73 210 M106 112 L129 207 M112 110 L137 204 M76 99 L127 87"
+        stroke={costura}
+        strokeWidth="1.4"
+        fill="none"
+      />
       {/* Clavija */}
-      <circle cx="70" cy="22" r="9" fill="#5b3b1f" stroke="#000" strokeWidth="2.6" />
+      <circle cx="100" cy="27" r="9" fill="#5b3b1f" stroke="#000" strokeWidth="3" />
     </svg>
   );
 }

@@ -579,3 +579,54 @@
     text-align: center;
   }
 }
+
+/* ── Repaso: piezas, caídas y galería sin tener que bajar ── */
+/* Los vídeos, en fila como móviles sobre la mesa. */
+.asalto .caso-videos {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 0.75rem;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+}
+
+.asalto .caso-videos li {
+  flex: 0 0 clamp(150px, 13vw, 190px);
+  scroll-snap-align: start;
+}
+
+.asalto .caso-videos video {
+  max-height: 46vh;
+  width: 100%;
+}
+
+/* Las caídas, una al lado de otra; si no caben, se deslizan. */
+.asalto .caso-caidas {
+  display: flex;
+  gap: 1.25rem;
+  overflow-x: auto;
+  padding: 0.5rem 0.5rem 1rem 0.25rem;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+}
+
+.asalto .caso-caidas li {
+  flex: 0 0 min(300px, 80%);
+  scroll-snap-align: start;
+  font-size: 0.97rem;
+}
+
+/* Diapositivas enteras, sin recortar. */
+.galeria img {
+  object-fit: contain;
+  background: var(--judogi);
+}
+
+.galeria:not(.galeria--vertical) img {
+  aspect-ratio: 16 / 10;
+}
+
+.asalto .caso-aprendizajes li {
+  font-size: clamp(1.05rem, 1.5vw, 1.3rem);
+}
