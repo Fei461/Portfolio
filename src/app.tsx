@@ -1,12 +1,9 @@
 import { Component, lazy, Suspense, type ErrorInfo, type ReactNode } from "react";
-import { HashRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Navigate, Route, Routes } from "react-router-dom";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { ScrollProgress } from "@/components/scroll-progress";
 
-const HomePage = lazy(() =>
-  import("@/pages/home-page").then(({ HomePage }) => ({ default: HomePage })),
-);
 const TrabajoPage = lazy(() =>
   import("@/pages/trabajo-page").then(({ TrabajoPage }) => ({ default: TrabajoPage })),
 );
@@ -24,6 +21,9 @@ const CaseStudyPage = lazy(() =>
 );
 const CvPage = lazy(() =>
   import("@/pages/cv-page").then(({ CvPage }) => ({ default: CvPage })),
+);
+const InicioPage = lazy(() =>
+  import("@/pages/inicio/inicio-page").then(({ InicioPage }) => ({ default: InicioPage })),
 );
 const NotFoundPage = lazy(() =>
   import("@/pages/not-found-page").then(({ NotFoundPage }) => ({ default: NotFoundPage })),
@@ -86,13 +86,30 @@ class AppErrorBoundary extends Component<
 function App() {
   return (
     <HashRouter>
-      <div className="min-h-screen bg-background text-foreground">
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Suspense fallback={<PageLoading />}>
+              <InicioPage />
+            </Suspense>
+          }
+        />
+        <Route path="/prototipo" element={<Navigate to="/" replace />} />
+        <Route path="*" element={<MainLayout />} />
+      </Routes>
+    </HashRouter>
+  );
+}
+
+function MainLayout() {
+  return (
+    <div className="min-h-screen bg-background text-foreground">
         <ScrollProgress />
         <SiteHeader />
         <AppErrorBoundary>
           <Suspense fallback={<PageLoading />}>
             <Routes>
-              <Route path="/" element={<HomePage />} />
               <Route path="/trabajo" element={<TrabajoPage />} />
               <Route path="/sobre" element={<SobrePage />} />
               <Route path="/sobre-mi" element={<SobrePage />} />
@@ -105,8 +122,7 @@ function App() {
           </Suspense>
         </AppErrorBoundary>
         <SiteFooter />
-      </div>
-    </HashRouter>
+    </div>
   );
 }
 
