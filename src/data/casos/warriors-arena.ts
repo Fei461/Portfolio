@@ -112,10 +112,9 @@ export const warriorsArena: CasoCompleto = {
     },
   ],
   tatami: {
-    termino: "Tsukuri",
-    titulo: "colocarse antes de lanzar",
-    intro:
-      "En judo, tsukuri es colocarse bien antes de proyectar. En distribución pasa lo mismo: dónde y cuándo te colocas decide cuánto llegas.",
+    termino: "",
+    titulo: "Las decisiones que ordenan el plan",
+    intro: "En distribución, dónde y cuándo te colocas decide cuánto llegas.",
   },
   caidas: [
     {

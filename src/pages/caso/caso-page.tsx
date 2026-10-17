@@ -4,6 +4,7 @@ import type { CasoCompleto } from "@/data/casos";
 import { cinturones, porCinturon, proyectos } from "@/data/proyectos";
 import { DemoTalixea } from "./demo-talixea";
 import { Cronograma, Reparto } from "./graficos";
+import { Movil } from "./movil";
 import "./caso.css";
 import "./combate.css";
 
@@ -88,7 +89,7 @@ function construirAsaltos(
           </div>
           {visual?.video ? (
             <figure className="reto__foto reto__foto--video">
-              <video src={visual.video} muted loop playsInline autoPlay={!quieto} aria-hidden="true" />
+              <video src={`${visual.video}#t=2`} muted loop playsInline autoPlay={!quieto} aria-hidden="true" />
             </figure>
           ) : visual?.portada ? (
             <figure className="reto__foto">
@@ -106,7 +107,28 @@ function construirAsaltos(
     },
   ];
 
-  if (caso.demo === "talixea") asaltos.push({ id: "demo", nombre: "Pruébalo", contenido: <DemoTalixea /> });
+  if (caso.demo === "talixea") asaltos.unshift({ id: "demo", nombre: "Pruébalo", contenido: <DemoTalixea /> });
+
+  // Santander: el laboratorio, usable sin salir del caso.
+  if (caso.laboratorio)
+    asaltos.unshift({
+      id: "laboratorio",
+      nombre: "El laboratorio",
+      contenido: (
+        <div className="laboratorio">
+          <p className="asalto__entradilla">{caso.laboratorio.texto}</p>
+          <div className="laboratorio__ventana">
+            <span className="laboratorio__barra" aria-hidden="true">
+              <i />
+              <i />
+              <i />
+              <span>fei461.github.io/santander</span>
+            </span>
+            <iframe src={caso.laboratorio.src} title={caso.laboratorio.titulo} loading="lazy" />
+          </div>
+        </div>
+      ),
+    });
 
   if (caso.cronograma || caso.reparto)
     asaltos.push({
@@ -147,6 +169,9 @@ function construirAsaltos(
           {caso.piezas && (
             <div className="asalto__bloque">
               <p className="asalto__entradilla">{caso.piezas.texto}</p>
+              {caso.enMovil ? (
+                <Movil videos={caso.piezas.videos} />
+              ) : (
               <ul className="caso-videos">
                 {caso.piezas.videos.map((v) => (
                   <li key={v.src}>
@@ -172,6 +197,7 @@ function construirAsaltos(
                   </li>
                 ))}
               </ul>
+              )}
               {caso.piezas.masEnlaces && (
                 <div className="caso-mas">
                   <h3>Más publicaciones en sus perfiles</h3>
@@ -201,13 +227,17 @@ function construirAsaltos(
   if (caso.caidas)
     asaltos.push({
       id: "tatami",
-      nombre: caso.tatami?.termino ?? "Ukemi",
+      nombre: caso.tatami ? caso.tatami.termino || "Decisiones" : "Ukemi",
       contenido: (
         <div className="asalto__tatami">
-          <h2>
-            <span lang="ja-Latn">{caso.tatami?.termino ?? "Ukemi"}</span>:{" "}
-            {caso.tatami?.titulo ?? "dónde caí y cómo me levanté"}
-          </h2>
+          {caso.tatami && !caso.tatami.termino ? (
+            <h2>{caso.tatami.titulo}</h2>
+          ) : (
+            <h2>
+              <span lang="ja-Latn">{caso.tatami?.termino ?? "Ukemi"}</span>:{" "}
+              {caso.tatami?.titulo ?? "dónde caí y cómo me levanté"}
+            </h2>
+          )}
           <p className="asalto__entradilla">
             {caso.tatami?.intro ??
               "Lo primero que te enseñan en judo es a caer sin hacerte daño. Aquí me tocó caer unas cuantas veces."}
@@ -388,7 +418,7 @@ export function CasoPage({ caso }: { caso: CasoCompleto }) {
               }}
             >
               <span className="asaltos__n">{i + 1}</span>
-              <span lang={a.id === "tatami" ? "ja-Latn" : undefined}>{a.nombre}</span>
+              <span lang={a.id === "tatami" && a.nombre !== "Decisiones" ? "ja-Latn" : undefined}>{a.nombre}</span>
             </button>
           ))}
         </div>

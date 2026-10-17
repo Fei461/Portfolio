@@ -18,6 +18,32 @@ const trayectoria = [
   { cuando: "2021–2025", que: "Profesora de artes marciales y monitora de campamento en Guerreros Galapagar." },
 ];
 
+function QuienSoy() {
+  return (
+    <div className="asalto__prosa">
+      <h2>No suelo ser la persona con la primera idea</h2>
+      <p className="quien__lead">Suelo ser la que quiere entender por qué esa idea debería funcionar.</p>
+      <p>
+        Lo que más me tira es la reputación, la percepción de marca, las relaciones públicas y la
+        comunicación, tanto corporativa como interna. Y, por el camino, he descubierto que me flipa
+        entender por qué compramos lo que compramos.
+      </p>
+      <p>
+        Estudio el Máster en Comunicación Publicitaria en la UC3M después de acabar Publicidad y RRPP en
+        la URJC. Antes de terminar ya había hecho prácticas en una startup, Stud-IA, y había empezado a
+        construir Talixea desde mi cuarto, sin saber programar.
+      </p>
+      <p>
+        Me muevo bien cuando hay que investigar, ordenar y bajar las ideas a tierra. Pregunto mucho, me
+        tomo en serio los datos y no me quedo quieta hasta que algo sale bien.
+      </p>
+      <p className="quien__busco">
+        <strong>Busco:</strong> {perfil.busco}
+      </p>
+    </div>
+  );
+}
+
 function Judo() {
   return (
     <div className="asalto__prosa">
@@ -146,9 +172,10 @@ function LoDemas() {
 }
 
 const pestanas: { id: string; nombre: string; contenido: ReactNode }[] = [
-  { id: "judo", nombre: "Por qué el judo", contenido: <Judo /> },
+  { id: "quien", nombre: "Quién soy", contenido: <QuienSoy /> },
   { id: "metodo", nombre: "Cómo trabajo", contenido: <Metodo /> },
   { id: "camino", nombre: "El camino", contenido: <Camino /> },
+  { id: "judo", nombre: "Por qué el judo", contenido: <Judo /> },
   { id: "demas", nombre: "Lo demás", contenido: <LoDemas /> },
 ];
 
@@ -164,17 +191,6 @@ export function SobrePage() {
     <main className="combate combate--sobre">
       <aside className="combate__ficha">
         <h1 className="combate__titulo">Sobre mí</h1>
-        <p className="caso-lecturas">
-          <span className="caso-lecturas__segunda">
-            No suelo ser la persona con la primera idea. Suelo ser la que quiere entender por qué esa
-            idea debería funcionar.
-          </span>
-        </p>
-        <p className="sobre-texto">
-          Lo que más me tira es la reputación, la percepción de marca, las relaciones públicas y la
-          comunicación, tanto corporativa como interna. Y, por el camino, he descubierto que me flipa
-          entender por qué compramos lo que compramos.
-        </p>
         <figure className="pagina-foto sobre-foto">
           <img src={foto} alt="Lara sonriendo con la lengua fuera delante de una cascada" width={1400} height={1050} />
           <figcaption>Fuera del aula, tampoco me quedo quieta.</figcaption>

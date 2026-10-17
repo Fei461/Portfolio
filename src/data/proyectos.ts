@@ -1,7 +1,7 @@
 // Fuente única de los proyectos: la portada y la página de Trabajo leen de aquí.
 // El orden de cada cinturón es el orden en que se muestran.
 
-export type Cinturon = "negro" | "marron" | "blanco";
+export type Cinturon = "negro" | "verde" | "archivo";
 
 export type Proyecto = {
   slug: string;
@@ -87,12 +87,12 @@ export const proyectos: Proyecto[] = [
     pagina: "nuevo",
   },
 
-  // ── Cinturón marrón: casos breves ──
+  // ── Cinturón verde: casos a medias, el reto y la idea ──
   {
     slug: "ryanair",
     portada: caso("ryanair/premios.jpg"),
     titulo: "Ryanair",
-    cinturon: "marron",
+    cinturon: "verde",
     tipo: "Grado URJC, en equipo",
     resumen: "Comunicación interna para que la plantilla se sienta parte.",
     pagina: "nuevo",
@@ -101,7 +101,7 @@ export const proyectos: Proyecto[] = [
     slug: "el-regalo-no-deseado",
     portada: caso("torrons/marquesina.png"),
     titulo: "Torrons Vicens",
-    cinturon: "marron",
+    cinturon: "verde",
     tipo: "Grado URJC, en equipo",
     resumen: "Una campaña que convierte el prejuicio sobre lo aparente en una experiencia de descubrimiento.",
     pagina: "nuevo",
@@ -110,7 +110,7 @@ export const proyectos: Proyecto[] = [
     slug: "m-and-ms",
     portada: caso("m-and-ms/cartel.jpg"),
     titulo: "M&M's Premium",
-    cinturon: "marron",
+    cinturon: "verde",
     tipo: "Grado URJC, en equipo",
     resumen: "Lanzamiento en España como agencia, del contrabriefing a los medios.",
     pagina: "nuevo",
@@ -119,7 +119,7 @@ export const proyectos: Proyecto[] = [
     slug: "tour-cdc-dana",
     video: caso("tour-cdc/tinder-publicitario.mp4"),
     titulo: "Tour C de C",
-    cinturon: "marron",
+    cinturon: "verde",
     tipo: "Tour c de c 2025, individual",
     resumen: "Un Tinder publicitario para conectar a la industria con los creativos afectados por la DANA.",
     pagina: "nuevo",
@@ -128,7 +128,7 @@ export const proyectos: Proyecto[] = [
     slug: "revista-super-pop",
     portada: caso("revista-super-pop/portada.jpg"),
     titulo: "Revista Super Pop",
-    cinturon: "marron",
+    cinturon: "verde",
     tipo: "Máster UC3M, en equipo",
     resumen: "Liderazgo explicado con Mean Girls y maquetado como una revista juvenil.",
     pagina: "nuevo",
@@ -137,7 +137,7 @@ export const proyectos: Proyecto[] = [
     slug: "bbva",
     portada: caso("bbva/sagrada-privacidad.jpg"),
     titulo: "BBVA",
-    cinturon: "marron",
+    cinturon: "verde",
     tipo: "Grado URJC, en equipo",
     resumen: "Fraude digital y jóvenes que se creen a salvo.",
     pagina: "nuevo",
@@ -146,59 +146,59 @@ export const proyectos: Proyecto[] = [
     slug: "oreo",
     portada: caso("oreo/grafica.jpg"),
     titulo: "Oreo",
-    cinturon: "marron",
+    cinturon: "verde",
     tipo: "Grado URJC, en equipo",
     resumen: "Plan de medios para un público que vive en redes.",
     pagina: "nuevo",
   },
 
-  // ── Cinturón blanco: donde empecé ──
+  // ── Archivo: trabajos de la carrera ──
   {
     slug: "matutano-mix",
     titulo: "Matutano MIX",
-    cinturon: "blanco",
+    cinturon: "archivo",
     tipo: "Grado URJC, en equipo",
     resumen: "Campaña para la marca de snacks favorita frente a Pringles y las marcas blancas.",
   },
   {
     slug: "brekkies",
     titulo: "Brekkies Excel Deli Sauce",
-    cinturon: "blanco",
+    cinturon: "archivo",
     tipo: "Grado URJC, en equipo",
     resumen: "«Para chuparse las patas»: una salsa que los perros no pueden dejar.",
   },
   {
     slug: "fnac",
     titulo: "FNAC",
-    cinturon: "blanco",
+    cinturon: "archivo",
     tipo: "Grado URJC, en equipo",
     resumen: "Street marketing en el Barrio de las Letras para volver a los clásicos.",
   },
   {
     slug: "generacion-z",
     titulo: "Generación Z",
-    cinturon: "blanco",
+    cinturon: "archivo",
     tipo: "Grado URJC, en equipo",
     resumen: "Cómo nos ven y cómo nos vemos, convertido en estrategia y en podcast.",
   },
   {
     slug: "hermanos-chacon",
     titulo: "Hermanos Chacón",
-    cinturon: "blanco",
+    cinturon: "archivo",
     tipo: "Grado URJC, en equipo",
     resumen: "Rebranding de un bar de toda la vida para atraer a universitarios sin perder a los de siempre.",
   },
   {
     slug: "sra-rushmore",
     titulo: "Sra. Rushmore",
-    cinturon: "blanco",
+    cinturon: "archivo",
     tipo: "Grado URJC, individual",
     resumen: "Análisis de la agencia: quién es, cómo piensa y para quién trabaja.",
   },
   {
     slug: "respeto-futbol",
     titulo: "El respeto en el fútbol",
-    cinturon: "blanco",
+    cinturon: "archivo",
     tipo: "Grado URJC, en equipo",
     resumen: "Campaña para la afición que oye los insultos homófobos y no hace nada.",
   },
@@ -212,12 +212,12 @@ export const cinturones: Record<Cinturon, { nombre: string; nota: string }> = {
     nombre: "Cinturón negro",
     nota: "Los casos completos: qué me pedían, qué hice y qué me llevé.",
   },
-  marron: {
-    nombre: "Cinturón marrón",
+  verde: {
+    nombre: "Cinturón verde",
     nota: "Casos más cortos: el reto, la idea y alguna pieza.",
   },
-  blanco: {
-    nombre: "Cinturón blanco",
-    nota: "Donde empecé. Trabajos de la carrera que me enseñaron el oficio y a perderle el miedo a proponer.",
+  archivo: {
+    nombre: "Archivo",
+    nota: "Trabajos de la carrera que me enseñaron el oficio y a perderle el miedo a proponer.",
   },
 };

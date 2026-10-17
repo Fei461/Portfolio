@@ -30,11 +30,11 @@
   border: 2px solid var(--sumi);
 }
 
-.caso-grado__cinta--marron {
-  background: var(--obi);
+.caso-grado__cinta--verde {
+  background: var(--verde);
 }
 
-.caso-grado__cinta--blanco {
+.caso-grado__cinta--archivo {
   background: var(--judogi);
 }
 

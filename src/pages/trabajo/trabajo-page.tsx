@@ -11,9 +11,9 @@ import { Link, useSearchParams } from "react-router-dom";
 import { cinturones, porCinturon, type Cinturon, type Proyecto } from "@/data/proyectos";
 import "./trabajo.css";
 
-const orden: Cinturon[] = ["negro", "marron", "blanco"];
+const orden: Cinturon[] = ["negro", "verde", "archivo"];
 const esCinturon = (v: string | null): v is Cinturon => orden.includes(v as Cinturon);
-const siguiente: Record<Cinturon, Cinturon> = { negro: "marron", marron: "blanco", blanco: "negro" };
+const siguiente: Record<Cinturon, Cinturon> = { negro: "verde", verde: "archivo", archivo: "negro" };
 
 // Tarjeta tipo dorsal de competición: número grande, imagen o vídeo y nombre.
 function Dorsal({ p, n, cinturon }: { p: Proyecto; n: number; cinturon: Cinturon }) {
@@ -183,6 +183,20 @@ export function TrabajoPage() {
         <p className="trabajo__nota">{cinturones[cinturon].nota}</p>
       </header>
 
+      {cinturon === "archivo" ? (
+        <ul className="archivo" key="archivo">
+          {lista.map((p, i) => (
+            <li key={p.slug} style={{ "--n": i } as CSSProperties}>
+              <span className="archivo__n" aria-hidden="true">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <strong>{p.titulo}</strong>
+              <span className="archivo__resumen">{p.resumen}</span>
+              <span className="archivo__tipo">{p.tipo}</span>
+            </li>
+          ))}
+        </ul>
+      ) : (
       <Pista clave={cinturon} key={cinturon}>
         {lista.map((p, i) => (
           <Dorsal key={p.slug} p={p} n={i + 1} cinturon={cinturon} />
@@ -197,13 +211,16 @@ export function TrabajoPage() {
             <span className="dorsal__siguiente-cinta" aria-hidden="true" />
             <strong>{cinturones[siguiente[cinturon]].nombre}</strong>
             <span>
-              {cinturon === "blanco" ? "Volver a empezar por los casos completos" : "Seguir con el siguiente cinturón"}
+              {siguiente[cinturon] === "archivo" ? "Los trabajos de la carrera" : "Seguir con el siguiente cinturón"}
             </span>
           </button>
         </li>
       </Pista>
+      )}
 
-      <p className="trabajo__ayuda">Arrastra, usa la rueda o las flechas del teclado.</p>
+      {cinturon !== "archivo" && (
+        <p className="trabajo__ayuda">Arrastra, usa la rueda o las flechas del teclado.</p>
+      )}
     </main>
   );
 }

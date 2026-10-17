@@ -90,6 +90,7 @@ export const studIa: CasoCompleto = {
       ],
     },
   ],
+  enMovil: true,
   piezas: {
     titulo: "Piezas publicadas",
     texto: "Algunos de los vídeos que guioné, grabé y edité. Alguno no lo vio ni mi madre (y eso que nos seguía); otro llegó a las 36.000 visualizaciones.",

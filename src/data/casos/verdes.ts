@@ -14,12 +14,6 @@ export const ryanair: CasoCompleto = {
     { etiqueta: "Equipo", valor: "Grupo 11" },
     { etiqueta: "Mi parte", valor: "Diagnóstico y propuesta, en equipo" },
   ],
-  marcador: [
-    { cifra: "20 %", texto: "de actitudes negativas de la plantilla a invertir en dos años" },
-    { cifra: "55 %", texto: "de empleados que conozcan las actividades de la empresa" },
-    { cifra: "40 %", texto: "de empleados que reconozcan los logros" },
-    { cifra: "1", texto: "reunión al mes con los sindicatos" },
-  ],
   contexto: {
     titulo: "Mirar hacia dentro",
     parrafos: [
@@ -320,12 +314,6 @@ export const oreo: CasoCompleto = {
     { etiqueta: "Equipo", valor: "Cuatro personas" },
     { etiqueta: "Mi parte", valor: "Plan completo, en equipo" },
   ],
-  marcador: [
-    { cifra: "10 %", texto: "de alcance orgánico progresivo de la audiencia útil en 12 meses" },
-    { cifra: "10 %", texto: "de nuevos clientes en 12 meses" },
-    { cifra: "20 %", texto: "más de notoriedad en nueve meses" },
-    { cifra: "60 %", texto: "del público alcanzado al menos seis veces" },
-  ],
   contexto: {
     titulo: "Un capricho sin culpa",
     parrafos: [
@@ -360,4 +348,4 @@ export const oreo: CasoCompleto = {
   nota: "Proyecto académico en equipo (Grado URJC), sin relación con Mondelēz.",
 };
 
-export const marrones = [ryanair, torrons, mms, tourCdc, revista, bbva, oreo];
+export const verdes = [ryanair, torrons, mms, tourCdc, revista, bbva, oreo];

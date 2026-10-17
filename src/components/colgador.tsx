@@ -3,21 +3,21 @@ import { Link } from "react-router-dom";
 import { cinturones, porCinturon, type Cinturon } from "@/data/proyectos";
 
 // Colores de cada cinturón: tela, cara interior (más oscura) y costuras.
-const telas: Record<Cinturon, { tela: string; sombra: string; costura: string }> = {
+type Grado = Exclude<Cinturon, "archivo">;
+
+const telas: Record<Grado, { tela: string; sombra: string; costura: string }> = {
   negro: { tela: "#161616", sombra: "#000", costura: "#5a5a54" },
-  marron: { tela: "#6b3a1f", sombra: "#3f2010", costura: "#97633f" },
-  blanco: { tela: "#f7f7f4", sombra: "#c9c9c0", costura: "#cfcfc6" },
+  verde: { tela: "#2f8a3e", sombra: "#1b5527", costura: "#5fb36c" },
 };
 
-const subtitulos: Record<Cinturon, (n: number) => string> = {
+const subtitulos: Record<Grado, (n: number) => string> = {
   negro: (n) => `${n} casos completos`,
-  marron: (n) => `${n} casos breves`,
-  blanco: (n) => `${n} trabajos donde empecé`,
+  verde: (n) => `${n} casos breves`,
 };
 
 // Un cinturón atado como en el tatami: el lazo cerrado colgado de la clavija,
 // el nudo cuadrado delante y las dos puntas cayendo.
-function Obi({ cinturon }: { cinturon: Cinturon }) {
+function Obi({ cinturon }: { cinturon: Grado }) {
   const { tela, sombra, costura } = telas[cinturon];
   const borde = { stroke: "#000", strokeWidth: 3, strokeLinejoin: "round" as const };
   return (
@@ -50,7 +50,7 @@ function Obi({ cinturon }: { cinturon: Cinturon }) {
 }
 
 // Al pasar por un cinturón asoman, en abanico, tres de sus proyectos.
-function Asomo({ cinturon }: { cinturon: Cinturon }) {
+function Asomo({ cinturon }: { cinturon: Grado }) {
   const lista = porCinturon(cinturon);
   const conImagen = lista.filter((p) => p.portada);
   const elegidos = (conImagen.length >= 3 ? conImagen : lista).slice(0, 3);
@@ -66,7 +66,7 @@ function Asomo({ cinturon }: { cinturon: Cinturon }) {
 }
 
 export function Colgador({ extra }: { extra?: ReactNode }) {
-  const orden: Cinturon[] = ["negro", "marron", "blanco"];
+  const orden: Grado[] = ["negro", "verde"];
   return (
     <nav className="colgador" aria-label="Proyectos por cinturón">
       <div className="colgador__barra" aria-hidden="true" />
@@ -83,6 +83,12 @@ export function Colgador({ extra }: { extra?: ReactNode }) {
             </Link>
           </li>
         ))}
+        <li className="colgador__archivo" style={{ "--i": 2 } as CSSProperties}>
+          <Link to="/trabajo?cinturon=archivo">
+            <strong>Archivo</strong>
+            <span>{porCinturon("archivo").length} trabajos de la carrera</span>
+          </Link>
+        </li>
         {extra && (
           <li className="colgador__extra" style={{ "--i": 3 } as CSSProperties}>
             {extra}

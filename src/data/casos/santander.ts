@@ -16,6 +16,11 @@ export const santander: CasoCompleto = {
     { etiqueta: "Mi parte", valor: "La web del laboratorio y la encuesta, enteras. La evaluación, en equipo" },
   ],
   enlaces: [{ href: "https://fei461.github.io/santander/", label: "Abrir el laboratorio" }],
+  laboratorio: {
+    src: "https://fei461.github.io/santander/",
+    titulo: "Laboratorio del signo Santander",
+    texto: "La web que hice, aquí mismo. Ponle tu nota al logo y compárala con la nuestra.",
+  },
   marcador: [
     { cifra: "11", texto: "criterios de Chaves y Belluccia, cada uno con su prueba interactiva" },
     { cifra: "31", texto: "personas en la encuesta, sin saber de qué marca se trataba" },
@@ -90,10 +95,9 @@ export const santander: CasoCompleto = {
     ],
   },
   tatami: {
-    termino: "Kuzushi",
-    titulo: "cuando los datos te desequilibran",
-    intro:
-      "En judo, kuzushi es sacar al otro de su equilibrio. Aquí fueron los datos los que nos sacaron del nuestro más de una vez.",
+    termino: "",
+    titulo: "Cuando los datos te llevan la contraria",
+    intro: "Más de una vez, la encuesta nos dijo algo distinto de lo que esperábamos. Esto es lo que hicimos con ello.",
   },
   caidas: [
     {

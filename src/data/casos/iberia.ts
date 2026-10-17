@@ -104,10 +104,9 @@ export const iberia: CasoCompleto = {
     ],
   },
   tatami: {
-    termino: "Kuzushi",
-    titulo: "desequilibrar el brief",
-    intro:
-      "Kuzushi es sacar al otro de su equilibrio antes de proyectarlo. Aquí lo que había que desequilibrar era el propio encargo.",
+    termino: "",
+    titulo: "Las decisiones que cambiaron el brief",
+    intro: "Lo que había que mover no era el mensaje, sino el propio encargo.",
   },
   caidas: [
     {

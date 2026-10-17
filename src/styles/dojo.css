@@ -2,6 +2,7 @@
    Tatami para la portada, judogi para leer, cinturones para ordenar. */
 :root {
   --alto-cabecera: 76px;
+  --verde: #2f8a3e;
   --judogi: #f5f5f2;
   --sumi: #000000;
   --obi: #6b3a1f;
@@ -1163,4 +1164,44 @@
 
 .no-encontrada .dojo-entradilla {
   color: var(--sumi);
+}
+
+/* El archivo, bajo los cinturones: una etiqueta sin cinturón */
+.colgador__archivo {
+  flex: 0.8 !important;
+  align-self: flex-end;
+}
+
+.colgador__archivo a {
+  display: block;
+  padding: 0.55rem 0.8rem;
+  text-decoration: none;
+  color: var(--sumi);
+  background: var(--judogi);
+  border: 3px dashed var(--sumi);
+  rotate: 1.5deg;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.colgador__archivo a:hover,
+.colgador__archivo a:focus-visible {
+  background: var(--sumi);
+  color: var(--judogi);
+  transform: translateY(-4px);
+}
+
+.colgador__archivo strong,
+.colgador__archivo span {
+  display: block;
+  font-family: var(--f);
+}
+
+.colgador__archivo strong {
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+.colgador__archivo span {
+  font-size: 0.88rem;
+  opacity: 0.8;
 }

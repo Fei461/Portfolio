@@ -110,10 +110,9 @@ export const brujaRoja: CasoCompleto = {
     ],
   },
   tatami: {
-    termino: "Kuzushi",
-    titulo: "desequilibrar un tabú",
-    intro:
-      "Para que se hable de algo que se esconde, primero hay que sacarlo de su sitio. Estas fueron las decisiones que lo hicieron.",
+    termino: "",
+    titulo: "Cómo sacar un tabú de su sitio",
+    intro: "Para que se hable de algo que se esconde, primero hay que sacarlo de su sitio. Estas fueron las decisiones que lo hicieron.",
   },
   caidas: [
     {

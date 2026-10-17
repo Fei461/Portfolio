@@ -490,60 +490,6 @@
   }
 }
 
-/* ── Notas como tablón: clavadas con cinta y un poco torcidas ── */
-.notas {
-  gap: 2.25rem 1.75rem;
-  padding: 1rem 0.5rem;
-}
-
-.nota {
-  position: relative;
-  box-shadow: 8px 8px 0 var(--heri);
-  transition: rotate 0.3s cubic-bezier(0.3, 1.5, 0.5, 1), transform 0.3s ease;
-}
-
-.nota:nth-child(3n + 1) {
-  rotate: -1.2deg;
-}
-
-.nota:nth-child(3n + 2) {
-  rotate: 0.9deg;
-}
-
-.nota:nth-child(3n) {
-  rotate: -0.4deg;
-}
-
-.nota:hover {
-  rotate: 0deg;
-  transform: translateY(-4px);
-}
-
-.nota::before {
-  content: "";
-  position: absolute;
-  top: -14px;
-  left: 50%;
-  width: 84px;
-  height: 22px;
-  translate: -50% 0;
-  rotate: -4deg;
-  background: rgba(107, 58, 31, 0.85);
-  border: 2px solid var(--sumi);
-}
-
-.pagina:has(.notas) {
-  max-width: none;
-  background-color: var(--tatami);
-  background-image: repeating-linear-gradient(90deg, transparent 0 5px, rgba(0, 0, 0, 0.05) 5px 6px);
-}
-
-.pagina:has(.notas) > * {
-  max-width: 1320px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 /* ── CV: una hoja sobre el tatami ── */
 .cv-mesa {
   padding: clamp(1.5rem, 4vw, 3rem) var(--gutter);
@@ -575,22 +521,130 @@
   }
 }
 
-/* Cabecera de Notas compacta: título y entradilla en una línea. */
-.pagina:has(.notas) .pagina-cabecera {
+
+/* ── Notas: índice a la izquierda, la nota abierta sobre el tatami ── */
+.notas-indice {
+  display: flex;
+  flex-direction: column;
+}
+
+.notas-indice__intro {
+  margin: 0.9rem 0 0;
+  max-width: 46ch;
+  color: var(--texto-suave);
+}
+
+.combate--notas .notas-filtro {
+  margin-top: 1.1rem;
+}
+
+.combate--notas .notas-filtro button {
+  font-size: 0.9rem;
+  padding: 0.35rem 0.7rem;
+}
+
+.notas-lista {
+  list-style: none;
+  margin: 1.1rem 0 0;
+  padding: 0;
+  border-top: 4px solid var(--sumi);
+}
+
+.notas-lista button {
+  display: block;
+  width: 100%;
+  padding: 0.7rem 0.5rem;
+  text-align: left;
+  font-family: var(--f);
+  font-weight: 700;
+  font-size: 1.02rem;
+  line-height: 1.2;
+  color: var(--sumi);
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+  cursor: pointer;
+  transition: background 0.2s ease, padding 0.2s ease;
+}
+
+.notas-lista button span {
+  display: block;
+  margin-bottom: 0.15rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--obi);
+}
+
+.notas-lista button:hover {
+  background: rgba(201, 196, 139, 0.35);
+}
+
+.notas-lista button.activo {
+  padding-left: 1rem;
+  color: var(--judogi);
+  background: var(--sumi);
+  box-shadow: inset 8px 0 0 var(--obi);
+}
+
+.notas-lista button.activo span {
+  color: var(--tatami);
+}
+
+.nota-hoja {
+  max-width: 760px;
+}
+
+.nota-hoja__tema {
+  margin: 0;
+  font-weight: 700;
+  color: var(--obi);
+}
+
+.nota-hoja h2 {
+  margin: 0.3rem 0 1rem;
+}
+
+.nota-hoja p:not(.nota-hoja__tema) {
+  margin: 0 0 0.8rem;
+  max-width: 64ch;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.nota-hoja .nota-hoja__gancho {
+  font-weight: 700;
+  font-size: 1.25rem !important;
+  line-height: 1.35 !important;
+}
+
+.nota-hoja__pie {
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-end;
-  gap: 1rem 2.5rem;
-}
-
-.pagina:has(.notas) .pagina-lead {
-  max-width: 44ch;
-  margin: 0;
-  font-size: clamp(1.1rem, 1.6vw, 1.4rem);
-  font-weight: 600;
-  line-height: 1.3;
-}
-
-.pagina:has(.notas) .notas-filtro {
+  gap: 0.5rem 1.5rem;
   margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 3px solid var(--sumi);
+  font-weight: 700;
+}
+
+.nota-hoja__pie a {
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.2em;
+}
+
+.notas-fuera {
+  margin-top: 1.75rem;
+}
+
+.notas-fuera ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.notas-fuera li + li {
+  margin-top: 0.35rem;
+}
+
+.notas-fuera a {
+  font-weight: 600;
 }

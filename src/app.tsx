@@ -100,9 +100,9 @@ function App() {
   );
 }
 
-// Las pantallas del dojo (portada, proyectos y casos) caben enteras en la ventana;
+// Las pantallas sobre el tatami (portada, proyectos y casos) caben enteras en la ventana;
 // el pie solo acompaña a las páginas de lectura.
-const conPie = ["/notas", "/cv"];
+const conPie = ["/cv"];
 
 function MainLayout() {
   const { pathname } = useLocation();

@@ -26,7 +26,7 @@ function NombreProyectado() {
   );
 }
 
-// La portada es el dojo entero en una pantalla: quién soy a la izquierda y,
+// La portada es el tatami entero en una pantalla: quién soy a la izquierda y,
 // en la pared, los cinturones que llevan a los proyectos.
 export function InicioPage() {
   useEffect(() => {

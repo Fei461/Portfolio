@@ -1,8 +1,8 @@
 /* Proyectos: una pista horizontal de dorsales, un cinturón cada vez. */
 .trabajo {
   --cinta-negro: var(--sumi);
-  --cinta-marron: var(--obi);
-  --cinta-blanco: var(--judogi);
+  --cinta-verde: var(--verde);
+  --cinta-archivo: var(--judogi);
   display: flex;
   flex-direction: column;
   height: calc(100svh - var(--alto-cabecera));
@@ -75,11 +75,11 @@
   background: var(--sumi);
 }
 
-.grado-boton--marron .grado-boton__cinta {
-  background: var(--obi);
+.grado-boton--verde .grado-boton__cinta {
+  background: var(--verde);
 }
 
-.grado-boton--blanco .grado-boton__cinta {
+.grado-boton--archivo .grado-boton__cinta {
   background: var(--judogi);
 }
 
@@ -194,11 +194,11 @@ button.dorsal__enlace:focus-visible {
   color: var(--judogi);
 }
 
-.dorsal--marron .dorsal__numero {
-  background: var(--obi);
+.dorsal--verde .dorsal__numero {
+  background: var(--verde);
 }
 
-.dorsal--blanco .dorsal__numero {
+.dorsal--archivo .dorsal__numero {
   background: var(--judogi);
   color: var(--sumi);
   border: 3px solid var(--sumi);
@@ -334,5 +334,76 @@ a.dorsal__enlace:hover .dorsal__visual video {
   .dorsal__enlace {
     min-height: 0;
     height: 64svh;
+  }
+}
+
+/* Archivo: los trabajos de la carrera en una sola pantalla, como fichas */
+.archivo {
+  list-style: none;
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+  align-content: start;
+  gap: 1rem;
+  margin: clamp(1rem, 2.5vh, 1.75rem) 0 0;
+  padding: 0.5rem var(--gutter) 1.5rem;
+  overflow-y: auto;
+}
+
+.archivo li {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 1rem 1.1rem 1rem 3.4rem;
+  background: var(--judogi);
+  border: 3px solid var(--sumi);
+  box-shadow: 5px 5px 0 var(--sumi);
+  animation: dorsal-entrar 0.45s cubic-bezier(0.25, 1.2, 0.5, 1) backwards;
+  animation-delay: calc(var(--n, 0) * 50ms);
+}
+
+.archivo__n {
+  position: absolute;
+  top: 0.9rem;
+  left: 0.9rem;
+  font-weight: 800;
+  font-variation-settings: "opsz" 48, "wdth" 75;
+  font-size: 1.4rem;
+  line-height: 1;
+  color: var(--texto-suave);
+}
+
+.archivo strong {
+  font-weight: 800;
+  font-variation-settings: "opsz" 48, "wdth" 80;
+  font-size: 1.45rem;
+  line-height: 1;
+}
+
+.archivo__resumen {
+  line-height: 1.4;
+}
+
+.archivo__tipo {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--texto-suave);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .archivo li {
+    animation: none;
+  }
+}
+
+.archivo {
+  width: 100%;
+  min-width: 0;
+}
+
+@media (max-width: 600px) {
+  .archivo {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
