@@ -9,10 +9,10 @@ export const brujaRoja: CasoCompleto = {
   parecia: "Parecía una identidad visual.",
   era: "Era un sistema entero para hablar de la regla sin pedir perdón: tono, logos, color, contenido y producto.",
   ficha: [
-    { etiqueta: "Qué", valor: "Manual de identidad corporativa para una copa menstrual" },
-    { etiqueta: "Dónde", valor: "Grado en Publicidad y RRPP, URJC" },
-    { etiqueta: "Equipo", valor: "Trabajo en equipo" },
-    { etiqueta: "Mi parte", valor: "Identidad y aplicaciones, en equipo" },
+    { etiqueta: "Qué", valor: "Cuenta de X e identidad corporativa para una copa menstrual" },
+    { etiqueta: "Dónde", valor: "Comunicación Multimedia, Grado URJC" },
+    { etiqueta: "Equipo", valor: "Cuatro personas, cuatro meses publicando en X" },
+    { etiqueta: "Mi parte", valor: "Propuse el enfoque de la cuenta; identidad y aplicaciones, en equipo" },
   ],
   marcador: [
     { cifra: "3", texto: "colores: cobre, burdeos y crema" },
@@ -24,7 +24,8 @@ export const brujaRoja: CasoCompleto = {
     titulo: "Una copa menstrual que no pide permiso",
     parrafos: [
       "Bruja Roja nace para desafiar los tabúes sobre la menstruación, empoderar a las mujeres y ofrecer una alternativa sostenible con su copa menstrual.",
-      "La clave era el tono: directo, provocador y con un punto de ironía. Una marca que habla como esa amiga que te dice las verdades que nadie más se atreve a decir, y que ocupa su espacio sin pedir permiso.",
+      "El reto de la asignatura era crear una cuenta en X. Convencí a mi equipo de que había otra forma de abordarlo: buscar la viralidad desde el odio, con un discurso profundamente progresista que chocara con la masculinidad frágil de esa red. Estuvimos cuatro meses publicando sin parar.",
+      "La clave era el tono: directo, provocador y con un punto de ironía. Una marca que habla como esa amiga que te dice las verdades que nadie más se atreve a decir. Por el camino creamos dos productos, colaboramos con otros grupos y lo resumimos todo en un dossier y un manual de marca.",
     ],
   },
   bloques: [
@@ -137,6 +138,7 @@ export const brujaRoja: CasoCompleto = {
     cargo: "Bruja Roja",
   },
   aprendizajes: [
+    "Cómo comunicar en un mundo instantáneo, donde la conversación nace en un segundo y desaparece igual de rápido.",
     "Un tono se diseña igual que un logo: con reglas.",
     "Decir cómo no se usa una marca la protege tanto como decir cómo se usa.",
     "El humor abre conversaciones que un dato solo no abre.",

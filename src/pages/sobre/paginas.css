@@ -243,6 +243,11 @@
   font-weight: 600;
 }
 
+.cv-premio {
+  margin: 0.35rem 0 0;
+  color: var(--texto-suave);
+}
+
 .cv-contacto {
   display: flex;
   flex-direction: column;

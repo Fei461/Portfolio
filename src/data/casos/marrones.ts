@@ -83,7 +83,7 @@ export const torrons: CasoCompleto = {
   contexto: {
     titulo: "Un turrón que no parece turrón",
     parrafos: [
-      "Sinergia es una línea de turrones creada con chefs de alta cocina. Para muchos jóvenes, el turrón es un dulce de Navidad y poco más.",
+      "El brief parecía sencillo: enamorar a la Generación Z para que comprara turrón de alta calidad. El problema, un precio poco asequible para una generación que mira el bolsillo. Y para ellos Sinergia, la línea creada con chefs de alta cocina, era un dulce de Navidad y poco más.",
       "El insight venía de ellos mismos: «Muchas veces no me muestro como soy en realidad por miedo a ser juzgado». Igual que el producto, juzgado por fuera y distinto por dentro.",
     ],
   },
@@ -94,6 +94,7 @@ export const torrons: CasoCompleto = {
       puntos: [
         "Inspirado en el trampantojo: detrás de cada envoltorio inesperado hay un regalo esperando a ser descubierto, como detrás de cada persona.",
         "Un mensaje para la Generación Z: la verdadera esencia está en el interior.",
+        "Dos pilares: romper la estacionalidad, para que el turrón sea un postre de todo el año, y dar profundidad al mensaje atacando los prejuicios.",
       ],
     },
     {
@@ -176,24 +177,39 @@ export const tourCdc: CasoCompleto = {
   slug: "tour-cdc-dana",
   titulo: "Tour C de C",
   parecia: "Parecía una app de citas.",
-  era: "Era una propuesta para el Tour C de C, contada con el lenguaje de Tinder.",
+  era: "Era una forma de conectar a agencias y anunciantes con los creativos afectados por la DANA.",
   ficha: [
-    { etiqueta: "Qué", valor: "Propuesta en vídeo: un Tinder publicitario" },
-    { etiqueta: "Brief", valor: "Jóvenes Talentos, 2024" },
+    { etiqueta: "Qué", valor: "Propuesta para el Tour c de c 2025 del Club de Creatividad" },
+    { etiqueta: "Brief", valor: "Dar visibilidad a los profesionales creativos afectados por la DANA" },
+    { etiqueta: "Equipo", valor: "Individual" },
+    { etiqueta: "Resultado", valor: "No fue seleccionada, y la sigo defendiendo" },
   ],
   contexto: {
-    titulo: "Un Tinder publicitario",
+    titulo: "El pueblo salva al pueblo",
     parrafos: [
-      "A partir del brief de Jóvenes Talentos de 2024, la propuesta para el Tour C de C se presenta literalmente así: como un Tinder de la publicidad.",
+      "Cuando la DANA arrasó la Comunidad Valenciana, desde Madrid solo pude donar productos de primera necesidad. Se me quedó la espinita de qué más habría podido hacer con los recursos adecuados.",
+      "Un mes después, el Club de Creatividad lanzó el Tour c de c 2025 con un brief centrado precisamente en eso: dar visibilidad a los creativos afectados. Ahí encontré el momento de darle forma a la idea.",
     ],
   },
-  bloques: [],
+  bloques: [
+    {
+      titulo: "La idea",
+      resumen: "Un Tinder publicitario.",
+      puntos: [
+        "Una base de datos para que agencias y anunciantes conecten con los profesionales damnificados de la zona.",
+        "Un matching que va más allá del CV: portfolio visible, likes y comentarios, como en una app de citas.",
+      ],
+    },
+  ],
   piezas: {
     titulo: "El vídeo",
-    texto: "La pieza completa.",
+    texto: "La propuesta completa, en vídeo.",
     videos: [{ src: img("tour-cdc", "tinder-publicitario.mp4"), titulo: "Tinder publicitario", red: "Vídeo" }],
   },
-  aprendizajes: ["Un formato que todo el mundo conoce es un atajo para que se entienda la idea."],
+  aprendizajes: [
+    "Un formato que todo el mundo conoce es un atajo para que se entienda la idea.",
+    "No ganar no le quita valor a haber intentado aportar una solución.",
+  ],
 };
 
 export const revista: CasoCompleto = {

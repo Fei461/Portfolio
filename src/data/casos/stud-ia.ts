@@ -16,9 +16,9 @@ export const studIa: CasoCompleto = {
   ],
   marcador: [
     { cifra: "80.000", texto: "estudiantes activos al mes al terminar mis prácticas" },
-    { cifra: "70+", texto: "países, de España a Latinoamérica" },
+    { cifra: "10:1", texto: "impresiones de responder a cuentas grandes frente a publicar contenido propio en X" },
+    { cifra: "3.030", texto: "visitas y 365 seguidores en Threads en un mes, empezando desde cero" },
     { cifra: "36.000", texto: "visualizaciones de uno de mis vídeos en YouTube" },
-    { cifra: "3", texto: "redes a mi cargo: X, Threads y Bluesky" },
   ],
   contexto: {
     titulo: "Una startup pequeña, a propósito",
@@ -59,6 +59,17 @@ export const studIa: CasoCompleto = {
       ],
     },
     {
+      titulo: "Leer los datos y cambiar el plan",
+      resumen: "BXT: Bluesky, X y Threads, mi primer ownership. Un informe cada mes.",
+      puntos: [
+        "X: las respuestas rápidas a cuentas grandes sumaron 6.577 impresiones frente a 671 del contenido propio. Una respuesta a Lidl logró 784 impresiones, 43 interacciones y 7 visitas al perfil, y se convirtió en el modelo a repetir.",
+        "Con esos datos dejé de publicar a diario y de copiar lo mismo en las tres redes: tres publicaciones propias a la semana y cuatro días dedicados a entrar en conversaciones.",
+        "Threads: 3.030 visitas y 365 seguidores en un mes, con el 64 % del tráfico llegando desde fuera del feed. Y un hallazgo que cambió el tono: la audiencia real era latinoamericana y de 25 a 34 años, no universitaria española.",
+        "TikTok: 16.000 visualizaciones en una semana, 10.000 de espectadores nuevos, pero la gente se iba en el primer segundo. El «reto del baño» llegó a 8 segundos de media frente a uno o dos del resto, así que pasamos a miniseries, ganchos sin «hola» y vídeos de 12 a 25 segundos.",
+        "Bluesky: el tono más coherente con la marca, pero sin red de contactos. Lancé un starter pack, «Survival Kit Estudiante 2026», para entrar en la comunidad académica.",
+      ],
+    },
+    {
       titulo: "Ordenar la estrategia",
       resumen: "Las herramientas que sostenían el trabajo del día a día.",
       puntos: [
@@ -69,10 +80,12 @@ export const studIa: CasoCompleto = {
     },
     {
       titulo: "Lanzar campañas",
-      resumen: "Lo más parecido a lo que estudié, con plazos de startup.",
+      resumen: "Una por país, cuando a cada uno le tocaba examen.",
       puntos: [
-        "B2C: dos campañas pequeñas al mes entre marzo y mayo, planificadas en febrero a partir del calendario de exámenes de cada país, con vídeos, carruseles, comentarios, email y códigos de descuento.",
-        "Medición de interacciones, nuevos usuarios y conversión a premium; los resultados de las primeras campañas mejoraron las últimas.",
+        "Perú, «Entrena el examen real»: tu vacante no depende de la suerte, depende de cómo entrenes. Colombia, «No es cuánto estudias, es cómo llegas al examen».",
+        "Argentina, «No estaba muerto, estaba de parranda»: la resurrección académica de quien desaparece en marzo y despierta con un parcial.",
+        "España, «El 30 % que nadie mira», para los de primero de Bachillerato, y la campaña de la PAU 2026, «Que las estadísticas estén siempre de vuestro lado». México, «Rumbo al EXANI».",
+        "Cada una con vídeos, carruseles, estrategia de comentarios, email marketing y códigos de descuento, y midiendo nuevos usuarios y conversión a premium.",
         "B2B: secuencias de siete mensajes por LinkedIn y email para cuatro nichos prioritarios, cada una con su objetivo, su tono y su narrativa.",
       ],
     },
@@ -123,7 +136,7 @@ export const studIa: CasoCompleto = {
     {
       titulo: "De «huevito» a llevar tres redes",
       texto:
-        "Al principio me presentaba como «huevito» y me callaba por miedo a decir una tontería. El punto de inflexión fue proponer reactivar X y Threads: la idea cuajó, llegué a la siguiente reunión con una propuesta completa para esas dos redes y Bluesky, y me quedé a cargo de ellas.",
+        "Al principio me presentaba como «huevito» y me callaba por miedo a decir una tontería. Detecté un hueco donde yo sí tenía experiencia, X, y lo propuse. Me dijeron «podría estar bien». En la siguiente reunión llevé una estrategia completa para X, Threads y Bluesky, y así nació BXT.",
     },
     {
       titulo: "Medir sin estadísticas",

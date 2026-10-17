@@ -64,7 +64,7 @@ export const proyectos: Proyecto[] = [
     cinturon: "negro",
     tipo: "Grado URJC, en equipo",
     resumen:
-      "Identidad corporativa completa para una copa menstrual que habla como esa amiga que te dice lo que nadie se atreve.",
+      "Cuatro meses en X y una identidad completa para una copa menstrual que habla como esa amiga que te dice lo que nadie se atreve.",
     pagina: "nuevo",
   },
   {
@@ -106,8 +106,8 @@ export const proyectos: Proyecto[] = [
     slug: "tour-cdc-dana",
     titulo: "Tour C de C",
     cinturon: "marron",
-    tipo: "Brief de Jóvenes Talentos, 2024",
-    resumen: "Un Tinder publicitario: una propuesta en vídeo para el Tour C de C.",
+    tipo: "Tour c de c 2025, individual",
+    resumen: "Un Tinder publicitario para conectar a la industria con los creativos afectados por la DANA.",
     pagina: "nuevo",
   },
   {

@@ -63,6 +63,7 @@ export function CvPage() {
               {perfil.premios.map((p) => (
                 <li key={p.titulo}>
                   <strong>{p.titulo}</strong> {p.lugar}
+                  {p.detalle && <p className="cv-premio">{p.detalle}</p>}
                 </li>
               ))}
             </ul>

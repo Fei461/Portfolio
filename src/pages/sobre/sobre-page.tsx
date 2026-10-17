@@ -63,8 +63,11 @@ export function SobrePage() {
           </blockquote>
           <p>
             Puede parecer un deporte individual hasta que descubres a tu entrenador, a tus
-            compañeros, a tu familia y, sobre todo, a tu pareja, más ilusionados que tú por un
-            resultado.
+            compañeros, a tu familia y, sobre todo, a tu cuack{" "}
+            <span aria-label="corazón amarillo" role="img">
+              💛
+            </span>
+            , más ilusionados que tú por un resultado.
           </p>
           <p>
             Hoy soy cinturón marrón en judo y azul en taekwondo, y he dado clase de artes marciales y
