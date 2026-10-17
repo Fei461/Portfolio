@@ -6,11 +6,25 @@ export type CasoCompleto = {
   parecia: string;
   era: string;
   ficha: { etiqueta: string; valor: string }[];
+  /** Enlaces destacados en la cabecera (producto en vivo, web del proyecto…). */
+  enlaces?: { href: string; label: string }[];
   /** Cifras reales del proyecto, en el marcador. */
   marcador?: { cifra: string; texto: string }[];
   contexto: { titulo: string; parrafos: string[] };
   /** Lo que hice, agrupado por terreno. */
   bloques: { titulo: string; resumen: string; puntos: string[] }[];
+  /** Línea de tiempo en meses (ventanas, fases…). */
+  cronograma?: {
+    titulo: string;
+    intro: string;
+    meses: number;
+    tramos: { nombre: string; desde: number; hasta: number; texto: string; abierto?: boolean }[];
+  };
+  /** Reparto en porcentajes de un total. */
+  reparto?: { titulo: string; intro: string; total: string; partes: { nombre: string; pct: number }[] };
+  /** Demo interactiva propia del caso. */
+  demo?: "talixea";
+  imagenes?: { titulo: string; texto?: string; items: { src: string; alt: string; pie: string }[] };
   piezas?: {
     titulo: string;
     texto: string;
@@ -19,6 +33,8 @@ export type CasoCompleto = {
   };
   /** Ukemi: dónde caí y cómo me levanté. */
   caidas?: { titulo: string; texto: string }[];
+  /** Título e introducción alternativos para la sección sobre tatami. */
+  tatami?: { titulo: string; termino: string; intro: string };
   cita?: { texto: string; autor: string; cargo: string };
   aprendizajes: string[];
   enLinkedIn?: { titulo: string; href: string }[];

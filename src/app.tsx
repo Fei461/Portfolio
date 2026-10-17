@@ -13,9 +13,6 @@ const SobrePage = lazy(() =>
 const NotasPage = lazy(() =>
   import("@/pages/notas-page").then(({ NotasPage }) => ({ default: NotasPage })),
 );
-const TalixeaPage = lazy(() =>
-  import("@/pages/talixea-page").then(({ TalixeaPage }) => ({ default: TalixeaPage })),
-);
 const CasoRouter = lazy(() =>
   import("@/pages/caso/caso-router").then(({ CasoRouter }) => ({ default: CasoRouter })),
 );
@@ -108,7 +105,6 @@ function MainLayout() {
               <Route path="/sobre" element={<SobrePage />} />
               <Route path="/sobre-mi" element={<SobrePage />} />
               <Route path="/notas" element={<NotasPage />} />
-              <Route path="/trabajo/talixea" element={<TalixeaPage />} />
               <Route path="/trabajo/:slug" element={<CasoRouter />} />
               <Route path="/cv" element={<CvPage />} />
               <Route path="*" element={<NotFoundPage />} />

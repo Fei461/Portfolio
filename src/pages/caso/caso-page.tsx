@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import type { CasoCompleto } from "@/data/casos";
 import { porCinturon, proyectos } from "@/data/proyectos";
+import { DemoTalixea } from "./demo-talixea";
+import { Cronograma, Reparto } from "./graficos";
 import "./caso.css";
 
 const red = (href: string) => (href.includes("tiktok") ? "TikTok" : href.includes("instagram") ? "Instagram" : "YouTube");
@@ -56,6 +58,16 @@ export function CasoPage({ caso }: { caso: CasoCompleto }) {
           <s className="caso-lecturas__primera">{caso.parecia}</s>
           <span className="caso-lecturas__segunda">{caso.era}</span>
         </p>
+        {caso.enlaces && (
+          <div className="dojo-acciones">
+            {caso.enlaces.map((e) => (
+              <a key={e.href} className="dojo-boton" href={e.href} target="_blank" rel="noreferrer">
+                {e.label}
+                <span className="sr-only"> (se abre en otra pestaña)</span>
+              </a>
+            ))}
+          </div>
+        )}
         <dl className="caso-ficha">
           {caso.ficha.map((f) => (
             <div key={f.etiqueta}>
@@ -92,6 +104,9 @@ export function CasoPage({ caso }: { caso: CasoCompleto }) {
         </div>
       </section>
 
+      {caso.demo === "talixea" && <DemoTalixea />}
+      {caso.cronograma && <Cronograma datos={caso.cronograma} />}
+
       {/* ── Lo que hice ── */}
       <section className="caso-seccion" aria-labelledby="caso-hice">
         <h2 id="caso-hice" className="caso-h2">
@@ -113,6 +128,26 @@ export function CasoPage({ caso }: { caso: CasoCompleto }) {
           ))}
         </div>
       </section>
+
+      {caso.reparto && <Reparto datos={caso.reparto} />}
+
+      {/* ── Imágenes ── */}
+      {caso.imagenes && (
+        <section className="caso-seccion" aria-labelledby="caso-imagenes">
+          <h2 id="caso-imagenes" className="caso-h2">
+            {caso.imagenes.titulo}
+          </h2>
+          {caso.imagenes.texto && <p className="caso-entradilla">{caso.imagenes.texto}</p>}
+          <div className="caso-imagenes">
+            {caso.imagenes.items.map((im) => (
+              <figure key={im.src}>
+                <img src={im.src} alt={im.alt} loading="lazy" />
+                <figcaption>{im.pie}</figcaption>
+              </figure>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* ── Piezas ── */}
       {caso.piezas && (
@@ -173,11 +208,12 @@ export function CasoPage({ caso }: { caso: CasoCompleto }) {
         <section className="caso-ukemi" aria-labelledby="caso-ukemi">
           <div className="caso-ukemi__dentro">
             <h2 id="caso-ukemi" className="caso-h2">
-              <span lang="ja-Latn">Ukemi</span>: dónde caí y cómo me levanté
+              <span lang="ja-Latn">{caso.tatami?.termino ?? "Ukemi"}</span>:{" "}
+              {caso.tatami?.titulo ?? "dónde caí y cómo me levanté"}
             </h2>
             <p className="caso-entradilla">
-              Lo primero que te enseñan en judo es a caer sin hacerte daño. Esto fue lo que me tocó
-              aprender aquí.
+              {caso.tatami?.intro ??
+                "Lo primero que te enseñan en judo es a caer sin hacerte daño. Esto fue lo que me tocó aprender aquí."}
             </p>
             <ul className="caso-caidas">
               {caso.caidas.map((c) => (

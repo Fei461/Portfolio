@@ -81,6 +81,10 @@
   color: var(--texto-suave);
 }
 
+.caso-cabecera .dojo-acciones {
+  margin-top: 1.75rem;
+}
+
 /* ── Marcador ─────────────────────────────── */
 .caso-marcador {
   background: var(--sumi);
@@ -212,6 +216,235 @@
   width: 0.7rem;
   height: 4px;
   background: var(--obi);
+}
+
+/* Imágenes */
+.caso-imagenes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.caso-imagenes figure {
+  margin: 0;
+}
+
+/* Con un número impar de imágenes, la primera ocupa todo el ancho. */
+.caso-imagenes figure:first-child:nth-last-child(odd) {
+  grid-column: 1 / -1;
+}
+
+.caso-imagenes img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 3px solid var(--sumi);
+  box-shadow: 8px 8px 0 var(--heri);
+}
+
+.caso-imagenes figcaption {
+  margin-top: 0.9rem;
+  color: var(--texto-suave);
+}
+
+/* Demo de Talixea */
+.demo-talixea {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 2rem clamp(2rem, 5vw, 4rem);
+  margin-top: 2rem;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  background-color: var(--tatami);
+  border: 4px solid var(--heri);
+}
+
+.demo-talixea__control {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-content: start;
+  gap: 0.75rem;
+}
+
+.demo-talixea__control label {
+  font-weight: 700;
+}
+
+.demo-talixea__control output {
+  font-weight: 800;
+  font-variation-settings: "opsz" 48, "wdth" 78;
+  font-size: 2.5rem;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.demo-talixea__control input {
+  grid-column: 1 / -1;
+  width: 100%;
+  accent-color: var(--obi);
+  height: 2rem;
+}
+
+.demo-talixea__marcas {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.demo-talixea__texto {
+  background: var(--judogi);
+  border: 3px solid var(--sumi);
+  padding: 1.25rem 1.5rem;
+}
+
+.demo-talixea__texto p {
+  margin: 0 0 0.8rem;
+  font-size: 1.15rem;
+  line-height: 1.6;
+}
+
+.demo-talixea__texto p:last-child {
+  margin-bottom: 0;
+}
+
+.demo-talixea__libro {
+  color: var(--texto-suave);
+  font-size: 0.95rem !important;
+  font-weight: 600;
+}
+
+.demo-talixea mark {
+  background: none;
+  color: var(--obi);
+  font-weight: 800;
+  text-decoration: underline dotted 2px;
+  text-underline-offset: 0.2em;
+}
+
+/* Cronograma */
+.cronograma {
+  list-style: none;
+  margin: 2rem 0 0;
+  padding: 0;
+  border-top: 4px solid var(--sumi);
+}
+
+.cronograma li {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.6fr);
+  gap: 1rem 2.5rem;
+  align-items: center;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.18);
+}
+
+.cronograma h3 {
+  margin: 0;
+  font-weight: 800;
+  font-variation-settings: "opsz" 40, "wdth" 85;
+  font-size: 1.35rem;
+}
+
+.cronograma__texto p {
+  margin: 0.3rem 0 0;
+  color: var(--texto-suave);
+}
+
+.cronograma__pista {
+  position: relative;
+  height: 34px;
+  background: repeating-linear-gradient(to right, rgba(0, 0, 0, 0.12) 0 1px, transparent 1px calc(100% / 5));
+}
+
+.cronograma__barra {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background:
+    repeating-linear-gradient(to bottom, transparent 0 6px, rgba(255, 255, 255, 0.14) 6px 7px),
+    var(--obi);
+  border: 2px solid var(--sumi);
+}
+
+.cronograma__barra--abierta {
+  border-right: 0;
+  background:
+    linear-gradient(to right, transparent 70%, var(--judogi)),
+    repeating-linear-gradient(to bottom, transparent 0 6px, rgba(255, 255, 255, 0.14) 6px 7px),
+    var(--obi);
+}
+
+.cronograma__regla {
+  position: relative;
+  height: 1.75rem;
+  margin-left: calc((100% - 2.5rem) * 0.8 / 2.4 + 2.5rem);
+  font-size: 0.85rem;
+  color: var(--texto-suave);
+}
+
+.cronograma__regla span {
+  position: absolute;
+  top: 0.4rem;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.cronograma__regla span:first-child {
+  transform: none;
+}
+
+.cronograma__regla span:last-child {
+  transform: translateX(-100%);
+}
+
+/* Reparto */
+.reparto {
+  display: flex;
+  margin-top: 2rem;
+  height: 64px;
+  border: 3px solid var(--sumi);
+}
+
+.reparto__parte {
+  display: flex;
+  align-items: center;
+  padding-left: 0.75rem;
+  font-weight: 800;
+  color: var(--judogi);
+}
+
+.reparto__parte + .reparto__parte {
+  border-left: 3px solid var(--sumi);
+}
+
+.reparto__parte--0 { background: var(--obi); }
+.reparto__parte--1 { background: var(--sumi); }
+.reparto__parte--2 { background: var(--tatami); color: var(--sumi); }
+.reparto__parte--3 { background: var(--marcador); }
+.reparto__parte--4 { background: var(--judogi); color: var(--sumi); }
+
+.reparto__leyenda {
+  list-style: none;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.75rem;
+}
+
+.reparto__leyenda li {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.reparto__muestra {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid var(--sumi);
 }
 
 /* Vídeos */
@@ -470,8 +703,15 @@
     grid-template-columns: 1fr;
   }
 
-  .caso-caidas {
+  .caso-caidas,
+  .caso-imagenes,
+  .demo-talixea,
+  .cronograma li {
     grid-template-columns: 1fr;
+  }
+
+  .cronograma__regla {
+    margin-left: 0;
   }
 
   .caso-videos {

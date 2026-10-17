@@ -39,6 +39,7 @@ export const proyectos: Proyecto[] = [
     tipo: "Proyecto propio, en marcha",
     resumen:
       "Buscaba una app para aprender idiomas leyendo, en español y gratis. No existía, así que la hice sin saber programar: 40 libros y seis idiomas.",
+    pagina: "nuevo",
     fuera: { href: "https://talixea.es", label: "Visitar talixea.es" },
   },
   {
@@ -48,6 +49,7 @@ export const proyectos: Proyecto[] = [
     tipo: "Máster UC3M, web y encuesta hechas por mí",
     resumen:
       "Un laboratorio web para evaluar el logo del banco con once criterios y una encuesta propia a 31 personas. Lo que la marca dice frente a lo que la gente percibe.",
+    pagina: "nuevo",
     fuera: { href: "https://fei461.github.io/santander/", label: "Abrir el laboratorio" },
   },
   {
@@ -57,7 +59,7 @@ export const proyectos: Proyecto[] = [
     tipo: "Grado URJC, en equipo",
     resumen:
       "Parecía un problema de sostenibilidad. Era de credibilidad: una campaña que reconoce la huella en vez de prometer vuelos verdes.",
-    pagina: "antiguo",
+    pagina: "nuevo",
   },
   {
     slug: "bruja-roja",
@@ -66,7 +68,7 @@ export const proyectos: Proyecto[] = [
     tipo: "Grado URJC, en equipo",
     resumen:
       "Identidad corporativa completa para una copa menstrual que habla como esa amiga que te dice lo que nadie se atreve.",
-    pagina: "antiguo",
+    pagina: "nuevo",
   },
   {
     slug: "warriors-arena",
@@ -75,7 +77,7 @@ export const proyectos: Proyecto[] = [
     tipo: "Curso de RTVE, individual",
     resumen:
       "Plan de distribución para un formato de competición física de diez episodios: ventanas, plataformas y venta internacional.",
-    pagina: "antiguo",
+    pagina: "nuevo",
   },
 
   // ── Cinturón marrón: casos breves ──
