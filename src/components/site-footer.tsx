@@ -9,7 +9,8 @@ export function SiteFooter() {
           Hajime.
         </p>
         <p>
-          Es lo que dice el árbitro para que empiece el combate. Si tienes unas prácticas, un
+          Es lo que dice el árbitro para que empiece el combate. Cuando lo dice, el resto
+          desaparece. Busco prácticas a tiempo completo a partir de abril de 2027; si tienes unas, un
           proyecto o una pregunta, empezamos cuando quieras.
         </p>
         <div className="dojo-acciones">

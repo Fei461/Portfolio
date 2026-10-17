@@ -106,6 +106,22 @@
   font-weight: 700;
 }
 
+.pagina-cita {
+  margin: 1.75rem 0;
+  padding: 1.25rem 1.5rem;
+  background: var(--sumi);
+  color: var(--judogi);
+  border-left: 12px solid var(--obi);
+}
+
+.pagina-cita p {
+  margin: 0 !important;
+  font-weight: 800;
+  font-variation-settings: "opsz" 60, "wdth" 82;
+  font-size: clamp(1.6rem, 3vw, 2.4rem) !important;
+  line-height: 1.1;
+}
+
 .pagina-linea {
   list-style: none;
   margin: 0;
@@ -215,6 +231,16 @@
   grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
   gap: 2rem;
   align-items: end;
+}
+
+.cv-busco {
+  display: inline-block;
+  margin: 1.25rem 0 0;
+  padding: 0.6rem 0.9rem;
+  border: 3px solid var(--sumi);
+  border-left-width: 10px;
+  border-left-color: var(--obi);
+  font-weight: 600;
 }
 
 .cv-contacto {

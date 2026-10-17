@@ -201,6 +201,24 @@
   font-size: clamp(1rem, 1.25vw, 1.15rem);
 }
 
+.dojo-busco {
+  display: inline-block;
+  margin: 1.25rem 0 0;
+  padding: 0.6rem 0.95rem;
+  background: var(--judogi);
+  border: 3px solid var(--sumi);
+  border-left-width: 12px;
+  border-left-color: var(--obi);
+  box-shadow: 5px 5px 0 var(--heri);
+  rotate: -0.8deg;
+  font-weight: 500;
+  font-size: clamp(1rem, 1.3vw, 1.15rem);
+}
+
+.dojo-busco strong {
+  font-weight: 800;
+}
+
 .dojo-acciones {
   display: flex;
   flex-wrap: wrap;

@@ -9,6 +9,7 @@ const foto = `${import.meta.env.BASE_URL}assets/lara/cascada.jpg`;
 const trayectoria = [
   { cuando: "Octubre de 2026", que: "Lanzo Talixea, la app que buscaba y no existía." },
   { cuando: "Septiembre de 2026", que: "Empiezo el Máster en Comunicación Publicitaria en la UC3M." },
+  { cuando: "Febrero de 2026", que: "Empiezo Talixea desde mi cuarto." },
   { cuando: "Enero a mayo de 2026", que: "Prácticas en marketing en Stud-IA, con tres redes a mi cargo." },
   { cuando: "2022–2026", que: "Grado en Publicidad y RRPP en la URJC, con un 8,62 de media y seis matrículas de honor." },
   { cuando: "2024–2025", que: "Cursos de RTVE sobre contenidos para plataformas OTT y sobre IA en medios." },
@@ -39,18 +40,36 @@ export function SobrePage() {
 
       <section className="pagina-bloque pagina-dos" aria-labelledby="tatami">
         <h2 className="pagina-h2" id="tatami">
-          Del tatami a la publicidad
+          Por qué el judo
         </h2>
         <div className="pagina-prosa">
           <p>
-            El judo forma parte de mí casi desde que nací. Soy cinturón marrón en judo y azul en
-            taekwondo, y durante años he dado clase de artes marciales y he sido monitora de
-            campamento en Guerreros Galapagar.
+            Descubrí el tatami con siete años, casi por obligación, porque tenía que hacer deporte.
+            Ahora no me imagino la vida sin él.
           </p>
           <p>
-            Del tatami me he traído una forma de trabajar: entender antes de moverme, colocarme bien
-            antes de lanzarme y saber caer cuando algo sale mal. Lo cuento en la{" "}
-            <Link to="/">portada</Link>, con mis proyectos como ejemplo.
+            Me ha enseñado respeto, perseverancia y lo que cuesta llegar: miles de{" "}
+            <span lang="ja-Latn">uchi komis</span> y <span lang="ja-Latn">nage komis</span> antes de
+            ganar una medalla. Esfuerzo, dedicación y motivación.
+          </p>
+          <p>
+            Ha sido un refugio. Un lugar en el que ser distinta es una ventaja y no un inconveniente,
+            y en el que consigo callar la mente y centrarme en una sola cosa.
+          </p>
+          <blockquote className="pagina-cita">
+            <p>
+              Cuando dicen <span lang="ja-Latn">hajime</span>, el resto desaparece.
+            </p>
+          </blockquote>
+          <p>
+            Puede parecer un deporte individual hasta que descubres a tu entrenador, a tus
+            compañeros, a tu familia y, sobre todo, a tu pareja, más ilusionados que tú por un
+            resultado.
+          </p>
+          <p>
+            Hoy soy cinturón marrón en judo y azul en taekwondo, y he dado clase de artes marciales y
+            he sido monitora de campamento en Guerreros Galapagar. Lo que aprendí en el tatami es mi
+            forma de trabajar: lo cuento en la <Link to="/">portada</Link>.
           </p>
         </div>
       </section>

@@ -11,7 +11,7 @@ export const talixea: CasoCompleto = {
   era: "Era un producto entero: método, catálogo, marca, precios y lanzamiento, hecho sin saber programar.",
   ficha: [
     { etiqueta: "Qué", valor: "App para aprender idiomas leyendo historias que ya conoces" },
-    { etiqueta: "Cuándo", valor: "Lanzada en octubre de 2026 y en marcha" },
+    { etiqueta: "Cuándo", valor: "Desde febrero de 2026, en mi cuarto. Lanzada en octubre" },
     { etiqueta: "Mi papel", valor: "Todo: idea, producto, marca, contenido y lanzamiento" },
     { etiqueta: "Con qué", valor: "Herramientas de IA para la parte técnica, aprendiendo sobre la marcha" },
   ],
@@ -28,6 +28,7 @@ export const talixea: CasoCompleto = {
       "Quería aprender idiomas leyendo con un método que me convencía, el diglot weave: lees un texto en tu idioma y, poco a poco, algunas palabras aparecen en el que estás aprendiendo, hasta que el texto acaba casi entero en él.",
       "Busqué una app que lo hiciera así y no la encontré: las que había no estaban en español o no eran gratis. Así que decidí hacerla. No sabía programar; como mucho, leía un poco de código.",
       "La idea estuvo clara desde el primer día: cuentos y clásicos de dominio público, historias que todo el mundo conoce, y en cada capítulo un poco más del idioma nuevo que en el anterior.",
+      "La empecé en febrero de 2026 desde mi cuarto. De lo que más orgullosa estoy es de la constancia: de no rendirme cuando no encontraba nada que me gustara y de seguir hasta tenerla. Acaba de salir al mercado y la siguiente meta es conseguir sus primeros lectores.",
     ],
   },
   demo: "talixea",
@@ -117,6 +118,7 @@ export const talixea: CasoCompleto = {
     cargo: "El día que la app me dejó crear la primera cuenta",
   },
   aprendizajes: [
+    "La constancia pesa más que el talento cuando nadie te está mirando.",
     "No saber hacer algo no es motivo para no hacerlo: es el primer capítulo.",
     "Decidir qué no entra pesa tanto como decidir qué entra.",
     "Una promesa honesta convence más que el hype.",

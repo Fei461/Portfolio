@@ -8,6 +8,7 @@ export const perfil = {
   titular: "Estudiante del Máster en Comunicación Publicitaria",
   resumen:
     "Me interesan especialmente la gestión de la reputación, la percepción de marca, las relaciones públicas, la comunicación corporativa y la comunicación interna.",
+  busco: "Prácticas a tiempo completo a partir de abril de 2027.",
   lugar: "Galapagar, Madrid",
   email: "lara.feijoo@gmail.com",
   linkedin: "https://www.linkedin.com/in/lara-feijoo",

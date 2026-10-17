@@ -176,22 +176,22 @@ export const tourCdc: CasoCompleto = {
   slug: "tour-cdc-dana",
   titulo: "Tour C de C",
   parecia: "Parecía una app de citas.",
-  era: "Era una forma de contar una propuesta publicitaria en vídeo, con el lenguaje de Tinder.",
+  era: "Era una propuesta para el Tour C de C, contada con el lenguaje de Tinder.",
   ficha: [
-    { etiqueta: "Qué", valor: "Pieza en vídeo: un Tinder publicitario" },
-    { etiqueta: "Formato", valor: "Vídeo" },
+    { etiqueta: "Qué", valor: "Propuesta en vídeo: un Tinder publicitario" },
+    { etiqueta: "Brief", valor: "Jóvenes Talentos, 2024" },
   ],
   contexto: {
     titulo: "Un Tinder publicitario",
-    parrafos: ["La propuesta se presenta como si fuera una app de citas: deslizar para descubrirla."],
+    parrafos: [
+      "A partir del brief de Jóvenes Talentos de 2024, la propuesta para el Tour C de C se presenta literalmente así: como un Tinder de la publicidad.",
+    ],
   },
   bloques: [],
   piezas: {
     titulo: "El vídeo",
     texto: "La pieza completa.",
-    videos: [
-      { src: img("tour-cdc", "tinder-publicitario.mp4"), titulo: "Tinder publicitario", red: "Vídeo" },
-    ],
+    videos: [{ src: img("tour-cdc", "tinder-publicitario.mp4"), titulo: "Tinder publicitario", red: "Vídeo" }],
   },
   aprendizajes: ["Un formato que todo el mundo conoce es un atajo para que se entienda la idea."],
 };

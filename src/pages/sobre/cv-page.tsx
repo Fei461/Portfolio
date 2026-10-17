@@ -34,6 +34,9 @@ export function CvPage() {
           <h1 className="pagina-titulo">{perfil.nombre}</h1>
           <p className="pagina-lead">{perfil.titular}</p>
           <p className="pagina-texto">{perfil.resumen}</p>
+          <p className="cv-busco">
+            <strong>Busco:</strong> {perfil.busco}
+          </p>
         </div>
         <div className="cv-contacto">
           <a href={`mailto:${perfil.email}`}>{perfil.email}</a>

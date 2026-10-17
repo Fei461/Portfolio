@@ -33,7 +33,7 @@ export const proyectos: Proyecto[] = [
     slug: "talixea",
     titulo: "Talixea",
     cinturon: "negro",
-    tipo: "Proyecto propio, en marcha",
+    tipo: "Proyecto propio, desde febrero de 2026",
     resumen:
       "Buscaba una app para aprender idiomas leyendo, en español y gratis. No existía, así que la hice sin saber programar: 40 libros y seis idiomas.",
     pagina: "nuevo",
@@ -106,8 +106,8 @@ export const proyectos: Proyecto[] = [
     slug: "tour-cdc-dana",
     titulo: "Tour C de C",
     cinturon: "marron",
-    tipo: "Pieza en vídeo",
-    resumen: "Un Tinder publicitario, contado en vídeo.",
+    tipo: "Brief de Jóvenes Talentos, 2024",
+    resumen: "Un Tinder publicitario: una propuesta en vídeo para el Tour C de C.",
     pagina: "nuevo",
   },
   {

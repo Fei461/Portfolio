@@ -80,10 +80,13 @@ export function InicioPage() {
             <p className="dojo-lema">Publicista con culo inquieto.</p>
             <div className="dojo-intro-caja">
               <p className="dojo-intro">
-                Estrategia, marca y reputación. Piso un tatami desde que tengo memoria y trabajo
-                igual que entreno: sin quedarme quieta hasta que algo sale bien.
+                Estrategia, marca y reputación. Piso un tatami desde los siete años y trabajo igual
+                que entreno: con constancia y sin quedarme quieta hasta que algo sale bien.
               </p>
             </div>
+            <p className="dojo-busco">
+              <strong>Busco prácticas</strong> a tiempo completo a partir de abril de 2027.
+            </p>
             <div className="dojo-acciones">
               <a className="dojo-boton" href="#/" onClick={irAProyectos}>
                 Ver proyectos
