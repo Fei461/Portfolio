@@ -8,16 +8,16 @@ const TrabajoPage = lazy(() =>
   import("@/pages/trabajo/trabajo-page").then(({ TrabajoPage }) => ({ default: TrabajoPage })),
 );
 const SobrePage = lazy(() =>
-  import("@/pages/sobre-page").then(({ SobrePage }) => ({ default: SobrePage })),
+  import("@/pages/sobre/sobre-page").then(({ SobrePage }) => ({ default: SobrePage })),
 );
 const NotasPage = lazy(() =>
-  import("@/pages/notas-page").then(({ NotasPage }) => ({ default: NotasPage })),
+  import("@/pages/sobre/notas-page").then(({ NotasPage }) => ({ default: NotasPage })),
 );
 const CasoRouter = lazy(() =>
   import("@/pages/caso/caso-router").then(({ CasoRouter }) => ({ default: CasoRouter })),
 );
 const CvPage = lazy(() =>
-  import("@/pages/cv-page").then(({ CvPage }) => ({ default: CvPage })),
+  import("@/pages/sobre/cv-page").then(({ CvPage }) => ({ default: CvPage })),
 );
 const InicioPage = lazy(() =>
   import("@/pages/inicio/inicio-page").then(({ InicioPage }) => ({ default: InicioPage })),

@@ -24,7 +24,7 @@ export type CasoCompleto = {
   reparto?: { titulo: string; intro: string; total: string; partes: { nombre: string; pct: number }[] };
   /** Demo interactiva propia del caso. */
   demo?: "talixea";
-  imagenes?: { titulo: string; texto?: string; items: { src: string; alt: string; pie: string }[] };
+  imagenes?: { titulo: string; texto?: string; vertical?: boolean; items: { src: string; alt: string; pie: string }[] };
   piezas?: {
     titulo: string;
     texto: string;

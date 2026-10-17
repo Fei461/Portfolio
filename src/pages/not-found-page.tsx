@@ -1,32 +1,29 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { SeoHead } from "@/components/seo-head";
 
+// En judo, «matte» es la orden de parar.
 export function NotFoundPage() {
+  useEffect(() => {
+    document.title = "Página no encontrada, Lara Feijóo";
+  }, []);
+
   return (
-    <>
-      <SeoHead
-        meta={{
-          title: "Página no encontrada | Lara Feijóo",
-          description: "La página solicitada no está disponible.",
-          canonical: `${window.location.origin}${window.location.pathname}`,
-        }}
-      />
-      <main className="section-shell min-h-[60vh] flex items-center">
-        <section className="section-inner max-w-2xl" aria-labelledby="not-found-title">
-          <p className="eyebrow mb-4">404</p>
-          <h1 id="not-found-title" className="display-headline text-5xl md:text-6xl">
-            Página no encontrada
-          </h1>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link to="/" className="px-5 py-3 bg-primary text-primary-foreground font-medium">
-              Volver a Inicio
-            </Link>
-            <Link to="/trabajo" className="px-5 py-3 border border-foreground/30 font-medium">
-              Ver trabajo
-            </Link>
-          </div>
-        </section>
-      </main>
-    </>
+    <main className="dojo-seccion" aria-labelledby="no-encontrada">
+      <h1 className="trabajo-titulo" id="no-encontrada" lang="ja-Latn">
+        Matte.
+      </h1>
+      <p className="dojo-entradilla">
+        Es lo que dice el árbitro para parar el combate. Esta página no existe o ha cambiado de
+        sitio.
+      </p>
+      <div className="dojo-acciones">
+        <Link className="dojo-boton" to="/">
+          Volver al inicio
+        </Link>
+        <Link className="dojo-boton dojo-boton--claro" to="/trabajo">
+          Ver proyectos
+        </Link>
+      </div>
+    </main>
   );
 }

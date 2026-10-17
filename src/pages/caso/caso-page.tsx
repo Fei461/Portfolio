@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import type { CasoCompleto } from "@/data/casos";
-import { porCinturon, proyectos } from "@/data/proyectos";
+import { cinturones, porCinturon, proyectos } from "@/data/proyectos";
 import { DemoTalixea } from "./demo-talixea";
 import { Cronograma, Reparto } from "./graficos";
 import "./caso.css";
@@ -37,8 +37,9 @@ function Vecinos({ slug }: { slug: string }) {
 }
 
 export function CasoPage({ caso }: { caso: CasoCompleto }) {
-  const negros = porCinturon("negro");
-  const posicion = negros.findIndex((p) => p.slug === caso.slug) + 1;
+  const cinturon = proyectos.find((p) => p.slug === caso.slug)?.cinturon ?? "negro";
+  const mismos = porCinturon(cinturon);
+  const posicion = mismos.findIndex((p) => p.slug === caso.slug) + 1;
 
   useEffect(() => {
     document.title = `${caso.titulo}, un caso de Lara Feijóo`;
@@ -50,8 +51,9 @@ export function CasoPage({ caso }: { caso: CasoCompleto }) {
       {/* ── Cabecera: la primera lectura, tumbada ── */}
       <header className="caso-cabecera">
         <p className="caso-grado">
-          <span className="caso-grado__cinta" aria-hidden="true" />
-          Cinturón negro{posicion > 0 && `, caso ${posicion} de ${negros.length}`}
+          <span className={`caso-grado__cinta caso-grado__cinta--${cinturon}`} aria-hidden="true" />
+          {cinturones[cinturon].nombre}
+          {posicion > 0 && `, caso ${posicion} de ${mismos.length}`}
         </p>
         <h1 className="caso-titulo">{caso.titulo}</h1>
         <p className="caso-lecturas">
@@ -108,6 +110,7 @@ export function CasoPage({ caso }: { caso: CasoCompleto }) {
       {caso.cronograma && <Cronograma datos={caso.cronograma} />}
 
       {/* ── Lo que hice ── */}
+      {caso.bloques.length > 0 && (
       <section className="caso-seccion" aria-labelledby="caso-hice">
         <h2 id="caso-hice" className="caso-h2">
           Lo que hice
@@ -128,6 +131,7 @@ export function CasoPage({ caso }: { caso: CasoCompleto }) {
           ))}
         </div>
       </section>
+      )}
 
       {caso.reparto && <Reparto datos={caso.reparto} />}
 
@@ -138,7 +142,7 @@ export function CasoPage({ caso }: { caso: CasoCompleto }) {
             {caso.imagenes.titulo}
           </h2>
           {caso.imagenes.texto && <p className="caso-entradilla">{caso.imagenes.texto}</p>}
-          <div className="caso-imagenes">
+          <div className={caso.imagenes.vertical ? "caso-imagenes caso-imagenes--vertical" : "caso-imagenes"}>
             {caso.imagenes.items.map((im) => (
               <figure key={im.src}>
                 <img src={im.src} alt={im.alt} loading="lazy" />

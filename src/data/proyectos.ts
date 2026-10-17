@@ -12,14 +12,11 @@ export type Proyecto = {
   resumen: string;
   /**
    * «nuevo»: caso con la plantilla nueva (src/data/casos).
-   * «antiguo»: todavía se muestra con la página anterior.
    * Sin valor: no tiene página propia.
    */
-  pagina?: "nuevo" | "antiguo";
+  pagina?: "nuevo";
   fuera?: { href: string; label: string };
 };
-
-const asset = (file: string) => `${import.meta.env.BASE_URL}assets/${file}`;
 
 export const proyectos: Proyecto[] = [
   // ── Cinturón negro: casos completos, en el orden de una entrevista ──
@@ -87,7 +84,7 @@ export const proyectos: Proyecto[] = [
     cinturon: "marron",
     tipo: "Grado URJC, en equipo",
     resumen: "Comunicación interna para que la plantilla se sienta parte.",
-    pagina: "antiguo",
+    pagina: "nuevo",
   },
   {
     slug: "el-regalo-no-deseado",
@@ -95,7 +92,7 @@ export const proyectos: Proyecto[] = [
     cinturon: "marron",
     tipo: "Grado URJC, en equipo",
     resumen: "Una campaña que convierte el prejuicio sobre lo aparente en una experiencia de descubrimiento.",
-    pagina: "antiguo",
+    pagina: "nuevo",
   },
   {
     slug: "m-and-ms",
@@ -103,6 +100,7 @@ export const proyectos: Proyecto[] = [
     cinturon: "marron",
     tipo: "Grado URJC, en equipo",
     resumen: "Lanzamiento en España como agencia, del contrabriefing a los medios.",
+    pagina: "nuevo",
   },
   {
     slug: "tour-cdc-dana",
@@ -110,7 +108,7 @@ export const proyectos: Proyecto[] = [
     cinturon: "marron",
     tipo: "Pieza en vídeo",
     resumen: "Un Tinder publicitario, contado en vídeo.",
-    fuera: { href: asset("casos/tour-cdc/tinder-publicitario.mp4"), label: "Ver el vídeo" },
+    pagina: "nuevo",
   },
   {
     slug: "revista-super-pop",
@@ -118,6 +116,7 @@ export const proyectos: Proyecto[] = [
     cinturon: "marron",
     tipo: "Máster UC3M, en equipo",
     resumen: "Liderazgo explicado con Mean Girls y maquetado como una revista juvenil.",
+    pagina: "nuevo",
   },
   {
     slug: "bbva",
@@ -125,6 +124,7 @@ export const proyectos: Proyecto[] = [
     cinturon: "marron",
     tipo: "Grado URJC, en equipo",
     resumen: "Fraude digital y jóvenes que se creen a salvo.",
+    pagina: "nuevo",
   },
   {
     slug: "oreo",
@@ -132,6 +132,7 @@ export const proyectos: Proyecto[] = [
     cinturon: "marron",
     tipo: "Grado URJC, en equipo",
     resumen: "Plan de medios para un público que vive en redes.",
+    pagina: "nuevo",
   },
 
   // ── Cinturón blanco: donde empecé ──

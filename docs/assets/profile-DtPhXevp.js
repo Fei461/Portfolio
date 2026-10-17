@@ -1,1 +1,0 @@
-const e={languages:[{code:"ES",label:"Español",level:"Nativo"},{code:"EN",label:"Inglés",level:"C1"},{code:"CA",label:"Catalán",level:"B2"},{code:"FR",label:"Francés",level:"B1"}],interests:["Psicología de la comunicación","Idiomas y lectura","Arte moderno y abstracto","Aprendizaje","Estrategia","Sistemas y procesos"]};export{e as p};
