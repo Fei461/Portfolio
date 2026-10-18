@@ -12,13 +12,7 @@ export const iberia: CasoCompleto = {
     { etiqueta: "Qué", valor: "Propuesta creativa de campaña" },
     { etiqueta: "Dónde", valor: "Grado en Publicidad y RRPP, URJC" },
     { etiqueta: "Equipo", valor: "Grupo 6, cinco personas" },
-    { etiqueta: "Mi parte", valor: "Estrategia, narrativa y piezas, en equipo. El entregable no asigna autoría por pieza" },
-  ],
-  marcador: [
-    { cifra: "Top 10", texto: "Iberia, entre las aerolíneas más contaminantes según Transport & Environment (2025)" },
-    { cifra: "2050", texto: "año de su objetivo de emisiones netas cero" },
-    { cifra: "1836", texto: "año de El Oxbow, el cuadro que se restaura en el spot" },
-    { cifra: "4", texto: "soportes para una misma idea: cine, aeropuerto, email y prensa" },
+    { etiqueta: "Mi parte", valor: "Estrategia, narrativa y piezas, en equipo" },
   ],
   contexto: {
     titulo: "Hablar de sostenibilidad sin greenwashing",

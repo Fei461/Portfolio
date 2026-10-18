@@ -832,3 +832,346 @@
 .combate {
   position: relative;
 }
+
+/* Aviso de que el texto sigue */
+.asalto--sigue {
+  -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 5rem), rgba(0, 0, 0, 0.15));
+  mask-image: linear-gradient(to bottom, #000 calc(100% - 5rem), rgba(0, 0, 0, 0.15));
+}
+
+.sigue {
+  position: relative;
+  z-index: 3;
+  align-self: center;
+  margin: -3.1rem 0 0.6rem;
+  padding: 0.45rem 0.95rem;
+  font-family: var(--f);
+  font-weight: 800;
+  font-size: 0.92rem;
+  color: var(--judogi);
+  background: var(--sumi);
+  border: 3px solid var(--sumi);
+  box-shadow: 3px 3px 0 var(--obi);
+  cursor: pointer;
+}
+
+.sigue span {
+  display: inline-block;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .sigue span {
+    animation: sigue-baja 1.3s ease-in-out infinite;
+  }
+}
+
+@keyframes sigue-baja {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(3px); }
+}
+
+@media (max-width: 900px) {
+  .sigue {
+    display: none;
+  }
+
+  .asalto--sigue {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+}
+
+/* ── Brecha entre públicos (TFG) ── */
+.brecha__mandos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.6rem 1rem;
+  margin: 1rem 0 0.4rem;
+}
+
+.brecha__leyenda {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 600;
+}
+
+.brecha__leyenda .brecha__punto {
+  position: static;
+  transform: none;
+  margin-left: 0.6rem;
+}
+
+.brecha__mandos [role="group"] {
+  display: inline-flex;
+  gap: 0.4rem;
+}
+
+.brecha__mandos button {
+  padding: 0.3rem 0.65rem;
+  font-family: var(--f);
+  font-weight: 700;
+  font-size: 0.85rem;
+  background: var(--judogi);
+  border: 2px solid var(--sumi);
+  cursor: pointer;
+}
+
+.brecha__mandos button[aria-pressed="true"] {
+  color: var(--judogi);
+  background: var(--sumi);
+}
+
+.brecha__filas {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.brecha__filas button,
+.brecha__regla {
+  display: grid;
+  grid-template-columns: minmax(8rem, 13rem) minmax(0, 1fr) 4rem;
+  gap: 1rem;
+}
+
+.brecha__filas button {
+  align-items: center;
+  width: 100%;
+  padding: 0.65rem 0.4rem;
+  text-align: left;
+  font-family: var(--f);
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.brecha__filas button:hover,
+.brecha__filas button.activo {
+  background: rgba(201, 196, 139, 0.35);
+}
+
+.brecha__atributo {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.brecha__pista {
+  position: relative;
+  height: 22px;
+  background: repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.12) 0 1px, transparent 1px 25%);
+}
+
+.brecha__tramo {
+  position: absolute;
+  top: 9px;
+  height: 4px;
+  background: var(--marcador);
+  transform-origin: left;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .brecha__tramo {
+    animation: tramo-crece 0.7s cubic-bezier(0.3, 1, 0.4, 1) backwards;
+  }
+}
+
+@keyframes tramo-crece {
+  from { transform: scaleX(0); }
+}
+
+.brecha__punto {
+  position: absolute;
+  top: 3px;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2.5px solid var(--sumi);
+  border-radius: 50%;
+  transform: translateX(-50%);
+}
+
+.brecha__punto--dentro {
+  background: #7cc6f6;
+}
+
+.brecha__punto--fuera {
+  background: #1d3f8f;
+}
+
+.brecha__dif {
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  color: var(--marcador);
+  text-align: right;
+}
+
+.brecha__regla {
+  position: relative;
+  height: 1.4rem;
+  font-size: 0.8rem;
+  color: var(--texto-suave);
+}
+
+.brecha__regla span {
+  position: absolute;
+  top: 0.2rem;
+  transform: translateX(-50%);
+  margin-left: calc(min(13rem, 30%) + 1rem);
+}
+
+.brecha__regla {
+  display: block;
+  width: calc(100% - 5rem - min(13rem, 30%));
+}
+
+.brecha__porque {
+  min-height: 3.2rem;
+  margin: 0.8rem 0 0;
+  padding: 0.7rem 0.9rem;
+  background: var(--tatami);
+  border-left: 6px solid var(--marcador);
+}
+
+/* ── Mapa de públicos (MagicAir) ── */
+.mapa__cuerpo {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 1.5rem;
+  align-items: start;
+  margin-top: 1rem;
+}
+
+.mapa__venn {
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+}
+
+.mapa__tipos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.mapa__tipos button {
+  padding: 0.35rem 0.7rem;
+  font-family: var(--f);
+  font-weight: 700;
+  font-size: 0.9rem;
+  background: var(--judogi);
+  border: 2px solid var(--sumi);
+  cursor: pointer;
+}
+
+.mapa__tipos button.activo {
+  color: var(--judogi);
+  background: var(--sumi);
+}
+
+.mapa__detalle {
+  margin-top: 0.9rem;
+  padding: 0.9rem 1rem;
+  background: var(--judogi);
+  border: 3px solid var(--sumi);
+  box-shadow: 5px 5px 0 var(--heri);
+}
+
+.mapa__atributos {
+  margin: 0 0 0.5rem;
+  font-weight: 800;
+  color: var(--obi);
+}
+
+.mapa__detalle ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.mapa__detalle li + li {
+  margin-top: 0.45rem;
+}
+
+/* ── Casos breves en una parte ── */
+.breve__bloques {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem 1.5rem;
+  margin-top: 1.6rem;
+  padding-top: 1.2rem;
+  border-top: 3px solid var(--sumi);
+}
+
+.breve__bloques h3,
+.breve__llevo h3 {
+  margin: 0 0 0.25rem;
+  font-weight: 800;
+  font-size: 1.15rem;
+}
+
+.breve__bloques ul {
+  margin: 0.4rem 0 0;
+  padding-left: 1.1rem;
+}
+
+.breve__bloques li + li {
+  margin-top: 0.35rem;
+}
+
+.breve__llevo {
+  margin-top: 1.4rem;
+}
+
+@media (max-width: 760px) {
+  .mapa__cuerpo {
+    grid-template-columns: 1fr;
+  }
+
+  .brecha__filas button {
+    grid-template-columns: 1fr 3.5rem;
+  }
+
+  .brecha__pista {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+  .brecha__regla {
+    display: none;
+  }
+}
+
+/* La regla comparte columnas con las filas */
+.brecha__regla {
+  display: grid;
+  grid-template-columns: minmax(8rem, 13rem) minmax(0, 1fr) 4rem;
+  gap: 1rem;
+  width: auto;
+  height: 1.4rem;
+  padding: 0 0.4rem;
+}
+
+.brecha__regla span {
+  position: static;
+  margin: 0;
+  transform: none;
+}
+
+.brecha__regla .brecha__regla-pista {
+  position: relative;
+}
+
+.brecha__regla .brecha__regla-pista span {
+  position: absolute;
+  top: 0.2rem;
+  transform: translateX(-50%);
+}
+
+.mapa__venn {
+  max-width: 340px;
+  padding: 0.4rem 0.6rem;
+}

@@ -127,7 +127,8 @@ function MainLayout() {
               <Route path="/trabajo" element={<TrabajoPage />} />
               <Route path="/sobre" element={<SobrePage />} />
               <Route path="/sobre-mi" element={<SobrePage />} />
-              <Route path="/notas" element={<NotasPage />} />
+              <Route path="/en-voz-alta" element={<NotasPage />} />
+              <Route path="/notas" element={<Navigate to="/en-voz-alta" replace />} />
               <Route path="/trabajo/:slug" element={<CasoRouter />} />
               <Route path="/cv" element={<CvPage />} />
               <Route path="*" element={<NotFoundPage />} />

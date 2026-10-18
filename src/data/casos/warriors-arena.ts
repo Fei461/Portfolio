@@ -13,12 +13,6 @@ export const warriorsArena: CasoCompleto = {
     { etiqueta: "Equipo", valor: "Individual" },
     { etiqueta: "Formato", valor: "Diez episodios de 75 minutos" },
   ],
-  marcador: [
-    { cifra: "10 M€", texto: "de presupuesto para la primera temporada" },
-    { cifra: "40", texto: "territorios como objetivo al acabar la temporada" },
-    { cifra: "10 M", texto: "de espectadores acumulados como meta" },
-    { cifra: "18", texto: "meses para convertirlo en un formato global de referencia" },
-  ],
   contexto: {
     titulo: "Un formato que se entiende sin idioma",
     parrafos: [

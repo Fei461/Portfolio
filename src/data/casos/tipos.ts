@@ -22,6 +22,24 @@ export type CasoCompleto = {
   };
   /** Reparto en porcentajes de un total. */
   reparto?: { titulo: string; intro: string; total: string; partes: { nombre: string; pct: number }[] };
+  /** Brecha entre dos públicos que puntúan lo mismo (de 1 a 5). */
+  brecha?: {
+    titulo: string;
+    intro: string;
+    dentro: string;
+    fuera: string;
+    items: { atributo: string; dentro: number; fuera: number; porQue: string }[];
+  };
+  /** Mapa de públicos según poder, legitimidad y urgencia (Mitchell, Agle y Wood). */
+  mapa?: {
+    titulo: string;
+    intro: string;
+    grupos: {
+      tipo: string;
+      atributos: ("poder" | "legitimidad" | "urgencia")[];
+      miembros: { nombre: string; texto: string }[];
+    }[];
+  };
   /** Demo interactiva propia del caso. */
   demo?: "talixea";
   /** Web propia que se puede usar dentro del caso. */
@@ -35,7 +53,7 @@ export type CasoCompleto = {
     videos: { src: string; titulo: string; red: string; original?: string }[];
     masEnlaces?: { red: string; enlaces: string[] }[];
   };
-  /** Ukemi: dónde caí y cómo me levanté. */
+  /** Caídas (ukemi): dónde caí y cómo me levanté. */
   caidas?: { titulo: string; texto: string }[];
   /** Título e introducción alternativos para la sección sobre tatami. */
   tatami?: { titulo: string; termino: string; intro: string };

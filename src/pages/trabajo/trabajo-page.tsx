@@ -15,6 +15,69 @@ const orden: Cinturon[] = ["negro", "verde", "archivo"];
 const esCinturon = (v: string | null): v is Cinturon => orden.includes(v as Cinturon);
 const siguiente: Record<Cinturon, Cinturon> = { negro: "verde", verde: "archivo", archivo: "negro" };
 
+// El grado de la URJC se da por supuesto en las tarjetas (lo dice la nota de arriba).
+const tipoCorto = (t: string) => {
+  const r = t.replace(/^Grado URJC, /, "");
+  return r.charAt(0).toUpperCase() + r.slice(1);
+};
+
+// Archivo: dos grupos de fichas que se despliegan para ver de qué va cada trabajo.
+function Archivo({ lista }: { lista: Proyecto[] }) {
+  const [abierto, setAbierto] = useState<string | null>(null);
+  const grupos: { id: "escrito" | "campana"; titulo: string; texto: string }[] = [
+    { id: "escrito", titulo: "Por escrito", texto: "Estrategia, relaciones públicas y análisis, sin piezas visuales." },
+    { id: "campana", titulo: "Campañas de clase", texto: "Ideas, conceptos y acciones de los primeros cursos." },
+  ];
+  let n = 0;
+  return (
+    <div className="archivo-grupos">
+      {grupos.map((g) => (
+        <section key={g.id} className="archivo-grupo" aria-labelledby={`archivo-${g.id}`}>
+          <header>
+            <h2 id={`archivo-${g.id}`}>{g.titulo}</h2>
+            <p>{g.texto}</p>
+          </header>
+          <ul className="archivo">
+            {lista
+              .filter((p) => p.grupo === g.id)
+              .map((p) => {
+                n += 1;
+                const abiertoAqui = abierto === p.slug;
+                return (
+                  <li key={p.slug} style={{ "--n": n } as CSSProperties} className={abiertoAqui ? "abierto" : undefined}>
+                    <button
+                      type="button"
+                      aria-expanded={abiertoAqui}
+                      aria-controls={`ficha-${p.slug}`}
+                      onClick={() => setAbierto(abiertoAqui ? null : p.slug)}
+                    >
+                      <span className="archivo__n" aria-hidden="true">
+                        {String(n).padStart(2, "0")}
+                      </span>
+                      <strong>{p.titulo}</strong>
+                      <span className="archivo__resumen">{p.resumen}</span>
+                      <span className="archivo__tipo">{p.tipo}</span>
+                      <span className="archivo__mas" aria-hidden="true">
+                        {abiertoAqui ? "−" : "+"}
+                      </span>
+                    </button>
+                    {p.detalle && (
+                      <div id={`ficha-${p.slug}`} className="archivo__ficha" hidden={!abiertoAqui}>
+                        {p.detalle.map((d) => (
+                          <p key={d}>{d}</p>
+                        ))}
+                      </div>
+                    )}
+                  </li>
+                );
+              })}
+          </ul>
+        </section>
+      ))}
+    </div>
+  );
+}
+
 // Tarjeta tipo dorsal de competición: número grande, imagen o vídeo y nombre.
 function Dorsal({ p, n, cinturon }: { p: Proyecto; n: number; cinturon: Cinturon }) {
   const video = useRef<HTMLVideoElement>(null);
@@ -31,7 +94,16 @@ function Dorsal({ p, n, cinturon }: { p: Proyecto; n: number; cinturon: Cinturon
       </span>
       <span className="dorsal__visual">
         {p.video ? (
-          <video ref={video} src={`${p.video}#t=0.5`} muted loop playsInline preload="metadata" aria-hidden="true" />
+          <video
+            ref={video}
+            src={p.video}
+            poster={p.poster}
+            muted
+            loop
+            playsInline
+            preload="none"
+            aria-hidden="true"
+          />
         ) : p.portada ? (
           <img src={p.portada} alt="" loading="lazy" draggable={false} />
         ) : (
@@ -42,7 +114,7 @@ function Dorsal({ p, n, cinturon }: { p: Proyecto; n: number; cinturon: Cinturon
       </span>
       <span className="dorsal__texto">
         <strong className="dorsal__titulo">{p.titulo}</strong>
-        <span className="dorsal__tipo">{p.tipo}</span>
+        <span className="dorsal__tipo">{tipoCorto(p.tipo)}</span>
         <span className="dorsal__resumen">{p.resumen}</span>
         {p.pagina && <span className="dorsal__ver">Ver caso</span>}
       </span>
@@ -204,18 +276,7 @@ export function TrabajoPage() {
       </header>
 
       {cinturon === "archivo" ? (
-        <ul className="archivo" key="archivo">
-          {lista.map((p, i) => (
-            <li key={p.slug} style={{ "--n": i } as CSSProperties}>
-              <span className="archivo__n" aria-hidden="true">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <strong>{p.titulo}</strong>
-              <span className="archivo__resumen">{p.resumen}</span>
-              <span className="archivo__tipo">{p.tipo}</span>
-            </li>
-          ))}
-        </ul>
+        <Archivo lista={lista} key="archivo" />
       ) : (
       <Pista clave={cinturon} key={cinturon}>
         {lista.map((p, i) => (

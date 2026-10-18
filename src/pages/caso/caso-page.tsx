@@ -1,9 +1,10 @@
+import { Sigue } from "@/components/sigue";
 import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import type { CasoCompleto } from "@/data/casos";
 import { cinturones, porCinturon, proyectos } from "@/data/proyectos";
 import { DemoTalixea } from "./demo-talixea";
-import { Cronograma, Reparto } from "./graficos";
+import { Brecha, Cronograma, Mapa, Reparto } from "./graficos";
 import { Movil } from "./movil";
 import "./caso.css";
 import "./combate.css";
@@ -72,7 +73,8 @@ function LoQueHice({ bloques }: { bloques: CasoCompleto["bloques"] }) {
 function construirAsaltos(
   caso: CasoCompleto,
   abrir: (i: Imagen) => void,
-  visual?: { portada?: string; video?: string },
+  visual?: { portada?: string; video?: string; poster?: string },
+  compacto = false,
 ): Asalto[] {
   const quieto = typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const asaltos: Asalto[] = [
@@ -89,7 +91,7 @@ function construirAsaltos(
           </div>
           {visual?.video ? (
             <figure className="reto__foto reto__foto--video">
-              <video src={`${visual.video}#t=2`} muted loop playsInline autoPlay={!quieto} aria-hidden="true" />
+              <video src={`${visual.video}#t=2`} poster={visual.poster} muted loop playsInline autoPlay={!quieto} aria-hidden="true" />
             </figure>
           ) : visual?.portada ? (
             <figure className="reto__foto">
@@ -129,6 +131,11 @@ function construirAsaltos(
         </div>
       ),
     });
+
+  if (caso.brecha)
+    asaltos.push({ id: "brecha", nombre: "La brecha", contenido: <Brecha datos={caso.brecha} /> });
+
+  if (caso.mapa) asaltos.push({ id: "mapa", nombre: "Los públicos", contenido: <Mapa datos={caso.mapa} /> });
 
   if (caso.cronograma || caso.reparto)
     asaltos.push({
@@ -227,20 +234,17 @@ function construirAsaltos(
   if (caso.caidas)
     asaltos.push({
       id: "tatami",
-      nombre: caso.tatami ? caso.tatami.termino || "Decisiones" : "Ukemi",
+      nombre: caso.tatami ? caso.tatami.termino || "Decisiones" : "Caídas",
       contenido: (
         <div className="asalto__tatami">
           {caso.tatami && !caso.tatami.termino ? (
             <h2>{caso.tatami.titulo}</h2>
           ) : (
-            <h2>
-              <span lang="ja-Latn">{caso.tatami?.termino ?? "Ukemi"}</span>:{" "}
-              {caso.tatami?.titulo ?? "dónde caí y cómo me levanté"}
-            </h2>
+            <h2>{caso.tatami?.titulo ?? "Dónde caí y cómo me levanté"}</h2>
           )}
           <p className="asalto__entradilla">
             {caso.tatami?.intro ??
-              "Lo primero que te enseñan en judo es a caer sin hacerte daño. Aquí me tocó caer unas cuantas veces."}
+              "Lo primero que te enseñan en judo es el ukemi: saber caer sin hacerte daño y levantarte rápido. Aquí me tocó caer unas cuantas veces."}
           </p>
           <ul className="caso-caidas">
             {caso.caidas.map((c) => (
@@ -294,6 +298,50 @@ function construirAsaltos(
     ),
   });
 
+  // Casos breves: todo el caso en una sola parte y, aparte, los números y las piezas si las hay.
+  if (compacto) {
+    const reto = asaltos.find((x) => x.id === "reto")!;
+    const resto = asaltos.filter((x) => x.id === "numeros" || x.id === "piezas");
+    return [
+      {
+        id: "reto",
+        nombre: "El caso",
+        contenido: (
+          <>
+            {reto.contenido}
+            {caso.bloques.length > 0 && (
+              <div className="breve__bloques">
+                {caso.bloques.map((b) => (
+                  <div key={b.titulo}>
+                    <h3>{b.titulo}</h3>
+                    <p className="hice__resumen">{b.resumen}</p>
+                    <ul>
+                      {b.puntos.map((pt) => (
+                        <li key={pt.slice(0, 32)}>{pt}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            )}
+            {caso.aprendizajes.length > 0 && (
+              <div className="breve__llevo">
+                <h3>Me llevo</h3>
+                <ul className="caso-aprendizajes">
+                  {caso.aprendizajes.map((x) => (
+                    <li key={x}>{x}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            {caso.nota && <p className="caso-nota">{caso.nota}</p>}
+          </>
+        ),
+      },
+      ...resto,
+    ];
+  }
+
   return asaltos;
 }
 
@@ -308,7 +356,12 @@ export function CasoPage({ caso }: { caso: CasoCompleto }) {
 
   const [lupa, setLupa] = useState<Imagen | null>(null);
   const cerrarLupa = useCallback(() => setLupa(null), []);
-  const asaltos = construirAsaltos(caso, setLupa, { portada: proyecto?.portada, video: proyecto?.video });
+  const asaltos = construirAsaltos(
+    caso,
+    setLupa,
+    { portada: proyecto?.portada, video: proyecto?.video, poster: proyecto?.poster },
+    cinturon === "verde",
+  );
   // La parte abierta queda en la dirección (?parte=piezas) para poder enlazarla.
   const [params, setParams] = useSearchParams();
   const pedido = asaltos.findIndex((a) => a.id === params.get("parte"));
@@ -418,7 +471,7 @@ export function CasoPage({ caso }: { caso: CasoCompleto }) {
               }}
             >
               <span className="asaltos__n">{i + 1}</span>
-              <span lang={a.id === "tatami" && a.nombre !== "Decisiones" ? "ja-Latn" : undefined}>{a.nombre}</span>
+              <span>{a.nombre}</span>
             </button>
           ))}
         </div>
@@ -433,6 +486,7 @@ export function CasoPage({ caso }: { caso: CasoCompleto }) {
         >
           {actual.contenido}
         </div>
+        <Sigue panel={panel} clave={`${caso.slug}-${actual.id}`} />
 
         <nav className="combate__pie" aria-label="Navegación del caso">
           <button type="button" onClick={() => ir(activo - 1)} disabled={activo === 0}>

@@ -2,13 +2,14 @@ import { useEffect, useRef } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { categoriasNotas, notas, soloEnLinkedIn, type CategoriaNota } from "@/data/notas";
 import { proyectos } from "@/data/proyectos";
+import { Sigue } from "@/components/sigue";
 import "./paginas.css";
 import "../caso/combate.css";
 
 const esPerfil = (url: string) => !url.includes("/posts/");
 const simple = (t: string) => t.toLowerCase().replace(/[^a-záéíóúñü¿? ]/g, "").slice(0, 18);
 
-// Notas: mis publicaciones de LinkedIn, enteras, para leerlas sin salir de aquí.
+// En voz alta: mis publicaciones de LinkedIn, enteras, para leerlas sin salir de aquí.
 export function NotasPage() {
   const [params, setParams] = useSearchParams();
   const filtro = (params.get("tema") as CategoriaNota | null) ?? null;
@@ -19,7 +20,7 @@ export function NotasPage() {
   const caso = nota.caso ? proyectos.find((p) => p.slug === nota.caso) : undefined;
 
   useEffect(() => {
-    document.title = `${nota.titulo}, notas de Lara Feijóo`;
+    document.title = `${nota.titulo}, en voz alta, Lara Feijóo`;
     hoja.current?.scrollTo({ top: 0 });
   }, [nota]);
 
@@ -33,10 +34,10 @@ export function NotasPage() {
   return (
     <main className="combate combate--notas">
       <aside className="combate__ficha notas-indice">
-        <h1 className="combate__titulo">Notas</h1>
+        <h1 className="combate__titulo">En voz alta</h1>
         <p className="notas-indice__intro">
-          Lo que voy publicando en LinkedIn sobre marcas, campañas y mi propio aprendizaje. Aquí están
-          enteras, de la más reciente a la más antigua.
+          Solo se aprende de aquello que te atreves a decir en voz alta. Esto es lo que voy contando en
+          LinkedIn sobre marcas, campañas y lo que aprendo, entero y de lo más reciente a lo más antiguo.
         </p>
         <div className="notas-filtro" role="group" aria-label="Filtrar por tema">
           <button type="button" aria-pressed={!filtro} className={!filtro ? "activo" : undefined} onClick={() => elegirTema(null)}>
@@ -122,6 +123,7 @@ export function NotasPage() {
             {caso && <Link to={`/trabajo/${caso.slug}`}>Ver el caso de {caso.titulo}</Link>}
           </div>
         </article>
+        <Sigue panel={hoja} clave={nota.id} />
         <nav className="combate__pie" aria-label="Pasar de nota">
           <button type="button" onClick={() => abrir(visibles[i - 1].id)} disabled={i <= 0}>
             Nota anterior

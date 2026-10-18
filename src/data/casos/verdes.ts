@@ -1,6 +1,6 @@
 import type { CasoCompleto } from "./tipos";
 
-// Casos breves (cinturón marrón). Fuente: los PDF de cada entrega.
+// Casos breves (cinturón verde). Ryanair vive aquí, pero ya es un caso completo. Fuente: los PDF de cada entrega.
 const img = (slug: string, file: string) => `${import.meta.env.BASE_URL}assets/casos/${slug}/${file}`;
 
 export const ryanair: CasoCompleto = {
@@ -9,24 +9,42 @@ export const ryanair: CasoCompleto = {
   parecia: "Parecía un problema de mensajes.",
   era: "Era un problema de pertenencia: una plantilla que no se siente reconocida.",
   ficha: [
-    { etiqueta: "Qué", valor: "Plan de comunicación interna" },
-    { etiqueta: "Dónde", valor: "Grado en Publicidad y RRPP, URJC" },
-    { etiqueta: "Equipo", valor: "Grupo 11" },
-    { etiqueta: "Mi parte", valor: "Diagnóstico y propuesta, en equipo" },
+    { etiqueta: "Qué", valor: "Diagnóstico de identidad, imagen y reputación, y plan de comunicación interna" },
+    { etiqueta: "Dónde", valor: "Gestión de la Comunicación, Grado URJC, 2025" },
+    { etiqueta: "Equipo", valor: "Ocho personas" },
+    { etiqueta: "Fuentes", valor: "Entrevistas a tripulantes y personal de tierra, prensa e Indeed" },
   ],
   contexto: {
     titulo: "Mirar hacia dentro",
     parrafos: [
-      "El diagnóstico de responsabilidad social mostraba una compañía volcada en lo externo, con la normativa ISO y su camino hacia el Net Zero, mientras las condiciones laborales seguían siendo mejorables.",
+      "Ryanair está bien posicionada en el mercado, pero arrastra problemas de reputación, sobre todo con su propia plantilla. Nuestro trabajo empezó por ahí: comparar lo que la compañía dice ser con lo que viven quienes trabajan en ella.",
+      "Además de informes, prensa y portales de empleo, hablamos con tripulantes y personal de tierra. Las quejas se repetían: sueldos por debajo de lo prometido, contratos inestables y una comunicación interna que solo baja de arriba abajo.",
       "El reto era darle la vuelta: que la comunicación empezara por quienes vuelan cada día con la marca.",
     ],
   },
   bloques: [
     {
-      titulo: "Mapear a quién importa",
-      resumen: "Stakeholders según poder, legitimidad y urgencia.",
+      titulo: "Diagnosticar",
+      resumen: "Identidad, imagen, competencia y reputación interna.",
       puntos: [
-        "Un mapa de públicos con accionistas, reguladores, sindicatos, ONG, consumidores y trabajadores, y lo que espera cada uno.",
+        "Imagen deseada, real y construida, y comparación con Vueling, EasyJet, Iberia Express y Wizz Air.",
+        "Un análisis de brecha entre lo que la compañía dice y lo que vive la plantilla: conciliación frente a productividad extrema, bienestar frente a acoso, entorno dinámico frente a sobrecarga.",
+      ],
+    },
+    {
+      titulo: "Plantear la estrategia",
+      resumen: "Primero cerrar la brecha, después diferenciarse.",
+      puntos: [
+        "Una estrategia en cuatro pasos: identificación, diferenciación, referencia y preferencia, con la conciliación como atributo diferenciador.",
+        "Objetivo: invertir en dos años el 20 % de las actitudes negativas de la plantilla, medido con encuestas de satisfacción semestrales.",
+        "Una reunión mensual entre dirección, sindicatos y grupos de trabajadores.",
+      ],
+    },
+    {
+      titulo: "Mapear a quién importa",
+      resumen: "Públicos según poder, legitimidad y urgencia.",
+      puntos: [
+        "Un mapa con accionistas, reguladores, sindicatos, autoridades aeroportuarias, proveedores, comunidades locales y pasajeros.",
         "De la plantilla: buen clima laboral, respeto por su trabajo y posibilidades de crecer y formarse.",
       ],
     },
@@ -34,33 +52,38 @@ export const ryanair: CasoCompleto = {
       titulo: "Reconocer y acoger",
       resumen: "Acciones, no solo mensajes.",
       puntos: [
-        "Los Cabin Crew Awards como unos Óscar de Ryanair en Montecarlo, con fiesta temática, cena de gala y entradas VIP para el Gran Premio de Fórmula 1 como premio.",
-        "Team building al aire libre, un desayuno de bienvenida, un kit de bienvenida y un programa de mentoría entre compañeros para reducir la rotación temprana.",
+        "Los Cabin Crew Awards como unos Óscar de Ryanair en Montecarlo, con cena de gala y entradas para el Gran Premio de Fórmula 1 como premio.",
+        "Regatas por equipos, un desayuno de bienvenida, un kit «Welcome on board» y un programa de mentoría para reducir la rotación temprana.",
       ],
     },
     {
       titulo: "Informar",
       resumen: "Canales para contarse cosas.",
       puntos: [
-        "«Historias con Altura», un podcast con vivencias y anécdotas de la plantilla que completa la revista interna.",
-        "Una intranet que digitaliza la acogida, avisa en tiempo real y conecta a los empleados entre sí.",
+        "«Historias con Altura», un podcast con vivencias de la plantilla.",
+        "SkyNews, la revista interna, y una intranet que digitaliza la acogida y conecta a los empleados entre sí.",
       ],
     },
   ],
   imagenes: {
     titulo: "Las piezas",
     items: [
-      { src: img("ryanair", "stakeholders.png"), alt: "Mapa de stakeholders de Ryanair en tres círculos: poder, legitimidad y urgencia", pie: "El mapa de stakeholders." },
+      { src: img("ryanair", "mapa-publicos.jpg"), alt: "Diagrama de tres círculos, poder, legitimidad y urgencia, con los públicos de Ryanair", pie: "El mapa de públicos." },
+      { src: img("ryanair", "podcast.jpg"), alt: "Cartel del podcast Historias con Altura con una chica hablando ante un micrófono", pie: "«Historias con Altura», el podcast interno." },
+      { src: img("ryanair", "skynews.jpg"), alt: "Portada de la revista interna SkyNews de Ryanair", pie: "SkyNews, la revista interna." },
+      { src: img("ryanair", "skynews-dentro.jpg"), alt: "Páginas interiores de SkyNews con historias de empleados", pie: "Historias de la plantilla, dentro de la revista." },
+      { src: img("ryanair", "bienvenida.jpg"), alt: "Kit de bienvenida de Ryanair con caja, taza, libreta y carta", pie: "El kit «Welcome on board»." },
       { src: img("ryanair", "premios.jpg"), alt: "Diapositiva de los Cabin Crew Awards de Ryanair", pie: "Los Cabin Crew Awards." },
-      { src: img("ryanair", "acogida.jpg"), alt: "Carteles de una regata por equipos y de un desayuno de bienvenida", pie: "Team building y desayuno de bienvenida." },
-      { src: img("ryanair", "kit-buddy.jpg"), alt: "Kit de bienvenida con taza y sudadera, y una mentora con un nuevo empleado", pie: "Kit de bienvenida y programa de mentoría." },
+      { src: img("ryanair", "acogida.jpg"), alt: "Carteles de una regata por equipos y de un desayuno de bienvenida", pie: "Regata y desayuno de bienvenida." },
+      { src: img("ryanair", "kit-buddy.jpg"), alt: "Kit de bienvenida con taza y sudadera, y una mentora con un nuevo empleado", pie: "El programa de mentoría." },
     ],
   },
   aprendizajes: [
     "La comunicación interna empieza por escuchar a quien menos poder tiene en el mapa.",
     "Reconocer es una acción, no un mensaje.",
+    "Una brecha no se cierra con mensajes: se cierra cambiando lo que la gente vive.",
   ],
-  nota: "Propuesta académica en equipo (Grupo 11, Grado URJC), sin relación con Ryanair.",
+  nota: "Propuesta académica en equipo (Grado URJC), sin relación con Ryanair.",
 };
 
 export const torrons: CasoCompleto = {
@@ -348,4 +371,54 @@ export const oreo: CasoCompleto = {
   nota: "Proyecto académico en equipo (Grado URJC), sin relación con Mondelēz.",
 };
 
-export const verdes = [ryanair, torrons, mms, tourCdc, revista, bbva, oreo];
+export const pluvielle: CasoCompleto = {
+  slug: "pluvielle",
+  titulo: "Pluvielle",
+  parecia: "Parecía una alfombrilla de baño.",
+  era: "Era una marca de lujo que convierte un objeto cotidiano en arte que se colecciona.",
+  ficha: [
+    { etiqueta: "Qué", valor: "Identidad de marca y marketing mix" },
+    { etiqueta: "Dónde", valor: "Máster en Comunicación Publicitaria, UC3M, 2026" },
+    { etiqueta: "Equipo", valor: "En equipo" },
+    { etiqueta: "Idioma", valor: "Trabajo en inglés" },
+  ],
+  contexto: {
+    titulo: "Del baño a la galería",
+    parrafos: [
+      "Pluvielle parte de la «artificación» de Kapferer: sacar un objeto corriente de su categoría y tratarlo como arte. Las alfombrillas son de diatomita, que absorbe y seca al instante, y cada colección la firma un artista: diez piezas numeradas.",
+      "Solo se compran en persona, en pop-ups de una semana en galerías de ciudades de lujo, con tres días de exposición privada antes de abrir la venta.",
+      "El nombre une pluvia, lluvia en latín, con el sufijo francés -elle, y el logo son dos gotas que, juntas, forman una P.",
+    ],
+  },
+  bloques: [
+    {
+      titulo: "Identidad",
+      resumen: "Lujo silencioso.",
+      puntos: [
+        "Tonos tierra, como la diatomita de la que sale el producto.",
+        "Una serif sofisticada para el logotipo y un packaging minimalista inspirado en las grandes casas de lujo.",
+      ],
+    },
+    {
+      titulo: "Marketing mix",
+      resumen: "Escasez y experiencia.",
+      puntos: [
+        "Colecciones limitadas por temporada y venta solo en galería.",
+        "Su promesa: el toque efímero de la lluvia, esculpido en diatomita.",
+      ],
+    },
+  ],
+  imagenes: {
+    titulo: "Las piezas",
+    items: [
+      { src: img("pluvielle", "alfombra.jpg"), alt: "Alfombrilla de diatomita con una ilustración de figuras de colores, de 50 por 25 centímetros", pie: "Una pieza de la colección." },
+      { src: img("pluvielle", "packaging.jpg"), alt: "Caja de presentación de Pluvielle con la alfombrilla y el texto de la artista", pie: "El packaging." },
+      { src: img("pluvielle", "galeria.jpg"), alt: "Galería de noche con invitados alrededor de las alfombrillas expuestas", pie: "El pop-up en galería." },
+      { src: img("pluvielle", "caja.jpg"), alt: "Caja abierta con papel de seda estampado y el sello de las dos gotas", pie: "El detalle del sello." },
+    ],
+  },
+  aprendizajes: ["El lujo no está solo en el objeto, sino en cómo se llega a él."],
+  nota: "Marca ficticia creada para el máster. Trabajo académico en equipo.",
+};
+
+export const verdes = [ryanair, torrons, mms, tourCdc, revista, bbva, oreo, pluvielle];

@@ -22,8 +22,6 @@ export const santander: CasoCompleto = {
     texto: "La web que hice, aquí mismo. Ponle tu nota al logo y compárala con la nuestra.",
   },
   marcador: [
-    { cifra: "11", texto: "criterios de Chaves y Belluccia, cada uno con su prueba interactiva" },
-    { cifra: "31", texto: "personas en la encuesta, sin saber de qué marca se trataba" },
     { cifra: "87 %", texto: "reconoció la marca solo con la llama" },
     { cifra: "10 %", texto: "percibe la cercanía que la marca dice transmitir" },
   ],

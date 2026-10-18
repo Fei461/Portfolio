@@ -26,6 +26,14 @@ function NombreProyectado() {
   );
 }
 
+// Las pruebas más fuertes, a un clic desde la portada.
+const minuto = [
+  { cifra: "36.000", texto: "visualizaciones en Stud-IA", to: "/trabajo/stud-ia" },
+  { cifra: "Una app", texto: "hecha sin saber programar", to: "/trabajo/talixea" },
+  { cifra: "248", texto: "encuestas en mi TFG", to: "/trabajo/tfg-bbva" },
+  { cifra: "1.er premio", texto: "Ideathon URJC", to: "/sobre-mi" },
+];
+
 // La foto de la graduación tiene historia detrás: se le da la vuelta para leerla.
 function FotoGraduacion() {
   const [vuelta, setVuelta] = useState(false);
@@ -97,9 +105,21 @@ export function InicioPage() {
         <p className="dojo-busco">
           <strong>Busco prácticas</strong> a tiempo completo a partir de abril de 2027.
         </p>
-        <p className="dojo-pista">
-          Coge un cinturón de la pared para ver mis proyectos <span aria-hidden="true">→</span>
-        </p>
+        <nav className="dojo-minuto" aria-label="Lo mejor, en un clic">
+          <p>Si solo tienes un minuto:</p>
+          <ul>
+            {minuto.map((m) => (
+              <li key={m.to}>
+                <Link to={m.to}>
+                  <strong>{m.cifra}</strong> {m.texto}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <p className="dojo-minuto__pista">
+            O coge un cinturón de la pared <span aria-hidden="true">→</span>
+          </p>
+        </nav>
       </div>
 
       <div className="dojo-pared">

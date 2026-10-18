@@ -43,7 +43,7 @@ export const perfil = {
       periodo: "Septiembre de 2022 a junio de 2026",
       titulo: "Grado en Publicidad y Relaciones Públicas",
       lugar: "Universidad Rey Juan Carlos",
-      detalle: "Nota media de 8,62 y seis matrículas de honor.",
+      detalle: "Nota media de 8,62 y seis matrículas de honor. TFG: la identidad y la reputación de BBVA tras la crisis de 2008.",
     },
     {
       periodo: "Septiembre de 2019 a mayo de 2021",
@@ -93,18 +93,18 @@ export const perfil = {
   ],
 
   competencias: [
-    "Compromiso",
-    "Buen trabajo bajo presión",
-    "Adaptabilidad",
-    "Visión crítica y creativa",
-    "Gestión eficaz del tiempo",
-    "Habilidades sociales",
+    "Relaciones públicas y reputación",
+    "Comunicación interna",
+    "Investigación: encuestas y entrevistas",
+    "Análisis de datos y métricas",
+    "Redes sociales y contenido",
+    "Herramientas de IA",
   ],
 
   aficiones: [
-    "Artes marciales: cinturón marrón de judo y azul de taekwondo",
-    "Aprender",
-    "Viajar",
-    "Naturaleza",
+    "Judo (cinturón marrón) y taekwondo (cinturón azul)",
+    "Un libro en el idioma de cada país que visito: ya van más de diez",
+    "Adivinar países por sus banderas (casi me las sé todas)",
+    "El fútbol, con el Atleti en el corazón",
   ],
 };

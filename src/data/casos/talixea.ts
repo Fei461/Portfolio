@@ -19,8 +19,6 @@ export const talixea: CasoCompleto = {
   marcador: [
     { cifra: "40", texto: "libros: cuentos, mitos, clásicos y aventuras" },
     { cifra: "6", texto: "idiomas, siempre desde el español" },
-    { cifra: "16", texto: "libros gratis, sin tarjeta" },
-    { cifra: "6,95 €", texto: "lo que costó el dominio. Conectarlo, bastante más" },
   ],
   contexto: {
     titulo: "Buscaba algo que no existía",

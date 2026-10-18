@@ -1,4 +1,4 @@
-// Cómo trabajo: mis tres momentos de un proyecto, cada uno con su color y un ejemplo real.
+// Cómo trabajo: mis cuatro momentos de un proyecto, cada uno con su color y un ejemplo real.
 export type ColorSubrayador = "azul" | "naranja" | "amarillo" | "verde" | "rosa" | "morado";
 
 export const tiempos: {
@@ -17,6 +17,14 @@ export const tiempos: {
     caso: { slug: "tour-cdc-dana", titulo: "Tour C de C" },
   },
   {
+    nombre: "Ordenarlo por colores",
+    significado: "Antes de lanzarme",
+    color: "azul",
+    ejemplo:
+      "Vivo con un esquema de colores en la cabeza: mis apuntes llevan siempre el mismo orden y todos los subrayadores del mundo, y tengo tres calendarios, cada uno con su color. Antes de escribir un solo mensaje B2B en Stud-IA, dividí el sector educativo en trece nichos.",
+    caso: { slug: "stud-ia", titulo: "Stud-IA" },
+  },
+  {
     nombre: "Darles forma",
     significado: "Medio, soporte y ejecución",
     color: "naranja",
@@ -27,7 +35,7 @@ export const tiempos: {
   {
     nombre: "Mirar los números",
     significado: "Qué ha pasado y por qué",
-    color: "azul",
+    color: "verde",
     ejemplo:
       "Me encantan las métricas, pero sobre todo entender por qué salen como salen. En Stud-IA, con los datos de cada red, buscaba qué publicaciones funcionaban y por qué.",
     caso: { slug: "stud-ia", titulo: "Stud-IA" },
@@ -44,11 +52,10 @@ export const colores: {
   {
     color: "azul",
     etiqueta: "Azulita",
-    titulo: "Cuadriculada, y a mucha honra",
+    titulo: "Me llaman azulita",
     texto: [
-      "Vivo con un esquema de colores en la cabeza en el que cada cosa tiene su correspondencia: mates, azul; lengua, naranja. Mis apuntes siempre llevan el mismo orden y todos los subrayadores del mundo, porque esquematizo con colores.",
-      "Tengo tres calendarios y, sí, los uso todos. Cada uno con su color, obviamente.",
-      "En la carrera me recomendaron leer «Rodeado de idiotas» y, desde entonces, mis amigas y yo nos llamamos por nuestros colores. Yo soy azulita.",
+      "En la carrera me recomendaron leer «Rodeado de idiotas» y, desde entonces, mis amigas y yo nos llamamos por nuestros colores. Yo soy azulita: la analítica, la cuadriculada, la de los tres calendarios.",
+      "Y sí, en mi cabeza cada cosa tiene su color: mates, azul; lengua, naranja. Por eso estos subrayadores no están puestos al azar.",
     ],
   },
   {

@@ -3,7 +3,7 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 const navItems = [
   { label: "Proyectos", to: "/trabajo" },
   { label: "Sobre mí", to: "/sobre-mi" },
-  { label: "Notas", to: "/notas" },
+  { label: "En voz alta", to: "/en-voz-alta" },
   { label: "CV", to: "/cv" },
 ] as const;
 
@@ -30,6 +30,15 @@ export function SiteHeader() {
             {item.label}
           </NavLink>
         ))}
+        <a
+          className="dojo-head__linkedin"
+          href="https://www.linkedin.com/in/lara-feijoo"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="LinkedIn (se abre en otra pestaña)"
+        >
+          in
+        </a>
         <a className="dojo-head__escribir" href="mailto:lara.feijoo@gmail.com">
           Escríbeme
         </a>

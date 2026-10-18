@@ -14,12 +14,6 @@ export const brujaRoja: CasoCompleto = {
     { etiqueta: "Equipo", valor: "Cuatro personas, cuatro meses publicando en X" },
     { etiqueta: "Mi parte", valor: "Propuse el enfoque de la cuenta; identidad y aplicaciones, en equipo" },
   ],
-  marcador: [
-    { cifra: "3", texto: "colores: cobre, burdeos y crema" },
-    { cifra: "3", texto: "tipografías, cada una con su función" },
-    { cifra: "4", texto: "tipos de publicación con su día de la semana" },
-    { cifra: "6", texto: "usos incorrectos del logo, documentados" },
-  ],
   contexto: {
     titulo: "Una copa menstrual que no pide permiso",
     parrafos: [

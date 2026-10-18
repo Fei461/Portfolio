@@ -1,4 +1,5 @@
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
+import { Sigue } from "@/components/sigue";
 import { Link, useSearchParams } from "react-router-dom";
 import { colores, tiempos } from "@/data/metodo";
 import { perfil } from "@/data/perfil";
@@ -39,6 +40,11 @@ function QuienSoy() {
         todo, por qué</Sub>. Soy un poco Barbie en esto, siento que puedo serlo todo. Por eso creo que
         encajo en una agencia pequeña, de las que hay que tocar todos los palos.
       </p>
+      <p>
+        Y una alegría por el camino: <strong>primer premio del Ideathon de Innovación de la URJC</strong>, entre
+        más de 200 estudiantes, con un CV generativo con IA que convierte el TFG en competencias para cada
+        oferta.
+      </p>
       <p className="quien__busco">
         <strong>Busco:</strong> {perfil.busco} Ahora estudio el Máster en Comunicación Publicitaria
         en la UC3M.
@@ -51,14 +57,15 @@ function QuienSoy() {
 const porques: ReactNode[] = [
   <>
     Por los valores: el respeto, la perseverancia, hacer mil <span lang="ja-Latn">uchi komis</span> y{" "}
-    <span lang="ja-Latn">nage komis</span> antes de llegar a ganar una medalla. Por el esfuerzo, la
+    <span lang="ja-Latn">nage komis</span> (repetir la entrada de una técnica y luego la proyección
+    entera, una y otra vez) antes de llegar a ganar una medalla. Por el esfuerzo, la
     dedicación y la motivación.
   </>,
   <>Porque ha sido un refugio en el que me he hospedado.</>,
   <>Porque es un lugar en el que ser distinta es una ventaja y no un inconveniente.</>,
   <>Porque consigo callar mi mente y centrarlo todo en una única cosa.</>,
   <>
-    Porque, cuando dicen <span lang="ja-Latn">hajime</span>, el resto desaparece.
+    Porque, cuando dicen <span lang="ja-Latn">hajime</span> («¡empezad!»), el resto desaparece.
   </>,
   <>
     Porque puede parecer un deporte individual hasta que descubres a tu entrenador, a tus compañeros, a
@@ -89,7 +96,7 @@ function Judo() {
   );
 }
 
-// Mis tres momentos de un proyecto: se elige uno y se ve el ejemplo real.
+// Mis cuatro momentos de un proyecto: se elige uno y se ve el ejemplo real.
 function Metodo() {
   const [activo, setActivo] = useState(0);
   const t = tiempos[activo];
@@ -97,7 +104,7 @@ function Metodo() {
     <div>
       <h2>Cómo trabajo un proyecto</h2>
       <p className="asalto__entradilla">
-        Tres momentos, cada uno con su color (no puedo evitarlo). Elige uno y te enseño dónde lo hice.
+        Cuatro momentos, cada uno con su color (no puedo evitarlo). Elige uno y te enseño dónde lo hice.
       </p>
       <div className="metodo">
         <ol className="metodo__tiempos">
@@ -166,8 +173,8 @@ function LoDemas() {
 
 const pestanas: { id: string; nombre: string; contenido: ReactNode }[] = [
   { id: "quien", nombre: "Quién soy", contenido: <QuienSoy /> },
-  { id: "metodo", nombre: "Cómo trabajo", contenido: <Metodo /> },
   { id: "demas", nombre: "Lo que no cabe en el CV", contenido: <LoDemas /> },
+  { id: "metodo", nombre: "Cómo trabajo", contenido: <Metodo /> },
   { id: "judo", nombre: "Por qué el judo", contenido: <Judo /> },
 ];
 
@@ -175,6 +182,7 @@ export function SobrePage() {
   // La parte abierta vive en la URL (?parte=demas), como las partes de los casos.
   const [params, setParams] = useSearchParams();
   const activo = Math.max(0, pestanas.findIndex((p) => p.id === params.get("parte")));
+  const panel = useRef<HTMLDivElement>(null);
   const setActivo = (i: number) => setParams(i ? { parte: pestanas[i].id } : {}, { replace: true });
   const actual = pestanas[activo];
 
@@ -223,6 +231,7 @@ export function SobrePage() {
           ))}
         </div>
         <div
+          ref={panel}
           id="sobre-panel"
           role="tabpanel"
           aria-labelledby={`sobre-${actual.id}`}
@@ -231,6 +240,7 @@ export function SobrePage() {
         >
           {actual.contenido}
         </div>
+        <Sigue panel={panel} clave={actual.id} />
         <nav className="combate__pie" aria-label="Navegación">
           <button type="button" onClick={() => setActivo(activo - 1)} disabled={activo === 0}>
             Anterior

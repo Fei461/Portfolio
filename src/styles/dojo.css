@@ -1426,3 +1426,124 @@
   width: clamp(270px, 21vw, 320px);
   aspect-ratio: 3 / 3.7;
 }
+
+/* LinkedIn, a la vista en la cabecera */
+.dojo-head nav a.dojo-head__linkedin {
+  display: inline-grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  font-weight: 800;
+  font-size: 1rem;
+  line-height: 1;
+  color: var(--judogi) !important;
+  background: #0a66c2;
+  border: 2px solid var(--sumi);
+  text-decoration: none;
+}
+
+.dojo-head nav a.dojo-head__linkedin:hover {
+  background: var(--sumi);
+}
+
+/* Si solo tienes un minuto: accesos directos a lo mejor */
+.dojo-minuto {
+  margin-top: 1.1rem;
+  max-width: 46rem;
+}
+
+.dojo-minuto > p:first-child {
+  display: inline-block;
+  margin: 0 0 0.45rem;
+  padding: 0.15rem 0.5rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--judogi);
+  background: var(--sumi);
+}
+
+.dojo-minuto ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.dojo-minuto a {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  padding: 0.4rem 0.7rem;
+  font-size: 0.95rem;
+  color: var(--sumi);
+  text-decoration: none;
+  background: var(--judogi);
+  border: 2.5px solid var(--sumi);
+  box-shadow: 3px 3px 0 var(--heri);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.dojo-minuto a:hover,
+.dojo-minuto a:focus-visible {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 var(--obi);
+}
+
+.dojo-minuto a strong {
+  font-weight: 800;
+  font-variation-settings: "opsz" 40, "wdth" 85;
+  font-size: 1.1rem;
+}
+
+.dojo-hero .dojo-minuto__pista {
+  display: inline-block;
+  margin: 0.7rem 0 0;
+  padding: 0.1rem 0.45rem;
+  font-weight: 700;
+  font-size: 0.92rem;
+  background: var(--tatami);
+}
+
+/* La portada entera cabe en pantallas de 900 px de alto */
+.dojo-hero--pantalla {
+  padding-top: 5.2rem;
+}
+
+.dojo-hero--pantalla .dojo-nombre {
+  font-size: min(14.5vw, 17.5vh, 15rem);
+}
+
+.dojo-hero--pantalla .dojo-lema {
+  margin-top: 0.9rem;
+}
+
+.obi {
+  height: min(30svh, 290px);
+}
+
+.dojo-minuto a {
+  padding: 0.3rem 0.6rem;
+  font-size: 0.9rem;
+}
+
+@media (max-height: 820px) and (min-width: 901px) {
+  .dojo-intro-caja {
+    padding: 0.7rem 1rem;
+    font-size: 0.98rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .colgador li {
+    min-width: 0;
+  }
+
+  .colgador .obi {
+    max-width: 100%;
+    height: auto;
+    max-height: 210px;
+  }
+}

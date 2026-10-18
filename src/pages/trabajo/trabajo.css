@@ -485,3 +485,114 @@ a.dorsal__enlace:hover .dorsal__visual video {
     line-height: 1.35;
   }
 }
+
+/* ── Archivo en dos grupos, con fichas desplegables ── */
+.archivo-grupos {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  margin-top: clamp(0.8rem, 2vh, 1.4rem);
+  padding: 0.3rem var(--gutter) 1.5rem;
+}
+
+.archivo-grupo + .archivo-grupo {
+  margin-top: 1.6rem;
+}
+
+.archivo-grupo header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.2rem 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 4px solid var(--sumi);
+}
+
+.archivo-grupo h2 {
+  margin: 0;
+  font-weight: 800;
+  font-variation-settings: "opsz" 60, "wdth" 80;
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
+}
+
+.archivo-grupo header p {
+  margin: 0;
+  color: var(--texto-suave);
+}
+
+.archivo-grupos .archivo {
+  flex: none;
+  overflow: visible;
+  margin: 1rem 0 0;
+  padding: 0;
+  align-items: start;
+}
+
+.archivo-grupos .archivo li {
+  padding: 0;
+  gap: 0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.archivo-grupos .archivo li:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0 var(--sumi);
+}
+
+.archivo-grupos .archivo li.abierto {
+  box-shadow: 7px 7px 0 var(--obi);
+}
+
+.archivo li > button {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  width: 100%;
+  padding: 1rem 2.6rem 1rem 3.4rem;
+  text-align: left;
+  font: inherit;
+  color: var(--sumi);
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.archivo__mas {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.8rem;
+  display: grid;
+  place-items: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  font-weight: 800;
+  font-size: 1.15rem;
+  line-height: 1;
+  color: var(--judogi);
+  background: var(--sumi);
+}
+
+.archivo li.abierto .archivo__mas {
+  background: var(--obi);
+}
+
+.archivo__ficha {
+  padding: 0 1.1rem 1rem 3.4rem;
+  border-top: 2px dashed rgba(0, 0, 0, 0.25);
+}
+
+.archivo__ficha p {
+  margin: 0.7rem 0 0;
+  line-height: 1.5;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .archivo__ficha:not([hidden]) {
+    animation: ficha-abre 0.3s ease;
+  }
+}
+
+@keyframes ficha-abre {
+  from { opacity: 0; transform: translateY(-4px); }
+}
