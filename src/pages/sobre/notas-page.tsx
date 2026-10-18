@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { Link, useSearchParams } from "react-router-dom";
-import { categoriasNotas, notas, soloEnLinkedIn, type CategoriaNota } from "@/data/notas";
+import { notas, perfilLinkedIn } from "@/data/notas";
 import { proyectos } from "@/data/proyectos";
 import { Sigue } from "@/components/sigue";
 import "./paginas.css";
@@ -12,8 +12,7 @@ const simple = (t: string) => t.toLowerCase().replace(/[^a-záéíóúñü¿? ]/
 // En voz alta: mis publicaciones de LinkedIn, enteras, para leerlas sin salir de aquí.
 export function NotasPage() {
   const [params, setParams] = useSearchParams();
-  const filtro = (params.get("tema") as CategoriaNota | null) ?? null;
-  const visibles = filtro ? notas.filter((n) => n.categoria === filtro) : notas;
+  const visibles = notas;
   const nota = visibles.find((n) => n.id === params.get("nota")) ?? visibles[0];
   const i = visibles.indexOf(nota);
   const hoja = useRef<HTMLElement>(null);
@@ -25,38 +24,19 @@ export function NotasPage() {
   }, [nota]);
 
   const abrir = (id: string) => {
-    const p: Record<string, string> = { nota: id };
-    if (filtro) p.tema = filtro;
-    setParams(p, { replace: true });
+    setParams({ nota: id }, { replace: true });
   };
-  const elegirTema = (t: CategoriaNota | null) => setParams(t ? { tema: t } : {}, { replace: true });
 
   return (
     <main className="combate combate--notas">
       <aside className="combate__ficha notas-indice">
         <h1 className="combate__titulo">En voz alta</h1>
         <p className="notas-indice__intro">
-          Solo se aprende de aquello que te atreves a decir en voz alta. Esto es lo que voy contando en
-          LinkedIn sobre marcas, campañas y lo que aprendo, entero y de lo más reciente a lo más antiguo.
+          Solo se aprende de aquello que te atreves a decir en voz alta. Aquí van algunas de las cosas que he
+          contado en LinkedIn sobre marcas, campañas y lo que aprendo. Enteras, para leerlas sin salir.
         </p>
-        <div className="notas-filtro" role="group" aria-label="Filtrar por tema">
-          <button type="button" aria-pressed={!filtro} className={!filtro ? "activo" : undefined} onClick={() => elegirTema(null)}>
-            Todas
-          </button>
-          {categoriasNotas.map((c) => (
-            <button
-              key={c}
-              type="button"
-              aria-pressed={filtro === c}
-              className={filtro === c ? "activo" : undefined}
-              onClick={() => elegirTema(c)}
-            >
-              {c}
-            </button>
-          ))}
-        </div>
         <ol className="notas-lista">
-          {visibles.map((n) => (
+          {notas.map((n) => (
             <li key={n.id}>
               <button
                 type="button"
@@ -70,20 +50,10 @@ export function NotasPage() {
             </li>
           ))}
         </ol>
-        {!filtro && (
-          <div className="notas-fuera">
-            <h2 className="pagina-h3">Solo en LinkedIn, de momento</h2>
-            <ul>
-              {soloEnLinkedIn.map((n) => (
-                <li key={n.url + n.titulo}>
-                  <a href={n.url} target="_blank" rel="noreferrer">
-                    {n.titulo}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
+        <a className="dojo-boton notas-resto" href={perfilLinkedIn} target="_blank" rel="noreferrer">
+          El resto, en mi LinkedIn&nbsp;<span aria-hidden="true">→</span>
+          <span className="sr-only"> (se abre en otra pestaña)</span>
+        </a>
       </aside>
 
       <section className="combate__tatami" aria-label="Nota abierta">

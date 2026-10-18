@@ -875,3 +875,8 @@
   from { opacity: 0; transform: translateX(-12px); }
   to { opacity: 1; transform: none; }
 }
+
+.notas-resto {
+  align-self: flex-start;
+  margin-top: 1.4rem;
+}

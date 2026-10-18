@@ -102,7 +102,6 @@ export const magicair: CasoCompleto = {
   imagenes: {
     titulo: "Las piezas",
     items: [
-      { src: img("stakeholders.jpg"), alt: "Diagrama de tres círculos, poder, legitimidad y urgencia, con los públicos de MagicAir", pie: "El mapa de públicos del plan." },
       { src: img("cronograma.jpg"), alt: "Cronograma por semanas de las técnicas de relaciones públicas", pie: "El calendario de técnicas." },
     ],
   },

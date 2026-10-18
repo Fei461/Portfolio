@@ -13,6 +13,8 @@ export type Nota = {
   caso?: string;
   fecha?: string;
   texto: string[];
+  /** Fuera de la selección: sigue en LinkedIn, pero no sale aquí. */
+  fuera?: boolean;
 };
 
 export const categoriasNotas: CategoriaNota[] = ["Prácticas", "Proyectos", "Marcas", "Comportamiento", "Aprendizaje"];
@@ -186,7 +188,7 @@ const antiguas: Nota[] = [
       "1. Analiza el contenido del TFG/TFM 📄",
       "2. Extrae competencias, habilidades y conocimientos clave de forma automática 3. Adapta y traduce esas capacidades a los requerimientos específicos de cualquier oferta de empleo 💼",
       "Fue un fin de semana de trabajo intenso, donde aprendimos, entre otras cosas, sobre el Modelo Canvas y la inmediatez de la adaptación. Conseguimos ganar nuestra categoría y quedar segundas en el Ideathon general.",
-      "Pero lo de menos fue el premio. Yo me quedo con los aprendizajes, las experiencias y las aptitudes que obtuvimos. Porque el verdadero valor fue el equipazo que formamos (Gabriela Dueñas, Alejandra Redondo Soares y Ainhoa Torres Martínez). Como bien dice el libro 'Rodeado de Idiotas', la mezcla de mi amarillita, mi verdecita, mi rojita y yo (la más azulita de todo el grupo) demostró ser imparable."
+      "Pero lo de menos fue el premio. Yo me quedo con los aprendizajes, las experiencias y las aptitudes que obtuvimos. Porque el verdadero valor fue el equipazo que formamos. Como bien dice el libro 'Rodeado de Idiotas', la mezcla de mi amarillita, mi verdecita, mi rojita y yo (la más azulita de todo el grupo) demostró ser imparable."
     ]
   },
   {
@@ -398,10 +400,13 @@ const nuevas: Nota[] = (recientes as (Omit<Nota, "id"> & { texto?: string[] })[]
   }))
   .sort((a, b) => (b.fecha ?? "").localeCompare(a.fecha ?? ""));
 
-export const notas: Nota[] = [...nuevas, ...antiguas];
+// Una selección, no un archivo: el resto está en LinkedIn. Las nuevas que lleguen por el
+// formulario entran solas; las antiguas, solo estas.
+const elegidas = ["no-buscaba-practicas", "kotter", "spotify-wrapped", "ideathon"];
 
-// Publicaciones de las que aún no tengo el enlace.
-export const soloEnLinkedIn: { titulo: string; url: string }[] = [
-  { titulo: "Una pregunta incómoda para el 8M", url: "https://es.linkedin.com/in/lara-feijoo" },
-  { titulo: "El primer paso también cuenta como estrategia", url: "https://es.linkedin.com/in/lara-feijoo" },
+export const notas: Nota[] = [
+  ...nuevas.filter((n) => !n.fuera),
+  ...elegidas.map((id) => antiguas.find((n) => n.id === id)!).filter(Boolean),
 ];
+
+export const perfilLinkedIn = "https://www.linkedin.com/in/lara-feijoo/recent-activity/all/";

@@ -69,7 +69,8 @@
       "Lo más gracioso es que ninguno me llamó por el nombre,",
       "solo decidí no juzgar un libro por su portada."
     ],
-    "fecha": "2026-07-09"
+    "fecha": "2026-07-09",
+    "fuera": true
   },
   {
     "url": "https://es.linkedin.com/posts/lara-feijoo_qu%C3%A9-lleg%C3%B3-antes-el-huevo-o-la-gallina-activity-7466057066965549056-Sz73",
@@ -93,7 +94,8 @@
       "El problema nunca fue ahogarse, fue el miedo a lanzarse a la piscina."
     ],
     "fecha": "2026-05-29",
-    "caso": "stud-ia"
+    "caso": "stud-ia",
+    "fuera": true
   },
   {
     "url": "https://www.linkedin.com/feed/update/urn:li:activity:7509906573302042625/",
