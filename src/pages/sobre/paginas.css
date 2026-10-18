@@ -648,3 +648,186 @@
 .notas-fuera a {
   font-weight: 600;
 }
+
+/* ── Mis subrayadores: cada cosa con su color ── */
+.color--azul { --c: #7cc6f6; --c-osc: #2a7fc0; }
+.color--naranja { --c: #ffb35c; --c-osc: #d9730d; }
+.color--amarillo { --c: #fbe94c; --c-osc: #c9a800; }
+.color--verde { --c: #9be37a; --c-osc: #3f9a2a; }
+.color--rosa { --c: #ff9fcf; --c-osc: #d6488f; }
+.color--morado { --c: #c7a6ff; --c-osc: #7a4fd0; }
+
+.sub {
+  color: inherit;
+  background-color: transparent;
+  background-image: linear-gradient(transparent 52%, var(--c, #fbe94c) 52%, var(--c, #fbe94c) 92%, transparent 92%);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  padding: 0 0.12em;
+  animation: subrayar 0.7s 0.25s cubic-bezier(0.6, 0, 0.3, 1) both;
+}
+
+.sub--azul { --c: #7cc6f6; }
+.sub--naranja { --c: #ffb35c; }
+.sub--verde { --c: #9be37a; }
+
+@keyframes subrayar {
+  from { background-size: 0% 100%; }
+  to { background-size: 100% 100%; }
+}
+
+.quien .sub:nth-of-type(2) { animation-delay: 0.6s; }
+.quien p:nth-of-type(3) .sub { animation-delay: 0.95s; }
+
+.quien__leyenda {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 0.9rem;
+  font-size: 0.9rem !important;
+  color: var(--texto-suave);
+}
+
+.quien__leyenda .sub {
+  animation: none;
+  color: var(--sumi);
+}
+
+/* Los cuatro momentos, con su color */
+.metodo__tiempos button.activo {
+  box-shadow: inset 10px 0 0 var(--c);
+}
+
+.metodo__n {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border: 2px solid var(--sumi);
+  border-radius: 50%;
+  color: var(--sumi) !important;
+  background: var(--c);
+  font-size: 1rem !important;
+}
+
+.metodo__grande .sub {
+  padding: 0 0.08em;
+}
+
+/* Estuche de subrayadores y la hoja de apuntes */
+.estuche {
+  display: grid;
+  gap: 1.4rem;
+  margin-top: 1.3rem;
+}
+
+.estuche__fila {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.subrayador {
+  display: flex;
+  align-items: stretch;
+  padding: 0;
+  font-family: var(--f);
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  transition: transform 0.25s cubic-bezier(0.3, 1.4, 0.5, 1);
+}
+
+.subrayador__tapa {
+  width: 1.4rem;
+  background: var(--c-osc);
+  border: 3px solid var(--sumi);
+  border-right: 0;
+  border-radius: 6px 0 0 6px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.subrayador__cuerpo {
+  padding: 0.5rem 0.9rem 0.5rem 0.7rem;
+  font-weight: 800;
+  font-size: 0.98rem;
+  color: var(--sumi);
+  background: var(--c);
+  border: 3px solid var(--sumi);
+  border-radius: 0 14px 14px 0;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.subrayador:hover {
+  transform: translateY(-3px) rotate(-2deg);
+}
+
+.subrayador.activo {
+  transform: translateY(-6px) rotate(-3deg);
+}
+
+.subrayador.activo .subrayador__tapa {
+  transform: translateX(-0.5rem) rotate(-12deg);
+  opacity: 0.85;
+}
+
+.subrayador.activo .subrayador__cuerpo {
+  box-shadow: 4px 4px 0 var(--sumi);
+}
+
+.apunte {
+  position: relative;
+  max-width: 720px;
+  padding: 1.3rem 1.5rem 1.4rem 3.2rem;
+  background-color: #fff;
+  background-image:
+    linear-gradient(90deg, transparent 2.2rem, rgba(210, 35, 28, 0.45) 2.2rem, rgba(210, 35, 28, 0.45) calc(2.2rem + 2px), transparent calc(2.2rem + 2px)),
+    repeating-linear-gradient(transparent 0 calc(1.7rem - 1px), rgba(42, 127, 192, 0.18) calc(1.7rem - 1px) 1.7rem);
+  background-position: 0 0, 0 1.15rem;
+  border: 3px solid var(--sumi);
+  box-shadow: 8px 8px 0 var(--heri);
+  animation: apunte-entra 0.35s ease both;
+}
+
+.apunte h3 {
+  margin: 0 0 0.5rem;
+  font-weight: 800;
+  font-variation-settings: "opsz" 60, "wdth" 85;
+  font-size: clamp(1.5rem, 2.6vw, 2.2rem);
+  line-height: 1.1;
+}
+
+.apunte p {
+  margin: 0 0 0.6rem;
+  max-width: 62ch;
+  font-size: 1.05rem;
+  line-height: 1.7rem;
+}
+
+@keyframes apunte-entra {
+  from { opacity: 0; transform: translateY(8px) rotate(0.6deg); }
+  to { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sub, .apunte { animation: none; }
+}
+
+@media (max-width: 600px) {
+  .apunte { padding-left: 2.6rem; background-position: -0.6rem 0, 0 1.15rem; }
+  .subrayador__cuerpo { font-size: 0.9rem; padding: 0.4rem 0.7rem 0.4rem 0.5rem; }
+}
+
+.quien .quien__leyenda {
+  margin-top: 0.4rem;
+}
+
+.estuche {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.apunte {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}

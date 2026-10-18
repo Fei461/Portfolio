@@ -1,6 +1,6 @@
 import { useEffect, useState, type ReactNode } from "react";
-import { Link } from "react-router-dom";
-import { tiempos } from "@/data/metodo";
+import { Link, useSearchParams } from "react-router-dom";
+import { colores, tiempos } from "@/data/metodo";
 import { perfil } from "@/data/perfil";
 import "./paginas.css";
 import "../caso/combate.css";
@@ -18,27 +18,41 @@ const trayectoria = [
   { cuando: "2021–2025", que: "Profesora de artes marciales y monitora de campamento en Guerreros Galapagar." },
 ];
 
+// Subrayado como mis apuntes: verde lo que elijo, naranja lo que me mueve, azul cómo pienso.
+function Sub({ c, children }: { c: "azul" | "naranja" | "verde"; children: ReactNode }) {
+  return <mark className={`sub sub--${c}`}>{children}</mark>;
+}
+
 function QuienSoy() {
   return (
-    <div className="asalto__prosa">
-      <h2>No suelo ser la persona con la primera idea</h2>
-      <p className="quien__lead">Suelo ser la que quiere entender por qué esa idea debería funcionar.</p>
-      <p>
-        Lo que más me tira es la reputación, la percepción de marca, las relaciones públicas y la
-        comunicación, tanto corporativa como interna. Y, por el camino, he descubierto que me flipa
-        entender por qué compramos lo que compramos.
+    <div className="asalto__prosa quien">
+      <h2>Puedo encajar en todas partes (y en ninguna a la vez)</h2>
+      <p className="quien__leyenda" aria-hidden="true">
+        Subrayado como mis apuntes: <span className="sub sub--verde">lo que elijo</span>{" "}
+        <span className="sub sub--naranja">lo que me mueve</span>{" "}
+        <span className="sub sub--azul">cómo pienso</span>
+      </p>
+      <p className="quien__lead">
+        De pequeña me apunté a todos los deportes hasta que encontré el judo. En la publicidad me está
+        pasando un poco lo mismo.
       </p>
       <p>
-        Estudio el Máster en Comunicación Publicitaria en la UC3M después de acabar Publicidad y RRPP en
-        la URJC. Antes de terminar ya había hecho prácticas en una startup, Stud-IA, y había empezado a
-        construir Talixea desde mi cuarto, sin saber programar.
+        No me defino como copy, ni como arte, ni como cuentas, ni como planner. Pero si tengo que
+        decantarme, me quedo con <Sub c="verde">las relaciones públicas, la gestión de marca, la
+        reputación y la comunicación interna</Sub>. No quiero ser la cara visible de nada ni busco los
+        premios: <Sub c="naranja">quiero entender a la gente</Sub>. Me mueve la psicología de la
+        comunicación y partirme la cabeza buscando la mejor solución para la marca, no quedarme en
+        resolver el briefing.
       </p>
       <p>
-        Me muevo bien cuando hay que investigar, ordenar y bajar las ideas a tierra. Pregunto mucho, me
-        tomo en serio los datos y no me quedo quieta hasta que algo sale bien.
+        Me lo paso genial en un brainstorming diciendo locuras, y me lo paso igual de bien dándoles forma
+        después. Y luego están <Sub c="azul">los números: me encanta analizar qué ha pasado y, sobre
+        todo, por qué</Sub>. Soy un poco Barbie en esto, siento que puedo serlo todo. Por eso creo que
+        encajo en una agencia pequeña, de las que hay que tocar todos los palos.
       </p>
       <p className="quien__busco">
-        <strong>Busco:</strong> {perfil.busco}
+        <strong>Busco:</strong> {perfil.busco} Ahora estudio el Máster en Comunicación Publicitaria
+        en la UC3M.
       </p>
     </div>
   );
@@ -82,16 +96,15 @@ function Judo() {
   );
 }
 
-// Los cuatro tiempos de una proyección: se elige uno y se ve el ejemplo real.
+// Mis cuatro momentos de un proyecto: se elige uno y se ve el ejemplo real.
 function Metodo() {
   const [activo, setActivo] = useState(0);
   const t = tiempos[activo];
   return (
     <div>
-      <h2>Trabajo un proyecto como una proyección</h2>
+      <h2>Cómo trabajo un proyecto</h2>
       <p className="asalto__entradilla">
-        En judo, una proyección tiene tres tiempos y una regla previa: saber caer. Llevo años
-        repitiéndolos en el tatami y, sin darme cuenta, es también como trabajo fuera de él.
+        Cuatro momentos, cada uno con su color (no puedo evitarlo). Elige uno y te enseño dónde lo hice.
       </p>
       <div className="metodo">
         <ol className="metodo__tiempos">
@@ -100,19 +113,19 @@ function Metodo() {
               <button
                 type="button"
                 aria-pressed={i === activo}
-                className={i === activo ? "activo" : undefined}
+                className={`color--${x.color}${i === activo ? " activo" : ""}`}
                 onClick={() => setActivo(i)}
               >
-                <span className="metodo__n">{i}</span>
-                <strong lang="ja-Latn">{x.nombre}</strong>
+                <span className="metodo__n">{i + 1}</span>
+                <strong>{x.nombre}</strong>
                 <span>{x.significado}</span>
               </button>
             </li>
           ))}
         </ol>
-        <div className="metodo__detalle" key={t.nombre} aria-live="polite">
-          <p className="metodo__grande" lang="ja-Latn">
-            {t.nombre}
+        <div className={`metodo__detalle color--${t.color}`} key={t.nombre} aria-live="polite">
+          <p className="metodo__grande">
+            <span className="sub">{t.nombre}</span>
           </p>
           <p>{t.ejemplo}</p>
           <Link to={`/trabajo/${t.caso.slug}`}>Verlo en {t.caso.titulo}</Link>
@@ -138,34 +151,37 @@ function Camino() {
   );
 }
 
+// Lo que no cabe en el CV: un estuche de subrayadores; cada uno abre una cosa sobre mí.
 function LoDemas() {
+  const [activo, setActivo] = useState(0);
+  const c = colores[activo];
   return (
-    <div className="sobre-demas">
-      <div>
-        <h3 className="pagina-h3">Idiomas</h3>
-        <ul className="pagina-lista">
-          {perfil.idiomas.map((i) => (
-            <li key={i.idioma}>
-              <strong>{i.idioma}</strong> {i.nivel}
-            </li>
+    <div>
+      <h2>Lo que no cabe en el CV</h2>
+      <p className="asalto__entradilla">En mi cabeza cada cosa tiene su color. Coge un subrayador.</p>
+      <div className="estuche">
+        <div className="estuche__fila" role="group" aria-label="Subrayadores">
+          {colores.map((x, i) => (
+            <button
+              key={x.color}
+              type="button"
+              aria-pressed={i === activo}
+              className={`subrayador color--${x.color}${i === activo ? " activo" : ""}`}
+              onClick={() => setActivo(i)}
+            >
+              <span className="subrayador__tapa" aria-hidden="true" />
+              <span className="subrayador__cuerpo">{x.etiqueta}</span>
+            </button>
           ))}
-        </ul>
-      </div>
-      <div>
-        <h3 className="pagina-h3">Cómo soy trabajando</h3>
-        <ul className="pagina-lista">
-          {perfil.competencias.map((c) => (
-            <li key={c}>{c}</li>
+        </div>
+        <article className={`apunte color--${c.color}`} key={c.color} aria-live="polite">
+          <h3>
+            <span className="sub">{c.titulo}</span>
+          </h3>
+          {c.texto.map((p) => (
+            <p key={p}>{p}</p>
           ))}
-        </ul>
-      </div>
-      <div>
-        <h3 className="pagina-h3">Fuera del trabajo</h3>
-        <ul className="pagina-lista">
-          {perfil.aficiones.map((a) => (
-            <li key={a}>{a}</li>
-          ))}
-        </ul>
+        </article>
       </div>
     </div>
   );
@@ -176,11 +192,14 @@ const pestanas: { id: string; nombre: string; contenido: ReactNode }[] = [
   { id: "metodo", nombre: "Cómo trabajo", contenido: <Metodo /> },
   { id: "camino", nombre: "El camino", contenido: <Camino /> },
   { id: "judo", nombre: "Por qué el judo", contenido: <Judo /> },
-  { id: "demas", nombre: "Lo demás", contenido: <LoDemas /> },
+  { id: "demas", nombre: "Lo que no cabe en el CV", contenido: <LoDemas /> },
 ];
 
 export function SobrePage() {
-  const [activo, setActivo] = useState(0);
+  // La parte abierta vive en la URL (?parte=demas), como los asaltos de los casos.
+  const [params, setParams] = useSearchParams();
+  const activo = Math.max(0, pestanas.findIndex((p) => p.id === params.get("parte")));
+  const setActivo = (i: number) => setParams(i ? { parte: pestanas[i].id } : {}, { replace: true });
   const actual = pestanas[activo];
 
   useEffect(() => {
@@ -193,7 +212,7 @@ export function SobrePage() {
         <h1 className="combate__titulo">Sobre mí</h1>
         <figure className="pagina-foto sobre-foto">
           <img src={foto} alt="Lara sonriendo con la lengua fuera delante de una cascada" width={1400} height={1050} />
-          <figcaption>Fuera del aula, tampoco me quedo quieta.</figcaption>
+          <figcaption>De pequeña me reñían por no sentarme bien. Sigo igual.</figcaption>
         </figure>
         <div className="dojo-acciones">
           <Link className="dojo-boton" to="/trabajo">

@@ -40,9 +40,9 @@ export function InicioPage() {
         <p className="dojo-lema">Publicista con culo inquieto.</p>
         <div className="dojo-intro-caja">
           <p className="dojo-intro">
-            Me muevo entre la estrategia, la marca y la reputación. Piso un tatami desde los siete
-            años y trabajo igual que entreno: con constancia, preguntándolo todo y sin quedarme quieta
-            hasta que algo sale bien.
+            Ni copy, ni arte, ni cuentas, ni planner: me lo paso bien en todas. Si me haces elegir,
+            relaciones públicas, marca, reputación y comunicación interna. Quiero entender a la gente
+            y partirme la cabeza por la mejor solución, no solo resolver el briefing.
           </p>
         </div>
         <p className="dojo-busco">
