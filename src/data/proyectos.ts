@@ -25,12 +25,14 @@ export type Proyecto = {
   grupo?: "escrito" | "campana";
   /** Archivo: lo que se cuenta al desplegar la ficha. */
   detalle?: string[];
+  /** Fuera de la selección: no sale en listas, pero su página sigue existiendo. */
+  oculto?: boolean;
 };
 
 const caso = (file: string) => `${import.meta.env.BASE_URL}assets/casos/${file}`;
 
 export const proyectos: Proyecto[] = [
-  // ── Cinturón negro: casos completos, en el orden de una entrevista ──
+  // ── Cinturón negro: seis casos completos, en el orden de una entrevista ──
   {
     slug: "stud-ia",
     video: caso("stud-ia/youtube-36k.mp4"),
@@ -94,11 +96,13 @@ export const proyectos: Proyecto[] = [
     pagina: "nuevo",
     fuera: { href: "https://fei461.github.io/santander/", label: "Abrir el laboratorio" },
   },
+
+  // ── Cinturón verde: cuatro casos breves ──
   {
     slug: "bruja-roja",
     portada: caso("bruja-roja/productos.jpg"),
     titulo: "Bruja Roja",
-    cinturon: "negro",
+    cinturon: "verde",
     tipo: "Grado URJC, en equipo",
     resumen:
       "Cuatro meses en X y una identidad completa para una copa menstrual que habla como esa amiga que te dice lo que nadie se atreve.",
@@ -108,40 +112,10 @@ export const proyectos: Proyecto[] = [
     slug: "iberia",
     portada: caso("iberia/cine.png"),
     titulo: "Iberia",
-    cinturon: "negro",
+    cinturon: "verde",
     tipo: "Grado URJC, en equipo",
     resumen:
       "Una aerolínea que reconoce su huella en lugar de prometer vuelos verdes, contada como la restauración de un cuadro.",
-    pagina: "nuevo",
-  },
-
-  // ── Cinturón verde: casos breves, el reto y la idea ──
-  {
-    slug: "el-regalo-no-deseado",
-    portada: caso("torrons/marquesina.png"),
-    titulo: "Torrons Vicens",
-    cinturon: "verde",
-    tipo: "Grado URJC, en equipo",
-    resumen: "Una campaña que convierte el prejuicio sobre lo aparente en una experiencia de descubrimiento.",
-    pagina: "nuevo",
-  },
-  {
-    slug: "m-and-ms",
-    portada: caso("m-and-ms/cartel.jpg"),
-    titulo: "M&M's Premium",
-    cinturon: "verde",
-    tipo: "Grado URJC, en equipo",
-    resumen: "Lanzamiento en España como agencia, del contrabriefing a los medios.",
-    pagina: "nuevo",
-  },
-  {
-    slug: "tour-cdc-dana",
-    video: caso("tour-cdc/tinder-publicitario.mp4"),
-    poster: caso("tour-cdc/poster.jpg"),
-    titulo: "Tour C de C",
-    cinturon: "verde",
-    tipo: "Tour c de c 2025, individual",
-    resumen: "Un Tinder publicitario para conectar a la industria con los creativos afectados por la DANA.",
     pagina: "nuevo",
   },
   {
@@ -154,40 +128,13 @@ export const proyectos: Proyecto[] = [
     pagina: "nuevo",
   },
   {
-    slug: "pluvielle",
-    portada: caso("pluvielle/alfombra.jpg"),
-    titulo: "Pluvielle",
+    slug: "tour-cdc-dana",
+    video: caso("tour-cdc/tinder-publicitario.mp4"),
+    poster: caso("tour-cdc/poster.jpg"),
+    titulo: "Tour C de C",
     cinturon: "verde",
-    tipo: "Máster UC3M, en equipo",
-    resumen: "Una marca de lujo que convierte una alfombrilla de baño en arte que se colecciona.",
-    pagina: "nuevo",
-  },
-  {
-    slug: "bbva",
-    portada: caso("bbva/sagrada-privacidad.jpg"),
-    titulo: "BBVA",
-    cinturon: "verde",
-    tipo: "Grado URJC, en equipo",
-    resumen: "Fraude digital y jóvenes que se creen a salvo.",
-    pagina: "nuevo",
-  },
-  {
-    slug: "oreo",
-    portada: caso("oreo/grafica.jpg"),
-    titulo: "Oreo",
-    cinturon: "verde",
-    tipo: "Grado URJC, en equipo",
-    resumen: "Plan de medios para un público que vive en redes.",
-    pagina: "nuevo",
-  },
-  {
-    slug: "warriors-arena",
-    titulo: "Warriors Arena",
-    cinturon: "verde",
-    tipo: "Curso de RTVE, individual",
-    resumen:
-      "Plan de distribución para un formato de competición física de diez episodios: ventanas, plataformas y venta internacional.",
-    portada: caso("warriors-arena/portada.jpg"),
+    tipo: "Tour c de c 2025, individual",
+    resumen: "Un Tinder publicitario para conectar a la industria con los creativos afectados por la DANA.",
     pagina: "nuevo",
   },
 
@@ -214,28 +161,6 @@ export const proyectos: Proyecto[] = [
     detalle: [
       "Del correo de contacto, con su consentimiento informado, a un guion por bloques: motivación, día a día, crisis y consejos para quien empieza.",
       "Lo que más nos sorprendió: que medir el éxito de la comunicación institucional sigue siendo bastante rudimentario.",
-    ],
-  },
-  {
-    slug: "reciclaje-vidrio",
-    titulo: "Reciclaje de vidrio",
-    cinturon: "archivo",
-    grupo: "escrito",
-    tipo: "Técnicas y Recursos de las RRPP, Grado URJC, 2024, en equipo",
-    resumen: "Planificación estratégica de relaciones públicas para implantar el reciclaje de vidrio.",
-    detalle: [
-      "De la investigación de la situación a un mapa de públicos jerarquizado, con la teoría situacional de los públicos de Grunig.",
-    ],
-  },
-  {
-    slug: "club-de-creativos",
-    titulo: "Club de Creativos",
-    cinturon: "archivo",
-    grupo: "escrito",
-    tipo: "Fundamentos de las RRPP, Grado URJC, 2023, en equipo",
-    resumen: "Cómo han evolucionado los modelos de relaciones públicas que usa el c de c.",
-    detalle: [
-      "De los cuatro modelos de Grunig a la teoría de la excelencia, aplicados a acciones reales del club como el Día E, UnaDeDos u OVER.",
     ],
   },
   {
@@ -273,6 +198,93 @@ export const proyectos: Proyecto[] = [
       "Nueva identidad visual, web y redes, un espacio más atractivo y una carta adaptada. Tono: «Sabor a bar de toda la vida».",
     ],
   },
+
+  // ── Fuera de la selección (menos es más). Para recuperar uno, quítale «oculto». ──
+  {
+    slug: "el-regalo-no-deseado",
+    portada: caso("torrons/marquesina.png"),
+    titulo: "Torrons Vicens",
+    cinturon: "verde",
+    tipo: "Grado URJC, en equipo",
+    resumen: "Una campaña que convierte el prejuicio sobre lo aparente en una experiencia de descubrimiento.",
+    pagina: "nuevo",
+    oculto: true,
+  },
+  {
+    slug: "m-and-ms",
+    portada: caso("m-and-ms/cartel.jpg"),
+    titulo: "M&M's Premium",
+    cinturon: "verde",
+    tipo: "Grado URJC, en equipo",
+    resumen: "Lanzamiento en España como agencia, del contrabriefing a los medios.",
+    pagina: "nuevo",
+    oculto: true,
+  },
+  {
+    slug: "bbva",
+    portada: caso("bbva/sagrada-privacidad.jpg"),
+    titulo: "BBVA",
+    cinturon: "verde",
+    tipo: "Grado URJC, en equipo",
+    resumen: "Fraude digital y jóvenes que se creen a salvo.",
+    pagina: "nuevo",
+    oculto: true,
+  },
+  {
+    slug: "oreo",
+    portada: caso("oreo/grafica.jpg"),
+    titulo: "Oreo",
+    cinturon: "verde",
+    tipo: "Grado URJC, en equipo",
+    resumen: "Plan de medios para un público que vive en redes.",
+    pagina: "nuevo",
+    oculto: true,
+  },
+  {
+    slug: "pluvielle",
+    portada: caso("pluvielle/alfombra.jpg"),
+    titulo: "Pluvielle",
+    cinturon: "verde",
+    tipo: "Máster UC3M, en equipo",
+    resumen: "Una marca de lujo que convierte una alfombrilla de baño en arte que se colecciona.",
+    pagina: "nuevo",
+    oculto: true,
+  },
+  {
+    slug: "warriors-arena",
+    titulo: "Warriors Arena",
+    cinturon: "verde",
+    tipo: "Curso de RTVE, individual",
+    resumen:
+      "Plan de distribución para un formato de competición física de diez episodios: ventanas, plataformas y venta internacional.",
+    portada: caso("warriors-arena/portada.jpg"),
+    pagina: "nuevo",
+    oculto: true,
+  },
+  {
+    slug: "reciclaje-vidrio",
+    titulo: "Reciclaje de vidrio",
+    cinturon: "archivo",
+    grupo: "escrito",
+    tipo: "Técnicas y Recursos de las RRPP, Grado URJC, 2024, en equipo",
+    resumen: "Planificación estratégica de relaciones públicas para implantar el reciclaje de vidrio.",
+    detalle: [
+      "De la investigación de la situación a un mapa de públicos jerarquizado, con la teoría situacional de los públicos de Grunig.",
+    ],
+    oculto: true,
+  },
+  {
+    slug: "club-de-creativos",
+    titulo: "Club de Creativos",
+    cinturon: "archivo",
+    grupo: "escrito",
+    tipo: "Fundamentos de las RRPP, Grado URJC, 2023, en equipo",
+    resumen: "Cómo han evolucionado los modelos de relaciones públicas que usa el c de c.",
+    detalle: [
+      "De los cuatro modelos de Grunig a la teoría de la excelencia, aplicados a acciones reales del club como el Día E, UnaDeDos u OVER.",
+    ],
+    oculto: true,
+  },
   {
     slug: "fnac",
     titulo: "FNAC",
@@ -284,6 +296,7 @@ export const proyectos: Proyecto[] = [
       "Stands con preguntas de cultura general: si aciertas, descuento en el clásico de la colección.",
       "El momento wow: encontrarte por la calle a los personajes de los libros.",
     ],
+    oculto: true,
   },
   {
     slug: "matutano-mix",
@@ -295,6 +308,7 @@ export const proyectos: Proyecto[] = [
     detalle: [
       "Análisis de mercado y competencia, insights del público, eje de comunicación, acciones y medios.",
     ],
+    oculto: true,
   },
   {
     slug: "brekkies",
@@ -307,11 +321,12 @@ export const proyectos: Proyecto[] = [
       "Concepto: el sabor que deja huella.",
       "Mupis cerca de grandes parques, veterinarias y tiendas de animales, donde el dueño ya está pensando en su perro.",
     ],
+    oculto: true,
   },
 ];
 
 export const porCinturon = (cinturon: Cinturon) =>
-  proyectos.filter((p) => p.cinturon === cinturon);
+  proyectos.filter((p) => p.cinturon === cinturon && !p.oculto);
 
 export const cinturones: Record<Cinturon, { nombre: string; nota: string }> = {
   negro: {

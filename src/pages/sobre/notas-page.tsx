@@ -6,7 +6,7 @@ import { Sigue } from "@/components/sigue";
 import "./paginas.css";
 import "../caso/combate.css";
 
-const esPerfil = (url: string) => !url.includes("/posts/");
+const esPerfil = (url: string) => !url.includes("/posts/") && !url.includes("/feed/update/");
 const simple = (t: string) => t.toLowerCase().replace(/[^a-záéíóúñü¿? ]/g, "").slice(0, 18);
 
 // En voz alta: mis publicaciones de LinkedIn, enteras, para leerlas sin salir de aquí.

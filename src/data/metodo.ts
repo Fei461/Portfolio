@@ -29,8 +29,8 @@ export const tiempos: {
     significado: "Medio, soporte y ejecución",
     color: "naranja",
     ejemplo:
-      "Disfruto igual bajando la idea a tierra: qué medio, qué soporte, en qué orden. En Warriors Arena eso fue un plan entero para venderlo por el mundo.",
-    caso: { slug: "warriors-arena", titulo: "Warriors Arena" },
+      "Disfruto igual bajando la idea a tierra: qué medio, qué soporte, en qué orden. En Ryanair eso fue pasar del diagnóstico a un podcast, una revista interna y un kit de bienvenida.",
+    caso: { slug: "ryanair", titulo: "Ryanair" },
   },
   {
     nombre: "Mirar los números",

@@ -350,7 +350,7 @@ export function CasoPage({ caso }: { caso: CasoCompleto }) {
   const cinturon = proyecto?.cinturon ?? "negro";
   const mismos = porCinturon(cinturon);
   const posicion = mismos.findIndex((p) => p.slug === caso.slug) + 1;
-  const conPagina = proyectos.filter((p) => p.pagina);
+  const conPagina = proyectos.filter((p) => p.pagina && !p.oculto);
   const indice = conPagina.findIndex((p) => p.slug === caso.slug);
   const siguienteCaso = conPagina[indice + 1] ?? conPagina[0];
 

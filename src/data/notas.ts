@@ -389,9 +389,12 @@ const nuevas: Nota[] = (recientes as (Omit<Nota, "id"> & { texto?: string[] })[]
   .map((n) => ({
     ...n,
     texto: n.texto!,
-    id: decodeURIComponent(n.url.split("/").filter(Boolean).pop() ?? "")
-      .replace(/^lara-feijoo_/, "")
-      .replace(/-activity-.*$/, ""),
+    // Enlaces de /posts/: el texto del slug. Enlaces de /feed/update/: el número de la actividad.
+    id: n.url.includes("urn:li:activity:")
+      ? `nota-${n.url.match(/activity:(\d+)/)?.[1]}`
+      : decodeURIComponent(n.url.split("/").filter(Boolean).pop() ?? "")
+          .replace(/^lara-feijoo_/, "")
+          .replace(/-activity-.*$/, ""),
   }))
   .sort((a, b) => (b.fecha ?? "").localeCompare(a.fecha ?? ""));
 
