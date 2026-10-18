@@ -1,0 +1,389 @@
+/* ── CV: una hoja A4 sobre el tatami. La misma hoja sale en el PDF. ── */
+.cv-mesa {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  padding: clamp(1.5rem, 4vw, 3rem) var(--gutter);
+  background-color: var(--tatami);
+  background-image: repeating-linear-gradient(90deg, transparent 0 5px, rgba(0, 0, 0, 0.05) 5px 6px);
+}
+
+.cv-acciones {
+  width: min(100%, 210mm);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hcv {
+  --hcv-tinta: #111;
+  --hcv-suave: #4a4a44;
+  width: min(100%, 210mm);
+  min-height: 297mm;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  color: var(--hcv-tinta);
+  border: 3px solid var(--sumi);
+  box-shadow: 12px 12px 0 var(--heri);
+  font-family: var(--f);
+  font-size: 9.6pt;
+  line-height: 1.4;
+}
+
+.hcv :is(h1, h2, p, strong, span, li, a) {
+  font-family: var(--f);
+}
+
+.hcv a {
+  color: inherit;
+}
+
+/* Cabecera: el nombre y el contacto */
+.hcv-cabecera {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1rem 2rem;
+  flex-wrap: wrap;
+  padding: 12mm 13mm 7mm;
+  border-bottom: 5px solid var(--sumi);
+  box-shadow: 0 5px 0 var(--obi);
+}
+
+.hcv-cabecera h1 {
+  margin: 0;
+  font-weight: 800;
+  font-variation-settings: "opsz" 96, "wdth" 75;
+  font-size: 40pt;
+  line-height: 0.9;
+}
+
+.hcv-titular {
+  margin: 0.35rem 0 0;
+  font-weight: 700;
+  font-size: 12pt;
+}
+
+.hcv-contacto {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: right;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+/* Cuerpo: columna principal y lateral */
+.hcv-cuerpo {
+  flex: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.75fr) minmax(0, 1fr);
+}
+
+.hcv-principal {
+  padding: 8mm 8mm 10mm 13mm;
+}
+
+.hcv-lateral {
+  display: flex;
+  flex-direction: column;
+  padding: 8mm 13mm 10mm 8mm;
+  background: #f4f2e2;
+  border-left: 3px solid var(--sumi);
+}
+
+.hcv-seccion + .hcv-seccion {
+  margin-top: 6mm;
+}
+
+.hcv-seccion h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 2.5mm;
+  font-weight: 800;
+  font-variation-settings: "opsz" 40, "wdth" 85;
+  font-size: 12.5pt;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.hcv-seccion h2::before {
+  content: "";
+  width: 18px;
+  height: 7px;
+  background: var(--obi);
+  border: 1.5px solid var(--sumi);
+}
+
+.hcv-perfil p {
+  margin: 0;
+}
+
+.hcv-busco {
+  margin-top: 2.5mm !important;
+  padding: 2mm 3mm;
+  border: 2px solid var(--sumi);
+  border-left: 7px solid var(--obi);
+  font-weight: 600;
+}
+
+.hcv-busco strong {
+  margin-right: 0.3em;
+}
+
+.hcv-linea {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.hcv-linea li {
+  display: grid;
+  grid-template-columns: 30mm minmax(0, 1fr);
+  gap: 3mm;
+  padding: 2mm 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.14);
+}
+
+.hcv-linea li:last-child {
+  border-bottom: 0;
+}
+
+.hcv-periodo {
+  color: var(--obi);
+  font-weight: 600;
+  font-size: 8.6pt;
+}
+
+.hcv strong {
+  display: block;
+  font-weight: 700;
+}
+
+.hcv-lugar {
+  display: block;
+  color: var(--hcv-suave);
+}
+
+.hcv-linea p,
+.hcv-premio p {
+  margin: 0.8mm 0 0;
+  color: var(--hcv-suave);
+}
+
+.hcv-idiomas,
+.hcv-chips,
+.hcv-puntos {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.hcv-idiomas li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2mm;
+  padding: 1mm 0;
+}
+
+.hcv-idiomas strong {
+  display: inline;
+}
+
+.hcv-nivel {
+  display: inline-flex;
+  gap: 2px;
+}
+
+.hcv-nivel i {
+  width: 9px;
+  height: 9px;
+  border: 1.5px solid var(--sumi);
+}
+
+.hcv-nivel i.lleno {
+  background: var(--sumi);
+}
+
+.hcv-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5mm;
+}
+
+.hcv-chips li {
+  padding: 0.6mm 2mm;
+  border: 1.5px solid var(--sumi);
+  background: #fff;
+  font-weight: 600;
+  font-size: 8.6pt;
+}
+
+.hcv-puntos li {
+  position: relative;
+  padding-left: 4mm;
+}
+
+.hcv-puntos li + li {
+  margin-top: 1mm;
+}
+
+.hcv-puntos li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 6px;
+  height: 6px;
+  background: var(--obi);
+}
+
+.hcv-web {
+  margin: auto 0 0;
+  padding-top: 6mm;
+  font-weight: 700;
+  font-size: 8.6pt;
+}
+
+/* En pantallas estrechas la hoja se lee en una columna */
+@media screen and (max-width: 760px) {
+  .hcv {
+    min-height: 0;
+    font-size: 0.95rem;
+  }
+
+  .hcv-cabecera {
+    padding: 1.5rem 1.25rem 1.25rem;
+  }
+
+  .hcv-cabecera h1 {
+    font-size: 3rem;
+  }
+
+  .hcv-contacto {
+    text-align: left;
+  }
+
+  .hcv-cuerpo {
+    grid-template-columns: 1fr;
+  }
+
+  .hcv-principal,
+  .hcv-lateral {
+    padding: 1.25rem;
+  }
+
+  .hcv-lateral {
+    border-left: 0;
+    border-top: 3px solid var(--sumi);
+  }
+
+  .hcv-linea li {
+    grid-template-columns: 1fr;
+    gap: 0.15rem;
+  }
+}
+
+/* Impresión y PDF: solo la hoja, a tamaño A4 exacto */
+@page {
+  size: A4;
+  margin: 0;
+}
+
+@media print {
+  html,
+  body {
+    background: #fff !important;
+  }
+
+  .dojo-head,
+  .dojo-progreso,
+  .barrido,
+  .cv-acciones,
+  .dojo-hajime,
+  .dojo-saltar {
+    display: none !important;
+  }
+
+  .cv-mesa {
+    display: block;
+    padding: 0 !important;
+    background: #fff !important;
+  }
+
+  .hcv {
+    width: 210mm;
+    height: 297mm;
+    min-height: 0;
+    border: 0;
+    box-shadow: none;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .hcv-seccion,
+  .hcv-linea li {
+    break-inside: avoid;
+  }
+}
+
+/* Los estilos de impresión antiguos de la web no tocan la hoja. */
+@media print {
+  .hcv header.hcv-cabecera {
+    display: flex !important;
+  }
+
+  .hcv section {
+    padding: 0 !important;
+    background: transparent !important;
+  }
+}
+
+.hcv-busco strong {
+  display: inline;
+}
+
+@media print {
+  .hcv a::after,
+  .hcv a:after {
+    content: none !important;
+  }
+
+  .hcv {
+    font-size: 8.9pt;
+    line-height: 1.33;
+  }
+
+  .hcv-cabecera {
+    flex-wrap: nowrap;
+    padding: 10mm 12mm 6mm;
+  }
+
+  .hcv-cabecera h1 {
+    font-size: 36pt;
+  }
+
+  .hcv-principal {
+    padding: 6mm 7mm 6mm 12mm;
+  }
+
+  .hcv-lateral {
+    padding: 6mm 12mm 6mm 7mm;
+  }
+
+  .hcv-seccion + .hcv-seccion {
+    margin-top: 4.5mm;
+  }
+
+  .hcv-seccion h2 {
+    margin-bottom: 1.5mm;
+    font-size: 11.5pt;
+  }
+
+  .hcv-linea li {
+    padding: 1.3mm 0;
+  }
+}

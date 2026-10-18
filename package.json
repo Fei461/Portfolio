@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "build:pages": "vite build --base=/Portfolio/ --outDir docs"
+    "build:pages": "vite build --base=/Portfolio/ --outDir docs",
+    "notas": "node scripts/notas-linkedin.mjs"
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.1.10",

@@ -1205,3 +1205,224 @@
   font-size: 0.88rem;
   opacity: 0.8;
 }
+
+/* ── Portada, segunda vuelta ─────────────── */
+/* Los textos van sobre tarjetas lisas: el tatami no se come las letras. */
+.dojo-intro-caja {
+  margin: 1rem 0 0;
+  max-width: 46ch;
+  padding: 0.9rem 1.15rem;
+  background: var(--judogi);
+  border: 3px solid var(--sumi);
+  box-shadow: 6px 6px 0 var(--heri);
+}
+
+.dojo-intro {
+  display: block;
+  padding: 0;
+  background: none;
+  line-height: 1.6;
+}
+
+.dojo-pista {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 1.25rem 0 0;
+  padding: 0.5rem 0.9rem;
+  color: var(--judogi);
+  background: var(--sumi);
+  font-size: 1rem;
+}
+
+.dojo-pista span {
+  display: inline-block;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .dojo-pista span {
+    animation: pista-empuja 1.4s ease-in-out infinite;
+  }
+}
+
+@keyframes pista-empuja {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(5px); }
+}
+
+/* La pared: la foto arriba y el colgador entero debajo, sin huecos muertos */
+.dojo-pared {
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.colgador {
+  position: relative;
+  z-index: 3;
+}
+
+.colgador ul {
+  margin-top: -40px;
+  align-items: flex-start;
+}
+
+.colgador li {
+  flex: 1 !important;
+  align-self: flex-start !important;
+}
+
+.obi {
+  width: auto;
+  max-width: none;
+  height: min(38svh, 320px);
+  max-height: none;
+  transform-origin: 50% 8%;
+}
+
+.colgador li:nth-child(3) .colgador__etiqueta {
+  rotate: -1deg;
+}
+
+/* El abanico de proyectos asoma por encima de todo, también de la foto */
+.asomo {
+  z-index: 5;
+  bottom: calc(100% - 3rem);
+}
+
+/* La foto de la graduación: se le da la vuelta y cuenta su historia */
+.foto-giro {
+  position: relative;
+  z-index: 1;
+  align-self: flex-end;
+  width: clamp(190px, 15vw, 235px);
+  aspect-ratio: 3 / 4.25;
+  margin: 0 1.5rem 0.5rem 0;
+  rotate: 4deg;
+  perspective: 1000px;
+}
+
+.foto-giro .dojo-foto__obi {
+  left: -18%;
+  top: 6%;
+  width: 70%;
+  height: 22px;
+  z-index: 3;
+}
+
+.foto-giro__cara {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--judogi);
+  border: 3px solid var(--sumi);
+  box-shadow: 8px 8px 0 var(--heri);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transition: transform 0.6s cubic-bezier(0.4, 1.3, 0.5, 1);
+}
+
+.foto-giro__delante {
+  padding: 0.5rem 0.5rem 0;
+}
+
+.foto-giro__delante img {
+  display: block;
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  object-fit: cover;
+  object-position: 50% 40%;
+}
+
+.foto-giro__boton {
+  padding: 0.5rem 0.1rem 0.6rem;
+  text-align: left;
+  font-family: var(--f);
+  font-weight: 700;
+  font-size: 0.82rem;
+  line-height: 1.2;
+  color: var(--sumi);
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.foto-giro__boton span {
+  display: inline-block;
+  margin-left: 0.2rem;
+  color: var(--obi);
+  font-size: 1rem;
+  transition: transform 0.4s ease;
+}
+
+.foto-giro__boton:hover span {
+  transform: rotate(200deg);
+}
+
+.foto-giro__detras {
+  gap: 0.5rem;
+  padding: 1rem 0.9rem 0.8rem;
+  overflow-y: auto;
+  transform: rotateY(180deg);
+  font-family: var(--f);
+  font-size: 0.8rem;
+  line-height: 1.38;
+}
+
+.foto-giro__detras p {
+  margin: 0;
+}
+
+.foto-giro__detras a {
+  margin-top: auto;
+  font-weight: 800;
+  color: var(--sumi);
+}
+
+.foto-giro__volver {
+  align-self: flex-start;
+  padding: 0;
+  font-family: var(--f);
+  font-weight: 600;
+  font-size: 0.78rem;
+  color: var(--texto-suave);
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.foto-giro--vuelta .foto-giro__delante {
+  transform: rotateY(-180deg);
+}
+
+.foto-giro--vuelta .foto-giro__detras {
+  transform: rotateY(0);
+}
+
+@media (max-width: 900px) {
+  .foto-giro {
+    align-self: center;
+    width: min(240px, 70vw);
+    margin: 0 0 1.5rem;
+  }
+
+  .obi {
+    height: min(46vw, 240px);
+  }
+}
+
+.dojo-hero .dojo-pista,
+.dojo-hero .dojo-pista span {
+  color: var(--judogi) !important;
+}
+
+/* Girada, la foto crece lo justo para que la historia se lea entera. */
+.foto-giro {
+  transition: width 0.45s cubic-bezier(0.4, 1.3, 0.5, 1);
+}
+
+.foto-giro--vuelta {
+  width: clamp(270px, 21vw, 320px);
+  aspect-ratio: 3 / 3.7;
+}

@@ -15,36 +15,60 @@ const subtitulos: Record<Grado, (n: number) => string> = {
   verde: (n) => `${n} casos breves`,
 };
 
-// Un cinturón atado como en el tatami: el lazo cerrado colgado de la clavija,
-// el nudo cuadrado delante y las dos puntas cayendo.
+// Un cinturón colgado de la barra como en el vestuario: doblado por la mitad,
+// con las dos puntas cayendo y las costuras a lo largo. El negro lleva mi nombre bordado.
 function Obi({ cinturon }: { cinturon: Grado }) {
   const { tela, sombra, costura } = telas[cinturon];
   const borde = { stroke: "#000", strokeWidth: 3, strokeLinejoin: "round" as const };
   return (
-    <svg className="obi" viewBox="0 0 200 230" aria-hidden="true">
-      {/* Lazo: la cara de atrás se ve por dentro y es más oscura */}
-      <path d="M20 62 C20 17 180 17 180 62 L158 62 C158 38 42 38 42 62 Z" fill={sombra} {...borde} />
-      <path d="M20 62 C20 107 180 107 180 62 L158 62 C158 86 42 86 42 62 Z" fill={tela} {...borde} />
-      <path
-        d="M27 63 C28 100 172 100 173 63 M35 63 C36 93 164 93 165 63"
-        stroke={costura}
-        strokeWidth="1.4"
-        fill="none"
-      />
-      {/* Puntas */}
-      <path d="M86 104 L101 108 L80 214 L57 206 Z" fill={tela} {...borde} />
-      <path d="M101 108 L116 104 L143 204 L120 213 Z" fill={tela} {...borde} />
-      {/* Nudo y la vuelta que lo cruza */}
-      <path d="M81 78 L119 74 L122 108 L84 112 Z" fill={tela} {...borde} />
-      <path d="M73 92 L127 80 L130 93 L76 105 Z" fill={tela} {...borde} />
-      <path
-        d="M90 112 L65 206 M96 113 L73 210 M106 112 L129 207 M112 110 L137 204 M76 99 L127 87"
-        stroke={costura}
-        strokeWidth="1.4"
-        fill="none"
-      />
-      {/* Clavija */}
-      <circle cx="100" cy="27" r="9" fill="#5b3b1f" stroke="#000" strokeWidth="3" />
+    <svg className="obi" viewBox="0 0 120 300" aria-hidden="true">
+      {/* Punta de atrás: asoma un poco por detrás y se abre hacia la derecha */}
+      <path d="M50 40 L88 40 L100 262 L63 266 Z" fill={sombra} {...borde} />
+      {/* La vuelta por encima de la barra */}
+      <path d="M28 44 C28 14 90 14 90 44 Z" fill={sombra} {...borde} />
+      {/* Punta de delante */}
+      <path d="M28 40 L68 40 L64 288 L24 286 Z" fill={tela} {...borde} />
+      <g stroke={costura} strokeWidth="1.3" fill="none">
+        {[34, 41, 48, 55, 62].map((x) => (
+          <path key={x} d={`M${x} 46 L${x - 4} 280`} />
+        ))}
+        {[90, 95].map((x) => (
+          <path key={x} d={`M${x - 14} 46 L${x - 2} 258`} />
+        ))}
+        <path d="M25 272 L64 274" />
+      </g>
+      {cinturon === "negro" && (
+        <text
+          x="0"
+          y="0"
+          transform="translate(47 214) rotate(90.9)"
+          fill="#d6b25e"
+          fontFamily="Bricolage Grotesque, system-ui, sans-serif"
+          fontWeight="800"
+          fontSize="14"
+          letterSpacing="2.5"
+          textAnchor="middle"
+        >
+          LARA
+        </text>
+      )}
+    </svg>
+  );
+}
+
+// El archivo: una carpeta colgada de una pinza.
+function Carpeta() {
+  const borde = { stroke: "#000", strokeWidth: 3, strokeLinejoin: "round" as const };
+  return (
+    <svg className="obi obi--carpeta" viewBox="0 0 160 300" aria-hidden="true">
+      <path d="M58 18 L102 18 L98 52 L62 52 Z" fill="#9a9a92" {...borde} />
+      <path d="M16 50 L60 50 L68 62 L146 62 L146 236 L16 236 Z" fill="#b8874f" {...borde} />
+      <path d="M22 78 L150 70 L144 246 L14 240 Z" fill="#d9a865" {...borde} />
+      <rect x="40" y="120" width="82" height="34" fill="#f5f5f2" stroke="#000" strokeWidth="2.5" transform="rotate(-2 81 137)" />
+      <text x="81" y="143" textAnchor="middle" fontFamily="Bricolage Grotesque, system-ui, sans-serif" fontWeight="800" fontSize="15" transform="rotate(-2 81 137)">
+        ARCHIVO
+      </text>
+      <path d="M30 196 L126 192 M30 210 L104 207" stroke="#8a5c34" strokeWidth="2" />
     </svg>
   );
 }
@@ -83,10 +107,13 @@ export function Colgador({ extra }: { extra?: ReactNode }) {
             </Link>
           </li>
         ))}
-        <li className="colgador__archivo" style={{ "--i": 2 } as CSSProperties}>
-          <Link to="/trabajo?cinturon=archivo">
-            <strong>Archivo</strong>
-            <span>{porCinturon("archivo").length} trabajos de la carrera</span>
+        <li style={{ "--i": 2 } as CSSProperties}>
+          <Link to="/trabajo?cinturon=archivo" className="colgador__cinturon">
+            <Carpeta />
+            <span className="colgador__etiqueta">
+              <strong>{cinturones.archivo.nombre}</strong>
+              <span>{porCinturon("archivo").length} trabajos de la carrera</span>
+            </span>
           </Link>
         </li>
         {extra && (

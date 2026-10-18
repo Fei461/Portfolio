@@ -1,5 +1,7 @@
 // Publicaciones de Lara en LinkedIn, enteras para leerlas aquí.
-// Origen: el documento «Cosas varias» con sus textos publicados.
+// Las más antiguas salen del documento «Cosas varias»; las nuevas, de notas-linkedin.json,
+// que se rellena solo con scripts/notas-linkedin.mjs a partir del enlace de cada publicación.
+import recientes from "./notas-linkedin.json";
 
 export type CategoriaNota = "Prácticas" | "Proyectos" | "Marcas" | "Comportamiento" | "Aprendizaje";
 
@@ -9,12 +11,13 @@ export type Nota = {
   categoria: CategoriaNota;
   url: string;
   caso?: string;
+  fecha?: string;
   texto: string[];
 };
 
 export const categoriasNotas: CategoriaNota[] = ["Prácticas", "Proyectos", "Marcas", "Comportamiento", "Aprendizaje"];
 
-export const notas: Nota[] = [
+const antiguas: Nota[] = [
   {
     "id": "no-buscaba-practicas",
     "titulo": "No buscaba prácticas: buscaba impacto",
@@ -380,11 +383,22 @@ export const notas: Nota[] = [
 ];
 
 // Publicaciones que de momento solo están en LinkedIn.
+// Las nuevas van primero, de la más reciente a la más antigua.
+const nuevas: Nota[] = (recientes as (Omit<Nota, "id"> & { texto?: string[] })[])
+  .filter((n) => n.texto?.length)
+  .map((n) => ({
+    ...n,
+    texto: n.texto!,
+    id: decodeURIComponent(n.url.split("/").filter(Boolean).pop() ?? "")
+      .replace(/^lara-feijoo_/, "")
+      .replace(/-activity-.*$/, ""),
+  }))
+  .sort((a, b) => (b.fecha ?? "").localeCompare(a.fecha ?? ""));
+
+export const notas: Nota[] = [...nuevas, ...antiguas];
+
+// Publicaciones de las que aún no tengo el enlace.
 export const soloEnLinkedIn: { titulo: string; url: string }[] = [
-  { titulo: "Las campañas ganadoras del Mundial 2026", url: "https://es.linkedin.com/posts/lara-feijoo_las-campa%C3%B1as-ganadoras-del-mundial-2026-activity-7473291045955538944-kLDK" },
-  { titulo: "Cuando una campaña se convierte en altavoz", url: "https://es.linkedin.com/posts/lara-feijoo_close-the-dream-gap-with-barbie-activity-7506997776690438144-Ao4H" },
-  { titulo: "Los libros que llegan sin estar en la lista", url: "https://es.linkedin.com/posts/lara-feijoo_publicidadyrrpp-estrategia-marketing-activity-7480902042056601616-m53_" },
   { titulo: "Una pregunta incómoda para el 8M", url: "https://es.linkedin.com/in/lara-feijoo" },
-  { titulo: "Salir de la universidad para empezar a proponer", url: "https://es.linkedin.com/posts/lara-feijoo_qu%C3%A9-lleg%C3%B3-antes-el-huevo-o-la-gallina-activity-7466057066965549056-Sz73" },
   { titulo: "El primer paso también cuenta como estrategia", url: "https://es.linkedin.com/in/lara-feijoo" },
 ];

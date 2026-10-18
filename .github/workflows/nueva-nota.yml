@@ -1,0 +1,78 @@
+# Cuando Lara abre una «Nueva nota» con el enlace de LinkedIn, la añade a Notas y publica la web.
+name: Nueva nota de LinkedIn
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: nueva-nota
+  cancel-in-progress: false
+
+jobs:
+  nota:
+    # Solo las notas que abre la dueña del repositorio.
+    if: contains(github.event.issue.labels.*.name, 'nota') && github.event.issue.user.login == github.repository_owner
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Leer el formulario
+        id: form
+        env:
+          CUERPO: ${{ github.event.issue.body }}
+        run: |
+          node -e '
+            const c = process.env.CUERPO;
+            const campo = (n) => {
+              const m = c.match(new RegExp("### " + n + "[^\n]*\n+([\s\S]*?)(?=\n### |$)"));
+              const v = m ? m[1].trim() : "";
+              return v === "_No response_" ? "" : v;
+            };
+            const fs = require("fs");
+            fs.appendFileSync(process.env.GITHUB_OUTPUT, `enlace=${campo("Enlace")}\ntema=${campo("Tema")}\ntitulo=${campo("Título").replace(/\n/g, " ")}\n`);
+            fs.writeFileSync("/tmp/texto.txt", campo("Texto"));
+          '
+
+      - name: Añadir la nota
+        env:
+          ENLACE: ${{ steps.form.outputs.enlace }}
+          TEMA: ${{ steps.form.outputs.tema }}
+          TITULO: ${{ steps.form.outputs.titulo }}
+        run: NOTA_TEXTO="$(cat /tmp/texto.txt)" node scripts/notas-linkedin.mjs "$ENLACE" "$TEMA" "$TITULO"
+
+      - name: Construir la web
+        run: |
+          npm ci
+          npm run build:pages
+
+      - name: Publicar
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/notas-linkedin.json docs
+          git commit -m "Nueva nota: ${{ github.event.issue.number }}"
+          git push origin main
+
+      - name: Cerrar el aviso
+        if: success()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh issue close ${{ github.event.issue.number }} --repo ${{ github.repository }} --comment "Hecho. En un par de minutos la verás en Notas."
+
+      - name: Avisar si algo falla
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh issue comment ${{ github.event.issue.number }} --repo ${{ github.repository }} --body "No he podido añadirla. Si LinkedIn no deja leerla, edita esta nota y pega el texto en «Texto», o abre una nueva con el texto."

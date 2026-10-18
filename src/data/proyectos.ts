@@ -84,6 +84,7 @@ export const proyectos: Proyecto[] = [
     tipo: "Curso de RTVE, individual",
     resumen:
       "Plan de distribución para un formato de competición física de diez episodios: ventanas, plataformas y venta internacional.",
+    portada: caso("warriors-arena/portada.jpg"),
     pagina: "nuevo",
   },
 

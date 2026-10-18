@@ -309,12 +309,12 @@ export function CasoPage({ caso }: { caso: CasoCompleto }) {
   const [lupa, setLupa] = useState<Imagen | null>(null);
   const cerrarLupa = useCallback(() => setLupa(null), []);
   const asaltos = construirAsaltos(caso, setLupa, { portada: proyecto?.portada, video: proyecto?.video });
-  // El asalto queda en la dirección (?asalto=piezas) para poder enlazarlo.
+  // La parte abierta queda en la dirección (?parte=piezas) para poder enlazarla.
   const [params, setParams] = useSearchParams();
-  const pedido = asaltos.findIndex((a) => a.id === params.get("asalto"));
+  const pedido = asaltos.findIndex((a) => a.id === params.get("parte"));
   const activo = pedido >= 0 ? pedido : 0;
   const setActivo = useCallback(
-    (n: number) => setParams(n === 0 ? {} : { asalto: asaltos[n].id }, { replace: true }),
+    (n: number) => setParams(n === 0 ? {} : { parte: asaltos[n].id }, { replace: true }),
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [setParams, caso.slug],
   );
@@ -336,7 +336,7 @@ export function CasoPage({ caso }: { caso: CasoCompleto }) {
     [asaltos.length, setActivo],
   );
 
-  // Flechas del teclado para cambiar de asalto, salvo si se está usando un control.
+  // Flechas del teclado para cambiar de parte, salvo si se está usando un control.
   useEffect(() => {
     const tecla = (e: KeyboardEvent) => {
       if (lupa) return;
@@ -397,8 +397,8 @@ export function CasoPage({ caso }: { caso: CasoCompleto }) {
         </dl>
       </aside>
 
-      <section className="combate__tatami" aria-label="El caso, por asaltos">
-        <div className="asaltos" role="tablist" aria-label="Asaltos">
+      <section className="combate__tatami" aria-label="El caso, por partes">
+        <div className="asaltos" role="tablist" aria-label="Partes del caso">
           {asaltos.map((a, i) => (
             <button
               key={a.id}
@@ -436,10 +436,10 @@ export function CasoPage({ caso }: { caso: CasoCompleto }) {
 
         <nav className="combate__pie" aria-label="Navegación del caso">
           <button type="button" onClick={() => ir(activo - 1)} disabled={activo === 0}>
-            Asalto anterior
+            Anterior
           </button>
           <span className="combate__marcador" aria-live="polite">
-            Asalto {activo + 1} de {asaltos.length}
+            {activo + 1} de {asaltos.length}
           </span>
           {ultimo ? (
             <Link to={`/trabajo/${siguienteCaso.slug}`} className="combate__siguiente">
@@ -447,7 +447,7 @@ export function CasoPage({ caso }: { caso: CasoCompleto }) {
             </Link>
           ) : (
             <button type="button" className="combate__siguiente" onClick={() => ir(activo + 1)}>
-              Siguiente asalto: {asaltos[activo + 1].nombre}
+              Siguiente: {asaltos[activo + 1].nombre}
             </button>
           )}
         </nav>

@@ -88,13 +88,30 @@ function Pista({ children, clave }: { children: ReactNode; clave: string }) {
       setProgreso(max > 0 ? el.scrollLeft / max : 0);
     };
     alMover();
+    // Las flechas del teclado mueven la pista estés donde estés de la página.
+    const alTeclear = (e: KeyboardEvent) => {
+      const t = e.target as HTMLElement | null;
+      if (t?.closest("input, textarea, select, [role='tablist']")) return;
+      if (e.key === "ArrowRight") desplazar(1);
+      if (e.key === "ArrowLeft") desplazar(-1);
+    };
+    window.addEventListener("keydown", alTeclear);
     el.addEventListener("wheel", alRodar, { passive: false });
     el.addEventListener("scroll", alMover, { passive: true });
     return () => {
+      window.removeEventListener("keydown", alTeclear);
       el.removeEventListener("wheel", alRodar);
       el.removeEventListener("scroll", alMover);
     };
   }, [clave]);
+
+  const desplazar = (sentido: 1 | -1) => {
+    const el = pista.current;
+    if (!el) return;
+    const carta = el.querySelector<HTMLElement>(".dorsal");
+    const paso = carta ? carta.offsetWidth + 24 : 360;
+    el.scrollBy({ left: sentido * paso, behavior: "smooth" });
+  };
 
   const abajo = (e: PointerEvent<HTMLUListElement>) => {
     if (e.pointerType !== "mouse" || !pista.current) return;
@@ -135,16 +152,19 @@ function Pista({ children, clave }: { children: ReactNode; clave: string }) {
         onPointerUp={soltar}
         onPointerLeave={soltar}
         onClickCapture={alClic}
-        onKeyDown={(e) => {
-          if (!pista.current) return;
-          if (e.key === "ArrowRight") pista.current.scrollBy({ left: 360, behavior: "smooth" });
-          if (e.key === "ArrowLeft") pista.current.scrollBy({ left: -360, behavior: "smooth" });
-        }}
       >
         {children}
       </ul>
-      <div className="pista__progreso" aria-hidden="true">
-        <span style={{ transform: `scaleX(${Math.max(progreso, 0.04)})` }} />
+      <div className="pista__mandos">
+        <button type="button" onClick={() => desplazar(-1)} disabled={progreso <= 0.001} aria-label="Proyectos anteriores">
+          ←
+        </button>
+        <div className="pista__progreso" aria-hidden="true">
+          <span style={{ transform: `scaleX(${Math.max(progreso, 0.04)})` }} />
+        </div>
+        <button type="button" onClick={() => desplazar(1)} disabled={progreso >= 0.999} aria-label="Más proyectos">
+          →
+        </button>
       </div>
     </>
   );
@@ -219,7 +239,7 @@ export function TrabajoPage() {
       )}
 
       {cinturon !== "archivo" && (
-        <p className="trabajo__ayuda">Arrastra, usa la rueda o las flechas del teclado.</p>
+        <p className="trabajo__ayuda">Arrastra, usa la rueda, las flechas del teclado o los botones.</p>
       )}
     </main>
   );

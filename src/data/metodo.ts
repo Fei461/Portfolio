@@ -1,4 +1,4 @@
-// Cómo trabajo: mis cuatro momentos de un proyecto, cada uno con su color y un ejemplo real.
+// Cómo trabajo: mis tres momentos de un proyecto, cada uno con su color y un ejemplo real.
 export type ColorSubrayador = "azul" | "naranja" | "amarillo" | "verde" | "rosa" | "morado";
 
 export const tiempos: {
@@ -30,14 +30,6 @@ export const tiempos: {
     color: "azul",
     ejemplo:
       "Me encantan las métricas, pero sobre todo entender por qué salen como salen. En Stud-IA, con los datos de cada red, buscaba qué publicaciones funcionaban y por qué.",
-    caso: { slug: "stud-ia", titulo: "Stud-IA" },
-  },
-  {
-    nombre: "Darle la vuelta",
-    significado: "Cuando no sale como lo imaginaba",
-    color: "rosa",
-    ejemplo:
-      "Primero cortocircuito, no lo voy a negar. Luego busco cómo convertir el problema en solución. En Stud-IA nos pasaron unas campañas de pago a orgánico cuando ya estaban pensadas, y se rehicieron igual.",
     caso: { slug: "stud-ia", titulo: "Stud-IA" },
   },
 ];

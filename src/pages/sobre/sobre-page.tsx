@@ -7,17 +7,6 @@ import "../caso/combate.css";
 
 const foto = `${import.meta.env.BASE_URL}assets/lara/cascada.jpg`;
 
-// Trayectoria en orden cronológico, de lo más reciente a lo más antiguo.
-const trayectoria = [
-  { cuando: "Octubre de 2026", que: "Lanzo Talixea, la app que buscaba y no existía." },
-  { cuando: "Septiembre de 2026", que: "Empiezo el Máster en Comunicación Publicitaria en la UC3M." },
-  { cuando: "Febrero de 2026", que: "Empiezo Talixea desde mi cuarto." },
-  { cuando: "Enero a mayo de 2026", que: "Prácticas en marketing en Stud-IA, con tres redes a mi cargo." },
-  { cuando: "2022–2026", que: "Grado en Publicidad y RRPP en la URJC, con un 8,62 de media y seis matrículas de honor." },
-  { cuando: "2024–2025", que: "Cursos de RTVE sobre contenidos para plataformas OTT y sobre IA en medios." },
-  { cuando: "2021–2025", que: "Profesora de artes marciales y monitora de campamento en Guerreros Galapagar." },
-];
-
 // Subrayado como mis apuntes: verde lo que elijo, naranja lo que me mueve, azul cómo pienso.
 function Sub({ c, children }: { c: "azul" | "naranja" | "verde"; children: ReactNode }) {
   return <mark className={`sub sub--${c}`}>{children}</mark>;
@@ -58,45 +47,49 @@ function QuienSoy() {
   );
 }
 
+// Por qué el judo, con mis palabras: cada «porque» es una razón.
+const porques: ReactNode[] = [
+  <>
+    Por los valores: el respeto, la perseverancia, hacer mil <span lang="ja-Latn">uchi komis</span> y{" "}
+    <span lang="ja-Latn">nage komis</span> antes de llegar a ganar una medalla. Por el esfuerzo, la
+    dedicación y la motivación.
+  </>,
+  <>Porque ha sido un refugio en el que me he hospedado.</>,
+  <>Porque es un lugar en el que ser distinta es una ventaja y no un inconveniente.</>,
+  <>Porque consigo callar mi mente y centrarlo todo en una única cosa.</>,
+  <>
+    Porque, cuando dicen <span lang="ja-Latn">hajime</span>, el resto desaparece.
+  </>,
+  <>
+    Porque puede parecer un deporte individual hasta que descubres a tu entrenador, a tus compañeros, a
+    tu familia o, sobre todo, a tu pareja (cuack{" "}
+    <span aria-label="corazón amarillo" role="img">
+      💛
+    </span>
+    ), más ilusionada que tú por un resultado.
+  </>,
+];
+
 function Judo() {
   return (
-    <div className="asalto__prosa">
+    <div className="asalto__prosa judo">
       <h2>Por qué el judo</h2>
-      <p>
-        Descubrí el tatami con siete años, casi por obligación, porque tenía que hacer deporte. Ahora
-        no me imagino la vida sin él.
+      <p className="quien__lead">
+        Descubrí el tatami con siete años, casi por obligación, porque tenía que hacer deporte. Ahora no me
+        imagino mi vida sin él.
       </p>
-      <p>
-        Me ha enseñado respeto, perseverancia y lo que cuesta llegar: miles de{" "}
-        <span lang="ja-Latn">uchi komis</span> y <span lang="ja-Latn">nage komis</span> antes de ganar
-        una medalla. Esfuerzo, dedicación y motivación.
-      </p>
-      <p>
-        Ha sido un refugio. Un lugar en el que ser distinta es una ventaja y no un inconveniente, y en
-        el que consigo callar la mente y centrarme en una sola cosa.
-      </p>
-      <blockquote className="pagina-cita">
-        <p>
-          Cuando dicen <span lang="ja-Latn">hajime</span>, el resto desaparece.
-        </p>
-      </blockquote>
-      <p>
-        Puede parecer un deporte individual hasta que descubres a tu entrenador, a tus compañeros, a tu
-        familia y, sobre todo, a tu cuack{" "}
-        <span aria-label="corazón amarillo" role="img">
-          💛
-        </span>
-        , más ilusionados que tú por un resultado.
-      </p>
-      <p>
-        Hoy soy cinturón marrón en judo y azul en taekwondo, y he dado clase de artes marciales y he
-        sido monitora de campamento en Guerreros Galapagar.
-      </p>
+      <ol className="judo__porques">
+        {porques.map((p, i) => (
+          <li key={i} className={i === 4 ? "judo__hajime" : undefined}>
+            {p}
+          </li>
+        ))}
+      </ol>
     </div>
   );
 }
 
-// Mis cuatro momentos de un proyecto: se elige uno y se ve el ejemplo real.
+// Mis tres momentos de un proyecto: se elige uno y se ve el ejemplo real.
 function Metodo() {
   const [activo, setActivo] = useState(0);
   const t = tiempos[activo];
@@ -104,7 +97,7 @@ function Metodo() {
     <div>
       <h2>Cómo trabajo un proyecto</h2>
       <p className="asalto__entradilla">
-        Cuatro momentos, cada uno con su color (no puedo evitarlo). Elige uno y te enseño dónde lo hice.
+        Tres momentos, cada uno con su color (no puedo evitarlo). Elige uno y te enseño dónde lo hice.
       </p>
       <div className="metodo">
         <ol className="metodo__tiempos">
@@ -131,22 +124,6 @@ function Metodo() {
           <Link to={`/trabajo/${t.caso.slug}`}>Verlo en {t.caso.titulo}</Link>
         </div>
       </div>
-    </div>
-  );
-}
-
-function Camino() {
-  return (
-    <div>
-      <h2>El camino hasta aquí</h2>
-      <ol className="pagina-linea">
-        {trayectoria.map((t) => (
-          <li key={t.que}>
-            <span>{t.cuando}</span>
-            <p>{t.que}</p>
-          </li>
-        ))}
-      </ol>
     </div>
   );
 }
@@ -190,13 +167,12 @@ function LoDemas() {
 const pestanas: { id: string; nombre: string; contenido: ReactNode }[] = [
   { id: "quien", nombre: "Quién soy", contenido: <QuienSoy /> },
   { id: "metodo", nombre: "Cómo trabajo", contenido: <Metodo /> },
-  { id: "camino", nombre: "El camino", contenido: <Camino /> },
-  { id: "judo", nombre: "Por qué el judo", contenido: <Judo /> },
   { id: "demas", nombre: "Lo que no cabe en el CV", contenido: <LoDemas /> },
+  { id: "judo", nombre: "Por qué el judo", contenido: <Judo /> },
 ];
 
 export function SobrePage() {
-  // La parte abierta vive en la URL (?parte=demas), como los asaltos de los casos.
+  // La parte abierta vive en la URL (?parte=demas), como las partes de los casos.
   const [params, setParams] = useSearchParams();
   const activo = Math.max(0, pestanas.findIndex((p) => p.id === params.get("parte")));
   const setActivo = (i: number) => setParams(i ? { parte: pestanas[i].id } : {}, { replace: true });
@@ -212,7 +188,7 @@ export function SobrePage() {
         <h1 className="combate__titulo">Sobre mí</h1>
         <figure className="pagina-foto sobre-foto">
           <img src={foto} alt="Lara sonriendo con la lengua fuera delante de una cascada" width={1400} height={1050} />
-          <figcaption>De pequeña me reñían por no sentarme bien. Sigo igual.</figcaption>
+          <figcaption>Azulita, fuera del aula.</figcaption>
         </figure>
         <div className="dojo-acciones">
           <Link className="dojo-boton" to="/trabajo">

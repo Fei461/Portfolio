@@ -35,8 +35,8 @@ export function NotasPage() {
       <aside className="combate__ficha notas-indice">
         <h1 className="combate__titulo">Notas</h1>
         <p className="notas-indice__intro">
-          Lo que voy observando de marcas, campañas y de mi propio aprendizaje. Aquí están enteras: no
-          hace falta irse a LinkedIn para leerlas.
+          Lo que voy publicando en LinkedIn sobre marcas, campañas y mi propio aprendizaje. Aquí están
+          enteras, de la más reciente a la más antigua.
         </p>
         <div className="notas-filtro" role="group" aria-label="Filtrar por tema">
           <button type="button" aria-pressed={!filtro} className={!filtro ? "activo" : undefined} onClick={() => elegirTema(null)}>
@@ -87,7 +87,15 @@ export function NotasPage() {
 
       <section className="combate__tatami" aria-label="Nota abierta">
         <article ref={hoja} className="asalto nota-hoja" key={nota.id}>
-          <p className="nota-hoja__tema">{nota.categoria}</p>
+          <p className="nota-hoja__tema">
+            {nota.categoria}
+            {nota.fecha && (
+              <time dateTime={nota.fecha}>
+                {" · "}
+                {new Date(nota.fecha).toLocaleDateString("es-ES", { day: "numeric", month: "long", year: "numeric" })}
+              </time>
+            )}
+          </p>
           {/* Si la publicación ya empieza por su título, no se repite. */}
           {simple(nota.texto[0]) === simple(nota.titulo) ? (
             <>

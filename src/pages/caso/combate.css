@@ -823,3 +823,12 @@
 .movil__mandos a {
   font-weight: 700;
 }
+
+/* Los textos ocultos para lectores de pantalla no se escapan de la tarjeta (y no alargan la página). */
+.asalto {
+  position: relative;
+}
+
+.combate {
+  position: relative;
+}

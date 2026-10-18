@@ -124,9 +124,40 @@
   outline-offset: -6px;
 }
 
-.pista__progreso {
-  height: 8px;
+.pista__mandos {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
   margin: 0 var(--gutter);
+}
+
+.pista__mandos button {
+  flex: 0 0 auto;
+  width: 48px;
+  height: 40px;
+  font-family: var(--f);
+  font-weight: 800;
+  font-size: 1.3rem;
+  line-height: 1;
+  color: var(--judogi);
+  background: var(--sumi);
+  border: 3px solid var(--sumi);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.pista__mandos button:hover:not(:disabled) {
+  transform: translate(-2px, -2px);
+  box-shadow: 3px 3px 0 var(--obi);
+}
+
+.pista__mandos button:disabled {
+  opacity: 0.25;
+  cursor: default;
+}
+
+.pista__progreso {
+  flex: 1;
+  height: 8px;
   background: rgba(0, 0, 0, 0.08);
   border: 2px solid var(--sumi);
 }
@@ -405,5 +436,52 @@ a.dorsal__enlace:hover .dorsal__visual video {
 @media (max-width: 600px) {
   .archivo {
     grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* El resumen se lee entero: la imagen cede el sitio que haga falta. */
+.dorsal__resumen {
+  display: block;
+  -webkit-line-clamp: unset;
+  overflow: visible;
+}
+
+.dorsal__visual {
+  flex: 1 1 40%;
+  min-height: 120px;
+}
+
+/* La tarjeta nunca es más alta que la pista: la imagen se encoge, el texto no se corta. */
+.dorsal__enlace {
+  min-height: 0;
+  height: calc(100% - 6px);
+}
+
+.dorsal__visual {
+  flex: 1 1 0;
+  min-height: 100px;
+}
+
+.dorsal__texto {
+  flex: 0 0 auto;
+}
+
+@media (max-height: 800px) and (min-width: 701px) {
+  .dorsal {
+    width: clamp(270px, 25vw, 360px);
+  }
+
+  .dorsal__texto {
+    padding: 0.7rem 0.9rem 0.8rem;
+    gap: 0.2rem;
+  }
+
+  .dorsal__titulo {
+    font-size: clamp(1.5rem, 4.2vh, 2.1rem);
+  }
+
+  .dorsal__resumen {
+    font-size: 0.88rem;
+    line-height: 1.35;
   }
 }

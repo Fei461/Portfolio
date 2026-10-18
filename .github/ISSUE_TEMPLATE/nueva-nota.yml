@@ -1,0 +1,35 @@
+name: Nueva nota
+description: Pega el enlace de una publicación de LinkedIn y aparecerá en Notas.
+title: "Nota: "
+labels: ["nota"]
+body:
+  - type: input
+    id: enlace
+    attributes:
+      label: Enlace
+      description: En LinkedIn, «…» › «Copiar enlace a la publicación».
+      placeholder: https://www.linkedin.com/posts/lara-feijoo_...
+    validations:
+      required: true
+  - type: dropdown
+    id: tema
+    attributes:
+      label: Tema
+      options:
+        - Marcas
+        - Proyectos
+        - Prácticas
+        - Comportamiento
+        - Aprendizaje
+    validations:
+      required: true
+  - type: input
+    id: titulo
+    attributes:
+      label: Título (opcional)
+      description: Si lo dejas vacío, se usa la primera frase.
+  - type: textarea
+    id: texto
+    attributes:
+      label: Texto (opcional)
+      description: Solo si la nota no aparece sola. Pega aquí el texto de la publicación.
