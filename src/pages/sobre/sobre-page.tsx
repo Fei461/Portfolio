@@ -16,7 +16,7 @@ function Sub({ c, children }: { c: "azul" | "naranja" | "verde"; children: React
 function QuienSoy() {
   return (
     <div className="asalto__prosa quien">
-      <h2>Puedo encajar en todas partes (y en ninguna a la vez)</h2>
+      <h2>Creo que puedo encajar en todas partes (y en ninguna a la vez)</h2>
       <p className="quien__leyenda" aria-hidden="true">
         Subrayado como mis apuntes: <span className="sub sub--verde">lo que elijo</span>{" "}
         <span className="sub sub--naranja">lo que me mueve</span>{" "}
@@ -27,10 +27,10 @@ function QuienSoy() {
         pasando un poco lo mismo.
       </p>
       <p>
-        No me defino como copy, ni como arte, ni como cuentas, ni como planner. Pero si tengo que
-        decantarme, me quedo con <Sub c="verde">las relaciones públicas, la gestión de marca, la
-        reputación y la comunicación interna</Sub>. No quiero ser la cara visible de nada ni busco los
-        premios: <Sub c="naranja">quiero entender a la gente</Sub>. Me mueve la psicología de la
+        No me defino como copy, ni como arte, ni como cuentas, ni como planner. Si tuviera que
+        decantarme, seguramente elegiría <Sub c="verde">las relaciones públicas, la gestión de marca, la
+        reputación y la comunicación interna</Sub>. No quiero ser la cara visible de nada:{" "}
+        <Sub c="naranja">quiero entender a la gente</Sub>. Me mueve la psicología de la
         comunicación y partirme la cabeza buscando la mejor solución para la marca, no quedarme en
         resolver el briefing.
       </p>
@@ -39,11 +39,6 @@ function QuienSoy() {
         después. Y luego están <Sub c="azul">los números: me encanta analizar qué ha pasado y, sobre
         todo, por qué</Sub>. Soy un poco Barbie en esto, siento que puedo serlo todo. Por eso creo que
         encajo en una agencia pequeña, de las que hay que tocar todos los palos.
-      </p>
-      <p>
-        Y una alegría por el camino: <strong>primer premio del Ideathon de Innovación de la URJC</strong>, entre
-        más de 200 estudiantes, con un CV generativo con IA que convierte el TFG en competencias para cada
-        oferta.
       </p>
       <p className="quien__busco">
         <strong>Busco:</strong> {perfil.busco} Ahora estudio el Máster en Comunicación Publicitaria
@@ -196,7 +191,7 @@ export function SobrePage() {
         <h1 className="combate__titulo">Sobre mí</h1>
         <figure className="pagina-foto sobre-foto">
           <img src={foto} alt="Lara sonriendo con la lengua fuera delante de una cascada" width={1400} height={1050} />
-          <figcaption>Azulita, fuera del aula.</figcaption>
+          <figcaption>No es una foto seria porque no lo soy.</figcaption>
         </figure>
         <div className="dojo-acciones">
           <Link className="dojo-boton" to="/trabajo">

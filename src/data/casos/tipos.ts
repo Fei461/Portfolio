@@ -2,8 +2,8 @@
 export type CasoCompleto = {
   slug: string;
   titulo: string;
-  /** Una frase de dos tiempos: lo que parecía y lo que era. */
-  parecia: string;
+  /** Lo que parecía (opcional) y lo que era: la frase que resume el caso. */
+  parecia?: string;
   era: string;
   ficha: { etiqueta: string; valor: string }[];
   /** Enlaces destacados en la cabecera (producto en vivo, web del proyecto…). */

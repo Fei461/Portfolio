@@ -7,8 +7,7 @@ const img = (file: string) => `${import.meta.env.BASE_URL}assets/casos/santander
 export const santander: CasoCompleto = {
   slug: "santander",
   titulo: "Santander",
-  parecia: "Parecía un análisis del logo de Santander.",
-  era: "Era una herramienta: un laboratorio web donde cualquiera puede evaluarlo y comparar su nota con la nuestra.",
+  era: "Un laboratorio web, hecho por mí de principio a fin, donde cualquiera puede evaluar el logo y comparar su nota con la nuestra.",
   ficha: [
     { etiqueta: "Qué", valor: "Análisis de identidad visual para Comunicación corporativa" },
     { etiqueta: "Cuándo", valor: "Octubre de 2026, Máster UC3M" },
@@ -22,15 +21,15 @@ export const santander: CasoCompleto = {
     texto: "La web que hice, aquí mismo. Ponle tu nota al logo y compárala con la nuestra.",
   },
   marcador: [
-    { cifra: "87 %", texto: "reconoció la marca solo con la llama" },
-    { cifra: "10 %", texto: "percibe la cercanía que la marca dice transmitir" },
+    { cifra: "87 %", texto: "de las 31 personas encuestadas reconoció la marca solo con la llama (27)" },
+    { cifra: "10 %", texto: "percibe cercanía, lo que la marca dice transmitir (3 de 31)" },
   ],
   contexto: {
     titulo: "Evaluar un logo sin quedarse en la opinión",
     parrafos: [
       "En 2018 Santander evolucionó su marca para un cliente que vive en el móvil: letra sin remates, fondo blanco y un rojo más vivo. El encargo era evaluar ese logo con los once criterios de calidad de Chaves y Belluccia.",
       "Decidimos que cada nota tenía que poder comprobarse. Por eso trabajamos con tres fuentes de evidencia: la guía de marca del banco, un laboratorio con una prueba por criterio y una encuesta propia.",
-      "La web y la encuesta las hice yo sola. Después de cuatro años entregando PDF que acaban en una carpeta, me apetecía un anexo que se usara de verdad: quien lo visita pone su nota y la compara con la nuestra.",
+      "La web y la encuesta las hice yo sola por completo. Además de ser el anexo de nuestra presentación, se puede usar: quien la visita pone su nota y la compara con la nuestra.",
     ],
   },
   bloques: [
@@ -120,10 +119,7 @@ export const santander: CasoCompleto = {
     cargo: "Presidenta de Banco Santander, sobre el cambio de 2018 (Reason Why, 2018)",
   },
   aprendizajes: [
-    "Una opinión con evidencia se defiende sola.",
-    "Enseñar el método convence más que enseñar la nota.",
     "Lo que una marca declara y lo que la gente percibe no siempre coinciden. Medirlo es la mitad del trabajo.",
-    "Un anexo puede ser algo que la gente usa, no algo que se salta.",
   ],
   nota: "Trabajo académico de máster, sin relación con Banco Santander. El logotipo se reproduce con fines académicos.",
 };

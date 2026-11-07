@@ -87,7 +87,11 @@ export function NotasPage() {
           )}
           <div className="nota-hoja__pie">
             <a href={nota.url} target="_blank" rel="noreferrer">
-              {esPerfil(nota.url) ? "Más en mi LinkedIn" : "Ver la publicación en LinkedIn"}
+              {esPerfil(nota.url)
+                ? "Más en mi LinkedIn"
+                : nota.texto.some((t) => /carrusel/i.test(t))
+                  ? "Ver el carrusel en LinkedIn"
+                  : "Ver la publicación en LinkedIn"}
               <span className="sr-only"> (se abre en otra pestaña)</span>
             </a>
             {caso && <Link to={`/trabajo/${caso.slug}`}>Ver el caso de {caso.titulo}</Link>}

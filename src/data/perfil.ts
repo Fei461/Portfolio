@@ -78,7 +78,7 @@ export const perfil = {
 
   premios: [
     {
-      titulo: "Primer premio del Ideathon de Innovación",
+      titulo: "Primer premio de categoría, Ideathon de Innovación",
       lugar: "Universidad Rey Juan Carlos",
       detalle:
         "Con el equipo Parchís, entre más de 200 estudiantes: un CV generativo con IA que convierte el TFG en competencias para cada oferta. Primeras en nuestra categoría y segundas en la general.",

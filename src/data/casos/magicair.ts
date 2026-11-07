@@ -7,8 +7,7 @@ const img = (file: string) => `${import.meta.env.BASE_URL}assets/casos/magicair/
 export const magicair: CasoCompleto = {
   slug: "magicair",
   titulo: "MagicAir",
-  parecia: "Parecía un cambio de tarifas.",
-  era: "Era una crisis de reputación por llegar: una aerolínea que presume de transparente aplicando lo que el público lee como un coste oculto.",
+  era: "Una crisis de reputación a punto de estallar: una aerolínea que presume de transparente aplicando lo que el público lee como un coste oculto.",
   ficha: [
     { etiqueta: "Qué", valor: "Estrategia de relaciones públicas y plan de crisis" },
     { etiqueta: "Dónde", valor: "Relaciones Públicas Especializadas, Grado URJC, 2025" },
@@ -73,29 +72,28 @@ export const magicair: CasoCompleto = {
   bloques: [
     {
       titulo: "Antes de la crisis",
-      resumen: "Un plan para anunciar el cambio.",
+      resumen: "Primero tocaba anunciar el cambio.",
       puntos: [
-        "Objetivo principal: aplicar la nueva política en el 100 % de las rutas en doce meses.",
-        "Que el 75 % de los clientes conozca el cambio en los tres meses previos y que el 15 % de las menciones sobre la medida sean positivas.",
-        "Un tono para cada público: fáctico y luego emocional con los clientes, formal con las asociaciones, negociador con los reguladores.",
-        "Lobbismo directo con un position paper y firma de acuerdos con los organismos institucionales.",
+        "Nos propusimos aplicar la nueva política en el 100 % de las rutas en doce meses, que el 75 % de los clientes la conociera antes de empezar y que el 15 % de las menciones fueran positivas.",
+        "Dimos a cada público su tono: fáctico y luego emocional con los clientes, formal con las asociaciones de consumidores y negociador con los reguladores.",
+        "Propusimos lobbismo directo con un position paper y acuerdos con los organismos institucionales.",
       ],
     },
     {
       titulo: "Cuando estalla",
       resumen: "Clasificar la crisis para saber cómo responder.",
       puntos: [
-        "Según la SCCT, una crisis del clúster de víctima: el origen es externo, una norma europea.",
-        "Pero con riesgo de que la responsabilidad atribuida suba si se gestiona mal, porque clientes y asociaciones culpan a la empresa.",
-        "Respuesta: estrategia de disminución, en concreto de excusa, con rueda de prensa, redes y web, dos portavoces y mensajes claros y cercanos.",
+        "Según la SCCT era una crisis del clúster de víctima, porque el origen es externo: una norma europea.",
+        "Pero clientes y asociaciones culpaban a la empresa, así que podía acabar en una responsabilidad mayor si no se gestionaba bien.",
+        "Respondimos con una estrategia de disminución, en concreto de excusa: rueda de prensa, redes y web, dos portavoces y un lenguaje claro, honesto y cercano.",
       ],
     },
     {
       titulo: "Medir",
-      resumen: "Saber si funciona.",
+      resumen: "Cómo saber si estaba funcionando.",
       puntos: [
         "Reducir en nueve meses la responsabilidad que atribuyen los consumidores y subir un 20 % la cobertura neutral o positiva en tres.",
-        "Indicadores: rutas con la nueva política, encuestas de pulso, Net Promoter Score, seguimiento de medios y CRM.",
+        "Con rutas adaptadas, encuestas de pulso, Net Promoter Score, seguimiento de medios y CRM.",
       ],
     },
   ],
@@ -106,9 +104,8 @@ export const magicair: CasoCompleto = {
     ],
   },
   aprendizajes: [
-    "Una crisis se gestiona antes de que estalle.",
-    "Clasificarla bien decide cómo hay que responder.",
-    "Cada público necesita su tono, aunque el mensaje sea el mismo.",
+    "La coherencia con la identidad de marca es lo que decide si un cambio se lee como oportunidad o como amenaza.",
+    "Una crisis en la que la empresa es víctima puede acabar siendo culpa suya si no se gestiona bien.",
   ],
   nota: "MagicAir es una marca ficticia creada para la asignatura. Trabajo académico en equipo.",
 };

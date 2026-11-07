@@ -72,7 +72,7 @@ export const proyectos: Proyecto[] = [
     cinturon: "negro",
     tipo: "Grado URJC, en equipo, 2025",
     resumen:
-      "Reputación interna: entrevistas a la plantilla, análisis de brecha y un plan de comunicación interna para que quien vuela con la marca se sienta parte.",
+      "Hice el diagnóstico, la reputación interna y el análisis de brecha de una plantilla que no se siente parte. De ahí salió un plan de comunicación interna.",
     pagina: "nuevo",
   },
   {
@@ -105,7 +105,7 @@ export const proyectos: Proyecto[] = [
     cinturon: "verde",
     tipo: "Grado URJC, en equipo",
     resumen:
-      "Cuatro meses en X y una identidad completa para una copa menstrual que habla como esa amiga que te dice lo que nadie se atreve.",
+      "Cuatro meses en X buscando la viralidad desde el odio con una copa menstrual feminista. El logotipo y el tono más provocador fueron cosa mía.",
     pagina: "nuevo",
   },
   {
@@ -115,7 +115,7 @@ export const proyectos: Proyecto[] = [
     cinturon: "verde",
     tipo: "Grado URJC, en equipo",
     resumen:
-      "Una aerolínea que reconoce su huella en lugar de prometer vuelos verdes, contada como la restauración de un cuadro.",
+      "Se me ocurrió contar la huella de una aerolínea como la restauración de un cuadro que nunca se termina.",
     pagina: "nuevo",
   },
   {
@@ -124,7 +124,16 @@ export const proyectos: Proyecto[] = [
     titulo: "Revista Super Pop",
     cinturon: "verde",
     tipo: "Máster UC3M, en equipo",
-    resumen: "Liderazgo explicado con Mean Girls y maquetado como una revista juvenil.",
+    resumen: "Liderazgo explicado con Mean Girls. Lo de hacerlo como una revista dosmilera fue idea mía.",
+    pagina: "nuevo",
+  },
+  {
+    slug: "pluvielle",
+    portada: caso("pluvielle/anuncio.jpg"),
+    titulo: "Pluvielle",
+    cinturon: "verde",
+    tipo: "Máster UC3M, plan de medios individual",
+    resumen: "Un plan de medios de doce meses para vender arte en forma de alfombrilla a quien huye de la publicidad.",
     pagina: "nuevo",
   },
   {
@@ -147,6 +156,7 @@ export const proyectos: Proyecto[] = [
     tipo: "Técnicas y Recursos de las RRPP, Grado URJC, 2024, en equipo",
     resumen: "Cómo nos ven y cómo nos vemos, convertido en una estrategia de relaciones públicas y en un podcast.",
     detalle: [
+      "El mapa de públicos fue cosa mía; en el resto participé.",
       "Objetivo: invertir en dos años el 15 % de las actitudes negativas de las generaciones X e Y hacia la Z.",
       "Análisis de campos de fuerzas, PERT y Gantt, y dieciocho técnicas: de la auditoría de imagen y la formación de portavoces a un podcast, una maleta pedagógica o una performance.",
     ],
@@ -192,8 +202,9 @@ export const proyectos: Proyecto[] = [
     cinturon: "archivo",
     grupo: "campana",
     tipo: "Grado URJC, en equipo",
-    resumen: "Rebranding de un bar de toda la vida para atraer a universitarios sin perder a los de siempre.",
+    resumen: "Rebranding real de nuestro «barde», el bar de confianza en el que habíamos comido varias veces.",
     detalle: [
+      "Como me gustan los Excel, me dediqué a toda la parte del presupuesto y las facturas, y también a la explicación previa.",
       "Objetivo: modernizar la marca en dos años sin perder su esencia.",
       "Nueva identidad visual, web y redes, un espacio más atractivo y una carta adaptada. Tono: «Sabor a bar de toda la vida».",
     ],
@@ -241,16 +252,6 @@ export const proyectos: Proyecto[] = [
     oculto: true,
   },
   {
-    slug: "pluvielle",
-    portada: caso("pluvielle/alfombra.jpg"),
-    titulo: "Pluvielle",
-    cinturon: "verde",
-    tipo: "Máster UC3M, en equipo",
-    resumen: "Una marca de lujo que convierte una alfombrilla de baño en arte que se colecciona.",
-    pagina: "nuevo",
-    oculto: true,
-  },
-  {
     slug: "warriors-arena",
     titulo: "Warriors Arena",
     cinturon: "verde",
@@ -293,6 +294,7 @@ export const proyectos: Proyecto[] = [
     tipo: "Grado URJC, en equipo",
     resumen: "Street marketing en el Barrio de las Letras para volver a los clásicos.",
     detalle: [
+      "Creo que la idea fue mía, aunque no de forma individual, igual que la ubicación.",
       "Stands con preguntas de cultura general: si aciertas, descuento en el clásico de la colección.",
       "El momento wow: encontrarte por la calle a los personajes de los libros.",
     ],
@@ -306,7 +308,7 @@ export const proyectos: Proyecto[] = [
     tipo: "Grado URJC, en equipo",
     resumen: "Campaña para la marca de snacks favorita frente a Pringles y las marcas blancas.",
     detalle: [
-      "Análisis de mercado y competencia, insights del público, eje de comunicación, acciones y medios.",
+      "La campaña del «matutaño», como la llamaba yo. Hice el público objetivo y aporté en todos los apartados.",
     ],
     oculto: true,
   },

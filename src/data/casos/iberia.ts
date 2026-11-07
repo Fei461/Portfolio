@@ -6,64 +6,38 @@ const img = (file: string) => `${import.meta.env.BASE_URL}assets/casos/iberia/${
 export const iberia: CasoCompleto = {
   slug: "iberia",
   titulo: "Iberia",
-  parecia: "Parecía un problema de sostenibilidad.",
-  era: "Era un problema de credibilidad: nadie se cree a una aerolínea que promete vuelos verdes.",
+  era: "Un problema de credibilidad: nadie se cree a una aerolínea que promete vuelos verdes.",
   ficha: [
     { etiqueta: "Qué", valor: "Propuesta creativa de campaña" },
-    { etiqueta: "Dónde", valor: "Grado en Publicidad y RRPP, URJC" },
+    { etiqueta: "Dónde", valor: "Redacción Publicitaria, Grado URJC, 2025" },
     { etiqueta: "Equipo", valor: "Grupo 6, cinco personas" },
-    { etiqueta: "Mi parte", valor: "Estrategia, narrativa y piezas, en equipo" },
+    { etiqueta: "Mi parte", valor: "La idea de la estrategia y su redacción, el guion del spot y las acciones de cada soporte" },
   ],
   contexto: {
     titulo: "Hablar de sostenibilidad sin greenwashing",
     parrafos: [
-      "Iberia, junto con Cepsa, Vueling y BIOCIRC, impulsa combustibles sostenibles de aviación y sistemas eléctricos, con el objetivo de llegar a cero emisiones netas en 2050. El encargo era construir una campaña para contar esa transición.",
-      "Pero el problema de comunicación estaba en otra parte. Entre lo que hace la aerolínea y lo que percibe la gente hay una brecha enorme, y cualquier mensaje «verde» genera desconfianza. ¿Prometer más? Solo habría hecho la brecha más grande.",
+      "Iberia, junto con Cepsa, Vueling y BIOCIRC, impulsa combustibles sostenibles de aviación, con el objetivo de llegar a cero emisiones netas en 2050. El encargo era construir una campaña para contar esa transición.",
+      "Pero entre lo que hace la aerolínea y lo que percibe la gente hay una brecha enorme, y cualquier mensaje «verde» genera desconfianza. ¿Prometer más? Solo habría hecho la brecha más grande.",
+      "Aunque la trabajamos en conjunto, la estrategia se me ocurrió a mí y la redacté yo. El guion lo tenía en la cabeza desde el principio: cómo quería que saliera el spot, el marketing experiencial, el spot de cine, el email y la prensa escrita, que creo que fue de lo más original.",
     ],
   },
   bloques: [
     {
-      titulo: "Diagnosticar",
-      resumen: "El brief pedía contar; el problema era que no nos creyeran.",
-      puntos: [
-        "Tres síntomas: la brecha entre acciones y percepción, una imagen poco comprometida con el clima y la desconfianza hacia los mensajes verdes.",
-        "Tres objetivos: una visión más informada de lo que hace Iberia, que se la perciba como una marca honesta y más tráfico a su web de sostenibilidad.",
-      ],
-    },
-    {
-      titulo: "Encontrar el insight",
-      resumen: "Generación Z, nativa digital y muy atenta a la autenticidad.",
-      puntos: [
-        "Un público hiperconectado, preocupado por el futuro y que valora lo auténtico: los «authentic activists».",
-        "El insight, el flight shaming: «Me siento mal cuando viajo en avión porque contamina mucho».",
-      ],
-    },
-    {
-      titulo: "Elegir el concepto",
+      titulo: "La estrategia",
       resumen: "La restauración inacabada.",
       puntos: [
-        "La transición ecológica como la restauración de una obra de arte deteriorada: un proceso real, lento y necesario.",
-        "Como en el kintsugi, hacer visible el daño para poder transformarlo. Sin esconder la huella y sin dar el trabajo por terminado.",
-        "Un tono sincero, cercano y esperanzador.",
+        "Nuestro público era una Generación Z que valora lo auténtico y que siente flight shaming: «Me siento mal cuando viajo en avión porque contamina mucho».",
+        "La transición ecológica contada como la restauración de una obra de arte deteriorada: un proceso real, lento y necesario. Como en el kintsugi, hacer visible el daño para poder transformarlo.",
       ],
     },
     {
-      titulo: "Llevarlo a cada soporte",
+      titulo: "Cada soporte",
       resumen: "La misma idea, cambiando de escala.",
       puntos: [
         "Spot: la restauración de El Oxbow, colocado en el aeropuerto, intercalada con las acciones reales de Iberia. Termina sin acabar de restaurarse.",
         "Cine: el tráiler arranca con un falso fallo técnico, una imagen sucia que rompe la calidad que se espera de una sala.",
         "Aeropuerto: cuadros españoles con doble cristal y un kit de limpieza; solo el público puede limpiar el primero.",
-        "Email: un correo «sucio» que se va limpiando a medida que se baja. Prensa: una página casi cubierta de tinta, como la huella de carbono.",
-      ],
-    },
-    {
-      titulo: "Decidir cómo medirlo",
-      resumen: "Propuesta académica: no hubo campaña en el mercado.",
-      puntos: [
-        "Comprensión de las acciones concretas de Iberia.",
-        "Credibilidad percibida frente a un mensaje verde convencional.",
-        "Visitas a la web de sostenibilidad e intención de volver a volar con Iberia.",
+        "Email: un correo «sucio» que se va limpiando a medida que bajas. Prensa: una página casi cubierta de tinta, como la huella de carbono.",
       ],
     },
   ],
@@ -97,38 +71,9 @@ export const iberia: CasoCompleto = {
       },
     ],
   },
-  tatami: {
-    termino: "",
-    titulo: "Las decisiones que cambiaron el brief",
-    intro: "Lo que había que mover no era el mensaje, sino el propio encargo.",
-  },
-  caidas: [
-    {
-      titulo: "No decir más",
-      texto:
-        "El brief pedía comunicar la transición sostenible. Con tanta desconfianza, comunicar más habría alejado aún más a la marca de su público.",
-    },
-    {
-      titulo: "Enseñar el daño",
-      texto:
-        "La tentación era enseñar el cielo limpio. Decidimos enseñar la mancha y dejar la restauración a medias, porque así es el proceso.",
-    },
-    {
-      titulo: "Incomodar a propósito",
-      texto:
-        "Un tráiler que parece estropeado o una página de periódico tapada de tinta rompen el formato. La incomodidad es lo que hace que se mire.",
-    },
-  ],
-  cita: {
-    texto:
-      "Nuestro propósito, al igual que el kintsugi, es hacer el daño visible para transformar el sector aéreo en algo mejor.",
-    autor: "Texto del spot",
-    cargo: "Propuesta para Iberia",
-  },
   aprendizajes: [
     "Reformular el brief cuando la percepción pública revela otro problema.",
-    "En territorios con desconfianza, explicar los límites da más credibilidad que parecer resuelto.",
-    "Una idea creativa sirve como prueba de coherencia, no como decoración.",
+    "Donde hay desconfianza, explicar los límites da más credibilidad que parecer resuelto.",
   ],
   nota: "Propuesta académica en equipo (Grupo 6, Grado URJC), sin relación con Iberia.",
 };

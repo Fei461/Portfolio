@@ -13,15 +13,15 @@ export const tiempos: {
     significado: "El brainstorming",
     color: "amarillo",
     ejemplo:
-      "Me lo paso genial en un brainstorming porque puedo decir locuras y dejar que la mente imagine lo que quiera. Así salió un Tinder para conectar a la industria con los creativos afectados por la DANA.",
-    caso: { slug: "tour-cdc-dana", titulo: "Tour C de C" },
+      "Me lo paso genial en un brainstorming porque puedo decir locuras y dejar que la mente imagine lo que quiera. Cuando nos pidieron una cuenta de Twitter, pensé que para ver el mundo arder lo mejor era un producto de menstruación femenina y feminista.",
+    caso: { slug: "bruja-roja", titulo: "Bruja Roja" },
   },
   {
     nombre: "Ordenarlo por colores",
     significado: "Antes de lanzarme",
-    color: "azul",
+    color: "verde",
     ejemplo:
-      "Vivo con un esquema de colores en la cabeza: mis apuntes llevan siempre el mismo orden y todos los subrayadores del mundo, y tengo tres calendarios, cada uno con su color. Antes de escribir un solo mensaje B2B en Stud-IA, dividí el sector educativo en trece nichos.",
+      "Vivo con un esquema de colores en la cabeza: mis apuntes llevan siempre el mismo orden y todos los subrayadores del mundo, y tengo tres calendarios, cada uno con su color. En Stud-IA hice un calendario editorial con más de cien fechas de seis países, categorizado para que fuera lo más útil y visual posible.",
     caso: { slug: "stud-ia", titulo: "Stud-IA" },
   },
   {
@@ -29,15 +29,15 @@ export const tiempos: {
     significado: "Medio, soporte y ejecución",
     color: "naranja",
     ejemplo:
-      "Disfruto igual bajando la idea a tierra: qué medio, qué soporte, en qué orden. En Ryanair eso fue pasar del diagnóstico a un podcast, una revista interna y un kit de bienvenida.",
-    caso: { slug: "ryanair", titulo: "Ryanair" },
+      "También me lo paso genial dando forma a las ideas, buscando el mejor medio, soporte y ejecución. En Iberia tenía en la cabeza cómo quería que salieran el spot, el email y la prensa escrita.",
+    caso: { slug: "iberia", titulo: "Iberia" },
   },
   {
     nombre: "Mirar los números",
     significado: "Qué ha pasado y por qué",
-    color: "verde",
+    color: "azul",
     ejemplo:
-      "Me encantan las métricas, pero sobre todo entender por qué salen como salen. En Stud-IA, con los datos de cada red, buscaba qué publicaciones funcionaban y por qué.",
+      "Me encantan las métricas, los números y los resultados. Me encanta analizar qué ha pasado y, sobre todo, por qué. En Stud-IA los datos me hicieron cambiar el plan de X, Threads y Bluesky.",
     caso: { slug: "stud-ia", titulo: "Stud-IA" },
   },
 ];
@@ -54,7 +54,7 @@ export const colores: {
     etiqueta: "Azulita",
     titulo: "Me llaman azulita",
     texto: [
-      "En la carrera me recomendaron leer «Rodeado de idiotas» y, desde entonces, mis amigas y yo nos llamamos por nuestros colores. Yo soy azulita: la analítica, la cuadriculada, la de los tres calendarios.",
+      "En la carrera me recomendaron leer «Rodeado de idiotas» y, desde entonces, mis amigas y yo nos llamamos por nuestros colores. Y por eso siempre seré azulita 💙.",
       "Y sí, en mi cabeza cada cosa tiene su color: mates, azul; lengua, naranja. Por eso estos subrayadores no están puestos al azar.",
     ],
   },
@@ -82,7 +82,7 @@ export const colores: {
     titulo: "Empecé Nutrición",
     texto: [
       "Hice el bachillerato sanitario de excelencia y empecé Nutrición Humana y Dietética, porque toda la vida había pensado que mi camino tenía que ser sanitario. Me gustaban la biología y la química, pero no era mi pasión, así que di el paso a la publicidad.",
-      "No me arrepiento de haberla estudiado: me encanta aprender. Me encanta llegar a un tema del que hace media hora no sabía absolutamente nada y empezar a descubrirlo.",
+      "Estudiarla me gustó, porque me encanta aprender. Me encanta llegar a un tema del que hace media hora no sabía absolutamente nada y empezar a descubrirlo.",
     ],
   },
   {

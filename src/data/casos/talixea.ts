@@ -7,8 +7,7 @@ const img = (file: string) => `${import.meta.env.BASE_URL}assets/casos/talixea/$
 export const talixea: CasoCompleto = {
   slug: "talixea",
   titulo: "Talixea",
-  parecia: "Parecía un hobby para aprender idiomas.",
-  era: "Era un producto entero: método, catálogo, marca, precios y lanzamiento, hecho sin saber programar.",
+  era: "Un producto entero hecho desde mi cuarto y sin saber programar: método, catálogo, marca, precios y lanzamiento.",
   ficha: [
     { etiqueta: "Qué", valor: "App para aprender idiomas leyendo historias que ya conoces" },
     { etiqueta: "Cuándo", valor: "Desde febrero de 2026, en mi cuarto. Lanzada en octubre" },
@@ -25,8 +24,8 @@ export const talixea: CasoCompleto = {
     parrafos: [
       "Quería aprender idiomas leyendo con un método que me convencía, el diglot weave: lees un texto en tu idioma y, poco a poco, algunas palabras aparecen en el que estás aprendiendo, hasta que el texto acaba casi entero en él.",
       "Busqué una app que lo hiciera así y no la encontré: las que había no estaban en español o no eran gratis. Así que decidí hacerla yo. Pequeño detalle: no sabía programar. Como mucho, leía un poco de código.",
-      "La idea estuvo clara desde el primer día: cuentos y clásicos de dominio público, historias que todo el mundo conoce, y en cada capítulo un poco más del idioma nuevo que en el anterior.",
-      "La empecé en febrero de 2026, desde mi cuarto. Si me preguntas de qué estoy más orgullosa, no es del código ni del diseño: es de la constancia. De no rendirme cuando no encontraba nada que me gustara y seguir hasta tenerlo. Acaba de salir al mercado y ahora toca lo siguiente: sus primeros lectores.",
+      "La empecé en febrero de 2026, desde mi cuarto. Estoy orgullosa por la constancia, por el esfuerzo y por no haberme dado por vencida cuando no encontré nada que me gustara.",
+      "Salió al mercado en octubre de 2026. Es un proyecto personal que sigue creciendo, y ahora toca lo siguiente: sus primeros lectores.",
     ],
   },
   demo: "talixea",
@@ -116,10 +115,8 @@ export const talixea: CasoCompleto = {
     cargo: "El día que la app me dejó crear la primera cuenta",
   },
   aprendizajes: [
-    "La constancia pesa más que el talento cuando nadie te está mirando.",
-    "No saber hacer algo no es motivo para no hacerlo: es el primer capítulo.",
-    "Decidir qué no entra pesa tanto como decidir qué entra.",
-    "Una promesa honesta convence más que el hype.",
     "Antes de lanzar, recorre tu producto como cada uno de tus clientes.",
+    "Un cuento no se estira para parecer novela.",
+    "Promesas honestas antes que hype.",
   ],
 };

@@ -1,67 +1,61 @@
 import type { CasoCompleto } from "./tipos";
 
-// Casos breves (cinturón verde). Ryanair vive aquí, pero ya es un caso completo. Fuente: los PDF de cada entrega.
+// Casos breves. Ryanair vive aquí, pero es un caso completo. Fuente: los PDF de cada entrega.
 const img = (slug: string, file: string) => `${import.meta.env.BASE_URL}assets/casos/${slug}/${file}`;
 
 export const ryanair: CasoCompleto = {
   slug: "ryanair",
   titulo: "Ryanair",
-  parecia: "Parecía un problema de mensajes.",
-  era: "Era un problema de pertenencia: una plantilla que no se siente reconocida.",
+  era: "Un problema de pertenencia: una plantilla que no se siente reconocida por su propia empresa.",
   ficha: [
     { etiqueta: "Qué", valor: "Diagnóstico de identidad, imagen y reputación, y plan de comunicación interna" },
     { etiqueta: "Dónde", valor: "Gestión de la Comunicación, Grado URJC, 2025" },
     { etiqueta: "Equipo", valor: "Ocho personas" },
-    { etiqueta: "Fuentes", valor: "Entrevistas a tripulantes y personal de tierra, prensa e Indeed" },
+    { etiqueta: "Mi parte", valor: "El diagnóstico inicial (DAFO), la reputación interna, el análisis de brecha, los objetivos y los KPI" },
   ],
   contexto: {
     titulo: "Mirar hacia dentro",
     parrafos: [
-      "Ryanair está bien posicionada en el mercado, pero arrastra problemas de reputación, sobre todo con su propia plantilla. Nuestro trabajo empezó por ahí: comparar lo que la compañía dice ser con lo que viven quienes trabajan en ella.",
-      "Además de informes, prensa y portales de empleo, hablamos con tripulantes y personal de tierra. Las quejas se repetían: sueldos por debajo de lo prometido, contratos inestables y una comunicación interna que solo baja de arriba abajo.",
-      "El reto era darle la vuelta: que la comunicación empezara por quienes vuelan cada día con la marca.",
+      "Ryanair está bien posicionada en el mercado, pero sufre varios problemas de reputación, sobre todo con su propia plantilla. Solemos fijarnos solo en la percepción externa, y esa visión se queda incompleta si no preguntas a quienes trabajan dentro.",
+      "Por eso combinamos valoraciones en Indeed, vídeos testimoniales y noticias con entrevistas y formularios a trabajadores actuales y antiguos. Las quejas se repetían: sueldos por debajo de lo prometido, inseguridad laboral y una comunicación interna ineficiente y jerárquica.",
+      "En la carrera los trabajos eran bastante en equipo, pero aquí yo me ocupé del diagnóstico inicial, del análisis de la reputación interna, del análisis de brecha y de los objetivos y KPI.",
     ],
   },
   bloques: [
     {
-      titulo: "Diagnosticar",
-      resumen: "Identidad, imagen, competencia y reputación interna.",
+      titulo: "Mi parte: la reputación interna",
+      resumen: "Qué vive de verdad la plantilla.",
       puntos: [
-        "Imagen deseada, real y construida, y comparación con Vueling, EasyJet, Iberia Express y Wizz Air.",
-        "Un análisis de brecha entre lo que la compañía dice y lo que vive la plantilla: conciliación frente a productividad extrema, bienestar frente a acoso, entorno dinámico frente a sobrecarga.",
+        "Empecé con un DAFO para ver sus puntos clave por dentro y por fuera.",
+        "Agrupé los problemas que más se repetían: remuneración y condiciones, inseguridad laboral y alta rotación, y comunicación y gestión.",
+        "También recogí a quien no lo vivía tan mal: cada base y cada cargo son un mundo distinto.",
       ],
     },
     {
-      titulo: "Plantear la estrategia",
-      resumen: "Primero cerrar la brecha, después diferenciarse.",
+      titulo: "Mi parte: el análisis de brecha",
+      resumen: "Lo que la compañía dice frente a lo que siente la plantilla.",
       puntos: [
-        "Una estrategia en cuatro pasos: identificación, diferenciación, referencia y preferencia, con la conciliación como atributo diferenciador.",
-        "Objetivo: invertir en dos años el 20 % de las actitudes negativas de la plantilla, medido con encuestas de satisfacción semestrales.",
+        "Conciliación frente a productividad extrema.",
+        "Bienestar de los empleados frente a personas que se sienten acosadas e intimidadas.",
+        "Entorno dinámico frente a sobrecarga de trabajo y comparación entre compañeros.",
+      ],
+    },
+    {
+      titulo: "Mi parte: objetivos y KPI",
+      resumen: "Cómo saber si la brecha se cierra.",
+      puntos: [
+        "Objetivo estratégico: invertir en dos años el 20 % de las actitudes negativas de la plantilla hacia la compañía.",
+        "Objetivos operativos, como subir un 55 % en seis meses lo que la plantilla conoce de las actividades internas.",
+        "KPI: encuestas de satisfacción dos veces al año, frecuencia e interacción en la intranet y participación en reuniones y eventos.",
+      ],
+    },
+    {
+      titulo: "En equipo: lo que propusimos",
+      resumen: "Reconocer, acoger e informar.",
+      puntos: [
+        "Los Cabin Crew Awards en Montecarlo, regatas por equipos, un desayuno de bienvenida, un kit «Welcome on board» y un programa de mentoría.",
+        "«Historias con Altura», un podcast con vivencias de la plantilla, la revista interna SkyNews y una intranet.",
         "Una reunión mensual entre dirección, sindicatos y grupos de trabajadores.",
-      ],
-    },
-    {
-      titulo: "Mapear a quién importa",
-      resumen: "Públicos según poder, legitimidad y urgencia.",
-      puntos: [
-        "Un mapa con accionistas, reguladores, sindicatos, autoridades aeroportuarias, proveedores, comunidades locales y pasajeros.",
-        "De la plantilla: buen clima laboral, respeto por su trabajo y posibilidades de crecer y formarse.",
-      ],
-    },
-    {
-      titulo: "Reconocer y acoger",
-      resumen: "Acciones, no solo mensajes.",
-      puntos: [
-        "Los Cabin Crew Awards como unos Óscar de Ryanair en Montecarlo, con cena de gala y entradas para el Gran Premio de Fórmula 1 como premio.",
-        "Regatas por equipos, un desayuno de bienvenida, un kit «Welcome on board» y un programa de mentoría para reducir la rotación temprana.",
-      ],
-    },
-    {
-      titulo: "Informar",
-      resumen: "Canales para contarse cosas.",
-      puntos: [
-        "«Historias con Altura», un podcast con vivencias de la plantilla.",
-        "SkyNews, la revista interna, y una intranet que digitaliza la acogida y conecta a los empleados entre sí.",
       ],
     },
   ],
@@ -78,10 +72,14 @@ export const ryanair: CasoCompleto = {
       { src: img("ryanair", "kit-buddy.jpg"), alt: "Kit de bienvenida con taza y sudadera, y una mentora con un nuevo empleado", pie: "El programa de mentoría." },
     ],
   },
+  cita: {
+    texto: "Saben muy bien cómo mover sus hilos para que estemos nosotros a lo que ellos necesiten, pero cuando tú necesitas algo de ellos, te ignoran.",
+    autor: "Un ex tripulante de cabina",
+    cargo: "Testimonio recogido en el análisis de reputación interna",
+  },
   aprendizajes: [
-    "La comunicación interna empieza por escuchar a quien menos poder tiene en el mapa.",
-    "Reconocer es una acción, no un mensaje.",
-    "Una brecha no se cierra con mensajes: se cierra cambiando lo que la gente vive.",
+    "La reputación interna es un pilar esencial para entender la verdadera salud de una empresa.",
+    "Cuanto más informada está la plantilla, menos información imprecisa o perjudicial circula.",
   ],
   nota: "Propuesta académica en equipo (Grado URJC), sin relación con Ryanair.",
 };
@@ -95,7 +93,7 @@ export const torrons: CasoCompleto = {
     { etiqueta: "Qué", valor: "Propuesta creativa para Sinergia, de Torrons Vicens" },
     { etiqueta: "Dónde", valor: "Grado en Publicidad y RRPP, URJC" },
     { etiqueta: "Equipo", valor: "Cuatro personas" },
-    { etiqueta: "Mi parte", valor: "Concepto, narrativa y soportes, en equipo" },
+    { etiqueta: "Mi parte", valor: "El layout y la marquesina holográfica; el resto, entre todas" },
   ],
   contexto: {
     titulo: "Un turrón que no parece turrón",
@@ -224,10 +222,7 @@ export const tourCdc: CasoCompleto = {
     texto: "La propuesta completa, en vídeo.",
     videos: [{ src: img("tour-cdc", "tinder-publicitario.mp4"), titulo: "Tinder publicitario", red: "Vídeo" }],
   },
-  aprendizajes: [
-    "Un formato que todo el mundo conoce es un atajo para que se entienda la idea.",
-    "No ganar no le quita valor a haber intentado aportar una solución.",
-  ],
+  aprendizajes: ["Aunque no fui seleccionada, estoy orgullosa del concepto y de haber intentado aportar una solución."],
 };
 
 export const revista: CasoCompleto = {
@@ -239,24 +234,16 @@ export const revista: CasoCompleto = {
     { etiqueta: "Qué", valor: "Análisis de liderazgo en formato revista" },
     { etiqueta: "Dónde", valor: "Máster en Comunicación Publicitaria, UC3M" },
     { etiqueta: "Equipo", valor: "Grupo 7, cuatro personas" },
-    { etiqueta: "Formato", valor: "Revista con índice, pósters y pasatiempos" },
+    { etiqueta: "Mi parte", valor: "La idea de la revista dosmilera, Janis, Damian y los juegos finales" },
   ],
   contexto: {
     titulo: "Cómo reinar en el instituto",
     parrafos: [
-      "Ocho personajes de Mean Girls analizados según su estilo de liderazgo (Goleman y otros, 2002), su temperamento (Cloninger y otros, 1993) y cómo evolucionan a lo largo de la película.",
-      "En lugar de un informe, una revista juvenil de los dos mil: la forma ya cuenta de qué va.",
+      "El primer trabajo de la asignatura no contaba para nota y se notó, así que en este decidimos innovar. La premisa era analizar una serie o película con el cubo temperamental de Cloninger: quiénes eran los líderes y quiénes sus públicos.",
+      "Entre todos llegamos a Mean Girls, y lo de hacerlo como una revista de estética dosmilera fue cosa mía. También hice a Janis y a Damian íntegramente y los juegos finales. Cada persona hizo unos personajes concretos, y el diseño y la corrección fueron cosa conjunta.",
     ],
   },
   bloques: [
-    {
-      titulo: "El análisis",
-      resumen: "De la abeja reina a la profesora coach.",
-      puntos: [
-        "Regina George, líder autoritaria cuyo poder se derrumba cuando pierde el estatus que lo sostenía.",
-        "Cady Heron, de cauta a líder democrática; Janis Ian, líder timonel; Gretchen Wieners, que no busca liderar sino pertenecer; y la señora Norbury, líder coach.",
-      ],
-    },
     {
       titulo: "La forma",
       resumen: "Una revista que se lee con ganas.",
@@ -335,7 +322,7 @@ export const oreo: CasoCompleto = {
     { etiqueta: "Qué", valor: "Plan de medios" },
     { etiqueta: "Cuándo", valor: "Mayo de 2025, Grado URJC" },
     { etiqueta: "Equipo", valor: "Cuatro personas" },
-    { etiqueta: "Mi parte", valor: "Plan completo, en equipo" },
+    { etiqueta: "Mi parte", valor: "La situación actual, la competencia en redes, los objetivos SMART y la programática" },
   ],
   contexto: {
     titulo: "Un capricho sin culpa",
@@ -375,50 +362,62 @@ export const pluvielle: CasoCompleto = {
   slug: "pluvielle",
   titulo: "Pluvielle",
   parecia: "Parecía una alfombrilla de baño.",
-  era: "Era una marca de lujo que convierte un objeto cotidiano en arte que se colecciona.",
+  era: "Era un plan de medios para un público que huye de la publicidad.",
   ficha: [
-    { etiqueta: "Qué", valor: "Identidad de marca y marketing mix" },
+    { etiqueta: "Qué", valor: "Marca de lujo y su plan de medios para doce meses" },
     { etiqueta: "Dónde", valor: "Máster en Comunicación Publicitaria, UC3M, 2026" },
-    { etiqueta: "Equipo", valor: "En equipo" },
+    { etiqueta: "Equipo", valor: "La marca, en equipo. El plan de medios, individual" },
     { etiqueta: "Idioma", valor: "Trabajo en inglés" },
   ],
   contexto: {
-    titulo: "Del baño a la galería",
+    titulo: "El primer paso sagrado",
     parrafos: [
-      "Pluvielle parte de la «artificación» de Kapferer: sacar un objeto corriente de su categoría y tratarlo como arte. Las alfombrillas son de diatomita, que absorbe y seca al instante, y cada colección la firma un artista: diez piezas numeradas.",
-      "Solo se compran en persona, en pop-ups de una semana en galerías de ciudades de lujo, con tres días de exposición privada antes de abrir la venta.",
-      "El nombre une pluvia, lluvia en latín, con el sufijo francés -elle, y el logo son dos gotas que, juntas, forman una P.",
+      "Pluvielle convierte una alfombrilla de baño en arte que se colecciona: piezas de diatomita, numeradas y creadas con artistas contemporáneos. La marca la creamos en equipo, partiendo de la «artificación» de Kapferer.",
+      "El plan de medios y la campaña los hice yo sola. Mi insight: los clientes de ultra lujo rechazan los logos a la vista y valoran cada vez más sus rituales privados. El paso de la ducha al mundo exterior es un momento sagrado que nadie estaba atendiendo. De ahí el concepto: «The sacred first step».",
+      "El reto era llegar a personas que ven la publicidad masiva como ruido. Por eso el anuncio tenía que vivirse como contenido editorial o artístico, sin interrumpir a nadie.",
     ],
   },
   bloques: [
     {
-      titulo: "Identidad",
-      resumen: "Lujo silencioso.",
+      titulo: "Objetivos",
+      resumen: "Alcance, interacción y prestigio.",
       puntos: [
-        "Tonos tierra, como la diatomita de la que sale el producto.",
-        "Una serif sofisticada para el logotipo y un packaging minimalista inspirado en las grandes casas de lujo.",
+        "Al menos un 65 % de alcance con una frecuencia efectiva de tres entre el público objetivo.",
+        "CTR superior al 5 % en plataformas de arte y 500 solicitudes VIP por colección.",
+        "Un 40 % de coleccionistas y asesores que repitan cada temporada.",
       ],
     },
     {
-      titulo: "Marketing mix",
-      resumen: "Escasez y experiencia.",
+      titulo: "Medios",
+      resumen: "Pocos, y donde ya está el público.",
       puntos: [
-        "Colecciones limitadas por temporada y venta solo en galería.",
-        "Su promesa: el toque efímero de la lluvia, esculpido en diatomita.",
+        "Print en Architectural Digest, con papel mate y gotas de agua en barniz UV.",
+        "Artículos patrocinados en Artsy y Artnet, e invitaciones a un portal VIP con contraseña.",
+        "Los vernissages de cinco días, el único sitio donde se puede comprar.",
+      ],
+    },
+    {
+      titulo: "Calendario",
+      resumen: "Doce meses con estrategia de pulsos.",
+      puntos: [
+        "Digital continuo de baja intensidad y picos en cada lanzamiento de colección.",
+        "Cuatro ciudades dentro del calendario del lujo: Milán, Basilea, París y Catar.",
       ],
     },
   ],
   imagenes: {
     titulo: "Las piezas",
     items: [
-      { src: img("pluvielle", "alfombra.jpg"), alt: "Alfombrilla de diatomita con una ilustración de figuras de colores, de 50 por 25 centímetros", pie: "Una pieza de la colección." },
-      { src: img("pluvielle", "packaging.jpg"), alt: "Caja de presentación de Pluvielle con la alfombrilla y el texto de la artista", pie: "El packaging." },
+      { src: img("pluvielle", "anuncio.jpg"), alt: "Anuncio de Pluvielle con una alfombrilla, gotas de agua y el titular Art shouldn't end where the water begins", pie: "El anuncio para Architectural Digest." },
+      { src: img("pluvielle", "articulo.jpg"), alt: "Artículo patrocinado de Pluvielle en la web de Artsy", pie: "El artículo patrocinado en Artsy." },
+      { src: img("pluvielle", "portal.jpg"), alt: "Cuatro pantallas de tableta con el portal digital VIP de Pluvielle", pie: "El portal VIP, solo con invitación." },
+      { src: img("pluvielle", "calendario.jpg"), alt: "Calendario de doce meses de la campaña por canales, con pulsos altos y bajos", pie: "El calendario de pulsos." },
       { src: img("pluvielle", "galeria.jpg"), alt: "Galería de noche con invitados alrededor de las alfombrillas expuestas", pie: "El pop-up en galería." },
-      { src: img("pluvielle", "caja.jpg"), alt: "Caja abierta con papel de seda estampado y el sello de las dos gotas", pie: "El detalle del sello." },
+      { src: img("pluvielle", "packaging.jpg"), alt: "Caja de presentación de Pluvielle con la alfombrilla y el texto de la artista", pie: "El packaging." },
     ],
   },
-  aprendizajes: ["El lujo no está solo en el objeto, sino en cómo se llega a él."],
-  nota: "Marca ficticia creada para el máster. Trabajo académico en equipo.",
+  aprendizajes: ["Que se puede conseguir un alcance alto sin resultar intrusiva."],
+  nota: "Marca ficticia creada para el máster. Las piezas son propuestas académicas.",
 };
 
 export const verdes = [ryanair, torrons, mms, tourCdc, revista, bbva, oreo, pluvielle];

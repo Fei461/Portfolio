@@ -6,64 +6,45 @@ const img = (file: string) => `${import.meta.env.BASE_URL}assets/casos/bruja-roj
 export const brujaRoja: CasoCompleto = {
   slug: "bruja-roja",
   titulo: "Bruja Roja",
-  parecia: "Parecía una identidad visual.",
-  era: "Era un sistema entero para hablar de la regla sin pedir perdón: tono, logos, color, contenido y producto.",
+  parecia: "Parecía una cuenta de Twitter para una asignatura.",
+  era: "Era ver el mundo arder con un producto de menstruación femenina y feminista.",
   ficha: [
     { etiqueta: "Qué", valor: "Cuenta de X e identidad corporativa para una copa menstrual" },
     { etiqueta: "Dónde", valor: "Comunicación Multimedia, Grado URJC" },
     { etiqueta: "Equipo", valor: "Cuatro personas, cuatro meses publicando en X" },
-    { etiqueta: "Mi parte", valor: "Propuse el enfoque de la cuenta; identidad y aplicaciones, en equipo" },
+    { etiqueta: "Mi parte", valor: "La idea, el logotipo, el calendario, los tipos de contenido y el contenido disruptivo" },
   ],
   contexto: {
     titulo: "Una copa menstrual que no pide permiso",
     parrafos: [
-      "Bruja Roja nace para desafiar los tabúes sobre la menstruación, empoderar a las mujeres y ofrecer una alternativa sostenible con su copa menstrual.",
-      "El reto de la asignatura era crear una cuenta en X. Convencí a mi equipo de que había otra forma de abordarlo: buscar la viralidad desde el odio, con un discurso profundamente progresista que chocara con la masculinidad frágil de esa red. Estuvimos cuatro meses publicando sin parar.",
-      "Fue uno de los trabajos en los que mejor me lo he pasado de toda la carrera. La clave era el tono: directo, provocador y con un punto de ironía. Una marca que habla como esa amiga que te dice las verdades que nadie más se atreve a decir. Por el camino creamos dos productos, colaboramos con otros grupos y lo resumimos todo en un dossier y un manual de marca.",
+      "Fue uno de los trabajos más divertidos que hice en toda la carrera. Cuando nos dijeron que debíamos hacernos una cuenta en Twitter, pensé que para ver el mundo arder (según el público de esta red) lo mejor era un producto de menstruación femenina y feminista.",
+      "Convencí a mi equipo de buscar la viralidad desde el odio, con un discurso profundamente progresista que chocara con la masculinidad frágil de esa red. Estuvimos cuatro meses publicando de forma constante y, si soy sincera, a veces me dan ganas de volver.",
+      "Yo aportaba el toque más sarcástico y provocador. El apartado de nuestra marca pone en palabras lo que yo pensaba de verdad, el logotipo fue cosa mía y el nombre lo elegimos entre todas. Admito que hice bastante en este trabajo, porque estaba motivada.",
     ],
   },
   bloques: [
     {
-      titulo: "Definir la marca y su voz",
-      resumen: "Antes que el logo, cómo habla.",
+      titulo: "La voz",
+      resumen: "Esa amiga que te dice lo que nadie se atreve.",
       puntos: [
-        "Misión: desafiar los tabúes sobre la regla, empoderar y ofrecer una alternativa sostenible.",
-        "Una comunicación sarcástica, disruptiva y sin filtros, con la irreverencia de quien no teme cuestionar lo establecido.",
-        "La bruja, en honor al nombre, como imagen central de un universo místico que da personalidad a la marca.",
+        "Un tono directo, disruptivo y sarcástico que rompiera con los estereotipos.",
+        "Teníamos que ser rápidas pero eficaces con nuestros mensajes.",
       ],
     },
     {
-      titulo: "Diseñar el logotipo",
-      resumen: "Un sistema, no un dibujo suelto.",
+      titulo: "El contenido",
+      resumen: "Hice el calendario y los tipos de publicaciones.",
       puntos: [
-        "Logotipo primario y secundario, cada uno en tres versiones: solo el nombre, el nombre con sombrero de bruja y una versión compacta.",
-        "Seis usos incorrectos documentados: cambiar elementos, colores no corporativos, otra separación, rotarlo, deformarlo o cambiar la tipografía.",
+        "Mi pilar favorito era el contenido disruptivo y las dudas, así que solía encargarme de ello.",
+        "Los datos curiosos y los educativos, que desmontaban mitos sobre la regla, los hicimos entre todas.",
       ],
     },
     {
-      titulo: "Elegir color y tipografía",
-      resumen: "Mística sin perder legibilidad.",
+      titulo: "La marca",
+      resumen: "Una identidad corporativa completa.",
       puntos: [
-        "Paleta de tres colores: cobre (#CE945C), burdeos (#6D1B2C) y crema (#FAF2EC).",
-        "Barcelona ITC para los titulares, Bodoni como secundaria y Glacial Indifference para los textos.",
-        "Elementos gráficos de brujería: fases de la luna, calderos, constelaciones y la propia copa.",
-      ],
-    },
-    {
-      titulo: "Planificar el contenido",
-      resumen: "Provocar, hacer reír y enseñar a la vez.",
-      puntos: [
-        "Lunes de datos educativos que desmontan mitos sobre la regla y jueves de datos curiosos de historia, cultura o ciencia.",
-        "Mensajes cortos y disruptivos para hacer pensar, y respuestas sin filtros a las preguntas incómodas.",
-        "Un diseño base reconocible: constelaciones rojas sobre crema y el imagotipo siempre en la esquina inferior derecha.",
-      ],
-    },
-    {
-      titulo: "Llevarlo al producto",
-      resumen: "Donde la marca se toca.",
-      puntos: [
-        "Packaging de la copa (100 % silicona) y caja regalo con el universo místico de la marca.",
-        "Una bolsa con el claim «Menstrúo, luego existo».",
+        "El logotipo, con el sombrero de bruja, dentro de un universo de lunas, calderos y constelaciones muy lejos de la estética de farmacia.",
+        "Creamos dos productos y una bolsa con el claim «Menstrúo, luego existo», y colaboramos con otros grupos de clase.",
       ],
     },
   ],
@@ -103,38 +84,8 @@ export const brujaRoja: CasoCompleto = {
       },
     ],
   },
-  tatami: {
-    termino: "",
-    titulo: "Cómo sacar un tabú de su sitio",
-    intro: "Para que se hable de algo que se esconde, primero hay que sacarlo de su sitio. Estas fueron las decisiones que lo hicieron.",
-  },
-  caidas: [
-    {
-      titulo: "Llamarlo por su nombre",
-      texto:
-        "Nada de eufemismos ni de líquidos azules. La regla se nombra, y el humor quita la vergüenza sin quitarle seriedad al tema.",
-    },
-    {
-      titulo: "Un universo propio",
-      texto:
-        "Lejos de la estética de farmacia, un mundo de brujas, lunas, calderos y constelaciones que hace la marca reconocible a primera vista.",
-    },
-    {
-      titulo: "Provocar con datos",
-      texto:
-        "La provocación se sostiene con educación sexual: cada mensaje disruptivo convive con información que desmonta un mito.",
-    },
-  ],
-  cita: {
-    texto: "Menstrúo, luego existo.",
-    autor: "Claim de la bolsa",
-    cargo: "Bruja Roja",
-  },
   aprendizajes: [
-    "Cómo comunicar en un mundo instantáneo, donde la conversación nace en un segundo y desaparece igual de rápido.",
-    "Un tono se diseña igual que un logo: con reglas.",
-    "Decir cómo no se usa una marca la protege tanto como decir cómo se usa.",
-    "El humor abre conversaciones que un dato solo no abre.",
+    "Cómo comunicarme en un mundo instantáneo, donde la conversación se genera al segundo y desaparece a la misma velocidad.",
   ],
   nota: "Proyecto académico en equipo (Grado URJC). Bruja Roja es una marca inventada para el ejercicio.",
 };

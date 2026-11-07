@@ -30,8 +30,8 @@ function NombreProyectado() {
 const minuto = [
   { cifra: "36.000", texto: "visualizaciones en Stud-IA", to: "/trabajo/stud-ia" },
   { cifra: "Una app", texto: "hecha sin saber programar", to: "/trabajo/talixea" },
-  { cifra: "248", texto: "encuestas en mi TFG", to: "/trabajo/tfg-bbva" },
-  { cifra: "1.er premio", texto: "Ideathon URJC", to: "/sobre-mi" },
+  { cifra: "248", texto: "respuestas en mi TFG", to: "/trabajo/tfg-bbva" },
+  { cifra: "Reputación", texto: "interna en Ryanair", to: "/trabajo/ryanair" },
 ];
 
 // La foto de la graduación tiene historia detrás: se le da la vuelta para leerla.
@@ -69,8 +69,8 @@ function FotoGraduacion() {
           que tocó ir «formal»: un top y un pantalón cómodo para seguir haciendo la cabra loca.
         </p>
         <p>
-          Eso sí, los calcetines no se negociaban: perros salchicha con el culo en forma de corazón. Quien me
-          conoce sabe que me gustan los calcetines originales.
+          Eso sí, por muy «formal» que fuera el acto, mis calcetines seguían siendo mi seña de identidad: perros
+          salchicha con el culo en forma de corazón.
         </p>
         <Link ref={detras} to="/sobre-mi" tabIndex={vuelta ? 0 : -1}>
           Más sobre mí →
@@ -97,9 +97,10 @@ export function InicioPage() {
         <p className="dojo-lema">Publicista con culo inquieto.</p>
         <div className="dojo-intro-caja">
           <p className="dojo-intro">
-            Ni copy, ni arte, ni cuentas, ni planner: me lo paso bien en todas. Si me haces elegir,
-            relaciones públicas, marca, reputación y comunicación interna. Quiero entender a la gente
-            y partirme la cabeza por la mejor solución, no solo resolver el briefing.
+            No me defino como copy, ni como arte, ni como cuentas, ni como planner. Si tuviera que
+            decantarme, elegiría las relaciones públicas, la gestión de marca, la reputación y la
+            comunicación interna. Quiero entender a la gente y partirme la cabeza buscando la mejor
+            solución para la marca.
           </p>
         </div>
         <p className="dojo-busco">

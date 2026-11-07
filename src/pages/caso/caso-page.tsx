@@ -417,7 +417,7 @@ export function CasoPage({ caso }: { caso: CasoCompleto }) {
         </p>
         <h1 className="combate__titulo">{caso.titulo}</h1>
         <p className="caso-lecturas">
-          <s className="caso-lecturas__primera">{caso.parecia}</s>
+          {caso.parecia && <s className="caso-lecturas__primera">{caso.parecia}</s>}
           <span className="caso-lecturas__segunda">{caso.era}</span>
         </p>
         {caso.enlaces && (
