@@ -2,7 +2,7 @@ import { Sigue } from "@/components/sigue";
 import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import type { CasoCompleto } from "@/data/casos";
-import { cinturones, porCinturon, proyectos } from "@/data/proyectos";
+import { perchas, porPercha, proyectos } from "@/data/proyectos";
 import { DemoTalixea } from "./demo-talixea";
 import { Brecha, Cronograma, Mapa, Reparto } from "./graficos";
 import { Movil } from "./movil";
@@ -348,8 +348,8 @@ function construirAsaltos(
 
 export function CasoPage({ caso }: { caso: CasoCompleto }) {
   const proyecto = proyectos.find((p) => p.slug === caso.slug);
-  const cinturon = proyecto?.cinturon ?? "negro";
-  const mismos = porCinturon(cinturon);
+  const percha = proyecto?.percha ?? "azul";
+  const mismos = porPercha(percha);
   const posicion = mismos.findIndex((p) => p.slug === caso.slug) + 1;
   const conPagina = proyectos.filter((p) => p.pagina && !p.oculto);
   const indice = conPagina.findIndex((p) => p.slug === caso.slug);
@@ -361,7 +361,7 @@ export function CasoPage({ caso }: { caso: CasoCompleto }) {
     caso,
     setLupa,
     { portada: proyecto?.portada, video: proyecto?.video, poster: proyecto?.poster },
-    cinturon === "verde",
+    Boolean(proyecto?.breve),
   );
   // La parte abierta queda en la dirección (?parte=piezas) para poder enlazarla.
   const [params, setParams] = useSearchParams();
@@ -407,12 +407,12 @@ export function CasoPage({ caso }: { caso: CasoCompleto }) {
   const ultimo = activo === asaltos.length - 1;
 
   return (
-    <main className={`combate combate--${cinturon}`}>
+    <main className={`combate combate--${percha}`}>
       <aside className="combate__ficha">
         <p className="caso-grado">
-          <Link to={`/trabajo?cinturon=${cinturon}`} className="caso-grado__volver">
-            <span className={`caso-grado__cinta caso-grado__cinta--${cinturon}`} aria-hidden="true" />
-            {cinturones[cinturon].nombre}
+          <Link to={`/trabajo?percha=${percha}`} className="caso-grado__volver">
+            <span className={`caso-grado__cinta caso-grado__cinta--${percha}`} aria-hidden="true" />
+            {perchas[percha].nombre}
             {posicion > 0 && `, caso ${posicion} de ${mismos.length}`}
           </Link>
         </p>

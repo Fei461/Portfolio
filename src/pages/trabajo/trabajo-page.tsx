@@ -8,12 +8,12 @@ import {
   type ReactNode,
 } from "react";
 import { Link, useSearchParams } from "react-router-dom";
-import { cinturones, porCinturon, type Cinturon, type Proyecto } from "@/data/proyectos";
+import { perchas, porPercha, type Percha, type Proyecto } from "@/data/proyectos";
 import "./trabajo.css";
 
-const orden: Cinturon[] = ["negro", "verde", "archivo"];
-const esCinturon = (v: string | null): v is Cinturon => orden.includes(v as Cinturon);
-const siguiente: Record<Cinturon, Cinturon> = { negro: "verde", verde: "archivo", archivo: "negro" };
+const orden: Percha[] = ["azul", "blanco", "archivo"];
+const esPercha = (v: string | null): v is Percha => orden.includes(v as Percha);
+const siguiente: Record<Percha, Percha> = { azul: "blanco", blanco: "archivo", archivo: "azul" };
 
 // El grado de la URJC se da por supuesto en las tarjetas (lo dice la nota de arriba).
 const tipoCorto = (t: string) => {
@@ -79,7 +79,7 @@ function Archivo({ lista }: { lista: Proyecto[] }) {
 }
 
 // Tarjeta tipo dorsal de competición: número grande, imagen o vídeo y nombre.
-function Dorsal({ p, n, cinturon }: { p: Proyecto; n: number; cinturon: Cinturon }) {
+function Dorsal({ p, n, percha }: { p: Proyecto; n: number; percha: Percha }) {
   const video = useRef<HTMLVideoElement>(null);
   const reproducir = () => {
     const v = video.current;
@@ -89,6 +89,7 @@ function Dorsal({ p, n, cinturon }: { p: Proyecto; n: number; cinturon: Cinturon
 
   const contenido = (
     <>
+      {p.origen && <span className="dorsal__origen">{p.origen}</span>}
       <span className="dorsal__numero" aria-hidden="true">
         {String(n).padStart(2, "0")}
       </span>
@@ -123,7 +124,7 @@ function Dorsal({ p, n, cinturon }: { p: Proyecto; n: number; cinturon: Cinturon
 
   return (
     <li
-      className={`dorsal dorsal--${cinturon}`}
+      className={`dorsal dorsal--${percha}`}
       style={{ "--n": n } as CSSProperties}
       onMouseEnter={reproducir}
       onMouseLeave={parar}
@@ -244,62 +245,62 @@ function Pista({ children, clave }: { children: ReactNode; clave: string }) {
 
 export function TrabajoPage() {
   const [params, setParams] = useSearchParams();
-  const pedido = params.get("cinturon");
-  const cinturon: Cinturon = esCinturon(pedido) ? pedido : "negro";
-  const lista = porCinturon(cinturon);
+  const pedido = params.get("percha");
+  const percha: Percha = esPercha(pedido) ? pedido : "azul";
+  const lista = porPercha(percha);
 
   useEffect(() => {
-    document.title = `${cinturones[cinturon].nombre}, proyectos de Lara Feijóo`;
-  }, [cinturon]);
+    document.title = `${perchas[percha].nombre}, proyectos de Lara Feijóo`;
+  }, [percha]);
 
   return (
-    <main className={`trabajo trabajo--${cinturon}`}>
+    <main className={`trabajo trabajo--${percha}`}>
       <header className="trabajo__cabecera">
         <h1 className="trabajo__titulo">Proyectos</h1>
-        <div className="trabajo__grados" role="tablist" aria-label="Cinturón">
+        <div className="trabajo__grados" role="tablist" aria-label="Tipo de proyecto">
           {orden.map((c) => (
             <button
               key={c}
               type="button"
               role="tab"
-              aria-selected={c === cinturon}
+              aria-selected={c === percha}
               className={`grado-boton grado-boton--${c}`}
-              onClick={() => setParams({ cinturon: c }, { replace: true })}
+              onClick={() => setParams({ percha: c }, { replace: true })}
             >
               <span className="grado-boton__cinta" aria-hidden="true" />
-              {cinturones[c].nombre}
-              <span className="grado-boton__n">{porCinturon(c).length}</span>
+              {perchas[c].nombre}
+              <span className="grado-boton__n">{porPercha(c).length}</span>
             </button>
           ))}
         </div>
-        <p className="trabajo__nota">{cinturones[cinturon].nota}</p>
+        <p className="trabajo__nota">{perchas[percha].nota}</p>
       </header>
 
-      {cinturon === "archivo" ? (
+      {percha === "archivo" ? (
         <Archivo lista={lista} key="archivo" />
       ) : (
-      <Pista clave={cinturon} key={cinturon}>
+      <Pista clave={percha} key={percha}>
         {lista.map((p, i) => (
-          <Dorsal key={p.slug} p={p} n={i + 1} cinturon={cinturon} />
+          <Dorsal key={p.slug} p={p} n={i + 1} percha={percha} />
         ))}
         <li className="dorsal dorsal--fin">
           <button
             type="button"
             className="dorsal__enlace dorsal__siguiente"
-            onClick={() => setParams({ cinturon: siguiente[cinturon] }, { replace: true })}
-            style={{ "--cinta": `var(--cinta-${siguiente[cinturon]})` } as CSSProperties}
+            onClick={() => setParams({ percha: siguiente[percha] }, { replace: true })}
+            style={{ "--cinta": `var(--cinta-${siguiente[percha]})` } as CSSProperties}
           >
             <span className="dorsal__siguiente-cinta" aria-hidden="true" />
-            <strong>{cinturones[siguiente[cinturon]].nombre}</strong>
+            <strong>{perchas[siguiente[percha]].nombre}</strong>
             <span>
-              {siguiente[cinturon] === "archivo" ? "Los trabajos de la carrera" : "Seguir con el siguiente cinturón"}
+              {siguiente[percha] === "archivo" ? "Los trabajos de la carrera" : "Seguir por aquí"}
             </span>
           </button>
         </li>
       </Pista>
       )}
 
-      {cinturon !== "archivo" && (
+      {percha !== "archivo" && (
         <p className="trabajo__ayuda">
           <span className="ayuda-raton">Arrastra, usa la rueda, las flechas del teclado o los botones.</span>
           <span className="ayuda-tactil">Desliza para ver más.</span>

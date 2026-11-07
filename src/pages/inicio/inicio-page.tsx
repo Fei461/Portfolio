@@ -106,7 +106,7 @@ function FotoGraduacion() {
 }
 
 // La portada es el tatami entero en una pantalla: quién soy a la izquierda y,
-// en la pared, los cinturones que llevan a los proyectos.
+// en la pared, los judogis que llevan a los proyectos.
 export function InicioPage() {
   useEffect(() => {
     document.title = "Lara Feijóo, publicista con culo inquieto";
@@ -143,7 +143,7 @@ export function InicioPage() {
             ))}
           </ul>
           <p className="dojo-minuto__pista">
-            O coge un cinturón de la pared <span aria-hidden="true">→</span>
+            O coge un judogi de la pared <span aria-hidden="true">→</span>
           </p>
         </nav>
       </div>

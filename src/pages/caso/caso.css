@@ -30,8 +30,12 @@
   border: 2px solid var(--sumi);
 }
 
-.caso-grado__cinta--verde {
-  background: var(--verde);
+.caso-grado__cinta--azul {
+  background: #1f4fb4;
+}
+
+.caso-grado__cinta--blanco {
+  background: #fff;
 }
 
 .caso-grado__cinta--archivo {

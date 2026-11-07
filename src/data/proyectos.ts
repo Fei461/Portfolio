@@ -1,12 +1,12 @@
 // Fuente única de los proyectos: la portada y la página de Trabajo leen de aquí.
-// El orden de cada cinturón es el orden en que se muestran.
+// El orden de cada percha es el orden en que se muestran.
 
-export type Cinturon = "negro" | "verde" | "archivo";
+export type Percha = "azul" | "blanco" | "archivo";
 
 export type Proyecto = {
   slug: string;
   titulo: string;
-  cinturon: Cinturon;
+  percha: Percha;
   /** Contexto breve: dónde, cuándo y con quién. */
   tipo: string;
   resumen: string;
@@ -25,6 +25,10 @@ export type Proyecto = {
   grupo?: "escrito" | "campana";
   /** Archivo: lo que se cuenta al desplegar la ficha. */
   detalle?: string[];
+  /** De dónde sale el trabajo: se ve como etiqueta en la tarjeta. */
+  origen?: "Real" | "Máster" | "Grado" | "Concurso";
+  /** Caso corto: todo en una sola parte, más las piezas. */
+  breve?: boolean;
   /** Fuera de la selección: no sale en listas, pero su página sigue existiendo. */
   oculto?: boolean;
 };
@@ -32,126 +36,142 @@ export type Proyecto = {
 const caso = (file: string) => `${import.meta.env.BASE_URL}assets/casos/${file}`;
 
 export const proyectos: Proyecto[] = [
-  // ── Cinturón negro: seis casos completos, en el orden de una entrevista ──
+  // ── Judogi azul: reputación y comunicación ──
   {
     slug: "stud-ia",
     video: caso("stud-ia/youtube-36k.mp4"),
     poster: caso("stud-ia/poster.jpg"),
     titulo: "Stud-IA",
-    cinturon: "negro",
+    percha: "azul",
     tipo: "Prácticas en marketing, enero a mayo de 2026",
     resumen:
       "Cinco meses en una startup de IA para estudiantes con 80.000 usuarios al mes. Contenido, comunidad, campañas B2C y B2B, y X, Threads y Bluesky a mi cargo.",
     pagina: "nuevo",
+    origen: "Real",
   },
   {
     slug: "tfg-bbva",
     portada: caso("tfg-bbva/nube.jpg"),
     titulo: "BBVA tras 2008",
-    cinturon: "negro",
+    percha: "azul",
     tipo: "TFG, individual",
     resumen:
       "¿Se ha cerrado la herida de 2008? Dos encuestas, dentro y fuera del banco, 248 respuestas y una entrevista a su responsable de marca para medir la brecha de reputación.",
     pagina: "nuevo",
-  },
-  {
-    slug: "talixea",
-    portada: caso("talixea/portada.png"),
-    titulo: "Talixea",
-    cinturon: "negro",
-    tipo: "Proyecto propio, desde febrero de 2026",
-    resumen:
-      "Buscaba una app para aprender idiomas leyendo, en español y gratis. No existía, así que la hice sin saber programar: 40 libros y seis idiomas.",
-    pagina: "nuevo",
-    fuera: { href: "https://talixea.es", label: "Visitar talixea.es" },
+    origen: "Grado",
   },
   {
     slug: "ryanair",
     portada: caso("ryanair/podcast.jpg"),
     titulo: "Ryanair",
-    cinturon: "negro",
+    percha: "azul",
     tipo: "Grado URJC, en equipo, 2025",
     resumen:
       "Hice el diagnóstico, la reputación interna y el análisis de brecha de una plantilla que no se siente parte. De ahí salió un plan de comunicación interna.",
     pagina: "nuevo",
+    origen: "Grado",
   },
   {
     slug: "magicair",
     portada: caso("magicair/logo.jpg"),
     titulo: "MagicAir",
-    cinturon: "negro",
+    percha: "azul",
     tipo: "Grado URJC, en equipo, 2025",
     resumen:
       "Una aerolínea inventada, una norma europea y una crisis de reputación: el plan para anunciarla y la respuesta cuando estalla, con la SCCT.",
     pagina: "nuevo",
+    origen: "Grado",
   },
   {
     slug: "santander",
     portada: caso("santander/laboratorio.png"),
     titulo: "Santander",
-    cinturon: "negro",
+    percha: "azul",
     tipo: "Máster UC3M, web y encuesta hechas por mí",
     resumen:
       "Un laboratorio web para evaluar el logo del banco con once criterios y una encuesta propia a 31 personas. Lo que la marca dice frente a lo que la gente percibe.",
     pagina: "nuevo",
     fuera: { href: "https://fei461.github.io/santander/", label: "Abrir el laboratorio" },
+    origen: "Máster",
   },
 
-  // ── Cinturón verde: cuatro casos breves ──
+  // ── Judogi blanco: marca y creatividad ──
+  {
+    slug: "talixea",
+    portada: caso("talixea/portada.png"),
+    titulo: "Talixea",
+    percha: "blanco",
+    tipo: "Proyecto propio, desde febrero de 2026",
+    resumen:
+      "Buscaba una app para aprender idiomas leyendo, en español y gratis. No existía, así que la hice sin saber programar: 40 libros y seis idiomas.",
+    pagina: "nuevo",
+    fuera: { href: "https://talixea.es", label: "Visitar talixea.es" },
+    origen: "Real",
+  },
   {
     slug: "bruja-roja",
     portada: caso("bruja-roja/productos.jpg"),
     titulo: "Bruja Roja",
-    cinturon: "verde",
+    percha: "blanco",
     tipo: "Grado URJC, en equipo",
     resumen:
       "Cuatro meses en X buscando la viralidad desde el odio con una copa menstrual feminista. El logotipo y el tono más provocador fueron cosa mía.",
     pagina: "nuevo",
+    origen: "Grado",
+    breve: true,
   },
   {
     slug: "iberia",
     portada: caso("iberia/cine.png"),
     titulo: "Iberia",
-    cinturon: "verde",
+    percha: "blanco",
     tipo: "Grado URJC, en equipo",
     resumen:
       "Se me ocurrió contar la huella de una aerolínea como la restauración de un cuadro que nunca se termina.",
     pagina: "nuevo",
+    origen: "Grado",
+    breve: true,
   },
   {
     slug: "revista-super-pop",
     portada: caso("revista-super-pop/portada.jpg"),
     titulo: "Revista Super Pop",
-    cinturon: "verde",
+    percha: "blanco",
     tipo: "Máster UC3M, en equipo",
     resumen: "Liderazgo explicado con Mean Girls. Lo de hacerlo como una revista dosmilera fue idea mía.",
     pagina: "nuevo",
+    origen: "Máster",
+    breve: true,
   },
   {
     slug: "pluvielle",
     portada: caso("pluvielle/anuncio.jpg"),
     titulo: "Pluvielle",
-    cinturon: "verde",
+    percha: "blanco",
     tipo: "Máster UC3M, plan de medios individual",
     resumen: "Un plan de medios de doce meses para vender arte en forma de alfombrilla a quien huye de la publicidad.",
     pagina: "nuevo",
+    origen: "Máster",
+    breve: true,
   },
   {
     slug: "tour-cdc-dana",
     video: caso("tour-cdc/tinder-publicitario.mp4"),
     poster: caso("tour-cdc/poster.jpg"),
     titulo: "Tour C de C",
-    cinturon: "verde",
+    percha: "blanco",
     tipo: "Tour c de c 2025, individual",
     resumen: "Un Tinder publicitario para conectar a la industria con los creativos afectados por la DANA.",
     pagina: "nuevo",
+    origen: "Concurso",
+    breve: true,
   },
 
   // ── Archivo: trabajos de la carrera ──
   {
     slug: "generacion-z",
     titulo: "Generación Z",
-    cinturon: "archivo",
+    percha: "archivo",
     grupo: "escrito",
     tipo: "Técnicas y Recursos de las RRPP, Grado URJC, 2024, en equipo",
     resumen: "Cómo nos ven y cómo nos vemos, convertido en una estrategia de relaciones públicas y en un podcast.",
@@ -164,7 +184,7 @@ export const proyectos: Proyecto[] = [
   {
     slug: "entrevista-dircom",
     titulo: "Entrevista a un DirCom",
-    cinturon: "archivo",
+    percha: "archivo",
     grupo: "escrito",
     tipo: "Dirección de Comunicación, Grado URJC, 2024, en equipo",
     resumen: "Preparar, conseguir y contar una entrevista con el director de comunicación de la URJC.",
@@ -176,7 +196,7 @@ export const proyectos: Proyecto[] = [
   {
     slug: "sra-rushmore",
     titulo: "Sra. Rushmore",
-    cinturon: "archivo",
+    percha: "archivo",
     grupo: "escrito",
     tipo: "Grado URJC, individual",
     resumen: "Análisis de la agencia que nació con «Un añito en el infierno» para el Atleti: quién es, cómo piensa y para quién trabaja.",
@@ -187,7 +207,7 @@ export const proyectos: Proyecto[] = [
   {
     slug: "seat-ibiza",
     titulo: "SEAT Ibiza frente a Ford Fiesta",
-    cinturon: "archivo",
+    percha: "archivo",
     grupo: "campana",
     tipo: "Redacción Publicitaria, Grado URJC, 2025, en pareja",
     resumen: "Un guion de spot y dos anuncios de prensa comparativos.",
@@ -199,7 +219,7 @@ export const proyectos: Proyecto[] = [
   {
     slug: "hermanos-chacon",
     titulo: "Hermanos Chacón",
-    cinturon: "archivo",
+    percha: "archivo",
     grupo: "campana",
     tipo: "Grado URJC, en equipo",
     resumen: "Rebranding real de nuestro «barde», el bar de confianza en el que habíamos comido varias veces.",
@@ -215,57 +235,67 @@ export const proyectos: Proyecto[] = [
     slug: "el-regalo-no-deseado",
     portada: caso("torrons/marquesina.png"),
     titulo: "Torrons Vicens",
-    cinturon: "verde",
+    percha: "blanco",
     tipo: "Grado URJC, en equipo",
     resumen: "Una campaña que convierte el prejuicio sobre lo aparente en una experiencia de descubrimiento.",
     pagina: "nuevo",
     oculto: true,
+    origen: "Grado",
+    breve: true,
   },
   {
     slug: "m-and-ms",
     portada: caso("m-and-ms/cartel.jpg"),
     titulo: "M&M's Premium",
-    cinturon: "verde",
+    percha: "blanco",
     tipo: "Grado URJC, en equipo",
     resumen: "Lanzamiento en España como agencia, del contrabriefing a los medios.",
     pagina: "nuevo",
     oculto: true,
+    origen: "Grado",
+    breve: true,
   },
   {
     slug: "bbva",
     portada: caso("bbva/sagrada-privacidad.jpg"),
     titulo: "BBVA",
-    cinturon: "verde",
+    percha: "blanco",
     tipo: "Grado URJC, en equipo",
     resumen: "Fraude digital y jóvenes que se creen a salvo.",
     pagina: "nuevo",
     oculto: true,
+    origen: "Grado",
+    breve: true,
   },
   {
     slug: "oreo",
     portada: caso("oreo/grafica.jpg"),
     titulo: "Oreo",
-    cinturon: "verde",
+    percha: "blanco",
     tipo: "Grado URJC, en equipo",
     resumen: "Plan de medios para un público que vive en redes.",
     pagina: "nuevo",
     oculto: true,
+    origen: "Grado",
+    breve: true,
   },
   {
     slug: "warriors-arena",
     titulo: "Warriors Arena",
-    cinturon: "verde",
+    percha: "blanco",
     tipo: "Curso de RTVE, individual",
     resumen:
       "Plan de distribución para un formato de competición física de diez episodios: ventanas, plataformas y venta internacional.",
     portada: caso("warriors-arena/portada.jpg"),
     pagina: "nuevo",
     oculto: true,
+    origen: "Grado",
+    breve: true,
   },
   {
     slug: "reciclaje-vidrio",
     titulo: "Reciclaje de vidrio",
-    cinturon: "archivo",
+    percha: "archivo",
     grupo: "escrito",
     tipo: "Técnicas y Recursos de las RRPP, Grado URJC, 2024, en equipo",
     resumen: "Planificación estratégica de relaciones públicas para implantar el reciclaje de vidrio.",
@@ -277,7 +307,7 @@ export const proyectos: Proyecto[] = [
   {
     slug: "club-de-creativos",
     titulo: "Club de Creativos",
-    cinturon: "archivo",
+    percha: "archivo",
     grupo: "escrito",
     tipo: "Fundamentos de las RRPP, Grado URJC, 2023, en equipo",
     resumen: "Cómo han evolucionado los modelos de relaciones públicas que usa el c de c.",
@@ -289,7 +319,7 @@ export const proyectos: Proyecto[] = [
   {
     slug: "fnac",
     titulo: "FNAC",
-    cinturon: "archivo",
+    percha: "archivo",
     grupo: "campana",
     tipo: "Grado URJC, en equipo",
     resumen: "Street marketing en el Barrio de las Letras para volver a los clásicos.",
@@ -303,7 +333,7 @@ export const proyectos: Proyecto[] = [
   {
     slug: "matutano-mix",
     titulo: "Matutano MIX",
-    cinturon: "archivo",
+    percha: "archivo",
     grupo: "campana",
     tipo: "Grado URJC, en equipo",
     resumen: "Campaña para la marca de snacks favorita frente a Pringles y las marcas blancas.",
@@ -315,7 +345,7 @@ export const proyectos: Proyecto[] = [
   {
     slug: "brekkies",
     titulo: "Brekkies Excel Deli Sauce",
-    cinturon: "archivo",
+    percha: "archivo",
     grupo: "campana",
     tipo: "Grado URJC, en equipo",
     resumen: "«Para chuparse las patas»: una salsa que los perros no pueden dejar.",
@@ -327,17 +357,17 @@ export const proyectos: Proyecto[] = [
   },
 ];
 
-export const porCinturon = (cinturon: Cinturon) =>
-  proyectos.filter((p) => p.cinturon === cinturon && !p.oculto);
+export const porPercha = (percha: Percha) =>
+  proyectos.filter((p) => p.percha === percha && !p.oculto);
 
-export const cinturones: Record<Cinturon, { nombre: string; nota: string }> = {
-  negro: {
-    nombre: "Cinturón negro",
-    nota: "Los casos completos: qué me pedían, qué hice y qué me llevé.",
+export const perchas: Record<Percha, { nombre: string; nota: string }> = {
+  azul: {
+    nombre: "Reputación y comunicación",
+    nota: "Lo que más me tira: entender cómo se percibe una marca, dentro y fuera.",
   },
-  verde: {
-    nombre: "Cinturón verde",
-    nota: "Casos más cortos: el reto, la idea y alguna pieza. Salvo que se indique, son del grado en la URJC.",
+  blanco: {
+    nombre: "Marca y creatividad",
+    nota: "Decir locuras y darles forma: marcas, campañas y productos.",
   },
   archivo: {
     nombre: "Archivo",

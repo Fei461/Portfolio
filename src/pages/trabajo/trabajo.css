@@ -1,7 +1,7 @@
 /* Proyectos: una pista horizontal de dorsales, un cinturón cada vez. */
 .trabajo {
-  --cinta-negro: var(--sumi);
-  --cinta-verde: var(--verde);
+  --cinta-azul: #1f4fb4;
+  --cinta-blanco: var(--judogi);
   --cinta-archivo: var(--judogi);
   display: flex;
   flex-direction: column;
@@ -71,12 +71,12 @@
   border-color: var(--judogi);
 }
 
-.grado-boton--negro .grado-boton__cinta {
-  background: var(--sumi);
+.grado-boton--azul .grado-boton__cinta {
+  background: #1f4fb4;
 }
 
-.grado-boton--verde .grado-boton__cinta {
-  background: var(--verde);
+.grado-boton--blanco .grado-boton__cinta {
+  background: #fff;
 }
 
 .grado-boton--archivo .grado-boton__cinta {
@@ -225,7 +225,7 @@ button.dorsal__enlace:focus-visible {
   color: var(--judogi);
 }
 
-.dorsal--verde .dorsal__numero {
+.dorsal--azul .dorsal__numero {
   background: var(--verde);
 }
 
@@ -614,4 +614,19 @@ a.dorsal__enlace:hover .dorsal__visual video {
   .ayuda-tactil {
     display: inline;
   }
+}
+
+/* De dónde sale cada trabajo */
+.dorsal__origen {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  padding: 0.2rem 0.55rem;
+  font-weight: 800;
+  font-size: 0.82rem;
+  color: var(--sumi);
+  background: var(--judogi);
+  border-left: 3px solid var(--sumi);
+  border-bottom: 3px solid var(--sumi);
 }
