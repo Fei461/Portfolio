@@ -9,7 +9,7 @@ export function Sigue({ panel, clave }: { panel: RefObject<HTMLElement | null>; 
     const el = panel.current;
     if (!el) return;
     const medir = () => {
-      const mas = el.scrollHeight - el.clientHeight - el.scrollTop > 24;
+      const mas = el.scrollHeight - el.clientHeight - el.scrollTop > 60;
       setHayMas(mas);
       el.classList.toggle("asalto--sigue", mas);
     };

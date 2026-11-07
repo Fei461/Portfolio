@@ -76,13 +76,13 @@ function Carpeta() {
 // Al pasar por un cinturón asoman, en abanico, tres de sus proyectos.
 function Asomo({ cinturon }: { cinturon: Grado }) {
   const lista = porCinturon(cinturon);
-  const conImagen = lista.filter((p) => p.portada);
+  const conImagen = lista.filter((p) => p.portada || p.poster);
   const elegidos = (conImagen.length >= 3 ? conImagen : lista).slice(0, 3);
   return (
     <span className="asomo" aria-hidden="true">
       {elegidos.map((p, k) => (
         <span key={p.slug} className="asomo__carta" style={{ "--k": k - 1 } as CSSProperties}>
-          {p.portada ? <img src={p.portada} alt="" loading="lazy" /> : <span>{p.titulo}</span>}
+          {p.portada || p.poster ? <img src={p.portada ?? p.poster} alt="" loading="lazy" /> : <span>{p.titulo}</span>}
         </span>
       ))}
     </span>

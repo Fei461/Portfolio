@@ -112,6 +112,7 @@ function MainLayout() {
   useEffect(() => {
     if (anterior.current === pathname) return;
     anterior.current = pathname;
+    window.scrollTo(0, 0);
     setBarrido((n) => n + 1);
   }, [pathname]);
   return (

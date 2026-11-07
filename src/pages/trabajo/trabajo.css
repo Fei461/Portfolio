@@ -596,3 +596,22 @@ a.dorsal__enlace:hover .dorsal__visual video {
 @keyframes ficha-abre {
   from { opacity: 0; transform: translateY(-4px); }
 }
+
+/* La primera tarjeta arranca alineada con el título, no pegada al borde. */
+.pista {
+  scroll-padding-inline: var(--gutter);
+}
+
+.ayuda-tactil {
+  display: none;
+}
+
+@media (hover: none), (max-width: 900px) {
+  .ayuda-raton {
+    display: none;
+  }
+
+  .ayuda-tactil {
+    display: inline;
+  }
+}

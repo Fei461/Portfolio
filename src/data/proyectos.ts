@@ -77,7 +77,7 @@ export const proyectos: Proyecto[] = [
   },
   {
     slug: "magicair",
-    portada: caso("magicair/stakeholders.jpg"),
+    portada: caso("magicair/logo.jpg"),
     titulo: "MagicAir",
     cinturon: "negro",
     tipo: "Grado URJC, en equipo, 2025",

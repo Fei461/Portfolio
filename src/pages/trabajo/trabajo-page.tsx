@@ -26,7 +26,7 @@ function Archivo({ lista }: { lista: Proyecto[] }) {
   const [abierto, setAbierto] = useState<string | null>(null);
   const grupos: { id: "escrito" | "campana"; titulo: string; texto: string }[] = [
     { id: "escrito", titulo: "Por escrito", texto: "Estrategia, relaciones públicas y análisis, sin piezas visuales." },
-    { id: "campana", titulo: "Campañas de clase", texto: "Ideas, conceptos y acciones de los primeros cursos." },
+    { id: "campana", titulo: "Campañas de clase", texto: "Ideas, conceptos y acciones hechos en clase." },
   ];
   let n = 0;
   return (
@@ -300,7 +300,10 @@ export function TrabajoPage() {
       )}
 
       {cinturon !== "archivo" && (
-        <p className="trabajo__ayuda">Arrastra, usa la rueda, las flechas del teclado o los botones.</p>
+        <p className="trabajo__ayuda">
+          <span className="ayuda-raton">Arrastra, usa la rueda, las flechas del teclado o los botones.</span>
+          <span className="ayuda-tactil">Desliza para ver más.</span>
+        </p>
       )}
     </main>
   );

@@ -1547,3 +1547,208 @@
     max-height: 210px;
   }
 }
+
+/* ── Portada: quién soy, cómo escribirme y lo mejor con imagen ── */
+.dojo-rol {
+  display: inline-block;
+  margin: 0.25rem 0 0;
+  padding: 0 0.3em;
+  font-weight: 600;
+  font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+  background: var(--tatami);
+}
+
+.dojo-hero--pantalla .dojo-lema {
+  display: block;
+  width: fit-content;
+}
+
+.dojo-hero--pantalla .dojo-nombre {
+  font-size: min(14.5vw, 15.5vh, 15rem);
+}
+
+.dojo-intro-caja {
+  margin-top: 0.7rem;
+  padding: 0.7rem 1rem;
+  font-size: clamp(0.95rem, 1.15vw, 1.05rem);
+}
+
+.dojo-intro {
+  line-height: 1.5;
+}
+
+.dojo-busco {
+  display: block;
+  width: fit-content;
+  margin-top: 0.9rem;
+  padding: 0.45rem 0.85rem;
+}
+
+.dojo-correo {
+  display: block;
+  margin-top: 0.1rem;
+  padding: 0;
+  font-family: var(--f);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--sumi);
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.dojo-correo span {
+  margin-left: 0.35rem;
+  font-weight: 800;
+  color: var(--obi);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.dojo-minuto {
+  margin-top: 0.8rem;
+}
+
+.dojo-minuto > p:first-child {
+  margin-bottom: 0.35rem;
+  font-size: 0.85rem;
+}
+
+.dojo-minuto ul {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 170px));
+  gap: 0.6rem;
+}
+
+.dojo-minuto a {
+  display: block;
+  height: 100%;
+  padding: 0;
+  overflow: hidden;
+  font-size: 0.82rem;
+  line-height: 1.15;
+}
+
+.dojo-minuto a img {
+  display: block;
+  width: 100%;
+  height: 58px;
+  object-fit: cover;
+  object-position: 50% 30%;
+  border-bottom: 2.5px solid var(--sumi);
+}
+
+.dojo-minuto a strong {
+  display: block;
+  padding: 0.3rem 0.5rem 0;
+  font-size: 1.05rem;
+}
+
+.dojo-minuto a span {
+  display: block;
+  padding: 0 0.5rem 0.4rem;
+}
+
+.dojo-hero .dojo-minuto__pista {
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 900px) {
+  .dojo-minuto__pista span {
+    display: inline-block;
+    rotate: 90deg;
+  }
+}
+
+/* Cabecera en móvil: nombre y contacto arriba, enlaces debajo. Nada tapa la portada. */
+@media (max-width: 700px) {
+  .dojo-head {
+    gap: 0.45rem 0.6rem;
+  }
+
+  .dojo-head nav {
+    display: contents;
+  }
+
+  .dojo-head__firma {
+    flex: 1 0 calc(100% - 11rem);
+    order: 1;
+  }
+
+  .dojo-head nav a.dojo-head__linkedin {
+    order: 2;
+  }
+
+  .dojo-head nav a.dojo-head__escribir {
+    order: 3;
+  }
+
+  .dojo-head nav a:not(.dojo-head__linkedin, .dojo-head__escribir) {
+    order: 4;
+    font-size: 0.95rem;
+  }
+
+  .dojo-hero--pantalla {
+    padding-top: 7rem;
+  }
+
+  .dojo-minuto ul {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Portátiles bajos: la portada entera, sin cortar etiquetas ni tarjetas. */
+@media (max-height: 820px) and (min-width: 901px) {
+  .dojo-hero--pantalla {
+    padding-top: 4.4rem;
+    padding-bottom: 1rem;
+  }
+
+  .dojo-hero--pantalla .dojo-nombre {
+    font-size: min(12vw, 14vh, 15rem);
+  }
+
+  .dojo-hero--pantalla .dojo-lema {
+    margin-top: 0.5rem;
+    font-size: 1.5rem;
+  }
+
+  .dojo-intro-caja {
+    margin-top: 0.45rem;
+    padding: 0.5rem 0.8rem;
+    font-size: 0.92rem;
+  }
+
+  .dojo-busco {
+    margin-top: 0.6rem;
+    font-size: 0.95rem;
+  }
+
+  .dojo-minuto {
+    margin-top: 0.55rem;
+  }
+
+  .dojo-minuto a img,
+  .dojo-minuto > p:first-child,
+  .dojo-hero .dojo-minuto__pista {
+    display: none;
+  }
+
+  .dojo-pared {
+    min-height: 0;
+    gap: 0.3rem;
+  }
+
+  .foto-giro {
+    width: clamp(150px, 22vh, 190px);
+  }
+
+  .obi {
+    height: min(25svh, 200px);
+  }
+
+  .colgador__etiqueta {
+    margin-top: 0.35rem;
+    padding: 0.3rem 0.6rem;
+  }
+}

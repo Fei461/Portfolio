@@ -220,7 +220,7 @@ export const tourCdc: CasoCompleto = {
   piezas: {
     titulo: "El vídeo",
     texto: "La propuesta completa, en vídeo.",
-    videos: [{ src: img("tour-cdc", "tinder-publicitario.mp4"), titulo: "Tinder publicitario", red: "Vídeo" }],
+    videos: [{ src: img("tour-cdc", "tinder-publicitario.mp4"), titulo: "Tinder publicitario", red: "Vídeo", horizontal: true, poster: img("tour-cdc", "poster.jpg") }],
   },
   aprendizajes: ["Aunque no fui seleccionada, estoy orgullosa del concepto y de haber intentado aportar una solución."],
 };

@@ -23,7 +23,7 @@ export function DemoTalixea() {
         Pruébalo aquí
       </h2>
       <p className="caso-entradilla">
-        Mueve el control: el inglés va ganando terreno en el texto. Pasa el ratón por una palabra en
+        Mueve el control: el inglés va ganando terreno en el texto. Pasa el ratón o toca una palabra en
         color para ver qué significa.
       </p>
       <div className="demo-talixea">
@@ -53,7 +53,7 @@ export function DemoTalixea() {
                 typeof t === "string" ? (
                   <span key={j}>{t}</span>
                 ) : t.orden <= visibles ? (
-                  <mark key={j} title={t.es} lang="en">
+                  <mark key={j} data-es={t.es} tabIndex={0} lang="en">
                     {t.en}
                   </mark>
                 ) : (

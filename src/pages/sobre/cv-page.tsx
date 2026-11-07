@@ -117,7 +117,9 @@ export function CvPage() {
                 ))}
               </ul>
             </section>
-            <p className="hcv-web">Portfolio: fei461.github.io/Portfolio</p>
+            <p className="hcv-web">
+              <a href="https://fei461.github.io/Portfolio/">Ver mi portfolio →</a>
+            </p>
           </aside>
         </div>
       </article>

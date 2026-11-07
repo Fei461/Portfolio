@@ -2,7 +2,6 @@ import type { CasoCompleto } from "./tipos";
 
 // MagicAir: aerolínea ficticia. Fuentes: «Construyendo la reputación» y «Diseño de
 // estrategia de respuesta a crisis reputacional mediante la SCCT» (RRPP Especializadas, URJC).
-const img = (file: string) => `${import.meta.env.BASE_URL}assets/casos/magicair/${file}`;
 
 export const magicair: CasoCompleto = {
   slug: "magicair",
@@ -12,14 +11,14 @@ export const magicair: CasoCompleto = {
     { etiqueta: "Qué", valor: "Estrategia de relaciones públicas y plan de crisis" },
     { etiqueta: "Dónde", valor: "Relaciones Públicas Especializadas, Grado URJC, 2025" },
     { etiqueta: "Equipo", valor: "Siete personas" },
-    { etiqueta: "Marca", valor: "Una aerolínea low cost que inventamos para la asignatura" },
+    { etiqueta: "Mi parte", valor: "El contexto, el diagnóstico, los objetivos y parte de la ficha de la empresa" },
   ],
   contexto: {
     titulo: "Una norma europea, una crisis propia",
     parrafos: [
-      "MagicAir es una aerolínea low cost que creamos desde cero, con misión, valores e identidad visual. Una nueva normativa europea la obliga a cambiar su política de equipaje de mano, y parte del público lo lee como un coste oculto para ganar más dinero.",
+      "MagicAir es una aerolínea low cost que creamos basándonos en Ryanair, siendo hasta el nombre una adaptación. Una nueva normativa europea la obliga a cambiar su política de equipaje de mano, y parte del público lo lee como un coste oculto para ganar más dinero.",
       "Lo trabajamos en dos tiempos. Primero, cómo anunciar el cambio sin dañar la reputación. Después, qué hacer cuando la crisis ya ha estallado: clasificarla con la Situational Crisis Communication Theory (SCCT) y elegir cómo responder.",
-      "El riesgo de fondo era una brecha de identidad: lo que la empresa dice ser, transparente y empática, frente a lo que algunos públicos creen que demuestra.",
+      "Yo hice el contexto y el diagnóstico y me encargué de los objetivos. El riesgo de fondo era una brecha de identidad: lo que la empresa dice ser, transparente y empática, frente a lo que algunos públicos creen que demuestra.",
     ],
   },
   mapa: {
@@ -71,6 +70,15 @@ export const magicair: CasoCompleto = {
   },
   bloques: [
     {
+      titulo: "La ficha de la empresa",
+      resumen: "Cada una escribió la suya y seleccionamos lo mejor.",
+      puntos: [
+        "De la mía salieron la innovación, la comunicación abierta, la trazabilidad y el estilo de las comunicaciones.",
+        "También el blanco roto, la tipografía y el estilo minimalista.",
+        "Hice además unas ideas de logos que no terminaron saliendo.",
+      ],
+    },
+    {
       titulo: "Antes de la crisis",
       resumen: "Primero tocaba anunciar el cambio.",
       puntos: [
@@ -97,12 +105,6 @@ export const magicair: CasoCompleto = {
       ],
     },
   ],
-  imagenes: {
-    titulo: "Las piezas",
-    items: [
-      { src: img("cronograma.jpg"), alt: "Cronograma por semanas de las técnicas de relaciones públicas", pie: "El calendario de técnicas." },
-    ],
-  },
   aprendizajes: [
     "La coherencia con la identidad de marca es lo que decide si un cambio se lee como oportunidad o como amenaza.",
     "Una crisis en la que la empresa es víctima puede acabar siendo culpa suya si no se gestiona bien.",

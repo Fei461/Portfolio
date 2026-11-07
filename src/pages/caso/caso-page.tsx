@@ -161,7 +161,7 @@ function construirAsaltos(
           {caso.imagenes && (
             <div className="asalto__bloque">
               {caso.imagenes.texto && <p className="asalto__entradilla">{caso.imagenes.texto}</p>}
-              <ul className={caso.imagenes.vertical ? "galeria galeria--vertical" : "galeria"}>
+              <ul className={`galeria${caso.imagenes.vertical ? " galeria--vertical" : ""}${caso.imagenes.oscuro ? " galeria--oscura" : ""}`}>
                 {caso.imagenes.items.map((im) => (
                   <li key={im.src}>
                     <button type="button" onClick={() => abrir(im)} aria-label={`Ampliar: ${im.pie}`}>
@@ -181,9 +181,10 @@ function construirAsaltos(
               ) : (
               <ul className="caso-videos">
                 {caso.piezas.videos.map((v) => (
-                  <li key={v.src}>
+                  <li key={v.src} className={v.horizontal ? "caso-video--horizontal" : undefined}>
                     <video
-                      src={`${v.src}#t=0.1`}
+                      src={v.horizontal ? v.src : `${v.src}#t=0.1`}
+                      poster={v.poster}
                       controls
                       playsInline
                       preload="metadata"

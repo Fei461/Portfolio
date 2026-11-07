@@ -26,13 +26,35 @@ function NombreProyectado() {
   );
 }
 
+const caso = (file: string) => `${import.meta.env.BASE_URL}assets/casos/${file}`;
+
 // Las pruebas más fuertes, a un clic desde la portada.
 const minuto = [
-  { cifra: "36.000", texto: "visualizaciones en Stud-IA", to: "/trabajo/stud-ia" },
-  { cifra: "Una app", texto: "hecha sin saber programar", to: "/trabajo/talixea" },
-  { cifra: "248", texto: "respuestas en mi TFG", to: "/trabajo/tfg-bbva" },
-  { cifra: "Reputación", texto: "interna en Ryanair", to: "/trabajo/ryanair" },
+  { img: caso("stud-ia/poster.jpg"), cifra: "36.000", texto: "visualizaciones en Stud‑IA", to: "/trabajo/stud-ia" },
+  { img: caso("tfg-bbva/brecha.jpg"), cifra: "248", texto: "respuestas en mi TFG", to: "/trabajo/tfg-bbva" },
+  { img: caso("talixea/portada.png"), cifra: "Una app", texto: "hecha sin saber programar", to: "/trabajo/talixea" },
 ];
+
+const correo = "lara.feijoo@gmail.com";
+
+// El correo a la vista, por si «Escríbeme» no abre nada en quien lo pulsa.
+function Correo() {
+  const [copiado, setCopiado] = useState(false);
+  const copiar = async () => {
+    try {
+      await navigator.clipboard.writeText(correo);
+      setCopiado(true);
+      window.setTimeout(() => setCopiado(false), 1800);
+    } catch {
+      window.location.href = `mailto:${correo}`;
+    }
+  };
+  return (
+    <button type="button" className="dojo-correo" onClick={copiar}>
+      {correo} <span aria-live="polite">{copiado ? "Copiado" : "Copiar"}</span>
+    </button>
+  );
+}
 
 // La foto de la graduación tiene historia detrás: se le da la vuelta para leerla.
 function FotoGraduacion() {
@@ -95,6 +117,7 @@ export function InicioPage() {
       <div className="dojo-hero__texto">
         <NombreProyectado />
         <p className="dojo-lema">Publicista con culo inquieto.</p>
+        <p className="dojo-rol">Estudiante del Máster en Comunicación Publicitaria (UC3M)</p>
         <div className="dojo-intro-caja">
           <p className="dojo-intro">
             No me defino como copy, ni como arte, ni como cuentas, ni como planner. Si tuviera que
@@ -105,6 +128,7 @@ export function InicioPage() {
         </div>
         <p className="dojo-busco">
           <strong>Busco prácticas</strong> a tiempo completo a partir de abril de 2027.
+          <Correo />
         </p>
         <nav className="dojo-minuto" aria-label="Lo mejor, en un clic">
           <p>Si solo tienes un minuto:</p>
@@ -112,7 +136,8 @@ export function InicioPage() {
             {minuto.map((m) => (
               <li key={m.to}>
                 <Link to={m.to}>
-                  <strong>{m.cifra}</strong> {m.texto}
+                  <img src={m.img} alt="" width={160} height={72} />
+                  <strong>{m.cifra}</strong> <span>{m.texto}</span>
                 </Link>
               </li>
             ))}

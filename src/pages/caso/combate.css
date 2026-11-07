@@ -1175,3 +1175,75 @@
   max-width: 340px;
   padding: 0.4rem 0.6rem;
 }
+
+/* Vídeo horizontal: ocupa todo el ancho. */
+.asalto .caso-videos li.caso-video--horizontal {
+  flex: 1 1 100%;
+}
+
+.asalto .caso-videos li.caso-video--horizontal video {
+  aspect-ratio: 16 / 9;
+  max-height: none;
+  object-fit: contain;
+}
+
+/* Caídas y decisiones: las tres a la vista, sin tarjetas cortadas. */
+.asalto .caso-caidas {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  overflow: visible;
+  padding: 0.5rem 0.5rem 1rem 0;
+}
+
+.asalto .caso-caidas li {
+  padding: 1.1rem;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 760px) {
+  .asalto .caso-caidas {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* «Sigue leyendo» se apoya en el borde de la tarjeta, sin tapar el texto. */
+.sigue {
+  margin: -1.15rem 0 0;
+}
+
+/* Demo de Talixea: la traducción sale con el ratón o tocando la palabra. */
+.demo-talixea__texto mark {
+  position: relative;
+  cursor: help;
+}
+
+.demo-talixea__texto mark:hover::after,
+.demo-talixea__texto mark:focus::after {
+  content: attr(data-es);
+  position: absolute;
+  left: 0;
+  bottom: calc(100% + 4px);
+  z-index: 2;
+  padding: 0.15rem 0.45rem;
+  white-space: nowrap;
+  font-family: var(--f);
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--judogi);
+  background: var(--sumi);
+}
+
+/* Los tuits, sobre negro como en X y más grandes. */
+.galeria--oscura {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+}
+
+.galeria--oscura img {
+  aspect-ratio: 1;
+  background: #000;
+}
+
+.asalto .caso-videos:has(.caso-video--horizontal) {
+  -webkit-mask-image: none;
+  mask-image: none;
+}

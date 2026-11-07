@@ -46,11 +46,11 @@ export type CasoCompleto = {
   laboratorio?: { src: string; titulo: string; texto: string };
   /** Las piezas se ven en un móvil, como un feed. */
   enMovil?: boolean;
-  imagenes?: { titulo: string; texto?: string; vertical?: boolean; items: { src: string; alt: string; pie: string }[] };
+  imagenes?: { titulo: string; texto?: string; vertical?: boolean; oscuro?: boolean; items: { src: string; alt: string; pie: string }[] };
   piezas?: {
     titulo: string;
     texto: string;
-    videos: { src: string; titulo: string; red: string; original?: string }[];
+    videos: { src: string; titulo: string; red: string; original?: string; horizontal?: boolean; poster?: string }[];
     masEnlaces?: { red: string; enlaces: string[] }[];
   };
   /** Caídas (ukemi): dónde caí y cómo me levanté. */
