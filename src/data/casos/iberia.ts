@@ -41,6 +41,38 @@ export const iberia: CasoCompleto = {
       ],
     },
   ],
+  guion: {
+    titulo: "«La restauración inacabada»",
+    intro: "Las cinco primeras escenas del guion del spot, tal y como lo escribí.",
+    escenas: [
+      {
+        tiempo: "00:00 – 00:30",
+        imagen: "Negro. De golpe, un collage de ciudades, aeropuertos, humo industrial, noticias y manifestaciones climáticas.",
+        texto: "Voz en off: «Volar contamina». Silencio y, después, un ruido blanco que crece.",
+      },
+      {
+        tiempo: "00:30 – 00:45",
+        imagen: "Corte abrupto a negro. Aparece el primer rótulo, centrado en blanco.",
+        texto: "Voz en off: «Ocultarlo no lo va a borrar». Rótulo: «Capítulo 1: la mancha».",
+      },
+      {
+        tiempo: "00:45 – 01:15",
+        imagen: "Un cuadro tapado con una tela negra en un expositor. La cámara se aleja y descubre dónde está: un aeropuerto.",
+        texto: "La tela se retira de un tirón. Golpe de sonido y ambiente de aeropuerto.",
+      },
+      {
+        tiempo: "01:15 – 01:55",
+        imagen: "El Oxbow de Thomas Cole (1836), en la zona de embarque, lleno de grietas y con una capa de suciedad.",
+        texto: "Una metáfora visual del daño en la atmósfera. Entra la música.",
+      },
+      {
+        tiempo: "01:55 – 02:15",
+        imagen: "Primer plano de un pie, en ángulo de gusano y con el fondo desenfocado: llega quien va a restaurarlo.",
+        texto: "El spot sigue con la restauración, intercalada con las acciones reales de Iberia, y termina sin acabar.",
+      },
+    ],
+    nota: "Guion completo en el trabajo original; aquí, solo el arranque.",
+  },
   imagenes: {
     titulo: "Las piezas",
     items: [

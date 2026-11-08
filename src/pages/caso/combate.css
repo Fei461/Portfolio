@@ -1566,3 +1566,144 @@
     max-height: clamp(200px, calc(100svh - 500px), 420px);
   }
 }
+
+/* ── Contraste: lo que se dice frente a lo que se vive ── */
+.contraste__cabeza,
+.contraste__filas button {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 2rem minmax(0, 1fr);
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.contraste__cabeza {
+  margin-top: 1rem;
+  padding: 0 0.6rem 0.4rem;
+  font-weight: 800;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--texto-suave);
+}
+
+.contraste__cabeza span:last-child {
+  grid-column: 3;
+}
+
+.contraste__filas {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 3px solid var(--sumi);
+}
+
+.contraste__filas li {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.contraste__filas button {
+  width: 100%;
+  padding: 0.7rem 0.6rem;
+  text-align: left;
+  font-family: var(--f);
+  font-size: 1rem;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.contraste__filas button:hover,
+.contraste__filas li.abierta button {
+  background: rgba(201, 196, 139, 0.3);
+}
+
+.contraste__dice {
+  font-weight: 700;
+}
+
+.contraste__vive {
+  font-weight: 700;
+  color: var(--marcador);
+}
+
+.contraste__flecha {
+  font-weight: 800;
+  font-size: 1.3rem;
+  text-align: center;
+  color: var(--caso-oscuro, var(--sumi));
+}
+
+.contraste__brecha {
+  margin: 0;
+  padding: 0.2rem 0.6rem 0.85rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.contraste__cierre {
+  margin: 1rem 0 0;
+  padding: 0.7rem 0.9rem;
+  background: var(--tatami);
+  border-left: 6px solid var(--caso-oscuro, var(--obi));
+  font-weight: 600;
+}
+
+/* ── Guion ── */
+.guion__escenas {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.7rem;
+}
+
+.guion__escenas li {
+  display: grid;
+  grid-template-columns: 6.5rem minmax(0, 1fr) minmax(0, 1fr);
+  gap: 1rem;
+  padding: 0.75rem 0.9rem;
+  background: #fff;
+  border: 2px solid var(--sumi);
+  border-left: 8px solid var(--caso-acento, var(--obi));
+}
+
+.guion__tiempo {
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.guion__escenas p {
+  margin: 0;
+  font-size: 0.93rem;
+  line-height: 1.45;
+}
+
+.guion__texto {
+  font-weight: 700;
+}
+
+.guion__nota {
+  margin: 1rem 0 0;
+  font-size: 0.9rem;
+  color: var(--texto-suave);
+}
+
+@media (max-width: 760px) {
+  .contraste__cabeza {
+    display: none;
+  }
+
+  .contraste__filas button {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.2rem;
+  }
+
+  .contraste__flecha {
+    text-align: left;
+  }
+
+  .guion__escenas li {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.35rem;
+  }
+}

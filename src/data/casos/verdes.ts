@@ -21,6 +21,42 @@ export const ryanair: CasoCompleto = {
       "En la carrera los trabajos eran bastante en equipo, pero aquí yo me ocupé del diagnóstico inicial, del análisis de la reputación interna, del análisis de brecha y de los objetivos y KPI.",
     ],
   },
+  contraste: {
+    titulo: "Mi análisis de brecha",
+    intro:
+      "Lo que Ryanair dice ofrecer a su plantilla frente a lo que contaron quienes trabajan allí. Cinco de sus pilares se perciben al revés. Toca una fila para ver la brecha.",
+    dice: "Lo que dice Ryanair",
+    vive: "Lo que vive la plantilla",
+    filas: [
+      {
+        dice: "Conciliación de la vida laboral y familiar",
+        vive: "Productividad extrema",
+        brecha: "Los empleados no se pueden beneficiar de los derechos laborales de sus países.",
+      },
+      {
+        dice: "Bienestar de los empleados",
+        vive: "Se sienten acosados e intimidados",
+        brecha: "Problemas en el departamento de recursos humanos.",
+      },
+      {
+        dice: "Entorno de trabajo dinámico",
+        vive: "Sobrecarga de trabajo y comparación entre compañeros",
+        brecha: "Un entorno laboral conflictivo.",
+      },
+      {
+        dice: "Oportunidades de desarrollo profesional",
+        vive: "Promociones limitadas",
+        brecha: "Falta de oportunidades reales de crecimiento.",
+      },
+      {
+        dice: "Salario competitivo",
+        vive: "Subcontratación de los empleados",
+        brecha: "Solo se paga a la tripulación de cabina por el tiempo en el aire.",
+      },
+    ],
+    cierre:
+      "De aquí salió el objetivo: invertir en dos años el 20 % de las actitudes negativas de la plantilla, empezando por la conciliación como atributo diferenciador.",
+  },
   bloques: [
     {
       titulo: "Mi parte: la reputación interna",
@@ -29,15 +65,6 @@ export const ryanair: CasoCompleto = {
         "Empecé con un DAFO para ver sus puntos clave por dentro y por fuera.",
         "Agrupé los problemas que más se repetían: remuneración y condiciones, inseguridad laboral y alta rotación, y comunicación y gestión.",
         "También recogí a quien no lo vivía tan mal: cada base y cada cargo son un mundo distinto.",
-      ],
-    },
-    {
-      titulo: "Mi parte: el análisis de brecha",
-      resumen: "Lo que la compañía dice frente a lo que siente la plantilla.",
-      puntos: [
-        "Conciliación frente a productividad extrema.",
-        "Bienestar de los empleados frente a personas que se sienten acosadas e intimidadas.",
-        "Entorno dinámico frente a sobrecarga de trabajo y comparación entre compañeros.",
       ],
     },
     {
@@ -255,11 +282,13 @@ export const revista: CasoCompleto = {
   ],
   imagenes: {
     titulo: "Algunas páginas",
+    texto: "La portada y las páginas que hice yo: Janis, Damian y los juegos finales.",
     vertical: true,
     items: [
       { src: img("revista-super-pop", "portada.jpg"), alt: "Portada de la revista: Mean Girls, especial liderazgo, cómo reinar en el instituto", pie: "La portada." },
-      { src: img("revista-super-pop", "regina.jpg"), alt: "Página dedicada a Regina George, la abeja reina", pie: "Regina George." },
-      { src: img("revista-super-pop", "poster.jpg"), alt: "Póster de Las Plásticas", pie: "Póster central." },
+      { src: img("revista-super-pop", "janis.jpg"), alt: "Página de Janis Ian con su evolución como personaje y su liderazgo timonel", pie: "Janis Ian, hecha por mí." },
+      { src: img("revista-super-pop", "damian.jpg"), alt: "Página de Damian Hubbard, el chill, con su perfil fiable según Cloninger", pie: "Damian Hubbard, hecho por mí." },
+      { src: img("revista-super-pop", "juegos.jpg"), alt: "Página «¿Qué has aprendido?» con una sopa de letras, un laberinto y los tipos de líder", pie: "Los juegos finales, hechos por mí." },
       { src: img("revista-super-pop", "repaso.jpg"), alt: "Página de repaso con los tipos de líder de cada personaje", pie: "El repaso de liderazgos." },
     ],
   },

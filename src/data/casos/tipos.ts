@@ -40,6 +40,22 @@ export type CasoCompleto = {
       miembros: { nombre: string; texto: string }[];
     }[];
   };
+  /** Lo que la marca dice frente a lo que se vive, punto por punto. */
+  contraste?: {
+    titulo: string;
+    intro: string;
+    dice: string;
+    vive: string;
+    filas: { dice: string; vive: string; brecha: string }[];
+    cierre?: string;
+  };
+  /** Fragmento de un guion, escena a escena. */
+  guion?: {
+    titulo: string;
+    intro: string;
+    escenas: { tiempo: string; imagen: string; texto: string }[];
+    nota?: string;
+  };
   /** Demo interactiva propia del caso. */
   demo?: "talixea";
   /** Web propia que se puede usar dentro del caso. */

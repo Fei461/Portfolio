@@ -236,3 +236,57 @@ export function Mapa({ datos }: { datos: NonNullable<CasoCompleto["mapa"]> }) {
     </section>
   );
 }
+
+// Contraste: lo que la marca dice de sí misma frente a lo que vive su gente.
+export function Contraste({ datos }: { datos: NonNullable<CasoCompleto["contraste"]> }) {
+  const [abierta, setAbierta] = useState(0);
+  return (
+    <section className="caso-seccion contraste" aria-labelledby="caso-contraste">
+      <h2 id="caso-contraste" className="caso-h2">
+        {datos.titulo}
+      </h2>
+      <p className="caso-entradilla">{datos.intro}</p>
+      <div className="contraste__cabeza" aria-hidden="true">
+        <span>{datos.dice}</span>
+        <span>{datos.vive}</span>
+      </div>
+      <ol className="contraste__filas">
+        {datos.filas.map((f, i) => (
+          <li key={f.dice} className={i === abierta ? "abierta" : undefined}>
+            <button type="button" aria-expanded={i === abierta} onClick={() => setAbierta(i)}>
+              <span className="contraste__dice">{f.dice}</span>
+              <span className="contraste__flecha" aria-hidden="true">
+                ≠
+              </span>
+              <span className="contraste__vive">{f.vive}</span>
+            </button>
+            {i === abierta && <p className="contraste__brecha">{f.brecha}</p>}
+          </li>
+        ))}
+      </ol>
+      {datos.cierre && <p className="contraste__cierre">{datos.cierre}</p>}
+    </section>
+  );
+}
+
+// Guion: escenas con su tiempo, lo que se ve y lo que se oye.
+export function Guion({ datos }: { datos: NonNullable<CasoCompleto["guion"]> }) {
+  return (
+    <section className="caso-seccion guion" aria-labelledby="caso-guion">
+      <h2 id="caso-guion" className="caso-h2">
+        {datos.titulo}
+      </h2>
+      <p className="caso-entradilla">{datos.intro}</p>
+      <ol className="guion__escenas">
+        {datos.escenas.map((e) => (
+          <li key={e.tiempo}>
+            <span className="guion__tiempo">{e.tiempo}</span>
+            <p className="guion__imagen">{e.imagen}</p>
+            <p className="guion__texto">{e.texto}</p>
+          </li>
+        ))}
+      </ol>
+      {datos.nota && <p className="guion__nota">{datos.nota}</p>}
+    </section>
+  );
+}

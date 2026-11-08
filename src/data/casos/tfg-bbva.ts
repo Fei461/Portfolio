@@ -89,6 +89,16 @@ export const tfgBbva: CasoCompleto = {
       ],
     },
     {
+      titulo: "Lo que le recomiendo a BBVA",
+      resumen: "Su problema no es lo que hace, es que no lo cuenta.",
+      puntos: [
+        "Comunicar los intangibles en medios ganados y pagados, no solo las condiciones de una cuenta.",
+        "Evitar que aparezcan nuevos escándalos como el de Villarejo.",
+        "Si quiere fusionarse con otro banco, ser más estratégico para que no se pueda leer como una OPA hostil.",
+        "Mantener la coherencia con su filosofía antes de incorporar novedades como la inteligencia artificial, y escuchar siempre a sus públicos, de dentro y de fuera.",
+      ],
+    },
+    {
       titulo: "Segmentar",
       resumen: "Cada público ve un banco distinto.",
       puntos: [

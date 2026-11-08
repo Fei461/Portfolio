@@ -67,6 +67,15 @@ export const talixea: CasoCompleto = {
       ],
     },
     {
+      titulo: "Contarlo en redes",
+      resumen: "Desde finales de octubre, con calendario y métricas.",
+      puntos: [
+        "Cinco series fijas a la semana: expresiones que no se traducen literal, palabras con historia, curiosidades de los clásicos, carruseles y demos de la app.",
+        "Yo pongo la cara y la voz; para producir carruseles y demos me apoyo en herramientas de IA, igual que con el código.",
+        "Cada pieza se mide a los siete días en TikTok, Instagram y YouTube, y cada diez o quince publicaciones reviso qué funciona.",
+      ],
+    },
+    {
       titulo: "Lanzar y sostenerlo",
       resumen: "La parte de negocio, que también es comunicación.",
       puntos: [
@@ -78,7 +87,7 @@ export const talixea: CasoCompleto = {
   ],
   imagenes: {
     titulo: "Así se ve hoy",
-    texto: "La portada de talixea.es: se puede leer el primer capítulo sin crear cuenta.",
+    texto: "La web, donde se puede leer el primer capítulo sin crear cuenta, y algunos carruseles del lanzamiento.",
     items: [
       {
         src: img("portada.png"),
@@ -90,6 +99,10 @@ export const talixea: CasoCompleto = {
         alt: "Biblioteca de Talixea con portadas de libros gratis y Plus, y el esquema de cómo funciona: 10 %, 45 % y 90 %",
         pie: "La biblioteca y cómo funciona, en tres pasos.",
       },
+      { src: img("carrusel-ojo.jpg"), alt: "Carrusel de Talixea: «En francés no cuesta un ojo: cuesta los dos»", pie: "Carrusel: «cuesta un ojo de la cara» en seis idiomas." },
+      { src: img("carrusel-ojo-3.jpg"), alt: "Diapositiva del carrusel con la expresión francesa Ça coûte les yeux de la tête y su pronunciación", pie: "Cada idioma, con traducción literal y pronunciación." },
+      { src: img("carrusel-falsos.jpg"), alt: "Carrusel de Talixea: «Parecen lo mismo… y te la juegan», sobre falsos amigos", pie: "Carrusel de falsos amigos." },
+      { src: img("carrusel-grimm.jpg"), alt: "Carrusel de Talixea: «Blancanieves no es como la recuerdas»", pie: "Curiosidades de los clásicos." },
     ],
   },
   caidas: [

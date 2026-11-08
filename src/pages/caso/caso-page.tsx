@@ -5,7 +5,7 @@ import { Link, useSearchParams } from "react-router-dom";
 import type { CasoCompleto } from "@/data/casos";
 import { perchas, porPercha, proyectos } from "@/data/proyectos";
 import { DemoTalixea } from "./demo-talixea";
-import { Brecha, Cronograma, Mapa, Reparto } from "./graficos";
+import { Brecha, Contraste, Cronograma, Guion, Mapa, Reparto } from "./graficos";
 import { Movil } from "./movil";
 import "./caso.css";
 import "./combate.css";
@@ -136,6 +136,9 @@ function construirAsaltos(
   if (caso.brecha)
     asaltos.push({ id: "brecha", nombre: "La brecha", contenido: <Brecha datos={caso.brecha} /> });
 
+  if (caso.contraste)
+    asaltos.push({ id: "brecha", nombre: "La brecha", contenido: <Contraste datos={caso.contraste} /> });
+
   if (caso.mapa) asaltos.push({ id: "mapa", nombre: "Los públicos", contenido: <Mapa datos={caso.mapa} /> });
 
   if (caso.cronograma || caso.reparto)
@@ -152,6 +155,8 @@ function construirAsaltos(
 
   if (caso.bloques.length > 0)
     asaltos.push({ id: "hice", nombre: "Lo que hice", contenido: <LoQueHice bloques={caso.bloques} /> });
+
+  if (caso.guion) asaltos.push({ id: "guion", nombre: "El guion", contenido: <Guion datos={caso.guion} /> });
 
   if (caso.imagenes || caso.piezas)
     asaltos.push({
@@ -303,7 +308,7 @@ function construirAsaltos(
   // Casos breves: todo el caso en una sola parte y, aparte, los números y las piezas si las hay.
   if (compacto) {
     const reto = asaltos.find((x) => x.id === "reto")!;
-    const resto = asaltos.filter((x) => x.id === "numeros" || x.id === "piezas");
+    const resto = asaltos.filter((x) => x.id === "numeros" || x.id === "piezas" || x.id === "guion");
     return [
       reto,
       {
