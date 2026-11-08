@@ -1878,3 +1878,29 @@
     max-width: none;
   }
 }
+
+@media (max-height: 820px) and (min-width: 901px) {
+  .colgador .gi {
+    height: 27svh;
+  }
+
+  .colgador .obi--carpeta {
+    height: 19svh;
+  }
+
+  .foto-giro {
+    width: clamp(140px, 20vh, 170px);
+  }
+
+  .dojo-pared {
+    padding-bottom: 1.4rem;
+  }
+
+  .colgador__etiqueta strong {
+    font-size: 1rem;
+  }
+
+  .colgador__etiqueta span {
+    font-size: 0.82rem;
+  }
+}

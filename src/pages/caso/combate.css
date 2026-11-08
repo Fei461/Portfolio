@@ -1405,3 +1405,164 @@
 .laboratorio iframe {
   background: #fff;
 }
+
+/* ── La ficha pasa a segundo plano: columna estrecha y compacta ── */
+@media (min-width: 901px) {
+  .combate {
+    grid-template-columns: clamp(270px, 26vw, 380px) minmax(0, 1fr);
+  }
+
+  .combate__ficha {
+    padding: clamp(1rem, 2.4vh, 1.75rem) 1.25rem 1.5rem var(--gutter);
+  }
+
+  .combate__titulo {
+    font-size: clamp(2.2rem, min(3.6vw, 8vh), 4.2rem);
+  }
+
+  .combate .caso-lecturas {
+    margin-top: 0.8rem;
+    font-size: clamp(0.98rem, min(1.25vw, 2.4vh), 1.2rem);
+  }
+
+  .combate .caso-lecturas__primera {
+    font-size: 0.85em;
+  }
+
+  .combate .dojo-acciones {
+    margin-top: 0.8rem;
+  }
+
+  .combate .dojo-acciones .dojo-boton {
+    min-height: 40px;
+    padding: 0.45rem 0.9rem;
+    font-size: 0.92rem;
+  }
+
+  .marcador {
+    margin-top: 1rem;
+  }
+
+  .marcador li {
+    padding: 0.55rem 0.65rem;
+  }
+
+  .marcador strong,
+  .marcador:has(> li:nth-child(3):last-child) strong {
+    font-size: clamp(1.35rem, min(2vw, 3.8vh), 1.9rem);
+  }
+
+  .marcador span {
+    font-size: 0.74rem;
+  }
+
+  .marcador:has(> li:nth-child(3):last-child) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .marcador:has(> li:nth-child(3):last-child) li:nth-child(3) {
+    grid-column: 1 / -1;
+    border-left: 0;
+    border-top: 1px solid rgba(245, 245, 242, 0.22);
+  }
+
+  .ficha-cita {
+    margin-top: 0.9rem;
+    padding: 0.6rem 0.75rem;
+  }
+
+  .ficha-cita p {
+    font-size: 0.86rem;
+  }
+
+  .ficha-cita figcaption {
+    font-size: 0.74rem;
+  }
+
+  /* Los datos, en lista corta: etiqueta y valor en la misma línea */
+  .combate__datos {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.35rem;
+    margin-top: 1rem;
+  }
+
+  .combate__datos > div {
+    display: grid;
+    grid-template-columns: 4.6rem minmax(0, 1fr);
+    gap: 0.5rem;
+  }
+
+  .combate__datos dt {
+    font-size: 0.82rem;
+  }
+
+  .combate__datos dd {
+    margin: 0;
+    font-size: 0.82rem;
+    line-height: 1.35;
+  }
+
+  .caso-grado__volver {
+    font-size: 0.9rem;
+  }
+
+  .caso-grado__cinta {
+    width: 40px;
+  }
+}
+
+/* ── Galerías en ordenador: una fila que se desliza, sin bajar dentro de la caja ── */
+@media (min-width: 901px) {
+  .galeria {
+    display: flex;
+    gap: 1.1rem;
+    overflow-x: auto;
+    padding: 0.25rem 2.5rem 1rem 0.25rem;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    -webkit-mask-image: linear-gradient(to right, #000 88%, transparent);
+    mask-image: linear-gradient(to right, #000 88%, transparent);
+  }
+
+  .galeria:has(> li:nth-child(2):last-child),
+  .galeria:has(> li:only-child) {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .galeria > li {
+    flex: 0 0 auto;
+    width: auto;
+    scroll-snap-align: start;
+  }
+
+  .galeria img,
+  .galeria:not(.galeria--vertical) img,
+  .galeria--vertical img,
+  .galeria--oscura img {
+    width: auto;
+    height: clamp(200px, calc(100svh - 500px), 420px);
+    max-width: min(560px, 46vw);
+    aspect-ratio: auto;
+    object-fit: contain;
+  }
+
+  .galeria p {
+    max-width: 300px;
+  }
+}
+
+@media (min-width: 901px) {
+  /* Con dos piezas caben las dos, sin cortar ninguna. */
+  .galeria:has(> li:nth-child(2):last-child) > li {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .galeria:has(> li:nth-child(2):last-child) img {
+    width: 100%;
+    height: auto;
+    max-width: none;
+    max-height: clamp(200px, calc(100svh - 500px), 420px);
+  }
+}

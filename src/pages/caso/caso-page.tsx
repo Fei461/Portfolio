@@ -427,7 +427,7 @@ export function CasoPage({ caso }: { caso: CasoCompleto }) {
           <Link to={`/trabajo?percha=${percha}`} className="caso-grado__volver">
             <span className={`caso-grado__cinta caso-grado__cinta--${percha}`} aria-hidden="true" />
             {perchas[percha].nombre}
-            {posicion > 0 && `, caso ${posicion} de ${mismos.length}`}
+            {posicion > 0 && ` · ${posicion} de ${mismos.length}`}
           </Link>
         </p>
         <h1 className="combate__titulo">{caso.titulo}</h1>
