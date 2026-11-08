@@ -51,6 +51,9 @@ export function CvPage() {
               <a href={`mailto:${perfil.email}`}>{perfil.email}</a>
             </li>
             <li>
+              <a href={`mailto:${perfil.emailUni}`}>{perfil.emailUni}</a>
+            </li>
+            <li>
               <a href={perfil.linkedin} target="_blank" rel="noreferrer">
                 linkedin.com/in/lara-feijoo
               </a>

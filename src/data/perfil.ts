@@ -1,5 +1,5 @@
 // Fuente única de los datos personales (Sobre mí y CV). Origen: CV de octubre de 2026.
-// Sin teléfono, fecha de nacimiento ni correo de la universidad: la web es pública.
+// Sin teléfono ni fecha de nacimiento. El correo de la universidad solo sale en el CV.
 
 export type Hito = { periodo: string; titulo: string; lugar: string; detalle?: string };
 
@@ -11,6 +11,8 @@ export const perfil = {
   busco: "Prácticas a tiempo completo a partir de abril de 2027.",
   lugar: "Galapagar, Madrid",
   email: "lara.feijoo@gmail.com",
+  /** Solo en el CV: lo piden en las candidaturas de prácticas. */
+  emailUni: "100605478@alumnos.uc3m.es",
   linkedin: "https://www.linkedin.com/in/lara-feijoo",
 
   experiencia: [
