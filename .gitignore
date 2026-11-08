@@ -25,3 +25,6 @@ workspace/
 *.njsproj
 *.sln
 *.sw?
+
+# Kit de marca: se queda en local (el CV lleva datos que no van a la web)
+marca/
