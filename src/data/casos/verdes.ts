@@ -11,18 +11,17 @@ export const ryanair: CasoCompleto = {
     { etiqueta: "Qué", valor: "Diagnóstico de identidad, imagen y reputación, y plan de comunicación interna" },
     { etiqueta: "Dónde", valor: "Gestión de la Comunicación, Grado URJC, 2025" },
     { etiqueta: "Equipo", valor: "Ocho personas" },
-    { etiqueta: "Mi parte", valor: "El diagnóstico inicial (DAFO), la reputación interna, el análisis de brecha, los objetivos y los KPI" },
+    { etiqueta: "Me encargué de", valor: "El DAFO, la reputación interna, el análisis de brecha, los objetivos y los KPI" },
   ],
   contexto: {
     titulo: "Mirar hacia dentro",
     parrafos: [
       "Ryanair está bien posicionada en el mercado, pero sufre varios problemas de reputación, sobre todo con su propia plantilla. Solemos fijarnos solo en la percepción externa, y esa visión se queda incompleta si no preguntas a quienes trabajan dentro.",
       "Por eso combinamos valoraciones en Indeed, vídeos testimoniales y noticias con entrevistas y formularios a trabajadores actuales y antiguos. Las quejas se repetían: sueldos por debajo de lo prometido, inseguridad laboral y una comunicación interna ineficiente y jerárquica.",
-      "En la carrera los trabajos eran bastante en equipo, pero aquí yo me ocupé del diagnóstico inicial, del análisis de la reputación interna, del análisis de brecha y de los objetivos y KPI.",
     ],
   },
   contraste: {
-    titulo: "Mi análisis de brecha",
+    titulo: "Lo que dice frente a lo que se vive",
     intro:
       "Lo que Ryanair dice ofrecer a su plantilla frente a lo que contaron quienes trabajan allí. Cinco de sus pilares se perciben al revés. Toca una fila para ver la brecha.",
     dice: "Lo que dice Ryanair",
@@ -59,16 +58,16 @@ export const ryanair: CasoCompleto = {
   },
   bloques: [
     {
-      titulo: "Mi parte: la reputación interna",
+      titulo: "La reputación interna",
       resumen: "Qué vive de verdad la plantilla.",
       puntos: [
-        "Empecé con un DAFO para ver sus puntos clave por dentro y por fuera.",
-        "Agrupé los problemas que más se repetían: remuneración y condiciones, inseguridad laboral y alta rotación, y comunicación y gestión.",
-        "También recogí a quien no lo vivía tan mal: cada base y cada cargo son un mundo distinto.",
+        "Empezamos con un DAFO para ver sus puntos clave por dentro y por fuera.",
+        "Agrupamos los problemas que más se repetían: remuneración y condiciones, inseguridad laboral y alta rotación, y comunicación y gestión.",
+        "También recogimos a quien no lo vivía tan mal: cada base y cada cargo son un mundo distinto.",
       ],
     },
     {
-      titulo: "Mi parte: objetivos y KPI",
+      titulo: "Objetivos y KPI",
       resumen: "Cómo saber si la brecha se cierra.",
       puntos: [
         "Objetivo estratégico: invertir en dos años el 20 % de las actitudes negativas de la plantilla hacia la compañía.",
@@ -77,7 +76,7 @@ export const ryanair: CasoCompleto = {
       ],
     },
     {
-      titulo: "En equipo: lo que propusimos",
+      titulo: "Lo que propusimos",
       resumen: "Reconocer, acoger e informar.",
       puntos: [
         "Los Cabin Crew Awards en Montecarlo, regatas por equipos, un desayuno de bienvenida, un kit «Welcome on board» y un programa de mentoría.",
@@ -120,7 +119,7 @@ export const torrons: CasoCompleto = {
     { etiqueta: "Qué", valor: "Propuesta creativa para Sinergia, de Torrons Vicens" },
     { etiqueta: "Dónde", valor: "Grado en Publicidad y RRPP, URJC" },
     { etiqueta: "Equipo", valor: "Cuatro personas" },
-    { etiqueta: "Mi parte", valor: "El layout y la marquesina holográfica; el resto, entre todas" },
+    { etiqueta: "Me encargué de", valor: "El layout y la marquesina holográfica; el resto, entre todas" },
   ],
   contexto: {
     titulo: "Un turrón que no parece turrón",
@@ -173,7 +172,7 @@ export const mms: CasoCompleto = {
     { etiqueta: "Qué", valor: "Campaña de lanzamiento en España, trabajando como agencia" },
     { etiqueta: "Dónde", valor: "Grado en Publicidad y RRPP, URJC" },
     { etiqueta: "Equipo", valor: "Agencia Mairaky, siete personas" },
-    { etiqueta: "Mi parte", valor: "Directora de planificación estratégica" },
+    { etiqueta: "Mi papel", valor: "Directora de planificación estratégica" },
   ],
   contexto: {
     titulo: "La versión adulta de una marca divertida",
@@ -184,7 +183,7 @@ export const mms: CasoCompleto = {
   },
   bloques: [
     {
-      titulo: "Mi parte: planificación estratégica",
+      titulo: "La planificación estratégica",
       resumen: "Del público a la promesa.",
       puntos: [
         "Buyer personas con educación, aficiones, pertenencias e idiomas, como un empleado de 28 años del sector financiero.",
@@ -261,13 +260,13 @@ export const revista: CasoCompleto = {
     { etiqueta: "Qué", valor: "Análisis de liderazgo en formato revista" },
     { etiqueta: "Dónde", valor: "Máster en Comunicación Publicitaria, UC3M" },
     { etiqueta: "Equipo", valor: "Grupo 7, cuatro personas" },
-    { etiqueta: "Mi parte", valor: "La idea de la revista dosmilera, Janis, Damian y los juegos finales" },
+    { etiqueta: "Me encargué de", valor: "La idea de la revista dosmilera, Janis, Damian y los juegos finales" },
   ],
   contexto: {
     titulo: "Cómo reinar en el instituto",
     parrafos: [
       "El primer trabajo de la asignatura no contaba para nota y se notó, así que en este decidimos innovar. La premisa era analizar una serie o película con el cubo temperamental de Cloninger: quiénes eran los líderes y quiénes sus públicos.",
-      "Entre todos llegamos a Mean Girls, y lo de hacerlo como una revista de estética dosmilera fue cosa mía. También hice a Janis y a Damian íntegramente y los juegos finales. Cada persona hizo unos personajes concretos, y el diseño y la corrección fueron cosa conjunta.",
+      "Entre todos llegamos a Mean Girls y a contarlo como una revista de estética dosmilera. Cada persona se encargó de unos personajes, y el diseño y la corrección fueron cosa de todos.",
     ],
   },
   bloques: [
@@ -282,13 +281,13 @@ export const revista: CasoCompleto = {
   ],
   imagenes: {
     titulo: "Algunas páginas",
-    texto: "La portada y las páginas que hice yo: Janis, Damian y los juegos finales.",
+    texto: "La portada, dos personajes, los juegos finales y el repaso.",
     vertical: true,
     items: [
       { src: img("revista-super-pop", "portada.jpg"), alt: "Portada de la revista: Mean Girls, especial liderazgo, cómo reinar en el instituto", pie: "La portada." },
-      { src: img("revista-super-pop", "janis.jpg"), alt: "Página de Janis Ian con su evolución como personaje y su liderazgo timonel", pie: "Janis Ian, hecha por mí." },
-      { src: img("revista-super-pop", "damian.jpg"), alt: "Página de Damian Hubbard, el chill, con su perfil fiable según Cloninger", pie: "Damian Hubbard, hecho por mí." },
-      { src: img("revista-super-pop", "juegos.jpg"), alt: "Página «¿Qué has aprendido?» con una sopa de letras, un laberinto y los tipos de líder", pie: "Los juegos finales, hechos por mí." },
+      { src: img("revista-super-pop", "janis.jpg"), alt: "Página de Janis Ian con su evolución como personaje y su liderazgo timonel", pie: "Janis Ian." },
+      { src: img("revista-super-pop", "damian.jpg"), alt: "Página de Damian Hubbard, el chill, con su perfil fiable según Cloninger", pie: "Damian Hubbard." },
+      { src: img("revista-super-pop", "juegos.jpg"), alt: "Página «¿Qué has aprendido?» con una sopa de letras, un laberinto y los tipos de líder", pie: "Los juegos finales." },
       { src: img("revista-super-pop", "repaso.jpg"), alt: "Página de repaso con los tipos de líder de cada personaje", pie: "El repaso de liderazgos." },
     ],
   },
@@ -351,7 +350,7 @@ export const oreo: CasoCompleto = {
     { etiqueta: "Qué", valor: "Plan de medios" },
     { etiqueta: "Cuándo", valor: "Mayo de 2025, Grado URJC" },
     { etiqueta: "Equipo", valor: "Cuatro personas" },
-    { etiqueta: "Mi parte", valor: "La situación actual, la competencia en redes, los objetivos SMART y la programática" },
+    { etiqueta: "Me encargué de", valor: "La situación actual, la competencia en redes, los objetivos SMART y la programática" },
   ],
   contexto: {
     titulo: "Un capricho sin culpa",

@@ -13,14 +13,14 @@ export const magicair: CasoCompleto = {
     { etiqueta: "Qué", valor: "Estrategia de relaciones públicas y plan de crisis" },
     { etiqueta: "Dónde", valor: "Relaciones Públicas Especializadas, Grado URJC, 2025" },
     { etiqueta: "Equipo", valor: "Siete personas" },
-    { etiqueta: "Mi parte", valor: "El contexto, el diagnóstico, los objetivos y parte de la ficha de la empresa" },
+    { etiqueta: "Me encargué de", valor: "El contexto, el diagnóstico, los objetivos y parte de la ficha de la empresa" },
   ],
   contexto: {
     titulo: "Una norma europea, una crisis propia",
     parrafos: [
       "MagicAir es una aerolínea low cost que creamos basándonos en Ryanair, siendo hasta el nombre una adaptación. Una nueva normativa europea la obliga a cambiar su política de equipaje de mano, y parte del público lo lee como un coste oculto para ganar más dinero.",
       "Lo trabajamos en dos tiempos. Primero, cómo anunciar el cambio sin dañar la reputación. Después, qué hacer cuando la crisis ya ha estallado: clasificarla con la Situational Crisis Communication Theory (SCCT) y elegir cómo responder.",
-      "Yo hice el contexto y el diagnóstico y me encargué de los objetivos. El riesgo de fondo era una brecha de identidad: lo que la empresa dice ser, transparente y empática, frente a lo que algunos públicos creen que demuestra.",
+      "El riesgo de fondo era una brecha de identidad: lo que la empresa dice ser, transparente y empática, frente a lo que algunos públicos creen que demuestra.",
     ],
   },
   mapa: {
@@ -73,11 +73,11 @@ export const magicair: CasoCompleto = {
   bloques: [
     {
       titulo: "La ficha de la empresa",
-      resumen: "Cada una escribió la suya y seleccionamos lo mejor.",
+      resumen: "Cada persona escribió la suya y nos quedamos con lo mejor de todas.",
       puntos: [
-        "De la mía salieron la innovación, la comunicación abierta, la trazabilidad y el estilo de las comunicaciones.",
-        "También el blanco roto, la tipografía y el estilo minimalista.",
-        "Hice además unas ideas de logo que no terminaron saliendo; están en «Mis propuestas de logo».",
+        "Valores como la innovación, la comunicación abierta y la trazabilidad, y un estilo de comunicación propio.",
+        "Una identidad minimalista: el blanco roto y la tipografía.",
+        "También hubo propuestas de logo; las mías están en las piezas.",
       ],
     },
     {

@@ -67,7 +67,7 @@ export const proyectos: Proyecto[] = [
     percha: "azul",
     tipo: "Grado URJC, en equipo, 2025",
     resumen:
-      "Hice el diagnóstico, la reputación interna y el análisis de brecha de una plantilla que no se siente parte. De ahí salió un plan de comunicación interna.",
+      "Una plantilla que no se siente parte. Diagnóstico, reputación interna y análisis de brecha, y de ahí, un plan de comunicación interna.",
     pagina: "nuevo",
     origen: "Grado",
   },
@@ -115,7 +115,7 @@ export const proyectos: Proyecto[] = [
     percha: "blanco",
     tipo: "Grado URJC, en equipo",
     resumen:
-      "Cuatro meses en X buscando la viralidad desde el odio con una copa menstrual feminista. El logotipo y el tono más provocador fueron cosa mía.",
+      "Cuatro meses en X buscando la viralidad desde el odio con una copa menstrual feminista, y una identidad de marca completa.",
     pagina: "nuevo",
     origen: "Grado",
     breve: true,
@@ -127,7 +127,7 @@ export const proyectos: Proyecto[] = [
     percha: "blanco",
     tipo: "Grado URJC, en equipo",
     resumen:
-      "Se me ocurrió contar la huella de una aerolínea como la restauración de un cuadro que nunca se termina.",
+      "La huella de una aerolínea contada como la restauración de un cuadro que nunca se termina.",
     pagina: "nuevo",
     origen: "Grado",
     breve: true,
@@ -138,7 +138,7 @@ export const proyectos: Proyecto[] = [
     titulo: "Revista Super Pop",
     percha: "blanco",
     tipo: "Máster UC3M, en equipo",
-    resumen: "Liderazgo explicado con Mean Girls. Lo de hacerlo como una revista dosmilera fue idea mía.",
+    resumen: "Liderazgo explicado con Mean Girls, en forma de revista dosmilera.",
     pagina: "nuevo",
     origen: "Máster",
     breve: true,
@@ -176,7 +176,7 @@ export const proyectos: Proyecto[] = [
     tipo: "Técnicas y Recursos de las RRPP, Grado URJC, 2024, en equipo",
     resumen: "Cómo nos ven y cómo nos vemos, convertido en una estrategia de relaciones públicas y en un podcast.",
     detalle: [
-      "El mapa de públicos fue cosa mía; en el resto participé.",
+      "Me encargué del mapa de públicos; el resto, en equipo.",
       "Objetivo: invertir en dos años el 15 % de las actitudes negativas de las generaciones X e Y hacia la Z.",
       "Análisis de campos de fuerzas, PERT y Gantt, y dieciocho técnicas: de la auditoría de imagen y la formación de portavoces a un podcast, una maleta pedagógica o una performance.",
     ],
@@ -371,6 +371,6 @@ export const perchas: Record<Percha, { nombre: string; nota: string }> = {
   },
   archivo: {
     nombre: "Archivo",
-    nota: "Trabajos de la carrera: unos por escrito, otros de campaña. Los expedientes, abiertos sobre la mesa.",
+    nota: "Trabajos de la carrera, guardados en su cajón: los claros, por escrito; los de cartón, campañas de clase. Tira de una carpeta para abrirla.",
   },
 };

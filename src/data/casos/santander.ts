@@ -7,18 +7,18 @@ const img = (file: string) => `${import.meta.env.BASE_URL}assets/casos/santander
 export const santander: CasoCompleto = {
   slug: "santander",
   titulo: "Santander",
-  era: "Un laboratorio web, hecho por mí de principio a fin, donde cualquiera puede evaluar el logo y comparar su nota con la nuestra.",
+  era: "Un laboratorio web donde cualquiera puede evaluar el logo y comparar su nota con la nuestra.",
   ficha: [
     { etiqueta: "Qué", valor: "Análisis de identidad visual para Comunicación corporativa" },
     { etiqueta: "Cuándo", valor: "Octubre de 2026, Máster UC3M" },
     { etiqueta: "Equipo", valor: "Grupo 7, cuatro personas" },
-    { etiqueta: "Mi parte", valor: "La web del laboratorio y la encuesta, enteras. La evaluación, en equipo" },
+    { etiqueta: "Me encargué de", valor: "La web del laboratorio y la encuesta, enteras. La evaluación, en equipo" },
   ],
   enlaces: [{ href: "https://fei461.github.io/santander/", label: "Abrir el laboratorio" }],
   laboratorio: {
     src: "https://fei461.github.io/santander/",
     titulo: "Laboratorio del signo Santander",
-    texto: "La web que hice, aquí mismo. Ponle tu nota al logo y compárala con la nuestra.",
+    texto: "La web, aquí mismo. Ponle tu nota al logo y compárala con la nuestra.",
   },
   marcador: [
     { cifra: "87 %", texto: "de las 31 personas encuestadas reconoció la marca solo con la llama (27)" },

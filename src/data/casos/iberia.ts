@@ -11,14 +11,14 @@ export const iberia: CasoCompleto = {
     { etiqueta: "Qué", valor: "Propuesta creativa de campaña" },
     { etiqueta: "Dónde", valor: "Redacción Publicitaria, Grado URJC, 2025" },
     { etiqueta: "Equipo", valor: "Grupo 6, cinco personas" },
-    { etiqueta: "Mi parte", valor: "La idea de la estrategia y su redacción, el guion del spot y las acciones de cada soporte" },
+    { etiqueta: "Me encargué de", valor: "La idea de la estrategia y su redacción, el guion del spot y las acciones de cada soporte" },
   ],
   contexto: {
     titulo: "Hablar de sostenibilidad sin greenwashing",
     parrafos: [
       "Iberia, junto con Cepsa, Vueling y BIOCIRC, impulsa combustibles sostenibles de aviación, con el objetivo de llegar a cero emisiones netas en 2050. El encargo era construir una campaña para contar esa transición.",
       "Pero entre lo que hace la aerolínea y lo que percibe la gente hay una brecha enorme, y cualquier mensaje «verde» genera desconfianza. ¿Prometer más? Solo habría hecho la brecha más grande.",
-      "Aunque la trabajamos en conjunto, la estrategia se me ocurrió a mí y la redacté yo. El guion lo tenía en la cabeza desde el principio: cómo quería que saliera el spot, el marketing experiencial, el spot de cine, el email y la prensa escrita, que creo que fue de lo más original.",
+      "La trabajamos en conjunto, del spot y el marketing experiencial al cine, el email y la prensa escrita, que creo que fue de lo más original.",
     ],
   },
   bloques: [
@@ -43,7 +43,7 @@ export const iberia: CasoCompleto = {
   ],
   guion: {
     titulo: "«La restauración inacabada»",
-    intro: "Las cinco primeras escenas del guion del spot, tal y como lo escribí.",
+    intro: "Las cinco primeras escenas del guion del spot.",
     escenas: [
       {
         tiempo: "00:00 – 00:30",

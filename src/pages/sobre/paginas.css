@@ -10,26 +10,6 @@
   color: inherit;
 }
 
-.pagina-foto {
-  margin: 0;
-  rotate: -2deg;
-  background: var(--judogi);
-  padding: 0.75rem 0.75rem 1rem;
-  border: 3px solid var(--sumi);
-  box-shadow: 10px 10px 0 var(--heri);
-}
-
-.pagina-foto img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.pagina-foto figcaption {
-  margin-top: 0.75rem;
-  font-weight: 600;
-}
-
 /* Notas */
 
 .notas {
@@ -158,16 +138,6 @@
 }
 
 /* ── Sobre mí en una pantalla ─────────────── */
-
-.sobre-foto {
-  max-width: 340px;
-  margin-top: 1.5rem;
-}
-
-.sobre-foto img {
-  max-height: 30vh;
-  object-fit: cover;
-}
 
 .combate--sobre .dojo-acciones {
   margin-top: 1.5rem;
@@ -665,53 +635,6 @@
   font-size: 0.74rem;
 }
 
-/* Lo que no cabe en el CV: todos los apuntes sobre la mesa, cada uno con su color. */
-.combate--sobre .estuche__fila {
-  margin-top: 1rem;
-}
-
-.apuntes {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 290px), 1fr));
-  gap: 1.3rem;
-  margin-top: 1.4rem;
-  align-items: start;
-}
-
-.apuntes .apunte {
-  max-width: none;
-  padding: 1rem 1.1rem 0.9rem 2.6rem;
-  background-position: -0.6rem 0, 0 1rem;
-  rotate: calc((var(--k) - 2.5) * 0.5deg);
-  animation-delay: calc(var(--k) * 70ms);
-  transition: transform 0.3s cubic-bezier(0.3, 1.4, 0.5, 1), box-shadow 0.3s ease;
-  scroll-margin: 1rem;
-}
-
-.apuntes .apunte:nth-child(even) {
-  rotate: calc((2.5 - var(--k)) * 0.4deg);
-}
-
-.apuntes .apunte h3 {
-  font-size: clamp(1.25rem, 1.7vw, 1.55rem);
-}
-
-.apuntes .apunte p {
-  font-size: 0.97rem;
-  line-height: 1.5rem;
-}
-
-.apuntes .apunte--marcado {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: 10px 10px 0 var(--c-osc);
-  outline: 4px solid var(--c);
-  outline-offset: 0;
-}
-
-.apuntes .apunte--marcado h3 .sub {
-  background-size: 100% 100%;
-}
-
 /* Sobre mí, en corto: lo básico bajo la foto. */
 .sobre-corto {
   display: grid;
@@ -811,4 +734,101 @@
 
 .combate--sobre .combate__ficha {
   overflow-x: hidden;
+}
+
+/* La ruleta de colores */
+.ruleta {
+  display: grid;
+  grid-template-columns: minmax(220px, 340px) minmax(0, 1fr);
+  gap: clamp(1.2rem, 3vw, 2.5rem);
+  align-items: center;
+  margin-top: 1.4rem;
+}
+
+.ruleta__rueda {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: 1rem;
+}
+
+.ruleta__rueda svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  border: 4px solid var(--sumi);
+  box-shadow: 8px 8px 0 var(--heri);
+  background: var(--sumi);
+  transition: transform 2.6s cubic-bezier(0.15, 0.85, 0.2, 1);
+}
+
+.ruleta__gajo {
+  fill: var(--c);
+  stroke: var(--sumi);
+  stroke-width: 1.6;
+}
+
+.ruleta__texto {
+  fill: var(--sumi);
+  font-family: var(--f);
+  font-weight: 800;
+  font-size: 11px;
+  text-anchor: middle;
+  dominant-baseline: middle;
+}
+
+.ruleta__centro {
+  fill: var(--judogi);
+  stroke: var(--sumi);
+  stroke-width: 3;
+}
+
+.ruleta__flecha {
+  position: absolute;
+  z-index: 2;
+  top: -14px;
+  left: 50%;
+  width: 0;
+  height: 0;
+  translate: -50% 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 28px solid var(--sumi);
+  filter: drop-shadow(0 3px 0 var(--judogi));
+}
+
+.ruleta__boton:disabled {
+  opacity: 0.7;
+  cursor: progress;
+}
+
+.ruleta .apunte {
+  max-width: 640px;
+}
+
+.ruleta .apunte--espera {
+  opacity: 0.35;
+  transition: opacity 0.2s ease;
+}
+
+@media (max-width: 760px) {
+  .ruleta {
+    grid-template-columns: 1fr;
+  }
+
+  .ruleta__rueda {
+    width: min(300px, 100%);
+    margin: 0 auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ruleta__rueda svg {
+    transition: none;
+  }
+}
+
+.combate--sobre .estuche__fila {
+  margin-top: 1rem;
 }

@@ -12,7 +12,7 @@ export const brujaRoja: CasoCompleto = {
     { etiqueta: "Qué", valor: "Cuenta de X e identidad corporativa para una copa menstrual" },
     { etiqueta: "Dónde", valor: "Comunicación Multimedia, Grado URJC" },
     { etiqueta: "Equipo", valor: "Cuatro personas, cuatro meses publicando en X" },
-    { etiqueta: "Mi parte", valor: "La idea, el logotipo, el calendario, los tipos de contenido y el contenido disruptivo" },
+    { etiqueta: "Me encargué de", valor: "La idea, el logotipo, el calendario, los tipos de contenido y el contenido disruptivo" },
   ],
   enlaces: [{ href: "https://x.com/brujaroja_cup", label: "Ver la cuenta en X" }],
   marcador: [
@@ -24,7 +24,7 @@ export const brujaRoja: CasoCompleto = {
     parrafos: [
       "Fue uno de los trabajos más divertidos que hice en toda la carrera. Cuando nos dijeron que debíamos hacernos una cuenta en Twitter, pensé que para ver el mundo arder (según el público de esta red) lo mejor era un producto de menstruación femenina y feminista.",
       "Desde el primer momento convencí a mi equipo de que había más de una forma de abordar el reto: lograr la viralidad desde el odio, con un discurso profundamente progresista que chocara con la masculinidad frágil de esa red. Estuvimos cuatro meses publicando de forma constante y, si soy sincera, a veces me dan ganas de volver.",
-      "Yo aportaba el toque más sarcástico y provocador. El apartado de nuestra marca pone en palabras lo que yo pensaba de verdad, el logotipo fue cosa mía y el nombre lo elegimos entre todas. Admito que hice bastante en este trabajo, porque estaba motivada.",
+      "Cada una aportó lo suyo; yo, el toque más sarcástico y provocador. El nombre lo elegimos entre todas.",
     ],
   },
   bloques: [
@@ -38,7 +38,7 @@ export const brujaRoja: CasoCompleto = {
     },
     {
       titulo: "El contenido",
-      resumen: "Hice el calendario y los tipos de publicaciones.",
+      resumen: "Un calendario y varios tipos de publicaciones.",
       puntos: [
         "Mi pilar favorito era el contenido disruptivo y las dudas, así que solía encargarme de ello.",
         "Los datos curiosos y los educativos, que desmontaban mitos sobre la regla, los hicimos entre todas.",

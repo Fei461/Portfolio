@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { Sigue } from "@/components/sigue";
 import { FotoGiro } from "@/components/foto-giro";
 import { Link, useSearchParams } from "react-router-dom";
@@ -143,20 +143,54 @@ function Metodo() {
   );
 }
 
-// Lo que no cabe en el CV: mis apuntes, todos a la vista sobre la mesa. Cada subrayador
-// marca el suyo, como hago yo al estudiar.
+// Lo que no cabe en el CV: una ruleta con mis seis colores. Se gira (o se coge un subrayador)
+// y sale el apunte de ese color.
+const GAJO = 360 / colores.length;
+
+function punto(angulo: number, r: number) {
+  const rad = ((angulo - 90) * Math.PI) / 180;
+  return [100 + r * Math.cos(rad), 100 + r * Math.sin(rad)];
+}
+
+function gajo(i: number) {
+  const [x1, y1] = punto(i * GAJO - GAJO / 2, 96);
+  const [x2, y2] = punto(i * GAJO + GAJO / 2, 96);
+  return `M100 100 L${x1.toFixed(2)} ${y1.toFixed(2)} A96 96 0 0 1 ${x2.toFixed(2)} ${y2.toFixed(2)} Z`;
+}
+
 function LoDemas() {
-  const [activo, setActivo] = useState<number | null>(null);
-  const tarjetas = useRef<(HTMLElement | null)[]>([]);
-  const marcar = (i: number) => {
-    setActivo(i);
-    tarjetas.current[i]?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  const [activo, setActivo] = useState(0);
+  const [giro, setGiro] = useState(0);
+  const [girando, setGirando] = useState(false);
+  const quieto = typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // Lleva el gajo i arriba, bajo la flecha, dando unas cuantas vueltas antes.
+  const ir = (i: number, vueltas: number) => {
+    if (girando) return;
+    const destino = (((-i * GAJO - giro) % 360) + 360) % 360;
+    setGiro(giro + (quieto ? 0 : vueltas * 360) + destino);
+    if (quieto) {
+      setActivo(i);
+      return;
+    }
+    setGirando(true);
+    window.setTimeout(() => {
+      setActivo(i);
+      setGirando(false);
+    }, 2600);
   };
+  const girar = () => {
+    let i = Math.floor(Math.random() * colores.length);
+    if (i === activo) i = (i + 1 + Math.floor(Math.random() * (colores.length - 1))) % colores.length;
+    ir(i, 4);
+  };
+  const c = colores[activo];
+
   return (
     <div>
       <h2>Lo que no cabe en el CV</h2>
       <p className="asalto__entradilla">
-        En mi cabeza cada cosa tiene su color. Coge un subrayador y te marco el apunte.
+        En mi cabeza cada cosa tiene su color. Gira la ruleta o coge directamente un subrayador.
       </p>
       <div className="estuche__fila" role="group" aria-label="Subrayadores">
         {colores.map((x, i) => (
@@ -165,31 +199,47 @@ function LoDemas() {
             type="button"
             aria-pressed={i === activo}
             className={`subrayador color--${x.color}${i === activo ? " activo" : ""}`}
-            onClick={() => marcar(i)}
+            onClick={() => ir(i, 1)}
           >
             <span className="subrayador__tapa" aria-hidden="true" />
             <span className="subrayador__cuerpo">{x.etiqueta}</span>
           </button>
         ))}
       </div>
-      <div className="apuntes">
-        {colores.map((c, i) => (
-          <article
-            key={c.color}
-            ref={(el) => {
-              tarjetas.current[i] = el;
-            }}
-            className={`apunte color--${c.color}${i === activo ? " apunte--marcado" : ""}`}
-            style={{ "--k": i } as CSSProperties}
+      <div className="ruleta">
+        <div className="ruleta__rueda">
+          <span className="ruleta__flecha" aria-hidden="true" />
+          <svg
+            viewBox="0 0 200 200"
+            aria-hidden="true"
+            style={{ transform: `rotate(${giro}deg)` }}
+            className={girando ? "girando" : undefined}
           >
-            <h3>
-              <span className="sub">{c.titulo}</span>
-            </h3>
-            {c.texto.map((p) => (
-              <p key={p}>{p}</p>
-            ))}
-          </article>
-        ))}
+            {colores.map((x, i) => {
+              const [tx, ty] = punto(i * GAJO, 62);
+              return (
+                <g key={x.color} className={`color--${x.color}`}>
+                  <path d={gajo(i)} className="ruleta__gajo" />
+                  <text x={tx} y={ty} transform={`rotate(${i * GAJO} ${tx} ${ty})`} className="ruleta__texto">
+                    {x.etiqueta}
+                  </text>
+                </g>
+              );
+            })}
+            <circle cx="100" cy="100" r="15" className="ruleta__centro" />
+          </svg>
+          <button type="button" className="dojo-boton ruleta__boton" onClick={girar} disabled={girando}>
+            {girando ? "Girando…" : "Gira la ruleta"}
+          </button>
+        </div>
+        <article className={`apunte color--${c.color}${girando ? " apunte--espera" : ""}`} key={c.color} aria-live="polite">
+          <h3>
+            <span className="sub">{c.titulo}</span>
+          </h3>
+          {c.texto.map((p) => (
+            <p key={p}>{p}</p>
+          ))}
+        </article>
       </div>
     </div>
   );

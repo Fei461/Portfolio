@@ -21,34 +21,96 @@ const tipoCorto = (t: string) => {
   return r.charAt(0).toUpperCase() + r.slice(1);
 };
 
-// Archivo: los expedientes de la carrera, abiertos sobre la mesa. Todo a la vista, sin desplegar.
+// Archivo: un cajón de archivador. Se tira de una carpeta y su expediente se abre sobre la mesa.
 function Archivo({ lista }: { lista: Proyecto[] }) {
   const etiqueta = { escrito: "Por escrito", campana: "Campaña de clase" } as const;
   const ordenados = [...lista].sort((a, b) => (a.grupo === b.grupo ? 0 : a.grupo === "escrito" ? -1 : 1));
+  const [abierta, setAbierta] = useState(0);
+  const carpetas = useRef<(HTMLButtonElement | null)[]>([]);
+  const p = ordenados[abierta];
+  const [miParte, ...resto] = p.detalle ?? [];
+  const esMiParte = Boolean(miParte) && /(mío|mía|me encargué|me dediqué|individual)/i.test(miParte);
+  const mover = (k: number) => {
+    const n = (k + ordenados.length) % ordenados.length;
+    setAbierta(n);
+    carpetas.current[n]?.focus();
+  };
   return (
-    <ol className="expedientes">
-      {ordenados.map((p, k) => {
-        const [miParte, ...resto] = p.detalle ?? [];
-        const esMiParte = Boolean(miParte) && /(mío|mía|me encargué|me dediqué|individual)/i.test(miParte);
-        return (
-          <li key={p.slug} className={`expediente expediente--${p.grupo}`} style={{ "--n": k } as CSSProperties}>
-            <span className="expediente__pestana">{p.grupo ? etiqueta[p.grupo] : "Trabajo"}</span>
-            <div className="expediente__hoja">
-              <span className="expediente__n" aria-hidden="true">
-                {String(k + 1).padStart(2, "0")}
+    <div className="cajon">
+      <div className="cajon__mueble">
+        <div className="cajon__carpetas" role="tablist" aria-label="Expedientes del archivo" aria-orientation="vertical">
+          {ordenados.map((x, k) => (
+            <button
+              key={x.slug}
+              ref={(el) => {
+                carpetas.current[k] = el;
+              }}
+              type="button"
+              role="tab"
+              id={`carpeta-${x.slug}`}
+              aria-selected={k === abierta}
+              aria-controls="expediente-abierto"
+              tabIndex={k === abierta ? 0 : -1}
+              className={`carpeta carpeta--${x.grupo}${k === abierta ? " carpeta--fuera" : ""}`}
+              style={{ "--n": k } as CSSProperties}
+              onClick={() => setAbierta(k)}
+              onKeyDown={(e) => {
+                if (e.key === "ArrowDown" || e.key === "ArrowRight") {
+                  e.preventDefault();
+                  mover(k + 1);
+                }
+                if (e.key === "ArrowUp" || e.key === "ArrowLeft") {
+                  e.preventDefault();
+                  mover(k - 1);
+                }
+              }}
+            >
+              <span className="carpeta__pestana">
+                <span aria-hidden="true">{String(k + 1).padStart(2, "0")}</span> {x.titulo}
               </span>
-              <h2>{p.titulo}</h2>
-              <p className="expediente__resumen">{p.resumen}</p>
-              {esMiParte && <p className="expediente__mia">{miParte}</p>}
-              {(esMiParte ? resto : p.detalle ?? []).map((d) => (
-                <p key={d}>{d}</p>
-              ))}
-              <p className="expediente__tipo">{tipoCorto(p.tipo)}</p>
-            </div>
-          </li>
-        );
-      })}
-    </ol>
+              <span className="carpeta__tipo">{x.grupo ? etiqueta[x.grupo] : "Trabajo"}</span>
+            </button>
+          ))}
+        </div>
+        <div className="cajon__frente" aria-hidden="true">
+          <span className="cajon__placa">Archivo · Grado URJC</span>
+          <span className="cajon__tirador" />
+        </div>
+      </div>
+
+      <article
+        id="expediente-abierto"
+        role="tabpanel"
+        aria-labelledby={`carpeta-${p.slug}`}
+        className={`expediente expediente--${p.grupo}`}
+        key={p.slug}
+      >
+        <span className="expediente__pestana">{p.grupo ? etiqueta[p.grupo] : "Trabajo"}</span>
+        <div className="expediente__hoja">
+          <span className="expediente__n" aria-hidden="true">
+            {String(abierta + 1).padStart(2, "0")}
+          </span>
+          <h2>{p.titulo}</h2>
+          <p className="expediente__resumen">{p.resumen}</p>
+          {esMiParte && <p className="expediente__mia">{miParte}</p>}
+          {(esMiParte ? resto : p.detalle ?? []).map((d) => (
+            <p key={d}>{d}</p>
+          ))}
+          <p className="expediente__tipo">{tipoCorto(p.tipo)}</p>
+          <nav className="expediente__pasar" aria-label="Pasar de expediente">
+            <button type="button" onClick={() => setAbierta((abierta - 1 + ordenados.length) % ordenados.length)}>
+              ← Anterior
+            </button>
+            <span>
+              {abierta + 1} de {ordenados.length}
+            </span>
+            <button type="button" onClick={() => setAbierta((abierta + 1) % ordenados.length)}>
+              Siguiente →
+            </button>
+          </nav>
+        </div>
+      </article>
+    </div>
   );
 }
 
