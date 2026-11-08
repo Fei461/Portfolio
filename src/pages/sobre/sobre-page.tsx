@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
 import { Sigue } from "@/components/sigue";
 import { Link, useSearchParams } from "react-router-dom";
 import { colores, tiempos } from "@/data/metodo";
@@ -130,37 +130,53 @@ function Metodo() {
   );
 }
 
-// Lo que no cabe en el CV: un estuche de subrayadores; cada uno abre una cosa sobre mí.
+// Lo que no cabe en el CV: mis apuntes, todos a la vista sobre la mesa. Cada subrayador
+// marca el suyo, como hago yo al estudiar.
 function LoDemas() {
-  const [activo, setActivo] = useState(0);
-  const c = colores[activo];
+  const [activo, setActivo] = useState<number | null>(null);
+  const tarjetas = useRef<(HTMLElement | null)[]>([]);
+  const marcar = (i: number) => {
+    setActivo(i);
+    tarjetas.current[i]?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  };
   return (
     <div>
       <h2>Lo que no cabe en el CV</h2>
-      <p className="asalto__entradilla">En mi cabeza cada cosa tiene su color. Coge un subrayador.</p>
-      <div className="estuche">
-        <div className="estuche__fila" role="group" aria-label="Subrayadores">
-          {colores.map((x, i) => (
-            <button
-              key={x.color}
-              type="button"
-              aria-pressed={i === activo}
-              className={`subrayador color--${x.color}${i === activo ? " activo" : ""}`}
-              onClick={() => setActivo(i)}
-            >
-              <span className="subrayador__tapa" aria-hidden="true" />
-              <span className="subrayador__cuerpo">{x.etiqueta}</span>
-            </button>
-          ))}
-        </div>
-        <article className={`apunte color--${c.color}`} key={c.color} aria-live="polite">
-          <h3>
-            <span className="sub">{c.titulo}</span>
-          </h3>
-          {c.texto.map((p) => (
-            <p key={p}>{p}</p>
-          ))}
-        </article>
+      <p className="asalto__entradilla">
+        En mi cabeza cada cosa tiene su color. Coge un subrayador y te marco el apunte.
+      </p>
+      <div className="estuche__fila" role="group" aria-label="Subrayadores">
+        {colores.map((x, i) => (
+          <button
+            key={x.color}
+            type="button"
+            aria-pressed={i === activo}
+            className={`subrayador color--${x.color}${i === activo ? " activo" : ""}`}
+            onClick={() => marcar(i)}
+          >
+            <span className="subrayador__tapa" aria-hidden="true" />
+            <span className="subrayador__cuerpo">{x.etiqueta}</span>
+          </button>
+        ))}
+      </div>
+      <div className="apuntes">
+        {colores.map((c, i) => (
+          <article
+            key={c.color}
+            ref={(el) => {
+              tarjetas.current[i] = el;
+            }}
+            className={`apunte color--${c.color}${i === activo ? " apunte--marcado" : ""}`}
+            style={{ "--k": i } as CSSProperties}
+          >
+            <h3>
+              <span className="sub">{c.titulo}</span>
+            </h3>
+            {c.texto.map((p) => (
+              <p key={p}>{p}</p>
+            ))}
+          </article>
+        ))}
       </div>
     </div>
   );
@@ -193,6 +209,32 @@ export function SobrePage() {
           <img src={foto} alt="Lara sonriendo con la lengua fuera delante de una cascada" width={1400} height={1050} />
           <figcaption>No es una foto seria porque no lo soy.</figcaption>
         </figure>
+        <dl className="sobre-corto">
+          <div>
+            <dt>Vivo en</dt>
+            <dd>{perfil.lugar}</dd>
+          </div>
+          <div>
+            <dt>Estudié</dt>
+            <dd>Publicidad y RRPP (URJC)</dd>
+          </div>
+          <div>
+            <dt>Estudio</dt>
+            <dd>Máster en Comunicación Publicitaria (UC3M)</dd>
+          </div>
+          <div>
+            <dt>Sobre el tatami</dt>
+            <dd>Cinturón marrón de judo y azul de taekwondo</dd>
+          </div>
+          <div>
+            <dt>Hablo</dt>
+            <dd>Español, inglés, catalán y francés</dd>
+          </div>
+          <div>
+            <dt>Mi color</dt>
+            <dd>Azul (soy azulita 💙)</dd>
+          </div>
+        </dl>
         <div className="dojo-acciones">
           <Link className="dojo-boton" to="/trabajo">
             Ver proyectos

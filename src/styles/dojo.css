@@ -268,15 +268,6 @@
   color: var(--sumi) !important;
 }
 
-.dojo-boton--rojo {
-  background: var(--marcador);
-  border-color: var(--marcador);
-}
-
-.dojo-boton--rojo:hover {
-  box-shadow: 3px 3px 0 var(--judogi);
-}
-
 /* Foto: aterriza sobre el tatami */
 .dojo-foto {
   position: relative;
@@ -348,54 +339,6 @@
 }
 
 /* ── Cierre: hajime ───────────────────────── */
-.dojo-hajime {
-  font-family: var(--f);
-  background: var(--sumi);
-  color: var(--judogi);
-  padding: clamp(4.5rem, 10vw, 8rem) var(--gutter);
-}
-
-.dojo-hajime__dentro {
-  max-width: 1320px;
-  margin: 0 auto;
-}
-
-.dojo-hajime__titulo {
-  margin: 0;
-  font-weight: 800;
-  font-variation-settings: "opsz" 96, "wdth" 75;
-  font-size: clamp(4.5rem, 16vw, 13rem);
-  line-height: 0.8;
-}
-
-.dojo-hajime p:not(.dojo-hajime__titulo) {
-  margin: 1.5rem 0 0;
-  max-width: 50ch;
-  font-size: clamp(1.1rem, 1.6vw, 1.3rem);
-}
-
-.dojo-hajime .dojo-boton--claro {
-  background: transparent;
-  border-color: var(--judogi);
-  color: var(--judogi) !important;
-}
-
-.dojo-hajime .dojo-boton--claro:hover {
-  box-shadow: 3px 3px 0 var(--obi-claro);
-}
-
-.dojo-pie {
-  max-width: 1320px;
-  margin: clamp(3rem, 6vw, 5rem) auto 0;
-  padding-top: 1.25rem;
-  border-top: 1px solid rgba(245, 245, 242, 0.25);
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  font-size: 0.95rem;
-  color: rgba(245, 245, 242, 0.7);
-}
 
 /* ── Entrada: la proyección ───────────────── */
 @media (prefers-reduced-motion: no-preference) {
@@ -1480,4 +1423,173 @@
   .colgador__etiqueta span {
     font-size: 0.82rem;
   }
+}
+
+/* ── Portada: rótulo de proyectos, foto que se entiende y todo dentro de la pantalla ── */
+.dojo-pared__arriba {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: clamp(1rem, 2vw, 2rem);
+}
+
+.dojo-rotulo {
+  position: relative;
+  z-index: 2;
+  max-width: 19rem;
+  margin: 0 0 1.2rem 0.5rem;
+  padding: 0.8rem 1rem 0.9rem;
+  font-family: var(--f);
+  background: var(--judogi);
+  border: 3px solid var(--sumi);
+  box-shadow: 6px 6px 0 var(--heri);
+  rotate: -2deg;
+}
+
+.dojo-rotulo strong {
+  display: block;
+  font-weight: 800;
+  font-variation-settings: "opsz" 96, "wdth" 78;
+  font-size: clamp(1.7rem, 2.6vw, 2.3rem);
+  line-height: 0.95;
+}
+
+.dojo-rotulo span {
+  display: block;
+  margin-top: 0.4rem;
+  font-size: 0.92rem;
+  line-height: 1.35;
+}
+
+.dojo-rotulo::after {
+  content: "↓";
+  position: absolute;
+  left: 1.2rem;
+  bottom: -1.9rem;
+  font-weight: 800;
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.foto-giro__boton span {
+  display: inline;
+  margin: 0;
+  color: inherit;
+  font-size: inherit;
+}
+
+.foto-giro__accion {
+  display: inline-block !important;
+  margin-top: 0.15rem !important;
+  color: var(--obi) !important;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.foto-giro__accion span {
+  display: inline-block !important;
+  transition: transform 0.4s ease;
+}
+
+.foto-giro__boton:hover .foto-giro__accion span {
+  transform: rotate(200deg);
+}
+
+/* Girada, la historia se lee entera sin barra de desplazamiento. */
+.foto-giro--vuelta {
+  width: clamp(290px, 22vw, 340px);
+  aspect-ratio: 3 / 3.4;
+}
+
+.foto-giro__detras {
+  overflow: hidden;
+  font-size: 0.82rem;
+}
+
+/* Holgura abajo: las etiquetas de los judogis nunca rozan el borde de la ventana. */
+@media (min-width: 901px) {
+  .dojo-hero--pantalla {
+    padding-bottom: 2.5rem;
+  }
+
+  .foto-giro {
+    width: clamp(170px, 13vw, 215px);
+  }
+
+  .obi {
+    height: min(26svh, 270px);
+  }
+}
+
+@media (min-width: 901px) and (max-height: 960px) {
+  .dojo-hero--pantalla .dojo-nombre {
+    font-size: min(14.5vw, 13.5vh, 15rem);
+  }
+
+  .foto-giro {
+    width: clamp(150px, 11.5vw, 190px);
+  }
+
+  .dojo-intro-caja {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .dojo-pared__arriba {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .dojo-rotulo {
+    margin: 0 0 2rem;
+  }
+}
+
+.dojo-hero--pantalla .dojo-lema {
+  max-width: none;
+}
+
+.dojo-rol {
+  font-size: clamp(0.88rem, 1.05vw, 1rem);
+}
+
+@media (min-width: 901px) and (max-height: 880px) {
+  .dojo-hero--pantalla .dojo-nombre {
+    font-size: min(14.5vw, 12.5vh, 15rem);
+  }
+
+  .dojo-minuto a img {
+    height: 48px;
+  }
+}
+
+/* Girada, la foto no cambia de sitio: la historia se abre por encima, hacia abajo. */
+.foto-giro.foto-giro--vuelta {
+  width: clamp(170px, 13vw, 215px);
+  aspect-ratio: 3 / 4.25;
+  z-index: 6;
+}
+
+.foto-giro .foto-giro__detras {
+  inset: 0 0 auto auto;
+  width: clamp(290px, 22vw, 340px);
+  height: auto;
+  max-height: calc(100svh - 7rem);
+}
+
+.dojo-pared__arriba .foto-giro {
+  flex-shrink: 0;
+}
+
+.foto-giro__detras {
+  overflow-y: auto;
+}
+
+.foto-giro .dojo-foto__obi {
+  transition: opacity 0.2s ease;
+}
+
+.foto-giro--vuelta .dojo-foto__obi {
+  opacity: 0;
 }

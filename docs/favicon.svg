@@ -1,1 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" fill="#eee9de"/><text x="32" y="42" text-anchor="middle" font-family="Georgia,serif" font-size="30" fill="#17100d">LF</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Un trozo de judogi azul con mi cinturón marrón anudado: lo mismo que cuelga en la portada. -->
+  <rect width="64" height="64" rx="12" fill="#1f4fbf"/>
+  <path d="M20 0 L32 22 L44 0" fill="none" stroke="#f5f5f2" stroke-width="6" stroke-linejoin="round"/>
+  <rect x="0" y="27" width="64" height="12" fill="#6b3a1f" stroke="#000" stroke-width="2.5"/>
+  <path d="M27 37 L16 60 L25 62 L31 41 Z" fill="#7a4424" stroke="#000" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M37 37 L48 60 L39 62 L33 41 Z" fill="#7a4424" stroke="#000" stroke-width="2.5" stroke-linejoin="round"/>
+  <rect x="24" y="24" width="16" height="18" rx="3" fill="#8a5c34" stroke="#000" stroke-width="2.5"/>
+</svg>

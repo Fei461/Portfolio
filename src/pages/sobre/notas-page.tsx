@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { Link, useSearchParams } from "react-router-dom";
-import { notas, perfilLinkedIn } from "@/data/notas";
+import { notas, notasConFecha, perfilLinkedIn } from "@/data/notas";
 import { proyectos } from "@/data/proyectos";
 import { Sigue } from "@/components/sigue";
 import "./paginas.css";
@@ -60,7 +60,7 @@ export function NotasPage() {
         <article ref={hoja} className="asalto nota-hoja" key={nota.id}>
           <p className="nota-hoja__tema">
             {nota.categoria}
-            {nota.fecha && (
+            {notasConFecha && nota.fecha && (
               <time dateTime={nota.fecha}>
                 {" · "}
                 {new Date(nota.fecha).toLocaleDateString("es-ES", { day: "numeric", month: "long", year: "numeric" })}

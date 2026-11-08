@@ -303,8 +303,7 @@
   .dojo-progreso,
   .barrido,
   .cv-acciones,
-  .dojo-hajime,
-  .dojo-saltar {
+  .dojo-saltar{
     display: none !important;
   }
 

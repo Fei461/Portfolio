@@ -371,6 +371,6 @@ export const perchas: Record<Percha, { nombre: string; nota: string }> = {
   },
   archivo: {
     nombre: "Archivo",
-    nota: "Trabajos de la carrera: unos por escrito, otros de campaña. Toca uno para ver de qué va.",
+    nota: "Trabajos de la carrera: unos por escrito, otros de campaña. Los expedientes, abiertos sobre la mesa.",
   },
 };

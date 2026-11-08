@@ -394,32 +394,11 @@ a.dorsal__enlace:hover .dorsal__visual video {
   animation-delay: calc(var(--n, 0) * 50ms);
 }
 
-.archivo__n {
-  position: absolute;
-  top: 0.9rem;
-  left: 0.9rem;
-  font-weight: 800;
-  font-variation-settings: "opsz" 48, "wdth" 75;
-  font-size: 1.4rem;
-  line-height: 1;
-  color: var(--texto-suave);
-}
-
 .archivo strong {
   font-weight: 800;
   font-variation-settings: "opsz" 48, "wdth" 80;
   font-size: 1.45rem;
   line-height: 1;
-}
-
-.archivo__resumen {
-  line-height: 1.4;
-}
-
-.archivo__tipo {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--texto-suave);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -487,61 +466,6 @@ a.dorsal__enlace:hover .dorsal__visual video {
 }
 
 /* ── Archivo en dos grupos, con fichas desplegables ── */
-.archivo-grupos {
-  flex: 1;
-  min-height: 0;
-  overflow-y: auto;
-  margin-top: clamp(0.8rem, 2vh, 1.4rem);
-  padding: 0.3rem var(--gutter) 1.5rem;
-}
-
-.archivo-grupo + .archivo-grupo {
-  margin-top: 1.6rem;
-}
-
-.archivo-grupo header {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 0.2rem 1rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 4px solid var(--sumi);
-}
-
-.archivo-grupo h2 {
-  margin: 0;
-  font-weight: 800;
-  font-variation-settings: "opsz" 60, "wdth" 80;
-  font-size: clamp(1.5rem, 2.4vw, 2rem);
-}
-
-.archivo-grupo header p {
-  margin: 0;
-  color: var(--texto-suave);
-}
-
-.archivo-grupos .archivo {
-  flex: none;
-  overflow: visible;
-  margin: 1rem 0 0;
-  padding: 0;
-  align-items: start;
-}
-
-.archivo-grupos .archivo li {
-  padding: 0;
-  gap: 0;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.archivo-grupos .archivo li:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 7px 7px 0 var(--sumi);
-}
-
-.archivo-grupos .archivo li.abierto {
-  box-shadow: 7px 7px 0 var(--obi);
-}
 
 .archivo li > button {
   position: relative;
@@ -556,41 +480,6 @@ a.dorsal__enlace:hover .dorsal__visual video {
   background: transparent;
   border: 0;
   cursor: pointer;
-}
-
-.archivo__mas {
-  position: absolute;
-  top: 0.75rem;
-  right: 0.8rem;
-  display: grid;
-  place-items: center;
-  width: 1.6rem;
-  height: 1.6rem;
-  font-weight: 800;
-  font-size: 1.15rem;
-  line-height: 1;
-  color: var(--judogi);
-  background: var(--sumi);
-}
-
-.archivo li.abierto .archivo__mas {
-  background: var(--obi);
-}
-
-.archivo__ficha {
-  padding: 0 1.1rem 1rem 3.4rem;
-  border-top: 2px dashed rgba(0, 0, 0, 0.25);
-}
-
-.archivo__ficha p {
-  margin: 0.7rem 0 0;
-  line-height: 1.5;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .archivo__ficha:not([hidden]) {
-    animation: ficha-abre 0.3s ease;
-  }
 }
 
 @keyframes ficha-abre {
@@ -629,4 +518,115 @@ a.dorsal__enlace:hover .dorsal__visual video {
   background: var(--judogi);
   border-left: 3px solid var(--sumi);
   border-bottom: 3px solid var(--sumi);
+}
+
+/* ── Archivo: expedientes abiertos sobre la mesa ── */
+.expedientes {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  list-style: none;
+  margin: clamp(0.8rem, 2vh, 1.4rem) 0 0;
+  padding: 0.6rem var(--gutter) 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 400px), 1fr));
+  gap: 2.2rem 1.6rem;
+  align-items: start;
+}
+
+.expediente {
+  position: relative;
+  padding-top: 1.9rem;
+  rotate: calc((var(--n) - 2) * 0.35deg);
+  animation: apunte-entra 0.4s ease both;
+  animation-delay: calc(var(--n) * 70ms);
+}
+
+.expediente__pestana {
+  position: absolute;
+  top: 0;
+  left: 1rem;
+  padding: 0.35rem 0.9rem 0.6rem;
+  font-family: var(--f);
+  font-weight: 800;
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+  background: #d9a865;
+  border: 3px solid var(--sumi);
+  border-bottom: 0;
+  border-radius: 8px 8px 0 0;
+}
+
+.expediente--escrito .expediente__pestana {
+  background: #e6dcc4;
+}
+
+.expediente__hoja {
+  position: relative;
+  padding: 1.2rem 1.3rem 1.1rem;
+  background: var(--judogi);
+  border: 3px solid var(--sumi);
+  box-shadow: 8px 8px 0 #b8874f;
+  font-family: var(--f);
+}
+
+.expediente--escrito .expediente__hoja {
+  box-shadow: 8px 8px 0 #c9bfa5;
+}
+
+.expediente__n {
+  position: absolute;
+  top: 0.8rem;
+  right: 1rem;
+  font-weight: 800;
+  font-variation-settings: "opsz" 96, "wdth" 75;
+  font-size: 2.4rem;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.14);
+}
+
+.expediente h2 {
+  margin: 0 3rem 0.5rem 0;
+  font-weight: 800;
+  font-variation-settings: "opsz" 60, "wdth" 82;
+  font-size: clamp(1.35rem, 1.9vw, 1.7rem);
+  line-height: 1.05;
+}
+
+.expediente p {
+  margin: 0 0 0.6rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.expediente .expediente__resumen {
+  font-weight: 700;
+  font-size: 1.02rem;
+  line-height: 1.4;
+}
+
+.expediente .expediente__mia {
+  padding: 0.45rem 0.7rem;
+  background: rgba(201, 196, 139, 0.45);
+  border-left: 5px solid var(--obi);
+}
+
+.expediente .expediente__tipo {
+  margin: 0.9rem 0 0;
+  padding-top: 0.6rem;
+  border-top: 2px dashed rgba(0, 0, 0, 0.25);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--texto-suave);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .expediente {
+    animation: none;
+  }
+}
+
+@keyframes apunte-entra {
+  from { opacity: 0; transform: translateY(8px) rotate(0.6deg); }
+  to { opacity: 1; transform: none; }
 }

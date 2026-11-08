@@ -404,9 +404,19 @@ const nuevas: Nota[] = (recientes as (Omit<Nota, "id"> & { texto?: string[] })[]
 // formulario entran solas; las antiguas, solo estas.
 const elegidas = ["no-buscaba-practicas", "kotter", "spotify-wrapped", "ideathon"];
 
+// El número de actividad de LinkedIn lleva dentro el momento de publicación (los bits altos son
+// milisegundos desde 1970): de ahí sale la fecha cuando no la tenemos apuntada.
+const fechaDelEnlace = (url: string) => {
+  const id = url.match(/activity[-:](\d{19})/)?.[1];
+  return id ? new Date(Number(BigInt(id) >> 22n)).toISOString().slice(0, 10) : undefined;
+};
+
 export const notas: Nota[] = [
   ...nuevas.filter((n) => !n.fuera),
   ...elegidas.map((id) => antiguas.find((n) => n.id === id)!).filter(Boolean),
-];
+].map((n) => ({ ...n, fecha: n.fecha ?? fechaDelEnlace(n.url) }));
+
+/** Las fechas solo se enseñan si las tienen todas: o todas, o ninguna. */
+export const notasConFecha = notas.every((n) => n.fecha);
 
 export const perfilLinkedIn = "https://www.linkedin.com/in/lara-feijoo/recent-activity/all/";

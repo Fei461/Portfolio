@@ -145,8 +145,7 @@
 /* Impresión del CV: solo el contenido, en blanco y negro legible. */
 @media print {
   .dojo-head,
-  .dojo-hajime,
-  .dojo-progreso {
+  .dojo-progreso{
     display: none !important;
   }
 
@@ -633,4 +632,107 @@
 .notas-resto {
   align-self: flex-start;
   margin-top: 1.4rem;
+}
+
+/* En voz alta: la nota ocupa el tatami y el índice se ve entero de un vistazo. */
+.combate--notas .nota-hoja {
+  max-width: min(100%, 1000px);
+}
+
+.combate--notas .nota-hoja p:not(.nota-hoja__tema) {
+  max-width: 72ch;
+}
+
+.combate--notas .notas-indice__intro {
+  margin-top: 0.6rem;
+  font-size: 0.98rem;
+}
+
+.combate--notas .notas-lista {
+  margin-top: 0.9rem;
+}
+
+.combate--notas .notas-lista button {
+  padding: 0.5rem 0.5rem;
+  font-size: 0.95rem;
+}
+
+.combate--notas .notas-lista button.activo {
+  padding-left: 1rem;
+}
+
+.combate--notas .notas-lista button span {
+  font-size: 0.74rem;
+}
+
+/* Lo que no cabe en el CV: todos los apuntes sobre la mesa, cada uno con su color. */
+.combate--sobre .estuche__fila {
+  margin-top: 1rem;
+}
+
+.apuntes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 290px), 1fr));
+  gap: 1.3rem;
+  margin-top: 1.4rem;
+  align-items: start;
+}
+
+.apuntes .apunte {
+  max-width: none;
+  padding: 1rem 1.1rem 0.9rem 2.6rem;
+  background-position: -0.6rem 0, 0 1rem;
+  rotate: calc((var(--k) - 2.5) * 0.5deg);
+  animation-delay: calc(var(--k) * 70ms);
+  transition: transform 0.3s cubic-bezier(0.3, 1.4, 0.5, 1), box-shadow 0.3s ease;
+  scroll-margin: 1rem;
+}
+
+.apuntes .apunte:nth-child(even) {
+  rotate: calc((2.5 - var(--k)) * 0.4deg);
+}
+
+.apuntes .apunte h3 {
+  font-size: clamp(1.25rem, 1.7vw, 1.55rem);
+}
+
+.apuntes .apunte p {
+  font-size: 0.97rem;
+  line-height: 1.5rem;
+}
+
+.apuntes .apunte--marcado {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 10px 10px 0 var(--c-osc);
+  outline: 4px solid var(--c);
+  outline-offset: 0;
+}
+
+.apuntes .apunte--marcado h3 .sub {
+  background-size: 100% 100%;
+}
+
+/* Sobre mí, en corto: lo básico bajo la foto. */
+.sobre-corto {
+  display: grid;
+  gap: 0.45rem;
+  margin: 1.1rem 0 1.2rem;
+  padding: 0.8rem 0 0;
+  border-top: 3px solid var(--sumi);
+  font-size: 0.92rem;
+}
+
+.sobre-corto div {
+  display: grid;
+  grid-template-columns: 7.5rem minmax(0, 1fr);
+  gap: 0.6rem;
+}
+
+.sobre-corto dt {
+  font-weight: 800;
+}
+
+.sobre-corto dd {
+  margin: 0;
+  color: var(--texto-suave);
 }

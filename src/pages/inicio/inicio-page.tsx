@@ -82,7 +82,7 @@ function FotoGraduacion() {
           height={1600}
         />
         <button ref={delante} type="button" className="foto-giro__boton" onClick={() => girar(true)} tabIndex={vuelta ? -1 : 0}>
-          Graduada, y sin la camiseta del Atleti <span aria-hidden="true">↻</span>
+          Mi graduación tiene historia. <span className="foto-giro__accion">Dale la vuelta <span aria-hidden="true">↻</span></span>
         </button>
       </div>
       <div className="foto-giro__cara foto-giro__detras" aria-hidden={!vuelta}>
@@ -109,15 +109,17 @@ function FotoGraduacion() {
 // en la pared, los judogis que llevan a los proyectos.
 export function InicioPage() {
   useEffect(() => {
-    document.title = "Lara Feijóo, publicista con culo inquieto";
+    document.title = "Lara Feijóo, publicidad, relaciones públicas y culo inquieto";
   }, []);
 
   return (
     <main className="dojo-hero dojo-hero--pantalla">
       <div className="dojo-hero__texto">
         <NombreProyectado />
-        <p className="dojo-lema">Publicista con culo inquieto.</p>
-        <p className="dojo-rol">Estudiante del Máster en Comunicación Publicitaria (UC3M)</p>
+        <p className="dojo-lema">Publicidad, RRPP y culo inquieto.</p>
+        <p className="dojo-rol">
+          Graduada en Publicidad y RRPP (URJC) · Máster en Comunicación Publicitaria (UC3M)
+        </p>
         <div className="dojo-intro-caja">
           <p className="dojo-intro">
             No me defino como copy, ni como arte, ni como cuentas, ni como planner. Si tuviera que
@@ -149,7 +151,13 @@ export function InicioPage() {
       </div>
 
       <div className="dojo-pared">
-        <FotoGraduacion />
+        <div className="dojo-pared__arriba">
+          <p className="dojo-rotulo">
+            <strong>Mis proyectos</strong>
+            <span>Elige un judogi: cada uno lleva a un tipo de trabajo. En la carpeta, los de la carrera.</span>
+          </p>
+          <FotoGraduacion />
+        </div>
         <Colgador />
       </div>
     </main>

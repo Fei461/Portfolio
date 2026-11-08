@@ -37,8 +37,8 @@ export const tiempos: {
     significado: "Qué ha pasado y por qué",
     color: "azul",
     ejemplo:
-      "Me encantan las métricas, los números y los resultados. Me encanta analizar qué ha pasado y, sobre todo, por qué. En Stud-IA los datos me hicieron cambiar el plan de X, Threads y Bluesky.",
-    caso: { slug: "stud-ia", titulo: "Stud-IA" },
+      "Me encantan las métricas, los números y los resultados. Me encanta analizar qué ha pasado y, sobre todo, por qué. En mi TFG pasé la misma encuesta dentro y fuera de BBVA: 248 respuestas para medir la distancia entre lo que la plantilla vive y lo que el público percibe.",
+    caso: { slug: "tfg-bbva", titulo: "mi TFG" },
   },
 ];
 

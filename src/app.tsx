@@ -10,7 +10,6 @@ import {
 } from "react";
 import { HashRouter, Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { SiteHeader } from "@/components/site-header";
-import { SiteFooter } from "@/components/site-footer";
 import { ScrollProgress } from "@/components/scroll-progress";
 
 const TrabajoPage = lazy(() =>
@@ -100,10 +99,6 @@ function App() {
   );
 }
 
-// Las pantallas sobre el tatami (portada, proyectos y casos) caben enteras en la ventana;
-// el pie solo acompaña a las páginas de lectura.
-const conPie = ["/cv"];
-
 function MainLayout() {
   const { pathname } = useLocation();
   // El barrido no se ve al entrar en la web, solo al cambiar de pantalla.
@@ -137,7 +132,6 @@ function MainLayout() {
           </Suspense>
         </AppErrorBoundary>
       </div>
-      {conPie.includes(pathname) && <SiteFooter />}
     </div>
   );
 }

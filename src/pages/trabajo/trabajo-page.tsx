@@ -21,60 +21,34 @@ const tipoCorto = (t: string) => {
   return r.charAt(0).toUpperCase() + r.slice(1);
 };
 
-// Archivo: dos grupos de fichas que se despliegan para ver de qué va cada trabajo.
+// Archivo: los expedientes de la carrera, abiertos sobre la mesa. Todo a la vista, sin desplegar.
 function Archivo({ lista }: { lista: Proyecto[] }) {
-  const [abierto, setAbierto] = useState<string | null>(null);
-  const grupos: { id: "escrito" | "campana"; titulo: string; texto: string }[] = [
-    { id: "escrito", titulo: "Por escrito", texto: "Estrategia, relaciones públicas y análisis, sin piezas visuales." },
-    { id: "campana", titulo: "Campañas de clase", texto: "Ideas, conceptos y acciones hechos en clase." },
-  ];
-  let n = 0;
+  const etiqueta = { escrito: "Por escrito", campana: "Campaña de clase" } as const;
+  const ordenados = [...lista].sort((a, b) => (a.grupo === b.grupo ? 0 : a.grupo === "escrito" ? -1 : 1));
   return (
-    <div className="archivo-grupos">
-      {grupos.map((g) => (
-        <section key={g.id} className="archivo-grupo" aria-labelledby={`archivo-${g.id}`}>
-          <header>
-            <h2 id={`archivo-${g.id}`}>{g.titulo}</h2>
-            <p>{g.texto}</p>
-          </header>
-          <ul className="archivo">
-            {lista
-              .filter((p) => p.grupo === g.id)
-              .map((p) => {
-                n += 1;
-                const abiertoAqui = abierto === p.slug;
-                return (
-                  <li key={p.slug} style={{ "--n": n } as CSSProperties} className={abiertoAqui ? "abierto" : undefined}>
-                    <button
-                      type="button"
-                      aria-expanded={abiertoAqui}
-                      aria-controls={`ficha-${p.slug}`}
-                      onClick={() => setAbierto(abiertoAqui ? null : p.slug)}
-                    >
-                      <span className="archivo__n" aria-hidden="true">
-                        {String(n).padStart(2, "0")}
-                      </span>
-                      <strong>{p.titulo}</strong>
-                      <span className="archivo__resumen">{p.resumen}</span>
-                      <span className="archivo__tipo">{p.tipo}</span>
-                      <span className="archivo__mas" aria-hidden="true">
-                        {abiertoAqui ? "−" : "+"}
-                      </span>
-                    </button>
-                    {p.detalle && (
-                      <div id={`ficha-${p.slug}`} className="archivo__ficha" hidden={!abiertoAqui}>
-                        {p.detalle.map((d) => (
-                          <p key={d}>{d}</p>
-                        ))}
-                      </div>
-                    )}
-                  </li>
-                );
-              })}
-          </ul>
-        </section>
-      ))}
-    </div>
+    <ol className="expedientes">
+      {ordenados.map((p, k) => {
+        const [miParte, ...resto] = p.detalle ?? [];
+        const esMiParte = Boolean(miParte) && /(mío|mía|me encargué|me dediqué|individual)/i.test(miParte);
+        return (
+          <li key={p.slug} className={`expediente expediente--${p.grupo}`} style={{ "--n": k } as CSSProperties}>
+            <span className="expediente__pestana">{p.grupo ? etiqueta[p.grupo] : "Trabajo"}</span>
+            <div className="expediente__hoja">
+              <span className="expediente__n" aria-hidden="true">
+                {String(k + 1).padStart(2, "0")}
+              </span>
+              <h2>{p.titulo}</h2>
+              <p className="expediente__resumen">{p.resumen}</p>
+              {esMiParte && <p className="expediente__mia">{miParte}</p>}
+              {(esMiParte ? resto : p.detalle ?? []).map((d) => (
+                <p key={d}>{d}</p>
+              ))}
+              <p className="expediente__tipo">{tipoCorto(p.tipo)}</p>
+            </div>
+          </li>
+        );
+      })}
+    </ol>
   );
 }
 
