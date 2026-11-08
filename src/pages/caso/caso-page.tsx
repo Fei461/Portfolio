@@ -1,5 +1,6 @@
 import { Sigue } from "@/components/sigue";
-import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
+import { motivo, temas } from "@/data/casos/temas";
+import { useCallback, useEffect, useRef, useState, type ReactNode, type CSSProperties } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import type { CasoCompleto } from "@/data/casos";
 import { perchas, porPercha, proyectos } from "@/data/proyectos";
@@ -264,7 +265,7 @@ function construirAsaltos(
     nombre: "Me llevo",
     contenido: (
       <div className="asalto__llevo">
-        {caso.cita && (
+        {caso.cita && !caso.citaEnFicha && (
           <figure className="caso-cita">
             <blockquote>
               <p>«{caso.cita.texto}»</p>
@@ -304,14 +305,14 @@ function construirAsaltos(
     const reto = asaltos.find((x) => x.id === "reto")!;
     const resto = asaltos.filter((x) => x.id === "numeros" || x.id === "piezas");
     return [
+      reto,
       {
-        id: "reto",
-        nombre: "El caso",
+        id: "hice",
+        nombre: "Lo que hice",
         contenido: (
           <>
-            {reto.contenido}
             {caso.bloques.length > 0 && (
-              <div className="breve__bloques">
+              <div className="breve__bloques breve__bloques--solo">
                 {caso.bloques.map((b) => (
                   <div key={b.titulo}>
                     <h3>{b.titulo}</h3>
@@ -348,6 +349,7 @@ function construirAsaltos(
 
 export function CasoPage({ caso }: { caso: CasoCompleto }) {
   const proyecto = proyectos.find((p) => p.slug === caso.slug);
+  const tema = temas[caso.slug];
   const percha = proyecto?.percha ?? "azul";
   const mismos = porPercha(percha);
   const posicion = mismos.findIndex((p) => p.slug === caso.slug) + 1;
@@ -407,7 +409,19 @@ export function CasoPage({ caso }: { caso: CasoCompleto }) {
   const ultimo = activo === asaltos.length - 1;
 
   return (
-    <main className={`combate combate--${percha}`}>
+    <main
+      className={`combate combate--${percha}${tema ? " combate--tema" : ""}`}
+      style={
+        tema
+          ? ({
+              "--caso-fondo": tema.fondo,
+              "--caso-oscuro": tema.oscuro,
+              "--caso-acento": tema.acento,
+              "--caso-motivo": motivo(tema),
+            } as CSSProperties)
+          : undefined
+      }
+    >
       <aside className="combate__ficha">
         <p className="caso-grado">
           <Link to={`/trabajo?percha=${percha}`} className="caso-grado__volver">
@@ -440,6 +454,16 @@ export function CasoPage({ caso }: { caso: CasoCompleto }) {
               </li>
             ))}
           </ul>
+        )}
+        {caso.cita && caso.citaEnFicha && (
+          <figure className="ficha-cita">
+            <blockquote>
+              <p>«{caso.cita.texto}»</p>
+            </blockquote>
+            <figcaption>
+              <strong>{caso.cita.autor}</strong>, {caso.cita.cargo}
+            </figcaption>
+          </figure>
         )}
         <dl className="combate__datos">
           {caso.ficha.map((f) => (

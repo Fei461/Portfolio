@@ -1247,3 +1247,161 @@
   -webkit-mask-image: none;
   mask-image: none;
 }
+
+/* ── Identidad de cada caso: su fondo, su motivo y sus colores ── */
+.combate--tema .combate__tatami {
+  background-color: var(--caso-fondo);
+  background-image: var(--caso-motivo);
+  background-size: auto;
+}
+
+.combate--tema .asaltos {
+  background: var(--caso-oscuro);
+  border-bottom-color: var(--caso-oscuro);
+}
+
+.combate--tema .asaltos button[aria-selected="true"] {
+  border-top-color: var(--caso-acento);
+}
+
+.combate--tema .marcador {
+  background: var(--caso-oscuro);
+  border-top-color: var(--caso-acento);
+}
+
+.combate--tema .combate__titulo {
+  text-decoration: underline;
+  text-decoration-color: var(--caso-fondo);
+  text-decoration-thickness: 0.12em;
+  text-underline-offset: 0.08em;
+}
+
+.combate--tema .caso-grado__cinta {
+  background: var(--caso-fondo);
+}
+
+.combate--tema .asalto {
+  box-shadow: 10px 10px 0 var(--caso-oscuro);
+}
+
+.combate--tema .combate__pie .combate__siguiente,
+.combate--tema .sigue,
+.combate--tema .hice__lista button.activo {
+  background: var(--caso-oscuro);
+  border-color: var(--caso-oscuro);
+}
+
+.combate--tema .hice__lista button.activo {
+  box-shadow: inset 8px 0 0 var(--caso-acento);
+}
+
+.combate--tema .sigue {
+  box-shadow: 3px 3px 0 var(--caso-acento);
+}
+
+.combate--tema .combate__marcador {
+  background: var(--judogi);
+  border: 2px solid var(--caso-oscuro);
+}
+
+.combate--tema .caso-cita,
+.combate--tema .asalto .caso-cita {
+  background: var(--caso-oscuro);
+}
+
+.combate--tema .hice__detalle li::before {
+  background: var(--caso-oscuro);
+}
+
+/* La carta, en la ficha */
+.ficha-cita {
+  margin: 1.2rem 0 0;
+  padding: 0.85rem 1rem;
+  background: var(--judogi);
+  border: 3px solid var(--sumi);
+  border-left: 10px solid var(--caso-fondo, var(--obi));
+}
+
+.ficha-cita blockquote {
+  margin: 0;
+}
+
+.ficha-cita p {
+  margin: 0;
+  font-weight: 700;
+  font-size: clamp(0.95rem, 1.15vw, 1.08rem);
+  line-height: 1.35;
+}
+
+.ficha-cita figcaption {
+  margin-top: 0.4rem;
+  font-size: 0.82rem;
+  color: var(--texto-suave);
+}
+
+.breve__bloques--solo {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+
+/* Tres cifras: en una fila, para que la ficha quepa entera. */
+.marcador:has(> li:nth-child(3):last-child) {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.marcador:has(> li:nth-child(3):last-child) li {
+  border-top: 0;
+  border-left: 1px solid rgba(245, 245, 242, 0.22);
+}
+
+.marcador:has(> li:nth-child(3):last-child) li:first-child {
+  border-left: 0;
+}
+
+.marcador:has(> li:nth-child(3):last-child) strong {
+  font-size: clamp(1.6rem, min(2.4vw, 4.4vh), 2.3rem);
+}
+
+/* Móvil: primero el título y el caso; las cifras y la ficha, al final. */
+@media (max-width: 900px) {
+  .combate__ficha {
+    display: contents;
+  }
+
+  .combate__ficha > * {
+    margin-left: var(--gutter);
+    margin-right: var(--gutter);
+  }
+
+  .combate__ficha > :first-child {
+    margin-top: 1.25rem;
+  }
+
+  .combate__ficha > .caso-lecturas,
+  .combate__ficha > .dojo-acciones {
+    margin-bottom: 1.25rem;
+  }
+
+  .combate__tatami {
+    order: 1;
+  }
+
+  .combate__ficha > .marcador,
+  .combate__ficha > .combate__datos {
+    order: 2;
+  }
+
+  .combate__ficha > .ficha-cita {
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+  }
+
+  .combate__ficha > .combate__datos {
+    margin-bottom: 2rem;
+  }
+}
+
+.laboratorio iframe {
+  background: #fff;
+}

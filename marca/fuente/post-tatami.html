@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Portada de post, tatami</title>
+<link rel="stylesheet" href="marca.css">
+<link rel="stylesheet" href="post.css">
+</head>
+<body>
+<!-- Para cambiar la portada, toca solo el texto de .post__seccion y del titular.
+     Lo que va dentro de <mark> sale subrayado. El tamaño se ajusta solo. -->
+<main class="post post--tatami tatami">
+  <div class="post__cabeza">
+    <p class="post__seccion">En voz alta</p>
+    <div class="mono"></div>
+  </div>
+  <div class="post__caja">
+    <h1 class="titular" data-ajustar="230" data-fondo><span>Aquí va <mark>el titular</mark>, en tres o cuatro líneas</span></h1>
+  </div>
+  <div class="post__obi obi">
+    <span class="post__nombre">Lara Feijóo</span>
+    <span class="post__lema">Publicista con culo inquieto</span>
+  </div>
+</main>
+<script src="marca.js"></script>
+</body>
+</html>

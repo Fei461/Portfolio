@@ -109,11 +109,6 @@ export const talixea: CasoCompleto = {
         "Cuando la recorrí como lo haría cada tipo de cliente, aparecieron fallos que yo, de tanto mirarla, ya no veía: etiquetas internas a la vista, un botón de Plus que no llevaba a Plus o mezclas de idiomas que parecían erratas. Se arreglaron antes de lanzar.",
     },
   ],
-  cita: {
-    texto: "Lo hemos conseguido, me deja entrar.",
-    autor: "Lo que escribí",
-    cargo: "El día que la app me dejó crear la primera cuenta",
-  },
   aprendizajes: [
     "Antes de lanzar, recorre tu producto como cada uno de tus clientes.",
     "Un cuento no se estira para parecer novela.",

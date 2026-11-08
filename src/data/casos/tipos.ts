@@ -58,6 +58,8 @@ export type CasoCompleto = {
   /** Título e introducción alternativos para la sección sobre tatami. */
   tatami?: { titulo: string; termino: string; intro: string };
   cita?: { texto: string; autor: string; cargo: string };
+  /** La cita va en la ficha, a la vista desde el principio. */
+  citaEnFicha?: boolean;
   aprendizajes: string[];
   enLinkedIn?: { titulo: string; href: string }[];
   nota?: string;

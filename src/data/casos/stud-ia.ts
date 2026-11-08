@@ -18,12 +18,11 @@ export const studIa: CasoCompleto = {
     { cifra: "36.000", texto: "visualizaciones de uno de mis vídeos en YouTube" },
     { cifra: "3.030", texto: "visitas y 365 seguidores en Threads en un mes, empezando desde cero" },
     { cifra: "10:1", texto: "impresiones de responder a cuentas grandes frente a publicar contenido propio en X" },
-    { cifra: "80.000", texto: "estudiantes activos al mes en la plataforma cuando acabé (mérito de todo el equipo)" },
   ],
   contexto: {
     titulo: "Una startup pequeña, a propósito",
     parrafos: [
-      "Stud-IA convierte los apuntes del propio estudiante en flashcards, mapas mentales y simulacros de examen. Tiene dos negocios que hablan de forma muy distinta: los estudiantes (B2C) y los centros educativos (B2B).",
+      "Stud-IA convierte los apuntes del propio estudiante en flashcards, mapas mentales y simulacros de examen. Cuando acabé, tenía 80.000 estudiantes activos al mes. Tiene dos negocios que hablan de forma muy distinta: los estudiantes (B2C) y los centros educativos (B2B).",
       "Cuando buscaba prácticas me encontré ante una encrucijada: grandes empresas con un nombre bonito en el CV o una startup de menos de diez personas de la que ni había oído hablar. No quería ser «una becaria más». Así que no me limité a subir mi solicitud: busqué en Google hasta localizar al equipo de comunicación y les escribí directamente.",
       "Y, para qué negarlo, era mi propio público. Empecé con los exámenes finales a tres semanas y el TFG a dos meses, así que el agobio que tenía que comunicar lo estaba viviendo en primera persona.",
       "Al principio me puse yo sola la etiqueta de «huevito» y prefería callarme a equivocarme. Hasta que detecté un hueco donde yo sí tenía experiencia: X. Lo propuse y me dijeron: «Podría estar bien». En lugar de esperar instrucciones, en la siguiente reunión llevé una estrategia completa para X, Threads y Bluesky. Así conseguí mi primer ownership, mi bebé, al que llamé BXT (como Elon Musk).",
@@ -124,11 +123,12 @@ export const studIa: CasoCompleto = {
         "En una startup no se puede sopesar durante semanas la decisión perfecta. Creo haberme defendido bien, pero sigo prefiriendo los proyectos «cocinados a fuego lento» y es algo en lo que debo mejorar.",
     },
   ],
+  citaEnFicha: true,
   cita: {
     texto:
       "Lara demostró ser una persona responsable, creativa y con una excelente actitud de aprendizaje y adaptación a un entorno dinámico y exigente como el de una startup.",
     autor: "Diego López de Aragón",
-    cargo: "Cofundador y CMO de Stud-IA, en su carta de recomendación",
+    cargo: "cofundador y CMO de Stud-IA, en su carta de recomendación",
   },
   aprendizajes: [
     "Solo puedes aprender de aquello que te atreves a decir en voz alta, a probar, a equivocarte y a acertar en el proceso.",
