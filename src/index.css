@@ -179,13 +179,6 @@
 }
 
 @layer components {
-  .section-shell {
-    @apply px-8 py-20 md:py-24 lg:py-28;
-  }
-
-  .section-inner {
-    @apply mx-auto w-full max-w-7xl;
-  }
 
   /* ─── SISTEMA TIPOGRÁFICO LF ───────────────────────────────
      Reglas estrictas de uso:
@@ -197,190 +190,55 @@
      · botones           → font-sans medium
   ──────────────────────────────────────────────────────────── */
 
-  .eyebrow {
-    /* Metadata y eyebrows: gris oscuro legible, NO amarillo */
-    @apply font-mono text-xs uppercase tracking-[0.2em] text-tertiary;
-  }
-
-  .surface-panel {
-    @apply rounded-2xl border border-border bg-card/80 backdrop-blur-sm;
-  }
+  
 
   /* ── Bloque oscuro editorial — clase utilitaria reutilizable ── */
-  .ink-block {
-    background-color: hsl(var(--color-ink));
-    color: hsl(var(--color-ink-text));
-  }
-  .ink-block-mid {
-    background-color: hsl(var(--color-ink-mid));
-    color: hsl(var(--color-ink-text));
-  }
-  .ink-surface {
-    background-color: hsl(var(--color-ink-surface));
-  }
+  
 
   /* ── Tres niveles de papel — ritmo visual claro ── */
-  .paper-light {
-    background-color: hsl(var(--surface-03)); /* más claro — descanso */
-  }
-  .paper-base {
-    background-color: hsl(var(--surface-01)); /* base principal */
-  }
-  .paper-warm {
-    background-color: hsl(var(--surface-02)); /* más cálido — peso visual */
-  }
-  .paper-deep {
-    background-color: hsl(34 24% 85%); /* más oscuro — transición a ink */
-  }
+  
 
   /* LF sparkle decoration */
-  .lf-sparkle {
-    display: inline-block;
-    position: relative;
-  }
-
-  .lf-sparkle::before {
-    content: "✦";
-    position: absolute;
-    color: hsl(var(--color-primary));
-    font-size: 0.7em;
-    top: -0.5em;
-    right: -0.8em;
-  }
+  
 
   /* Monogram LF */
-  .lf-monogram {
-    @apply font-serif font-bold text-foreground/40 select-none;
-    letter-spacing: -0.04em;
-  }
+  
 
   /* Arc decoration */
-  .lf-arc {
-    position: absolute;
-    border-radius: 50%;
-    border: 1.5px solid hsl(var(--color-foreground) / 0.12);
-    pointer-events: none;
-  }
+  
 
   /* Card warm style */
-  .lf-card {
-    @apply rounded-2xl border border-border/60 bg-card/70 backdrop-blur-sm shadow-sm;
-    transition:
-      transform 0.2s ease,
-      box-shadow 0.2s ease;
-  }
-
-  .lf-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 40px hsl(44 95% 48% / 0.15);
-  }
+  
 
   /* Serif display headline */
-  .display-headline {
-    @apply font-serif font-medium leading-[1.1] tracking-tight text-foreground;
-  }
+  
 
   /* SEGUNDA LECTURA — anomaly elements */
 
   /* Strikethrough annotation (crossed-out assumption) */
-  .sl-strike {
-    position: relative;
-    display: inline;
-    color: hsl(var(--color-muted-foreground));
-  }
-  .sl-strike::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 50%;
-    height: 1.5px;
-    background: hsl(var(--color-primary));
-    transform: translateY(-50%) rotate(-1deg);
-  }
+  
 
   /* Shifted / offset word */
-  .sl-shift {
-    display: inline-block;
-    transform: translateY(-3px);
-    color: hsl(var(--color-secondary));
-    font-style: italic;
-  }
+  
 
   /* Marginal annotation / side note */
-  .sl-margin-note {
-    /* Contraste suficiente: text-tertiary = gris 38% oscuro sobre blanco = AA */
-    @apply font-mono text-xs;
-    color: hsl(var(--color-tertiary));
-    border-left: 2px solid hsl(var(--color-primary) / 0.6);
-    padding-left: 0.75rem;
-  }
+  
 
   /* Underline reveal on hover */
-  .sl-reveal-underline {
-    position: relative;
-    cursor: default;
-  }
-  .sl-reveal-underline::after {
-    content: attr(data-reveal);
-    position: absolute;
-    bottom: -1.6rem;
-    left: 0;
-    font-family: var(--font-mono);
-    font-size: 0.65rem;
-    color: hsl(var(--color-tertiary));
-    white-space: nowrap;
-    opacity: 0;
-    transform: translateY(4px);
-    transition:
-      opacity 0.2s ease,
-      transform 0.2s ease;
-    pointer-events: none;
-  }
-  .sl-reveal-underline:hover::after {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  
 
   /* Reasoning chain arrow — amarillo solo como decoración, no como texto informativo */
-  .sl-chain-arrow {
-    @apply font-mono text-xs;
-    color: hsl(var(--color-primary));
-    margin: 0 0.35rem;
-    font-weight: 500;
-  }
+  
 
   /* Annotation bracket */
-  .sl-bracket {
-    @apply font-mono text-xs;
-    color: hsl(var(--color-primary) / 0.7);
-  }
+  
 
   /* Grid rule — fine horizontal line with label */
-  .sl-rule {
-    position: relative;
-    border-top: 1px solid hsl(var(--color-border));
-  }
-  .sl-rule-label {
-    position: absolute;
-    top: -0.7rem;
-    right: 0;
-    @apply font-mono text-[10px] uppercase tracking-widest text-muted-foreground bg-background px-2;
-  }
+  
 
   /* Note card */
-  .nota-card {
-    @apply border border-border bg-card;
-    transition:
-      border-color 0.2s ease,
-      background-color 0.2s ease,
-      box-shadow 0.2s ease;
-  }
-  .nota-card:hover {
-    border-color: hsl(var(--color-primary) / 0.6);
-    background-color: hsl(var(--color-accent) / 0.28);
-    box-shadow: 0 2px 16px hsl(44 95% 48% / 0.08);
-  }
+  
+
 }
 
 /* ─── Marquee ─── */
@@ -392,44 +250,14 @@
     transform: translateX(-50%);
   }
 }
-.animate-marquee {
-  animation: marquee 30s linear infinite;
-}
 
 /* Transiciones editoriales reutilizables entre superficies contiguas. */
-.section-transition {
-  height: clamp(1rem, 2vw, 2rem);
-  pointer-events: none;
-}
-.section-transition-to-warm {
-  background: hsl(var(--surface-02));
-  border-top: 1px solid hsl(var(--color-foreground) / 0.08);
-}
-.section-transition-to-dark {
-  background: hsl(var(--surface-dark));
-  border-top: 1px solid hsl(var(--color-primary) / 0.35);
-}
-.section-transition-from-dark {
-  background: hsl(var(--surface-01));
-  border-top: 1px solid hsl(var(--color-foreground) / 0.12);
-}
 
 /* ─── Utility overrides ─── */
 .hover\:bg-foreground\/6:hover {
   background-color: hsl(var(--color-foreground) / 0.06);
 }
-.bg-primary\/8 {
-  background-color: hsl(var(--color-primary) / 0.08);
-}
-.bg-white\/4 {
-  background-color: hsl(0 0% 100% / 0.04);
-}
-.border-white\/8 {
-  border-color: hsl(0 0% 100% / 0.08);
-}
-.bg-primary\/12 {
-  background-color: hsl(var(--color-primary) / 0.12);
-}
+
 .bg-foreground\/6 {
   background-color: hsl(var(--color-foreground) / 0.06);
 }
@@ -465,9 +293,7 @@
     display: none !important;
   }
   /* Clean up gradients and decorative elements */
-  .pointer-events-none {
-    display: none !important;
-  }
+  
   /* Force links to show URLs */
   a[href^="http"]::after {
     content: " (" attr(href) ")";

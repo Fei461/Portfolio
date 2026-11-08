@@ -32,7 +32,7 @@ const caso = (file: string) => `${import.meta.env.BASE_URL}assets/casos/${file}`
 const minuto = [
   { img: caso("stud-ia/poster.jpg"), cifra: "36.000", texto: "visualizaciones en Stud‑IA", to: "/trabajo/stud-ia" },
   { img: caso("tfg-bbva/brecha.jpg"), cifra: "248", texto: "respuestas en mi TFG", to: "/trabajo/tfg-bbva" },
-  { img: caso("talixea/portada.png"), cifra: "Una app", texto: "hecha sin saber programar", to: "/trabajo/talixea" },
+  { img: caso("talixea/portada.jpg"), cifra: "Una app", texto: "hecha sin saber programar", to: "/trabajo/talixea" },
 ];
 
 const correo = "lara.feijoo@gmail.com";

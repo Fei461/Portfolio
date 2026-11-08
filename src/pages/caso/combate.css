@@ -1707,3 +1707,13 @@
     gap: 0.35rem;
   }
 }
+
+.contraste__vive {
+  color: #a3170f;
+}
+
+/* Foco visible también sobre los fondos de color de cada caso */
+.combate--tema :focus-visible {
+  outline-color: var(--sumi);
+  box-shadow: 0 0 0 6px var(--judogi);
+}

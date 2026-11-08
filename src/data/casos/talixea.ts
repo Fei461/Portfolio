@@ -90,7 +90,7 @@ export const talixea: CasoCompleto = {
     texto: "La web, donde se puede leer el primer capítulo sin crear cuenta, y algunos carruseles del lanzamiento.",
     items: [
       {
-        src: img("portada.png"),
+        src: img("portada.jpg"),
         alt: "Portada de talixea.es con el titular «Aprende idiomas con libros que ya conoces» y una muestra de Blancanieves con palabras en inglés",
         pie: "La portada, con la muestra de lectura y el control de idioma.",
       },

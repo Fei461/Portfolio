@@ -82,7 +82,7 @@ export const iberia: CasoCompleto = {
         pie: "Storyboard del spot. El cuadro se restaura con oro, como en el kintsugi, y no llega a terminarse.",
       },
       {
-        src: img("cine.png"),
+        src: img("cine.jpg"),
         alt: "Sala de cine con una pantalla sucia que alguien limpia con un trapo y el texto «A veces, la suciedad no te deja ver la imagen completa»",
         pie: "Cine: el tráiler empieza con la pantalla sucia.",
       },

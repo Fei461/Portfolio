@@ -98,7 +98,7 @@ export const proyectos: Proyecto[] = [
   // ── Judogi blanco: marca y creatividad ──
   {
     slug: "talixea",
-    portada: caso("talixea/portada.png"),
+    portada: caso("talixea/portada.jpg"),
     titulo: "Talixea",
     percha: "blanco",
     tipo: "Proyecto propio, desde febrero de 2026",
@@ -122,7 +122,7 @@ export const proyectos: Proyecto[] = [
   },
   {
     slug: "iberia",
-    portada: caso("iberia/cine.png"),
+    portada: caso("iberia/cine.jpg"),
     titulo: "Iberia",
     percha: "blanco",
     tipo: "Grado URJC, en equipo",
@@ -233,7 +233,7 @@ export const proyectos: Proyecto[] = [
   // ── Fuera de la selección (menos es más). Para recuperar uno, quítale «oculto». ──
   {
     slug: "el-regalo-no-deseado",
-    portada: caso("torrons/marquesina.png"),
+    portada: caso("torrons/marquesina.jpg"),
     titulo: "Torrons Vicens",
     percha: "blanco",
     tipo: "Grado URJC, en equipo",

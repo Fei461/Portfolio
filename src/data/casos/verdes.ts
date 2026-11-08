@@ -152,9 +152,9 @@ export const torrons: CasoCompleto = {
   imagenes: {
     titulo: "Las piezas",
     items: [
-      { src: img("torrons", "storyboard.png"), alt: "Storyboard ilustrado del vídeo para YouTube", pie: "Storyboard del vídeo para YouTube." },
-      { src: img("torrons", "marquesina.png"), alt: "Marquesina holográfica de Sinergia con dos imágenes según el lado desde el que se mira", pie: "La marquesina holográfica." },
-      { src: img("torrons", "metro.png"), alt: "Interior de un vagón de metro decorado para la campaña", pie: "El metro decorado por dentro." },
+      { src: img("torrons", "storyboard.jpg"), alt: "Storyboard ilustrado del vídeo para YouTube", pie: "Storyboard del vídeo para YouTube." },
+      { src: img("torrons", "marquesina.jpg"), alt: "Marquesina holográfica de Sinergia con dos imágenes según el lado desde el que se mira", pie: "La marquesina holográfica." },
+      { src: img("torrons", "metro.jpg"), alt: "Interior de un vagón de metro decorado para la campaña", pie: "El metro decorado por dentro." },
     ],
   },
   aprendizajes: [
