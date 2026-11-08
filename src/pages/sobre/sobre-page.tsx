@@ -37,8 +37,8 @@ function QuienSoy() {
       <p>
         Me lo paso genial en un brainstorming diciendo locuras, y me lo paso igual de bien dándoles forma
         después. Y luego están <Sub c="azul">los números: me encanta analizar qué ha pasado y, sobre
-        todo, por qué</Sub>. Soy un poco Barbie en esto, siento que puedo serlo todo. Por eso creo que
-        encajo en una agencia pequeña, de las que hay que tocar todos los palos.
+        todo, por qué</Sub>. Soy un poco Barbie en esto, siento que puedo serlo todo. Por eso quizá
+        encajo más en una agencia pequeña, en la que hay que tocar todos los palos.
       </p>
       <p className="quien__busco">
         <strong>Busco:</strong> {perfil.busco} Ahora estudio el Máster en Comunicación Publicitaria

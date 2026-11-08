@@ -23,9 +23,8 @@ export const brujaRoja: CasoCompleto = {
     titulo: "Una copa menstrual que no pide permiso",
     parrafos: [
       "Fue uno de los trabajos más divertidos que hice en toda la carrera. Cuando nos dijeron que debíamos hacernos una cuenta en Twitter, pensé que para ver el mundo arder (según el público de esta red) lo mejor era un producto de menstruación femenina y feminista.",
-      "Convencí a mi equipo de buscar la viralidad desde el odio, con un discurso profundamente progresista que chocara con la masculinidad frágil de esa red. Estuvimos cuatro meses publicando de forma constante y, si soy sincera, a veces me dan ganas de volver.",
+      "Desde el primer momento convencí a mi equipo de que había más de una forma de abordar el reto: lograr la viralidad desde el odio, con un discurso profundamente progresista que chocara con la masculinidad frágil de esa red. Estuvimos cuatro meses publicando de forma constante y, si soy sincera, a veces me dan ganas de volver.",
       "Yo aportaba el toque más sarcástico y provocador. El apartado de nuestra marca pone en palabras lo que yo pensaba de verdad, el logotipo fue cosa mía y el nombre lo elegimos entre todas. Admito que hice bastante en este trabajo, porque estaba motivada.",
-      "Empezamos de cero y sin presupuesto. La cuenta siguió siendo pequeña, pero algunos mensajes se recibieron mejor de lo esperado.",
     ],
   },
   bloques: [
@@ -50,8 +49,8 @@ export const brujaRoja: CasoCompleto = {
       titulo: "La marca",
       resumen: "Una identidad corporativa completa.",
       puntos: [
-        "El logotipo, con el sombrero de bruja, dentro de un universo de lunas, calderos y constelaciones muy lejos de la estética de farmacia.",
-        "Creamos dos productos, la copa y unas infusiones, y una bolsa con el claim «Menstrúo, luego existo».",
+        "El logotipo, con dos símbolos que lo complementan: el sombrero de la bruja y la gota de sangre. Y, desde el primer momento, el fondo con las constelaciones.",
+        "Creamos dos productos, la copa y unas infusiones para los cólicos, y una bolsa con el claim «Menstrúo, luego existo».",
         "Colaboramos con otros grupos de clase, como las zapatillas con UShoose.",
       ],
     },
@@ -88,7 +87,7 @@ export const brujaRoja: CasoCompleto = {
       },
       {
         src: img("productos.jpg"),
-        alt: "Caja regalo de copas menstruales, packaging de la copa y una bolsa burdeos con el texto «Menstrúo, luego existo»",
+        alt: "Caja regalo de la marca, packaging de la copa y una bolsa burdeos con el texto «Menstrúo, luego existo»",
         pie: "Producto: caja, packaging y bolsa.",
       },
       {

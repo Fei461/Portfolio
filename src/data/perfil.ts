@@ -7,7 +7,7 @@ export const perfil = {
   nombre: "Lara Feijóo",
   titular: "Estudiante del Máster en Comunicación Publicitaria",
   resumen:
-    "Me interesan especialmente la gestión de la reputación, la percepción de marca, las relaciones públicas, la comunicación corporativa y la comunicación interna.",
+    "Estudiante con ganas de aprender del mundo publicitario. Me interesan especialmente la gestión de la reputación, la percepción de marca, las relaciones públicas, la comunicación corporativa y la comunicación interna.",
   busco: "Prácticas a tiempo completo a partir de abril de 2027.",
   lugar: "Galapagar, Madrid",
   email: "lara.feijoo@gmail.com",
@@ -94,13 +94,14 @@ export const perfil = {
     { idioma: "Francés", nivel: "B1" },
   ],
 
+  // Tal cual las pone el CV en PDF.
   competencias: [
-    "Relaciones públicas y reputación",
-    "Comunicación interna",
-    "Investigación: encuestas y entrevistas",
-    "Análisis de datos y métricas",
-    "Redes sociales y contenido",
-    "Herramientas de IA",
+    "Compromiso",
+    "Adaptabilidad",
+    "Buen trabajo bajo presión",
+    "Visión crítica y creativa",
+    "Gestión eficaz del tiempo",
+    "Fuertes habilidades sociales",
   ],
 
   aficiones: [
@@ -108,5 +109,6 @@ export const perfil = {
     "Un libro en el idioma de cada país que visito: ya van más de diez",
     "Adivinar países por sus banderas (casi me las sé todas)",
     "El fútbol, con el Atleti en el corazón",
+    "Viajar y la naturaleza",
   ],
 };

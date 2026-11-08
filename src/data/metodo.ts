@@ -54,7 +54,7 @@ export const colores: {
     etiqueta: "Azulita",
     titulo: "Me llaman azulita",
     texto: [
-      "En la carrera me recomendaron leer «Rodeado de idiotas» y, desde entonces, mis amigas y yo nos llamamos por nuestros colores. Y por eso siempre seré azulita 💙.",
+      "En la carrera me recomendaron leer «Rodeado de idiotas» y, desde entonces, mis amigas y yo nos llamamos por nuestros colores. Yo soy azulita 💙.",
       "Y sí, en mi cabeza cada cosa tiene su color: mates, azul; lengua, naranja. Por eso estos subrayadores no están puestos al azar.",
     ],
   },

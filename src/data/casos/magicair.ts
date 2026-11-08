@@ -1,5 +1,7 @@
 import type { CasoCompleto } from "./tipos";
 
+const img = (file: string) => `${import.meta.env.BASE_URL}assets/casos/magicair/${file}`;
+
 // MagicAir: aerolínea ficticia. Fuentes: «Construyendo la reputación» y «Diseño de
 // estrategia de respuesta a crisis reputacional mediante la SCCT» (RRPP Especializadas, URJC).
 
@@ -75,7 +77,7 @@ export const magicair: CasoCompleto = {
       puntos: [
         "De la mía salieron la innovación, la comunicación abierta, la trazabilidad y el estilo de las comunicaciones.",
         "También el blanco roto, la tipografía y el estilo minimalista.",
-        "Hice además unas ideas de logos que no terminaron saliendo.",
+        "Hice además unas ideas de logo que no terminaron saliendo; están en «Mis propuestas de logo».",
       ],
     },
     {
@@ -105,6 +107,16 @@ export const magicair: CasoCompleto = {
       ],
     },
   ],
+  imagenes: {
+    titulo: "Mis propuestas de logo",
+    texto: "Las ideas de logo que propuse para la marca. No terminaron saliendo.",
+    items: [
+      { src: img("logo-1.jpg"), alt: "Logo MagicAir en letra manuscrita con un avión oscuro y una estela de estrellas", pie: "Letra manuscrita y una estela de estrellas." },
+      { src: img("logo-2.jpg"), alt: "La misma propuesta de logo con el avión en dorado", pie: "La misma idea, con el avión en dorado." },
+      { src: img("logo-3.jpg"), alt: "Logo MagicAir con un avión azul y dorado sobre el nombre", pie: "Un avión azul y dorado sobre el nombre." },
+      { src: img("logo-4.jpg"), alt: "Logo MagicAir con alas azules, estrellas doradas y el nombre en dorado", pie: "Alas, estrellas y el nombre en dorado." },
+    ],
+  },
   aprendizajes: [
     "La coherencia con la identidad de marca es lo que decide si un cambio se lee como oportunidad o como amenaza.",
     "Una crisis en la que la empresa es víctima puede acabar siendo culpa suya si no se gestiona bien.",
