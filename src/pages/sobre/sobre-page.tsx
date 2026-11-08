@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
 import { Sigue } from "@/components/sigue";
+import { FotoGiro } from "@/components/foto-giro";
 import { Link, useSearchParams } from "react-router-dom";
 import { colores, tiempos } from "@/data/metodo";
 import { perfil } from "@/data/perfil";
@@ -72,9 +73,21 @@ const porques: ReactNode[] = [
   </>,
 ];
 
+const fotoJudo = `${import.meta.env.BASE_URL}assets/lara/judo.jpg`;
+
 function Judo() {
   return (
     <div className="asalto__prosa judo">
+      <figure className="judo__foto">
+        <img
+          src={fotoJudo}
+          alt="Lara, de blanco y con el cinturón marrón bordado con su apellido, agarrando a su rival de azul en un combate"
+          width={1200}
+          height={1080}
+          loading="lazy"
+        />
+        <figcaption>De blanco, con FEIJÓO en el cinturón.</figcaption>
+      </figure>
       <h2>Por qué el judo</h2>
       <p className="quien__lead">
         Descubrí el tatami con siete años, casi por obligación, porque tenía que hacer deporte. Ahora no me
@@ -205,10 +218,37 @@ export function SobrePage() {
     <main className="combate combate--sobre">
       <aside className="combate__ficha">
         <h1 className="combate__titulo">Sobre mí</h1>
-        <figure className="pagina-foto sobre-foto">
-          <img src={foto} alt="Lara sonriendo con la lengua fuera delante de una cascada" width={1400} height={1050} />
-          <figcaption>No es una foto seria porque no lo soy.</figcaption>
-        </figure>
+        <FotoGiro
+          className="foto-giro--sobre"
+          src={foto}
+          alt="Lara sonriendo y mordiéndose la lengua delante de una cascada"
+          ancho={1400}
+          alto={1050}
+          frente="No es una foto seria porque no lo soy."
+          detras={
+            <>
+              <p>
+                Soy muy familiar y me encanta la naturaleza. Este año descubrí una joya oculta del paisaje
+                ibérico: la Sierra de la Estrella. Perderme entre montañas con mi familia y con Gretuka es uno
+                de mis planes favoritos.
+              </p>
+              <p>
+                Hacía calor; si no, me habría llevado uno de mis mil gorritos (tengo uno de cada color, de
+                dinosaurios, de pingüinos y, cómo no, de mi Atleti).
+              </p>
+              <p>
+                Nunca se me ha dado bien posar, así que ya ni lo intento. Suelo sacar la lengua, y tiene gracia
+                que me la esté mordiendo: soy tan culo inquieto que con dos años casi me quedo sin ella por
+                balancearme en la silla. Mis profes siempre lo destacaban (sí, hasta en la universidad): todo muy
+                bien, pero no sabía sentarme. Escribo esto mal sentada, para sorpresa de nadie.
+              </p>
+              <p>
+                Ah, y mi madre siempre dice que llevo las gafas sucias. Pero las últimas se me partieron por la
+                mitad al intentar limpiarlas, así que siempre, siempre, no.
+              </p>
+            </>
+          }
+        />
         <dl className="sobre-corto">
           <div>
             <dt>Vivo en</dt>

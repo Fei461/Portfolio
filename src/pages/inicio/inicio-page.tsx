@@ -1,6 +1,7 @@
-import { useEffect, useRef, useState, type CSSProperties } from "react";
+import { useEffect, useState, type CSSProperties } from "react";
 import { Link } from "react-router-dom";
 import { Colgador } from "@/components/colgador";
+import { FotoGiro } from "@/components/foto-giro";
 
 const foto = `${import.meta.env.BASE_URL}assets/lara/salto.jpg`;
 
@@ -58,50 +59,27 @@ function Correo() {
 
 // La foto de la graduación tiene historia detrás: se le da la vuelta para leerla.
 function FotoGraduacion() {
-  const [vuelta, setVuelta] = useState(false);
-  const detras = useRef<HTMLAnchorElement>(null);
-  const delante = useRef<HTMLButtonElement>(null);
-  const girada = useRef(false);
-  // Al girarla, el foco acompaña a la cara que se ve.
-  useEffect(() => {
-    if (!girada.current) return;
-    (vuelta ? detras : delante).current?.focus({ preventScroll: true });
-  }, [vuelta]);
-  const girar = (v: boolean) => {
-    girada.current = true;
-    setVuelta(v);
-  };
   return (
-    <div className={vuelta ? "foto-giro foto-giro--vuelta" : "foto-giro"}>
-      <span className="dojo-foto__obi" aria-hidden="true" />
-      <div className="foto-giro__cara foto-giro__delante" aria-hidden={vuelta}>
-        <img
-          src={foto}
-          alt="Lara con la beca de graduación y un ramo de flores, levantando una pierna y con el pulgar arriba"
-          width={1200}
-          height={1600}
-        />
-        <button ref={delante} type="button" className="foto-giro__boton" onClick={() => girar(true)} tabIndex={vuelta ? -1 : 0}>
-          Mi graduación tiene historia. <span className="foto-giro__accion">Dale la vuelta <span aria-hidden="true">↻</span></span>
-        </button>
-      </div>
-      <div className="foto-giro__cara foto-giro__detras" aria-hidden={!vuelta}>
-        <p>
-          Si el Atleti hubiera ganado la Champions, me habría graduado con la camiseta. No fue el caso, así
-          que tocó ir «formal»: un top y un pantalón cómodo para seguir haciendo la cabra loca.
-        </p>
-        <p>
-          Eso sí, por muy «formal» que fuera el acto, mis calcetines seguían siendo mi seña de identidad: perros
-          salchicha con el culo en forma de corazón.
-        </p>
-        <Link ref={detras} to="/sobre-mi" tabIndex={vuelta ? 0 : -1}>
-          Más sobre mí →
-        </Link>
-        <button type="button" className="foto-giro__volver" onClick={() => girar(false)} tabIndex={vuelta ? 0 : -1}>
-          <span aria-hidden="true">↺</span> Ver la foto
-        </button>
-      </div>
-    </div>
+    <FotoGiro
+      src={foto}
+      alt="Lara con la beca de graduación y un ramo de flores, levantando una pierna y con el pulgar arriba"
+      ancho={1200}
+      alto={1600}
+      frente="Mi graduación tiene historia."
+      enlace={{ to: "/sobre-mi", texto: "Más sobre mí →" }}
+      detras={
+        <>
+          <p>
+            Si el Atleti hubiera ganado la Champions, me habría graduado con la camiseta. No fue el caso, así
+            que tocó ir «formal»: un top y un pantalón cómodo para seguir haciendo la cabra loca.
+          </p>
+          <p>
+            Eso sí, por muy «formal» que fuera el acto, mis calcetines seguían siendo mi seña de identidad: perros
+            salchicha con el culo en forma de corazón.
+          </p>
+        </>
+      }
+    />
   );
 }
 

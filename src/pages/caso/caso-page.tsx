@@ -13,9 +13,6 @@ import "./combate.css";
 type Imagen = { src: string; alt: string; pie: string };
 type Asalto = { id: string; nombre: string; contenido: ReactNode };
 
-const red = (href: string) =>
-  href.includes("tiktok") ? "TikTok" : href.includes("instagram") ? "Instagram" : "YouTube";
-
 // Imagen a pantalla completa; se cierra con Escape, con el botón o pulsando fuera.
 function Lupa({ imagen, cerrar }: { imagen: Imagen; cerrar: () => void }) {
   const boton = useRef<HTMLButtonElement>(null);
@@ -214,22 +211,17 @@ function construirAsaltos(
               )}
               {caso.piezas.masEnlaces && (
                 <div className="caso-mas">
-                  <h3>Más publicaciones en sus perfiles</h3>
-                  {caso.piezas.masEnlaces.map((grupo) => (
-                    <p key={grupo.red}>
-                      <strong>{grupo.red}:</strong>{" "}
-                      {grupo.enlaces.map((href, n) => (
-                        <span key={href}>
-                          <a href={href} target="_blank" rel="noreferrer">
-                            {n === 0 ? "publicación " : ""}
-                            {n + 1}
-                            <span className="sr-only"> en {red(href)}</span>
-                          </a>
-                          {n < grupo.enlaces.length - 1 ? ", " : ""}
-                        </span>
-                      ))}
-                    </p>
-                  ))}
+                  <h3>Más vídeos míos, en su red</h3>
+                  <ul>
+                    {caso.piezas.masEnlaces.map((e) => (
+                      <li key={e.href}>
+                        <a href={e.href} target="_blank" rel="noreferrer">
+                          {e.titulo}
+                        </a>{" "}
+                        <span>en {e.red}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               )}
             </div>

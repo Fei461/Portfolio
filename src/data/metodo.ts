@@ -63,7 +63,7 @@ export const colores: {
     etiqueta: "Culo inquieto",
     titulo: "Risueña y sin estarme quieta",
     texto: [
-      "De pequeña me echaban la bronca por no sentarme bien en clase (con dos años casi me quedo sin lengua por ello) y en la carrera me lo han seguido diciendo.",
+      "Soy una persona risueña y culo inquieto. Lo de no saber sentarme viene de lejos: la historia está detrás de la foto de la cascada.",
       "Tengo un humor muy rápido, encajo con casi cualquiera e intento que todo el mundo se sienta integrado. También tengo carácter (mi madre dice que por ser tauro), pero es muy difícil que salga.",
     ],
   },

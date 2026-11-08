@@ -102,7 +102,8 @@ export function Movil({ videos }: { videos: Video[] }) {
         </button>
         {v.original && (
           <a href={v.original} target="_blank" rel="noreferrer">
-            Ver la publicación original
+            Verlo en {v.red.replace(" Shorts", "")}
+            <span className="sr-only"> (se abre en otra pestaña)</span>
           </a>
         )}
       </div>

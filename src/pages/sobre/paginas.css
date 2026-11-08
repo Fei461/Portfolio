@@ -736,3 +736,79 @@
   margin: 0;
   color: var(--texto-suave);
 }
+
+/* Por qué el judo: la foto en combate, al lado de los porqués. */
+.judo__foto {
+  float: right;
+  width: min(40%, 420px);
+  margin: 0.3rem 0 1rem 1.6rem;
+  padding: 0.5rem 0.5rem 0;
+  background: var(--judogi);
+  border: 3px solid var(--sumi);
+  box-shadow: 8px 8px 0 var(--heri);
+  rotate: 1.5deg;
+}
+
+.judo__foto img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.judo__foto figcaption {
+  padding: 0.45rem 0.1rem 0.55rem;
+  font-family: var(--f);
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.judo .judo__porques {
+  overflow: hidden;
+}
+
+@media (max-width: 700px) {
+  .judo__foto {
+    float: none;
+    width: 100%;
+    margin: 0 0 1.2rem;
+    rotate: 0deg;
+  }
+}
+
+/* Sobre mí: la foto de la cascada también tiene historia detrás. */
+.foto-giro.foto-giro--sobre,
+.foto-giro.foto-giro--sobre.foto-giro--vuelta {
+  align-self: auto;
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 4 / 3.55;
+  margin: 1.2rem 0 0.6rem;
+  rotate: -1.5deg;
+}
+
+.foto-giro--sobre .foto-giro__delante img {
+  object-position: 50% 45%;
+}
+
+.foto-giro--sobre .foto-giro__boton {
+  font-size: 0.9rem;
+}
+
+.foto-giro.foto-giro--sobre .foto-giro__detras {
+  inset: 0 auto auto 0;
+  width: 100%;
+  max-height: none;
+  font-size: 0.86rem;
+}
+
+.foto-giro--sobre .dojo-foto__obi {
+  left: auto;
+  right: 1%;
+  top: -5%;
+  width: 40%;
+  rotate: 18deg;
+}
+
+.combate--sobre .combate__ficha {
+  overflow-x: hidden;
+}

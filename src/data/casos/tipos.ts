@@ -67,7 +67,8 @@ export type CasoCompleto = {
     titulo: string;
     texto: string;
     videos: { src: string; titulo: string; red: string; original?: string; horizontal?: boolean; poster?: string }[];
-    masEnlaces?: { red: string; enlaces: string[] }[];
+    /** Otras publicaciones mías que no están descargadas, con lo que dice cada una. */
+    masEnlaces?: { red: string; href: string; titulo: string }[];
   };
   /** Caídas (ukemi): dónde caí y cómo me levanté. */
   caidas?: { titulo: string; texto: string }[];

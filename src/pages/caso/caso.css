@@ -500,3 +500,16 @@
   }
 
 }
+
+.caso-mas ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.caso-mas li span {
+  color: var(--texto-suave);
+  font-size: 0.92rem;
+}

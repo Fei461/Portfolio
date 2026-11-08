@@ -177,7 +177,8 @@ const antiguas: Nota[] = [
     "id": "ideathon",
     "titulo": "El TFG no debería acabar en una estantería",
     "categoria": "Proyectos",
-    "url": "https://es.linkedin.com/in/lara-feijoo",
+    "url": "https://www.linkedin.com/posts/lara-feijoo_inteligenciaartificial-ideathon-cvgenerativo-ugcPost-7399102440643395584-8cRE",
+    "fecha": "2025-11-26",
     "texto": [
       "¿El TFG/TFM es un logro que acaba en la estantería... o un activo clave en tu CV? 🤯",
       "Hace justo un año, en el Ideathon de Innovación de la Universidad Rey Juan Carlos, nos propusimos responder a esa pregunta. Nos reunimos más de 200 estudiantes para resolver 6 retos, y mi equipo, Parchís, nos lanzamos de lleno al reto de U4IMPACT: \"Cómo transformar el TFG/TFM en valor profesional\".",
@@ -247,7 +248,8 @@ const antiguas: Nota[] = [
     "id": "spotify-wrapped",
     "titulo": "Por qué todo el mundo comparte su Wrapped",
     "categoria": "Marcas",
-    "url": "https://es.linkedin.com/in/lara-feijoo",
+    "url": "https://www.linkedin.com/posts/lara-feijoo_por-qu%C3%A9-triunfa-spotify-wrapped-ugcPost-7401915985017942016-mQ7R",
+    "fecha": "2025-12-03",
     "texto": [
       "Aunque todavía no se haya descongelado Mariah Carey, ya es diciembre... 🎄",
       "...Y con él llegan algunas de las tradiciones más compartidas: poner el árbol, el calendario de adviento, los villancicos... y en el ámbito digital, el Spotify Wrapped. Una tendencia que genera expectativa y conversación en redes sociales desde octubre.",
@@ -284,7 +286,8 @@ const antiguas: Nota[] = [
     "id": "kotter",
     "titulo": "Duolingo, TikTok y el modelo de Kotter",
     "categoria": "Comportamiento",
-    "url": "https://es.linkedin.com/in/lara-feijoo",
+    "url": "https://www.linkedin.com/posts/lara-feijoo_sabes-lo-que-tienen-en-com%C3%BAn-duolingo-tiktok-share-7436734903087640577-6zbC",
+    "fecha": "2026-03-10",
     "texto": [
       "¿Sabes lo que tienen en común Duolingo, Tiktok o Wuolah?",
       "Todos siguen el Modelo de Kotter (sin siquiera saberlo).",
@@ -407,14 +410,17 @@ const elegidas = ["no-buscaba-practicas", "kotter", "spotify-wrapped", "ideathon
 // El número de actividad de LinkedIn lleva dentro el momento de publicación (los bits altos son
 // milisegundos desde 1970): de ahí sale la fecha cuando no la tenemos apuntada.
 const fechaDelEnlace = (url: string) => {
-  const id = url.match(/activity[-:](\d{19})/)?.[1];
+  const id = url.match(/(?:activity|ugcPost|share)[-:](\d{19})/)?.[1];
   return id ? new Date(Number(BigInt(id) >> 22n)).toISOString().slice(0, 10) : undefined;
 };
 
 export const notas: Nota[] = [
   ...nuevas.filter((n) => !n.fuera),
   ...elegidas.map((id) => antiguas.find((n) => n.id === id)!).filter(Boolean),
-].map((n) => ({ ...n, fecha: n.fecha ?? fechaDelEnlace(n.url) }));
+]
+  .map((n) => ({ ...n, fecha: n.fecha ?? fechaDelEnlace(n.url) }))
+  // De la más reciente a la más antigua.
+  .sort((a, b) => (b.fecha ?? "").localeCompare(a.fecha ?? ""));
 
 /** Las fechas solo se enseñan si las tienen todas: o todas, o ninguna. */
 export const notasConFecha = notas.every((n) => n.fecha);

@@ -75,35 +75,45 @@ export const studIa: CasoCompleto = {
     videos: [
       {
         src: video("youtube-36k.mp4"),
-        titulo: "El vídeo de las 36.000 visualizaciones",
+        titulo: "Probé todas las IA para estudiar: 36.000 visualizaciones",
         red: "YouTube Shorts",
         original: "https://www.youtube.com/shorts/DuHQNrGzdFo",
       },
-      { src: video("tiktok-gracioso.mp4"), titulo: "Humor estudiantil", red: "TikTok" },
-      { src: video("tiktok-relatable.mp4"), titulo: "Lo que todo estudiante ha vivido", red: "TikTok" },
-      { src: video("tiktok-dia-1.mp4"), titulo: "Serie: día 1 de 7", red: "TikTok" },
-      { src: video("reel-producto.mp4"), titulo: "La herramienta, en acción", red: "Instagram" },
-      { src: video("reel-relatable.mp4"), titulo: "Reel para sentirse identificado", red: "Instagram" },
+      {
+        src: video("tiktok-gracioso.mp4"),
+        titulo: "POV: Medicina y el tutorial prohibido",
+        red: "TikTok",
+        original: "https://www.tiktok.com/@studia.community/video/7612978259646598422",
+      },
+      {
+        src: video("tiktok-relatable.mp4"),
+        titulo: "POV: terminas de subrayar y toca estudiar",
+        red: "TikTok",
+        original: "https://www.tiktok.com/@studia.community/video/7638539708414430486",
+      },
+      {
+        src: video("tiktok-dia-1.mp4"),
+        titulo: "Día 1 de 7: el reto del baño",
+        red: "TikTok",
+        original: "https://www.tiktok.com/@studia.community/video/7610360156085406998",
+      },
+      {
+        src: video("reel-producto.mp4"),
+        titulo: "POV: todo un año en dos semanas",
+        red: "Instagram",
+        original: "https://www.instagram.com/reel/DX8zu2kSd4Y/",
+      },
+      {
+        src: video("reel-relatable.mp4"),
+        titulo: "POV: estudiante promedio en mayo",
+        red: "Instagram",
+        original: "https://www.instagram.com/reel/DYeR5pDSIwk/",
+      },
     ],
     masEnlaces: [
-      {
-        red: "Instagram",
-        enlaces: [
-          "https://www.instagram.com/reel/DX8zu2kSd4Y/",
-          "https://www.instagram.com/reel/DYMNOOmSYXB/",
-          "https://www.instagram.com/reel/DYeR5pDSIwk/",
-          "https://www.instagram.com/reel/DYy5fj-yMYr/",
-        ],
-      },
-      {
-        red: "TikTok",
-        enlaces: [
-          "https://www.tiktok.com/@studia.community/video/7638539708414430486",
-          "https://www.tiktok.com/@studia.community/video/7610360156085406998",
-          "https://www.tiktok.com/@studia.community/video/7625555265248578838",
-          "https://www.tiktok.com/@studia.community/video/7612978259646598422",
-        ],
-      },
+      { red: "TikTok", titulo: "El evento canónico de todo estudiante post-vacaciones", href: "https://www.tiktok.com/@studia.community/video/7625555265248578838" },
+      { red: "Instagram", titulo: "Se acabó el momento aesthetic de subrayar", href: "https://www.instagram.com/reel/DYMNOOmSYXB/" },
+      { red: "Instagram", titulo: "Aprobar sin renunciar a tu vida social", href: "https://www.instagram.com/reel/DYy5fj-yMYr/" },
     ],
   },
   caidas: [
