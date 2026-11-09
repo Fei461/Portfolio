@@ -5,6 +5,7 @@ import { Link, useSearchParams } from "react-router-dom";
 import type { CasoCompleto } from "@/data/casos";
 import { perchas, porPercha, proyectos } from "@/data/proyectos";
 import { DemoTalixea } from "./demo-talixea";
+import { Tablon } from "./tablon";
 import { Brecha, Contraste, Cronograma, Guion, Mapa, Reparto } from "./graficos";
 import { Movil } from "./movil";
 import "./caso.css";
@@ -100,6 +101,7 @@ function construirAsaltos(
               >
                 <img src={visual.portada} alt="" />
               </button>
+              {caso.retoPie && <figcaption>{caso.retoPie}</figcaption>}
             </figure>
           ) : null}
         </div>
@@ -178,6 +180,62 @@ function construirAsaltos(
           )}
           {caso.piezas && (
             <div className="asalto__bloque">
+              {caso.piezasExtra ? (
+                <Tablon
+                  extras={caso.piezasExtra}
+                  videos={
+                    <>
+                  <p className="asalto__entradilla">{caso.piezas.texto}</p>
+                  {caso.enMovil ? (
+                    <Movil videos={caso.piezas.videos} />
+                  ) : (
+                  <ul className="caso-videos">
+                    {caso.piezas.videos.map((v) => (
+                      <li key={v.src} className={v.horizontal ? "caso-video--horizontal" : undefined}>
+                        <video
+                          src={v.horizontal ? v.src : `${v.src}#t=0.1`}
+                          poster={v.poster}
+                          controls
+                          playsInline
+                          preload="metadata"
+                          aria-label={`${v.titulo}, vídeo para ${v.red}`}
+                        />
+                        <p className="caso-video__titulo">{v.titulo}</p>
+                        <p className="caso-video__red">
+                          {v.red}
+                          {v.original && (
+                            <>
+                              {". "}
+                              <a href={v.original} target="_blank" rel="noreferrer">
+                                Ver la publicación original
+                              </a>
+                            </>
+                          )}
+                        </p>
+                      </li>
+                    ))}
+                  </ul>
+                  )}
+                  {caso.piezas.masEnlaces && (
+                    <div className="caso-mas">
+                      <h3>Más vídeos míos, en su red</h3>
+                      <ul>
+                        {caso.piezas.masEnlaces.map((e) => (
+                          <li key={e.href}>
+                            <a href={e.href} target="_blank" rel="noreferrer">
+                              {e.titulo}
+                            </a>{" "}
+                            <span>en {e.red}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                    </>
+                  }
+                />
+              ) : (
+                <>
               <p className="asalto__entradilla">{caso.piezas.texto}</p>
               {caso.enMovil ? (
                 <Movil videos={caso.piezas.videos} />
@@ -224,6 +282,8 @@ function construirAsaltos(
                   </ul>
                 </div>
               )}
+                </>
+              )}
             </div>
           )}
         </>
@@ -243,7 +303,7 @@ function construirAsaltos(
           )}
           <p className="asalto__entradilla">
             {caso.tatami?.intro ??
-              "Lo primero que te enseñan en judo es el ukemi: saber caer sin hacerte daño y levantarte rápido. Aquí me tocó caer unas cuantas veces."}
+              "Lo primero que te enseñan en judo son las ukemis: saber caer sin hacerte daño y levantarte rápido. Aquí me tocó caer unas cuantas veces."}
           </p>
           <ul className="caso-caidas">
             {caso.caidas.map((c) => (
@@ -273,11 +333,17 @@ function construirAsaltos(
             </figcaption>
           </figure>
         )}
-        <ul className="caso-aprendizajes">
-          {caso.aprendizajes.map((a) => (
-            <li key={a}>{a}</li>
+        <h2 className="llevo__titulo">Lo que me llevo</h2>
+        <ol className="llevo__lista">
+          {caso.aprendizajes.map((a, k) => (
+            <li key={a}>
+              <span className="llevo__n" aria-hidden="true">
+                {String(k + 1).padStart(2, "0")}
+              </span>
+              <p>{a}</p>
+            </li>
           ))}
-        </ul>
+        </ol>
         {caso.enLinkedIn && (
           <div className="caso-linkedin">
             <h3>Lo conté en LinkedIn</h3>
@@ -285,7 +351,8 @@ function construirAsaltos(
               {caso.enLinkedIn.map((l) => (
                 <li key={l.href}>
                   <a href={l.href} target="_blank" rel="noreferrer">
-                    {l.titulo}
+                    {l.titulo} <span aria-hidden="true">→</span>
+                    <span className="sr-only"> (se abre en otra pestaña)</span>
                   </a>
                 </li>
               ))}

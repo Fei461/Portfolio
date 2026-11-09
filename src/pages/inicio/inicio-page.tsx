@@ -122,9 +122,6 @@ export function InicioPage() {
               </li>
             ))}
           </ul>
-          <p className="dojo-minuto__pista">
-            O coge un judogi de la pared <span aria-hidden="true">→</span>
-          </p>
         </nav>
       </div>
 
@@ -132,7 +129,7 @@ export function InicioPage() {
         <div className="dojo-pared__arriba">
           <p className="dojo-rotulo">
             <strong>Mis proyectos</strong>
-            <span>Elige un judogi: cada uno lleva a un tipo de trabajo. En la carpeta, los de la carrera.</span>
+            <span>Elige un judogi</span>
           </p>
           <FotoGraduacion />
         </div>

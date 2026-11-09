@@ -73,17 +73,12 @@ export function Reparto({ datos }: { datos: NonNullable<CasoCompleto["reparto"]>
 
 const coma = (n: number) => n.toFixed(2).replace(".", ",");
 
-// Brecha: cada atributo con dos puntos sobre una regla de 1 a 5. Se puede ordenar
-// por la distancia entre públicos y tocar una fila para ver qué la explica.
+// Brecha: cada atributo con dos puntos sobre una regla de 1 a 5, de mayor a menor distancia.
+// Al tocar una fila, su explicación se abre justo debajo; la primera viene abierta.
 export function Brecha({ datos }: { datos: NonNullable<CasoCompleto["brecha"]> }) {
-  const [orden, setOrden] = useState<"encuesta" | "brecha">("brecha");
-  const [abierto, setAbierto] = useState<string | null>(null);
-  const filas =
-    orden === "brecha"
-      ? [...datos.items].sort((a, b) => b.dentro - b.fuera - (a.dentro - a.fuera))
-      : datos.items;
+  const filas = [...datos.items].sort((a, b) => b.dentro - b.fuera - (a.dentro - a.fuera));
+  const [abierto, setAbierto] = useState<string | null>(filas[0]?.atributo ?? null);
   const x = (v: number) => `${((v - 1) / 4) * 100}%`;
-  const elegido = datos.items.find((i) => i.atributo === abierto);
   return (
     <section className="caso-seccion brecha" aria-labelledby="caso-brecha">
       <h2 id="caso-brecha" className="caso-h2">
@@ -95,40 +90,43 @@ export function Brecha({ datos }: { datos: NonNullable<CasoCompleto["brecha"]> }
           <i className="brecha__punto brecha__punto--dentro" aria-hidden="true" /> {datos.dentro}
           <i className="brecha__punto brecha__punto--fuera" aria-hidden="true" /> {datos.fuera}
         </span>
-        <span role="group" aria-label="Ordenar">
-          <button type="button" aria-pressed={orden === "brecha"} onClick={() => setOrden("brecha")}>
-            Mayor brecha primero
-          </button>
-          <button type="button" aria-pressed={orden === "encuesta"} onClick={() => setOrden("encuesta")}>
-            Orden de la encuesta
-          </button>
-        </span>
       </div>
       <ul className="brecha__filas">
-        {filas.map((f) => (
-          <li key={f.atributo}>
-            <button
-              type="button"
-              className={abierto === f.atributo ? "activo" : undefined}
-              aria-expanded={abierto === f.atributo}
-              onClick={() => setAbierto(abierto === f.atributo ? null : f.atributo)}
-            >
-              <span className="brecha__atributo">{f.atributo}</span>
-              <span className="brecha__pista" aria-hidden="true">
-                <span className="brecha__tramo" style={{ left: x(f.fuera), width: `calc(${x(f.dentro)} - ${x(f.fuera)})` }} />
-                <i className="brecha__punto brecha__punto--fuera" style={{ left: x(f.fuera) }} />
-                <i className="brecha__punto brecha__punto--dentro" style={{ left: x(f.dentro) }} />
-              </span>
-              <span className="brecha__dif">
-                −{coma(f.dentro - f.fuera)}
-                <span className="sr-only">
-                  {" "}
-                  puntos: {datos.dentro} {coma(f.dentro)}, {datos.fuera} {coma(f.fuera)}
+        {filas.map((f) => {
+          const abiertoAqui = abierto === f.atributo;
+          return (
+            <li key={f.atributo} className={abiertoAqui ? "abierta" : undefined}>
+              <button
+                type="button"
+                className={abiertoAqui ? "activo" : undefined}
+                aria-expanded={abiertoAqui}
+                onClick={() => setAbierto(abiertoAqui ? null : f.atributo)}
+              >
+                <span className="brecha__atributo">{f.atributo}</span>
+                <span className="brecha__pista" aria-hidden="true">
+                  <span className="brecha__tramo" style={{ left: x(f.fuera), width: `calc(${x(f.dentro)} - ${x(f.fuera)})` }} />
+                  <i className="brecha__punto brecha__punto--fuera" style={{ left: x(f.fuera) }} />
+                  <i className="brecha__punto brecha__punto--dentro" style={{ left: x(f.dentro) }} />
                 </span>
-              </span>
-            </button>
-          </li>
-        ))}
+                <span className="brecha__dif">
+                  −{coma(f.dentro - f.fuera)}
+                  <span className="sr-only">
+                    {" "}
+                    puntos: {datos.dentro} {coma(f.dentro)}, {datos.fuera} {coma(f.fuera)}
+                  </span>
+                </span>
+              </button>
+              {abiertoAqui && (
+                <p className="brecha__porque">
+                  <strong>
+                    {coma(f.dentro)} dentro, {coma(f.fuera)} fuera.
+                  </strong>{" "}
+                  {f.porQue}
+                </p>
+              )}
+            </li>
+          );
+        })}
       </ul>
       <div className="brecha__regla" aria-hidden="true">
         <span />
@@ -141,18 +139,6 @@ export function Brecha({ datos }: { datos: NonNullable<CasoCompleto["brecha"]> }
         </span>
         <span />
       </div>
-      <p className="brecha__porque" aria-live="polite">
-        {elegido ? (
-          <>
-            <strong>
-              {elegido.atributo}: {coma(elegido.dentro)} dentro, {coma(elegido.fuera)} fuera.
-            </strong>{" "}
-            {elegido.porQue}
-          </>
-        ) : (
-          "Toca una fila para ver qué explica la diferencia."
-        )}
-      </p>
     </section>
   );
 }

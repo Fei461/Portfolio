@@ -70,6 +70,28 @@ export type CasoCompleto = {
     /** Otras publicaciones mías que no están descargadas, con lo que dice cada una. */
     masEnlaces?: { red: string; href: string; titulo: string }[];
   };
+  /** Más piezas, cada grupo en su pestaña junto a los vídeos (guiones, campañas, voz de marca…). */
+  piezasExtra?: {
+    id: string;
+    nombre: string;
+    intro: string;
+    tarjetas?: {
+      etiqueta?: string;
+      titulo: string;
+      lineas?: string[];
+      /** Escenas de un guion: momento y texto en pantalla. */
+      escenas?: { momento: string; texto: string }[];
+      /** Un email: asunto, cuerpo y botón. */
+      email?: { asunto: string; cuerpo: string[]; boton: string };
+    }[];
+    /** Sliders de tono, de 1 a 5. */
+    sliders?: { nombre: string; valor: number; nota?: string }[];
+    /** Cómo no hablamos frente a cómo sí. */
+    pares?: { no: string; si: string }[];
+    cita?: string;
+  }[];
+  /** Pie de la imagen que acompaña a «El reto». */
+  retoPie?: string;
   /** Caídas (ukemi): dónde caí y cómo me levanté. */
   caidas?: { titulo: string; texto: string }[];
   /** Título e introducción alternativos para la sección sobre tatami. */

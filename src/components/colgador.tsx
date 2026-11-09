@@ -22,22 +22,6 @@ function Carpeta() {
   );
 }
 
-// Al pasar por un judogi asoman, en abanico, tres de sus proyectos.
-function Asomo({ percha }: { percha: Lado }) {
-  const lista = porPercha(percha);
-  const conImagen = lista.filter((p) => p.portada || p.poster);
-  const elegidos = (conImagen.length >= 3 ? conImagen : lista).slice(0, 3);
-  return (
-    <span className="asomo" aria-hidden="true">
-      {elegidos.map((p, k) => (
-        <span key={p.slug} className="asomo__carta" style={{ "--k": k - 1 } as CSSProperties}>
-          {p.portada || p.poster ? <img src={p.portada ?? p.poster} alt="" loading="lazy" /> : <span>{p.titulo}</span>}
-        </span>
-      ))}
-    </span>
-  );
-}
-
 export function Colgador({ extra }: { extra?: ReactNode }) {
   const orden: Lado[] = ["azul", "blanco"];
   return (
@@ -47,7 +31,6 @@ export function Colgador({ extra }: { extra?: ReactNode }) {
         {orden.map((c, i) => (
           <li key={c} style={{ "--i": i } as CSSProperties}>
             <Link to={`/trabajo?percha=${c}`} className="colgador__percha">
-              <Asomo percha={c} />
               <Judogi color={c} />
               <span className="colgador__etiqueta">
                 <strong>{perchas[c].nombre}</strong>

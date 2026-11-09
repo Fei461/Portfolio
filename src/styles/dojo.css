@@ -602,68 +602,6 @@
   position: relative;
 }
 
-.asomo {
-  position: absolute;
-  left: 50%;
-  bottom: calc(100% - 1.5rem);
-  width: 0;
-  height: 0;
-  pointer-events: none;
-}
-
-.asomo__carta {
-  position: absolute;
-  left: -48px;
-  bottom: 0;
-  width: 96px;
-  height: 124px;
-  overflow: hidden;
-  background: var(--judogi);
-  border: 3px solid var(--sumi);
-  box-shadow: 4px 4px 0 var(--heri);
-  opacity: 0;
-  transform: translate(0, 40px) rotate(0) scale(0.6);
-  transform-origin: 50% 100%;
-  transition:
-    transform 0.4s cubic-bezier(0.3, 1.5, 0.5, 1),
-    opacity 0.2s ease;
-  transition-delay: calc((var(--k) + 1) * 40ms);
-}
-
-.asomo__carta img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.asomo__carta span {
-  display: flex;
-  align-items: flex-end;
-  height: 100%;
-  padding: 0.4rem;
-  font-family: var(--f);
-  font-weight: 800;
-  font-variation-settings: "opsz" 40, "wdth" 78;
-  font-size: 0.95rem;
-  line-height: 1;
-  color: var(--sumi);
-  background: var(--tatami);
-}
-
-.colgador__percha:hover .asomo__carta,
-.colgador__percha:focus-visible .asomo__carta {
-  opacity: 1;
-  transform: translate(calc(var(--k) * 74px), calc(var(--k) * var(--k) * 10px)) rotate(calc(var(--k) * 12deg))
-    scale(1);
-}
-
-@media (hover: none), (max-width: 900px) {
-  .asomo {
-    display: none;
-  }
-}
-
 /* La foto, clavada en la pared con un trozo de cinturón: lleva a Sobre mí */
 
 @media (max-width: 900px) {
@@ -809,10 +747,6 @@
 }
 
 /* El abanico de proyectos asoma por encima de todo, también de la foto */
-.asomo {
-  z-index: 5;
-  bottom: calc(100% - 3rem);
-}
 
 /* La foto de la graduación: se le da la vuelta y cuenta su historia */
 .foto-giro {
@@ -1018,15 +952,6 @@
   font-size: 1.1rem;
 }
 
-.dojo-hero .dojo-minuto__pista {
-  display: inline-block;
-  margin: 0.7rem 0 0;
-  padding: 0.1rem 0.45rem;
-  font-weight: 700;
-  font-size: 0.92rem;
-  background: var(--tatami);
-}
-
 /* La portada entera cabe en pantallas de 900 px de alto */
 .dojo-hero--pantalla {
   padding-top: 5.2rem;
@@ -1169,17 +1094,6 @@
   padding: 0 0.5rem 0.4rem;
 }
 
-.dojo-hero .dojo-minuto__pista {
-  margin-top: 0.5rem;
-}
-
-@media (max-width: 900px) {
-  .dojo-minuto__pista span {
-    display: inline-block;
-    rotate: 90deg;
-  }
-}
-
 /* Cabecera en móvil: nombre y contacto arriba, enlaces debajo. Nada tapa la portada. */
 @media (max-width: 700px) {
   .dojo-head {
@@ -1249,8 +1163,7 @@
   }
 
   .dojo-minuto a img,
-  .dojo-minuto > p:first-child,
-  .dojo-hero .dojo-minuto__pista {
+  .dojo-minuto > p:first-child {
     display: none;
   }
 
@@ -1592,4 +1505,33 @@
 
 .foto-giro--vuelta .dojo-foto__obi {
   opacity: 0;
+}
+
+/* Al pasar por un judogi, se levanta un poco sin balancearse: la zona de clic no se mueve. */
+@media (prefers-reduced-motion: no-preference) {
+  .colgador__percha:hover .gi,
+  .colgador__percha:focus-visible .gi {
+    animation: none;
+    transform: translateY(-6px);
+    transition: transform 0.25s ease;
+  }
+}
+
+.dojo-rotulo {
+  max-width: 13rem;
+  padding: 0.6rem 0.9rem 0.7rem;
+}
+
+.dojo-rotulo span {
+  margin-top: 0.2rem;
+  font-weight: 700;
+}
+
+.dojo-rotulo {
+  max-width: none;
+}
+
+.dojo-rotulo strong {
+  white-space: nowrap;
+  font-size: clamp(1.35rem, 1.9vw, 1.8rem);
 }

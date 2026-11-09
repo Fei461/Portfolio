@@ -1717,3 +1717,351 @@
   outline-color: var(--sumi);
   box-shadow: 0 0 0 6px var(--judogi);
 }
+
+/* ── Las piezas en pestañas pequeñas: vídeos, guiones, campañas, voz de marca ── */
+.tablon__pestanas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.1rem;
+}
+
+.tablon__pestanas button {
+  padding: 0.45rem 0.95rem;
+  font-family: var(--f);
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: var(--sumi);
+  background: var(--judogi);
+  border: 3px solid var(--sumi);
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.tablon__pestanas button[aria-pressed="true"] {
+  color: var(--judogi);
+  background: var(--sumi);
+  box-shadow: 3px 3px 0 var(--caso-fondo, var(--obi));
+}
+
+.tablon__contenido {
+  animation: apunte-entra 0.3s ease both;
+}
+
+/* Vídeos: el móvil a un lado y el resto de enlaces al otro, sin huecos. */
+.tablon__contenido:has(> .movil) {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  column-gap: clamp(1.5rem, 3vw, 3rem);
+  align-items: start;
+}
+
+.tablon__contenido:has(> .movil) > .asalto__entradilla {
+  grid-column: 1 / -1;
+}
+
+.tablon__contenido:has(> .movil) > .caso-mas {
+  margin-top: 0;
+  align-self: end;
+}
+
+.movil {
+  margin-top: 0.4rem;
+}
+
+.movil__aparato {
+  width: auto;
+  height: min(48vh, 460px);
+  max-height: none;
+}
+
+.tablon__cita {
+  margin: 0 0 1rem;
+  font-weight: 800;
+  font-variation-settings: "opsz" 60, "wdth" 82;
+  font-size: clamp(1.3rem, 2vw, 1.7rem);
+  line-height: 1.15;
+}
+
+.tablon__sliders {
+  list-style: none;
+  margin: 0 0 1.2rem;
+  padding: 0;
+  display: grid;
+  gap: 0.45rem;
+  max-width: 34rem;
+}
+
+.tablon__sliders li {
+  display: grid;
+  grid-template-columns: 7.5rem auto minmax(0, 1fr);
+  align-items: center;
+  gap: 0.8rem;
+  font-weight: 700;
+}
+
+.tablon__slider {
+  display: inline-flex;
+  gap: 4px;
+}
+
+.tablon__slider i {
+  width: 22px;
+  height: 12px;
+  border: 2px solid var(--sumi);
+  background: transparent;
+}
+
+.tablon__slider i.lleno {
+  background: var(--caso-oscuro, var(--sumi));
+}
+
+.tablon__slider-nota {
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: var(--texto-suave);
+}
+
+.tablon__pares {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: 0.9rem;
+}
+
+.tablon__pares li {
+  display: grid;
+  gap: 0.5rem;
+  padding: 0.8rem 0.9rem;
+  border: 3px solid var(--sumi);
+  background: var(--judogi);
+}
+
+.tablon__no {
+  color: #8a1c14;
+  text-decoration: line-through;
+  text-decoration-thickness: 1.5px;
+}
+
+.tablon__si {
+  font-weight: 700;
+}
+
+.tablon__tarjetas {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: 1.1rem;
+  align-items: start;
+}
+
+.tablon__tarjeta {
+  padding: 1rem 1.1rem;
+  background: var(--judogi);
+  border: 3px solid var(--sumi);
+  box-shadow: 6px 6px 0 var(--caso-fondo, var(--heri));
+}
+
+.tablon__tarjeta--ancha {
+  grid-column: 1 / -1;
+}
+
+.tablon__etiqueta {
+  display: inline-block;
+  margin-bottom: 0.4rem;
+  padding: 0.1rem 0.5rem;
+  font-weight: 800;
+  font-size: 0.78rem;
+  color: var(--judogi);
+  background: var(--sumi);
+}
+
+.tablon__tarjeta h3 {
+  margin: 0 0 0.5rem;
+  font-weight: 800;
+  font-variation-settings: "opsz" 60, "wdth" 82;
+  font-size: clamp(1.2rem, 1.6vw, 1.45rem);
+  line-height: 1.1;
+}
+
+.tablon__tarjeta p {
+  margin: 0 0 0.5rem;
+  font-size: 0.97rem;
+  line-height: 1.5;
+}
+
+.tablon__escenas {
+  list-style: none;
+  margin: 0.4rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.tablon__escenas li {
+  display: grid;
+  grid-template-columns: 6.5rem minmax(0, 1fr);
+  gap: 0.6rem;
+  font-size: 0.95rem;
+}
+
+.tablon__email {
+  max-width: 40rem;
+  margin-top: 0.4rem;
+  padding: 0.9rem 1rem;
+  background: #fff;
+  border: 2px solid rgba(0, 0, 0, 0.25);
+}
+
+.tablon__asunto {
+  font-weight: 800;
+}
+
+.tablon__asunto span {
+  color: var(--texto-suave);
+  font-weight: 600;
+}
+
+.tablon__boton {
+  display: inline-block;
+  margin-top: 0.4rem;
+  padding: 0.5rem 1rem;
+  font-weight: 800;
+  font-size: 0.9rem;
+  color: #fff;
+  background: #161616;
+}
+
+@media (max-width: 760px) {
+  .tablon__contenido:has(> .movil) {
+    grid-template-columns: 1fr;
+  }
+
+  .tablon__sliders li {
+    grid-template-columns: 6rem auto;
+  }
+
+  .tablon__slider-nota {
+    grid-column: 1 / -1;
+  }
+}
+
+@keyframes apunte-entra {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tablon__contenido {
+    animation: none;
+  }
+}
+
+/* ── Me llevo: un título, los aprendizajes numerados y lo que conté en LinkedIn ── */
+.llevo__titulo {
+  margin: 0 0 1rem;
+}
+
+.asalto__llevo .caso-cita + .llevo__titulo {
+  margin-top: 1.8rem;
+}
+
+.llevo__lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr));
+  gap: 1rem;
+}
+
+.llevo__lista li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.9rem;
+  align-items: start;
+  padding: 1rem 1.1rem;
+  background: var(--judogi);
+  border: 3px solid var(--sumi);
+  box-shadow: 6px 6px 0 var(--caso-fondo, var(--heri));
+}
+
+.llevo__n {
+  font-weight: 800;
+  font-variation-settings: "opsz" 96, "wdth" 75;
+  font-size: 2.2rem;
+  line-height: 0.9;
+  color: var(--caso-oscuro, var(--obi));
+}
+
+.llevo__lista p {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1.02rem;
+  line-height: 1.45;
+}
+
+.asalto__llevo .caso-linkedin {
+  margin-top: 1.8rem;
+  padding-top: 0;
+  border-top: 0;
+}
+
+.asalto__llevo .caso-linkedin ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.asalto__llevo .caso-linkedin a {
+  display: inline-flex;
+  gap: 0.4rem;
+  padding: 0.5rem 0.85rem;
+  text-decoration: none;
+  background: var(--judogi);
+  border: 2.5px solid var(--sumi);
+}
+
+.asalto__llevo .caso-linkedin a:hover {
+  color: var(--judogi);
+  background: var(--sumi);
+}
+
+/* La cita de la ficha acompaña, no compite: sin caja, en redonda y más pequeña. */
+.ficha-cita {
+  padding: 0.2rem 0 0.2rem 0.9rem;
+  background: none;
+  border: 0;
+  border-left: 4px solid var(--caso-fondo, var(--obi));
+}
+
+.ficha-cita p {
+  font-weight: 500;
+  font-style: italic;
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.reto__foto figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.88rem;
+  line-height: 1.35;
+  color: var(--texto-suave);
+}
+
+/* La explicación de cada brecha se abre bajo su fila. */
+.brecha__filas li .brecha__porque {
+  min-height: 0;
+  margin: 0 0 0.6rem;
+  padding: 0.6rem 0.9rem;
+  font-size: 0.98rem;
+  line-height: 1.5;
+  animation: apunte-entra 0.25s ease both;
+}
