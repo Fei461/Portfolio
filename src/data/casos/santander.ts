@@ -90,7 +90,7 @@ export const santander: CasoCompleto = {
   ],
   imagenes: {
     titulo: "El laboratorio",
-    texto: "Dos pantallas de la web, además de la portada. Se puede recorrer entera en diez o doce minutos.",
+    texto: "Dos pantallas más de la web.",
     items: [
       {
         src: img("criterio.png"),

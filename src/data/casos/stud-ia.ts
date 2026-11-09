@@ -58,7 +58,7 @@ export const studIa: CasoCompleto = {
     },
     {
       titulo: "Una campaña por país",
-      resumen: "Cada país tiene su calendario de exámenes y su jerga, y cada campaña salía justo cuando a ese país le tocaba sufrir.",
+      resumen: "Cada país tiene su calendario de exámenes, y cada campaña salía justo cuando a ese país le tocaba sufrir.",
       puntos: [
         "La admisión a la universidad en Perú, el ICFES en Colombia, los primeros parciales en Argentina, el EXANI en México y la PAU en España.",
         "Cada una con su concepto, su jerga y su momento, y con vídeos, carruseles, emails y códigos de descuento. Algunas están en Las piezas.",
@@ -145,7 +145,7 @@ export const studIa: CasoCompleto = {
     {
       id: "campanas",
       nombre: "Campañas",
-      intro: "Un concepto para cada país, con su momento, su jerga y su miedo.",
+      intro: "Un concepto para cada país, con su momento y su miedo.",
       tarjetas: [
         {
           etiqueta: "Perú · admisión a la universidad",

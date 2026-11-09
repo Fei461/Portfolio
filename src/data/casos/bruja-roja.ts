@@ -32,7 +32,7 @@ export const brujaRoja: CasoCompleto = {
       titulo: "La voz",
       resumen: "Esa amiga que te dice lo que nadie se atreve.",
       puntos: [
-        "Un tono directo, disruptivo y sarcástico que rompiera con los estereotipos (lo sarcástico y lo provocador solían ser cosa mía).",
+        "Un tono directo, disruptivo y sarcástico que rompiera con los estereotipos.",
         "Teníamos que ser rápidas pero eficaces con nuestros mensajes.",
       ],
     },

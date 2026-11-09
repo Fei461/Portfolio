@@ -15,9 +15,9 @@ const orden: Percha[] = ["azul", "blanco", "archivo"];
 const esPercha = (v: string | null): v is Percha => orden.includes(v as Percha);
 const siguiente: Record<Percha, Percha> = { azul: "blanco", blanco: "archivo", archivo: "azul" };
 
-// El grado de la URJC se da por supuesto en las tarjetas (lo dice la nota de arriba).
+// Grado o máster ya lo dice la etiqueta de la tarjeta.
 const tipoCorto = (t: string) => {
-  const r = t.replace(/^Grado URJC, /, "");
+  const r = t.replace(/^(Grado URJC|Máster UC3M), /, "");
   return r.charAt(0).toUpperCase() + r.slice(1);
 };
 

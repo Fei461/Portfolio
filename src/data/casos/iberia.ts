@@ -17,7 +17,7 @@ export const iberia: CasoCompleto = {
   contexto: {
     titulo: "Hablar de sostenibilidad sin greenwashing",
     parrafos: [
-      "La elegimos a propósito, en contraposición a Ryanair, el trabajo del año anterior. Iberia, junto con Cepsa, Vueling y BIOCIRC, impulsa combustibles sostenibles de aviación, con el objetivo de llegar a cero emisiones netas en 2050. El encargo era construir una campaña para contar esa transición.",
+      "La elegimos a propósito, en contraposición a Ryanair, el trabajo del curso anterior. Iberia, junto con Cepsa, Vueling y BIOCIRC, impulsa combustibles sostenibles de aviación, con el objetivo de llegar a cero emisiones netas en 2050. El encargo era construir una campaña para contar esa transición.",
       "Pero entre lo que hace la aerolínea y lo que percibe la gente hay una brecha enorme, y cualquier mensaje «verde» genera desconfianza. ¿Prometer más? Solo habría hecho la brecha más grande.",
       "Investigando vimos que Iberia sí hacía cosas, pero no las comunicaba. Y la autocrítica es un valor que considero clave, en las empresas y en las personas: quien asume sus errores y pide perdón puede seguir mejorando; quien no, solo se está engañando. Así surgió «la restauración inacabada».",
       "Me lo pasé muy bien porque nos salimos de lo establecido. Sí, hicimos un spot, pero en realidad era marketing experiencial con muchísimos factores en juego: pensar fuera de la caja para encajar. Y convencer a gente que te odia ya era un reto en sí mismo.",
@@ -41,7 +41,7 @@ export const iberia: CasoCompleto = {
     },
     {
       titulo: "Cada soporte",
-      resumen: "Pensar fuera de la caja para encajar: la misma idea en cada soporte, y cada pieza con su porqué.",
+      resumen: "Cada pieza, con su porqué.",
       puntos: [
         "Spot: el cuadro El Oxbow (1836), deteriorado y colgado en la zona de embarque, se restaura mientras se intercalan las acciones reales de Iberia. Termina sin acabar, porque la responsabilidad empieza al asumir el daño.",
         "Aeropuerto: cuadros españoles tras un doble cristal sucio y un kit de limpieza; solo el público puede limpiar el primero. Así lo intangible se convierte en algo que se toca.",

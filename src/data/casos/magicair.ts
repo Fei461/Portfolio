@@ -19,7 +19,7 @@ export const magicair: CasoCompleto = {
   contexto: {
     titulo: "Una norma europea, una crisis propia",
     parrafos: [
-      "MagicAir es una aerolínea low cost que creamos basándonos en Ryanair, siendo hasta el nombre una adaptación. Una nueva normativa europea la obliga a cambiar su política de equipaje de mano, y parte del público lo lee como un coste oculto para ganar más dinero.",
+      "MagicAir es una aerolínea low cost que creamos basándonos en Ryanair (hasta el nombre es una adaptación). Una nueva normativa europea la obliga a cambiar su política de equipaje de mano, y parte del público lo lee como un coste oculto para ganar más dinero.",
       "Lo trabajamos en dos tiempos. Primero, cómo anunciar el cambio sin dañar la reputación. Después, qué hacer cuando la crisis ya ha estallado: saber cuánta culpa nos atribuía la gente y elegir cómo responder.",
       "El riesgo de fondo era una brecha de identidad: lo que la empresa dice ser, transparente y empática, frente a lo que algunos públicos creen que demuestra.",
       "Para entonces estábamos ya «locas desquiciadas»: llevábamos presentaciones de aerolíneas en por lo menos cuatro asignaturas. Y lo gracioso es que la primera parte consistía en crear la empresa entera, sin saber que después tendríamos que provocarle una crisis. La teníamos tan bien montada y éramos tan coherentes que costó encontrarle un problema: acabamos inventándonos uno con las nuevas medidas de las maletas.",
@@ -76,7 +76,7 @@ export const magicair: CasoCompleto = {
   bloques: [
     {
       titulo: "La marca",
-      resumen: "Cada persona escribió su ficha de empresa y nos quedamos con lo mejor de todas. La montamos tan bien que luego costó romperla.",
+      resumen: "Cada persona escribió su ficha de empresa y nos quedamos con lo mejor de todas.",
       puntos: [
         "Valores como la innovación, la comunicación abierta y la trazabilidad, y un estilo de comunicación propio.",
         "Una identidad minimalista: el blanco roto y la tipografía.",
@@ -94,7 +94,7 @@ export const magicair: CasoCompleto = {
     },
     {
       titulo: "Cuando estalla",
-      resumen: "Saber cuánta culpa nos atribuye la gente para elegir cómo responder.",
+      resumen: "Cuando la víctima puede acabar pareciendo culpable.",
       puntos: [
         "Usamos la teoría situacional de la comunicación de crisis (SCCT), que clasifica una crisis según cuánta responsabilidad atribuye el público a la empresa.",
         "La norma venía de Europa, así que MagicAir era, en principio, víctima. Pero clientes y asociaciones la culpaban a ella, y una crisis así puede acabar siendo culpa tuya si no se gestiona bien.",
@@ -103,7 +103,7 @@ export const magicair: CasoCompleto = {
     },
     {
       titulo: "Medir",
-      resumen: "Encajar cada objetivo con su forma de medirlo, otra vez como piezas de un puzle.",
+      resumen: "Cada objetivo, con su forma de medirlo.",
       puntos: [
         "Reducir en nueve meses la responsabilidad que atribuyen los consumidores y subir un 20 % la cobertura neutral o positiva en tres.",
         "Con encuestas, Net Promoter Score, seguimiento de medios y CRM.",

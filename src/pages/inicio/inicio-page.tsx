@@ -100,9 +100,8 @@ export function InicioPage() {
         </p>
         <div className="dojo-intro-caja">
           <p className="dojo-intro">
-            No me defino como copy, ni como arte, ni como cuentas, ni como planner. Si tuviera que
-            decantarme, elegiría las relaciones públicas, la gestión de marca, la reputación y la
-            comunicación interna. Quiero entender a la gente y partirme la cabeza buscando la mejor
+            Me tiran las relaciones públicas, la gestión de marca, la reputación y la comunicación
+            interna. Quiero entender a la gente y partirme la cabeza buscando la mejor
             solución para la marca.
           </p>
         </div>

@@ -63,8 +63,7 @@ export const ryanair: CasoCompleto = {
       titulo: "La reputación interna",
       resumen: "Bajar al barro: escuchar a quienes la hacen volar.",
       puntos: [
-        "Solemos medir la reputación desde fuera. Aquí la medimos desde dentro: reseñas de empleados, vídeos testimoniales, noticias y entrevistas a trabajadores actuales y antiguos.",
-        "Los problemas se repetían: sueldos por debajo de lo prometido, contratos inestables y mucha rotación, una comunicación interna jerárquica y la sensación de no sentirse valorados.",
+        "Solemos medir la reputación desde fuera. Aquí la medimos desde dentro, y las quejas se agrupaban en cinco frentes: remuneración y condiciones, inseguridad y rotación, comunicación y gestión, ambiente y cultura, y falta de valoración.",
         "Con un matiz importante: cada base y cada cargo son un mundo, y no todos lo vivían igual.",
         "La conclusión: no eran incidentes aislados, sino un modelo basado en reducir costes que choca con el bienestar de las personas.",
       ],
@@ -431,7 +430,7 @@ export const pluvielle: CasoCompleto = {
     },
     {
       titulo: "Medios",
-      resumen: "Pocos, y donde ya está el público.",
+      resumen: "Solo donde ya está el público.",
       puntos: [
         "Una página en Architectural Digest, la revista de arquitectura y diseño que lee este público, con gotas de agua en barniz brillante sobre papel mate: un anuncio que también se toca.",
         "Artículos patrocinados en Artsy y Artnet, las plataformas que consultan los coleccionistas antes de comprar arte, e invitaciones a un portal VIP con contraseña.",
@@ -460,7 +459,6 @@ export const pluvielle: CasoCompleto = {
   },
   aprendizajes: [
     "Que se puede conseguir un alcance alto sin resultar intrusiva.",
-    "Que con un público que huye de la publicidad, el anuncio tiene que vivirse como contenido editorial o artístico.",
     "Que un calendario por picos no solo acierta con el momento: permite cambiar el plan según lo que digan los primeros datos.",
   ],
   nota: "Marca ficticia creada para el máster. Las piezas son propuestas académicas.",
