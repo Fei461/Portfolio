@@ -17,9 +17,10 @@ export const iberia: CasoCompleto = {
   contexto: {
     titulo: "Hablar de sostenibilidad sin greenwashing",
     parrafos: [
-      "Iberia, junto con Cepsa, Vueling y BIOCIRC, impulsa combustibles sostenibles de aviación, con el objetivo de llegar a cero emisiones netas en 2050. El encargo era construir una campaña para contar esa transición.",
+      "La elegimos a propósito, en contraposición a Ryanair, el trabajo del año anterior. Iberia, junto con Cepsa, Vueling y BIOCIRC, impulsa combustibles sostenibles de aviación, con el objetivo de llegar a cero emisiones netas en 2050. El encargo era construir una campaña para contar esa transición.",
       "Pero entre lo que hace la aerolínea y lo que percibe la gente hay una brecha enorme, y cualquier mensaje «verde» genera desconfianza. ¿Prometer más? Solo habría hecho la brecha más grande.",
-      "La trabajamos en conjunto, del spot y el marketing experiencial al cine, el email y la prensa escrita, que creo que fue de lo más original.",
+      "Investigando vimos que Iberia sí hacía cosas, pero no las comunicaba. Y la autocrítica es un valor que considero clave, en las empresas y en las personas: quien asume sus errores y pide perdón puede seguir mejorando; quien no, solo se está engañando. Así surgió «la restauración inacabada».",
+      "Me lo pasé muy bien porque nos salimos de lo establecido. Sí, hicimos un spot, pero en realidad era marketing experiencial con muchísimos factores en juego: pensar fuera de la caja para encajar. Y convencer a gente que te odia ya era un reto en sí mismo.",
     ],
   },
   bloques: [

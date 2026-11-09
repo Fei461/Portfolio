@@ -17,14 +17,15 @@ export const ryanair: CasoCompleto = {
   contexto: {
     titulo: "Mirar hacia dentro",
     parrafos: [
-      "Ryanair está bien posicionada en el mercado, pero sufre varios problemas de reputación, sobre todo con su propio público interno. Solemos fijarnos solo en la percepción externa, y esa visión se queda incompleta si no preguntas a quienes trabajan dentro.",
-      "Por eso combinamos valoraciones en Indeed, vídeos testimoniales y noticias con entrevistas y formularios a trabajadores actuales y antiguos. Las quejas se repetían: sueldos por debajo de lo prometido, inseguridad laboral y una comunicación interna ineficiente y jerárquica.",
+      "Teníamos que resolver un problema corporativo real. Ryanair está bien posicionada en el mercado, pero sufre varios problemas de reputación, sobre todo dentro de casa.",
+      "Para saber qué opinaban de verdad sus trabajadores, hicimos entrevistas a empleados actuales y antiguos, y las cruzamos con valoraciones en Indeed, vídeos testimoniales y noticias. Al final, solo bajando al barro notas que la tierra está húmeda. Las quejas se repetían: sueldos por debajo de lo prometido, inseguridad laboral y una comunicación interna ineficiente y jerárquica.",
+      "Nos quedamos con los públicos internos porque, al final, las empresas son personas. Pero sin olvidarnos de los externos ni del resto de stakeholders.",
     ],
   },
   contraste: {
     titulo: "Lo que dice frente a lo que se vive",
     intro:
-      "Lo que Ryanair dice ofrecer a sus empleados frente a lo que contaron quienes trabajan allí. Cinco de sus pilares se perciben al revés. Toca una fila para ver la brecha.",
+      "Lo que Ryanair dice ofrecer a sus empleados frente a lo que contaron quienes trabajan allí. Cinco de sus pilares se perciben al revés. Fue la parte que más disfruté, porque va directa a la psicología de la comunicación. Toca una fila para ver la brecha.",
     dice: "Lo que dice Ryanair",
     vive: "Lo que viven los empleados",
     filas: [
@@ -78,7 +79,7 @@ export const ryanair: CasoCompleto = {
     },
     {
       titulo: "Objetivos y KPI",
-      resumen: "Cómo saber si la brecha se cierra.",
+      resumen: "Me lo pasé muy bien encajando cada objetivo con su forma de medirlo, como piezas de un puzle.",
       puntos: [
         "El gran objetivo: invertir en dos años el 20 % de las actitudes negativas de los empleados hacia la compañía.",
         "Para llegar, objetivos por público: reconocer los logros de los empleados, que conozcan un 55 % más las actividades internas en seis meses, una reunión al mes con los sindicatos y el apoyo de los accionistas para cambiar las condiciones.",
@@ -87,7 +88,7 @@ export const ryanair: CasoCompleto = {
     },
     {
       titulo: "Lo que propusimos",
-      resumen: "Reconocer, acoger y dar voz.",
+      resumen: "Reconocer, acoger y dar voz, pensado para sacar el máximo a cada objetivo con cada público.",
       puntos: [
         "Reconocer: los premios a la tripulación, esta vez en Montecarlo, y regatas por equipos para romper jerarquías y trabajar la confianza.",
         "Acoger: un desayuno de bienvenida, un kit con un pasaporte que se va sellando con los primeros logros y un compañero que hace de mentor los tres primeros meses, para que nadie se vaya al poco de entrar.",
@@ -411,7 +412,8 @@ export const pluvielle: CasoCompleto = {
   contexto: {
     titulo: "El primer paso sagrado",
     parrafos: [
-      "Pluvielle convierte una alfombrilla de baño en arte que se colecciona: piezas de diatomita, numeradas y creadas con artistas contemporáneos. La marca la creamos en equipo, partiendo de la «artificación» de Kapferer: convertir un objeto que no es arte en una pieza de arte.",
+      "Empezó siendo un trabajo en grupo con un encargo poco glamuroso: vender alfombrillas de baño. Podríamos haber tirado por lo fácil, pero buscamos un público muy alejado de nuestra realidad y llevamos el negocio a lo surrealista.",
+      "Pensamos en cómo es esa gente y en qué es, en el fondo, una alfombrilla: lo primero que pisas al salir de la ducha. De ahí salió el arte funcional, piezas de diatomita en ediciones exclusivas y numeradas, creadas con artistas, que justificaran su precio. Las ideas salieron de una sala donde cabía cualquier cosa, sin limitaciones; una vez montada la empresa, el resto fluyó solo.",
       "El plan de medios y la campaña los hice yo sola. Mi insight: los clientes de ultra lujo rechazan los logos a la vista y valoran cada vez más sus rituales privados. El paso de la ducha al mundo exterior es un momento sagrado que nadie estaba atendiendo. De ahí el concepto: «The sacred first step».",
       "El reto era llegar a personas que ven la publicidad masiva como ruido. Por eso el anuncio tenía que vivirse como contenido editorial o artístico, sin interrumpir a nadie.",
     ],

@@ -22,9 +22,10 @@ export const tfgBbva: CasoCompleto = {
   contexto: {
     titulo: "¿Se ha cerrado la herida de 2008?",
     parrafos: [
-      "Tras la crisis financiera, la banca perdió la confianza de la gente. BBVA respondió con un restyling, una apuesta por la sostenibilidad y proyectos de contenido como Aprendemos Juntos. Mi TFG quería saber si todo eso había funcionado de verdad.",
-      "Para no quedarme en la teoría lo medí desde los dos lados: una encuesta al público interno y otra al externo, con las mismas preguntas, y una entrevista en profundidad a la responsable de marca y contenidos de BBVA, una de las creadoras de Aprendemos Juntos.",
-      "Y a riesgo de cruzar la línea, hay algo que no se ve detrás de este trabajo: soy hija de dos empleados de BBVA. He visto de cerca su plantación de árboles tras los incendios, sus talleres de ciberseguridad y sus becas. Todo eso es cierto, como también lo es que tienen un problema de comunicación.",
+      "El TFG (o «la T palabra», como lo llamaba yo) nace de las ganas de tratar todo lo que más me había enganchado en la carrera: la comunicación corporativa y la reputación de marca. Lo admito, fui por terreno conocido. No por vaguería, sino porque sentía que así podía llegar a gente que aportaba muchísimo.",
+      "Tras la crisis financiera, la banca perdió la confianza de la gente. BBVA respondió con un restyling, una apuesta por la sostenibilidad y proyectos de contenido como Aprendemos Juntos. Quería saber si todo eso había funcionado de verdad, y medirlo desde los dos lados: una encuesta al público interno y otra al externo, con las mismas preguntas.",
+      "Mis padres movieron la encuesta entre sus contactos, y así llegó a Ana, responsable de marca y contenidos de BBVA y una de las creadoras de Aprendemos Juntos. Ella misma se ofreció a ayudarme como fuera.",
+      "Y, a riesgo de cruzar la línea, la razón real de esta investigación es una niña que crecía pegando cromos de la Liga BBVA con su madre, que plantó árboles junto a su padre con un chaleco azul enorme y que fue con su hermano a una charla de ciberseguridad de la empresa en la que no consiguieron sacarnos nada, salvo que hacíamos judo juntos. Soy hija de dos empleados de BBVA. Sé que lo que hacen es cierto, como también lo es que tienen un problema de comunicación.",
     ],
   },
   retoPie: "La nube de palabras de las respuestas abiertas de las dos encuestas: «social», «sostenibilidad», «valores», «transparencia» o «confianza», entre las que más se repiten.",
@@ -86,8 +87,17 @@ export const tfgBbva: CasoCompleto = {
       resumen: "Un método mixto, en tres fases.",
       puntos: [
         "Primero, los documentos: el manual de marca, los informes de banca responsable, el caso de Aprendemos Juntos y lo que otros trabajos académicos habían escrito sobre el banco desde 2008.",
-        "Después, dos encuestas gemelas, con las mismas preguntas de 1 a 5 y preguntas abiertas: 103 respuestas de dentro y 145 de fuera. Y la entrevista en profundidad.",
+        "Después, dos encuestas gemelas, con las mismas preguntas de 1 a 5 y preguntas abiertas: 103 respuestas de dentro y 145 de fuera.",
         "Por último, el análisis: medias para medir la brecha, correlaciones para ver qué pesa más en la reputación, la dispersión para medir la polarización y las respuestas abiertas, agrupadas por temas, para entender el porqué de cada nota.",
+      ],
+    },
+    {
+      titulo: "La entrevista",
+      resumen: "Todo lo que no cabe en un papel.",
+      puntos: [
+        "Sentía que toda esa información cuantitativa se complementaría muy bien con alguien que trabaja en reputación de marca. Encontrar fecha costó, con exámenes de por medio.",
+        "Cuando por fin la tuvimos, yo iba con un guion bien preparado. Pero no fue así la cosa: Ana me contó todo lo que no cabe en un papel, casi como si se lo estuviera contando a una amiga tomándose un café.",
+        "Me habló con tanto cariño y profundidad de Aprendemos Juntos que decidí convertirlo en una pieza clave del estudio.",
       ],
     },
     {
