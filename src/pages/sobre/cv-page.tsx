@@ -5,7 +5,7 @@ import "./cv.css";
 // El CV es una hoja A4: lo que se ve aquí es exactamente lo que se descarga en PDF.
 const pdf = `${import.meta.env.BASE_URL}cv-lara-feijoo.pdf`;
 
-const nivelIdioma: Record<string, number> = { Nativo: 5, C2: 5, C1: 4, B2: 3, B1: 2, A2: 1 };
+const nivelIdioma: Record<string, number> = { Nativa: 5, Nativo: 5, C2: 5, C1: 4, B2: 3, B1: 2, A2: 1 };
 
 function Linea({ titulo, hitos }: { titulo: string; hitos: Hito[] }) {
   return (
@@ -19,6 +19,13 @@ function Linea({ titulo, hitos }: { titulo: string; hitos: Hito[] }) {
               <strong>{h.titulo}</strong>
               <span className="hcv-lugar">{h.lugar}</span>
               {h.detalle && <p>{h.detalle}</p>}
+              {h.puntos && (
+                <ul className="hcv-logros">
+                  {h.puntos.map((pt) => (
+                    <li key={pt}>{pt}</li>
+                  ))}
+                </ul>
+              )}
             </div>
           </li>
         ))}
@@ -73,7 +80,6 @@ export function CvPage() {
             </section>
             <Linea titulo="Experiencia" hitos={perfil.experiencia} />
             <Linea titulo="Formación" hitos={perfil.formacion} />
-            <Linea titulo="Cursos" hitos={perfil.cursos} />
           </div>
 
           <aside className="hcv-lateral">
@@ -84,6 +90,17 @@ export function CvPage() {
                   <strong>{p.titulo}</strong>
                   <span className="hcv-lugar">{p.lugar}</span>
                   {p.detalle && <p>{p.detalle}</p>}
+                </div>
+              ))}
+            </section>
+            <section className="hcv-seccion">
+              <h2>Cursos</h2>
+              {perfil.cursos.map((c) => (
+                <div key={c.titulo} className="hcv-premio hcv-curso">
+                  <strong>{c.titulo}</strong>
+                  <span className="hcv-lugar">
+                    {c.lugar} · {c.periodo}
+                  </span>
                 </div>
               ))}
             </section>

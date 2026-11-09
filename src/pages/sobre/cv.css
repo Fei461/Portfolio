@@ -323,8 +323,7 @@
     print-color-adjust: exact;
   }
 
-  .hcv-seccion,
-  .hcv-linea li {
+  .hcv-linea > li {
     break-inside: avoid;
   }
 }
@@ -391,5 +390,38 @@
   .hcv-periodo,
   .hcv-chips li {
     font-size: 0.8rem;
+  }
+}
+
+/* Logros de cada experiencia, en lista corta. */
+.hcv-logros {
+  margin: 0.8mm 0 0;
+  padding-left: 3.2mm;
+  color: var(--hcv-suave);
+}
+
+.hcv-logros li {
+  margin: 0.3mm 0 0;
+  padding: 0;
+  border: 0;
+  display: list-item;
+}
+
+.hcv-linea .hcv-logros {
+  list-style: disc;
+}
+
+.hcv-linea .hcv-logros li::marker {
+  color: var(--obi);
+}
+
+.hcv-curso + .hcv-curso {
+  margin-top: 2mm;
+}
+
+@media screen and (max-width: 760px) {
+  .hcv-contacto a,
+  .hcv-web a {
+    font-size: 0.85rem;
   }
 }

@@ -1,13 +1,13 @@
 // Fuente única de los datos personales (Sobre mí y CV). Origen: CV de octubre de 2026.
 // Sin teléfono ni fecha de nacimiento. El correo de la universidad solo sale en el CV.
 
-export type Hito = { periodo: string; titulo: string; lugar: string; detalle?: string };
+export type Hito = { periodo: string; titulo: string; lugar: string; detalle?: string; puntos?: string[] };
 
 export const perfil = {
   nombre: "Lara Feijóo",
-  titular: "Estudiante del Máster en Comunicación Publicitaria",
+  titular: "Publicidad y RRPP · Máster en Comunicación Publicitaria",
   resumen:
-    "Estudiante con ganas de aprender del mundo publicitario. Me interesan especialmente la gestión de la reputación, la percepción de marca, las relaciones públicas, la comunicación corporativa y la comunicación interna.",
+    "Graduada en Publicidad y RRPP, con ganas de seguir aprendiendo. Me interesan especialmente la gestión de la reputación, la percepción de marca, las relaciones públicas, la comunicación corporativa y la comunicación interna. Mezclo análisis y creatividad: me encanta entender qué ha pasado y por qué, y partirme la cabeza buscando la mejor solución para la marca.",
   busco: "Prácticas a tiempo completo a partir de abril de 2027.",
   lugar: "Galapagar, Madrid",
   email: "lara.feijoo@gmail.com",
@@ -19,9 +19,20 @@ export const perfil = {
     {
       periodo: "Enero a mayo de 2026",
       titulo: "Prácticas en el departamento de marketing",
-      lugar: "Stud-IA",
+      lugar: "Stud-IA, startup EdTech (en remoto)",
+      puntos: [
+        "Estrategia y gestión de X, Threads y Bluesky, con informes mensuales. Threads: de cero a 365 seguidores, y 3.030 visitas en un mes.",
+        "Guion, grabación y edición de vídeos para TikTok, Instagram y YouTube; uno superó las 36.000 visualizaciones.",
+        "Campañas para Perú, Colombia, Argentina, México y España, y secuencias B2B por LinkedIn y email.",
+        "Gestión de la reputación y de la comunidad: reseñas de Trustpilot y conversación en cinco redes.",
+      ],
+    },
+    {
+      periodo: "Desde febrero de 2026",
+      titulo: "Creadora de Talixea (proyecto propio)",
+      lugar: "talixea.es",
       detalle:
-        "Estrategia de campañas, creación de contenido, análisis de mercado y de la competencia, y gestión de la reputación.",
+        "App para aprender idiomas leyendo: método, catálogo de 40 libros en seis idiomas, marca, precios y lanzamiento (octubre de 2026). Hecha sin saber programar, con herramientas de IA.",
     },
     {
       periodo: "Octubre de 2022 a junio de 2025",
@@ -40,12 +51,14 @@ export const perfil = {
       periodo: "Desde septiembre de 2026",
       titulo: "Máster en Comunicación Publicitaria",
       lugar: "Universidad Carlos III de Madrid",
+      detalle: "Entre otros trabajos, un laboratorio web y una encuesta propia para evaluar el logo de Santander.",
     },
     {
       periodo: "Septiembre de 2022 a junio de 2026",
       titulo: "Grado en Publicidad y Relaciones Públicas",
       lugar: "Universidad Rey Juan Carlos",
-      detalle: "Nota media de 8,62 y seis matrículas de honor. TFG: la identidad y la reputación de BBVA tras la crisis de 2008.",
+      detalle:
+        "Nota media de 8,62 y seis matrículas de honor. TFG sobre la identidad y la reputación de BBVA tras la crisis de 2008: dos encuestas (248 respuestas) y una entrevista en profundidad.",
     },
     {
       periodo: "Septiembre de 2019 a mayo de 2021",
@@ -54,7 +67,7 @@ export const perfil = {
     },
     {
       periodo: "Septiembre de 2012 a junio de 2021",
-      titulo: "Programa PEAC",
+      titulo: "Programa de Enriquecimiento Educativo (PEAC)",
       lugar: "PEAC Madrid Oeste",
       detalle: "Alumni en la actualidad.",
     },
@@ -83,12 +96,12 @@ export const perfil = {
       titulo: "Primer premio de categoría, Ideathon de Innovación",
       lugar: "Universidad Rey Juan Carlos",
       detalle:
-        "Con el equipo Parchís, entre más de 200 estudiantes: un CV generativo con IA que convierte el TFG en competencias para cada oferta. Primeras en nuestra categoría y segundas en la general.",
+        "Más de 200 estudiantes. Con mi equipo, un CV generativo con IA que convierte el TFG en competencias para cada oferta: primeras en la categoría y segundas en la general.",
     },
   ] as { titulo: string; lugar: string; detalle?: string }[],
 
   idiomas: [
-    { idioma: "Español", nivel: "Nativo" },
+    { idioma: "Español", nivel: "Nativa" },
     { idioma: "Inglés", nivel: "C1" },
     { idioma: "Catalán", nivel: "B2" },
     { idioma: "Francés", nivel: "B1" },

@@ -16,7 +16,7 @@ export const studIa: CasoCompleto = {
   ],
   marcador: [
     { cifra: "36.000", texto: "visualizaciones de uno de mis vídeos en YouTube" },
-    { cifra: "3.030", texto: "visitas y 365 seguidores en Threads en un mes, empezando desde cero" },
+    { cifra: "3.030", texto: "visitas en un mes en Threads, una cuenta que empezó de cero y llegó a 365 seguidores" },
     { cifra: "10:1", texto: "impresiones de responder a cuentas grandes frente a publicar contenido propio en X" },
   ],
   contexto: {
@@ -43,7 +43,7 @@ export const studIa: CasoCompleto = {
       resumen: "BXT (Bluesky, X y Threads) era mi bebé, y cada mes le hacía su informe: qué había pasado y, sobre todo, por qué.",
       puntos: [
         "En X, responder a cuentas grandes daba diez veces más impresiones que publicar contenido propio. Así que dejé de publicar a diario y de copiar lo mismo en las tres redes: menos monólogo y más conversación.",
-        "En Threads llegamos a 3.030 visitas y 365 seguidores en un mes, y un hallazgo que me cambió el tono: el público real era latinoamericano y de 25 a 34 años, cuando yo pensaba en universitarios españoles. Así que empecé a hablarle a quien de verdad estaba ahí.",
+        "En Threads, una cuenta que empezó de cero, llegamos a 3.030 visitas en un mes y a 365 seguidores. Y un hallazgo que me cambió el tono: el público real era latinoamericano y de 25 a 34 años, cuando yo pensaba en universitarios españoles. Así que empecé a hablarle a quien de verdad estaba ahí.",
         "En TikTok la gente se iba en el primer segundo. El «reto del baño» retuvo 8 segundos de media frente a uno o dos del resto, así que pasamos a vídeos más cortos, en series y con un gancho directo desde el principio.",
       ],
     },
