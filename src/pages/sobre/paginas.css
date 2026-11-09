@@ -379,6 +379,7 @@
 .color--verde { --c: #9be37a; --c-osc: #3f9a2a; }
 .color--rosa { --c: #ff9fcf; --c-osc: #d6488f; }
 .color--morado { --c: #c7a6ff; --c-osc: #7a4fd0; }
+.color--rojo { --c: #ff8f85; --c-osc: #c4302b; }
 
 .sub {
   color: inherit;
@@ -773,7 +774,7 @@
   fill: var(--sumi);
   font-family: var(--f);
   font-weight: 800;
-  font-size: 11px;
+  font-size: 10.5px;
   text-anchor: middle;
   dominant-baseline: middle;
 }

@@ -61,7 +61,7 @@ export const ryanair: CasoCompleto = {
   bloques: [
     {
       titulo: "La reputación interna",
-      resumen: "Escuchar a quien trabaja dentro, no solo a quien vuela.",
+      resumen: "Bajar al barro: escuchar a quienes la hacen volar.",
       puntos: [
         "Solemos medir la reputación desde fuera. Aquí la medimos desde dentro: reseñas de empleados, vídeos testimoniales, noticias y entrevistas a trabajadores actuales y antiguos.",
         "Los problemas se repetían: sueldos por debajo de lo prometido, contratos inestables y mucha rotación, una comunicación interna jerárquica y la sensación de no sentirse valorados.",
@@ -71,7 +71,7 @@ export const ryanair: CasoCompleto = {
     },
     {
       titulo: "La estrategia",
-      resumen: "Primero, que se conozca de verdad; después, diferenciarse por la conciliación.",
+      resumen: "Otra de las partes que más disfruté: el plan estratégico de identidad corporativa.",
       puntos: [
         "Quien entra en Ryanair no sabe cómo es por dentro hasta que empieza a trabajar. El primer paso era que el público interno supiera quién es, qué hace y cómo lo hace.",
         "El segundo, diferenciarse de Vueling o EasyJet con algo que hoy le falta: la conciliación familiar, poner a las personas y su salud mental por delante del máximo rendimiento.",
@@ -98,6 +98,7 @@ export const ryanair: CasoCompleto = {
   ],
   imagenes: {
     titulo: "Las piezas",
+    texto: "El mapa de públicos y la propuesta creativa, pensada para sacar el máximo a cada objetivo con cada público.",
     items: [
       { src: img("ryanair", "mapa-publicos.jpg"), alt: "Diagrama de tres círculos, poder, legitimidad y urgencia, con los públicos de Ryanair", pie: "El mapa de públicos." },
       { src: img("ryanair", "skynews.jpg"), alt: "Portada de la revista interna SkyNews de Ryanair", pie: "SkyNews, la revista interna." },
@@ -421,7 +422,7 @@ export const pluvielle: CasoCompleto = {
   bloques: [
     {
       titulo: "Objetivos",
-      resumen: "Alcance, interacción y prestigio.",
+      resumen: "Llegar a pocos, pero a los que importan.",
       puntos: [
         "Llegar al menos al 65 % del público objetivo, y que cada persona viera la campaña un mínimo de tres veces.",
         "Más de un 5 % de clics en las plataformas de arte y 500 solicitudes para los eventos VIP de cada colección.",
@@ -448,6 +449,7 @@ export const pluvielle: CasoCompleto = {
   ],
   imagenes: {
     titulo: "Las piezas",
+    texto: "Lo primero que pisas al salir de la ducha, convertido en una campaña de lujo.",
     items: [
       { src: img("pluvielle", "anuncio.jpg"), alt: "Anuncio de Pluvielle con una alfombrilla, gotas de agua y el titular Art shouldn't end where the water begins", pie: "El anuncio para Architectural Digest." },
       { src: img("pluvielle", "articulo.jpg"), alt: "Artículo patrocinado de Pluvielle en la web de Artsy", pie: "El artículo patrocinado en Artsy." },

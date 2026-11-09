@@ -1,5 +1,5 @@
 // Cómo trabajo: mis cuatro momentos de un proyecto, cada uno con su color y un ejemplo real.
-export type ColorSubrayador = "azul" | "naranja" | "amarillo" | "verde" | "rosa" | "morado";
+export type ColorSubrayador = "azul" | "naranja" | "amarillo" | "verde" | "rosa" | "morado" | "rojo";
 
 export const tiempos: {
   nombre: string;
@@ -74,6 +74,7 @@ export const colores: {
     texto: [
       "Hace diez años el fútbol femenino era tan nicho que los partidos del Barça solo se podían ver en el directo de Instagram de una aficionada. Mi Twitter acabó en catalán, me enganché a Merlí y a Les de l’hoquei, y la transición vino sola.",
       "Hoy: español nativo, inglés C1, catalán B2 y francés B1. Y de cada país con un idioma nuevo que visito me traigo un libro. Empecé con unos diez años y ya tengo más de diez.",
+      "Cuando viví en Irlanda intentaba hablar con cada persona en su idioma. Un día en el patio estábamos mi amiga andaluza (que no sabía mucho inglés), unos cuantos irlandeses, una chica francesa y yo. Mi amiga propuso un juego y me puse a traducirlo al inglés y al francés, y a traducir de vuelta cada respuesta. Fue un poco caos, pero nadie se quedó fuera.",
     ],
   },
   {
@@ -100,6 +101,16 @@ export const colores: {
     titulo: "Las buenas costumbres",
     texto: [
       "Escribo a ordenador, pero luego lo paso todo a mano. Que no se pierdan las buenas costumbres, como dar los buenos días, pedir perdón o dar las gracias.",
+    ],
+  },
+  {
+    color: "rojo",
+    etiqueta: "En equipo",
+    titulo: "Defensa",
+    texto: [
+      "En el colegio me juntaba más con los chicos y jugaba al fútbol de defensa: era donde me sentía más cómoda, sabiendo que mi equipo podía confiar en mí.",
+      "Mi cabeza va rápido, así que en los trabajos en grupo suelo ser la que esquematiza, marca las líneas de actuación y reparte el trabajo. No porque me guste mandar, que no es el caso, sino porque suelo ver la solución antes. Y como quiero que cada uno destaque en lo suyo, suelo ser la última en elegir mi parte (salvo que haya una con mi nombre tatuado).",
+      "Pienso las emociones de forma muy racional, casi como problemas matemáticos, y eso me ayuda a leer al grupo: qué se espera de mí y cómo se siente cada uno. Eso sí, soy cabezona: de primeras me niego a cambiar de esquema. Termino reculando, pero me cuesta.",
     ],
   },
 ];

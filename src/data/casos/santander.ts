@@ -55,7 +55,7 @@ export const santander: CasoCompleto = {
       titulo: "Diseñar la encuesta",
       resumen: "Medir lo que el público percibe, no lo que la marca declara.",
       puntos: [
-        "31 personas respondieron en Google Forms sin saber de qué marca se trataba: 14 con formación en publicidad, diseño o marketing, 17 sin ella y 9 clientes del banco.",
+        "La hice yo, y conseguimos 31 respuestas en apenas 24 horas, sin decir de qué marca se trataba: 14 personas con formación en publicidad, diseño o marketing, 17 sin ella y 9 clientes del banco.",
         "Pruebas de reconocimiento: identificar la marca solo con el símbolo, decir qué se ve en cinco segundos y elegir la llama original entre cuatro versiones, con un 25 % de acierto por azar.",
         "Una pregunta antes de enseñar ninguna imagen, «escribe el primer banco que te venga a la cabeza: rojo», para medir la asociación de color sin contaminarla.",
         "Escalas de acuerdo y atributos percibidos, comparados entre perfiles: profesionales frente al resto y clientes frente a no clientes.",
@@ -63,7 +63,7 @@ export const santander: CasoCompleto = {
     },
     {
       titulo: "Construir el laboratorio",
-      resumen: "Una pestaña por criterio y el visitante como evaluador.",
+      resumen: "La parte que no se veía a primera vista.",
       puntos: [
         "Cada criterio tiene nuestra valoración, la evidencia de la guía de marca, el dato de la encuesta y una prueba interactiva.",
         "El visitante se pone su propia nota de 1 a 5 y la tabla final la compara con la del grupo, 65 sobre 75.",
@@ -81,7 +81,7 @@ export const santander: CasoCompleto = {
     },
     {
       titulo: "Presentarlo",
-      resumen: "Para un cliente metódico, cada titular es una conclusión.",
+      resumen: "Lo que nos pidieron, al pie de la letra (y con hipervínculos a todo lo demás).",
       puntos: [
         "Una presentación de diez diapositivas, veinte minutos y letra de treinta puntos (la regla 10/20/30 de Kawasaki), pensada para un cliente metódico.",
         "Cada diapositiva lleva un dato comprobable y la última enlaza directamente con cada prueba del laboratorio.",

@@ -31,34 +31,34 @@ export const studIa: CasoCompleto = {
   bloques: [
     {
       titulo: "Cuidar la reputación",
-      resumen: "Responder bien, rápido y a cada persona según lo que necesitaba.",
+      resumen: "Era parte de mi día a día, también cuando tocaba algún comentario delicado.",
       puntos: [
-        "Contestaba las reseñas de Trustpilot, las buenas y las malas. Nos servían para estar cerca de los usuarios, detectar fallos y hasta como buzón de sugerencias. Si alguien pedía más de lo que yo podía darle, lo hablaba directamente con los fundadores.",
-        "Llevaba la comunidad en X, Instagram, TikTok, Threads y Bluesky, también en los momentos delicados. No se responde igual a alguien con miedo a un examen que a alguien que duda de que estudiar con IA sea ético: primero había que entender qué esperaba y luego escribir algo que, como mínimo, no dañara la reputación de la marca.",
+        "Contestaba todas las reseñas de Trustpilot, las buenas y las malas. Al final eran nuestro mejor buzón de sugerencias: ahí aparecían los fallos antes que en ningún sitio. Si alguien pedía más de lo que yo podía darle, lo hablaba directamente con los fundadores.",
+        "Llevaba la comunidad en cinco redes. Y no se responde igual a alguien con miedo a un examen que a alguien que duda de si estudiar con IA es ético: primero tocaba entender qué esperaba cada persona y después escribir algo que, como mínimo, no dañara la reputación de la marca.",
         "Entraba en las conversaciones de las cuentas grandes del mundo estudiantil en los primeros minutos, aportando algo sin sonar a anuncio.",
       ],
     },
     {
       titulo: "Decidir con datos",
-      resumen: "X, Threads y Bluesky eran responsabilidad mía, y cada mes revisaba qué funcionaba y qué no.",
+      resumen: "BXT (Bluesky, X y Threads) era mi bebé, y cada mes le hacía su informe: qué había pasado y, sobre todo, por qué.",
       puntos: [
-        "En X, responder a cuentas grandes daba diez veces más impresiones que publicar contenido propio. Así que dejé de publicar a diario y de copiar lo mismo en las tres redes: menos publicaciones propias y más conversación.",
-        "En Threads llegamos a 3.030 visitas y 365 seguidores en un mes, y los datos me enseñaron algo que no esperaba: el público real era latinoamericano y de 25 a 34 años, no universitario español. Cambié el tono para hablarle a quien de verdad estaba ahí.",
+        "En X, responder a cuentas grandes daba diez veces más impresiones que publicar contenido propio. Así que dejé de publicar a diario y de copiar lo mismo en las tres redes: menos monólogo y más conversación.",
+        "En Threads llegamos a 3.030 visitas y 365 seguidores en un mes, y un hallazgo que me cambió el tono: el público real era latinoamericano y de 25 a 34 años, cuando yo pensaba en universitarios españoles. Así que empecé a hablarle a quien de verdad estaba ahí.",
         "En TikTok la gente se iba en el primer segundo. El «reto del baño» retuvo 8 segundos de media frente a uno o dos del resto, así que pasamos a vídeos más cortos, en series y con un gancho directo desde el principio.",
       ],
     },
     {
       titulo: "Entender antes de publicar",
-      resumen: "Saber contra quién competíamos y a quién le hablábamos.",
+      resumen: "Antes de lanzarme, ordenarlo todo (por colores, claro).",
       puntos: [
         "Analicé a cinco competidores y dibujé el recorrido de cinco tipos de usuario para saber qué necesitaba cada uno.",
         "Para los centros educativos, dividí el sector educativo español en trece nichos y prioricé dónde había más oportunidad.",
-        "Propuse cuatro pilares de contenido para hablar a los estudiantes: el producto, lo viral, su día a día y el lado humano de la marca.",
+        "Propuse cuatro pilares de contenido para hablar a los estudiantes: el producto, lo viral, su día a día y el lado humano de la marca. Y un calendario editorial con más de cien fechas de seis países, categorizado para que fuera lo más útil y visual posible.",
       ],
     },
     {
       titulo: "Una campaña por país",
-      resumen: "Cada país tiene su calendario de exámenes, y cada campaña salía cuando a ese país le tocaba.",
+      resumen: "Cada país tiene su calendario de exámenes y su jerga, y cada campaña salía justo cuando a ese país le tocaba sufrir.",
       puntos: [
         "La admisión a la universidad en Perú, el ICFES en Colombia, los primeros parciales en Argentina, el EXANI en México y la PAU en España.",
         "Cada una con su concepto, su jerga y su momento, y con vídeos, carruseles, emails y códigos de descuento. Algunas están en Las piezas.",
@@ -69,7 +69,7 @@ export const studIa: CasoCompleto = {
   enMovil: true,
   piezas: {
     titulo: "Piezas publicadas",
-    texto: "Algunos de los vídeos que guioné, grabé y edité. Alguno no lo vio ni mi madre (y eso que nos seguía); otro llegó a las 36.000 visualizaciones.",
+    texto: "Algunos de los vídeos que guioné, grabé y edité yo. Alguno no lo vio ni mi madre (y eso que nos seguía); otro llegó a las 36.000 visualizaciones.",
     videos: [
       {
         src: video("youtube-36k.mp4"),

@@ -216,11 +216,11 @@ function LoDemas() {
             className={girando ? "girando" : undefined}
           >
             {colores.map((x, i) => {
-              const [tx, ty] = punto(i * GAJO, 62);
+              const [tx, ty] = punto(i * GAJO, 57);
               return (
                 <g key={x.color} className={`color--${x.color}`}>
                   <path d={gajo(i)} className="ruleta__gajo" />
-                  <text x={tx} y={ty} transform={`rotate(${i * GAJO} ${tx} ${ty})`} className="ruleta__texto">
+                  <text x={tx} y={ty} transform={`rotate(${i * GAJO - 90} ${tx} ${ty})`} className="ruleta__texto">
                     {x.etiqueta}
                   </text>
                 </g>

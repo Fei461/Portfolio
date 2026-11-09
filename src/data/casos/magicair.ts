@@ -76,7 +76,7 @@ export const magicair: CasoCompleto = {
   bloques: [
     {
       titulo: "La marca",
-      resumen: "Cada persona escribió su ficha de empresa y nos quedamos con lo mejor de todas.",
+      resumen: "Cada persona escribió su ficha de empresa y nos quedamos con lo mejor de todas. La montamos tan bien que luego costó romperla.",
       puntos: [
         "Valores como la innovación, la comunicación abierta y la trazabilidad, y un estilo de comunicación propio.",
         "Una identidad minimalista: el blanco roto y la tipografía.",
@@ -103,7 +103,7 @@ export const magicair: CasoCompleto = {
     },
     {
       titulo: "Medir",
-      resumen: "Cómo saber si estaba funcionando.",
+      resumen: "Encajar cada objetivo con su forma de medirlo, otra vez como piezas de un puzle.",
       puntos: [
         "Reducir en nueve meses la responsabilidad que atribuyen los consumidores y subir un 20 % la cobertura neutral o positiva en tres.",
         "Con encuestas, Net Promoter Score, seguimiento de medios y CRM.",

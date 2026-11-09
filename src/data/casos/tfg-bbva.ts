@@ -78,17 +78,17 @@ export const tfgBbva: CasoCompleto = {
       titulo: "La pregunta",
       resumen: "Si la identidad que BBVA dice tener coincide con la imagen que percibe la gente.",
       puntos: [
-        "Quería saber si el branded content, el restyling y la apuesta por la sostenibilidad habían servido para recuperar la confianza perdida en 2008.",
+        "Quería saber si el branded content, el restyling y la apuesta por la sostenibilidad habían servido para algo más que para quedar bien: si habían devuelto la confianza que se perdió en 2008.",
         "Lo concreté en cuatro preguntas: cuánta distancia hay entre dentro y fuera, cómo cambia según la edad, el género o el cargo, qué peso tiene Aprendemos Juntos y si la IA y la sostenibilidad se ven como un valor o como algo que deshumaniza.",
       ],
     },
     {
       titulo: "Cómo lo medí",
-      resumen: "Un método mixto, en tres fases.",
+      resumen: "Números para saber qué pasa, y palabras para entender por qué.",
       puntos: [
         "Primero, los documentos: el manual de marca, los informes de banca responsable, el caso de Aprendemos Juntos y lo que otros trabajos académicos habían escrito sobre el banco desde 2008.",
         "Después, dos encuestas gemelas, con las mismas preguntas de 1 a 5 y preguntas abiertas: 103 respuestas de dentro y 145 de fuera.",
-        "Por último, el análisis: medias para medir la brecha, correlaciones para ver qué pesa más en la reputación, la dispersión para medir la polarización y las respuestas abiertas, agrupadas por temas, para entender el porqué de cada nota.",
+        "Y por último, la parte que más disfruto: el análisis. Medias para medir la brecha, correlaciones para ver qué pesa más en la reputación y la dispersión para ver cuánto se polarizan las opiniones. Las respuestas abiertas, agrupadas por temas, me dieron el porqué de cada nota.",
       ],
     },
     {
@@ -112,11 +112,12 @@ export const tfgBbva: CasoCompleto = {
     },
     {
       titulo: "Aprendemos Juntos",
-      resumen: "El escudo de la reputación de BBVA.",
+      resumen: "El proyecto del que Ana me habló con tanto cariño.",
       puntos: [
         "Nació al pasar del patrocinio a la utilidad: dejaron de ser «la Liga BBVA» para ser útiles a la gente.",
         "Llegaron a rechazar contactos que venían de presidencia para no «sacar la patita de banco».",
-        "Nadie, de las 248 personas encuestadas, cree que afecte para mal a la reputación del banco.",
+        "Nadie, de las 248 personas encuestadas, cree que afecte para mal a la reputación del banco. Funciona como un escudo.",
+        "Ana guarda un pósit que dice «Os amo BBVA, gracias por ayudarme tanto». ¿En qué momento alguien le dice a un banco que le quiere?",
       ],
     },
     {
@@ -131,7 +132,7 @@ export const tfgBbva: CasoCompleto = {
   ],
   imagenes: {
     titulo: "Las piezas",
-    texto: "Algunos de los gráficos del trabajo, hechos con las respuestas de las dos encuestas.",
+    texto: "Algunos de los gráficos que saqué de las dos encuestas. Lo que más me gustó fue ver cómo cada número escondía una historia.",
     items: [
       {
         src: img("aprendemos-juntos.jpg"),

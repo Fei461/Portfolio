@@ -26,7 +26,7 @@ export const iberia: CasoCompleto = {
   bloques: [
     {
       titulo: "La estrategia",
-      resumen: "La restauración inacabada.",
+      resumen: "La restauración inacabada: asumir el daño antes de prometer nada.",
       puntos: [
         "Nuestro público era una Generación Z que valora lo auténtico y que siente flight shaming: «Me siento mal cuando viajo en avión porque contamina mucho».",
         "La transición ecológica contada como la restauración de una obra de arte deteriorada: un proceso real, lento y necesario. Como en el kintsugi, hacer visible el daño para poder transformarlo.",
@@ -41,7 +41,7 @@ export const iberia: CasoCompleto = {
     },
     {
       titulo: "Cada soporte",
-      resumen: "La misma idea, cambiando de escala, y cada pieza con su porqué.",
+      resumen: "Pensar fuera de la caja para encajar: la misma idea en cada soporte, y cada pieza con su porqué.",
       puntos: [
         "Spot: el cuadro El Oxbow (1836), deteriorado y colgado en la zona de embarque, se restaura mientras se intercalan las acciones reales de Iberia. Termina sin acabar, porque la responsabilidad empieza al asumir el daño.",
         "Aeropuerto: cuadros españoles tras un doble cristal sucio y un kit de limpieza; solo el público puede limpiar el primero. Así lo intangible se convierte en algo que se toca.",
@@ -85,6 +85,7 @@ export const iberia: CasoCompleto = {
   },
   imagenes: {
     titulo: "Las piezas",
+    texto: "La misma idea en cada soporte: enseñar la mancha y lo que se está haciendo para limpiarla.",
     items: [
       {
         src: img("storyboard.jpg"),
