@@ -4,19 +4,19 @@ import type { CasoCompleto } from "@/data/casos";
 
 type Extra = NonNullable<CasoCompleto["piezasExtra"]>[number];
 
-// Las piezas de un caso, en pequeñas pestañas: los vídeos primero y luego el resto
+// Las piezas de un caso, en pequeñas pestañas: lo principal (vídeos o imágenes) y luego el resto
 // del trabajo (guiones, campañas, voz de marca…).
-export function Tablon({ videos, extras }: { videos: ReactNode; extras: Extra[] }) {
+export function Tablon({ nombre, principal, extras }: { nombre: string; principal: ReactNode; extras: Extra[] }) {
   // El tipo de pieza abierto vive en la URL (?pieza=guiones), como las partes del caso.
   const [params, setParams] = useSearchParams();
-  const activo = params.get("pieza") ?? "videos";
+  const activo = params.get("pieza") ?? "principal";
   const setActivo = (id: string) => {
     const nuevos = new URLSearchParams(params);
-    if (id === "videos") nuevos.delete("pieza");
+    if (id === "principal") nuevos.delete("pieza");
     else nuevos.set("pieza", id);
     setParams(nuevos, { replace: true });
   };
-  const grupos = [{ id: "videos", nombre: "Vídeos" }, ...extras.map((e) => ({ id: e.id, nombre: e.nombre }))];
+  const grupos = [{ id: "principal", nombre }, ...extras.map((e) => ({ id: e.id, nombre: e.nombre }))];
   const extra = extras.find((e) => e.id === activo);
 
   return (
@@ -29,7 +29,7 @@ export function Tablon({ videos, extras }: { videos: ReactNode; extras: Extra[] 
         ))}
       </div>
       <div className="tablon__contenido" key={activo}>
-        {extra ? <Grupo extra={extra} /> : videos}
+        {extra ? <Grupo extra={extra} /> : principal}
       </div>
     </div>
   );

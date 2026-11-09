@@ -6,26 +6,26 @@ const img = (slug: string, file: string) => `${import.meta.env.BASE_URL}assets/c
 export const ryanair: CasoCompleto = {
   slug: "ryanair",
   titulo: "Ryanair",
-  era: "Un problema de pertenencia: una plantilla que no se siente reconocida por su propia empresa.",
+  era: "Un problema de pertenencia: unos empleados que no se sienten reconocidos por su propia empresa.",
   ficha: [
     { etiqueta: "Qué", valor: "Diagnóstico de identidad, imagen y reputación, y plan de comunicación interna" },
     { etiqueta: "Dónde", valor: "Gestión de la Comunicación, Grado URJC, 2025" },
     { etiqueta: "Equipo", valor: "Ocho personas" },
-    { etiqueta: "Me encargué de", valor: "El DAFO, la reputación interna, el análisis de brecha, los objetivos y los KPI" },
+    { etiqueta: "Mi parte", valor: "El DAFO, la reputación interna, el análisis de brecha, los objetivos y los KPI" },
   ],
   contexto: {
     titulo: "Mirar hacia dentro",
     parrafos: [
-      "Ryanair está bien posicionada en el mercado, pero sufre varios problemas de reputación, sobre todo con su propia plantilla. Solemos fijarnos solo en la percepción externa, y esa visión se queda incompleta si no preguntas a quienes trabajan dentro.",
+      "Ryanair está bien posicionada en el mercado, pero sufre varios problemas de reputación, sobre todo con su propio público interno. Solemos fijarnos solo en la percepción externa, y esa visión se queda incompleta si no preguntas a quienes trabajan dentro.",
       "Por eso combinamos valoraciones en Indeed, vídeos testimoniales y noticias con entrevistas y formularios a trabajadores actuales y antiguos. Las quejas se repetían: sueldos por debajo de lo prometido, inseguridad laboral y una comunicación interna ineficiente y jerárquica.",
     ],
   },
   contraste: {
     titulo: "Lo que dice frente a lo que se vive",
     intro:
-      "Lo que Ryanair dice ofrecer a su plantilla frente a lo que contaron quienes trabajan allí. Cinco de sus pilares se perciben al revés. Toca una fila para ver la brecha.",
+      "Lo que Ryanair dice ofrecer a sus empleados frente a lo que contaron quienes trabajan allí. Cinco de sus pilares se perciben al revés. Toca una fila para ver la brecha.",
     dice: "Lo que dice Ryanair",
-    vive: "Lo que vive la plantilla",
+    vive: "Lo que viven los empleados",
     filas: [
       {
         dice: "Conciliación de la vida laboral y familiar",
@@ -54,34 +54,43 @@ export const ryanair: CasoCompleto = {
       },
     ],
     cierre:
-      "De aquí salió el objetivo: invertir en dos años el 20 % de las actitudes negativas de la plantilla, empezando por la conciliación como atributo diferenciador.",
+      "De aquí salió el objetivo: invertir en dos años el 20 % de las actitudes negativas de los empleados, con la conciliación como atributo diferenciador.",
   },
   bloques: [
     {
       titulo: "La reputación interna",
-      resumen: "Qué vive de verdad la plantilla.",
+      resumen: "Escuchar a quien trabaja dentro, no solo a quien vuela.",
       puntos: [
-        "Empezamos con un DAFO para ver sus puntos clave por dentro y por fuera.",
-        "Agrupamos los problemas que más se repetían: remuneración y condiciones, inseguridad laboral y alta rotación, y comunicación y gestión.",
-        "También recogimos a quien no lo vivía tan mal: cada base y cada cargo son un mundo distinto.",
+        "Solemos medir la reputación desde fuera. Aquí la medimos desde dentro: reseñas de empleados, vídeos testimoniales, noticias y entrevistas a trabajadores actuales y antiguos.",
+        "Los problemas se repetían: sueldos por debajo de lo prometido, contratos inestables y mucha rotación, una comunicación interna jerárquica y la sensación de no sentirse valorados.",
+        "Con un matiz importante: cada base y cada cargo son un mundo, y no todos lo vivían igual.",
+        "La conclusión: no eran incidentes aislados, sino un modelo basado en reducir costes que choca con el bienestar de las personas.",
+      ],
+    },
+    {
+      titulo: "La estrategia",
+      resumen: "Primero, que se conozca de verdad; después, diferenciarse por la conciliación.",
+      puntos: [
+        "Quien entra en Ryanair no sabe cómo es por dentro hasta que empieza a trabajar. El primer paso era que el público interno supiera quién es, qué hace y cómo lo hace.",
+        "El segundo, diferenciarse de Vueling o EasyJet con algo que hoy le falta: la conciliación familiar, poner a las personas y su salud mental por delante del máximo rendimiento.",
       ],
     },
     {
       titulo: "Objetivos y KPI",
       resumen: "Cómo saber si la brecha se cierra.",
       puntos: [
-        "Objetivo estratégico: invertir en dos años el 20 % de las actitudes negativas de la plantilla hacia la compañía.",
-        "Objetivos operativos, como subir un 55 % en seis meses lo que la plantilla conoce de las actividades internas.",
-        "KPI: encuestas de satisfacción dos veces al año, frecuencia e interacción en la intranet y participación en reuniones y eventos.",
+        "El gran objetivo: invertir en dos años el 20 % de las actitudes negativas de los empleados hacia la compañía.",
+        "Para llegar, objetivos por público: reconocer los logros de los empleados, que conozcan un 55 % más las actividades internas en seis meses, una reunión al mes con los sindicatos y el apoyo de los accionistas para cambiar las condiciones.",
+        "Para medirlo, encuestas de satisfacción dos veces al año (sin saturar a nadie), la actividad en la intranet y la participación en reuniones y eventos.",
       ],
     },
     {
       titulo: "Lo que propusimos",
-      resumen: "Reconocer, acoger e informar.",
+      resumen: "Reconocer, acoger y dar voz.",
       puntos: [
-        "Los Cabin Crew Awards en Montecarlo, regatas por equipos, un desayuno de bienvenida, un kit «Welcome on board» y un programa de mentoría.",
-        "«Historias con Altura», un podcast con vivencias de la plantilla, la revista interna SkyNews y una intranet.",
-        "Una reunión mensual entre dirección, sindicatos y grupos de trabajadores.",
+        "Reconocer: los premios a la tripulación, esta vez en Montecarlo, y regatas por equipos para romper jerarquías y trabajar la confianza.",
+        "Acoger: un desayuno de bienvenida, un kit con un pasaporte que se va sellando con los primeros logros y un compañero que hace de mentor los tres primeros meses, para que nadie se vaya al poco de entrar.",
+        "Dar voz: un podcast en el que los protagonistas son los empleados, una revista interna con sus historias y una reunión mensual entre dirección, sindicatos y trabajadores.",
       ],
     },
   ],
@@ -89,7 +98,6 @@ export const ryanair: CasoCompleto = {
     titulo: "Las piezas",
     items: [
       { src: img("ryanair", "mapa-publicos.jpg"), alt: "Diagrama de tres círculos, poder, legitimidad y urgencia, con los públicos de Ryanair", pie: "El mapa de públicos." },
-      { src: img("ryanair", "podcast.jpg"), alt: "Cartel del podcast Historias con Altura con una chica hablando ante un micrófono", pie: "«Historias con Altura», el podcast interno." },
       { src: img("ryanair", "skynews.jpg"), alt: "Portada de la revista interna SkyNews de Ryanair", pie: "SkyNews, la revista interna." },
       { src: img("ryanair", "skynews-dentro.jpg"), alt: "Páginas interiores de SkyNews con historias de empleados", pie: "Historias de la plantilla, dentro de la revista." },
       { src: img("ryanair", "bienvenida.jpg"), alt: "Kit de bienvenida de Ryanair con caja, taza, libreta y carta", pie: "El kit «Welcome on board»." },
@@ -105,7 +113,9 @@ export const ryanair: CasoCompleto = {
   },
   aprendizajes: [
     "La reputación interna es un pilar esencial para entender la verdadera salud de una empresa.",
-    "Cuanto más informada está la plantilla, menos información imprecisa o perjudicial circula.",
+    "Que una mala reputación interna no se arregla con medidas superficiales: hay que repensar la cultura entera.",
+    "Que cada base y cada cargo son un mundo, y hay que escuchar a todos antes de generalizar.",
+    "Cuanto más informados están los empleados, menos información imprecisa o perjudicial circula.",
   ],
   nota: "Propuesta académica en equipo (Grado URJC), sin relación con Ryanair.",
 };
@@ -119,7 +129,7 @@ export const torrons: CasoCompleto = {
     { etiqueta: "Qué", valor: "Propuesta creativa para Sinergia, de Torrons Vicens" },
     { etiqueta: "Dónde", valor: "Grado en Publicidad y RRPP, URJC" },
     { etiqueta: "Equipo", valor: "Cuatro personas" },
-    { etiqueta: "Me encargué de", valor: "El layout y la marquesina holográfica; el resto, entre todas" },
+    { etiqueta: "Mi parte", valor: "El layout y la marquesina holográfica; el resto, entre todas" },
   ],
   contexto: {
     titulo: "Un turrón que no parece turrón",
@@ -260,7 +270,7 @@ export const revista: CasoCompleto = {
     { etiqueta: "Qué", valor: "Análisis de liderazgo en formato revista" },
     { etiqueta: "Dónde", valor: "Máster en Comunicación Publicitaria, UC3M" },
     { etiqueta: "Equipo", valor: "Grupo 7, cuatro personas" },
-    { etiqueta: "Me encargué de", valor: "La idea de la revista dosmilera, Janis, Damian y los juegos finales" },
+    { etiqueta: "Mi parte", valor: "La idea de la revista dosmilera, Janis, Damian y los juegos finales" },
   ],
   contexto: {
     titulo: "Cómo reinar en el instituto",
@@ -350,7 +360,7 @@ export const oreo: CasoCompleto = {
     { etiqueta: "Qué", valor: "Plan de medios" },
     { etiqueta: "Cuándo", valor: "Mayo de 2025, Grado URJC" },
     { etiqueta: "Equipo", valor: "Cuatro personas" },
-    { etiqueta: "Me encargué de", valor: "La situación actual, la competencia en redes, los objetivos SMART y la programática" },
+    { etiqueta: "Mi parte", valor: "La situación actual, la competencia en redes, los objetivos SMART y la programática" },
   ],
   contexto: {
     titulo: "Un capricho sin culpa",
@@ -400,7 +410,7 @@ export const pluvielle: CasoCompleto = {
   contexto: {
     titulo: "El primer paso sagrado",
     parrafos: [
-      "Pluvielle convierte una alfombrilla de baño en arte que se colecciona: piezas de diatomita, numeradas y creadas con artistas contemporáneos. La marca la creamos en equipo, partiendo de la «artificación» de Kapferer.",
+      "Pluvielle convierte una alfombrilla de baño en arte que se colecciona: piezas de diatomita, numeradas y creadas con artistas contemporáneos. La marca la creamos en equipo, partiendo de la «artificación» de Kapferer: convertir un objeto que no es arte en una pieza de arte.",
       "El plan de medios y la campaña los hice yo sola. Mi insight: los clientes de ultra lujo rechazan los logos a la vista y valoran cada vez más sus rituales privados. El paso de la ducha al mundo exterior es un momento sagrado que nadie estaba atendiendo. De ahí el concepto: «The sacred first step».",
       "El reto era llegar a personas que ven la publicidad masiva como ruido. Por eso el anuncio tenía que vivirse como contenido editorial o artístico, sin interrumpir a nadie.",
     ],
@@ -410,8 +420,8 @@ export const pluvielle: CasoCompleto = {
       titulo: "Objetivos",
       resumen: "Alcance, interacción y prestigio.",
       puntos: [
-        "Al menos un 65 % de alcance con una frecuencia efectiva de tres entre el público objetivo.",
-        "CTR superior al 5 % en plataformas de arte y 500 solicitudes VIP por colección.",
+        "Llegar al menos al 65 % del público objetivo, y que cada persona viera la campaña un mínimo de tres veces.",
+        "Más de un 5 % de clics en las plataformas de arte y 500 solicitudes para los eventos VIP de cada colección.",
         "Un 40 % de coleccionistas y asesores que repitan cada temporada.",
       ],
     },
@@ -419,16 +429,16 @@ export const pluvielle: CasoCompleto = {
       titulo: "Medios",
       resumen: "Pocos, y donde ya está el público.",
       puntos: [
-        "Print en Architectural Digest, con papel mate y gotas de agua en barniz UV.",
-        "Artículos patrocinados en Artsy y Artnet, e invitaciones a un portal VIP con contraseña.",
+        "Una página en Architectural Digest, la revista de arquitectura y diseño que lee este público, con gotas de agua en barniz brillante sobre papel mate: un anuncio que también se toca.",
+        "Artículos patrocinados en Artsy y Artnet, las plataformas que consultan los coleccionistas antes de comprar arte, e invitaciones a un portal VIP con contraseña.",
         "Los vernissages de cinco días, el único sitio donde se puede comprar.",
       ],
     },
     {
       titulo: "Calendario",
-      resumen: "Doce meses con estrategia de pulsos.",
+      resumen: "Doce meses, con picos y valles.",
       puntos: [
-        "Digital continuo de baja intensidad y picos en cada lanzamiento de colección.",
+        "Presencia digital continua pero suave, y picos en cada lanzamiento de colección.",
         "Cuatro ciudades dentro del calendario del lujo: Milán, Basilea, París y Catar.",
       ],
     },
@@ -440,11 +450,14 @@ export const pluvielle: CasoCompleto = {
       { src: img("pluvielle", "articulo.jpg"), alt: "Artículo patrocinado de Pluvielle en la web de Artsy", pie: "El artículo patrocinado en Artsy." },
       { src: img("pluvielle", "portal.jpg"), alt: "Cuatro pantallas de tableta con el portal digital VIP de Pluvielle", pie: "El portal VIP, solo con invitación." },
       { src: img("pluvielle", "calendario.jpg"), alt: "Calendario de doce meses de la campaña por canales, con pulsos altos y bajos", pie: "El calendario de pulsos." },
-      { src: img("pluvielle", "galeria.jpg"), alt: "Galería de noche con invitados alrededor de las alfombrillas expuestas", pie: "El pop-up en galería." },
       { src: img("pluvielle", "packaging.jpg"), alt: "Caja de presentación de Pluvielle con la alfombrilla y el texto de la artista", pie: "El packaging." },
     ],
   },
-  aprendizajes: ["Que se puede conseguir un alcance alto sin resultar intrusiva."],
+  aprendizajes: [
+    "Que se puede conseguir un alcance alto sin resultar intrusiva.",
+    "Que con un público que huye de la publicidad, el anuncio tiene que vivirse como contenido editorial o artístico.",
+    "Que un calendario por picos no solo acierta con el momento: permite cambiar el plan según lo que digan los primeros datos.",
+  ],
   nota: "Marca ficticia creada para el máster. Las piezas son propuestas académicas.",
 };
 

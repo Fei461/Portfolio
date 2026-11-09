@@ -11,7 +11,7 @@ export const iberia: CasoCompleto = {
     { etiqueta: "Qué", valor: "Propuesta creativa de campaña" },
     { etiqueta: "Dónde", valor: "Redacción Publicitaria, Grado URJC, 2025" },
     { etiqueta: "Equipo", valor: "Grupo 6, cinco personas" },
-    { etiqueta: "Me encargué de", valor: "La idea de la estrategia y su redacción, el guion del spot y las acciones de cada soporte" },
+    { etiqueta: "Mi parte", valor: "La idea de la estrategia y su redacción, el guion del spot y las acciones de cada soporte" },
   ],
   contexto: {
     titulo: "Hablar de sostenibilidad sin greenwashing",
@@ -31,13 +31,21 @@ export const iberia: CasoCompleto = {
       ],
     },
     {
-      titulo: "Cada soporte",
-      resumen: "La misma idea, cambiando de escala.",
+      titulo: "Los objetivos",
+      resumen: "Que se vea a Iberia como una marca honesta.",
       puntos: [
-        "Spot: la restauración de El Oxbow, colocado en el aeropuerto, intercalada con las acciones reales de Iberia. Termina sin acabar de restaurarse.",
-        "Cine: el tráiler arranca con un falso fallo técnico, una imagen sucia que rompe la calidad que se espera de una sala.",
-        "Aeropuerto: cuadros españoles con doble cristal y un kit de limpieza; solo el público puede limpiar el primero.",
-        "Email: un correo «sucio» que se va limpiando a medida que bajas. Prensa: una página casi cubierta de tinta, como la huella de carbono.",
+        "Fomentar una visión más informada de lo que Iberia hace de verdad, aumentar el tráfico a su web y, sobre todo, que se la perciba como honesta.",
+      ],
+    },
+    {
+      titulo: "Cada soporte",
+      resumen: "La misma idea, cambiando de escala, y cada pieza con su porqué.",
+      puntos: [
+        "Spot: el cuadro El Oxbow (1836), deteriorado y colgado en la zona de embarque, se restaura mientras se intercalan las acciones reales de Iberia. Termina sin acabar, porque la responsabilidad empieza al asumir el daño.",
+        "Aeropuerto: cuadros españoles tras un doble cristal sucio y un kit de limpieza; solo el público puede limpiar el primero. Así lo intangible se convierte en algo que se toca.",
+        "Cine: el tráiler arranca con un falso fallo técnico. Romper la calidad de imagen que se espera de una sala genera incertidumbre y atrapa la atención.",
+        "Email: un correo «sucio» que se va limpiando a medida que bajas. Es más personal y permite segmentar mejor.",
+        "Prensa: una página casi cubierta de tinta negra, como la huella de carbono, con un solo trazo nítido. Materializa el problema en papel y rompe los códigos del medio.",
       ],
     },
   ],
@@ -80,11 +88,6 @@ export const iberia: CasoCompleto = {
         src: img("storyboard.jpg"),
         alt: "Storyboard del spot: manos restaurando un cuadro con oro al estilo kintsugi, intercaladas con un avión de Iberia repostando y el cierre con el logo",
         pie: "Storyboard del spot. El cuadro se restaura con oro, como en el kintsugi, y no llega a terminarse.",
-      },
-      {
-        src: img("cine.jpg"),
-        alt: "Sala de cine con una pantalla sucia que alguien limpia con un trapo y el texto «A veces, la suciedad no te deja ver la imagen completa»",
-        pie: "Cine: el tráiler empieza con la pantalla sucia.",
       },
       {
         src: img("activacion.png"),

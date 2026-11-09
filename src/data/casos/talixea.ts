@@ -81,19 +81,14 @@ export const talixea: CasoCompleto = {
       puntos: [
         "Modelo freemium: 16 de los 40 libros gratis y sin tarjeta; Plus por 4,99 € al mes o 49,99 € al año.",
         "Antes de publicar, recorrí la web y la app como cada tipo de cliente y cerré los fallos críticos que encontré.",
-        "Medición propia con consentimiento y sin guardar IP, y un reto por correo, «7 días, 7 escenas», como primer lead magnet.",
+        "Medición propia con consentimiento y sin guardar IP, y un reto gratuito por correo, «7 días, 7 escenas», para conseguir los primeros lectores.",
       ],
     },
   ],
   imagenes: {
     titulo: "Así se ve hoy",
-    texto: "La web, donde se puede leer el primer capítulo sin crear cuenta, y algunos carruseles del lanzamiento.",
+    texto: "La biblioteca de la web y algunos carruseles del lanzamiento.",
     items: [
-      {
-        src: img("portada.jpg"),
-        alt: "Portada de talixea.es con el titular «Aprende idiomas con libros que ya conoces» y una muestra de Blancanieves con palabras en inglés",
-        pie: "La portada, con la muestra de lectura y el control de idioma.",
-      },
       {
         src: img("biblioteca.png"),
         alt: "Biblioteca de Talixea con portadas de libros gratis y Plus, y el esquema de cómo funciona: 10 %, 45 % y 90 %",

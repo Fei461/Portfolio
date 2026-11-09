@@ -142,10 +142,11 @@ export const proyectos: Proyecto[] = [
     pagina: "nuevo",
     origen: "Máster",
     breve: true,
+    oculto: true,
   },
   {
     slug: "pluvielle",
-    portada: caso("pluvielle/anuncio.jpg"),
+    portada: caso("pluvielle/galeria.jpg"),
     titulo: "Pluvielle",
     percha: "blanco",
     tipo: "Máster UC3M, plan de medios individual",
@@ -165,6 +166,7 @@ export const proyectos: Proyecto[] = [
     pagina: "nuevo",
     origen: "Concurso",
     breve: true,
+    oculto: true,
   },
 
   // ── Archivo: trabajos de la carrera ──

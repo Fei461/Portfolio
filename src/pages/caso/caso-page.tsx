@@ -157,138 +157,94 @@ function construirAsaltos(
 
   if (caso.guion) asaltos.push({ id: "guion", nombre: "El guion", contenido: <Guion datos={caso.guion} /> });
 
-  if (caso.imagenes || caso.piezas)
+  if (caso.imagenes || caso.piezas || caso.piezasExtra) {
+    const galeria = caso.imagenes && (
+      <div className="asalto__bloque">
+        {caso.imagenes.texto && <p className="asalto__entradilla">{caso.imagenes.texto}</p>}
+        <ul className={`galeria${caso.imagenes.vertical ? " galeria--vertical" : ""}${caso.imagenes.oscuro ? " galeria--oscura" : ""}`}>
+          {caso.imagenes.items.map((im) => (
+            <li key={im.src}>
+              <button type="button" onClick={() => abrir(im)} aria-label={`Ampliar: ${im.pie}`}>
+                <img src={im.src} alt={im.alt} loading="lazy" />
+              </button>
+              <p>{im.pie}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+    const videos = caso.piezas && (
+      <>
+        <p className="asalto__entradilla">{caso.piezas.texto}</p>
+        {caso.enMovil ? (
+          <Movil videos={caso.piezas.videos} />
+        ) : (
+          <ul className="caso-videos">
+            {caso.piezas.videos.map((v) => (
+              <li key={v.src} className={v.horizontal ? "caso-video--horizontal" : undefined}>
+                <video
+                  src={v.horizontal ? v.src : `${v.src}#t=0.1`}
+                  poster={v.poster}
+                  controls
+                  playsInline
+                  preload="metadata"
+                  aria-label={`${v.titulo}, vídeo para ${v.red}`}
+                />
+                <p className="caso-video__titulo">{v.titulo}</p>
+                <p className="caso-video__red">
+                  {v.red}
+                  {v.original && (
+                    <>
+                      {". "}
+                      <a href={v.original} target="_blank" rel="noreferrer">
+                        Verlo en {v.red}
+                      </a>
+                    </>
+                  )}
+                </p>
+              </li>
+            ))}
+          </ul>
+        )}
+        {caso.piezas.masEnlaces && (
+          <div className="caso-mas">
+            <h3>Más vídeos míos, en su red</h3>
+            <ul>
+              {caso.piezas.masEnlaces.map((e) => (
+                <li key={e.href}>
+                  <a href={e.href} target="_blank" rel="noreferrer">
+                    {e.titulo}
+                  </a>{" "}
+                  <span>en {e.red}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </>
+    );
+    const principal = (
+      <>
+        {galeria}
+        {videos}
+      </>
+    );
     asaltos.push({
       id: "piezas",
       nombre: "Las piezas",
-      contenido: (
-        <>
-          {caso.imagenes && (
-            <div className="asalto__bloque">
-              {caso.imagenes.texto && <p className="asalto__entradilla">{caso.imagenes.texto}</p>}
-              <ul className={`galeria${caso.imagenes.vertical ? " galeria--vertical" : ""}${caso.imagenes.oscuro ? " galeria--oscura" : ""}`}>
-                {caso.imagenes.items.map((im) => (
-                  <li key={im.src}>
-                    <button type="button" onClick={() => abrir(im)} aria-label={`Ampliar: ${im.pie}`}>
-                      <img src={im.src} alt={im.alt} loading="lazy" />
-                    </button>
-                    <p>{im.pie}</p>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-          {caso.piezas && (
-            <div className="asalto__bloque">
-              {caso.piezasExtra ? (
-                <Tablon
-                  extras={caso.piezasExtra}
-                  videos={
-                    <>
-                  <p className="asalto__entradilla">{caso.piezas.texto}</p>
-                  {caso.enMovil ? (
-                    <Movil videos={caso.piezas.videos} />
-                  ) : (
-                  <ul className="caso-videos">
-                    {caso.piezas.videos.map((v) => (
-                      <li key={v.src} className={v.horizontal ? "caso-video--horizontal" : undefined}>
-                        <video
-                          src={v.horizontal ? v.src : `${v.src}#t=0.1`}
-                          poster={v.poster}
-                          controls
-                          playsInline
-                          preload="metadata"
-                          aria-label={`${v.titulo}, vídeo para ${v.red}`}
-                        />
-                        <p className="caso-video__titulo">{v.titulo}</p>
-                        <p className="caso-video__red">
-                          {v.red}
-                          {v.original && (
-                            <>
-                              {". "}
-                              <a href={v.original} target="_blank" rel="noreferrer">
-                                Ver la publicación original
-                              </a>
-                            </>
-                          )}
-                        </p>
-                      </li>
-                    ))}
-                  </ul>
-                  )}
-                  {caso.piezas.masEnlaces && (
-                    <div className="caso-mas">
-                      <h3>Más vídeos míos, en su red</h3>
-                      <ul>
-                        {caso.piezas.masEnlaces.map((e) => (
-                          <li key={e.href}>
-                            <a href={e.href} target="_blank" rel="noreferrer">
-                              {e.titulo}
-                            </a>{" "}
-                            <span>en {e.red}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-                    </>
-                  }
-                />
-              ) : (
-                <>
-              <p className="asalto__entradilla">{caso.piezas.texto}</p>
-              {caso.enMovil ? (
-                <Movil videos={caso.piezas.videos} />
-              ) : (
-              <ul className="caso-videos">
-                {caso.piezas.videos.map((v) => (
-                  <li key={v.src} className={v.horizontal ? "caso-video--horizontal" : undefined}>
-                    <video
-                      src={v.horizontal ? v.src : `${v.src}#t=0.1`}
-                      poster={v.poster}
-                      controls
-                      playsInline
-                      preload="metadata"
-                      aria-label={`${v.titulo}, vídeo para ${v.red}`}
-                    />
-                    <p className="caso-video__titulo">{v.titulo}</p>
-                    <p className="caso-video__red">
-                      {v.red}
-                      {v.original && (
-                        <>
-                          {". "}
-                          <a href={v.original} target="_blank" rel="noreferrer">
-                            Ver la publicación original
-                          </a>
-                        </>
-                      )}
-                    </p>
-                  </li>
-                ))}
-              </ul>
-              )}
-              {caso.piezas.masEnlaces && (
-                <div className="caso-mas">
-                  <h3>Más vídeos míos, en su red</h3>
-                  <ul>
-                    {caso.piezas.masEnlaces.map((e) => (
-                      <li key={e.href}>
-                        <a href={e.href} target="_blank" rel="noreferrer">
-                          {e.titulo}
-                        </a>{" "}
-                        <span>en {e.red}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-                </>
-              )}
-            </div>
-          )}
-        </>
+      contenido: caso.piezasExtra ? (
+        <div className="asalto__bloque">
+          <Tablon
+            nombre={caso.piezas ? "Vídeos" : caso.imagenes?.titulo ?? "Imágenes"}
+            principal={principal}
+            extras={caso.piezasExtra}
+          />
+        </div>
+      ) : (
+        principal
       ),
     });
+  }
 
   if (caso.caidas)
     asaltos.push({

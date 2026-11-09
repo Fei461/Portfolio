@@ -12,7 +12,7 @@ export const brujaRoja: CasoCompleto = {
     { etiqueta: "Qué", valor: "Cuenta de X e identidad corporativa para una copa menstrual" },
     { etiqueta: "Dónde", valor: "Comunicación Multimedia, Grado URJC" },
     { etiqueta: "Equipo", valor: "Cuatro personas, cuatro meses publicando en X" },
-    { etiqueta: "Me encargué de", valor: "La idea, el logotipo, el calendario, los tipos de contenido y el contenido disruptivo" },
+    { etiqueta: "Mi parte", valor: "La idea, el logotipo, el calendario, los tipos de contenido y el contenido disruptivo" },
   ],
   enlaces: [{ href: "https://x.com/brujaroja_cup", label: "Ver la cuenta en X" }],
   marcador: [
@@ -38,11 +38,11 @@ export const brujaRoja: CasoCompleto = {
     },
     {
       titulo: "El contenido",
-      resumen: "Un calendario y varios tipos de publicaciones.",
+      resumen: "Un calendario fijo y varios tipos de publicaciones.",
       puntos: [
-        "Mi pilar favorito era el contenido disruptivo y las dudas, así que solía encargarme de ello.",
-        "Los datos curiosos y los educativos, que desmontaban mitos sobre la regla, los hicimos entre todas.",
-        "Aprovechamos el calendario, como con el hilo del Día del Padre, y salimos a la calle a hacer entrevistas.",
+        "Cada semana se planificaba con una de antelación: los lunes y los jueves, un dato informativo o curioso que desmontaba mitos sobre la regla; el resto de días, dudas sobre la copa, producto y vídeo.",
+        "Apostamos por el vídeo y la imagen porque las entrevistas, los spots y los tuits con imagen eran lo que más se veía.",
+        "Mi pilar favorito era el contenido disruptivo y las dudas, así que solía encargarme de ello. Y aprovechamos el calendario, como con el hilo del Día del Padre.",
       ],
     },
     {
@@ -51,7 +51,7 @@ export const brujaRoja: CasoCompleto = {
       puntos: [
         "El logotipo, con dos símbolos que lo complementan: el sombrero de la bruja y la gota de sangre. Y, desde el primer momento, el fondo con las constelaciones.",
         "Creamos dos productos, la copa y unas infusiones para los cólicos, y una bolsa con el claim «Menstrúo, luego existo».",
-        "Colaboramos con otros grupos de clase, como las zapatillas con UShoose.",
+        "Colaboramos con otras marcas de clase: unas zapatillas con UShoose y un kit de autocuidado con Sävia y Lumina.",
       ],
     },
   ],
@@ -86,19 +86,60 @@ export const brujaRoja: CasoCompleto = {
         pie: "La colaboración con UShoose.",
       },
       {
-        src: img("productos.jpg"),
-        alt: "Caja regalo de la marca, packaging de la copa y una bolsa burdeos con el texto «Menstrúo, luego existo»",
-        pie: "Producto: caja, packaging y bolsa.",
-      },
-      {
         src: img("logos.jpg"),
         alt: "Tres versiones del logotipo de Bruja Roja en cobre sobre burdeos: el nombre, el nombre con sombrero de bruja y una versión compacta",
         pie: "El logotipo.",
       },
     ],
   },
+  piezasExtra: [
+    {
+      id: "calendario",
+      nombre: "El calendario",
+      intro: "Cada semana se planificaba con una de antelación. Los lunes y los jueves tenían tema fijo; el resto se decidía según lo que tocaba contar.",
+      tarjetas: [
+        {
+          etiqueta: "Una semana de ejemplo",
+          titulo: "Del domingo 6 al sábado 12",
+          escenas: [
+            { momento: "Domingo", texto: "Clip de la entrevista a chicas que usan la copa" },
+            { momento: "Lunes", texto: "Dato informativo: el impuesto rosa" },
+            { momento: "Martes", texto: "¿De qué material están hechas las copas?" },
+            { momento: "Miércoles", texto: "¿Cómo se limpia la copa, durante la regla y entre ciclos?" },
+            { momento: "Jueves", texto: "Dato curioso: la regla como signo vital" },
+            { momento: "Viernes", texto: "¿Las copas vienen en tallas? ¿Cómo sé cuál es la mía?" },
+            { momento: "Sábado", texto: "¿Cuánto tiempo puedo llevar la copa sin cambiarla?" },
+          ],
+        },
+      ],
+    },
+    {
+      id: "spots",
+      nombre: "Los spots",
+      intro: "Dos spots, uno para presentarnos y otro para explicar el producto. Los dos acaban igual.",
+      cita: "«No es magia, es poder.»",
+      tarjetas: [
+        {
+          etiqueta: "Spot 1 · presentación",
+          titulo: "Desmentir los mitos",
+          lineas: [
+            "Desmonta los mitos sobre la menstruación y se pregunta por qué la sangre se normaliza en otros ámbitos y en este no. Es nuestra carta de presentación: propósito y valores.",
+          ],
+        },
+        {
+          etiqueta: "Spot 2 · producto",
+          titulo: "Una menstruación digna",
+          lineas: [
+            "Explica las propiedades de la copa y cómo cuidarla, y reivindica el derecho a vivir la regla de forma digna y libre.",
+          ],
+        },
+      ],
+    },
+  ],
   aprendizajes: [
     "Cómo comunicarme en un mundo instantáneo, donde la conversación se genera al segundo y desaparece a la misma velocidad.",
+    "A estar presente y usar el altavoz que podíamos tener en un mundo lleno de ruido.",
+    "Que el precio de romper estereotipos no es económico, sino de tiempo, esfuerzo y dedicación.",
   ],
   nota: "Proyecto académico en equipo (Grado URJC). Bruja Roja es una marca inventada para el ejercicio.",
 };

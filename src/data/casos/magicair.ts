@@ -13,7 +13,7 @@ export const magicair: CasoCompleto = {
     { etiqueta: "Qué", valor: "Estrategia de relaciones públicas y plan de crisis" },
     { etiqueta: "Dónde", valor: "Relaciones Públicas Especializadas, Grado URJC, 2025" },
     { etiqueta: "Equipo", valor: "Siete personas" },
-    { etiqueta: "Me encargué de", valor: "El contexto, el diagnóstico, los objetivos y parte de la ficha de la empresa" },
+    { etiqueta: "Mi parte", valor: "El contexto, el diagnóstico, los objetivos y parte de la ficha de la empresa" },
   ],
   contexto: {
     titulo: "Una norma europea, una crisis propia",
@@ -26,7 +26,7 @@ export const magicair: CasoCompleto = {
   mapa: {
     titulo: "Quién importa cuando estalla la crisis",
     intro:
-      "Con la crisis, los públicos cambian de sitio según su poder, su legitimidad y su urgencia (el modelo de prominencia de Mitchell, Agle y Wood). Elige un tipo de público.",
+      "Con la crisis, cada público cambia de sitio según tres cosas: el poder que tiene para influir, la legitimidad de lo que reclama y la urgencia con que lo reclama. Elige un tipo de público.",
     grupos: [
       {
         tipo: "Definitivos",
@@ -72,8 +72,8 @@ export const magicair: CasoCompleto = {
   },
   bloques: [
     {
-      titulo: "La ficha de la empresa",
-      resumen: "Cada persona escribió la suya y nos quedamos con lo mejor de todas.",
+      titulo: "La marca",
+      resumen: "Cada persona escribió su ficha de empresa y nos quedamos con lo mejor de todas.",
       puntos: [
         "Valores como la innovación, la comunicación abierta y la trazabilidad, y un estilo de comunicación propio.",
         "Una identidad minimalista: el blanco roto y la tipografía.",
@@ -82,20 +82,20 @@ export const magicair: CasoCompleto = {
     },
     {
       titulo: "Antes de la crisis",
-      resumen: "Primero tocaba anunciar el cambio.",
+      resumen: "Anunciar una norma que nadie quiere oír.",
       puntos: [
-        "Nos propusimos aplicar la nueva política en el 100 % de las rutas en doce meses, que el 75 % de los clientes la conociera antes de empezar y que el 15 % de las menciones fueran positivas.",
-        "Dimos a cada público su tono: fáctico y luego emocional con los clientes, formal con las asociaciones de consumidores y negociador con los reguladores.",
-        "Propusimos lobbismo directo con un position paper y acuerdos con los organismos institucionales.",
+        "Nos pusimos objetivos concretos: aplicar la nueva política en todas las rutas en un año, que tres de cada cuatro clientes la conocieran antes de empezar y que al menos el 15 % de las menciones fueran positivas.",
+        "Cada público necesitaba su tono: primero los datos y luego la emoción con los clientes, formal con las asociaciones de consumidores y negociador con los reguladores.",
+        "Y defender nuestra postura ante las instituciones con un documento de posición y acuerdos con los organismos.",
       ],
     },
     {
       titulo: "Cuando estalla",
-      resumen: "Clasificar la crisis para saber cómo responder.",
+      resumen: "Saber cuánta culpa nos atribuye la gente para elegir cómo responder.",
       puntos: [
-        "Según la SCCT era una crisis del clúster de víctima, porque el origen es externo: una norma europea.",
-        "Pero clientes y asociaciones culpaban a la empresa, así que podía acabar en una responsabilidad mayor si no se gestionaba bien.",
-        "Respondimos con una estrategia de disminución, en concreto de excusa: rueda de prensa, redes y web, dos portavoces y un lenguaje claro, honesto y cercano.",
+        "Usamos la teoría situacional de la comunicación de crisis (SCCT), que clasifica una crisis según cuánta responsabilidad atribuye el público a la empresa.",
+        "La norma venía de Europa, así que MagicAir era, en principio, víctima. Pero clientes y asociaciones la culpaban a ella, y una crisis así puede acabar siendo culpa tuya si no se gestiona bien.",
+        "Respondimos rebajando la responsabilidad: recordar que el cambio venía impuesto, en una rueda de prensa, en redes y en la web, con dos portavoces y un lenguaje claro, honesto y cercano.",
       ],
     },
     {
@@ -103,12 +103,12 @@ export const magicair: CasoCompleto = {
       resumen: "Cómo saber si estaba funcionando.",
       puntos: [
         "Reducir en nueve meses la responsabilidad que atribuyen los consumidores y subir un 20 % la cobertura neutral o positiva en tres.",
-        "Con rutas adaptadas, encuestas de pulso, Net Promoter Score, seguimiento de medios y CRM.",
+        "Con encuestas, Net Promoter Score, seguimiento de medios y CRM.",
       ],
     },
   ],
   imagenes: {
-    titulo: "Mis propuestas de logo",
+    titulo: "Mis logos",
     texto: "Las ideas de logo que propuse para la marca. No terminaron saliendo.",
     items: [
       { src: img("logo-1.jpg"), alt: "Logo MagicAir en letra manuscrita con un avión oscuro y una estela de estrellas", pie: "Letra manuscrita y una estela de estrellas." },
@@ -117,6 +117,29 @@ export const magicair: CasoCompleto = {
       { src: img("logo-4.jpg"), alt: "Logo MagicAir con alas azules, estrellas doradas y el nombre en dorado", pie: "Alas, estrellas y el nombre en dorado." },
     ],
   },
+  piezasExtra: [
+    {
+      id: "rueda-de-prensa",
+      nombre: "Rueda de prensa",
+      intro: "Para la rueda de prensa preparamos las preguntas más difíciles que podían hacernos y una respuesta para cada una. Este bloque lo preparé yo.",
+      tarjetas: [
+        {
+          etiqueta: "Preguntas y respuestas · para el CEO",
+          titulo: "Sobre el lucro y los «costes ocultos»",
+          escenas: [
+            {
+              momento: "Pregunta",
+              texto: "«Muchos usuarios y asociaciones de consumidores sienten que esta “tasa por equipaje de mano” es en realidad una excusa para aumentar sus beneficios y maquillar un coste oculto. ¿Es esta medida una forma de compensar ingresos?»",
+            },
+            {
+              momento: "Respuesta",
+              texto: "«Quiero ser tajante en esto: esta modificación no nace de una decisión interna para obtener mayor beneficio económico, sino de una obligación regulatoria externa. Rechazamos la idea de que sea un “coste oculto”. Al contrario, lo hemos comunicado precisamente para ser transparentes. De hecho, para equilibrar el impacto en el viajero, hemos aplicado simultáneamente una disminución del coste de la maleta facturada.»",
+            },
+          ],
+        },
+      ],
+    },
+  ],
   aprendizajes: [
     "La coherencia con la identidad de marca es lo que decide si un cambio se lee como oportunidad o como amenaza.",
     "Una crisis en la que la empresa es víctima puede acabar siendo culpa suya si no se gestiona bien.",

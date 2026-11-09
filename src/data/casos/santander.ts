@@ -12,7 +12,7 @@ export const santander: CasoCompleto = {
     { etiqueta: "Qué", valor: "Análisis de identidad visual para Comunicación corporativa" },
     { etiqueta: "Cuándo", valor: "Octubre de 2026, Máster UC3M" },
     { etiqueta: "Equipo", valor: "Grupo 7, cuatro personas" },
-    { etiqueta: "Me encargué de", valor: "La web del laboratorio y la encuesta, enteras. La evaluación, en equipo" },
+    { etiqueta: "Mi parte", valor: "La web del laboratorio y la encuesta, enteras. La evaluación, en equipo" },
   ],
   enlaces: [{ href: "https://fei461.github.io/santander/", label: "Abrir el laboratorio" }],
   laboratorio: {
@@ -27,9 +27,9 @@ export const santander: CasoCompleto = {
   contexto: {
     titulo: "Evaluar un logo sin quedarse en la opinión",
     parrafos: [
-      "En 2018 Santander evolucionó su marca para un cliente que vive en el móvil: letra sin remates, fondo blanco y un rojo más vivo. El encargo era evaluar ese logo con los once criterios de calidad de Chaves y Belluccia.",
+      "En 2018 Santander evolucionó su marca para un cliente que vive en el móvil: letra sin remates, fondo blanco y un rojo más vivo. El encargo era evaluar ese logo con los once criterios de calidad de Chaves y Belluccia, que miran desde si se lee bien y se reconoce hasta si funciona en cualquier tamaño y soporte.",
       "Decidimos que cada nota tenía que poder comprobarse. Por eso trabajamos con tres fuentes de evidencia: la guía de marca del banco, un laboratorio con una prueba por criterio y una encuesta propia.",
-      "La web y la encuesta las hice yo sola por completo. Además de ser el anexo de nuestra presentación, se puede usar: quien la visita pone su nota y la compara con la nuestra.",
+      "La web es el anexo de nuestra presentación, pero también se puede usar: quien la visita pone su nota y la compara con la nuestra.",
     ],
   },
   bloques: [
@@ -50,7 +50,7 @@ export const santander: CasoCompleto = {
         "Cada criterio tiene nuestra valoración, la evidencia de la guía de marca, el dato de la encuesta y una prueba interactiva.",
         "El visitante se pone su propia nota de 1 a 5 y la tabla final la compara con la del grupo, 65 sobre 75.",
         "Cuatro criterios cuentan doble y la web explica por qué. También enseña el resultado sin ponderar, 47 sobre 55, para que se vea que el peso no cambia la conclusión.",
-        "Las siete valoraciones de expertos que recogió Reason Why, positivas y críticas, respondidas una a una.",
+        "Las siete valoraciones de expertos que recogió la web especializada Reason Why, positivas y críticas, respondidas una a una.",
       ],
     },
     {
@@ -65,20 +65,15 @@ export const santander: CasoCompleto = {
       titulo: "Presentarlo",
       resumen: "Para un cliente metódico, cada titular es una conclusión.",
       puntos: [
-        "Presentación según la regla 10/20/30 de Kawasaki, pensada para un perfil de cliente metódico.",
+        "Una presentación de diez diapositivas, veinte minutos y letra de treinta puntos (la regla 10/20/30 de Kawasaki), pensada para un cliente metódico.",
         "Cada diapositiva lleva un dato comprobable y la última enlaza directamente con cada prueba del laboratorio.",
       ],
     },
   ],
   imagenes: {
     titulo: "El laboratorio",
-    texto: "Tres pantallas de la web. Se puede recorrer entera en diez o doce minutos.",
+    texto: "Dos pantallas de la web, además de la portada. Se puede recorrer entera en diez o doce minutos.",
     items: [
-      {
-        src: img("laboratorio.png"),
-        alt: "Portada del laboratorio de pruebas del signo Santander, con la conclusión del grupo, 65 sobre 75, y cómo leer las notas",
-        pie: "La portada: la conclusión arriba y el método justo al lado.",
-      },
       {
         src: img("criterio.png"),
         alt: "Pestaña del criterio de pertinencia, con la valoración del grupo, la evidencia y una prueba para marcar los atributos que se perciben en el logotipo",
