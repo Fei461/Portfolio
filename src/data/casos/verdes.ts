@@ -6,8 +6,8 @@ const img = (slug: string, file: string) => `${import.meta.env.BASE_URL}assets/c
 export const ryanair: CasoCompleto = {
   slug: "ryanair",
   titulo: "Ryanair",
-  parecia: "Parecía un problema de imagen de una low cost.",
-  era: "Era un problema de pertenencia: unos empleados que no se sienten reconocidos por su propia empresa.",
+  parecia: "Parecía otro trabajo sobre lo barato que vuela Ryanair.",
+  era: "Era escuchar a quienes la hacen volar: unos empleados que no se sienten parte de su propia empresa.",
   ficha: [
     { etiqueta: "Qué", valor: "Diagnóstico de identidad, imagen y reputación, y plan de comunicación interna" },
     { etiqueta: "Dónde", valor: "Gestión de la Comunicación, Grado URJC, 2025" },
@@ -400,8 +400,8 @@ export const oreo: CasoCompleto = {
 export const pluvielle: CasoCompleto = {
   slug: "pluvielle",
   titulo: "Pluvielle",
-  parecia: "Parecía una alfombrilla de baño.",
-  era: "Era un plan de medios para un público que huye de la publicidad.",
+  parecia: "Parecía una alfombrilla de baño (y, técnicamente, lo es).",
+  era: "Era venderle arte a quien huye de la publicidad, sin interrumpirle ni una sola vez.",
   ficha: [
     { etiqueta: "Qué", valor: "Marca de lujo y su plan de medios para doce meses" },
     { etiqueta: "Dónde", valor: "Máster en Comunicación Publicitaria, UC3M, 2026" },

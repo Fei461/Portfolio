@@ -2135,3 +2135,12 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* «Parecía…»: tachado, pero que se pueda leer. */
+.combate .caso-lecturas .caso-lecturas__primera {
+  display: block;
+  font-size: 0.9rem;
+  line-height: 1.35;
+  color: var(--texto-suave);
+  text-decoration-thickness: 1.5px;
+}

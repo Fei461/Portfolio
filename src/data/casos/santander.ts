@@ -7,8 +7,8 @@ const img = (file: string) => `${import.meta.env.BASE_URL}assets/casos/santander
 export const santander: CasoCompleto = {
   slug: "santander",
   titulo: "Santander",
-  parecia: "Parecía una presentación de diez diapositivas.",
-  era: "Era un laboratorio web donde cualquiera puede evaluar el logo y comparar su nota con la nuestra.",
+  parecia: "Parecía una presentación de diez diapositivas, justo lo que nos pidieron.",
+  era: "Era un laboratorio entero escondido detrás de cada hipervínculo.",
   ficha: [
     { etiqueta: "Qué", valor: "Análisis de identidad visual para Comunicación corporativa" },
     { etiqueta: "Cuándo", valor: "Octubre de 2026, Máster UC3M" },
@@ -133,6 +133,8 @@ export const santander: CasoCompleto = {
   },
   aprendizajes: [
     "Lo que una marca declara y lo que la gente percibe no siempre coinciden. Medirlo es la mitad del trabajo.",
+    "Que lo que se ve a primera vista tiene que cumplir el encargo, y lo que marca la diferencia puede estar debajo.",
+    "Que picarse, bien canalizado, también es un motor.",
   ],
   nota: "Trabajo académico de máster, sin relación con Banco Santander. El logotipo se reproduce con fines académicos.",
 };

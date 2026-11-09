@@ -7,8 +7,8 @@ const img = (file: string) => `${import.meta.env.BASE_URL}assets/casos/talixea/$
 export const talixea: CasoCompleto = {
   slug: "talixea",
   titulo: "Talixea",
-  parecia: "Parecía una app de idiomas más.",
-  era: "Era un producto entero hecho desde mi cuarto y sin saber programar: método, catálogo, marca, precios y lanzamiento.",
+  parecia: "Parecía un capricho: quería leer en otros idiomas y no encontraba la app.",
+  era: "Era un producto entero, del método al lanzamiento, hecho desde mi cuarto y sin saber programar.",
   ficha: [
     { etiqueta: "Qué", valor: "App para aprender idiomas leyendo historias que ya conoces" },
     { etiqueta: "Cuándo", valor: "Desde febrero de 2026, en mi cuarto. Lanzada en octubre" },

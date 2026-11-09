@@ -8,8 +8,8 @@ const img = (file: string) => `${import.meta.env.BASE_URL}assets/casos/magicair/
 export const magicair: CasoCompleto = {
   slug: "magicair",
   titulo: "MagicAir",
-  parecia: "Parecía una aerolínea más.",
-  era: "Era una crisis a punto de estallar: una marca que presume de transparente aplicando lo que el público lee como un coste oculto.",
+  parecia: "Parecía la enésima presentación de aerolíneas de la carrera (la cuarta, como mínimo).",
+  era: "Era inventarnos una aerolínea tan coherente que después nos costó provocarle una crisis.",
   ficha: [
     { etiqueta: "Qué", valor: "Estrategia de relaciones públicas y plan de crisis" },
     { etiqueta: "Dónde", valor: "Relaciones Públicas Especializadas, Grado URJC, 2025" },
@@ -146,6 +146,7 @@ export const magicair: CasoCompleto = {
   aprendizajes: [
     "La coherencia con la identidad de marca es lo que decide si un cambio se lee como oportunidad o como amenaza.",
     "Una crisis en la que la empresa es víctima puede acabar siendo culpa suya si no se gestiona bien.",
+    "Que una marca bien construida es difícil de romper: la coherencia también protege en una crisis.",
   ],
   nota: "MagicAir es una marca ficticia creada para la asignatura. Trabajo académico en equipo.",
 };

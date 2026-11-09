@@ -6,8 +6,8 @@ const img = (file: string) => `${import.meta.env.BASE_URL}assets/casos/bruja-roj
 export const brujaRoja: CasoCompleto = {
   slug: "bruja-roja",
   titulo: "Bruja Roja",
-  parecia: "Parecía una cuenta de Twitter para una asignatura.",
-  era: "Era ver el mundo arder con un producto de menstruación femenina y feminista.",
+  parecia: "Parecía otra cuenta de Twitter que había que abrir para aprobar una asignatura.",
+  era: "Era ver el mundo arder: una copa menstrual feminista justo en la red donde más iba a escocer.",
   ficha: [
     { etiqueta: "Qué", valor: "Cuenta de X e identidad corporativa para una copa menstrual" },
     { etiqueta: "Dónde", valor: "Comunicación Multimedia, Grado URJC, 2025" },

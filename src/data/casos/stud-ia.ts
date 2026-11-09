@@ -6,8 +6,8 @@ const video = (file: string) => `${import.meta.env.BASE_URL}assets/casos/stud-ia
 export const studIa: CasoCompleto = {
   slug: "stud-ia",
   titulo: "Stud-IA",
-  parecia: "Parecían unas prácticas de redes sociales.",
-  era: "Era construir una marca en un océano rojo de apps de IA para estudiar.",
+  parecia: "Parecían las prácticas de una becaria «huevito» que llevaba redes sociales.",
+  era: "Era pasar de huevito a llevar X, Threads y Bluesky por mi cuenta, en un océano rojo de apps de IA para estudiar.",
   ficha: [
     { etiqueta: "Qué", valor: "Prácticas en el departamento de marketing" },
     { etiqueta: "Cuándo", valor: "Enero a mayo de 2026" },
