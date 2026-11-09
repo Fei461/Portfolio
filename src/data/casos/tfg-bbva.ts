@@ -10,7 +10,7 @@ export const tfgBbva: CasoCompleto = {
   era: "Quise medir, dentro y fuera del banco, si la gente se ha creído el nuevo relato de BBVA.",
   ficha: [
     { etiqueta: "Qué", valor: "Trabajo de Fin de Grado sobre identidad y reputación corporativa" },
-    { etiqueta: "Dónde", valor: "Grado en Publicidad y RRPP, URJC, curso 2025-2026" },
+    { etiqueta: "Dónde", valor: "Grado en Publicidad y RRPP, URJC, 2026" },
     { etiqueta: "Equipo", valor: "Individual" },
     { etiqueta: "Método", valor: "Análisis documental, dos encuestas y una entrevista en profundidad" },
   ],
@@ -22,7 +22,7 @@ export const tfgBbva: CasoCompleto = {
     titulo: "¿Se ha cerrado la herida de 2008?",
     parrafos: [
       "Tras la crisis financiera, la banca perdió la confianza de la gente. BBVA respondió con un restyling, una apuesta por la sostenibilidad y proyectos de contenido como Aprendemos Juntos. Mi TFG quería saber si todo eso había funcionado de verdad.",
-      "Para no quedarme en la teoría lo medí desde los dos lados: una encuesta al público interno y otra al externo, con las mismas preguntas, y una entrevista en profundidad a la Head of Brand & Content de BBVA, una de las creadoras de Aprendemos Juntos.",
+      "Para no quedarme en la teoría lo medí desde los dos lados: una encuesta al público interno y otra al externo, con las mismas preguntas, y una entrevista en profundidad a la responsable de marca y contenidos de BBVA, una de las creadoras de Aprendemos Juntos.",
       "Y a riesgo de cruzar la línea, hay algo que no se ve detrás de este trabajo: soy hija de dos empleados de BBVA. He visto de cerca su plantación de árboles tras los incendios, sus talleres de ciberseguridad y sus becas. Todo eso es cierto, como también lo es que tienen un problema de comunicación.",
     ],
   },
@@ -85,7 +85,7 @@ export const tfgBbva: CasoCompleto = {
       resumen: "Un método mixto, en tres fases.",
       puntos: [
         "Primero, los documentos: el manual de marca, los informes de banca responsable, el caso de Aprendemos Juntos y lo que otros trabajos académicos habían escrito sobre el banco desde 2008.",
-        "Después, dos encuestas gemelas, con las mismas preguntas de 1 a 5 y preguntas abiertas: 103 respuestas de dentro y 145 de fuera. Y una entrevista en profundidad a la responsable de marca y contenidos de BBVA, una de las creadoras de Aprendemos Juntos.",
+        "Después, dos encuestas gemelas, con las mismas preguntas de 1 a 5 y preguntas abiertas: 103 respuestas de dentro y 145 de fuera. Y la entrevista en profundidad.",
         "Por último, el análisis: medias para medir la brecha, correlaciones para ver qué pesa más en la reputación, la dispersión para medir la polarización y las respuestas abiertas, agrupadas por temas, para entender el porqué de cada nota.",
       ],
     },
@@ -95,7 +95,7 @@ export const tfgBbva: CasoCompleto = {
       puntos: [
         "La Generación X, la que más sufrió la crisis, es la más crítica. La Z valora la identidad visual, pero castiga la IA, y los Baby Boomers son los más positivos.",
         "Fuera, hombres y mujeres puntúan casi igual; la mayor diferencia está en el medio ambiente, donde ellas son más exigentes.",
-        "Dentro, los técnicos, el grueso de la organización, son los más críticos y piden menos comunicaciones y mejor agrupadas. Los becarios, que llegan atraídos por esa imagen tecnológica y sostenible, son los más críticos con la sostenibilidad y la diversidad.",
+        "Dentro, los técnicos, el grueso de la organización, son los más críticos y piden menos comunicaciones y mejor agrupadas. Los becarios, que llegan atraídos por la imagen tecnológica y sostenible del banco, son los más críticos con la sostenibilidad y la diversidad.",
         "Conclusión: BBVA no gestiona una única reputación, sino muchas a la vez.",
       ],
     },
@@ -114,7 +114,7 @@ export const tfgBbva: CasoCompleto = {
       puntos: [
         "La brecha existe, pero el pronóstico es bueno: dentro la cultura está arraigada y, fuera, los jóvenes la valoran bien.",
         "El cambio más significativo no fue el restyling, sino replantearse el propósito: pasar de querer ser conocido a querer ser útil.",
-        "Faltan los intangibles en medios ganados y pagados, y coherencia antes de incorporar novedades como la IA. Contar lo que ya hace sería la mejor forma de cerrar la brecha.",
+        "Le falta contar sus intangibles en medios ganados y pagados, no solo las condiciones de sus productos, y ser coherente antes de incorporar novedades como la IA. Contar lo que ya hace sería la mejor forma de cerrar la brecha.",
       ],
     },
   ],
@@ -146,7 +146,7 @@ export const tfgBbva: CasoCompleto = {
   },
   cita: {
     texto: "La raíz de la brecha reputacional no consiste en la falta de acciones y estrategias, sino en la no muestra de las mismas.",
-    autor: "Lo que concluí",
+    autor: "Lara Feijóo",
     cargo: "Discusión final del TFG",
   },
   aprendizajes: [

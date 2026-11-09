@@ -832,3 +832,9 @@
 .combate--sobre .estuche__fila {
   margin-top: 1rem;
 }
+
+@media (max-width: 600px) {
+  .foto-giro.foto-giro--sobre {
+    width: calc(100% - 12px);
+  }
+}

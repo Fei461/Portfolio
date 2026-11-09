@@ -11,7 +11,7 @@ export const talixea: CasoCompleto = {
   ficha: [
     { etiqueta: "Qué", valor: "App para aprender idiomas leyendo historias que ya conoces" },
     { etiqueta: "Cuándo", valor: "Desde febrero de 2026, en mi cuarto. Lanzada en octubre" },
-    { etiqueta: "Mi papel", valor: "Todo: idea, producto, marca, contenido y lanzamiento" },
+    { etiqueta: "Mi parte", valor: "Todo: idea, producto, marca, contenido y lanzamiento" },
     { etiqueta: "Con qué", valor: "Herramientas de IA para la parte técnica, aprendiendo sobre la marcha" },
   ],
   enlaces: [{ href: "https://talixea.es", label: "Probar Talixea" }],

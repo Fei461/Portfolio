@@ -99,9 +99,9 @@ export const ryanair: CasoCompleto = {
     items: [
       { src: img("ryanair", "mapa-publicos.jpg"), alt: "Diagrama de tres círculos, poder, legitimidad y urgencia, con los públicos de Ryanair", pie: "El mapa de públicos." },
       { src: img("ryanair", "skynews.jpg"), alt: "Portada de la revista interna SkyNews de Ryanair", pie: "SkyNews, la revista interna." },
-      { src: img("ryanair", "skynews-dentro.jpg"), alt: "Páginas interiores de SkyNews con historias de empleados", pie: "Historias de la plantilla, dentro de la revista." },
+      { src: img("ryanair", "skynews-dentro.jpg"), alt: "Páginas interiores de SkyNews con historias de empleados", pie: "Historias de los empleados, dentro de la revista." },
       { src: img("ryanair", "bienvenida.jpg"), alt: "Kit de bienvenida de Ryanair con caja, taza, libreta y carta", pie: "El kit «Welcome on board»." },
-      { src: img("ryanair", "premios.jpg"), alt: "Diapositiva de los Cabin Crew Awards de Ryanair", pie: "Los Cabin Crew Awards." },
+      { src: img("ryanair", "premios.jpg"), alt: "Diapositiva de los Cabin Crew Awards de Ryanair", pie: "Los premios a la tripulación de cabina." },
       { src: img("ryanair", "acogida.jpg"), alt: "Carteles de una regata por equipos y de un desayuno de bienvenida", pie: "Regata y desayuno de bienvenida." },
       { src: img("ryanair", "kit-buddy.jpg"), alt: "Kit de bienvenida con taza y sudadera, y una mentora con un nuevo empleado", pie: "El programa de mentoría." },
     ],
@@ -431,7 +431,7 @@ export const pluvielle: CasoCompleto = {
       puntos: [
         "Una página en Architectural Digest, la revista de arquitectura y diseño que lee este público, con gotas de agua en barniz brillante sobre papel mate: un anuncio que también se toca.",
         "Artículos patrocinados en Artsy y Artnet, las plataformas que consultan los coleccionistas antes de comprar arte, e invitaciones a un portal VIP con contraseña.",
-        "Los vernissages de cinco días, el único sitio donde se puede comprar.",
+        "Las inauguraciones privadas de cada colección, de cinco días: el único sitio donde se puede comprar.",
       ],
     },
     {
@@ -449,7 +449,7 @@ export const pluvielle: CasoCompleto = {
       { src: img("pluvielle", "anuncio.jpg"), alt: "Anuncio de Pluvielle con una alfombrilla, gotas de agua y el titular Art shouldn't end where the water begins", pie: "El anuncio para Architectural Digest." },
       { src: img("pluvielle", "articulo.jpg"), alt: "Artículo patrocinado de Pluvielle en la web de Artsy", pie: "El artículo patrocinado en Artsy." },
       { src: img("pluvielle", "portal.jpg"), alt: "Cuatro pantallas de tableta con el portal digital VIP de Pluvielle", pie: "El portal VIP, solo con invitación." },
-      { src: img("pluvielle", "calendario.jpg"), alt: "Calendario de doce meses de la campaña por canales, con pulsos altos y bajos", pie: "El calendario de pulsos." },
+      { src: img("pluvielle", "calendario.jpg"), alt: "Calendario de doce meses de la campaña por canales, con pulsos altos y bajos", pie: "El calendario: picos en cada lanzamiento." },
       { src: img("pluvielle", "packaging.jpg"), alt: "Caja de presentación de Pluvielle con la alfombrilla y el texto de la artista", pie: "El packaging." },
     ],
   },

@@ -386,3 +386,10 @@
     padding: 1.3mm 0;
   }
 }
+
+@media screen and (max-width: 760px) {
+  .hcv-periodo,
+  .hcv-chips li {
+    font-size: 0.8rem;
+  }
+}

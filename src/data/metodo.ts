@@ -37,7 +37,7 @@ export const tiempos: {
     significado: "Qué ha pasado y por qué",
     color: "azul",
     ejemplo:
-      "Me encantan las métricas, los números y los resultados. Me encanta analizar qué ha pasado y, sobre todo, por qué. En mi TFG pasé la misma encuesta dentro y fuera de BBVA: 248 respuestas para medir la distancia entre lo que la plantilla vive y lo que el público percibe.",
+      "Me encantan las métricas, los números y los resultados. Me encanta analizar qué ha pasado y, sobre todo, por qué. En mi TFG pasé la misma encuesta dentro y fuera de BBVA: 248 respuestas para medir la distancia entre lo que se vive dentro y lo que se percibe fuera.",
     caso: { slug: "tfg-bbva", titulo: "mi TFG" },
   },
 ];
@@ -61,7 +61,7 @@ export const colores: {
   {
     color: "amarillo",
     etiqueta: "Culo inquieto",
-    titulo: "Risueña y sin estarme quieta",
+    titulo: "Risueña y culo inquieto",
     texto: [
       "Soy una persona risueña y culo inquieto. Lo de no saber sentarme viene de lejos: la historia está detrás de la foto de la cascada.",
       "Tengo un humor muy rápido, encajo con casi cualquiera e intento que todo el mundo se sienta integrado. También tengo carácter (mi madre dice que por ser tauro), pero es muy difícil que salga.",

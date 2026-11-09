@@ -10,7 +10,7 @@ export const brujaRoja: CasoCompleto = {
   era: "Era ver el mundo arder con un producto de menstruación femenina y feminista.",
   ficha: [
     { etiqueta: "Qué", valor: "Cuenta de X e identidad corporativa para una copa menstrual" },
-    { etiqueta: "Dónde", valor: "Comunicación Multimedia, Grado URJC" },
+    { etiqueta: "Dónde", valor: "Comunicación Multimedia, Grado URJC, 2025" },
     { etiqueta: "Equipo", valor: "Cuatro personas, cuatro meses publicando en X" },
     { etiqueta: "Mi parte", valor: "La idea, el logotipo, el calendario, los tipos de contenido y el contenido disruptivo" },
   ],
@@ -22,7 +22,7 @@ export const brujaRoja: CasoCompleto = {
   contexto: {
     titulo: "Una copa menstrual que no pide permiso",
     parrafos: [
-      "Fue uno de los trabajos más divertidos que hice en toda la carrera. Cuando nos dijeron que debíamos hacernos una cuenta en Twitter, pensé que para ver el mundo arder (según el público de esta red) lo mejor era un producto de menstruación femenina y feminista.",
+      "Fue uno de los trabajos más divertidos que hice en toda la carrera. Cuando nos dijeron que debíamos hacernos una cuenta en Twitter (hoy, X), pensé que para ver el mundo arder (según el público de esta red) lo mejor era un producto de menstruación femenina y feminista.",
       "Desde el primer momento convencí a mi equipo de que había más de una forma de abordar el reto: lograr la viralidad desde el odio, con un discurso profundamente progresista que chocara con la masculinidad frágil de esa red. Estuvimos cuatro meses publicando de forma constante y, si soy sincera, a veces me dan ganas de volver.",
       "Cada una aportó lo suyo; yo, el toque más sarcástico y provocador. El nombre lo elegimos entre todas.",
     ],
@@ -51,14 +51,14 @@ export const brujaRoja: CasoCompleto = {
       puntos: [
         "El logotipo, con dos símbolos que lo complementan: el sombrero de la bruja y la gota de sangre. Y, desde el primer momento, el fondo con las constelaciones.",
         "Creamos dos productos, la copa y unas infusiones para los cólicos, y una bolsa con el claim «Menstrúo, luego existo».",
-        "Colaboramos con otras marcas de clase: unas zapatillas con UShoose y un kit de autocuidado con Sävia y Lumina.",
+        "Colaboramos con las marcas de otros grupos de clase: unas zapatillas con UShoose y un kit de autocuidado con Sävia y Lumina.",
       ],
     },
   ],
   imagenes: {
     titulo: "Los tuits",
     oscuro: true,
-    texto: "Capturas de la cuenta, con sus visualizaciones reales, y algunas piezas de la marca.",
+    texto: "Capturas de la cuenta, con sus visualizaciones reales, y el logotipo.",
     items: [
       {
         src: img("tuit-juegos.jpg"),
@@ -96,7 +96,7 @@ export const brujaRoja: CasoCompleto = {
     {
       id: "calendario",
       nombre: "El calendario",
-      intro: "Cada semana se planificaba con una de antelación. Los lunes y los jueves tenían tema fijo; el resto se decidía según lo que tocaba contar.",
+      intro: "Así se veía una semana: los lunes y los jueves, con tema fijo; el resto, según lo que tocaba contar.",
       tarjetas: [
         {
           etiqueta: "Una semana de ejemplo",

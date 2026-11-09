@@ -627,10 +627,6 @@
   aspect-ratio: 16 / 10;
 }
 
-.asalto .caso-aprendizajes li {
-  font-size: clamp(1.05rem, 1.5vw, 1.3rem);
-}
-
 /* El vídeo de «El reto» respeta su formato (vertical u horizontal). */
 .reto__foto--video video {
   aspect-ratio: auto;
@@ -1106,8 +1102,7 @@
   border-top: 3px solid var(--sumi);
 }
 
-.breve__bloques h3,
-.breve__llevo h3 {
+.breve__bloques h3 {
   margin: 0 0 0.25rem;
   font-weight: 800;
   font-size: 1.15rem;
@@ -1120,10 +1115,6 @@
 
 .breve__bloques li + li {
   margin-top: 0.35rem;
-}
-
-.breve__llevo {
-  margin-top: 1.4rem;
 }
 
 @media (max-width: 760px) {
@@ -2064,4 +2055,32 @@
   font-size: 0.98rem;
   line-height: 1.5;
   animation: apunte-entra 0.25s ease both;
+}
+
+/* El título de «Me llevo» respira antes de las tarjetas; los enlaces, alineados. */
+.asalto__llevo .llevo__titulo {
+  margin-bottom: 1.4rem;
+}
+
+.asalto__llevo .caso-linkedin ul {
+  align-items: flex-start;
+}
+
+.asalto__llevo .caso-linkedin li {
+  margin: 0;
+}
+
+/* En móvil, las marcas de la demo de Talixea pueden partirse en dos líneas. */
+@media (max-width: 600px) {
+  .asalto .demo-talixea__marcas span {
+    white-space: normal;
+  }
+
+  .asalto .demo-talixea__marcas span:last-child {
+    text-align: right;
+  }
+
+  .asalto .demo-talixea__marcas span:nth-child(2) {
+    text-align: center;
+  }
 }

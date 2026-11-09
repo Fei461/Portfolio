@@ -320,7 +320,7 @@ function construirAsaltos(
     ),
   });
 
-  // Casos breves: todo el caso en una sola parte y, aparte, los números y las piezas si las hay.
+  // Casos breves: lo que hice en una sola parte y, aparte, el guion, las piezas y lo que me llevo.
   if (compacto) {
     const reto = asaltos.find((x) => x.id === "reto")!;
     const resto = asaltos.filter((x) => x.id === "numeros" || x.id === "piezas" || x.id === "guion");
@@ -346,21 +346,11 @@ function construirAsaltos(
                 ))}
               </div>
             )}
-            {caso.aprendizajes.length > 0 && (
-              <div className="breve__llevo">
-                <h3>Me llevo</h3>
-                <ul className="caso-aprendizajes">
-                  {caso.aprendizajes.map((x) => (
-                    <li key={x}>{x}</li>
-                  ))}
-                </ul>
-              </div>
-            )}
-            {caso.nota && <p className="caso-nota">{caso.nota}</p>}
           </>
         ),
       },
       ...resto,
+      ...asaltos.filter((x) => x.id === "llevo"),
     ];
   }
 

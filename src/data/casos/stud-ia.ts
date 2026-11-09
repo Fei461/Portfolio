@@ -12,7 +12,7 @@ export const studIa: CasoCompleto = {
     { etiqueta: "Qué", valor: "Prácticas en el departamento de marketing" },
     { etiqueta: "Cuándo", valor: "Enero a mayo de 2026" },
     { etiqueta: "Dónde", valor: "Startup EdTech, 100 % en remoto, con equipo en España, Uruguay y Chile" },
-    { etiqueta: "Mi papel", valor: "Reputación, comunidad, contenido y campañas. X, Threads y Bluesky, a mi cargo" },
+    { etiqueta: "Mi parte", valor: "Reputación, comunidad, contenido y campañas. X, Threads y Bluesky, a mi cargo" },
   ],
   marcador: [
     { cifra: "36.000", texto: "visualizaciones de uno de mis vídeos en YouTube" },
@@ -126,7 +126,7 @@ export const studIa: CasoCompleto = {
           lineas: [
             "Objetivo: que la gente lea la descripción (más tiempo de retención, y el algoritmo te premia) y guarde el post.",
             "En pantalla: «Dime qué tipo de estudiante eres y te digo tu hack 👇».",
-            "En la descripción, seis tipos de estudiante y su herramienta. «El Gambler: ¿te la juegas a que “eso no cae”? Tu hack: Simulacro de Examen. Deja de jugar a la lotería.»",
+            "En la descripción, seis tipos de estudiante y su herramienta. «El Gambler: ¿te la juegas a que “eso no cae”? Tu hack: Simulacro de Examen. Deja de jugar a la lotería […].»",
           ],
         },
         {

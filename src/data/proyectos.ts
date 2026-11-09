@@ -54,7 +54,7 @@ export const proyectos: Proyecto[] = [
     portada: caso("tfg-bbva/nube.jpg"),
     titulo: "BBVA tras 2008",
     percha: "azul",
-    tipo: "TFG, individual",
+    tipo: "TFG, individual, 2026",
     resumen:
       "¿Se ha cerrado la herida de 2008? Dos encuestas, dentro y fuera del banco, 248 respuestas y una entrevista a su responsable de marca para medir la brecha de reputación.",
     pagina: "nuevo",
@@ -67,7 +67,7 @@ export const proyectos: Proyecto[] = [
     percha: "azul",
     tipo: "Grado URJC, en equipo, 2025",
     resumen:
-      "Una plantilla que no se siente parte. Diagnóstico, reputación interna y análisis de brecha, y de ahí, un plan de comunicación interna.",
+      "Unos empleados que no se sienten parte de su empresa. Diagnóstico, reputación interna y análisis de brecha, y de ahí, un plan de comunicación interna.",
     pagina: "nuevo",
     origen: "Grado",
   },
@@ -87,7 +87,7 @@ export const proyectos: Proyecto[] = [
     portada: caso("santander/laboratorio.png"),
     titulo: "Santander",
     percha: "azul",
-    tipo: "Máster UC3M, web y encuesta hechas por mí",
+    tipo: "Máster UC3M, en equipo, 2026",
     resumen:
       "Un laboratorio web para evaluar el logo del banco con once criterios y una encuesta propia a 31 personas. Lo que la marca dice frente a lo que la gente percibe.",
     pagina: "nuevo",
@@ -113,7 +113,7 @@ export const proyectos: Proyecto[] = [
     portada: caso("bruja-roja/productos.jpg"),
     titulo: "Bruja Roja",
     percha: "blanco",
-    tipo: "Grado URJC, en equipo",
+    tipo: "Grado URJC, en equipo, 2025",
     resumen:
       "Cuatro meses en X buscando la viralidad desde el odio con una copa menstrual feminista, y una identidad de marca completa.",
     pagina: "nuevo",
@@ -125,7 +125,7 @@ export const proyectos: Proyecto[] = [
     portada: caso("iberia/cine.jpg"),
     titulo: "Iberia",
     percha: "blanco",
-    tipo: "Grado URJC, en equipo",
+    tipo: "Grado URJC, en equipo, 2025",
     resumen:
       "La huella de una aerolínea contada como la restauración de un cuadro que nunca se termina.",
     pagina: "nuevo",
@@ -149,7 +149,7 @@ export const proyectos: Proyecto[] = [
     portada: caso("pluvielle/galeria.jpg"),
     titulo: "Pluvielle",
     percha: "blanco",
-    tipo: "Máster UC3M, plan de medios individual",
+    tipo: "Máster UC3M, plan de medios individual, 2026",
     resumen: "Un plan de medios de doce meses para vender arte en forma de alfombrilla a quien huye de la publicidad.",
     pagina: "nuevo",
     origen: "Máster",
