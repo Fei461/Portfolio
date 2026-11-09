@@ -59,7 +59,7 @@ export type CasoCompleto = {
   /** Demo interactiva propia del caso. */
   demo?: "talixea";
   /** Web propia que se puede usar dentro del caso. */
-  laboratorio?: { src: string; titulo: string; texto: string };
+  laboratorio?: { src: string; titulo: string; texto: string; imagen: string; dentro: string[] };
   /** Las piezas se ven en un móvil, como un feed. */
   enMovil?: boolean;
   imagenes?: { titulo: string; texto?: string; vertical?: boolean; oscuro?: boolean; items: { src: string; alt: string; pie: string }[] };

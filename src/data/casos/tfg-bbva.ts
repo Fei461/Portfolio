@@ -7,7 +7,8 @@ const img = (file: string) => `${import.meta.env.BASE_URL}assets/casos/tfg-bbva/
 export const tfgBbva: CasoCompleto = {
   slug: "tfg-bbva",
   titulo: "BBVA tras 2008",
-  era: "Quise medir, dentro y fuera del banco, si la gente se ha creído el nuevo relato de BBVA.",
+  parecia: "Parecía un TFG sobre un banco.",
+  era: "Era medir, dentro y fuera de BBVA, si la gente se ha creído su nuevo relato.",
   ficha: [
     { etiqueta: "Qué", valor: "Trabajo de Fin de Grado sobre identidad y reputación corporativa" },
     { etiqueta: "Dónde", valor: "Grado en Publicidad y RRPP, URJC, 2026" },

@@ -2084,3 +2084,54 @@
     text-align: center;
   }
 }
+
+/* Santander: la portada del laboratorio como enlace, y al lado qué hay dentro. */
+.laboratorio {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  gap: clamp(1.2rem, 3vw, 2.5rem);
+  align-items: start;
+  height: auto;
+}
+
+.laboratorio .laboratorio__ventana {
+  display: block;
+  flex: none;
+  min-height: 0;
+  margin-top: 0;
+  text-decoration: none;
+  rotate: -0.8deg;
+  transition: transform 0.25s ease;
+}
+
+.laboratorio .laboratorio__ventana:hover {
+  transform: translateY(-4px);
+}
+
+.laboratorio__ventana img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.laboratorio__lado h2 {
+  margin: 0 0 0.6rem;
+}
+
+.laboratorio__lado p {
+  margin: 0 0 0.8rem;
+}
+
+.laboratorio__lado ul {
+  margin: 0 0 1.3rem;
+  padding-left: 1.1rem;
+  display: grid;
+  gap: 0.45rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .laboratorio {
+    grid-template-columns: 1fr;
+  }
+}

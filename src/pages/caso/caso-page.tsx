@@ -111,22 +111,34 @@ function construirAsaltos(
 
   if (caso.demo === "talixea") asaltos.unshift({ id: "demo", nombre: "Pruébalo", contenido: <DemoTalixea /> });
 
-  // Santander: el laboratorio, usable sin salir del caso.
+  // Santander: el laboratorio se abre en su propia pestaña del navegador, donde se ve entero.
   if (caso.laboratorio)
-    asaltos.unshift({
+    asaltos.splice(1, 0, {
       id: "laboratorio",
       nombre: "El laboratorio",
       contenido: (
         <div className="laboratorio">
-          <p className="asalto__entradilla">{caso.laboratorio.texto}</p>
-          <div className="laboratorio__ventana">
+          <a className="laboratorio__ventana" href={caso.laboratorio.src} target="_blank" rel="noreferrer">
             <span className="laboratorio__barra" aria-hidden="true">
               <i />
               <i />
               <i />
               <span>fei461.github.io/santander</span>
             </span>
-            <iframe src={caso.laboratorio.src} title={caso.laboratorio.titulo} loading="lazy" />
+            <img src={caso.laboratorio.imagen} alt={`Portada de la web: ${caso.laboratorio.titulo}`} />
+          </a>
+          <div className="laboratorio__lado">
+            <h2>{caso.laboratorio.titulo}</h2>
+            <p>{caso.laboratorio.texto}</p>
+            <ul>
+              {caso.laboratorio.dentro.map((d) => (
+                <li key={d}>{d}</li>
+              ))}
+            </ul>
+            <a className="dojo-boton" href={caso.laboratorio.src} target="_blank" rel="noreferrer">
+              Abrir el laboratorio <span aria-hidden="true">↗</span>
+              <span className="sr-only"> (se abre en otra pestaña)</span>
+            </a>
           </div>
         </div>
       ),
@@ -372,7 +384,8 @@ export function CasoPage({ caso }: { caso: CasoCompleto }) {
   const asaltos = construirAsaltos(
     caso,
     setLupa,
-    { portada: proyecto?.portada, video: proyecto?.video, poster: proyecto?.poster },
+    // Con laboratorio, su portada ya se ve en esa pestaña: el reto va sin imagen.
+    caso.laboratorio ? {} : { portada: proyecto?.portada, video: proyecto?.video, poster: proyecto?.poster },
     Boolean(proyecto?.breve),
   );
   // La parte abierta queda en la dirección (?parte=piezas) para poder enlazarla.

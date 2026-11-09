@@ -8,7 +8,8 @@ const img = (file: string) => `${import.meta.env.BASE_URL}assets/casos/magicair/
 export const magicair: CasoCompleto = {
   slug: "magicair",
   titulo: "MagicAir",
-  era: "Una crisis de reputación a punto de estallar: una aerolínea que presume de transparente aplicando lo que el público lee como un coste oculto.",
+  parecia: "Parecía una aerolínea más.",
+  era: "Era una crisis a punto de estallar: una marca que presume de transparente aplicando lo que el público lee como un coste oculto.",
   ficha: [
     { etiqueta: "Qué", valor: "Estrategia de relaciones públicas y plan de crisis" },
     { etiqueta: "Dónde", valor: "Relaciones Públicas Especializadas, Grado URJC, 2025" },
@@ -21,6 +22,8 @@ export const magicair: CasoCompleto = {
       "MagicAir es una aerolínea low cost que creamos basándonos en Ryanair, siendo hasta el nombre una adaptación. Una nueva normativa europea la obliga a cambiar su política de equipaje de mano, y parte del público lo lee como un coste oculto para ganar más dinero.",
       "Lo trabajamos en dos tiempos. Primero, cómo anunciar el cambio sin dañar la reputación. Después, qué hacer cuando la crisis ya ha estallado: saber cuánta culpa nos atribuía la gente y elegir cómo responder.",
       "El riesgo de fondo era una brecha de identidad: lo que la empresa dice ser, transparente y empática, frente a lo que algunos públicos creen que demuestra.",
+      "Para entonces estábamos ya «locas desquiciadas»: llevábamos presentaciones de aerolíneas en por lo menos cuatro asignaturas. Y lo gracioso es que la primera parte consistía en crear la empresa entera, sin saber que después tendríamos que provocarle una crisis. La teníamos tan bien montada y éramos tan coherentes que costó encontrarle un problema: acabamos inventándonos uno con las nuevas medidas de las maletas.",
+      "MagicAir fue la última de una larga serie de trabajos que nos dejaron preparadas para trabajar en una aerolínea desde todos los prismas. Lo irónico es que en cuatro años nunca cogimos un avión todas juntas.",
     ],
   },
   mapa: {

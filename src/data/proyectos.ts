@@ -200,10 +200,11 @@ export const proyectos: Proyecto[] = [
     titulo: "Sra. Rushmore",
     percha: "archivo",
     grupo: "escrito",
-    tipo: "Grado URJC, individual",
-    resumen: "Análisis de la agencia que nació con «Un añito en el infierno» para el Atleti: quién es, cómo piensa y para quién trabaja.",
+    tipo: "Empresa Publicitaria y Gestión de Cuentas, Grado URJC, 3.º, individual",
+    resumen: "Análisis completo de la agencia que nació con «Un añito en el infierno» para el Atleti: quién es, cómo piensa, cómo gana dinero y para quién trabaja.",
     detalle: [
-      "Historia, filosofía, estructura y clientes, con iniciativas propias como El Balcón de la Sra. Rushmore.",
+      "Individual: me encargué de todo.",
+      "Historia, filosofía, estructura y clientes, con su modelo de negocio en un Canvas e iniciativas propias como El Balcón de la Sra. Rushmore.",
     ],
   },
   {
@@ -223,8 +224,8 @@ export const proyectos: Proyecto[] = [
     titulo: "Hermanos Chacón",
     percha: "archivo",
     grupo: "campana",
-    tipo: "Grado URJC, en equipo",
-    resumen: "Rebranding real de nuestro «barde», el bar de confianza en el que habíamos comido varias veces.",
+    tipo: "Empresa Publicitaria y Gestión de Cuentas, Grado URJC, 3.º, en equipo",
+    resumen: "Plan de negocio y rebranding real de nuestro «barde», el bar de confianza en el que habíamos comido varias veces.",
     detalle: [
       "Como me gustan los Excel, me dediqué a toda la parte del presupuesto y las facturas, y también a la explicación previa.",
       "Objetivo: modernizar la marca en dos años sin perder su esencia.",

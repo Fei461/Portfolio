@@ -7,7 +7,8 @@ const img = (file: string) => `${import.meta.env.BASE_URL}assets/casos/santander
 export const santander: CasoCompleto = {
   slug: "santander",
   titulo: "Santander",
-  era: "Un laboratorio web donde cualquiera puede evaluar el logo y comparar su nota con la nuestra.",
+  parecia: "Parecía una presentación de diez diapositivas.",
+  era: "Era un laboratorio web donde cualquiera puede evaluar el logo y comparar su nota con la nuestra.",
   ficha: [
     { etiqueta: "Qué", valor: "Análisis de identidad visual para Comunicación corporativa" },
     { etiqueta: "Cuándo", valor: "Octubre de 2026, Máster UC3M" },
@@ -17,22 +18,39 @@ export const santander: CasoCompleto = {
   enlaces: [{ href: "https://fei461.github.io/santander/", label: "Abrir el laboratorio" }],
   laboratorio: {
     src: "https://fei461.github.io/santander/",
-    titulo: "Laboratorio del signo Santander",
-    texto: "La web, aquí mismo. Ponle tu nota al logo y compárala con la nuestra.",
+    titulo: "Laboratorio de pruebas del signo Santander",
+    texto: "La web que hice para que cada nota se pudiera comprobar. Se recorre en diez o doce minutos.",
+    imagen: `${import.meta.env.BASE_URL}assets/casos/santander/laboratorio.png`,
+    dentro: [
+      "Los once criterios, cada uno en su pestaña: nuestra valoración, la evidencia de la guía de marca y una prueba interactiva.",
+      "Los resultados de la encuesta, sin saber de qué marca se trataba.",
+      "Las críticas de los expertos, positivas y negativas, respondidas una a una.",
+      "Tu propia nota de 1 a 5 en cada criterio, comparada al final con la nuestra.",
+    ],
   },
   marcador: [
     { cifra: "87 %", texto: "de las 31 personas encuestadas reconoció la marca solo con la llama (27)" },
     { cifra: "10 %", texto: "percibe cercanía, lo que la marca dice transmitir (3 de 31)" },
   ],
   contexto: {
-    titulo: "Evaluar un logo sin quedarse en la opinión",
+    titulo: "Lo que no se ve a primera vista",
     parrafos: [
-      "En 2018 Santander evolucionó su marca para un cliente que vive en el móvil: letra sin remates, fondo blanco y un rojo más vivo. El encargo era evaluar ese logo con los once criterios de calidad de Chaves y Belluccia, que miran desde si se lee bien y se reconoce hasta si funciona en cualquier tamaño y soporte.",
-      "Decidimos que cada nota tenía que poder comprobarse. Por eso trabajamos con tres fuentes de evidencia: la guía de marca del banco, un laboratorio con una prueba por criterio y una encuesta propia.",
-      "La web es el anexo de nuestra presentación, pero también se puede usar: quien la visita pone su nota y la compara con la nuestra.",
+      "El primer trabajo en grupo de la asignatura no puntuaba, teníamos varias entregas a la vez y no le dedicamos demasiado tiempo. Al día siguiente, en clase, el profesor nos contó una historia sobre unos yogures que se nos quedó marcada: de una forma muy enrevesada, nos estaba diciendo que esperaba mucho más de nosotros.",
+      "En el siguiente trabajo hicimos una revista entera, con estilo y coherencia temática, y aun así hubo dos trabajos por encima del nuestro. Uno era una locura, sí. El otro, sinceramente, no era mejor. Me piqué.",
+      "Así que, en este, fui un paso más allá. Nos pidieron diez diapositivas siguiendo el método Kawasaki para un cliente metódico, explicando por qué el nuevo logo de Santander era mejor que el anterior según los once criterios de Chaves y Belluccia. Y eso es lo que presentamos. Pero con hipervínculos a todo lo que había debajo: una encuesta que respondieron 31 personas en apenas 24 horas y una web entera con cómo cumple el logo cada criterio, los resultados del sondeo y hasta las críticas de profesionales.",
+      "Lo que se veía a primera vista era lo que nos habían pedido. Lo que marcaba la diferencia estaba debajo.",
     ],
   },
   bloques: [
+    {
+      titulo: "El encargo",
+      resumen: "Evaluar un logo sin quedarse en la opinión.",
+      puntos: [
+        "En 2018 Santander evolucionó su marca para un cliente que vive en el móvil: letra sin remates, fondo blanco y un rojo más vivo.",
+        "Había que evaluar ese logo con los once criterios de calidad de Chaves y Belluccia, que miran desde si se lee bien y se reconoce hasta si funciona en cualquier tamaño y soporte.",
+        "Decidimos que cada nota tenía que poder comprobarse, con tres fuentes de evidencia: la guía de marca del banco, una prueba por criterio y una encuesta propia.",
+      ],
+    },
     {
       titulo: "Diseñar la encuesta",
       resumen: "Medir lo que el público percibe, no lo que la marca declara.",

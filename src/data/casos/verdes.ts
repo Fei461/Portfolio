@@ -6,7 +6,8 @@ const img = (slug: string, file: string) => `${import.meta.env.BASE_URL}assets/c
 export const ryanair: CasoCompleto = {
   slug: "ryanair",
   titulo: "Ryanair",
-  era: "Un problema de pertenencia: unos empleados que no se sienten reconocidos por su propia empresa.",
+  parecia: "Parecía un problema de imagen de una low cost.",
+  era: "Era un problema de pertenencia: unos empleados que no se sienten reconocidos por su propia empresa.",
   ficha: [
     { etiqueta: "Qué", valor: "Diagnóstico de identidad, imagen y reputación, y plan de comunicación interna" },
     { etiqueta: "Dónde", valor: "Gestión de la Comunicación, Grado URJC, 2025" },

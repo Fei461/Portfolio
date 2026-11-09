@@ -6,7 +6,8 @@ const img = (file: string) => `${import.meta.env.BASE_URL}assets/casos/iberia/${
 export const iberia: CasoCompleto = {
   slug: "iberia",
   titulo: "Iberia",
-  era: "Un problema de credibilidad: nadie se cree a una aerolínea que promete vuelos verdes.",
+  parecia: "Parecía una campaña de vuelos verdes.",
+  era: "Era un problema de credibilidad: nadie se cree a una aerolínea que promete volar limpio.",
   ficha: [
     { etiqueta: "Qué", valor: "Propuesta creativa de campaña" },
     { etiqueta: "Dónde", valor: "Redacción Publicitaria, Grado URJC, 2025" },
