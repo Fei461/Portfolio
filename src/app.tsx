@@ -19,9 +19,6 @@ const TrabajoPage = lazy(() =>
 const SobrePage = lazy(() =>
   import("@/pages/sobre/sobre-page").then(({ SobrePage }) => ({ default: SobrePage })),
 );
-const NotasPage = lazy(() =>
-  import("@/pages/sobre/notas-page").then(({ NotasPage }) => ({ default: NotasPage })),
-);
 const CasoRouter = lazy(() =>
   import("@/pages/caso/caso-router").then(({ CasoRouter }) => ({ default: CasoRouter })),
 );
@@ -157,8 +154,10 @@ function MainLayout() {
               <Route path="/trabajo" element={<TrabajoPage />} />
               <Route path="/sobre" element={<SobrePage />} />
               <Route path="/sobre-mi" element={<SobrePage />} />
-              <Route path="/en-voz-alta" element={<NotasPage />} />
-              <Route path="/notas" element={<Navigate to="/en-voz-alta" replace />} />
+              {/* En voz alta se quitó (menos es más): sus enlaces llevan a la portada. La página sigue en
+                  src/pages/sobre/notas-page.tsx por si vuelve. */}
+              <Route path="/en-voz-alta" element={<Navigate to="/" replace />} />
+              <Route path="/notas" element={<Navigate to="/" replace />} />
               <Route path="/trabajo/:slug" element={<CasoRouter />} />
               <Route path="/cv" element={<CvPage />} />
               <Route path="*" element={<NotFoundPage />} />
