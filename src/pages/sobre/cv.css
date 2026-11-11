@@ -1,4 +1,6 @@
-/* ── CV: una hoja A4 sobre el tatami. La misma hoja sale en el PDF. ── */
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap");
+
+/* ── CV: una hoja A4 de formato clásico sobre el tatami. La misma hoja sale en el PDF. ── */
 .cv-mesa {
   display: flex;
   flex-direction: column;
@@ -16,274 +18,226 @@
 }
 
 .hcv {
-  --hcv-tinta: #111;
-  --hcv-suave: #4a4a44;
+  --hcv-tinta: #1a1a1a;
+  --hcv-suave: #4d4d4d;
+  --hcv-acento: #6b3a1f;
+  --hcv-linea: #d9d4cc;
+  --hcv-f: "Source Sans 3", "Segoe UI", Arial, sans-serif;
   width: min(100%, 210mm);
   min-height: 297mm;
-  display: flex;
-  flex-direction: column;
+  box-sizing: border-box;
+  padding: 14mm 15mm 12mm;
   background: #fff;
   color: var(--hcv-tinta);
-  border: 3px solid var(--sumi);
-  box-shadow: 12px 12px 0 var(--heri);
-  font-family: var(--f);
+  border: 1px solid #b9b39a;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+  font-family: var(--hcv-f);
   font-size: 9.6pt;
-  line-height: 1.4;
+  line-height: 1.38;
 }
 
-.hcv :is(h1, h2, p, strong, span, li, a) {
-  font-family: var(--f);
+.hcv :is(h1, h2, h3, p, strong, span, li, a) {
+  font-family: var(--hcv-f);
+  letter-spacing: 0;
+}
+
+.hcv :is(h1, h2, h3, p, ul) {
+  margin: 0;
+}
+
+.hcv ul {
+  padding: 0;
+  list-style: none;
 }
 
 .hcv a {
   color: inherit;
+  text-decoration: none;
 }
 
-/* Cabecera: el nombre y el contacto */
+.hcv a:hover {
+  text-decoration: underline;
+}
+
+/* Cabecera */
 .hcv-cabecera {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 1rem 2rem;
-  flex-wrap: wrap;
-  padding: 12mm 13mm 7mm;
-  border-bottom: 5px solid var(--sumi);
-  box-shadow: 0 5px 0 var(--obi);
+  padding-bottom: 4mm;
+  border-bottom: 1.5pt solid var(--hcv-acento);
 }
 
 .hcv-cabecera h1 {
-  margin: 0;
-  font-weight: 800;
-  font-variation-settings: "opsz" 96, "wdth" 75;
-  font-size: 40pt;
-  line-height: 0.9;
+  font-size: 25pt;
+  font-weight: 700;
+  line-height: 1.05;
+  color: var(--hcv-tinta);
 }
 
 .hcv-titular {
-  margin: 0.35rem 0 0;
-  font-weight: 700;
-  font-size: 12pt;
+  margin-top: 1mm !important;
+  font-size: 11pt;
+  color: var(--hcv-acento);
+  font-weight: 600;
 }
 
 .hcv-contacto {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  text-align: right;
-  font-weight: 600;
-  line-height: 1.6;
-}
-
-/* Cuerpo: columna principal y lateral */
-.hcv-cuerpo {
-  flex: 1;
-  display: grid;
-  grid-template-columns: minmax(0, 1.75fr) minmax(0, 1fr);
-}
-
-.hcv-principal {
-  padding: 8mm 8mm 10mm 13mm;
-}
-
-.hcv-lateral {
   display: flex;
-  flex-direction: column;
-  padding: 8mm 13mm 10mm 8mm;
-  background: #f4f2e2;
-  border-left: 3px solid var(--sumi);
+  flex-wrap: wrap;
+  margin-top: 2.5mm !important;
+  color: var(--hcv-suave);
+  font-size: 9pt;
 }
 
-.hcv-seccion + .hcv-seccion {
-  margin-top: 6mm;
+.hcv-contacto li + li::before {
+  content: "|";
+  margin: 0 2.2mm;
+  color: #b0aaa0;
+}
+
+/* Secciones */
+.hcv-seccion {
+  margin-top: 4.5mm;
 }
 
 .hcv-seccion h2 {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin: 0 0 2.5mm;
-  font-weight: 800;
-  font-variation-settings: "opsz" 40, "wdth" 85;
-  font-size: 12.5pt;
+  margin-bottom: 2mm;
+  padding-bottom: 0.8mm;
+  border-bottom: 0.5pt solid var(--hcv-linea);
+  font-size: 10pt;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
-
-.hcv-seccion h2::before {
-  content: "";
-  width: 18px;
-  height: 7px;
-  background: var(--obi);
-  border: 1.5px solid var(--sumi);
+  letter-spacing: 0.08em;
+  color: var(--hcv-acento);
 }
 
 .hcv-perfil p {
-  margin: 0;
+  text-align: justify;
+  hyphens: auto;
 }
 
-.hcv-busco {
-  margin-top: 2.5mm !important;
-  padding: 2mm 3mm;
-  border: 2px solid var(--sumi);
-  border-left: 7px solid var(--obi);
-  font-weight: 600;
+.hcv-disponible {
+  margin-top: 1.2mm !important;
 }
 
-.hcv-busco strong {
-  margin-right: 0.3em;
-}
-
-.hcv-linea {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.hcv-linea li {
+.hcv-lista {
   display: grid;
-  grid-template-columns: 30mm minmax(0, 1fr);
-  gap: 3mm;
-  padding: 2mm 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.14);
+  gap: 2.4mm;
 }
 
-.hcv-linea li:last-child {
-  border-bottom: 0;
+.hcv-entrada__cabeza {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 4mm;
+}
+
+.hcv-entrada h3 {
+  font-size: 10pt;
+  font-weight: 700;
 }
 
 .hcv-periodo {
-  color: var(--obi);
-  font-weight: 600;
-  font-size: 8.6pt;
-}
-
-.hcv strong {
-  display: block;
-  font-weight: 700;
+  flex: none;
+  font-size: 9pt;
+  color: var(--hcv-suave);
+  font-variant-numeric: tabular-nums;
 }
 
 .hcv-lugar {
-  display: block;
+  font-style: italic;
   color: var(--hcv-suave);
 }
 
-.hcv-linea p,
-.hcv-premio p {
-  margin: 0.8mm 0 0;
-  color: var(--hcv-suave);
+.hcv-detalle {
+  margin-top: 0.6mm !important;
 }
 
-.hcv-idiomas,
-.hcv-chips,
-.hcv-puntos {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.hcv-logros {
+  margin-top: 0.8mm !important;
+  padding-left: 4mm !important;
+  list-style: disc !important;
 }
 
-.hcv-idiomas li {
+.hcv-logros li {
+  margin-top: 0.4mm;
+}
+
+.hcv-logros li::marker {
+  color: var(--hcv-acento);
+}
+
+/* Bloques en columnas */
+.hcv-dos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 8mm;
+}
+
+.hcv-tres {
+  display: grid;
+  grid-template-columns: 0.8fr 1fr 1.25fr;
+  gap: 0 8mm;
+}
+
+.hcv-pares li {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  gap: 2mm;
-  padding: 1mm 0;
+  gap: 3mm;
 }
 
-.hcv-idiomas strong {
-  display: inline;
+.hcv-pares span {
+  color: var(--hcv-suave);
 }
 
-.hcv-nivel {
-  display: inline-flex;
-  gap: 2px;
+.hcv-simple li {
+  padding-left: 3mm;
+  text-indent: -3mm;
 }
 
-.hcv-nivel i {
-  width: 9px;
-  height: 9px;
-  border: 1.5px solid var(--sumi);
-}
-
-.hcv-nivel i.lleno {
-  background: var(--sumi);
-}
-
-.hcv-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5mm;
-}
-
-.hcv-chips li {
-  padding: 0.6mm 2mm;
-  border: 1.5px solid var(--sumi);
-  background: #fff;
-  font-weight: 600;
-  font-size: 8.6pt;
-}
-
-.hcv-puntos li {
-  position: relative;
-  padding-left: 4mm;
-}
-
-.hcv-puntos li + li {
-  margin-top: 1mm;
-}
-
-.hcv-puntos li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.55em;
-  width: 6px;
-  height: 6px;
-  background: var(--obi);
-}
-
-.hcv-web {
-  margin: auto 0 0;
-  padding-top: 6mm;
+.hcv-simple li::before {
+  content: "·";
+  display: inline-block;
+  width: 3mm;
+  text-indent: 0;
+  color: var(--hcv-acento);
   font-weight: 700;
-  font-size: 8.6pt;
 }
 
-/* En pantallas estrechas la hoja se lee en una columna */
+/* Móvil: la hoja se apila */
 @media screen and (max-width: 760px) {
   .hcv {
-    min-height: 0;
-    font-size: 0.95rem;
-  }
-
-  .hcv-cabecera {
-    padding: 1.5rem 1.25rem 1.25rem;
+    padding: 8mm 6mm;
+    font-size: 0.85rem;
   }
 
   .hcv-cabecera h1 {
-    font-size: 3rem;
+    font-size: 1.8rem;
   }
 
   .hcv-contacto {
+    flex-direction: column;
+  }
+
+  .hcv-contacto li + li::before {
+    content: none;
+  }
+
+  .hcv-entrada__cabeza {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .hcv-periodo,
+  .hcv-contacto {
+    font-size: 0.8rem;
+  }
+
+  .hcv-dos,
+  .hcv-tres {
+    grid-template-columns: 1fr;
+  }
+
+  .hcv-perfil p {
     text-align: left;
-  }
-
-  .hcv-cuerpo {
-    grid-template-columns: 1fr;
-  }
-
-  .hcv-principal,
-  .hcv-lateral {
-    padding: 1.25rem;
-  }
-
-  .hcv-lateral {
-    border-left: 0;
-    border-top: 3px solid var(--sumi);
-  }
-
-  .hcv-linea li {
-    grid-template-columns: 1fr;
-    gap: 0.15rem;
   }
 }
 
@@ -303,7 +257,7 @@
   .dojo-progreso,
   .barrido,
   .cv-acciones,
-  .dojo-saltar{
+  .dojo-saltar {
     display: none !important;
   }
 
@@ -317,111 +271,103 @@
     width: 210mm;
     height: 297mm;
     min-height: 0;
+    overflow: hidden;
     border: 0;
     box-shadow: none;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
 
-  .hcv-linea > li {
+  .hcv-entrada {
     break-inside: avoid;
   }
 }
 
-/* Los estilos de impresión antiguos de la web no tocan la hoja. */
+/* Las reglas de impresión generales (index.css) no aplican a la hoja. */
 @media print {
   .hcv header.hcv-cabecera {
-    display: flex !important;
+    display: block !important;
   }
 
   .hcv section {
     padding: 0 !important;
     background: transparent !important;
   }
+
+  .hcv a::after {
+    content: none !important;
+  }
 }
 
-.hcv-busco strong {
-  display: inline;
+/* Entradas cortas: puesto y lugar en una línea. */
+.hcv-entrada h3 .hcv-lugar {
+  font-weight: 400;
+}
+
+.hcv-entrada h3 .hcv-lugar::before {
+  content: " · ";
+  font-style: normal;
 }
 
 @media print {
-  .hcv a::after,
-  .hcv a:after {
-    content: none !important;
+  .hcv {
+    font-size: 9.4pt;
+    line-height: 1.34;
+    padding: 12mm 14mm 10mm;
   }
 
+  .hcv-seccion {
+    margin-top: 4mm;
+  }
+
+  .hcv-lista {
+    gap: 2mm;
+  }
+}
+
+/* Idiomas y otros datos: etiqueta y valor en una línea. */
+.hcv-datos {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.6mm 4mm;
+  margin: 0;
+}
+
+.hcv-datos dt {
+  font-weight: 700;
+}
+
+.hcv-datos dd {
+  margin: 0;
+}
+
+@media screen and (max-width: 760px) {
+  .hcv-datos {
+    grid-template-columns: 1fr;
+  }
+
+  .hcv-datos dd {
+    margin-bottom: 1.5mm;
+  }
+}
+
+@media print {
   .hcv {
-    font-size: 8.9pt;
-    line-height: 1.33;
+    font-size: 9.2pt;
+    line-height: 1.32;
+  }
+
+  .hcv-seccion {
+    margin-top: 3.6mm;
+  }
+}
+
+@media print {
+  .hcv {
+    padding: 10mm 14mm 8mm;
   }
 
   .hcv-cabecera {
-    flex-wrap: nowrap;
-    padding: 10mm 12mm 6mm;
-  }
-
-  .hcv-cabecera h1 {
-    font-size: 36pt;
-  }
-
-  .hcv-principal {
-    padding: 6mm 7mm 6mm 12mm;
-  }
-
-  .hcv-lateral {
-    padding: 6mm 12mm 6mm 7mm;
-  }
-
-  .hcv-seccion + .hcv-seccion {
-    margin-top: 4.5mm;
-  }
-
-  .hcv-seccion h2 {
-    margin-bottom: 1.5mm;
-    font-size: 11.5pt;
-  }
-
-  .hcv-linea li {
-    padding: 1.3mm 0;
-  }
-}
-
-@media screen and (max-width: 760px) {
-  .hcv-periodo,
-  .hcv-chips li {
-    font-size: 0.8rem;
-  }
-}
-
-/* Logros de cada experiencia, en lista corta. */
-.hcv-logros {
-  margin: 0.8mm 0 0;
-  padding-left: 3.2mm;
-  color: var(--hcv-suave);
-}
-
-.hcv-logros li {
-  margin: 0.3mm 0 0;
-  padding: 0;
-  border: 0;
-  display: list-item;
-}
-
-.hcv-linea .hcv-logros {
-  list-style: disc;
-}
-
-.hcv-linea .hcv-logros li::marker {
-  color: var(--obi);
-}
-
-.hcv-curso + .hcv-curso {
-  margin-top: 2mm;
-}
-
-@media screen and (max-width: 760px) {
-  .hcv-contacto a,
-  .hcv-web a {
-    font-size: 0.85rem;
+    padding-bottom: 3mm;
   }
 }

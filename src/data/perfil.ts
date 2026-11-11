@@ -1,46 +1,55 @@
-// Fuente única de los datos personales (Sobre mí y CV). Origen: CV de octubre de 2026.
+// Fuente única de los datos personales (Sobre mí y CV). Origen: CV de octubre de 2026 y lo que ha contado Lara.
 // Sin teléfono ni fecha de nacimiento. El correo de la universidad solo sale en el CV.
 
-export type Hito = { periodo: string; titulo: string; lugar: string; detalle?: string; puntos?: string[] };
+export type Hito = {
+  periodo: string;
+  titulo: string;
+  lugar: string;
+  detalle?: string;
+  puntos?: string[];
+};
 
 export const perfil = {
   nombre: "Lara Feijóo",
-  titular: "Publicidad y RRPP · Máster en Comunicación Publicitaria",
+  titular: "Graduada en Publicidad y Relaciones Públicas · Máster en Comunicación Publicitaria",
   resumen:
-    "Graduada en Publicidad y RRPP, con ganas de seguir aprendiendo. Me interesan especialmente la gestión de la reputación, la percepción de marca, las relaciones públicas, la comunicación corporativa y la comunicación interna. Mezclo análisis y creatividad: me encanta entender qué ha pasado y por qué, y partirme la cabeza buscando la mejor solución para la marca.",
+    "Graduada en Publicidad y Relaciones Públicas (URJC) y estudiante del Máster en Comunicación Publicitaria (UC3M), con interés especial en la reputación, la percepción de marca, las relaciones públicas y la comunicación corporativa e interna. Experiencia en contenidos, comunidad y análisis de resultados en una startup EdTech y en el lanzamiento de un producto digital propio.",
   busco: "Prácticas a tiempo completo a partir de abril de 2027.",
   lugar: "Galapagar, Madrid",
   email: "lara.feijoo@gmail.com",
   /** Solo en el CV: lo piden en las candidaturas de prácticas. */
   emailUni: "100605478@alumnos.uc3m.es",
   linkedin: "https://www.linkedin.com/in/lara-feijoo",
+  portfolio: "https://fei461.github.io/Portfolio/",
 
   experiencia: [
     {
-      periodo: "Enero a mayo de 2026",
-      titulo: "Prácticas en el departamento de marketing",
-      lugar: "Stud-IA, startup EdTech (en remoto)",
+      periodo: "Ene. 2026 – may. 2026",
+      titulo: "Prácticas en Marketing",
+      lugar: "Stud-IA · Startup EdTech · En remoto",
       puntos: [
-        "Estrategia y gestión de X, Threads y Bluesky, con informes mensuales. Threads: de cero a 365 seguidores, y 3.030 visitas en un mes.",
-        "Guion, grabación y edición de vídeos para TikTok, Instagram y YouTube; uno superó las 36.000 visualizaciones.",
-        "Campañas para Perú, Colombia, Argentina, México y España, y secuencias B2B por LinkedIn y email.",
-        "Gestión de la reputación y de la comunidad: reseñas de Trustpilot y conversación en cinco redes.",
+        "Estrategia y gestión de X, Threads y Bluesky, con informes mensuales de resultados. En Threads, de 0 a 365 seguidores y 3.030 visitas en un mes.",
+        "Guion, grabación y edición de vídeo para TikTok, Instagram y YouTube; una de las piezas superó las 36.000 visualizaciones.",
+        "Campañas B2C adaptadas a Perú, Colombia, Argentina, México y España, y secuencias B2B por LinkedIn y email.",
+        "Gestión de la reputación online y de la comunidad: respuesta a reseñas en Trustpilot y conversación en cinco redes sociales.",
+        "Análisis de mercado y de la competencia.",
       ],
     },
     {
-      periodo: "Desde febrero de 2026",
-      titulo: "Creadora de Talixea (proyecto propio)",
-      lugar: "talixea.es",
-      detalle:
-        "App para aprender idiomas leyendo: método, catálogo de 40 libros en seis idiomas, marca, precios y lanzamiento (octubre de 2026). Hecha sin saber programar, con herramientas de IA.",
+      periodo: "Feb. 2026 – actualidad",
+      titulo: "Creadora y responsable de marca",
+      lugar: "Talixea · App para aprender idiomas leyendo · Proyecto propio",
+      puntos: [
+        "Desarrollo y lanzamiento (octubre de 2026) del producto completo con herramientas de IA, sin conocimientos previos de programación: método, catálogo de 40 libros en seis idiomas, identidad de marca y precios.",
+      ],
     },
     {
-      periodo: "Octubre de 2022 a junio de 2025",
+      periodo: "Oct. 2022 – jun. 2025",
       titulo: "Profesora de artes marciales",
       lugar: "Guerreros Galapagar",
     },
     {
-      periodo: "Junio de 2021 a agosto de 2025",
+      periodo: "Jun. 2021 – ago. 2025",
       titulo: "Monitora de campamento de verano",
       lugar: "Guerreros Galapagar",
     },
@@ -48,44 +57,49 @@ export const perfil = {
 
   formacion: [
     {
-      periodo: "Desde septiembre de 2026",
+      periodo: "Sept. 2026 – actualidad",
       titulo: "Máster en Comunicación Publicitaria",
       lugar: "Universidad Carlos III de Madrid",
-      detalle: "Entre otros trabajos, un laboratorio web y una encuesta propia para evaluar el logo de Santander.",
     },
     {
-      periodo: "Septiembre de 2022 a junio de 2026",
+      periodo: "Sept. 2022 – jun. 2026",
       titulo: "Grado en Publicidad y Relaciones Públicas",
       lugar: "Universidad Rey Juan Carlos",
-      detalle:
-        "Nota media de 8,62 y seis matrículas de honor. TFG sobre la identidad y la reputación de BBVA tras la crisis de 2008: dos encuestas (248 respuestas) y una entrevista en profundidad.",
+      puntos: [
+        "Nota media: 8,62. Seis matrículas de honor.",
+        "TFG: «Percepción y renovación de la identidad corporativa: el caso de BBVA tras la crisis financiera». Metodología mixta: dos encuestas (248 respuestas, públicos interno y externo) y entrevista en profundidad.",
+      ],
     },
     {
-      periodo: "Septiembre de 2019 a mayo de 2021",
+      periodo: "Sept. 2019 – may. 2021",
       titulo: "Bachillerato de Excelencia",
       lugar: "IES Diego Velázquez",
     },
     {
-      periodo: "Septiembre de 2012 a junio de 2021",
-      titulo: "Programa de Enriquecimiento Educativo (PEAC)",
-      lugar: "PEAC Madrid Oeste",
-      detalle: "Alumni en la actualidad.",
+      periodo: "Sept. 2018 – jun. 2019",
+      titulo: "Curso escolar en Irlanda",
+      lugar: "Escolarizada en un centro irlandés",
+    },
+    {
+      periodo: "Sept. 2012 – jun. 2021",
+      titulo: "Programa PEAC",
+      lugar: "PEAC Madrid Oeste · Alumni",
     },
   ] satisfies Hito[],
 
   cursos: [
     {
-      periodo: "Junio a octubre de 2025",
+      periodo: "Jun. – oct. 2025",
       titulo: "Producción y estrategia de contenidos para plataformas OTT",
       lugar: "RTVE",
     },
     {
-      periodo: "Octubre de 2024 a agosto de 2025",
-      titulo: "Comunicación, Marketing e Imagen corporativa",
+      periodo: "Oct. 2024 – ago. 2025",
+      titulo: "Comunicación, Marketing e Imagen Corporativa",
       lugar: "Ayuntamiento de Galapagar",
     },
     {
-      periodo: "Octubre y noviembre de 2024",
+      periodo: "Oct. – nov. 2024",
       titulo: "Inteligencia artificial en medios de comunicación",
       lugar: "RTVE",
     },
@@ -93,12 +107,13 @@ export const perfil = {
 
   premios: [
     {
+      periodo: "Nov. 2024",
       titulo: "Primer premio de categoría, Ideathon de Innovación",
       lugar: "Universidad Rey Juan Carlos",
       detalle:
-        "Más de 200 estudiantes. Con mi equipo, un CV generativo con IA que convierte el TFG en competencias para cada oferta: primeras en la categoría y segundas en la general.",
+        "Con más de 200 participantes: un CV generativo con IA que convierte el TFG en competencias. Segundo puesto en la general.",
     },
-  ] as { titulo: string; lugar: string; detalle?: string }[],
+  ] satisfies Hito[],
 
   idiomas: [
     { idioma: "Español", nivel: "Nativa" },
@@ -107,21 +122,18 @@ export const perfil = {
     { idioma: "Francés", nivel: "B1" },
   ],
 
-  // Tal cual las pone el CV en PDF.
   competencias: [
     "Compromiso",
     "Adaptabilidad",
-    "Buen trabajo bajo presión",
+    "Trabajo bajo presión",
     "Visión crítica y creativa",
-    "Gestión eficaz del tiempo",
-    "Fuertes habilidades sociales",
+    "Gestión del tiempo",
+    "Habilidades sociales",
   ],
 
   aficiones: [
     "Judo (cinturón marrón) y taekwondo (cinturón azul)",
-    "Un libro en el idioma de cada país que visito: ya van más de diez",
-    "Adivinar países por sus banderas (casi me las sé todas)",
-    "El fútbol, con el Atleti en el corazón",
-    "Viajar y la naturaleza",
+    "Lectura en otros idiomas",
+    "Viajes y naturaleza",
   ],
 };
