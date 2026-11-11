@@ -1,0 +1,57 @@
+/* ── Una sola imagen: la de su CV y su LinkedIn ──
+   El tatami se queda donde se entiende (la portada, con las esteras dibujadas).
+   Fuera de ahí, su celeste claro. El rojo y el azul de LinkedIn pasan a los colores de la casa:
+   cinturón para lo que se pulsa, negro para lo demás. Va al final para mandar sobre lo anterior,
+   y se puede quitar entero sin tocar nada más. */
+:root {
+  --celeste: #8ec5ea;
+  --celeste-claro: #e4f2fb;
+}
+
+/* Cabecera: «Escríbeme» en cinturón y LinkedIn en negro */
+.dojo-head nav a.dojo-head__escribir {
+  background: var(--obi);
+}
+
+.dojo-head nav a.dojo-head__linkedin {
+  background: var(--sumi);
+}
+
+/* Portada: el tatami se queda; lo que buscas, en celeste, como en el CV */
+.dojo .dojo-busco {
+  background: var(--celeste-claro);
+}
+
+/* Las páginas por partes sin color propio (Sobre mí, En voz alta): celeste en vez de tatami */
+.combate:not(.combate--tema) .combate__tatami {
+  background-color: var(--celeste-claro);
+  background-image: none;
+}
+
+/* Recuadros que eran tatami */
+.dojo .metodo__detalle,
+.dojo .brecha__porque,
+.dojo .contraste__cierre,
+.dojo .dorsal__texto {
+  background: var(--celeste-claro);
+}
+
+.dojo .dorsal__tipografia {
+  background-color: var(--celeste-claro);
+  background-image: none;
+}
+
+.dojo .brecha__porque {
+  border-left-color: var(--obi);
+}
+
+/* La mesa del CV y la página de error */
+.dojo .cv-mesa {
+  background-color: var(--judogi);
+  background-image: none;
+}
+
+.dojo .no-encontrada {
+  background-color: var(--celeste-claro);
+  background-image: none;
+}
