@@ -42,6 +42,7 @@ export function NotasPage() {
                 type="button"
                 aria-current={n.id === nota.id ? "true" : undefined}
                 className={n.id === nota.id ? "activo" : undefined}
+                data-evento={`En voz alta · ${n.titulo}`}
                 onClick={() => abrir(n.id)}
               >
                 <span>{n.categoria}</span>

@@ -11,6 +11,7 @@ import {
 import { HashRouter, Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { SiteHeader } from "@/components/site-header";
 import { ScrollProgress } from "@/components/scroll-progress";
+import { contarPagina } from "@/lib/visitas";
 
 const TrabajoPage = lazy(() =>
   import("@/pages/trabajo/trabajo-page").then(({ TrabajoPage }) => ({ default: TrabajoPage })),
@@ -27,6 +28,10 @@ const CasoRouter = lazy(() =>
 // Hoja de la firma: solo en local (npm run dev), no se publica.
 const FirmaPage = import.meta.env.DEV
   ? lazy(() => import("@/pages/firma/firma-page").then(({ FirmaPage }) => ({ default: FirmaPage })))
+  : null;
+// Piezas de LinkedIn (banner y posts): solo en local, no se publican.
+const MarcaPage = import.meta.env.DEV
+  ? lazy(() => import("@/pages/marca/marca-page").then(({ MarcaPage }) => ({ default: MarcaPage })))
   : null;
 const CvPage = lazy(() =>
   import("@/pages/sobre/cv-page").then(({ CvPage }) => ({ default: CvPage })),
@@ -97,6 +102,16 @@ function App() {
     <HashRouter>
       <Routes>
         <Route path="/prototipo" element={<Navigate to="/" replace />} />
+        {MarcaPage && (
+          <Route
+            path="/marca/:pieza"
+            element={
+              <Suspense fallback={null}>
+                <MarcaPage />
+              </Suspense>
+            }
+          />
+        )}
         {FirmaPage && (
           <Route
             path="/firma"
@@ -118,6 +133,11 @@ function MainLayout() {
   // El barrido no se ve al entrar en la web, solo al cambiar de pantalla.
   const anterior = useRef(pathname);
   const [barrido, setBarrido] = useState(0);
+  // Cada pantalla cuenta como una visita (el título lo pone la página al cargar, por eso se espera un poco).
+  useEffect(() => {
+    const t = window.setTimeout(() => contarPagina(pathname, document.title), 800);
+    return () => window.clearTimeout(t);
+  }, [pathname]);
   useEffect(() => {
     if (anterior.current === pathname) return;
     anterior.current = pathname;

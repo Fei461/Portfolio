@@ -91,7 +91,7 @@ export function CvPage() {
               </li>
               <li>
                 <Icono d={icono.enlace} />
-                <a href={perfil.portfolio} target="_blank" rel="noreferrer">
+                <a href={`${perfil.portfolio}?ref=cv`} target="_blank" rel="noreferrer">
                   Portfolio
                 </a>
               </li>

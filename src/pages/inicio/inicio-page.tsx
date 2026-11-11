@@ -51,7 +51,7 @@ function Correo() {
     }
   };
   return (
-    <button type="button" className="dojo-correo" onClick={copiar}>
+    <button type="button" className="dojo-correo" onClick={copiar} data-evento="Copiar correo">
       {correo} <span aria-live="polite">{copiado ? "Copiado" : "Copiar"}</span>
     </button>
   );

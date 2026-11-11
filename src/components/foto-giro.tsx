@@ -41,7 +41,7 @@ export function FotoGiro({
       <span className="dojo-foto__obi" aria-hidden="true" />
       <div className="foto-giro__cara foto-giro__delante" aria-hidden={vuelta}>
         <img src={src} alt={alt} width={ancho} height={alto} />
-        <button ref={delante} type="button" className="foto-giro__boton" onClick={() => girar(true)} tabIndex={vuelta ? -1 : 0}>
+        <button ref={delante} type="button" className="foto-giro__boton" data-evento="Dar la vuelta a la foto" onClick={() => girar(true)} tabIndex={vuelta ? -1 : 0}>
           {frente}{" "}
           <span className="foto-giro__accion">
             Dale la vuelta <span aria-hidden="true">↻</span>

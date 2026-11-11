@@ -199,6 +199,7 @@ function LoDemas() {
             type="button"
             aria-pressed={i === activo}
             className={`subrayador color--${x.color}${i === activo ? " activo" : ""}`}
+            data-evento={`Cómo trabajo · ${x.etiqueta}`}
             onClick={() => ir(i, 1)}
           >
             <span className="subrayador__tapa" aria-hidden="true" />
@@ -228,7 +229,7 @@ function LoDemas() {
             })}
             <circle cx="100" cy="100" r="15" className="ruleta__centro" />
           </svg>
-          <button type="button" className="dojo-boton ruleta__boton" onClick={girar} disabled={girando}>
+          <button type="button" className="dojo-boton ruleta__boton" data-evento="Girar la ruleta" onClick={girar} disabled={girando}>
             {girando ? "Girando…" : "Gira la ruleta"}
           </button>
         </div>
