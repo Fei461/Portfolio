@@ -9,14 +9,17 @@ export type Hito = {
   nota?: string;
   /** Una línea propia, en negrita: lo que más pesa de esa experiencia. */
   destacado?: string;
+  /** Si el destacado se puede comprobar en algún sitio, el enlace. */
+  destacadoEnlace?: string;
   puntos?: string[];
 };
 
 export const perfil = {
   nombre: "Lara Feijóo",
-  titular: "RRPP, reputación y comunicación · Máster UC3M",
+  /** En el CV va con los dos apellidos. */
+  nombreCompleto: "Lara Feijóo Vázquez",
   resumen:
-    "Graduada en Publicidad y RRPP. Me mueve entender a la gente: cómo se percibe una marca, dentro y fuera, y por qué. Disfruto tanto proponiendo ideas como analizando qué ha funcionado, y me interesan especialmente la reputación, las relaciones públicas y la comunicación corporativa e interna.",
+    "Graduada en Publicidad y RRPP. Me mueve entender a la gente: cómo se percibe una marca, dentro y fuera, y por qué. Disfruto tanto proponiendo ideas como analizando qué ha funcionado. Me interesan especialmente la reputación, las relaciones públicas y la comunicación interna y la corporativa.",
   busco: "Prácticas a tiempo completo a partir de abril de 2027.",
   lugar: "Galapagar, Madrid",
   email: "lara.feijoo@gmail.com",
@@ -31,13 +34,14 @@ export const perfil = {
       titulo: "Prácticas en el departamento de Marketing",
       periodo: "Enero 2026 – mayo 2026",
       nota: "Cinco meses en el equipo de marketing de una startup EdTech: estrategia de campañas, contenido para redes, gestión de la comunidad y de la reputación, y análisis de mercado y de la competencia.",
-      destacado: "Carta de recomendación de Diego López de Aragón, cofundador y CMO.",
+      destacado: "Carta de recomendación de Diego López de Aragón, cofundador y CMO",
+      destacadoEnlace: "https://fei461.github.io/Portfolio/?ref=cv#/trabajo/stud-ia",
     },
     {
       lugar: "Talixea",
-      titulo: "Proyecto propio: una app para aprender idiomas leyendo",
+      titulo: "Proyecto propio: una plataforma para aprender idiomas leyendo",
       periodo: "Febrero 2026 – actualidad",
-      nota: "La he hecho de principio a fin: el método, el catálogo, la marca y el lanzamiento, en octubre de 2026.",
+      nota: "De la idea al lanzamiento, en octubre de 2026: el método de aprendizaje, el catálogo de libros y la marca.",
     },
     {
       lugar: "Guerreros Galapagar",
@@ -98,7 +102,7 @@ export const perfil = {
     "Estrategia de contenidos y campañas",
     "Análisis de reputación y competencia",
     "Investigación con encuestas y entrevistas",
-    "Redacción",
+    "Redacción para redes sociales y email",
     "Guion, grabación y edición de vídeo",
   ],
 

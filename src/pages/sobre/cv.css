@@ -354,3 +354,10 @@
   border-left: 1.2mm solid var(--obi);
   font-weight: 700;
 }
+
+.ccv .ccv-destacado a {
+  text-decoration: underline;
+  text-decoration-color: var(--obi);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 2px;
+}

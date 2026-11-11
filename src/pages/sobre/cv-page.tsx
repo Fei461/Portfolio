@@ -44,7 +44,17 @@ function Lista({ hitos }: { hitos: Hito[] }) {
           </h3>
           <p className="ccv-fecha">{h.periodo}</p>
           {h.nota && <p className="ccv-nota">{h.nota}</p>}
-          {h.destacado && <p className="ccv-destacado">{h.destacado}</p>}
+          {h.destacado && (
+            <p className="ccv-destacado">
+              {h.destacadoEnlace ? (
+                <a href={h.destacadoEnlace} target="_blank" rel="noreferrer">
+                  {h.destacado} (léela en el portfolio)
+                </a>
+              ) : (
+                h.destacado
+              )}
+            </p>
+          )}
         </li>
       ))}
     </ul>
@@ -62,19 +72,19 @@ export function CvPage() {
   return (
     <main className="cv-mesa">
       <div className="cv-acciones">
-        <a className="dojo-boton" href={pdf} download="CV Lara Feijóo.pdf">
+        <a className="dojo-boton" href={pdf} download="CV Lara Feijóo Vázquez.pdf">
           Descargar CV en PDF
         </a>
       </div>
 
-      <article className="ccv" aria-label="Currículum de Lara Feijóo">
+      <article className="ccv" aria-label="Currículum de Lara Feijóo Vázquez">
         <div className="ccv-principal">
           <header className="ccv-cabecera">
-            <h1 className="ccv-nombre">{perfil.nombre}</h1>
-            <p className="ccv-titular">{perfil.titular}</p>
+            <h1 className="ccv-nombre">{perfil.nombreCompleto}</h1>
             <p className="ccv-resumen">{perfil.resumen}</p>
             <p className="ccv-busco">
-              <strong>Busco prácticas</strong> a tiempo completo, con convenio de la UC3M, a partir de abril de 2027.
+              <strong>Busco prácticas</strong> a tiempo completo, con convenio de la UC3M, a partir de abril de 2027:
+              180 horas, ampliables hasta el 30 de septiembre.
             </p>
             <ul className="ccv-contacto">
               <li>
@@ -149,15 +159,15 @@ export function CvPage() {
             </ul>
             <p className="ccv-idiomas__nota">{perfil.idiomasNota}</p>
           </Bloque>
-          <Bloque titulo="Sobre el tatami">
-            <p>{perfil.tatami}</p>
-          </Bloque>
           <Bloque titulo="Premios">
             <ul className="ccv-simple">
               {perfil.premios.map((p) => (
                 <li key={p}>{p}</li>
               ))}
             </ul>
+          </Bloque>
+          <Bloque titulo="Sobre el tatami">
+            <p>{perfil.tatami}</p>
           </Bloque>
         </aside>
       </article>
