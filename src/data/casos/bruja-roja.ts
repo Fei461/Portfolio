@@ -141,5 +141,4 @@ export const brujaRoja: CasoCompleto = {
     "A estar presente y usar el altavoz que podíamos tener en un mundo lleno de ruido.",
     "Que el precio de romper estereotipos no es económico, sino de tiempo, esfuerzo y dedicación.",
   ],
-  nota: "Proyecto académico en equipo (Grado URJC). Bruja Roja es una marca inventada para el ejercicio.",
 };

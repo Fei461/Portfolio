@@ -136,5 +136,4 @@ export const santander: CasoCompleto = {
     "Que lo que se ve a primera vista tiene que cumplir el encargo, y lo que marca la diferencia puede estar debajo.",
     "Que picarse, bien canalizado, también es un motor.",
   ],
-  nota: "Trabajo académico de máster, sin relación con Banco Santander. El logotipo se reproduce con fines académicos.",
 };

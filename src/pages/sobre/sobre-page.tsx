@@ -260,13 +260,14 @@ export function SobrePage() {
   const panel = useRef<HTMLDivElement>(null);
   const setActivo = (i: number) => setParams(i ? { parte: pestanas[i].id } : {}, { replace: true });
   const actual = pestanas[activo];
+  // «Por qué el judo» se queda sobre el tatami; el resto de Sobre mí, en celeste.
 
   useEffect(() => {
     document.title = "Sobre mí, Lara Feijóo";
   }, []);
 
   return (
-    <main className="combate combate--sobre">
+    <main className={`combate combate--sobre${actual.id === "judo" ? " combate--judo" : ""}`}>
       <aside className="combate__ficha">
         <h1 className="combate__titulo">Sobre mí</h1>
         <FotoGiro

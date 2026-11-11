@@ -132,5 +132,4 @@ export const warriorsArena: CasoCompleto = {
     "Cada comprador necesita una razón distinta para el mismo producto.",
     "Los derechos que no vendes en exclusiva siguen trabajando para ti.",
   ],
-  nota: "Plan individual del curso de RTVE. Warriors Arena es un formato ficticio; sus imágenes promocionales se crearon con IA.",
 };

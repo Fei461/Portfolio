@@ -240,5 +240,4 @@ export const studIa: CasoCompleto = {
       href: "https://es.linkedin.com/posts/lara-feijoo_qu%C3%A9-lleg%C3%B3-antes-el-huevo-o-la-gallina-activity-7466057066965549056-Sz73",
     },
   ],
-  nota: "Las piezas son extractos de mi trabajo. El análisis de competencia, la matriz de nichos y las secuencias B2B se quedan en Stud-IA.",
 };

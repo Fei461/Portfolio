@@ -6,10 +6,10 @@ import { FotoGiro } from "@/components/foto-giro";
 const foto = `${import.meta.env.BASE_URL}assets/lara/salto.jpg`;
 
 function NombreProyectado() {
-  const lineas = ["Lara", "Feijóo"];
+  const lineas = ["Lara", "Feijóo", "Vázquez"];
   let i = 0;
   return (
-    <h1 className="dojo-nombre" aria-label="Lara Feijóo">
+    <h1 className="dojo-nombre dojo-nombre--tres" aria-label="Lara Feijóo Vázquez">
       {lineas.map((linea) => (
         <span className="dojo-nombre__linea" key={linea} aria-hidden="true">
           {[...linea].map((letra, j) => (

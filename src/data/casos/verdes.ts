@@ -119,7 +119,6 @@ export const ryanair: CasoCompleto = {
     "Que cada base y cada cargo son un mundo, y hay que escuchar a todos antes de generalizar.",
     "Cuanto más informados están los empleados, menos información imprecisa o perjudicial circula.",
   ],
-  nota: "Propuesta académica en equipo (Grado URJC), sin relación con Ryanair.",
 };
 
 export const torrons: CasoCompleto = {
@@ -172,7 +171,6 @@ export const torrons: CasoCompleto = {
     "Un insight personal funciona mejor que uno de producto cuando le hablas a una generación.",
     "Si la idea va de mirar dos veces, los soportes tienen que obligar a hacerlo.",
   ],
-  nota: "Propuesta académica en equipo (Grado URJC), sin relación con Torrons Vicens.",
 };
 
 export const mms: CasoCompleto = {
@@ -224,7 +222,6 @@ export const mms: CasoCompleto = {
     "Lo premium se demuestra en el detalle, no en el adjetivo.",
     "Planificar es decidir para quién es, antes de pensar cómo decirlo.",
   ],
-  nota: "Propuesta académica en equipo (Grado URJC), sin relación con Mars.",
 };
 
 export const tourCdc: CasoCompleto = {
@@ -304,7 +301,6 @@ export const revista: CasoCompleto = {
     ],
   },
   aprendizajes: ["La forma también comunica: un marco teórico se lee mejor si apetece leerlo."],
-  nota: "Trabajo académico de máster. Las imágenes de la película se usan con fines académicos.",
 };
 
 export const bbva: CasoCompleto = {
@@ -350,7 +346,6 @@ export const bbva: CasoCompleto = {
     ],
   },
   aprendizajes: ["Para que alguien se proteja, primero tiene que dejar de sentirse a salvo."],
-  nota: "Proyecto académico en equipo (Grado URJC), sin relación con BBVA.",
 };
 
 export const oreo: CasoCompleto = {
@@ -395,7 +390,6 @@ export const oreo: CasoCompleto = {
     ],
   },
   aprendizajes: ["Un plan de medios empieza por la persona, no por los soportes."],
-  nota: "Proyecto académico en equipo (Grado URJC), sin relación con Mondelēz.",
 };
 
 export const pluvielle: CasoCompleto = {
@@ -461,7 +455,6 @@ export const pluvielle: CasoCompleto = {
     "Que se puede conseguir un alcance alto sin resultar intrusiva.",
     "Que un calendario por picos no solo acierta con el momento: permite cambiar el plan según lo que digan los primeros datos.",
   ],
-  nota: "Marca ficticia creada para el máster. Las piezas son propuestas académicas.",
 };
 
 export const verdes = [ryanair, torrons, mms, tourCdc, revista, bbva, oreo, pluvielle];

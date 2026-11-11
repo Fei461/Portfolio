@@ -17,7 +17,7 @@ export function SiteHeader() {
         Saltar al contenido
       </a>
       <Link to="/" className="dojo-head__firma">
-        Lara Feijóo
+        Lara Feijóo Vázquez
       </Link>
       <nav aria-label="Principal">
         {navItems.map((item) => (

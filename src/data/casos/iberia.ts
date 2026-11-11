@@ -113,5 +113,4 @@ export const iberia: CasoCompleto = {
     "Reformular el brief cuando la percepción pública revela otro problema.",
     "Donde hay desconfianza, explicar los límites da más credibilidad que parecer resuelto.",
   ],
-  nota: "Propuesta académica en equipo (Grupo 6, Grado URJC), sin relación con Iberia.",
 };

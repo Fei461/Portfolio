@@ -148,5 +148,4 @@ export const magicair: CasoCompleto = {
     "Una crisis en la que la empresa es víctima puede acabar siendo culpa suya si no se gestiona bien.",
     "Que una marca bien construida es difícil de romper: la coherencia también protege en una crisis.",
   ],
-  nota: "MagicAir es una marca ficticia creada para la asignatura. Trabajo académico en equipo.",
 };
