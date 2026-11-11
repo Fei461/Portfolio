@@ -64,6 +64,19 @@ export function MinutoPage() {
         </li>
 
         <li className="minuto__paso">
+          <h2>Lo que dicen de mí</h2>
+          <blockquote className="minuto__cita">
+            <p>
+              «Lara demostró ser una persona responsable, creativa y con una excelente actitud de aprendizaje y
+              adaptación a un entorno dinámico y exigente como el de una startup.»
+            </p>
+            <footer>
+              Diego López de Aragón, cofundador y CMO de Stud-IA, en su carta de recomendación
+            </footer>
+          </blockquote>
+        </li>
+
+        <li className="minuto__paso">
           <h2>Tres trabajos para empezar</h2>
           <ul className="minuto__casos">
             {destacados.map((p) => (
@@ -91,6 +104,27 @@ export function MinutoPage() {
           <p>
             <Link className="minuto__ejemplos" to="/sobre-mi?parte=metodo">
               Verlo con ejemplos
+            </Link>
+          </p>
+        </li>
+        <li className="minuto__paso">
+          <h2>Más allá del CV</h2>
+          <ul className="minuto__mas-de-mi">
+            <li>
+              <strong>Culo inquieto.</strong> Me lo paso genial en un brainstorming diciendo locuras, y me lo paso
+              igual de bien dándoles forma después.
+            </li>
+            <li>
+              <strong>Sobre el tatami.</strong> Cinturón marrón de judo y azul de taekwondo, y años dando clase a
+              otros.
+            </li>
+            <li>
+              <strong>Cuatro idiomas.</strong> Español, inglés, catalán y francés, y un curso escolar en Irlanda.
+            </li>
+          </ul>
+          <p>
+            <Link className="minuto__ejemplos" to="/sobre-mi">
+              Más sobre mí
             </Link>
           </p>
         </li>

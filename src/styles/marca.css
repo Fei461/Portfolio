@@ -17,11 +17,6 @@
   background: var(--sumi);
 }
 
-/* Portada: el tatami se queda; lo que buscas, en celeste, como en el CV */
-.dojo .dojo-busco {
-  background: var(--celeste-claro);
-}
-
 /* Las páginas por partes sin color propio (Sobre mí, En voz alta): celeste en vez de tatami */
 .combate:not(.combate--tema) .combate__tatami {
   background-color: var(--celeste-claro);
@@ -100,4 +95,17 @@
   background-color: var(--tatami);
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='360' viewBox='0 0 360 360'%3E%3Cg stroke='%231d1c14' stroke-opacity='.45' stroke-width='2.5' fill='none'%3E%3Crect x='0' y='0' width='240' height='120'/%3E%3Crect x='240' y='0' width='120' height='240'/%3E%3Crect x='120' y='240' width='240' height='120'/%3E%3Crect x='0' y='120' width='120' height='240'/%3E%3Crect x='120' y='120' width='120' height='120'/%3E%3C/g%3E%3C/svg%3E");
   background-size: 600px 600px;
+}
+
+/* Portada: el nombre tapa las juntas del tatami, como el lema, para que se lea limpio */
+.dojo-nombre--dos .dojo-nombre__linea {
+  width: fit-content;
+  padding: 0 0.06em 0.04em;
+  margin-left: -0.06em;
+  background: var(--tatami);
+}
+
+/* «Busco prácticas» en blanco, como las tarjetas */
+.dojo .dojo-busco {
+  background: #fff;
 }

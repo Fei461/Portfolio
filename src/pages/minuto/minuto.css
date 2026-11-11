@@ -193,3 +193,30 @@
     margin-left: 0;
   }
 }
+
+.minuto__cita {
+  margin: 0;
+  padding: 0.2rem 0 0.2rem 1.1rem;
+  border-left: 6px solid var(--obi);
+}
+
+.minuto__cita p {
+  font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+  font-style: italic;
+}
+
+.minuto__cita footer {
+  margin-top: 0.6rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.minuto__mas-de-mi {
+  display: grid;
+  gap: 0.7rem;
+  margin: 0 0 0.9rem;
+  padding: 0;
+  list-style: none;
+  max-width: 62ch;
+  line-height: 1.6;
+}
