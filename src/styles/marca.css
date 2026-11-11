@@ -55,3 +55,21 @@
   background-color: var(--celeste-claro);
   background-image: none;
 }
+
+/* Botones claros, contador de partes, fila abierta de la brecha y tirador del archivo */
+.dojo .dojo-boton--claro {
+  background: #fff;
+}
+
+.dojo .combate__marcador {
+  background: #fff;
+}
+
+.dojo .brecha__filas button:hover,
+.dojo .brecha__filas button.activo {
+  background: var(--celeste-claro);
+}
+
+.dojo .cajon__tirador {
+  background: var(--celeste);
+}
