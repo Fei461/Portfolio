@@ -4,7 +4,7 @@
 //
 // Para activarlo: crear la cuenta en goatcounter.com y poner aquí su código (lo que va antes de .goatcounter.com).
 // Mientras esté vacío, no se cuenta nada. En local (npm run dev) tampoco se cuenta.
-const CODIGO = "";
+const CODIGO = "larafeijoo";
 
 type Visita = { path: string; title?: string; event?: boolean };
 type GoatCounter = { count: (v: Visita) => void };

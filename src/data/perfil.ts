@@ -7,6 +7,8 @@ export type Hito = {
   titulo: string;
   periodo: string;
   nota?: string;
+  /** Una línea propia, en negrita: lo que más pesa de esa experiencia. */
+  destacado?: string;
   puntos?: string[];
 };
 
@@ -28,7 +30,8 @@ export const perfil = {
       lugar: "Stud-IA",
       titulo: "Prácticas en el departamento de Marketing",
       periodo: "Enero 2026 – mayo 2026",
-      nota: "Cinco meses en el equipo de marketing de una startup EdTech: estrategia de campañas, contenido para redes, gestión de la comunidad y de la reputación, y análisis de mercado y de la competencia. Con carta de recomendación de su cofundador y CMO.",
+      nota: "Cinco meses en el equipo de marketing de una startup EdTech: estrategia de campañas, contenido para redes, gestión de la comunidad y de la reputación, y análisis de mercado y de la competencia.",
+      destacado: "Carta de recomendación de Diego López de Aragón, cofundador y CMO.",
     },
     {
       lugar: "Talixea",
@@ -56,14 +59,9 @@ export const perfil = {
       nota: "Nota media de 8,62 y seis matrículas de honor.",
     },
     {
-      lugar: "IES Diego Velázquez",
-      titulo: "Bachillerato de Excelencia",
-      periodo: "Septiembre 2019 – mayo 2021",
-    },
-    {
-      lugar: "PEAC Madrid Oeste",
-      titulo: "Programa de Enriquecimiento Educativo para Alumnos con Altas Capacidades (PEAC)",
-      periodo: "Septiembre 2012 – junio 2021 | Alumni en la actualidad",
+      lugar: "IES Diego Velázquez y PEAC Madrid Oeste",
+      titulo: "Bachillerato de Excelencia y Programa para Altas Capacidades",
+      periodo: "2012 – 2021",
     },
   ] satisfies Hito[],
 

@@ -1,4 +1,5 @@
 import { useEffect, type ReactNode } from "react";
+import { useSearchParams } from "react-router-dom";
 import { perfil, type Hito } from "@/data/perfil";
 import { Nudo } from "@/components/firma";
 import "./cv.css";
@@ -11,6 +12,7 @@ const pdf = `${base}cv-lara-feijoo.pdf`;
 
 const icono = {
   correo: "M3 5.5h18v13H3zM3 6l9 7 9-7",
+  telefono: "M6.5 3.5h3l1.5 4.5-2 1.5a11 11 0 0 0 5.5 5.5l1.5-2 4.5 1.5v3a2 2 0 0 1-2 2A16.5 16.5 0 0 1 4.5 5.5a2 2 0 0 1 2-2",
   lugar: "M12 21.5s6.5-6 6.5-11.5a6.5 6.5 0 0 0-13 0c0 5.5 6.5 11.5 6.5 11.5zM12 12a2 2 0 1 0 0-4 2 2 0 0 0 0 4",
   enlace: "M10 14a4.5 4.5 0 0 0 6.4 0l3-3A4.5 4.5 0 0 0 13 4.6l-1 1M14 10a4.5 4.5 0 0 0-6.4 0l-3 3a4.5 4.5 0 0 0 6.4 6.4l1-1",
 };
@@ -42,6 +44,7 @@ function Lista({ hitos }: { hitos: Hito[] }) {
           </h3>
           <p className="ccv-fecha">{h.periodo}</p>
           {h.nota && <p className="ccv-nota">{h.nota}</p>}
+          {h.destacado && <p className="ccv-destacado">{h.destacado}</p>}
         </li>
       ))}
     </ul>
@@ -49,6 +52,9 @@ function Lista({ hitos }: { hitos: Hito[] }) {
 }
 
 export function CvPage() {
+  // La versión para enviar lleva teléfono: solo en local (?tel=…), nunca en la web publicada.
+  const [params] = useSearchParams();
+  const telefono = import.meta.env.DEV ? params.get("tel") : null;
   useEffect(() => {
     document.title = "CV de Lara Feijóo";
   }, []);
@@ -68,7 +74,7 @@ export function CvPage() {
             <p className="ccv-titular">{perfil.titular}</p>
             <p className="ccv-resumen">{perfil.resumen}</p>
             <p className="ccv-busco">
-              <strong>Busco prácticas</strong> a tiempo completo a partir de abril de 2027.
+              <strong>Busco prácticas</strong> a tiempo completo, con convenio de la UC3M, a partir de abril de 2027.
             </p>
             <ul className="ccv-contacto">
               <li>
@@ -79,6 +85,12 @@ export function CvPage() {
                 <Icono d={icono.correo} />
                 <a href={`mailto:${perfil.emailUni}`}>{perfil.emailUni}</a>
               </li>
+              {telefono && (
+                <li>
+                  <Icono d={icono.telefono} />
+                  {telefono}
+                </li>
+              )}
               <li>
                 <Icono d={icono.lugar} />
                 {perfil.lugar}

@@ -346,3 +346,11 @@
 .ccv .ccv-busco {
   background: var(--celeste-claro);
 }
+
+/* La carta de recomendación: lo que más pesa, en su propia línea */
+.ccv-destacado {
+  margin-top: 0.8mm !important;
+  padding-left: 2.2mm;
+  border-left: 1.2mm solid var(--obi);
+  font-weight: 700;
+}
