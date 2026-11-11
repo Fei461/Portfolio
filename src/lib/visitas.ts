@@ -1,26 +1,48 @@
-// Contador de visitas sin cookies (GoatCounter, https://www.goatcounter.com).
+// Contador de visitas sin cookies (GoatCounter, https://www.goatcounter.com). Panel: https://larafeijoo.goatcounter.com
 // No guarda cookies ni datos personales: cuenta páginas, de dónde llega la gente, el tipo de dispositivo,
 // el país y lo que se toca. No hace falta aviso de cookies.
 //
-// Para activarlo: crear la cuenta en goatcounter.com y poner aquí su código (lo que va antes de .goatcounter.com).
-// Mientras esté vacío, no se cuenta nada. En local (npm run dev) tampoco se cuenta.
-const CODIGO = "larafeijoo";
+// Las visitas se envían directamente al panel, sin cargar el script de GoatCounter (gc.zgo.at): muchos
+// bloqueadores y redes lo cortan, y así el contador funciona igual. En local (npm run dev) no se cuenta nada.
+const PANEL = "https://larafeijoo.goatcounter.com/count";
 
 type Visita = { path: string; title?: string; event?: boolean };
-type GoatCounter = { count: (v: Visita) => void };
-declare global {
-  interface Window {
-    goatcounter?: GoatCounter & { no_onload?: boolean };
+
+const activo = import.meta.env.PROD;
+
+/** Este navegador no cuenta: la propia Lara, tras abrir la web una vez con ?soyyo, o un robot. */
+function seSalta() {
+  if (navigator.webdriver) return true;
+  try {
+    return localStorage.getItem("skipgc") === "t";
+  } catch {
+    return false;
   }
 }
 
-const activo = Boolean(CODIGO) && import.meta.env.PROD;
-const pendientes: Visita[] = [];
+/** De dónde llega: ?ref=cv / ?ref=linkedin si viene en el enlace; si no, la página anterior. */
+function origen() {
+  const q = new URLSearchParams(location.search);
+  return q.get("ref") ?? q.get("utm_source") ?? document.referrer;
+}
 
 function enviar(v: Visita) {
-  if (!activo) return;
-  if (window.goatcounter?.count) window.goatcounter.count(v);
-  else pendientes.push(v);
+  if (!activo || seSalta()) return;
+  const datos: Record<string, string> = {
+    p: v.path,
+    t: v.title ?? v.path,
+    s: `${screen.width},${screen.height},${window.devicePixelRatio || 1}`,
+    rnd: Math.random().toString(36).slice(2),
+  };
+  if (v.event) datos.e = "true";
+  else {
+    const r = origen();
+    if (r) datos.r = r;
+    if (location.search) datos.q = location.search;
+  }
+  const url = `${PANEL}?${new URLSearchParams(datos)}`;
+  if (navigator.sendBeacon?.(url)) return;
+  new Image().src = url;
 }
 
 /** Una página vista: la ruta, sin parámetros. */
@@ -28,7 +50,7 @@ export function contarPagina(ruta: string, titulo: string) {
   enviar({ path: ruta, title: titulo });
 }
 
-/** Algo que se ha tocado: «Descarga del CV», «Pestaña · Stud-IA · Me llevo»… */
+/** Algo que se ha tocado: «Descarga del CV», «Pestaña · /trabajo/stud-ia · Me llevo»… */
 export function contarEvento(nombre: string) {
   enviar({ path: nombre.slice(0, 120), title: nombre.slice(0, 120), event: true });
 }
@@ -65,10 +87,9 @@ function escucharClics() {
   );
 }
 
-/** Carga el contador una sola vez, al arrancar la web. */
+/** Se pone en marcha una sola vez, al arrancar la web. */
 export function iniciarVisitas() {
-  if (!activo) return;
-  // ?soyyo en la dirección: este navegador deja de contar (para no contarse una misma).
+  // ?soyyo en la dirección: este navegador deja de contar (para no contarse una misma). Funciona también en local.
   if (new URLSearchParams(location.search).has("soyyo")) {
     try {
       localStorage.setItem("skipgc", "t");
@@ -76,13 +97,5 @@ export function iniciarVisitas() {
       /* sin almacenamiento, no pasa nada */
     }
   }
-  window.goatcounter = { ...(window.goatcounter ?? {}), no_onload: true } as Window["goatcounter"];
-  const s = document.createElement("script");
-  s.async = true;
-  s.src = "https://gc.zgo.at/count.js";
-  s.dataset.goatcounter = `https://${CODIGO}.goatcounter.com/count`;
-  s.dataset.goatcounterSettings = JSON.stringify({ no_onload: true });
-  s.onload = () => pendientes.splice(0).forEach((v) => window.goatcounter?.count(v));
-  document.head.appendChild(s);
-  escucharClics();
+  if (activo) escucharClics();
 }
