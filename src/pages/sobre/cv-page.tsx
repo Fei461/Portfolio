@@ -1,45 +1,55 @@
-import { useEffect } from "react";
+import { useEffect, type ReactNode } from "react";
 import { perfil, type Hito } from "@/data/perfil";
 import "./cv.css";
 
-// El CV es una hoja A4 de formato clásico: lo que se ve aquí es exactamente lo que se descarga en PDF.
-const pdf = `${import.meta.env.BASE_URL}cv-lara-feijoo.pdf`;
+// El CV de Lara, mejorado: su misma estructura y sus colores. Lo que se ve aquí es lo que se descarga en PDF.
+// La columna principal va primero en el código para que el texto del PDF se lea en orden.
+const base = import.meta.env.BASE_URL;
+const pdf = `${base}cv-lara-feijoo.pdf`;
 
-function Entrada({ h }: { h: Hito }) {
-  // Sin logros, el lugar va en la misma línea que el puesto.
-  const corta = !h.puntos;
+const icono = {
+  correo: "M3 5.5h18v13H3zM3 6l9 7 9-7",
+  lugar: "M12 21.5s6.5-6 6.5-11.5a6.5 6.5 0 0 0-13 0c0 5.5 6.5 11.5 6.5 11.5zM12 12a2 2 0 1 0 0-4 2 2 0 0 0 0 4",
+  enlace: "M10 14a4.5 4.5 0 0 0 6.4 0l3-3A4.5 4.5 0 0 0 13 4.6l-1 1M14 10a4.5 4.5 0 0 0-6.4 0l-3 3a4.5 4.5 0 0 0 6.4 6.4l1-1",
+};
+
+function Icono({ d }: { d: string }) {
   return (
-    <li className="hcv-entrada">
-      <div className="hcv-entrada__cabeza">
-        <h3>
-          {h.titulo}
-          {corta && <span className="hcv-lugar">{h.lugar}</span>}
-        </h3>
-        <span className="hcv-periodo">{h.periodo}</span>
-      </div>
-      {!corta && <p className="hcv-lugar">{h.lugar}</p>}
-      {h.detalle && <p className="hcv-detalle">{h.detalle}</p>}
-      {h.puntos && (
-        <ul className="hcv-logros">
-          {h.puntos.map((pt) => (
-            <li key={pt}>{pt}</li>
-          ))}
-        </ul>
-      )}
-    </li>
+    <svg viewBox="0 0 24 24" aria-hidden="true" className="ccv-icono">
+      <path d={d} />
+    </svg>
   );
 }
 
-function Seccion({ titulo, hitos }: { titulo: string; hitos: Hito[] }) {
+function Bloque({ titulo, children }: { titulo: string; children: ReactNode }) {
   return (
-    <section className="hcv-seccion">
+    <section className="ccv-bloque">
       <h2>{titulo}</h2>
-      <ul className="hcv-lista">
-        {hitos.map((h) => (
-          <Entrada key={h.titulo} h={h} />
-        ))}
-      </ul>
+      {children}
     </section>
+  );
+}
+
+function Lista({ hitos }: { hitos: Hito[] }) {
+  return (
+    <ul className="ccv-lista">
+      {hitos.map((h) => (
+        <li key={h.lugar + h.titulo}>
+          <h3>
+            {h.lugar} | {h.titulo}
+          </h3>
+          <p className="ccv-fecha">{h.periodo}</p>
+          {h.nota && <p className="ccv-nota">{h.nota}</p>}
+          {h.puntos && (
+            <ul className="ccv-puntos">
+              {h.puntos.map((p) => (
+                <li key={p}>{p}</li>
+              ))}
+            </ul>
+          )}
+        </li>
+      ))}
+    </ul>
   );
 }
 
@@ -56,56 +66,98 @@ export function CvPage() {
         </a>
       </div>
 
-      <article className="hcv" aria-label="Currículum de Lara Feijóo">
-        <header className="hcv-cabecera">
-          <h1>{perfil.nombre}</h1>
-          <p className="hcv-titular">{perfil.titular}</p>
-          <ul className="hcv-contacto">
-            <li>{perfil.lugar}</li>
-            <li>
-              <a href={`mailto:${perfil.email}`}>{perfil.email}</a>
-            </li>
-            <li>
-              <a href={`mailto:${perfil.emailUni}`}>{perfil.emailUni}</a>
-            </li>
-            <li>
-              <a href={perfil.linkedin} target="_blank" rel="noreferrer">
-                linkedin.com/in/lara-feijoo
-              </a>
-            </li>
-            <li>
-              <a href={perfil.portfolio} target="_blank" rel="noreferrer">
-                Portfolio
-              </a>
-            </li>
-          </ul>
-        </header>
+      <article className="ccv" aria-label="Currículum de Lara Feijóo">
+        <div className="ccv-principal">
+          <header className="ccv-cabecera">
+            <h1>{perfil.nombre}</h1>
+            <p className="ccv-titular">{perfil.titular}</p>
+            <div className="ccv-presenta">
+              <p>{perfil.resumen}</p>
+              <p className="ccv-busco">{perfil.busco}</p>
+            </div>
+            <ul className="ccv-contacto">
+              <li>
+                <Icono d={icono.correo} />
+                <a href={`mailto:${perfil.email}`}>{perfil.email}</a>
+              </li>
+              <li>
+                <Icono d={icono.correo} />
+                <a href={`mailto:${perfil.emailUni}`}>{perfil.emailUni}</a>
+              </li>
+              <li>
+                <Icono d={icono.lugar} />
+                {perfil.lugar}
+              </li>
+              <li>
+                <Icono d={icono.enlace} />
+                <a href={perfil.linkedin} target="_blank" rel="noreferrer">
+                  LinkedIn
+                </a>
+              </li>
+              <li>
+                <Icono d={icono.enlace} />
+                <a href={perfil.portfolio} target="_blank" rel="noreferrer">
+                  Portfolio
+                </a>
+              </li>
+            </ul>
+          </header>
 
-        <section className="hcv-seccion hcv-perfil">
-          <h2>Perfil</h2>
-          <p>{perfil.resumen}</p>
-          <p className="hcv-disponible">
-            <strong>Disponibilidad:</strong> {perfil.busco.charAt(0).toLowerCase() + perfil.busco.slice(1)}
-          </p>
-        </section>
+          <Bloque titulo="Experiencia laboral">
+            <Lista hitos={perfil.experiencia} />
+          </Bloque>
+          <Bloque titulo="Formación educativa">
+            <Lista hitos={perfil.formacion} />
+          </Bloque>
+          <Bloque titulo="Cursos">
+            <Lista hitos={perfil.cursos} />
+          </Bloque>
+          <span className="ccv-lf" aria-hidden="true">
+            LF
+          </span>
+        </div>
 
-        <Seccion titulo="Experiencia" hitos={perfil.experiencia} />
-        <Seccion titulo="Formación" hitos={perfil.formacion} />
-
-        <Seccion titulo="Formación complementaria" hitos={perfil.cursos} />
-        <Seccion titulo="Premios" hitos={perfil.premios} />
-
-        <section className="hcv-seccion">
-          <h2>Idiomas y otros datos</h2>
-          <dl className="hcv-datos">
-            <dt>Idiomas</dt>
-            <dd>{perfil.idiomas.map((i) => `${i.idioma} (${i.nivel === "Nativa" ? "nativa" : i.nivel})`).join(" · ")}</dd>
-            <dt>Competencias</dt>
-            <dd>{perfil.competencias.join(" · ")}</dd>
-            <dt>Intereses</dt>
-            <dd>{perfil.aficiones.join(" · ")}</dd>
-          </dl>
-        </section>
+        <aside className="ccv-lateral">
+          <img
+            className="ccv-foto"
+            src={`${base}assets/lara/cv-foto.jpg`}
+            alt="Lara Feijóo sonriendo, con un gorro azul de pingüino"
+          />
+          <Bloque titulo="Competencias">
+            <ul className="ccv-simple">
+              {perfil.competencias.map((c) => (
+                <li key={c}>{c}</li>
+              ))}
+            </ul>
+          </Bloque>
+          <Bloque titulo="Idiomas">
+            <ul className="ccv-idiomas">
+              {perfil.idiomas.map((i) => (
+                <li key={i.idioma}>
+                  <strong>{i.idioma}</strong>
+                  <span>{i.nivel}</span>
+                </li>
+              ))}
+            </ul>
+          </Bloque>
+          <Bloque titulo="Hobbies">
+            <ul className="ccv-hobbies">
+              {perfil.aficiones.map((a) => (
+                <li key={a.titulo}>
+                  <strong>{a.titulo}</strong>
+                  {a.texto && <span>{a.texto}</span>}
+                </li>
+              ))}
+            </ul>
+          </Bloque>
+          <Bloque titulo="Premios">
+            <ul className="ccv-simple ccv-premios">
+              {perfil.premios.map((p) => (
+                <li key={p}>{p}</li>
+              ))}
+            </ul>
+          </Bloque>
+        </aside>
       </article>
     </main>
   );

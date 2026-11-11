@@ -1,19 +1,20 @@
-// Fuente única de los datos personales (Sobre mí y CV). Origen: CV de octubre de 2026 y lo que ha contado Lara.
+// Fuente única de los datos personales (Sobre mí y CV). Origen: el CV de Lara (octubre de 2026), mejorado.
 // Sin teléfono ni fecha de nacimiento. El correo de la universidad solo sale en el CV.
 
+/** Una línea del CV: «Lugar | Puesto», con sus fechas y, si hace falta, logros o una nota. */
 export type Hito = {
-  periodo: string;
-  titulo: string;
   lugar: string;
-  detalle?: string;
+  titulo: string;
+  periodo: string;
+  nota?: string;
   puntos?: string[];
 };
 
 export const perfil = {
   nombre: "Lara Feijóo",
-  titular: "Graduada en Publicidad y Relaciones Públicas · Máster en Comunicación Publicitaria",
+  titular: "Estudiante de máster en Comunicación Publicitaria",
   resumen:
-    "Graduada en Publicidad y Relaciones Públicas (URJC) y estudiante del Máster en Comunicación Publicitaria (UC3M), con interés especial en la reputación, la percepción de marca, las relaciones públicas y la comunicación corporativa e interna. Experiencia en contenidos, comunidad y análisis de resultados en una startup EdTech y en el lanzamiento de un producto digital propio.",
+    "Graduada en Publicidad y RRPP, con ganas de seguir aprendiendo del mundo publicitario. Me interesan especialmente la gestión de la reputación, la percepción de marca, las relaciones públicas y la comunicación corporativa e interna.",
   busco: "Prácticas a tiempo completo a partir de abril de 2027.",
   lugar: "Galapagar, Madrid",
   email: "lara.feijoo@gmail.com",
@@ -24,116 +25,102 @@ export const perfil = {
 
   experiencia: [
     {
-      periodo: "Ene. 2026 – may. 2026",
-      titulo: "Prácticas en Marketing",
-      lugar: "Stud-IA · Startup EdTech · En remoto",
+      lugar: "Stud-IA",
+      titulo: "Prácticas en el departamento de Marketing",
+      periodo: "Enero 2026 – Mayo 2026",
       puntos: [
-        "Estrategia y gestión de X, Threads y Bluesky, con informes mensuales de resultados. En Threads, de 0 a 365 seguidores y 3.030 visitas en un mes.",
-        "Guion, grabación y edición de vídeo para TikTok, Instagram y YouTube; una de las piezas superó las 36.000 visualizaciones.",
-        "Campañas B2C adaptadas a Perú, Colombia, Argentina, México y España, y secuencias B2B por LinkedIn y email.",
-        "Gestión de la reputación online y de la comunidad: respuesta a reseñas en Trustpilot y conversación en cinco redes sociales.",
-        "Análisis de mercado y de la competencia.",
+        "Gestión de X, Threads y Bluesky: en Threads, de 0 a 365 seguidores.",
+        "Guion, grabación y edición de vídeos: uno superó las 36.000 visitas.",
+        "Campañas para cinco países y gestión de la reputación.",
       ],
     },
     {
-      periodo: "Feb. 2026 – actualidad",
-      titulo: "Creadora y responsable de marca",
-      lugar: "Talixea · App para aprender idiomas leyendo · Proyecto propio",
-      puntos: [
-        "Desarrollo y lanzamiento (octubre de 2026) del producto completo con herramientas de IA, sin conocimientos previos de programación: método, catálogo de 40 libros en seis idiomas, identidad de marca y precios.",
-      ],
+      lugar: "Talixea",
+      titulo: "Creadora de una app para aprender idiomas leyendo",
+      periodo: "Febrero 2026 – Actualidad",
+      nota: "Proyecto propio lanzado en octubre de 2026, sin saber programar.",
     },
     {
-      periodo: "Oct. 2022 – jun. 2025",
+      lugar: "Guerreros Galapagar",
       titulo: "Profesora de artes marciales",
-      lugar: "Guerreros Galapagar",
+      periodo: "Octubre 2022 – Junio 2025",
     },
     {
-      periodo: "Jun. 2021 – ago. 2025",
-      titulo: "Monitora de campamento de verano",
       lugar: "Guerreros Galapagar",
+      titulo: "Monitora en campamento de verano",
+      periodo: "Junio 2021 – Agosto 2025",
     },
   ] satisfies Hito[],
 
   formacion: [
     {
-      periodo: "Sept. 2026 – actualidad",
-      titulo: "Máster en Comunicación Publicitaria",
       lugar: "Universidad Carlos III de Madrid",
+      titulo: "Máster en Comunicación Publicitaria",
+      periodo: "Septiembre 2026 – Actualidad",
     },
     {
-      periodo: "Sept. 2022 – jun. 2026",
-      titulo: "Grado en Publicidad y Relaciones Públicas",
       lugar: "Universidad Rey Juan Carlos",
-      puntos: [
-        "Nota media: 8,62. Seis matrículas de honor.",
-        "TFG: «Percepción y renovación de la identidad corporativa: el caso de BBVA tras la crisis financiera». Metodología mixta: dos encuestas (248 respuestas, públicos interno y externo) y entrevista en profundidad.",
-      ],
+      titulo: "Grado en Publicidad y RRPP",
+      periodo: "Septiembre 2022 – Junio 2026",
+      nota: "Nota media de 8,62 y seis matrículas de honor. TFG sobre la reputación de BBVA tras la crisis de 2008.",
     },
     {
-      periodo: "Sept. 2019 – may. 2021",
-      titulo: "Bachillerato de Excelencia",
       lugar: "IES Diego Velázquez",
+      titulo: "Bachillerato de Excelencia",
+      periodo: "Septiembre 2019 – Mayo 2021",
     },
     {
-      periodo: "Sept. 2018 – jun. 2019",
-      titulo: "Curso escolar en Irlanda",
-      lugar: "Escolarizada en un centro irlandés",
+      lugar: "Irlanda",
+      titulo: "Curso escolar en el extranjero",
+      periodo: "Septiembre 2018 – Junio 2019",
     },
     {
-      periodo: "Sept. 2012 – jun. 2021",
+      lugar: "PEAC Madrid Oeste",
       titulo: "Programa PEAC",
-      lugar: "PEAC Madrid Oeste · Alumni",
+      periodo: "Septiembre 2012 – Junio 2021 | Alumni en la actualidad",
     },
   ] satisfies Hito[],
 
   cursos: [
     {
-      periodo: "Jun. – oct. 2025",
+      lugar: "RTVE",
       titulo: "Producción y estrategia de contenidos para plataformas OTT",
-      lugar: "RTVE",
+      periodo: "Junio – Octubre 2025",
     },
     {
-      periodo: "Oct. 2024 – ago. 2025",
-      titulo: "Comunicación, Marketing e Imagen Corporativa",
       lugar: "Ayuntamiento de Galapagar",
+      titulo: "Comunicación, Marketing e Imagen corporativa",
+      periodo: "Octubre 2024 – Agosto 2025",
     },
     {
-      periodo: "Oct. – nov. 2024",
-      titulo: "Inteligencia artificial en medios de comunicación",
       lugar: "RTVE",
+      titulo: "Inteligencia artificial en medios de comunicación",
+      periodo: "Octubre – Noviembre 2024",
     },
   ] satisfies Hito[],
 
-  premios: [
-    {
-      periodo: "Nov. 2024",
-      titulo: "Primer premio de categoría, Ideathon de Innovación",
-      lugar: "Universidad Rey Juan Carlos",
-      detalle:
-        "Con más de 200 participantes: un CV generativo con IA que convierte el TFG en competencias. Segundo puesto en la general.",
-    },
-  ] satisfies Hito[],
+  premios: ["Primer premio de categoría en el Ideathon de Innovación (URJC, 2024)"],
 
   idiomas: [
     { idioma: "Español", nivel: "Nativa" },
-    { idioma: "Inglés", nivel: "C1" },
-    { idioma: "Catalán", nivel: "B2" },
-    { idioma: "Francés", nivel: "B1" },
+    { idioma: "Inglés", nivel: "Nivel C1" },
+    { idioma: "Catalán", nivel: "Nivel B2" },
+    { idioma: "Francés", nivel: "Nivel B1" },
   ],
 
   competencias: [
     "Compromiso",
     "Adaptabilidad",
-    "Trabajo bajo presión",
+    "Buen trabajo bajo presión",
     "Visión crítica y creativa",
-    "Gestión del tiempo",
-    "Habilidades sociales",
+    "Gestión eficaz del tiempo",
+    "Fuertes habilidades sociales",
   ],
 
   aficiones: [
-    "Judo (cinturón marrón) y taekwondo (cinturón azul)",
-    "Lectura en otros idiomas",
-    "Viajes y naturaleza",
-  ],
+    { titulo: "Artes marciales", texto: "Cinturón marrón de judo y cinturón azul de taekwondo" },
+    { titulo: "Leer", texto: "Un libro en el idioma de cada país que visito" },
+    { titulo: "Viajar" },
+    { titulo: "Naturaleza" },
+  ] as { titulo: string; texto?: string }[],
 };

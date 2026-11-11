@@ -1,6 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Belleza&family=DM+Serif+Display&family=Montserrat:wght@500&family=Poppins:wght@300;400;500;600&display=swap");
 
-/* ── CV: una hoja A4 de formato clásico sobre el tatami. La misma hoja sale en el PDF. ── */
+/* ── CV: el de Lara (crema y mostaza, foto a la izquierda), mejorado. La misma hoja sale en el PDF. ── */
 .cv-mesa {
   display: flex;
   flex-direction: column;
@@ -17,227 +17,261 @@
   justify-content: flex-end;
 }
 
-.hcv {
-  --hcv-tinta: #1a1a1a;
-  --hcv-suave: #4d4d4d;
-  --hcv-acento: #6b3a1f;
-  --hcv-linea: #d9d4cc;
-  --hcv-f: "Source Sans 3", "Segoe UI", Arial, sans-serif;
+.ccv {
+  --ccv-crema: #fff5d6;
+  --ccv-mostaza: #ffbd59;
+  --ccv-tinta: #1d1d1d;
+  --ccv-gris: #7a7a7a;
+  --ccv-p: "Poppins", "Segoe UI", Arial, sans-serif;
   width: min(100%, 210mm);
   min-height: 297mm;
   box-sizing: border-box;
-  padding: 14mm 15mm 12mm;
+  display: grid;
+  grid-template-columns: 36% 1fr;
+  grid-template-areas: "lateral principal";
   background: #fff;
-  color: var(--hcv-tinta);
-  border: 1px solid #b9b39a;
+  color: var(--ccv-tinta);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
-  font-family: var(--hcv-f);
-  font-size: 9.6pt;
+  font-family: var(--ccv-p);
+  font-weight: 300;
+  font-size: 9.2pt;
   line-height: 1.38;
 }
 
-.hcv :is(h1, h2, h3, p, strong, span, li, a) {
-  font-family: var(--hcv-f);
+.ccv :is(h1, h2, h3, p, ul, li, a, span, strong) {
+  font-family: var(--ccv-p);
   letter-spacing: 0;
 }
 
-.hcv :is(h1, h2, h3, p, ul) {
+.ccv :is(h1, h2, h3, p, ul) {
   margin: 0;
 }
 
-.hcv ul {
+.ccv ul {
   padding: 0;
   list-style: none;
 }
 
-.hcv a {
+.ccv a {
   color: inherit;
   text-decoration: none;
 }
 
-.hcv a:hover {
+.ccv a:hover {
   text-decoration: underline;
 }
 
-/* Cabecera */
-.hcv-cabecera {
-  padding-bottom: 4mm;
-  border-bottom: 1.5pt solid var(--hcv-acento);
+.ccv strong {
+  font-weight: 500;
 }
 
-.hcv-cabecera h1 {
-  font-size: 25pt;
-  font-weight: 700;
-  line-height: 1.05;
-  color: var(--hcv-tinta);
+/* Columna lateral: crema, con la foto arriba */
+.ccv-lateral {
+  grid-area: lateral;
+  background: var(--ccv-crema);
+  padding: 0 0 8mm;
 }
 
-.hcv-titular {
-  margin-top: 1mm !important;
-  font-size: 11pt;
-  color: var(--hcv-acento);
-  font-weight: 600;
+.ccv-foto {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1.12;
+  object-fit: cover;
+  object-position: 50% 30%;
 }
 
-.hcv-contacto {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 2.5mm !important;
-  color: var(--hcv-suave);
-  font-size: 9pt;
+.ccv-lateral .ccv-bloque {
+  margin-top: 5mm;
 }
 
-.hcv-contacto li + li::before {
-  content: "|";
-  margin: 0 2.2mm;
-  color: #b0aaa0;
+.ccv-lateral .ccv-bloque > :not(h2) {
+  padding: 0 7mm;
 }
 
-/* Secciones */
-.hcv-seccion {
-  margin-top: 4.5mm;
+.ccv-simple li + li,
+.ccv-idiomas li + li,
+.ccv-hobbies li + li {
+  margin-top: 1.2mm;
 }
 
-.hcv-seccion h2 {
-  margin-bottom: 2mm;
-  padding-bottom: 0.8mm;
-  border-bottom: 0.5pt solid var(--hcv-linea);
-  font-size: 10pt;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--hcv-acento);
-}
-
-.hcv-perfil p {
-  text-align: justify;
-  hyphens: auto;
-}
-
-.hcv-disponible {
-  margin-top: 1.2mm !important;
-}
-
-.hcv-lista {
-  display: grid;
-  gap: 2.4mm;
-}
-
-.hcv-entrada__cabeza {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 4mm;
-}
-
-.hcv-entrada h3 {
-  font-size: 10pt;
-  font-weight: 700;
-}
-
-.hcv-periodo {
-  flex: none;
-  font-size: 9pt;
-  color: var(--hcv-suave);
-  font-variant-numeric: tabular-nums;
-}
-
-.hcv-lugar {
-  font-style: italic;
-  color: var(--hcv-suave);
-}
-
-.hcv-detalle {
-  margin-top: 0.6mm !important;
-}
-
-.hcv-logros {
-  margin-top: 0.8mm !important;
-  padding-left: 4mm !important;
-  list-style: disc !important;
-}
-
-.hcv-logros li {
-  margin-top: 0.4mm;
-}
-
-.hcv-logros li::marker {
-  color: var(--hcv-acento);
-}
-
-/* Bloques en columnas */
-.hcv-dos {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0 8mm;
-}
-
-.hcv-tres {
-  display: grid;
-  grid-template-columns: 0.8fr 1fr 1.25fr;
-  gap: 0 8mm;
-}
-
-.hcv-pares li {
+.ccv-idiomas li {
   display: flex;
   justify-content: space-between;
   gap: 3mm;
 }
 
-.hcv-pares span {
-  color: var(--hcv-suave);
+.ccv-idiomas span {
+  color: #555;
 }
 
-.hcv-simple li {
-  padding-left: 3mm;
-  text-indent: -3mm;
+.ccv-hobbies span {
+  display: block;
+  color: #444;
 }
 
-.hcv-simple li::before {
-  content: "·";
-  display: inline-block;
-  width: 3mm;
-  text-indent: 0;
-  color: var(--hcv-acento);
-  font-weight: 700;
+/* Títulos de sección: la franja mostaza del original */
+.ccv-bloque h2 {
+  margin: 0 0 2.6mm;
+  padding: 1.6mm 7mm;
+  background: var(--ccv-mostaza);
+  font-family: "Montserrat", var(--ccv-p);
+  font-weight: 500;
+  font-size: 13.5pt;
+  line-height: 1.2;
+  color: #3d3d3d;
 }
 
-/* Móvil: la hoja se apila */
+/* Columna principal */
+.ccv-principal {
+  grid-area: principal;
+  position: relative;
+  padding: 11mm 0 12mm;
+}
+
+.ccv-cabecera {
+  padding: 0 9mm;
+  text-align: center;
+}
+
+.ccv-cabecera h1 {
+  font-family: "DM Serif Display", Georgia, serif;
+  font-weight: 400;
+  font-size: 31pt;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.ccv-titular {
+  margin-top: 2.2mm !important;
+  font-family: "Belleza", var(--ccv-p) !important;
+  font-size: 11.5pt;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.ccv-presenta {
+  margin-top: 3.5mm;
+  padding: 3mm 0;
+  border-top: 0.75pt solid #333;
+  border-bottom: 0.75pt solid #333;
+  font-size: 9.6pt;
+}
+
+.ccv-busco {
+  margin-top: 1.4mm !important;
+  font-weight: 500;
+}
+
+.ccv-contacto {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.2mm 4.5mm;
+  margin-top: 3mm !important;
+  font-size: 8.4pt;
+}
+
+.ccv-contacto li {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.4mm;
+}
+
+.ccv-icono {
+  width: 3.4mm;
+  height: 3.4mm;
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.ccv-principal .ccv-bloque {
+  margin-top: 5mm;
+}
+
+.ccv-principal .ccv-bloque h2 {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.ccv-lista {
+  display: grid;
+  gap: 2.3mm;
+  padding: 0 9mm !important;
+}
+
+.ccv-lista h3 {
+  font-weight: 500;
+  font-size: 9.6pt;
+  line-height: 1.3;
+}
+
+.ccv-fecha {
+  font-weight: 600;
+  color: var(--ccv-gris);
+  font-size: 8.8pt;
+}
+
+.ccv-nota {
+  margin-top: 0.4mm !important;
+}
+
+.ccv-puntos {
+  margin-top: 0.6mm !important;
+  padding-left: 4mm !important;
+  list-style: disc !important;
+}
+
+.ccv-puntos li + li {
+  margin-top: 0.3mm;
+}
+
+.ccv-puntos li::marker {
+  color: #e59a2f;
+}
+
+.ccv-lf {
+  position: absolute;
+  right: 9mm;
+  bottom: 7mm;
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: 24pt;
+  line-height: 1;
+  letter-spacing: -0.06em;
+}
+
+/* Móvil: la hoja se apila, con la foto arriba */
 @media screen and (max-width: 760px) {
-  .hcv {
-    padding: 8mm 6mm;
+  .ccv {
+    grid-template-columns: 1fr;
+    grid-template-areas: "lateral" "principal";
     font-size: 0.85rem;
   }
 
-  .hcv-cabecera h1 {
-    font-size: 1.8rem;
+  .ccv-foto {
+    aspect-ratio: 1.4;
   }
 
-  .hcv-contacto {
-    flex-direction: column;
+  .ccv-cabecera h1 {
+    font-size: 2rem;
   }
 
-  .hcv-contacto li + li::before {
-    content: none;
-  }
-
-  .hcv-entrada__cabeza {
-    flex-direction: column;
-    gap: 0;
-  }
-
-  .hcv-periodo,
-  .hcv-contacto {
+  .ccv-contacto,
+  .ccv-fecha {
     font-size: 0.8rem;
   }
 
-  .hcv-dos,
-  .hcv-tres {
-    grid-template-columns: 1fr;
+  .ccv-lista,
+  .ccv-cabecera {
+    padding: 0 5mm !important;
   }
 
-  .hcv-perfil p {
-    text-align: left;
+  .ccv-principal {
+    padding-bottom: 16mm;
   }
 }
 
@@ -267,107 +301,64 @@
     background: #fff !important;
   }
 
-  .hcv {
+  .ccv {
     width: 210mm;
     height: 297mm;
     min-height: 0;
     overflow: hidden;
-    border: 0;
     box-shadow: none;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
 
-  .hcv-entrada {
-    break-inside: avoid;
-  }
-}
-
-/* Las reglas de impresión generales (index.css) no aplican a la hoja. */
-@media print {
-  .hcv header.hcv-cabecera {
+  /* Las reglas de impresión generales (index.css) no aplican a la hoja. */
+  .ccv header.ccv-cabecera {
     display: block !important;
   }
 
-  .hcv section {
+  .ccv section {
     padding: 0 !important;
     background: transparent !important;
   }
 
-  .hcv a::after {
+  .ccv a::after {
     content: none !important;
   }
-}
 
-/* Entradas cortas: puesto y lugar en una línea. */
-.hcv-entrada h3 .hcv-lugar {
-  font-weight: 400;
-}
-
-.hcv-entrada h3 .hcv-lugar::before {
-  content: " · ";
-  font-style: normal;
+  .ccv-lista > li {
+    break-inside: avoid;
+  }
 }
 
 @media print {
-  .hcv {
-    font-size: 9.4pt;
-    line-height: 1.34;
-    padding: 12mm 14mm 10mm;
+  .ccv .ccv-fecha {
+    color: var(--ccv-gris) !important;
   }
 
-  .hcv-seccion {
+  .ccv .ccv-idiomas span,
+  .ccv .ccv-hobbies span {
+    color: #555 !important;
+  }
+
+  .ccv .ccv-bloque h2 {
+    color: #3d3d3d !important;
+  }
+
+  .ccv-principal {
+    padding-top: 9mm;
+  }
+
+  .ccv-principal .ccv-bloque {
     margin-top: 4mm;
   }
 
-  .hcv-lista {
-    gap: 2mm;
+  .ccv-lista {
+    gap: 1.9mm;
   }
 }
 
-/* Idiomas y otros datos: etiqueta y valor en una línea. */
-.hcv-datos {
-  display: grid;
-  grid-template-columns: max-content 1fr;
-  gap: 0.6mm 4mm;
-  margin: 0;
-}
-
-.hcv-datos dt {
-  font-weight: 700;
-}
-
-.hcv-datos dd {
-  margin: 0;
-}
-
-@media screen and (max-width: 760px) {
-  .hcv-datos {
-    grid-template-columns: 1fr;
-  }
-
-  .hcv-datos dd {
-    margin-bottom: 1.5mm;
-  }
-}
-
-@media print {
-  .hcv {
-    font-size: 9.2pt;
-    line-height: 1.32;
-  }
-
-  .hcv-seccion {
-    margin-top: 3.6mm;
-  }
-}
-
-@media print {
-  .hcv {
-    padding: 10mm 14mm 8mm;
-  }
-
-  .hcv-cabecera {
-    padding-bottom: 3mm;
-  }
+.ccv .ccv-lf {
+  font-family: "DM Serif Display", Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -0.06em;
 }
