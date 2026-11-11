@@ -199,7 +199,7 @@ function LoDemas() {
             type="button"
             aria-pressed={i === activo}
             className={`subrayador color--${x.color}${i === activo ? " activo" : ""}`}
-            data-evento={`Cómo trabajo · ${x.etiqueta}`}
+            data-evento={`Lo que no cabe en el CV · ${x.etiqueta}`}
             onClick={() => ir(i, 1)}
           >
             <span className="subrayador__tapa" aria-hidden="true" />
@@ -248,8 +248,8 @@ function LoDemas() {
 
 const pestanas: { id: string; nombre: string; contenido: ReactNode }[] = [
   { id: "quien", nombre: "Quién soy", contenido: <QuienSoy /> },
-  { id: "demas", nombre: "Lo que no cabe en el CV", contenido: <LoDemas /> },
   { id: "metodo", nombre: "Cómo trabajo", contenido: <Metodo /> },
+  { id: "demas", nombre: "Lo que no cabe en el CV", contenido: <LoDemas /> },
   { id: "judo", nombre: "Por qué el judo", contenido: <Judo /> },
 ];
 
