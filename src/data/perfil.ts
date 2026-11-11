@@ -19,7 +19,7 @@ export const perfil = {
   /** En el CV va con los dos apellidos. */
   nombreCompleto: "Lara Feijóo Vázquez",
   resumen:
-    "Graduada en Publicidad y RRPP. Me mueve entender a la gente: cómo se percibe una marca, dentro y fuera, y por qué. Disfruto tanto proponiendo ideas como analizando qué ha funcionado. Me interesan especialmente la reputación, las relaciones públicas y la comunicación interna y la corporativa.",
+    "Graduada en Publicidad y RRPP y estudiante del Máster en Comunicación Publicitaria (UC3M). Me mueve entender a la gente: cómo se percibe una marca, dentro y fuera, y por qué. Disfruto tanto proponiendo ideas como analizando qué ha funcionado. Me interesan especialmente la reputación, las relaciones públicas y la comunicación interna y la corporativa.",
   busco: "Prácticas a tiempo completo a partir de abril de 2027.",
   lugar: "Galapagar, Madrid",
   email: "lara.feijoo@gmail.com",
@@ -39,9 +39,9 @@ export const perfil = {
     },
     {
       lugar: "Talixea",
-      titulo: "Proyecto propio: una plataforma para aprender idiomas leyendo",
+      titulo: "Proyecto propio: plataforma para aprender idiomas leyendo",
       periodo: "Febrero 2026 – actualidad",
-      nota: "De la idea al lanzamiento, en octubre de 2026: el método de aprendizaje, el catálogo de libros y la marca.",
+      nota: "Creado desde mi cama a partir de un hueco en el mercado. Publicado en octubre de 2026, pero trabajado en las sombras desde febrero.",
     },
     {
       lugar: "Guerreros Galapagar",
