@@ -1,0 +1,292 @@
+.hoja-firma {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 48px 56px 64px;
+  background: #f5f5f2;
+  color: #000;
+  font-family: var(--f);
+  font-variation-settings: "opsz" 14;
+}
+
+.hoja-firma :is(h1, h2, h3, p, figure, ul) {
+  margin: 0;
+}
+
+.hf-etiqueta {
+  font-weight: 700;
+  color: #6e3c20;
+}
+
+.hf-cabecera h1 {
+  margin-top: 6px;
+  font-size: 56px;
+  font-weight: 800;
+  font-variation-settings: "opsz" 96, "wdth" 75;
+  line-height: 0.95;
+}
+
+.hf-intro {
+  max-width: 780px;
+  margin-top: 14px !important;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.hf-bloque {
+  margin-top: 44px;
+}
+
+.hf-bloque h2 {
+  margin-bottom: 16px;
+  font-size: 30px;
+  font-weight: 800;
+  font-variation-settings: "opsz" 96, "wdth" 75;
+}
+
+.hf-nota {
+  margin: -8px 0 16px !important;
+  font-size: 16px;
+}
+
+.hf-fondos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.hf-fondo {
+  display: grid;
+  place-items: center;
+  gap: 10px;
+  padding: 34px 40px 18px;
+  border: 3px solid #000;
+}
+
+.hf-fondo > svg {
+  width: 100%;
+  max-width: 440px;
+}
+
+.hf-fondo > span:last-child {
+  font-variation-settings: normal;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.hf-fondo--blanco {
+  background: #fff;
+}
+
+.hf-fondo--tatami {
+  background: #c9c48b;
+}
+
+.hf-fondo--azul {
+  background: #1f4fb4;
+  color: #fff;
+}
+
+.hf-fondo--negro {
+  background: #111;
+  color: #fff;
+}
+
+.hf-tamanos {
+  display: flex;
+  align-items: flex-end;
+  gap: 48px;
+  padding: 28px 36px;
+  background: #fff;
+  border: 3px solid #000;
+}
+
+.hf-tamanos > div {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.hf-t160 {
+  width: 160px;
+}
+
+.hf-t64 {
+  width: 64px;
+}
+
+.hf-t32 {
+  width: 32px;
+}
+
+.hf-t16 {
+  width: 16px;
+}
+
+.hf-usos {
+  display: grid;
+  grid-template-columns: 220px 1fr 1fr;
+  gap: 16px;
+}
+
+.hf-uso {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.hf-uso > div {
+  border: 3px solid #000;
+  background: #fff;
+}
+
+.hf-avatar {
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.hf-correo {
+  padding: 20px 22px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.hf-correo__datos {
+  color: #333;
+  font-size: 12.5px;
+}
+
+.hf-correo__datos span {
+  color: #1f4fb4;
+}
+
+.hf-titulo-ejemplo {
+  padding: 0 0 20px;
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.hf-titulo-ejemplo h3 {
+  margin: 0 0 14px;
+  padding: 7px 22px 6px;
+  background: repeating-linear-gradient(to bottom, transparent 0 5px, rgba(255, 255, 255, 0.13) 5px 6px), #6e3c20;
+  color: #e6bc4a;
+  font-size: 24px;
+  font-weight: 800;
+  font-variation-settings: "opsz" 96, "wdth" 75;
+}
+
+.hf-titulo-ejemplo p {
+  padding: 0 22px;
+}
+
+.hf-titulo-ejemplo mark {
+  background: transparent;
+  box-shadow: inset 0 -0.5em 0 #a9c8ff;
+  color: inherit;
+}
+
+.hf-colores {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  padding: 0;
+  list-style: none;
+}
+
+.hf-colores li {
+  display: grid;
+  gap: 2px;
+  font-size: 14px;
+}
+
+.hf-muestra {
+  height: 64px;
+  margin-bottom: 6px;
+  border: 3px solid #000;
+}
+
+.hf-colores code {
+  font-size: 13px;
+}
+
+.hf-colores small {
+  color: #444;
+  font-size: 13px;
+}
+
+.hf-reglas {
+  display: grid;
+  gap: 8px;
+  padding-left: 20px;
+  list-style: disc;
+  font-size: 16px;
+  line-height: 1.45;
+}
+
+.hf-grande {
+  font-size: 64px;
+}
+
+.hf-invertida {
+  color: #f5f5f2;
+}
+
+.hf-t200 {
+  width: 200px;
+}
+
+.hf-avatar__circulo {
+  display: grid;
+  place-items: center;
+  width: 150px;
+  height: 150px;
+  border: 3px solid #000;
+  border-radius: 50%;
+  background: #e4f2fb;
+}
+
+.hf-avatar__circulo svg {
+  width: 112px;
+}
+
+.hf-usos {
+  grid-template-columns: 220px 1fr !important;
+}
+
+.hf-correo__firma {
+  font-size: 30px;
+  margin: 8px 0 8px !important;
+  width: auto !important;
+}
+
+.hf-colores {
+  grid-template-columns: repeat(4, 1fr) !important;
+}
+
+.hf-nombre {
+  font-size: 64px;
+  line-height: 1;
+}
+
+.hf-fondo--agua {
+  position: relative;
+  overflow: hidden;
+}
+
+.hf-agua {
+  position: absolute;
+  right: 18px;
+  bottom: 14px;
+  width: 90px;
+}
+
+.hf-correo__nombre {
+  margin: 6px 0 6px !important;
+  font-size: 30px;
+}

@@ -1,6 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Belleza&family=DM+Serif+Display&family=Montserrat:wght@500&family=Poppins:wght@300;400;500;600&display=swap");
-
-/* ── CV: el de Lara (crema y mostaza, foto a la izquierda), mejorado. La misma hoja sale en el PDF. ── */
+/* ── CV: la estructura del CV de Lara con las piezas del portfolio. La misma hoja sale en el PDF. ──
+   Su celeste en la columna lateral, blanco para leer, cinturones para ordenar,
+   bordes negros y sombras duras. */
 .cv-mesa {
   display: flex;
   flex-direction: column;
@@ -18,32 +18,28 @@
 }
 
 .ccv {
-  --ccv-crema: #fff5d6;
-  --ccv-mostaza: #ffbd59;
-  --ccv-tinta: #1d1d1d;
-  --ccv-gris: #7a7a7a;
-  --ccv-p: "Poppins", "Segoe UI", Arial, sans-serif;
+  --ccv-pespunte: rgba(255, 255, 255, 0.16);
   width: min(100%, 210mm);
   min-height: 297mm;
   box-sizing: border-box;
   display: grid;
-  grid-template-columns: 36% 1fr;
+  grid-template-columns: 34% 1fr;
   grid-template-areas: "lateral principal";
   background: #fff;
-  color: var(--ccv-tinta);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
-  font-family: var(--ccv-p);
-  font-weight: 300;
-  font-size: 9.2pt;
-  line-height: 1.38;
+  color: var(--sumi);
+  border: 3px solid var(--sumi);
+  box-shadow: 12px 12px 0 var(--heri);
+  font-family: var(--f);
+  font-variation-settings: "opsz" 12;
+  font-size: 9.3pt;
+  line-height: 1.4;
 }
 
-.ccv :is(h1, h2, h3, p, ul, li, a, span, strong) {
-  font-family: var(--ccv-p);
-  letter-spacing: 0;
+.ccv :is(h1, h2, h3, p, ul, li, a, span, strong, figure) {
+  font-family: var(--f);
 }
 
-.ccv :is(h1, h2, h3, p, ul) {
+.ccv :is(h1, h2, h3, p, ul, figure) {
   margin: 0;
 }
 
@@ -62,36 +58,68 @@
 }
 
 .ccv strong {
-  font-weight: 500;
+  font-weight: 700;
 }
 
-/* Columna lateral: crema, con la foto arriba */
+/* Títulos: un trozo de cinturón, un poco torcido, con su sombra dura */
+.ccv-bloque h2 {
+  display: inline-block;
+  margin: 0 0 2.6mm;
+  padding: 1.1mm 3.2mm 1mm;
+  background: repeating-linear-gradient(to bottom, transparent 0 3.5px, var(--ccv-pespunte) 3.5px 4.3px), var(--obi);
+  color: var(--judogi);
+  box-shadow: 1.2mm 1.2mm 0 var(--heri);
+  rotate: -1.5deg;
+  font-weight: 800;
+  font-variation-settings: "opsz" 96, "wdth" 75;
+  font-size: 13pt;
+  line-height: 1.1;
+}
+
+/* Columna lateral, con la foto como en la portada */
 .ccv-lateral {
   grid-area: lateral;
-  background: var(--ccv-crema);
-  padding: 0 0 8mm;
+  padding: 9mm 7mm 8mm;
+  background: var(--celeste-claro);
+  border-right: 3px solid var(--sumi);
 }
 
 .ccv-foto {
+  position: relative;
+  padding: 2.2mm 2.2mm 2.2mm;
+  background: var(--judogi);
+  border: 2px solid var(--sumi);
+  box-shadow: 1.6mm 1.6mm 0 var(--heri);
+  rotate: 1.8deg;
+}
+
+.ccv-foto img {
   display: block;
   width: 100%;
-  aspect-ratio: 1.12;
+  aspect-ratio: 1.05;
   object-fit: cover;
-  object-position: 50% 30%;
+  object-position: 50% 32%;
+}
+
+.ccv-foto__obi {
+  position: absolute;
+  left: -7mm;
+  top: 4mm;
+  width: 24mm;
+  height: 5.5mm;
+  rotate: -32deg;
+  background: repeating-linear-gradient(to bottom, transparent 0 3px, var(--ccv-pespunte) 3px 3.8px), var(--obi);
+  box-shadow: 0.8mm 1mm 0 var(--heri);
 }
 
 .ccv-lateral .ccv-bloque {
-  margin-top: 5mm;
-}
-
-.ccv-lateral .ccv-bloque > :not(h2) {
-  padding: 0 7mm;
+  margin-top: 6mm;
 }
 
 .ccv-simple li + li,
 .ccv-idiomas li + li,
 .ccv-hobbies li + li {
-  margin-top: 1.2mm;
+  margin-top: 1mm;
 }
 
 .ccv-idiomas li {
@@ -100,82 +128,53 @@
   gap: 3mm;
 }
 
-.ccv-idiomas span {
-  color: #555;
-}
-
 .ccv-hobbies span {
   display: block;
-  color: #444;
 }
 
-/* Títulos de sección: la franja mostaza del original */
-.ccv-bloque h2 {
-  margin: 0 0 2.6mm;
-  padding: 1.6mm 7mm;
-  background: var(--ccv-mostaza);
-  font-family: "Montserrat", var(--ccv-p);
-  font-weight: 500;
-  font-size: 13.5pt;
-  line-height: 1.2;
-  color: #3d3d3d;
-}
-
-/* Columna principal */
+/* Columna principal: judogi blanco para leer */
 .ccv-principal {
   grid-area: principal;
   position: relative;
-  padding: 11mm 0 12mm;
-}
-
-.ccv-cabecera {
-  padding: 0 9mm;
-  text-align: center;
+  padding: 10mm 10mm 12mm 9mm;
 }
 
 .ccv-cabecera h1 {
-  font-family: "DM Serif Display", Georgia, serif;
-  font-weight: 400;
-  font-size: 31pt;
+  font-size: 36pt;
   line-height: 1;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
 }
 
 .ccv-titular {
-  margin-top: 2.2mm !important;
-  font-family: "Belleza", var(--ccv-p) !important;
+  margin-top: 1.6mm !important;
+  font-weight: 700;
   font-size: 11.5pt;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
 }
 
-.ccv-presenta {
-  margin-top: 3.5mm;
-  padding: 3mm 0;
-  border-top: 0.75pt solid #333;
-  border-bottom: 0.75pt solid #333;
-  font-size: 9.6pt;
+.ccv-resumen {
+  margin-top: 2.6mm !important;
 }
 
 .ccv-busco {
-  margin-top: 1.4mm !important;
-  font-weight: 500;
+  margin-top: 3.2mm !important;
+  padding: 2mm 3mm;
+  border: 2px solid var(--sumi);
+  border-left: 3.2mm solid var(--obi);
+  box-shadow: 1.2mm 1.2mm 0 var(--heri);
+  rotate: -0.6deg;
 }
 
 .ccv-contacto {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 1.2mm 4.5mm;
-  margin-top: 3mm !important;
-  font-size: 8.4pt;
+  margin-top: 3.6mm !important;
+  font-size: 8.6pt;
 }
 
 .ccv-contacto li {
   display: inline-flex;
   align-items: center;
-  gap: 1.4mm;
+  gap: 1.3mm;
 }
 
 .ccv-icono {
@@ -183,95 +182,70 @@
   height: 3.4mm;
   flex: none;
   fill: none;
-  stroke: currentColor;
-  stroke-width: 1.8;
+  stroke: var(--sumi);
+  stroke-width: 2;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
 
 .ccv-principal .ccv-bloque {
-  margin-top: 5mm;
-}
-
-.ccv-principal .ccv-bloque h2 {
-  margin-right: 0;
-  margin-left: 0;
+  margin-top: 6mm;
 }
 
 .ccv-lista {
   display: grid;
-  gap: 2.3mm;
-  padding: 0 9mm !important;
+  gap: 2.5mm;
 }
 
 .ccv-lista h3 {
-  font-weight: 500;
+  font-weight: 700;
   font-size: 9.6pt;
   line-height: 1.3;
 }
 
+.ccv-barra {
+  color: var(--obi);
+  font-weight: 400;
+}
+
 .ccv-fecha {
-  font-weight: 600;
-  color: var(--ccv-gris);
-  font-size: 8.8pt;
+  color: var(--texto-suave);
+  font-size: 8.7pt;
 }
 
 .ccv-nota {
   margin-top: 0.4mm !important;
 }
 
-.ccv-puntos {
-  margin-top: 0.6mm !important;
-  padding-left: 4mm !important;
-  list-style: disc !important;
-}
-
-.ccv-puntos li + li {
-  margin-top: 0.3mm;
-}
-
-.ccv-puntos li::marker {
-  color: #e59a2f;
-}
-
-.ccv-lf {
-  position: absolute;
-  right: 9mm;
-  bottom: 7mm;
-  font-family: "DM Serif Display", Georgia, serif;
-  font-size: 24pt;
-  line-height: 1;
-  letter-spacing: -0.06em;
-}
-
 /* Móvil: la hoja se apila, con la foto arriba */
 @media screen and (max-width: 760px) {
   .ccv {
     grid-template-columns: 1fr;
-    grid-template-areas: "lateral" "principal";
-    font-size: 0.85rem;
+    grid-template-areas: "principal" "lateral";
+    font-size: 0.88rem;
+    box-shadow: 6px 6px 0 var(--heri);
+  }
+
+  .ccv-lateral {
+    border-right: 0;
+    border-top: 3px solid var(--sumi);
   }
 
   .ccv-foto {
-    aspect-ratio: 1.4;
+    max-width: 16rem;
   }
 
   .ccv-cabecera h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
+  }
+
+  .ccv-principal {
+    padding: 8mm 6mm 22mm;
   }
 
   .ccv-contacto,
   .ccv-fecha {
-    font-size: 0.8rem;
-  }
-
-  .ccv-lista,
-  .ccv-cabecera {
-    padding: 0 5mm !important;
-  }
-
-  .ccv-principal {
-    padding-bottom: 16mm;
+    font-size: 0.82rem;
   }
 }
 
@@ -306,6 +280,7 @@
     height: 297mm;
     min-height: 0;
     overflow: hidden;
+    border: 0;
     box-shadow: none;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
@@ -325,40 +300,49 @@
     content: none !important;
   }
 
+  .ccv .ccv-bloque h2 {
+    color: var(--judogi) !important;
+  }
+
+  .ccv .ccv-fecha {
+    color: var(--texto-suave) !important;
+  }
+
   .ccv-lista > li {
     break-inside: avoid;
   }
 }
 
-@media print {
-  .ccv .ccv-fecha {
-    color: var(--ccv-gris) !important;
-  }
-
-  .ccv .ccv-idiomas span,
-  .ccv .ccv-hobbies span {
-    color: #555 !important;
-  }
-
-  .ccv .ccv-bloque h2 {
-    color: #3d3d3d !important;
-  }
-
-  .ccv-principal {
-    padding-top: 9mm;
-  }
-
-  .ccv-principal .ccv-bloque {
-    margin-top: 4mm;
-  }
-
-  .ccv-lista {
-    gap: 1.9mm;
-  }
+.ccv-idiomas__nota {
+  margin-top: 1.4mm !important;
+  font-size: 8.4pt;
+  font-style: italic;
 }
 
-.ccv .ccv-lf {
-  font-family: "DM Serif Display", Georgia, serif;
-  font-weight: 400;
-  letter-spacing: -0.06em;
+/* El nombre, con la letra de la portada */
+.ccv .ccv-nombre {
+  font-weight: 800;
+  font-variation-settings: "opsz" 96, "wdth" 75;
+  font-size: 38pt;
+  line-height: 0.95;
+  letter-spacing: -0.015em;
+}
+
+/* El nudo, entero y en color, abajo en la esquina */
+.ccv-agua {
+  position: absolute;
+  right: 9mm;
+  bottom: 7mm;
+  width: 26mm;
+  pointer-events: none;
+}
+
+/* Su azul: celeste suave, como su gorro */
+.ccv {
+  --celeste: #8ec5ea;
+  --celeste-claro: #e4f2fb;
+}
+
+.ccv .ccv-busco {
+  background: var(--celeste-claro);
 }

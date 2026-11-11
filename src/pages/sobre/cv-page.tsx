@@ -1,9 +1,11 @@
 import { useEffect, type ReactNode } from "react";
 import { perfil, type Hito } from "@/data/perfil";
+import { Nudo } from "@/components/firma";
 import "./cv.css";
 
-// El CV de Lara, mejorado: su misma estructura y sus colores. Lo que se ve aquí es lo que se descarga en PDF.
-// La columna principal va primero en el código para que el texto del PDF se lea en orden.
+// El CV de Lara con su estructura de siempre (foto, columna lateral, títulos por sección),
+// hecho con las piezas del portfolio (cinturones para ordenar, tarjetas con sombra dura) y su celeste.
+// Lo que se ve aquí es lo que se descarga en PDF.
 const base = import.meta.env.BASE_URL;
 const pdf = `${base}cv-lara-feijoo.pdf`;
 
@@ -36,17 +38,10 @@ function Lista({ hitos }: { hitos: Hito[] }) {
       {hitos.map((h) => (
         <li key={h.lugar + h.titulo}>
           <h3>
-            {h.lugar} | {h.titulo}
+            {h.lugar} <span className="ccv-barra">|</span> {h.titulo}
           </h3>
           <p className="ccv-fecha">{h.periodo}</p>
           {h.nota && <p className="ccv-nota">{h.nota}</p>}
-          {h.puntos && (
-            <ul className="ccv-puntos">
-              {h.puntos.map((p) => (
-                <li key={p}>{p}</li>
-              ))}
-            </ul>
-          )}
         </li>
       ))}
     </ul>
@@ -69,12 +64,12 @@ export function CvPage() {
       <article className="ccv" aria-label="Currículum de Lara Feijóo">
         <div className="ccv-principal">
           <header className="ccv-cabecera">
-            <h1>{perfil.nombre}</h1>
+            <h1 className="ccv-nombre">{perfil.nombre}</h1>
             <p className="ccv-titular">{perfil.titular}</p>
-            <div className="ccv-presenta">
-              <p>{perfil.resumen}</p>
-              <p className="ccv-busco">{perfil.busco}</p>
-            </div>
+            <p className="ccv-resumen">{perfil.resumen}</p>
+            <p className="ccv-busco">
+              <strong>Busco prácticas</strong> a tiempo completo a partir de abril de 2027.
+            </p>
             <ul className="ccv-contacto">
               <li>
                 <Icono d={icono.correo} />
@@ -112,23 +107,24 @@ export function CvPage() {
           <Bloque titulo="Cursos">
             <Lista hitos={perfil.cursos} />
           </Bloque>
-          <span className="ccv-lf" aria-hidden="true">
-            LF
-          </span>
+          {/* El nudo del cinturón, abajo en la esquina */}
+          <Nudo className="ccv-agua" />
         </div>
 
         <aside className="ccv-lateral">
-          <img
-            className="ccv-foto"
-            src={`${base}assets/lara/cv-foto.jpg`}
-            alt="Lara Feijóo sonriendo, con un gorro azul de pingüino"
-          />
-          <Bloque titulo="Competencias">
+          <figure className="ccv-foto">
+            <img src={`${base}assets/lara/cv-foto.jpg`} alt="Lara Feijóo sonriendo, con un gorro azul de pingüino" />
+            <span className="ccv-foto__obi" aria-hidden="true" />
+          </figure>
+          <Bloque titulo="Lo que sé hacer">
             <ul className="ccv-simple">
               {perfil.competencias.map((c) => (
                 <li key={c}>{c}</li>
               ))}
             </ul>
+          </Bloque>
+          <Bloque titulo="Herramientas">
+            <p className="ccv-herramientas">{perfil.herramientas.map((h) => h.replace(/ /g, " ")).join(" · ")}</p>
           </Bloque>
           <Bloque titulo="Idiomas">
             <ul className="ccv-idiomas">
@@ -139,19 +135,13 @@ export function CvPage() {
                 </li>
               ))}
             </ul>
+            <p className="ccv-idiomas__nota">{perfil.idiomasNota}</p>
           </Bloque>
-          <Bloque titulo="Hobbies">
-            <ul className="ccv-hobbies">
-              {perfil.aficiones.map((a) => (
-                <li key={a.titulo}>
-                  <strong>{a.titulo}</strong>
-                  {a.texto && <span>{a.texto}</span>}
-                </li>
-              ))}
-            </ul>
+          <Bloque titulo="Sobre el tatami">
+            <p>{perfil.tatami}</p>
           </Bloque>
           <Bloque titulo="Premios">
-            <ul className="ccv-simple ccv-premios">
+            <ul className="ccv-simple">
               {perfil.premios.map((p) => (
                 <li key={p}>{p}</li>
               ))}

@@ -24,6 +24,10 @@ const NotasPage = lazy(() =>
 const CasoRouter = lazy(() =>
   import("@/pages/caso/caso-router").then(({ CasoRouter }) => ({ default: CasoRouter })),
 );
+// Hoja de la firma: solo en local (npm run dev), no se publica.
+const FirmaPage = import.meta.env.DEV
+  ? lazy(() => import("@/pages/firma/firma-page").then(({ FirmaPage }) => ({ default: FirmaPage })))
+  : null;
 const CvPage = lazy(() =>
   import("@/pages/sobre/cv-page").then(({ CvPage }) => ({ default: CvPage })),
 );
@@ -93,6 +97,16 @@ function App() {
     <HashRouter>
       <Routes>
         <Route path="/prototipo" element={<Navigate to="/" replace />} />
+        {FirmaPage && (
+          <Route
+            path="/firma"
+            element={
+              <Suspense fallback={null}>
+                <FirmaPage />
+              </Suspense>
+            }
+          />
+        )}
         <Route path="*" element={<MainLayout />} />
       </Routes>
     </HashRouter>

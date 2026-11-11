@@ -1,0 +1,8 @@
+/* La firma: el nombre con la letra de la portada (estrecha y muy gruesa). */
+.firma__nombre {
+  font-family: "Bricolage Grotesque", system-ui, sans-serif;
+  font-weight: 800;
+  font-variation-settings: "opsz" 96, "wdth" 75;
+  letter-spacing: -0.015em;
+  white-space: nowrap;
+}

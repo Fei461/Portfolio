@@ -10,6 +10,7 @@ const ROJO = "#d2231c";
 const AMARILLO = "#f6c100";
 
 const borde = { stroke: "#000", strokeWidth: 3, strokeLinejoin: "round", strokeLinecap: "round" } as const;
+const costuraObi = { stroke: HILO_OBI, strokeWidth: 1.1, fill: "none", strokeLinecap: "round" } as const;
 
 const colores = {
   azul: { tela: "#1f4fb4", sombra: "#11306f", solapa: "#2558c4", hilo: "#8fb0ee", grano: "rgba(255,255,255,.14)" },
@@ -71,7 +72,6 @@ export function Judogi({ color }: { color: "azul" | "blanco" }) {
   const { tela, sombra, solapa, hilo, grano } = colores[color];
   const id = `gi-${color}`;
   const costura = { stroke: hilo, strokeWidth: 1.3, fill: "none", strokeLinecap: "round" } as const;
-  const costuraObi = { stroke: HILO_OBI, strokeWidth: 1.1, fill: "none", strokeLinecap: "round" } as const;
   const granoEntero = <rect width="360" height="400" fill={`url(#${id}-grano)`} />;
   const gancho = "M180 30 V0 C180 -19 200 -19 200 -4";
 
@@ -88,7 +88,6 @@ export function Judogi({ color }: { color: "azul" | "blanco" }) {
         <clipPath id={`${id}-cuerpo`}>
           <path d={CUERPO} />
         </clipPath>
-        <path id={`${id}-nombre`} d="M188 246.6 L260 302.4" />
       </defs>
 
       {/* La percha: el gancho sube por delante de la barra y baja por detrás */}
@@ -157,15 +156,36 @@ export function Judogi({ color }: { color: "azul" | "blanco" }) {
 
       {/* Cinturón: sube hacia los lados y se pierde por detrás del cuerpo */}
       <g clipPath={`url(#${id}-cuerpo)`}>
-        <Pieza id={`${id}-f1`} d="M100 207 C126 214 148 224 170 233 L170 250 C146 241 124 231 100 224 Z" fondo={OBI}>
-          <path d="M96 212 C126 219 148 229 174 239 M96 218 C126 225 148 235 174 245" {...costuraObi} />
-        </Pieza>
-        <Pieza id={`${id}-f2`} d="M260 207 C234 214 212 224 190 233 L190 250 C214 241 236 231 260 224 Z" fondo={OBI}>
-          <path d="M264 212 C234 219 212 229 186 239 M264 218 C234 225 212 235 186 245" {...costuraObi} />
-        </Pieza>
+        <FajasObi id={id} />
       </g>
       <path d="M110.4 180 L114 224 L108.2 272 M249.6 180 L246 224 L251.8 272" fill="none" {...borde} />
 
+      <NudoObi id={id} />
+    </svg>
+  );
+}
+
+// El cinturón atado, en dos piezas para poder usarlo también fuera del judogi (la firma).
+// Las fajas suben hacia los lados; el nudo y las puntas van delante, con FEIJÓO bordado.
+export function FajasObi({ id }: { id: string }) {
+  return (
+    <>
+      <Pieza id={`${id}-f1`} d="M100 207 C126 214 148 224 170 233 L170 250 C146 241 124 231 100 224 Z" fondo={OBI}>
+        <path d="M96 212 C126 219 148 229 174 239 M96 218 C126 225 148 235 174 245" {...costuraObi} />
+      </Pieza>
+      <Pieza id={`${id}-f2`} d="M260 207 C234 214 212 224 190 233 L190 250 C214 241 236 231 260 224 Z" fondo={OBI}>
+        <path d="M264 212 C234 219 212 229 186 239 M264 218 C234 225 212 235 186 245" {...costuraObi} />
+      </Pieza>
+    </>
+  );
+}
+
+export function NudoObi({ id }: { id: string }) {
+  return (
+    <>
+      <defs>
+        <path id={`${id}-nombre`} d="M188 246.6 L260 302.4" />
+      </defs>
       {/* Puntas y nombre bordado */}
       <Pieza id={`${id}-p1`} d={poligono(espejo(PUNTA))} fondo={OBI}>
         <CosturasPunta p={espejo(PUNTA)} />
@@ -196,6 +216,6 @@ export function Judogi({ color }: { color: "azul" | "blanco" }) {
       <Pieza id={`${id}-n2`} d={NUDO_DERECHA} fondo={OBI}>
         <path d="M186 218 C187 232 187 248 186 262 M192 218 C193 232 193 248 192 262 M198 218 C199 232 199 248 198 262" {...costuraObi} />
       </Pieza>
-    </svg>
+    </>
   );
 }
