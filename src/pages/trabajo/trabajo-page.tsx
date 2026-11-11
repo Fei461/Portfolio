@@ -286,7 +286,7 @@ export function TrabajoPage() {
   const lista = porPercha(percha);
 
   useEffect(() => {
-    document.title = `${perchas[percha].nombre}, proyectos de Lara Feijóo`;
+    document.title = `${perchas[percha].nombre}, proyectos de Lara Feijóo Vázquez`;
   }, [percha]);
 
   return (

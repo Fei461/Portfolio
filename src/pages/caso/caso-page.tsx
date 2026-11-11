@@ -401,7 +401,7 @@ export function CasoPage({ caso }: { caso: CasoCompleto }) {
   const pestanas = useRef<(HTMLButtonElement | null)[]>([]);
 
   useEffect(() => {
-    document.title = `${caso.titulo}, un caso de Lara Feijóo`;
+    document.title = `${caso.titulo}, un caso de Lara Feijóo Vázquez`;
     window.scrollTo(0, 0);
   }, [caso]);
 

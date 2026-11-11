@@ -263,7 +263,7 @@ export function SobrePage() {
   // «Por qué el judo» se queda sobre el tatami; el resto de Sobre mí, en celeste.
 
   useEffect(() => {
-    document.title = "Sobre mí, Lara Feijóo";
+    document.title = "Sobre mí, Lara Feijóo Vázquez";
   }, []);
 
   return (

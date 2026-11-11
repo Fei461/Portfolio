@@ -109,3 +109,29 @@
 .dojo .dojo-busco {
   background: #fff;
 }
+
+/* Portada: tu foco, en una línea, con el mismo fondo que la titulación */
+.dojo .dojo-foco {
+  display: inline-block;
+  margin: 0.55rem 0 0;
+  padding: 0 0.3em;
+  max-width: 38rem;
+  font-size: clamp(1.02rem, 1.35vw, 1.2rem);
+  font-weight: 500;
+  line-height: 1.45;
+  background: var(--tatami);
+}
+
+/* Móvil: los cuatro enlaces caben en una línea */
+@media (max-width: 700px) {
+  .dojo-head {
+    column-gap: 0.4rem;
+  }
+
+  .dojo-head nav a:not(.dojo-head__linkedin, .dojo-head__escribir),
+  .dojo-head--tatami nav a:not(.dojo-head__linkedin, .dojo-head__escribir) {
+    padding: 0.15rem 0.2rem;
+    font-size: 0.86rem;
+    letter-spacing: -0.005em;
+  }
+}

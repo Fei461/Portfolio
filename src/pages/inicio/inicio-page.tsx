@@ -79,7 +79,7 @@ function FotoGraduacion() {
 // en la pared, los judogis que llevan a los proyectos.
 export function InicioPage() {
   useEffect(() => {
-    document.title = "Lara Feijóo, publicidad, relaciones públicas y culo inquieto";
+    document.title = "Lara Feijóo Vázquez, publicidad, RRPP y culo inquieto";
   }, []);
 
   return (
@@ -90,8 +90,11 @@ export function InicioPage() {
         <p className="dojo-rol">
           Graduada en Publicidad y RRPP (URJC) · Máster en Comunicación Publicitaria (UC3M)
         </p>
+        <p className="dojo-foco">
+          Me tiran las relaciones públicas, la reputación y la comunicación interna.
+        </p>
         <p className="dojo-busco">
-          <strong>Busco prácticas</strong> a tiempo completo a partir de abril de 2027.
+          <strong>Busco prácticas</strong> a tiempo completo, con convenio de la UC3M, a partir de abril de 2027.
           <Correo />
         </p>
         <Link to="/minuto" className="dojo-boton dojo-dame-minuto">

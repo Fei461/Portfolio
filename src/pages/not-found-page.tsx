@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 // En judo, «matte» es la orden de parar.
 export function NotFoundPage() {
   useEffect(() => {
-    document.title = "Página no encontrada, Lara Feijóo";
+    document.title = "Página no encontrada, Lara Feijóo Vázquez";
   }, []);
 
   return (

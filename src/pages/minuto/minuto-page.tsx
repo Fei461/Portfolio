@@ -58,8 +58,7 @@ export function MinutoPage() {
         <li className="minuto__paso minuto__paso--busco">
           <h2>Qué busco</h2>
           <p>
-            <strong>Prácticas a tiempo completo</strong>, con convenio de la UC3M, a partir de abril de 2027: 180
-            horas, ampliables hasta el 30 de septiembre.
+            <strong>Prácticas a tiempo completo</strong>, con convenio de la UC3M, a partir de abril de 2027.
           </p>
         </li>
 

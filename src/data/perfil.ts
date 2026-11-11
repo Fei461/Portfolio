@@ -20,7 +20,7 @@ export const perfil = {
   nombreCompleto: "Lara Feijóo Vázquez",
   resumen:
     "Graduada en Publicidad y RRPP y estudiante del Máster en Comunicación Publicitaria (UC3M). Me mueve entender a la gente: cómo se percibe una marca, dentro y fuera, y por qué. Disfruto tanto proponiendo ideas como analizando qué ha funcionado. Me interesan especialmente la reputación, las relaciones públicas y la comunicación interna y la corporativa.",
-  busco: "Prácticas a tiempo completo a partir de abril de 2027.",
+  busco: "Prácticas a tiempo completo, con convenio de la UC3M, a partir de abril de 2027.",
   lugar: "Galapagar, Madrid",
   email: "lara.feijoo@gmail.com",
   /** Solo en el CV: lo piden en las candidaturas de prácticas. */

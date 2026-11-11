@@ -66,7 +66,7 @@ export function CvPage() {
   const [params] = useSearchParams();
   const telefono = import.meta.env.DEV ? params.get("tel") : null;
   useEffect(() => {
-    document.title = "CV de Lara Feijóo";
+    document.title = "CV de Lara Feijóo Vázquez";
   }, []);
 
   return (
@@ -83,8 +83,7 @@ export function CvPage() {
             <h1 className="ccv-nombre">{perfil.nombreCompleto}</h1>
             <p className="ccv-resumen">{perfil.resumen}</p>
             <p className="ccv-busco">
-              <strong>Busco prácticas</strong> a tiempo completo, con convenio de la UC3M, a partir de abril de 2027:
-              180 horas, ampliables hasta el 30 de septiembre.
+              <strong>Busco prácticas</strong> a tiempo completo, con convenio de la UC3M, a partir de abril de 2027.
             </p>
             <ul className="ccv-contacto">
               <li>
