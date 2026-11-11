@@ -32,7 +32,7 @@
   font-family: var(--f);
   font-variation-settings: "opsz" 12;
   font-size: 9.3pt;
-  line-height: 1.4;
+  line-height: 1.55;
 }
 
 .ccv :is(h1, h2, h3, p, ul, li, a, span, strong, figure) {
@@ -189,7 +189,7 @@
 }
 
 .ccv-principal .ccv-bloque {
-  margin-top: 6mm;
+  margin-top: 5mm;
 }
 
 .ccv-lista {
@@ -200,7 +200,7 @@
 .ccv-lista h3 {
   font-weight: 700;
   font-size: 9.6pt;
-  line-height: 1.3;
+  line-height: 1.4;
 }
 
 .ccv-barra {
@@ -331,9 +331,9 @@
 /* El nudo, entero y en color, abajo en la esquina */
 .ccv-agua {
   position: absolute;
-  right: 9mm;
-  bottom: 7mm;
-  width: 26mm;
+  right: 7mm;
+  bottom: 3.5mm;
+  width: 23mm;
   pointer-events: none;
 }
 
