@@ -1,0 +1,195 @@
+/* «Dame un minuto»: una hoja blanca sobre su celeste, con los pasos numerados. */
+.minuto {
+  min-height: calc(100svh - var(--alto-cabecera));
+  padding: clamp(2rem, 5vw, 4rem) var(--gutter) clamp(3rem, 6vw, 5rem);
+  background: var(--celeste-claro, #e4f2fb);
+}
+
+.minuto__cabeza,
+.minuto__pasos,
+.minuto__pie {
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.minuto__cabeza h1 {
+  margin: 0;
+  font-weight: 800;
+  font-variation-settings: "opsz" 96, "wdth" 75;
+  font-size: clamp(3rem, 8vw, 6rem);
+  line-height: 0.9;
+}
+
+.minuto__cabeza p {
+  margin: 0.8rem 0 0;
+  font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+}
+
+.minuto__pasos {
+  display: grid;
+  gap: 1.6rem;
+  margin-top: 2.2rem;
+  padding: 0;
+  list-style: none;
+  counter-reset: paso;
+}
+
+.minuto__paso {
+  position: relative;
+  padding: 1.5rem 1.75rem 1.6rem 4.6rem;
+  background: #fff;
+  border: 3px solid var(--sumi);
+  box-shadow: 8px 8px 0 var(--heri);
+  counter-increment: paso;
+}
+
+.minuto__paso::before {
+  content: counter(paso);
+  position: absolute;
+  left: 1.4rem;
+  top: 1.35rem;
+  display: grid;
+  place-items: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  background: var(--obi);
+  color: var(--judogi);
+  border: 2px solid var(--sumi);
+  font-weight: 800;
+  rotate: -4deg;
+}
+
+.minuto__paso h2 {
+  margin: 0 0 0.55rem;
+  font-weight: 800;
+  font-variation-settings: "opsz" 96, "wdth" 75;
+  font-size: clamp(1.6rem, 2.6vw, 2.1rem);
+  line-height: 1;
+}
+
+.minuto__paso p {
+  margin: 0;
+  max-width: 62ch;
+  line-height: 1.6;
+}
+
+.minuto__paso p + p {
+  margin-top: 0.7rem;
+}
+
+.minuto__paso--busco {
+  border-left: 14px solid var(--obi);
+}
+
+.minuto__casos {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 0.4rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.minuto__casos a {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  height: 100%;
+  padding: 0 0 0.9rem;
+  color: inherit;
+  text-decoration: none;
+  border: 2px solid var(--sumi);
+  background: var(--judogi);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.minuto__casos a:hover,
+.minuto__casos a:focus-visible {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 var(--heri);
+}
+
+.minuto__casos img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-bottom: 2px solid var(--sumi);
+}
+
+.minuto__casos strong,
+.minuto__casos span {
+  padding: 0 0.85rem;
+}
+
+.minuto__casos strong {
+  margin-top: 0.35rem;
+  font-weight: 800;
+  font-variation-settings: "opsz" 96, "wdth" 75;
+  font-size: 1.45rem;
+  line-height: 1;
+}
+
+.minuto__tipo {
+  color: var(--obi);
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.minuto__casos span:last-child {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.minuto__tiempos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.minuto__tiempo {
+  padding: 0.25rem 0.6rem;
+  font-weight: 700;
+  background: linear-gradient(transparent 45%, var(--c) 45% 92%, transparent 92%);
+}
+
+.minuto__ejemplos {
+  color: inherit;
+  text-decoration: underline;
+  font-weight: 700;
+  text-decoration-color: var(--obi);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+.minuto__pie {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.9rem 1rem;
+  margin-top: 2.2rem;
+}
+
+.minuto__mas {
+  margin-left: auto;
+  color: inherit;
+  text-decoration: underline;
+  font-weight: 700;
+  text-decoration-color: var(--obi);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 800px) {
+  .minuto__casos {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .minuto__paso {
+    padding: 4rem 1.2rem 1.4rem;
+  }
+
+  .minuto__mas {
+    margin-left: 0;
+  }
+}

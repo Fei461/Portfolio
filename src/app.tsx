@@ -30,6 +30,9 @@ const FirmaPage = import.meta.env.DEV
 const MarcaPage = import.meta.env.DEV
   ? lazy(() => import("@/pages/marca/marca-page").then(({ MarcaPage }) => ({ default: MarcaPage })))
   : null;
+const MinutoPage = lazy(() =>
+  import("@/pages/minuto/minuto-page").then(({ MinutoPage }) => ({ default: MinutoPage })),
+);
 const CvPage = lazy(() =>
   import("@/pages/sobre/cv-page").then(({ CvPage }) => ({ default: CvPage })),
 );
@@ -159,6 +162,7 @@ function MainLayout() {
               <Route path="/en-voz-alta" element={<Navigate to="/" replace />} />
               <Route path="/notas" element={<Navigate to="/" replace />} />
               <Route path="/trabajo/:slug" element={<CasoRouter />} />
+              <Route path="/minuto" element={<MinutoPage />} />
               <Route path="/cv" element={<CvPage />} />
               <Route path="*" element={<NotFoundPage />} />
             </Routes>

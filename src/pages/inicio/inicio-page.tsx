@@ -6,10 +6,10 @@ import { FotoGiro } from "@/components/foto-giro";
 const foto = `${import.meta.env.BASE_URL}assets/lara/salto.jpg`;
 
 function NombreProyectado() {
-  const lineas = ["Lara", "Feijóo", "Vázquez"];
+  const lineas = ["Lara Feijóo", "Vázquez"];
   let i = 0;
   return (
-    <h1 className="dojo-nombre dojo-nombre--tres" aria-label="Lara Feijóo Vázquez">
+    <h1 className="dojo-nombre dojo-nombre--dos" aria-label="Lara Feijóo Vázquez">
       {lineas.map((linea) => (
         <span className="dojo-nombre__linea" key={linea} aria-hidden="true">
           {[...linea].map((letra, j) => (
@@ -18,7 +18,7 @@ function NombreProyectado() {
               key={`${linea}-${j}`}
               style={{ "--i": i++ } as CSSProperties}
             >
-              {letra}
+              {letra === " " ? " " : letra}
             </span>
           ))}
         </span>
@@ -27,14 +27,6 @@ function NombreProyectado() {
   );
 }
 
-const caso = (file: string) => `${import.meta.env.BASE_URL}assets/casos/${file}`;
-
-// Las pruebas más fuertes, a un clic desde la portada.
-const minuto = [
-  { img: caso("tfg-bbva/brecha.jpg"), cifra: "248", texto: "respuestas para medir la reputación de BBVA", to: "/trabajo/tfg-bbva" },
-  { img: caso("stud-ia/poster.jpg"), cifra: "5 meses", texto: "de prácticas, con carta de recomendación", to: "/trabajo/stud-ia" },
-  { img: caso("talixea/portada.jpg"), cifra: "Una app", texto: "hecha sin saber programar", to: "/trabajo/talixea" },
-];
 
 const correo = "lara.feijoo@gmail.com";
 
@@ -98,30 +90,13 @@ export function InicioPage() {
         <p className="dojo-rol">
           Graduada en Publicidad y RRPP (URJC) · Máster en Comunicación Publicitaria (UC3M)
         </p>
-        <div className="dojo-intro-caja">
-          <p className="dojo-intro">
-            Me tiran las relaciones públicas, la gestión de marca, la reputación y la comunicación
-            interna. Quiero entender a la gente y partirme la cabeza buscando la mejor
-            solución para la marca.
-          </p>
-        </div>
         <p className="dojo-busco">
           <strong>Busco prácticas</strong> a tiempo completo a partir de abril de 2027.
           <Correo />
         </p>
-        <nav className="dojo-minuto" aria-label="Lo mejor, en un clic">
-          <p>Si solo tienes un minuto:</p>
-          <ul>
-            {minuto.map((m) => (
-              <li key={m.to}>
-                <Link to={m.to}>
-                  <img src={m.img} alt="" width={160} height={72} />
-                  <strong>{m.cifra}</strong> <span>{m.texto}</span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
+        <Link to="/minuto" className="dojo-boton dojo-dame-minuto">
+          ¿Vas con prisa? Dame un minuto
+        </Link>
       </div>
 
       <div className="dojo-pared">

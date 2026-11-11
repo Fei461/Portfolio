@@ -1,6 +1,7 @@
 import { Link, NavLink, useLocation } from "react-router-dom";
 
 const navItems = [
+  { label: "Dame un minuto", to: "/minuto" },
   { label: "Proyectos", to: "/trabajo" },
   { label: "Sobre mí", to: "/sobre-mi" },
   { label: "CV", to: "/cv" },
