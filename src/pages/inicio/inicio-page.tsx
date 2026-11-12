@@ -91,7 +91,7 @@ export function InicioPage() {
           Graduada en Publicidad y RRPP (URJC) · Máster en Comunicación Publicitaria (UC3M)
         </p>
         <p className="dojo-foco">
-          Me tiran las relaciones públicas, la reputación y la comunicación interna.
+          Me mueven las relaciones públicas, la reputación y la comunicación interna.
         </p>
         <p className="dojo-busco">
           <strong>Busco prácticas</strong> a tiempo completo, con convenio de la UC3M, a partir de abril de 2027.

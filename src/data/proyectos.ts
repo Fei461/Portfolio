@@ -366,7 +366,7 @@ export const porPercha = (percha: Percha) =>
 export const perchas: Record<Percha, { nombre: string; nota: string }> = {
   azul: {
     nombre: "Reputación y comunicación",
-    nota: "Lo que más me tira: entender cómo se percibe una marca, dentro y fuera.",
+    nota: "Lo que más me mueve: entender cómo se percibe una marca, dentro y fuera.",
   },
   blanco: {
     nombre: "Marca y creatividad",

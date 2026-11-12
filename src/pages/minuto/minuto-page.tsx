@@ -50,7 +50,7 @@ export function MinutoPage() {
           <h2>Quién soy</h2>
           <p>
             Graduada en Publicidad y RRPP (URJC) y estudiante del Máster en Comunicación Publicitaria (UC3M). Me
-            tiran las relaciones públicas, la gestión de marca, la reputación y la comunicación interna. Quiero
+            mueven las relaciones públicas, la gestión de marca, la reputación y la comunicación interna. Quiero
             entender a la gente y partirme la cabeza buscando la mejor solución para la marca.
           </p>
         </li>
