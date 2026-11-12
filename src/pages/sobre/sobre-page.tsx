@@ -274,8 +274,8 @@ export function SobrePage() {
           className="foto-giro--sobre"
           src={foto}
           alt="Lara sonriendo y mordiéndose la lengua delante de una cascada"
-          ancho={1400}
-          alto={1050}
+          ancho={700}
+          alto={525}
           frente="No es una foto seria porque no lo soy."
           detras={
             <>

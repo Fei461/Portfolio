@@ -15,7 +15,7 @@ function Carpeta() {
       <path d="M22 78 L150 70 L144 246 L14 240 Z" fill="#d9a865" {...borde} />
       <rect x="40" y="120" width="82" height="34" fill="#f5f5f2" stroke="#000" strokeWidth="2.5" transform="rotate(-2 81 137)" />
       <text x="81" y="143" textAnchor="middle" fontFamily="Bricolage Grotesque, system-ui, sans-serif" fontWeight="800" fontSize="15" transform="rotate(-2 81 137)">
-        ARCHIVO
+        Archivo
       </text>
       <path d="M30 196 L126 192 M30 210 L104 207" stroke="#8a5c34" strokeWidth="2" />
     </svg>

@@ -153,3 +153,10 @@
   background-color: var(--judogi);
   background-image: none;
 }
+
+/* Sin etiquetas en mayúsculas (regla de la marca) */
+.dojo .cajon__placa,
+.dojo .contraste__cabeza {
+  text-transform: none;
+  letter-spacing: 0;
+}

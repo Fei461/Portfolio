@@ -135,7 +135,7 @@ export const studIa: CasoCompleto = {
           lineas: ["Esa mentira que nos contamos con los apuntes: «los guardo por si los necesito». Para publicar justo el día del último examen."],
           escenas: [
             { momento: "Gancho", texto: "POV: Terminas los exámenes 🚮" },
-            { momento: "La duda", texto: "Pero... ¿y si los necesito en 2035? 🤡" },
+            { momento: "La duda", texto: "Pero… ¿y si los necesito en 2035? 🤡" },
             { momento: "La mentira", texto: "«Por si acaso» = Nunca 🗑️" },
             { momento: "Cierre", texto: "Etiqueta a tu amigo" },
           ],

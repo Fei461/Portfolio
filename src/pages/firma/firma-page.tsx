@@ -15,13 +15,13 @@ const colores = [
 
 export function FirmaPage() {
   useEffect(() => {
-    document.title = "Firma de Lara Feijóo";
+    document.title = "Firma de Lara Feijóo Vázquez";
   }, []);
 
   return (
     <main className="hoja-firma">
       <header className="hf-cabecera">
-        <p className="hf-etiqueta">Imagen personal de Lara Feijóo</p>
+        <p className="hf-etiqueta">Imagen personal de Lara Feijóo Vázquez</p>
         <h1>Su nombre y el nudo de su cinturón</h1>
         <p className="hf-intro">
           Dos piezas que ya están en el portfolio. El nombre, con la letra de la portada, es la firma. El nudo del
@@ -34,19 +34,19 @@ export function FirmaPage() {
         <h2>1. El nombre</h2>
         <div className="hf-fondos">
           <div className="hf-fondo hf-fondo--blanco">
-            <span className="firma__nombre hf-nombre">Lara Feijóo</span>
+            <span className="firma__nombre hf-nombre">Lara Feijóo Vázquez</span>
             <span>Sobre judogi blanco</span>
           </div>
           <div className="hf-fondo hf-fondo--tatami">
-            <span className="firma__nombre hf-nombre">Lara Feijóo</span>
+            <span className="firma__nombre hf-nombre">Lara Feijóo Vázquez</span>
             <span>Sobre tatami</span>
           </div>
           <div className="hf-fondo hf-fondo--negro">
-            <span className="firma__nombre hf-nombre hf-invertida">Lara Feijóo</span>
+            <span className="firma__nombre hf-nombre hf-invertida">Lara Feijóo Vázquez</span>
             <span>Sobre negro</span>
           </div>
           <div className="hf-fondo hf-fondo--blanco hf-fondo--agua">
-            <span className="firma__nombre hf-nombre">Lara Feijóo</span>
+            <span className="firma__nombre hf-nombre">Lara Feijóo Vázquez</span>
             <Nudo className="hf-agua" />
             <span>Con el nudo en la esquina, como en el CV</span>
           </div>
@@ -55,7 +55,7 @@ export function FirmaPage() {
 
       <section className="hf-bloque">
         <h2>2. Solo el nudo</h2>
-        <p className="hf-nota">Para la foto de perfil y la esquina del CV. En la pestaña del navegador sigue el judogi.</p>
+        <p className="hf-nota">Para la foto de perfil, la esquina del CV y, sobre celeste, el icono de la web.</p>
         <div className="hf-tamanos">
           <div>
             <Nudo className="hf-t200" />
@@ -86,7 +86,7 @@ export function FirmaPage() {
           <figure className="hf-uso">
             <div className="hf-correo">
               <p>Un saludo,</p>
-              <p className="firma__nombre hf-correo__nombre">Lara Feijóo</p>
+              <p className="firma__nombre hf-correo__nombre">Lara Feijóo Vázquez</p>
               <p className="hf-correo__datos">
                 Publicidad y RRPP · Máster en Comunicación Publicitaria (UC3M)
                 <br />

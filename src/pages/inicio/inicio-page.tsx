@@ -55,8 +55,8 @@ function FotoGraduacion() {
     <FotoGiro
       src={foto}
       alt="Lara con la beca de graduación y un ramo de flores, levantando una pierna y con el pulgar arriba"
-      ancho={1200}
-      alto={1600}
+      ancho={600}
+      alto={800}
       frente="Mi graduación tiene historia."
       enlace={{ to: "/sobre-mi", texto: "Más sobre mí →" }}
       detras={
