@@ -134,7 +134,7 @@ export function CvPage() {
 
         <aside className="ccv-lateral">
           <figure className="ccv-foto">
-            <img src={`${base}assets/lara/cv-foto.jpg`} alt="Lara Feijóo sonriendo, con un gorro azul de pingüino" />
+            <img src={`${base}assets/lara/cv-foto.jpg`} alt="Lara Feijóo Vázquez sonriendo, con un gorro azul de pingüino" />
             <span className="ccv-foto__obi" aria-hidden="true" />
           </figure>
           <Bloque titulo="Lo que sé hacer">

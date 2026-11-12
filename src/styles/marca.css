@@ -135,3 +135,21 @@
     letter-spacing: -0.005em;
   }
 }
+
+/* Foco del teclado: negro, como los bordes, en vez del rojo marcador */
+.dojo :focus-visible,
+.dojo .pista:focus-visible {
+  outline-color: var(--sumi);
+}
+
+/* Últimos restos de tatami fuera de la portada: resaltados y la demo de Talixea */
+.dojo .hice__lista button:hover,
+.dojo .contraste__filas li.abierta button,
+.dojo .expediente .expediente__mia {
+  background: var(--celeste-claro);
+}
+
+.dojo .demo-talixea {
+  background-color: var(--judogi);
+  background-image: none;
+}

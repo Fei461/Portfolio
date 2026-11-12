@@ -399,7 +399,7 @@ export const pluvielle: CasoCompleto = {
   era: "Era venderle arte a quien huye de la publicidad, sin interrumpirle ni una sola vez.",
   ficha: [
     { etiqueta: "Qué", valor: "Marca de lujo y su plan de medios para doce meses" },
-    { etiqueta: "Dónde", valor: "Máster en Comunicación Publicitaria, UC3M, 2026" },
+    { etiqueta: "Dónde", valor: "Máster UC3M, 2026" },
     { etiqueta: "Equipo", valor: "La marca, en equipo. El plan de medios, individual" },
     { etiqueta: "Idioma", valor: "Trabajo en inglés" },
   ],

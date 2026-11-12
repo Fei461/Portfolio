@@ -7,10 +7,10 @@ const img = (file: string) => `${import.meta.env.BASE_URL}assets/casos/talixea/$
 export const talixea: CasoCompleto = {
   slug: "talixea",
   titulo: "Talixea",
-  parecia: "Parecía un capricho: quería leer en otros idiomas y no encontraba la app.",
+  parecia: "Parecía un capricho: quería leer en otros idiomas y no encontraba dónde.",
   era: "Era un producto entero, del método al lanzamiento, hecho desde mi cuarto y sin saber programar.",
   ficha: [
-    { etiqueta: "Qué", valor: "App para aprender idiomas leyendo historias que ya conoces" },
+    { etiqueta: "Qué", valor: "Plataforma para aprender idiomas leyendo historias que ya conoces" },
     { etiqueta: "Cuándo", valor: "Desde febrero de 2026, en mi cuarto. Lanzada en octubre" },
     { etiqueta: "Mi parte", valor: "Todo: idea, producto, marca, contenido y lanzamiento" },
     { etiqueta: "Con qué", valor: "Herramientas de IA para la parte técnica, aprendiendo sobre la marcha" },
@@ -24,7 +24,7 @@ export const talixea: CasoCompleto = {
     titulo: "Buscaba algo que no existía",
     parrafos: [
       "Quería aprender idiomas leyendo con un método que me convencía, el diglot weave: lees un texto en tu idioma y, poco a poco, algunas palabras aparecen en el que estás aprendiendo, hasta que el texto acaba casi entero en él.",
-      "Busqué una app que lo hiciera así y no la encontré: las que había no estaban en español o no eran gratis. Así que decidí hacerla yo. Pequeño detalle: no sabía programar. Como mucho, leía un poco de código.",
+      "Busqué una plataforma que lo hiciera así y no la encontré: las que había no estaban en español o no eran gratis. Así que decidí hacerla yo. Pequeño detalle: no sabía programar. Como mucho, leía un poco de código.",
       "La empecé en febrero de 2026, desde mi cuarto. Estoy orgullosa por la constancia, por el esfuerzo y por no haberme dado por vencida cuando no encontré nada que me gustara.",
       "Salió al mercado en octubre de 2026. Es un proyecto personal que sigue creciendo, y ahora toca lo siguiente: sus primeros lectores.",
     ],
@@ -71,7 +71,7 @@ export const talixea: CasoCompleto = {
       titulo: "Contarlo en redes",
       resumen: "Desde finales de octubre, con calendario y métricas.",
       puntos: [
-        "Cinco series fijas a la semana: expresiones que no se traducen literal, palabras con historia, curiosidades de los clásicos, carruseles y demos de la app.",
+        "Cinco series fijas a la semana: expresiones que no se traducen literal, palabras con historia, curiosidades de los clásicos, carruseles y demos de la plataforma.",
         "Yo pongo la cara y la voz; para producir carruseles y demos me apoyo en herramientas de IA, igual que con el código.",
         "Cada pieza se mide a los siete días en TikTok, Instagram y YouTube, y cada diez o quince publicaciones reviso qué funciona.",
       ],
@@ -81,7 +81,7 @@ export const talixea: CasoCompleto = {
       resumen: "La parte de negocio, que también es comunicación.",
       puntos: [
         "Modelo freemium: 16 de los 40 libros gratis y sin tarjeta; Plus por 4,99 € al mes o 49,99 € al año.",
-        "Antes de publicar, recorrí la web y la app como cada tipo de cliente y cerré los fallos críticos que encontré.",
+        "Antes de publicar, recorrí la plataforma como cada tipo de cliente y cerré los fallos críticos que encontré.",
         "Medición propia con consentimiento y sin guardar IP, y un reto gratuito por correo, «7 días, 7 escenas», para conseguir los primeros lectores.",
       ],
     },
@@ -105,7 +105,7 @@ export const talixea: CasoCompleto = {
     {
       titulo: "No sabía programar",
       texto:
-        "Me apoyé en herramientas de IA y fui aprendiendo sobre la marcha, a base de romper cosas. Después de muchísimos errores, la app por fin me dejó crear una cuenta. Lo que escribí en ese momento: «Lo hemos conseguido, me deja entrar».",
+        "Me apoyé en herramientas de IA y fui aprendiendo sobre la marcha, a base de romper cosas. Después de muchísimos errores, la plataforma por fin me dejó crear una cuenta. Lo que escribí en ese momento: «Lo hemos conseguido, me deja entrar».",
     },
     {
       titulo: "Cada nombre ya estaba cogido",

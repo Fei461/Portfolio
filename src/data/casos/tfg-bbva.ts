@@ -11,7 +11,7 @@ export const tfgBbva: CasoCompleto = {
   era: "Era medir, con 248 respuestas de dentro y de fuera, si la gente ya le ha perdonado 2008 al banco. Spoiler: todavía no del todo.",
   ficha: [
     { etiqueta: "Qué", valor: "Trabajo de Fin de Grado sobre identidad y reputación corporativa" },
-    { etiqueta: "Dónde", valor: "Grado en Publicidad y RRPP, URJC, 2026" },
+    { etiqueta: "Dónde", valor: "Grado URJC, 2026" },
     { etiqueta: "Equipo", valor: "Individual" },
     { etiqueta: "Método", valor: "Análisis documental, dos encuestas y una entrevista en profundidad" },
   ],
@@ -158,7 +158,7 @@ export const tfgBbva: CasoCompleto = {
   },
   cita: {
     texto: "La raíz de la brecha reputacional no consiste en la falta de acciones y estrategias, sino en la no muestra de las mismas.",
-    autor: "Lara Feijóo",
+    autor: "Lara Feijóo Vázquez",
     cargo: "Discusión final del TFG",
   },
   aprendizajes: [

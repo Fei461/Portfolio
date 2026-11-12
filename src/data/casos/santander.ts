@@ -10,9 +10,9 @@ export const santander: CasoCompleto = {
   parecia: "Parecía una presentación de diez diapositivas, justo lo que nos pidieron.",
   era: "Era un laboratorio entero escondido detrás de cada hipervínculo.",
   ficha: [
-    { etiqueta: "Qué", valor: "Análisis de identidad visual para Comunicación corporativa" },
-    { etiqueta: "Cuándo", valor: "Octubre de 2026, Máster UC3M" },
-    { etiqueta: "Equipo", valor: "Grupo 7, cuatro personas" },
+    { etiqueta: "Qué", valor: "Análisis de la identidad visual del logo de Santander" },
+    { etiqueta: "Dónde", valor: "Comunicación Corporativa, Máster UC3M, 2026" },
+    { etiqueta: "Equipo", valor: "Cuatro personas" },
     { etiqueta: "Mi parte", valor: "La web del laboratorio y la encuesta, enteras. La evaluación, en equipo" },
   ],
   enlaces: [{ href: "https://fei461.github.io/santander/", label: "Abrir el laboratorio" }],

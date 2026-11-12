@@ -103,7 +103,7 @@ export const proyectos: Proyecto[] = [
     percha: "blanco",
     tipo: "Proyecto propio, desde febrero de 2026",
     resumen:
-      "Buscaba una app para aprender idiomas leyendo, en español y gratis. No existía, así que la hice sin saber programar: 40 libros y seis idiomas.",
+      "Buscaba una plataforma para aprender idiomas leyendo, en español y gratis. No existía, así que la hice sin saber programar: 40 libros y seis idiomas.",
     pagina: "nuevo",
     fuera: { href: "https://talixea.es", label: "Visitar talixea.es" },
     origen: "Real",

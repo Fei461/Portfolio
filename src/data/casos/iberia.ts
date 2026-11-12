@@ -11,7 +11,7 @@ export const iberia: CasoCompleto = {
   ficha: [
     { etiqueta: "Qué", valor: "Propuesta creativa de campaña" },
     { etiqueta: "Dónde", valor: "Redacción Publicitaria, Grado URJC, 2025" },
-    { etiqueta: "Equipo", valor: "Grupo 6, cinco personas" },
+    { etiqueta: "Equipo", valor: "Cinco personas" },
     { etiqueta: "Mi parte", valor: "La idea de la estrategia y su redacción, el guion del spot y las acciones de cada soporte" },
   ],
   contexto: {
